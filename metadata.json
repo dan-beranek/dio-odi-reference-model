@@ -20,5 +20,7 @@
       "path": "mappings/rag-pipeline-mapping.md",
       "relation": "derived-application-layer"
     }
-  ]
+  ],
+  "release_doi": "10.5281/zenodo.23282752",
+  "release_doi_url": "https://doi.org/10.5281/zenodo.23282752"
 }
