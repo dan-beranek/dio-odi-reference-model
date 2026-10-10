@@ -9,7 +9,7 @@
 
 ## Purpose
 
-This repository provides a machine-readable reference vocabulary derived from the published DIO/ODI corpus.
+This repository provides the DIO/ODI Reference Model, centered on a machine-readable reference vocabulary derived from the published DIO/ODI corpus and extended by explicitly separated application mappings.
 
 It does not replace the papers and does not claim to be a completed formal ontology. It provides a stable semantic layer in which machines and humans can identify DIO/ODI concepts, retrieve concise definitions, inspect conceptual hierarchy and relatedness, and trace concepts back to source publications.
 
@@ -91,15 +91,26 @@ The namespace is owned by the author and is intended to remain stable independen
 - `docs/source-map.md` — concept-to-source provenance
 - `docs/concept-map.mmd` — Mermaid overview
 - `examples/queries.sparql` — example machine queries
-- `mappings/rag-pipeline-mapping.md` — derived Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
-- `mappings/` — application mappings, deliberately separate from the core model
+- `mappings/index.html` — public index of derived Application Mappings
+- `mappings/rag-pipeline-mapping.md` — source for Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
+- `mappings/rag-pipeline/index.html` — human-readable RAG mapping frontend
+- `mappings/hem-dio-mapping.md` — source for Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
+- `mappings/hem-dio-mapping.jsonld` — machine-readable metadata and mapping items for the HEM × DIO mapping
+- `mappings/hem-dio/index.html` — human-readable HEM × DIO mapping frontend
+- `mappings/hem-dio/bridge.svg` — conceptual bridge diagram
+- `mappings/` — derived application layer, deliberately separate from the canonical vocabulary
 - `CITATION.cff` — repository citation metadata
 
 ## Derived application mappings
 
 These mappings are not part of the canonical vocabulary. They project vocabulary concepts into external domains without changing their definitions, hierarchy, or relations.
 
-- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](mappings/rag-pipeline-mapping.md) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework.
+Public index: https://vocab.danielberanek.cz/mappings/
+
+- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework. The source mapping is archived as part of Reference Model v0.2.0.
+- [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
+
+The HEM × DIO mapping was added to `main` after the v0.2.0 archive and is **not** part of the archived release identified by DOI 10.5281/zenodo.23282752. The canonical Reference Vocabulary remains v0.1.0.
 
 ## Primary sources
 
