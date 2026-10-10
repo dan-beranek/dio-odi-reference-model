@@ -12,6 +12,9 @@
     body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:860px;margin:4rem auto;padding:0 1.4rem;line-height:1.65;color:#171717}
     h1,h2{line-height:1.2} code{background:#f2f2f2;padding:.15rem .35rem;border-radius:.25rem}
     .note{border-left:4px solid #777;padding-left:1rem;color:#444}
+    figure.concept-map{margin:2rem 0}
+    figure.concept-map img{display:block;width:100%;height:auto;border:1px solid #ddd;border-radius:.5rem;background:#fff}
+    figure.concept-map figcaption{margin-top:.65rem;color:#555;font-size:.95rem}
   </style>
   <script id="dio-odi-jsonld" type="application/ld+json">
 {
@@ -1189,6 +1192,15 @@
   <p>This document identifies the machine-readable reference vocabulary derived from the published corpus of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).</p>
 
   <p class="note">The vocabulary is intentionally SKOS-first. It provides stable concept identifiers, definitions, broader/narrower and related-concept relations, provenance, and revision notes without presenting the current model as a completed OWL ontology.</p>
+
+  <h2>Concept map</h2>
+  <p>The diagram shows the current Reconstruction Failure Mode taxonomy and selected related concepts that are deliberately kept outside, or distinct from, the hierarchy.</p>
+  <figure class="concept-map">
+    <a href="/docs/concept-map.svg" aria-label="Open the DIO/ODI concept map as SVG">
+      <img src="/docs/concept-map.svg" alt="DIO/ODI Reconstruction Failure Mode taxonomy and related concepts" width="1200" height="900">
+    </a>
+    <figcaption>Solid arrows represent taxonomic relations. Dashed arrows represent related concepts; dashed boxes are outside the failure-mode hierarchy.</figcaption>
+  </figure>
 
   <h2>Machine-readable serializations</h2>
   <ul>
