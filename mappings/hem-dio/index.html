@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEM Heterogeneity × DIO Reconstruction Consequences | Application Mapping</title>
+  <meta name="description" content="Derived mapping between the Heterogeneous Entity Matching heterogeneity taxonomy and possible DIO reconstruction consequences, including Semantic Vulnerability and Reconstruction Failure Modes.">
+  <meta name="author" content="Daniel Beránek">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://vocab.danielberanek.cz/mappings/hem-dio/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="text/markdown" href="/mappings/hem-dio-mapping.md" title="HEM × DIO mapping source — Markdown">
+  <link rel="alternate" type="application/ld+json" href="/mappings/hem-dio-mapping.jsonld" title="HEM × DIO mapping metadata — JSON-LD">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HEM Heterogeneity × DIO Reconstruction Consequences">
+  <meta property="og:description" content="An analytical bridge from heterogeneous input conditions in HEM to possible consequences for digital identity reconstruction in DIO.">
+  <meta property="og:url" content="https://vocab.danielberanek.cz/mappings/hem-dio/">
+  <meta property="og:site_name" content="DIO/ODI Reference Model">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1060px;margin:4rem auto;padding:0 1.4rem;line-height:1.65;color:#171717}
+    h1,h2,h3{line-height:1.2} a{color:#174ea6} code{background:#f2f2f2;padding:.15rem .35rem;border-radius:.25rem}
+    .note{border-left:4px solid #777;padding-left:1rem;color:#444}.status{padding:1rem 1.2rem;background:#f5f5f5;border-radius:.55rem}
+    table{border-collapse:collapse;width:100%;margin:1.5rem 0;font-size:.95rem}th,td{border:1px solid #ccc;padding:.7rem;vertical-align:top}th{background:#f1f1f1;text-align:left}
+    figure{margin:2rem 0}figure img{display:block;width:100%;height:auto;border:1px solid #ddd;border-radius:.5rem}figcaption{color:#555;font-size:.93rem;margin-top:.55rem}
+    .source{padding:1.1rem 1.3rem;border:1px solid #ddd;border-radius:.55rem;background:#fafafa}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"TechArticle",
+    "@id":"https://vocab.danielberanek.cz/mappings/hem-dio/",
+    "name":"Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
+    "description":"Derived analytical mapping between HEM heterogeneity conditions and possible DIO reconstruction consequences.",
+    "url":"https://vocab.danielberanek.cz/mappings/hem-dio/",
+    "dateModified":"2026-10-11",
+    "license":"https://creativecommons.org/licenses/by/4.0/",
+    "author":{"@type":"Person","name":"Daniel Beránek","url":"https://danielberanek.cz/","sameAs":"https://orcid.org/0009-0004-0050-0264"},
+    "isBasedOn":[
+      {"@type":"ScholarlyArticle","name":"Heterogeneity in entity matching: A survey and experimental analysis","url":"https://doi.org/10.1016/j.datak.2026.102575"},
+      {"@type":"CreativeWork","name":"Minimum Viable Digital Identity Optimization (DIO)","url":"https://doi.org/10.5281/zenodo.23226205"},
+      {"@type":"CreativeWork","name":"From Entity Resolution Anomalies to Reconstruction Failure Modes","url":"https://doi.org/10.5281/zenodo.23269323"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <p><a href="/mappings/">← Application Mappings</a> · <a href="/dio-odi/">Reference Vocabulary</a></p>
+  <h1>Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences</h1>
+
+  <div class="status">
+    <strong>Status:</strong> derived application layer under active development after DIO/ODI Reference Model v0.2.0.<br>
+    <strong>Boundary:</strong> not part of the canonical DIO/ODI Reference Vocabulary; not a claim of taxonomic equivalence or deterministic causality.
+  </div>
+
+  <h2>Context and rationale</h2>
+  <p>Heterogeneous Entity Matching (HEM) provides a systematic taxonomy of heterogeneity affecting entity matching across diverse data environments. Moslemi et al. distinguish between <strong>representation heterogeneity</strong>—Multimodality, Format Heterogeneity, and Structural (Schema) Heterogeneity—and <strong>semantic heterogeneity</strong>—Terminology &amp; Language, Contextual Variability, Granularity &amp; Resolution, Temporal Variability, and Data Quality.</p>
+  <p>The taxonomy is useful here because it treats heterogeneity as a first-class condition of entity matching. It supplies an external analytical axis for asking how variations in the form, organization, meaning, context, temporal state, resolution, or quality of representations may affect subsequent identity reconstruction.</p>
+
+  <p class="note"><strong>HEM heterogeneity types describe properties or mismatches in input representations and datasets; DIO Reconstruction Failure Modes describe failures or inadequacies of the resulting identity reconstruction.</strong> The relation is therefore many-to-many and diagnostic, not a translation between equivalent taxonomies.</p>
+
+  <figure>
+    <a href="/mappings/hem-dio/bridge.svg"><img src="/mappings/hem-dio/bridge.svg" alt="Conceptual bridge from HEM heterogeneity conditions through reconstruction pressure to DIO reconstruction consequences" width="1200" height="700"></a>
+    <figcaption>HEM characterizes heterogeneous input conditions. DIO characterizes possible consequences for identity reconstruction. Semantic Vulnerability is shown separately because it is a susceptibility property, not a realized Reconstruction Failure Mode.</figcaption>
+  </figure>
+
+  <h2>Mapping</h2>
+  <table>
+    <thead><tr><th>HEM heterogeneity type</th><th>DIO reconstruction consequence</th><th>Relation</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Multimodality</strong></td><td><a href="/dio-odi/#SemanticFragmentation">Semantic Fragmentation</a>; <a href="/dio-odi/#SplitFailure">Split Failure</a>; <a href="/dio-odi/#SemanticVulnerability">Semantic Vulnerability</a></td><td>may contribute to / may increase</td><td>Evidence distributed across modalities may be integrated unevenly or treated as disconnected. The heterogeneity itself is not a failure.</td></tr>
+      <tr><td><strong>Format Heterogeneity</strong></td><td><a href="/dio-odi/#SemanticVulnerability">Semantic Vulnerability</a>; secondarily Merge/Split failures</td><td>may increase / may contribute to</td><td>Syntactic incompatibility can reduce usable overlap among otherwise compatible representations and increase sensitivity to which formats remain legible.</td></tr>
+      <tr><td><strong>Structural (Schema) Heterogeneity</strong></td><td><a href="/dio-odi/#MergeFailure">Merge Failure</a>; <a href="/dio-odi/#SplitFailure">Split Failure</a>; <a href="/dio-odi/#SemanticFragmentation">Semantic Fragmentation</a></td><td>may contribute to</td><td>Misaligned attributes, hierarchies, or schemas can obscure identity-preserving correspondences or produce false ones.</td></tr>
+      <tr><td><strong>Terminology &amp; Language</strong></td><td><a href="/dio-odi/#EntitySubstitution">Entity Substitution</a>; <a href="/dio-odi/#SplitFailure">Split Failure</a>; <a href="/dio-odi/#SemanticFragmentation">Semantic Fragmentation</a></td><td>may contribute to / may increase risk of</td><td>Aliases, synonyms, multilingual labels, and domain terminology can weaken links among representations or increase confusion among distinct referents.</td></tr>
+      <tr><td><strong>Contextual Variability</strong></td><td><a href="/dio-odi/#ContextualDisplacement">Contextual Displacement</a>; <a href="/dio-odi/#EntitySubstitution">Entity Substitution</a></td><td>may contribute to</td><td>Context-sensitive meaning can support a legitimate but secondary identity aspect or a wrong referential interpretation.</td></tr>
+      <tr><td><strong>Granularity &amp; Resolution</strong></td><td><a href="/dio-odi/#SemanticFragmentation">Semantic Fragmentation</a>; <a href="/dio-odi/#ContextualDisplacement">Contextual Displacement</a>; <a href="/dio-odi/#SemanticVulnerability">Semantic Vulnerability</a></td><td>may contribute to / may increase</td><td>Different levels of detail can remain referentially compatible while resisting coherent integration or displacing the resolution relevant to the observation context.</td></tr>
+      <tr><td><strong>Temporal Variability</strong></td><td><a href="/dio-odi/#TemporalMisalignment">Temporal Misalignment</a>; <a href="/dio-odi/#TemporalDiscontinuity">Temporal Discontinuity</a></td><td>may contribute to</td><td>Time-sensitive differences can yield the right referent in the wrong temporal state or break perceived identity continuity across legitimate transformation.</td></tr>
+      <tr><td><strong>Data Quality</strong></td><td><a href="/dio-odi/#SemanticVulnerability">Semantic Vulnerability</a>; potentially multiple failure modes</td><td>may increase / may contribute to</td><td>Missing, noisy, inconsistent, or outdated values can make reconstruction disproportionately sensitive to remaining evidence; no single failure follows automatically.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Analytical bridge</h2>
+  <p>The mapping uses three analytical levels: <strong>HEM heterogeneity condition</strong> → <strong>reconstruction pressure</strong> → <strong>DIO reconstruction consequence</strong>. This prevents an upstream data condition from being mislabeled as a downstream reconstruction failure.</p>
+  <p><a href="/dio-odi/#SemanticVulnerability">Semantic Vulnerability</a> is especially useful as a bridge concept because heterogeneity need not yield an observable failure. It may instead increase susceptibility to disproportionate change when representation availability, interpretation, ranking, or context changes.</p>
+
+  <h2>Interpretation boundary</h2>
+  <p>This mapping does not claim that HEM and DIO use equivalent taxonomies, that heterogeneity necessarily produces a reconstruction failure, that an entity-matching model error is automatically a DIO failure, or that any relation in the table is deterministic.</p>
+
+  <h2>Source basis</h2>
+  <div class="source">
+    <p><strong>HEM source:</strong> Moslemi, M. H., Mousavi, A., Behkamal, B., &amp; Milani, M. (2026). <em>Heterogeneity in entity matching: A survey and experimental analysis</em>. <strong>Data &amp; Knowledge Engineering, 164</strong>, 102575. <a href="https://doi.org/10.1016/j.datak.2026.102575">DOI 10.1016/j.datak.2026.102575</a>.</p>
+    <p><strong>DIO/ODI source basis:</strong> <a href="https://doi.org/10.5281/zenodo.23226205">Minimum Viable DIO</a>; <a href="https://doi.org/10.5281/zenodo.23269323">Taxonomic Note</a>; <a href="/dio-odi/">DIO/ODI Reference Vocabulary v0.1.0</a>.</p>
+  </div>
+
+  <h2>Source and machine-readable metadata</h2>
+  <ul>
+    <li><a href="/mappings/hem-dio-mapping.md">Markdown source</a></li>
+    <li><a href="/mappings/hem-dio-mapping.jsonld">JSON-LD metadata and mapping items</a></li>
+    <li><a href="/mappings/hem-dio/bridge.svg">SVG conceptual bridge</a></li>
+    <li><a href="https://github.com/dan-beranek/dio-odi-reference-model">GitHub repository</a></li>
+  </ul>
+
+  <p><strong>Provenance:</strong> the HEM taxonomy is external source material. The HEM→DIO relations shown here are a DIO-side analytical interpretation authored for this Application Mapping; they are not claims made by Moslemi et al.</p>
+  <p>Author: <strong>Daniel Beránek</strong> · ORCID 0009-0004-0050-0264 · License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</body>
+</html>
