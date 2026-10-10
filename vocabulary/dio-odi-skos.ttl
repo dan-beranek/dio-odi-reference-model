@@ -7,6 +7,7 @@ dio:ReferenceVocabulary a skos:ConceptScheme ;
   skos:prefLabel "DIO/ODI Reference Vocabulary"@en ;
   dcterms:creator "Daniel Beránek" ;
   dcterms:description "SKOS reference vocabulary derived from the DIO/ODI corpus."@en ;
+  skos:hasTopConcept dio:ReconstructionFailureMode ;
   dcterms:modified "2026-10-10"^^xsd:date .
 
 dio:DIO a skos:Concept ;
@@ -134,7 +135,9 @@ dio:IdentityPreservingVariation a skos:Concept ;
   dcterms:source <https://doi.org/10.5281/zenodo.23226205> .
 
 dio:ReconstructionFailureMode a skos:Concept ;
-  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Reconstruction Failure Mode"@en ;
+  skos:inScheme dio:ReferenceVocabulary ;
+  skos:topConceptOf dio:ReferenceVocabulary ;
+  skos:prefLabel "Reconstruction Failure Mode"@en ;
   skos:definition "A realized, analytically distinguishable way in which identity reconstruction fails."@en ;
   skos:narrower dio:ReferentialReconstructionFailure, dio:SemanticCoherenceFailure, dio:TemporalReconstructionFailure, dio:ContextualAdequacyFailure ;
   skos:scopeNote "The taxonomy is non-exclusive and multi-level; a single case may instantiate multiple failure modes."@en ;
