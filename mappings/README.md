@@ -1,8 +1,11 @@
 # Application mappings
 
-Reserved for low-cost derived mappings after the core vocabulary is approved.
+Application mappings project the DIO/ODI reference model onto adjacent technical or analytical domains. They are derived layers and must not silently redefine the core vocabulary.
 
-Candidate files:
+## Available
 
-- `rag-pipeline-mapping.md` — application mapping from RAG/retrieval-generation conditions to possible DIO Reconstruction Failure Modes. This must not redefine DIO as a RAG framework.
+- [RAG pipeline mapping](rag-pipeline-mapping.md) — maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.
+
+## Planned
+
 - `hem-mapping.md` — mapping between Heterogeneous Entity Matching heterogeneity categories and possible DIO reconstruction consequences. This must distinguish input heterogeneity from reconstruction failure.
