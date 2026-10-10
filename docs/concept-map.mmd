@@ -23,9 +23,12 @@ flowchart TD
     IC["Identity Collapse\nphenomenon-level concept"]
     SV["Semantic Vulnerability\nrobustness-related property"]
     SR["Semantic Robustness"]
+    RC["Reconstruction Capture"]
 
+    ES -. related .-> IC
     SV -. related .-> SR
+    SV -. related .-> RC
     SF -. related, not equivalent .-> SFR
 
     classDef outside stroke-dasharray: 5 5;
-    class IC,SV,SR outside;
+    class IC,SV,SR,RC outside;
