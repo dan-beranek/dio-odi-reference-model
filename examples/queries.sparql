@@ -1,0 +1,29 @@
+PREFIX dio: <https://vocab.danielberanek.cz/dio-odi#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# Top-level analytical domains of Reconstruction Failure Modes
+SELECT ?concept ?label WHERE {
+  dio:ReconstructionFailureMode skos:narrower ?concept .
+  ?concept skos:prefLabel ?label .
+}
+ORDER BY ?label
+
+# Referential Reconstruction Failures
+SELECT ?concept ?label WHERE {
+  dio:ReferentialReconstructionFailure skos:narrower ?concept .
+  ?concept skos:prefLabel ?label .
+}
+ORDER BY ?label
+
+# Semantic Vulnerability must not resolve as a Reconstruction Failure Mode
+ASK {
+  dio:SemanticVulnerability skos:broader+ dio:ReconstructionFailureMode .
+}
+
+# Concepts sourced from MVDIO
+SELECT ?concept ?label WHERE {
+  ?concept dcterms:source <https://doi.org/10.5281/zenodo.23226205> ;
+           skos:prefLabel ?label .
+}
+ORDER BY ?label
