@@ -4,4 +4,32 @@
     <loc>https://vocab.danielberanek.cz/dio-odi/</loc>
     <lastmod>2026-10-10</lastmod>
   </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/docs/concept-map.svg</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/docs/terminology.md</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/docs/source-map.md</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/examples/queries.sparql</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
 </urlset>
