@@ -38,7 +38,7 @@ dio:SemanticField a skos:Concept ;
   skos:prefLabel "Semantic Field"@en ;
   skos:definition "A modeled designation for the shared configuration of mutually conditioned analytical dimensions of digital identity; not a physical field or ontological substance."@en ;
   skos:related dio:K6, dio:ODI ;
-  dcterms:source <https://doi.org/10.5281/zenodo.21610934>, <https://doi.org/10.5281/zenodo.23226205> .
+  dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/>, <https://doi.org/10.5281/zenodo.23226205> .
 
 dio:K6 a skos:Concept ;
   skos:inScheme dio:ReferenceVocabulary ;
@@ -46,25 +46,32 @@ dio:K6 a skos:Concept ;
   skos:altLabel "Semantic Connectome"@en ;
   skos:definition "A finer-grained candidate model of digital identity comprising six analytically distinguishable dimensions within a single semantic field."@en ;
   skos:related dio:SemanticField, dio:MVDIO ;
-  skos:narrower dio:EntityDimension, dio:RepresentationDimension, dio:InterpretationDimension, dio:TrustDimension, dio:RelationshipDimension, dio:ReconstructionDimension ;
-  dcterms:source <https://doi.org/10.5281/zenodo.21610934>, <https://doi.org/10.5281/zenodo.23226205> .
+  dcterms:hasPart dio:EntityDimension, dio:RepresentationDimension, dio:InterpretationDimension, dio:TrustDimension, dio:RelationshipDimension, dio:ReconstructionDimension ;
+  dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/>, <https://doi.org/10.5281/zenodo.23226205> .
 
-dio:EntityDimension a skos:Concept ; skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Entity"@en ; skos:broader dio:K6 .
-dio:RepresentationDimension a skos:Concept ; skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Representation"@en ; skos:broader dio:K6 .
-dio:InterpretationDimension a skos:Concept ; skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Interpretation"@en ; skos:broader dio:K6 .
+dio:EntityDimension a skos:Concept ; skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Entity"@en ;
+  dcterms:isPartOf dio:K6 ; dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/> .
+dio:RepresentationDimension a skos:Concept ; skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Representation"@en ;
+  dcterms:isPartOf dio:K6 ; dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/> .
+dio:InterpretationDimension a skos:Concept ; skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Interpretation"@en ;
+  dcterms:isPartOf dio:K6 ; dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/> .
 dio:TrustDimension a skos:Concept ;
-  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Trust"@en ; skos:broader dio:K6 ;
+  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Trust"@en ;
+  dcterms:isPartOf dio:K6 ;
   skos:definition "A context- and task-sensitive evaluative state used as a functional analytical label; it need not imply human psychology in machine observers."@en ;
   skos:related dio:RelationshipDimension ;
-  dcterms:source <https://doi.org/10.5281/zenodo.23226205> .
+  dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/>, <https://doi.org/10.5281/zenodo.23226205> .
 dio:RelationshipDimension a skos:Concept ;
-  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Relationship"@en ; skos:broader dio:K6 ;
+  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Relationship"@en ;
+  dcterms:isPartOf dio:K6 ;
   skos:definition "A persistent, historically sedimented relation between an observer and an entity that can shape future processing or encounters."@en ;
   skos:related dio:TrustDimension ;
-  dcterms:source <https://doi.org/10.5281/zenodo.23226205> .
+  dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/>, <https://doi.org/10.5281/zenodo.23226205> .
 dio:ReconstructionDimension a skos:Concept ;
-  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Reconstruction"@en ; skos:broader dio:K6 ;
-  skos:related dio:ReconstructionMechanism .
+  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Reconstruction"@en ;
+  dcterms:isPartOf dio:K6 ;
+  skos:related dio:ReconstructionMechanism ;
+  dcterms:source <https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/>, <https://doi.org/10.5281/zenodo.23226205> .
 
 dio:ReferentialContinuity a skos:Concept ;
   skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Referential Continuity"@en ;
