@@ -1,0 +1,32 @@
+# DIO/ODI Reference Model
+
+> Canonical machine-readable reference layer for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI), maintained by Daniel Beránek.
+
+## Versions
+
+- Reference Model release: 0.2.0
+- Reference Vocabulary: 0.1.0
+
+## Canonical vocabulary
+
+- Namespace document: https://vocab.danielberanek.cz/dio-odi/
+- Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
+- Turtle / SKOS: https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl
+- JSON-LD: https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld
+- Human-readable terminology: https://vocab.danielberanek.cz/docs/terminology.md
+- Concept-to-source map: https://vocab.danielberanek.cz/docs/source-map.md
+- Concept map: https://vocab.danielberanek.cz/docs/concept-map.svg
+
+## Derived application mappings
+
+Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. They apply vocabulary concepts to external technical or analytical domains without modifying canonical definitions or relations.
+
+- Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md
+
+## Source repository
+
+- GitHub: https://github.com/dan-beranek/dio-odi-reference-model
+
+## License
+
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
