@@ -3,8 +3,8 @@
 | Concept / cluster | Primary source | Current status |
 |---|---|---|
 | DIO / ODI | Manifest, DOI 10.5281/zenodo.21610934 | Current |
-| K6 / Semantic Connectome | Manifest + MVDIO | Current, interpreted through MVDIO |
-| Semantic Field | Manifest + MVDIO | Current model label |
+| K6 / Semantic Connectome | Manifest v2 (web) + MVDIO | Current, introduced in v2 and interpreted/refined through MVDIO |
+| Semantic Field | Manifest v2 (web) + MVDIO | Current model label |
 | MVDIO core analytical distinctions | MVDIO, DOI 10.5281/zenodo.23226205 | Current |
 | Essential Vector | Manifest → reinterpreted in MVDIO | Revised |
 | Identity Collapse | Crisis, DOI 10.5281/zenodo.22257504 | Retained; not redefined in current taxonomy |
@@ -21,3 +21,6 @@
 | Revised hierarchical Reconstruction Failure Modes | Taxonomic Note | Current; DOI 10.5281/zenodo.23269323 |
 
 A later source may refine the conceptual role of an earlier term without erasing the earlier publication.
+
+
+Manifest v2 source URL: https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/
