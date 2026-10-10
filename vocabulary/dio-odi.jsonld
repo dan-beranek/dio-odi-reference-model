@@ -158,7 +158,7 @@
       ],
       "dcterms:source": [
         {
-          "@id": "https://doi.org/10.5281/zenodo.21610934"
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
         },
         {
           "@id": "https://doi.org/10.5281/zenodo.23226205"
@@ -191,7 +191,15 @@
           "@id": "dio:MVDIO"
         }
       ],
-      "skos:narrower": [
+      "dcterms:source": [
+        {
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ],
+      "dcterms:hasPart": [
         {
           "@id": "dio:EntityDimension"
         },
@@ -210,14 +218,6 @@
         {
           "@id": "dio:ReconstructionDimension"
         }
-      ],
-      "dcterms:source": [
-        {
-          "@id": "https://doi.org/10.5281/zenodo.21610934"
-        },
-        {
-          "@id": "https://doi.org/10.5281/zenodo.23226205"
-        }
       ]
     },
     {
@@ -230,9 +230,14 @@
         "@value": "Entity",
         "@language": "en"
       },
-      "skos:broader": {
+      "dcterms:isPartOf": {
         "@id": "dio:K6"
-      }
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
+        }
+      ]
     },
     {
       "@id": "dio:RepresentationDimension",
@@ -244,9 +249,14 @@
         "@value": "Representation",
         "@language": "en"
       },
-      "skos:broader": {
+      "dcterms:isPartOf": {
         "@id": "dio:K6"
-      }
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
+        }
+      ]
     },
     {
       "@id": "dio:InterpretationDimension",
@@ -258,9 +268,14 @@
         "@value": "Interpretation",
         "@language": "en"
       },
-      "skos:broader": {
+      "dcterms:isPartOf": {
         "@id": "dio:K6"
-      }
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
+        }
+      ]
     },
     {
       "@id": "dio:TrustDimension",
@@ -272,9 +287,6 @@
         "@value": "Trust",
         "@language": "en"
       },
-      "skos:broader": {
-        "@id": "dio:K6"
-      },
       "skos:definition": {
         "@value": "A context- and task-sensitive evaluative state used as a functional analytical label; it need not imply human psychology in machine observers.",
         "@language": "en"
@@ -284,9 +296,15 @@
       },
       "dcterms:source": [
         {
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
+        },
+        {
           "@id": "https://doi.org/10.5281/zenodo.23226205"
         }
-      ]
+      ],
+      "dcterms:isPartOf": {
+        "@id": "dio:K6"
+      }
     },
     {
       "@id": "dio:RelationshipDimension",
@@ -298,9 +316,6 @@
         "@value": "Relationship",
         "@language": "en"
       },
-      "skos:broader": {
-        "@id": "dio:K6"
-      },
       "skos:definition": {
         "@value": "A persistent, historically sedimented relation between an observer and an entity that can shape future processing or encounters.",
         "@language": "en"
@@ -310,9 +325,15 @@
       },
       "dcterms:source": [
         {
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
+        },
+        {
           "@id": "https://doi.org/10.5281/zenodo.23226205"
         }
-      ]
+      ],
+      "dcterms:isPartOf": {
+        "@id": "dio:K6"
+      }
     },
     {
       "@id": "dio:ReconstructionDimension",
@@ -324,12 +345,20 @@
         "@value": "Reconstruction",
         "@language": "en"
       },
-      "skos:broader": {
-        "@id": "dio:K6"
-      },
       "skos:related": {
         "@id": "dio:ReconstructionMechanism"
-      }
+      },
+      "dcterms:isPartOf": {
+        "@id": "dio:K6"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
     },
     {
       "@id": "dio:ReferentialContinuity",
