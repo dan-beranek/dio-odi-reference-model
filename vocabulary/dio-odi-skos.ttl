@@ -1,4 +1,4 @@
-@prefix dio: <https://vocab.danielberanek.cz/dio-odi#> .
+@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
