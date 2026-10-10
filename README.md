@@ -30,11 +30,11 @@ In that sense, the artifact applies a core DIO principle to DIO itself: the conc
 
 ## Canonical namespace
 
-`https://vocab.danielberanek.cz/dio-odi#`
+`https://vocab.danielberanek.cz/dio-odi/#`
 
 Example concept URI:
 
-`https://vocab.danielberanek.cz/dio-odi#SemanticFragmentation`
+`https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation`
 
 The namespace is owned by the author and is intended to remain stable independently of the repository host.
 
