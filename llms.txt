@@ -6,6 +6,7 @@
 
 - Reference Model release: 0.2.0
 - Reference Vocabulary: 0.1.0
+- Archived release DOI: https://doi.org/10.5281/zenodo.23282752
 
 ## Canonical vocabulary
 
@@ -22,6 +23,10 @@
 Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. They apply vocabulary concepts to external technical or analytical domains without modifying canonical definitions or relations.
 
 - Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md
+
+## Archived release
+
+- DIO/ODI Reference Model v0.2.0: https://doi.org/10.5281/zenodo.23282752
 
 ## Source repository
 
