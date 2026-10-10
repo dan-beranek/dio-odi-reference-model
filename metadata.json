@@ -1,0 +1,15 @@
+{
+  "title": "DIO/ODI Reference Model",
+  "version": "0.1.0",
+  "status": "public-reference-vocabulary",
+  "namespace": "https://vocab.danielberanek.cz/dio-odi#",
+  "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
+  "license": "CC-BY-4.0",
+  "taxonomic_note_doi": "10.5281/zenodo.23269323",
+  "author": {
+    "name": "Daniel Beránek",
+    "orcid": "0009-0004-0050-0264",
+    "affiliation": "Independent Researcher, Brno, Czech Republic",
+    "email": "dan@danielberanek.cz"
+  }
+}
