@@ -89,8 +89,13 @@ The namespace is owned by the author and is intended to remain stable independen
 - `docs/source-map.md` — concept-to-source provenance
 - `docs/concept-map.mmd` — Mermaid overview
 - `examples/queries.sparql` — example machine queries
+- `mappings/rag-pipeline-mapping.md` — DIO Reconstruction Failure Modes × RAG pipeline application mapping
 - `mappings/` — application mappings, deliberately separate from the core model
 - `CITATION.cff` — repository citation metadata
+
+## Application mappings
+
+- [DIO Reconstruction Failure Modes × RAG Pipeline Mapping](mappings/rag-pipeline-mapping.md) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework.
 
 ## Primary sources
 
