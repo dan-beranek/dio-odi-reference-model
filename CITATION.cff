@@ -1,13 +1,25 @@
 cff-version: 1.2.0
 message: "If you use this reference vocabulary, please cite the repository and the underlying DIO/ODI publications."
 title: "DIO/ODI Reference Model"
-type: dataset
+type: software
 version: "0.1.0"
+abstract: "Machine-readable SKOS reference vocabulary for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI), providing stable concept URIs, definitions, semantic relations, provenance, Turtle, and JSON-LD serializations."
 authors:
   - family-names: "Beránek"
     given-names: "Daniel"
     orcid: "https://orcid.org/0009-0004-0050-0264"
     affiliation: "Independent Researcher, Brno, Czech Republic"
+keywords:
+  - digital identity
+  - Digital Identity Optimization
+  - Ontology of Digital Identity
+  - SKOS
+  - RDF
+  - JSON-LD
+  - semantic web
+  - linked data
+  - knowledge representation
+  - entity resolution
 date-released: "2026-10-10"
 repository-code: "https://github.com/dan-beranek/dio-odi-reference-model"
 license: "CC-BY-4.0"
