@@ -21,6 +21,9 @@
       "dcterms:modified": {
         "@value": "2026-10-10",
         "@type": "xsd:date"
+      },
+      "skos:hasTopConcept": {
+        "@id": "dio:ReconstructionFailureMode"
       }
     },
     {
@@ -673,7 +676,10 @@
         {
           "@id": "https://doi.org/10.5281/zenodo.23269323"
         }
-      ]
+      ],
+      "skos:topConceptOf": {
+        "@id": "dio:ReferenceVocabulary"
+      }
     },
     {
       "@id": "dio:ReferentialReconstructionFailure",
