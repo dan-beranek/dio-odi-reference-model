@@ -1,8 +1,9 @@
 # DIO/ODI Reference Model
 
-**Reference Model release:** v0.2.0  
+**Reference Model release:** v0.3.0  
 **Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
-**Release DOI:** https://doi.org/10.5281/zenodo.23282752  
+**Archive status:** v0.3.0 DOI pending  
+**Previous archived release:** v0.2.0 — https://doi.org/10.5281/zenodo.23282752  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
@@ -107,10 +108,10 @@ These mappings are not part of the canonical vocabulary. They project vocabulary
 
 Public index: https://vocab.danielberanek.cz/mappings/
 
-- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework. The source mapping is archived as part of Reference Model v0.2.0.
+- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework. Introduced in Reference Model v0.2.0 and retained in v0.3.0.
 - [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
 
-The HEM × DIO mapping was added to `main` after the v0.2.0 archive and is **not** part of the archived release identified by DOI 10.5281/zenodo.23282752. The canonical Reference Vocabulary remains v0.1.0.
+The HEM × DIO mapping is introduced in **Reference Model v0.3.0**. The canonical Reference Vocabulary remains unchanged at v0.1.0.
 
 ## Primary sources
 
@@ -133,11 +134,11 @@ In particular:
 
 ## Citation and archival release
 
-DIO/ODI Reference Model v0.2.0 is archived on Zenodo:
+**Current release:** DIO/ODI Reference Model v0.3.0. Its Zenodo DOI will be added after archival publication.
 
-https://doi.org/10.5281/zenodo.23282752
+**Previous archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
-The DOI identifies the versioned Reference Model release. It is not asserted as the source of every vocabulary concept; concept provenance remains attached to the underlying DIO/ODI publications.
+A Reference Model release DOI identifies the versioned repository package. It is not asserted as the source of every vocabulary concept; concept provenance remains attached to the underlying DIO/ODI publications.
 
 ## License
 
