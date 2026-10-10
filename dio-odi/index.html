@@ -3,9 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DIO/ODI Reference Vocabulary</title>
-  <meta name="description" content="Canonical namespace document for the DIO/ODI Reference Vocabulary by Daniel Beránek.">
+  <title>DIO/ODI Reference Vocabulary | SKOS/RDF &amp; RAG Application Mapping</title>
+  <meta name="description" content="Canonical DIO/ODI Reference Vocabulary in SKOS/RDF and JSON-LD, with stable concept URIs, provenance, concept map and derived RAG Application Mapping.">
+  <meta name="author" content="Daniel Beránek">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DIO/ODI Reference Vocabulary | SKOS/RDF &amp; RAG Application Mapping">
+  <meta property="og:description" content="Canonical DIO/ODI Reference Vocabulary in SKOS/RDF and JSON-LD, with stable concept URIs, provenance, concept map and derived RAG Application Mapping.">
+  <meta property="og:url" content="https://vocab.danielberanek.cz/dio-odi/">
+  <meta property="og:site_name" content="DIO/ODI Reference Model">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DIO/ODI Reference Vocabulary | SKOS/RDF &amp; RAG Application Mapping">
+  <meta name="twitter:description" content="Canonical DIO/ODI Reference Vocabulary in SKOS/RDF and JSON-LD, with stable concept URIs, provenance, concept map and derived RAG Application Mapping.">
   <link rel="canonical" href="https://vocab.danielberanek.cz/dio-odi/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="text/turtle" href="/vocabulary/dio-odi-skos.ttl" title="DIO/ODI Reference Vocabulary — Turtle">
   <link rel="alternate" type="application/ld+json" href="/vocabulary/dio-odi.jsonld" title="DIO/ODI Reference Vocabulary — JSON-LD">
   <style>
@@ -19,6 +31,36 @@
     figure.concept-map img{display:block;width:100%;height:auto;border:1px solid #ddd;border-radius:.5rem;background:#fff}
     figure.concept-map figcaption{margin-top:.65rem;color:#555;font-size:.95rem}
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "https://vocab.danielberanek.cz/dio-odi/",
+  "name": "DIO/ODI Reference Vocabulary",
+  "description": "Canonical machine-readable reference vocabulary for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI).",
+  "url": "https://vocab.danielberanek.cz/dio-odi/",
+  "version": "0.1.0",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Person",
+    "name": "Daniel Beránek",
+    "url": "https://danielberanek.cz/",
+    "sameAs": "https://orcid.org/0009-0004-0050-0264"
+  },
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl",
+      "encodingFormat": "text/turtle"
+    },
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld",
+      "encodingFormat": "application/ld+json"
+    }
+  ]
+}
+  </script>
   <script id="dio-odi-jsonld" type="application/ld+json">
 {
   "@context": {
@@ -1190,7 +1232,7 @@
 </head>
 <body>
   <h1>DIO/ODI Reference Vocabulary</h1>
-  <p><strong>Version:</strong> 0.1.0</p>
+  <p><strong>Reference Vocabulary version:</strong> 0.1.0<br><strong>Reference Model release:</strong> 0.2.0</p>
   <p><strong>Canonical namespace:</strong> <code>https://vocab.danielberanek.cz/dio-odi/#</code></p>
   <p>This document identifies the machine-readable reference vocabulary derived from the published corpus of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).</p>
 
