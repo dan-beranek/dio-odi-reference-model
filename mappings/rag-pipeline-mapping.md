@@ -1,6 +1,7 @@
 # Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
 
 **Status:** Derived application layer included in DIO/ODI Reference Model v0.2.0  
+**Archived release:** https://doi.org/10.5281/zenodo.23282752  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external technical domain and does not modify their definitions or relations.  
 **Scope:** Derived mapping; not a normative redefinition of DIO, ODI, RAG, or the Reconstruction Failure Mode taxonomy.
 
