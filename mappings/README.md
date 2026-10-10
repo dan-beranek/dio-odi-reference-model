@@ -13,7 +13,8 @@ Public index: https://vocab.danielberanek.cz/mappings/
 
 - Frontend: https://vocab.danielberanek.cz/mappings/rag-pipeline/
 - Source: [rag-pipeline-mapping.md](rag-pipeline-mapping.md)
-- Status: included in DIO/ODI Reference Model v0.2.0
+- Introduced in: DIO/ODI Reference Model v0.2.0
+- Included in: DIO/ODI Reference Model v0.3.0
 - Archived release: https://doi.org/10.5281/zenodo.23282752
 
 Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.
@@ -25,7 +26,7 @@ Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented gen
 - JSON-LD: [hem-dio-mapping.jsonld](hem-dio-mapping.jsonld)
 - Conceptual bridge: [hem-dio/bridge.svg](hem-dio/bridge.svg)
 - External HEM source: https://doi.org/10.1016/j.datak.2026.102575
-- Status: post-v0.2.0 development; not included in the archived v0.2.0 release
+- Introduced in: DIO/ODI Reference Model v0.3.0
 
 Uses the Heterogeneous Entity Matching taxonomy of Moslemi et al. as an external analytical axis. HEM categories characterize heterogeneous input conditions; DIO concepts characterize possible consequences for identity reconstruction. The mapping is many-to-many and diagnostic, not taxonomic equivalence.
 
