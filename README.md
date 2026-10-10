@@ -2,6 +2,7 @@
 
 **Reference Model release:** v0.2.0  
 **Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
+**Release DOI:** https://doi.org/10.5281/zenodo.23282752  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
@@ -118,6 +119,14 @@ In particular:
 - Identity Collapse is not defined as a sum, superclass, consequence, or cause of the current Reconstruction Failure Modes.
 - Semantic Vulnerability is not classified as a Reconstruction Failure Mode.
 - K6 is represented as a finer-grained candidate model, not as a logical consequence of MVDIO.
+
+## Citation and archival release
+
+DIO/ODI Reference Model v0.2.0 is archived on Zenodo:
+
+https://doi.org/10.5281/zenodo.23282752
+
+The DOI identifies the versioned Reference Model release. It is not asserted as the source of every vocabulary concept; concept provenance remains attached to the underlying DIO/ODI publications.
 
 ## License
 
