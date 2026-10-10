@@ -4,9 +4,10 @@
 
 ## Versions
 
-- Reference Model release: 0.2.0
+- Reference Model archived release: 0.2.0
 - Reference Vocabulary: 0.1.0
 - Archived release DOI: https://doi.org/10.5281/zenodo.23282752
+- Development state: main contains post-v0.2.0 application-layer additions; the Reference Vocabulary remains 0.1.0.
 
 ## Canonical vocabulary
 
@@ -22,7 +23,16 @@
 
 Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. They apply vocabulary concepts to external technical or analytical domains without modifying canonical definitions or relations.
 
-- Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md
+- Application Mappings index: https://vocab.danielberanek.cz/mappings/
+- Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline: https://vocab.danielberanek.cz/mappings/rag-pipeline/
+  - Source Markdown: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md
+  - Status: included in archived Reference Model v0.2.0.
+- Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences: https://vocab.danielberanek.cz/mappings/hem-dio/
+  - Source Markdown: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md
+  - JSON-LD: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.jsonld
+  - Conceptual bridge SVG: https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg
+  - External HEM source DOI: https://doi.org/10.1016/j.datak.2026.102575
+  - Status: added after v0.2.0; not part of the archived v0.2.0 release.
 
 ## Archived release
 
