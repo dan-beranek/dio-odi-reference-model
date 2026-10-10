@@ -1,0 +1,1131 @@
+{
+  "@context": {
+    "dio": "https://vocab.danielberanek.cz/dio-odi#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "dio:ReferenceVocabulary",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": {
+        "@value": "DIO/ODI Reference Vocabulary",
+        "@language": "en"
+      },
+      "dcterms:creator": "Daniel Beránek",
+      "dcterms:description": {
+        "@value": "SKOS reference vocabulary derived from the DIO/ODI corpus.",
+        "@language": "en"
+      },
+      "dcterms:modified": {
+        "@value": "2026-10-10",
+        "@type": "xsd:date"
+      }
+    },
+    {
+      "@id": "dio:DIO",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Digital Identity Optimization",
+        "@language": "en"
+      },
+      "skos:altLabel": {
+        "@value": "DIO",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "An applied discipline concerned with the intentional and systematic optimization of conditions under which an entity's digital identity is reconstructed by relevant human or machine observers.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ODI"
+        },
+        {
+          "@id": "dio:MVDIO"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.21610934"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ODI",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Ontology of Digital Identity",
+        "@language": "en"
+      },
+      "skos:altLabel": {
+        "@value": "ODI",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The theoretical meta-layer concerned with digital identity itself and the conditions of its existence, without requiring immediate practical optimization.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:DIO"
+        },
+        {
+          "@id": "dio:SemanticField"
+        },
+        {
+          "@id": "dio:K6"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.21610934"
+        }
+      ]
+    },
+    {
+      "@id": "dio:MVDIO",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Minimum Viable Digital Identity Optimization",
+        "@language": "en"
+      },
+      "skos:altLabel": {
+        "@value": "MVDIO",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A coarse-grained analytical model identifying the minimum distinctions required for an optimizable problem of digital identity reconstruction to exist.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:DIO"
+        },
+        {
+          "@id": "dio:K6"
+        },
+        {
+          "@id": "dio:ReconstructionMechanism"
+        },
+        {
+          "@id": "dio:DIOProblem"
+        },
+        {
+          "@id": "dio:DIOIntervention"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:SemanticField",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Semantic Field",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A modeled designation for the shared configuration of mutually conditioned analytical dimensions of digital identity; not a physical field or ontological substance.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:K6"
+        },
+        {
+          "@id": "dio:ODI"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.21610934"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:K6",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "K6 Semantic Connectome",
+        "@language": "en"
+      },
+      "skos:altLabel": {
+        "@value": "Semantic Connectome",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A finer-grained candidate model of digital identity comprising six analytically distinguishable dimensions within a single semantic field.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:SemanticField"
+        },
+        {
+          "@id": "dio:MVDIO"
+        }
+      ],
+      "skos:narrower": [
+        {
+          "@id": "dio:EntityDimension"
+        },
+        {
+          "@id": "dio:RepresentationDimension"
+        },
+        {
+          "@id": "dio:InterpretationDimension"
+        },
+        {
+          "@id": "dio:TrustDimension"
+        },
+        {
+          "@id": "dio:RelationshipDimension"
+        },
+        {
+          "@id": "dio:ReconstructionDimension"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.21610934"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:EntityDimension",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Entity",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:K6"
+      }
+    },
+    {
+      "@id": "dio:RepresentationDimension",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Representation",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:K6"
+      }
+    },
+    {
+      "@id": "dio:InterpretationDimension",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Interpretation",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:K6"
+      }
+    },
+    {
+      "@id": "dio:TrustDimension",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Trust",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:K6"
+      },
+      "skos:definition": {
+        "@value": "A context- and task-sensitive evaluative state used as a functional analytical label; it need not imply human psychology in machine observers.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:RelationshipDimension"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:RelationshipDimension",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Relationship",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:K6"
+      },
+      "skos:definition": {
+        "@value": "A persistent, historically sedimented relation between an observer and an entity that can shape future processing or encounters.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:TrustDimension"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ReconstructionDimension",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Reconstruction",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:K6"
+      },
+      "skos:related": {
+        "@id": "dio:ReconstructionMechanism"
+      }
+    },
+    {
+      "@id": "dio:ReferentialContinuity",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Referential Continuity",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Continuity by which an entity can change over time while remaining the same referent for analytical purposes.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:IdentityPreservingConstraint"
+        },
+        {
+          "@id": "dio:TemporalDiscontinuity"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:DistributedRepresentationalState",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Distributed Digital Representational State",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The observable distributed digital state through which an entity is represented, including content, attributes, metadata, identifiers, provenance, availability, and relations among representations.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:ReconstructionMechanism"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:Observer",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Observer",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A human or machine observer together with the mechanism through which it reads or processes representations.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ObservationDomain"
+        },
+        {
+          "@id": "dio:ReconstructionMechanism"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ObservationDomain",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Observation Domain",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A bounded set of observational situations against which a specific analysis or optimization is evaluated.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:Observer"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ReconstructionMechanism",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Reconstruction Mechanism",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A mechanism through which changes in an entity's representational state can alter its reconstruction under sufficiently comparable observation conditions.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:DIOProblem"
+        },
+        {
+          "@id": "dio:DIOIntervention"
+        },
+        {
+          "@id": "dio:DistributedRepresentationalState"
+        },
+        {
+          "@id": "dio:Observer"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:DIOProblem",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "DIO Problem",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "An inadequacy of reconstruction, continuity, or robustness relative to a legitimate objective within a defined observation domain.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ReconstructionMechanism"
+        },
+        {
+          "@id": "dio:DIOIntervention"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:DIOIntervention",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "DIO Intervention",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "An intentional and systematic change to the distributed representational state or relations among representations undertaken to address a DIO problem.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:DIOProblem"
+        },
+        {
+          "@id": "dio:ReconstructionMechanism"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:IdentityPreservingConstraint",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Identity-Preserving Constraint",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A condition whose preservation allows differing reconstructions or transformations to remain legitimately anchored to the same referentially continuous entity.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ReferentialContinuity"
+        },
+        {
+          "@id": "dio:EssentialVector"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:EssentialVector",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Essential Vector",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The minimal relevant core of identity-preserving constraints; the term does not imply a metaphysical essence or necessarily a numerical vector space.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:IdentityPreservingConstraint"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.21610934"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:IdentityPreservingVariation",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Identity-Preserving Variation",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Legitimate contextual variation among reconstructions that preserves referential continuity and compatibility rather than requiring uniformity.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ReferentialContinuity"
+        },
+        {
+          "@id": "dio:SemanticFragmentation"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ReconstructionFailureMode",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Reconstruction Failure Mode",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A realized, analytically distinguishable way in which identity reconstruction fails.",
+        "@language": "en"
+      },
+      "skos:narrower": [
+        {
+          "@id": "dio:ReferentialReconstructionFailure"
+        },
+        {
+          "@id": "dio:SemanticCoherenceFailure"
+        },
+        {
+          "@id": "dio:TemporalReconstructionFailure"
+        },
+        {
+          "@id": "dio:ContextualAdequacyFailure"
+        }
+      ],
+      "skos:scopeNote": {
+        "@value": "The taxonomy is non-exclusive and multi-level; a single case may instantiate multiple failure modes.",
+        "@language": "en"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ReferentialReconstructionFailure",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Referential Reconstruction Failure",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A reconstruction failure concerning the identity assignment of an intended referent.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReconstructionFailureMode"
+      },
+      "skos:narrower": [
+        {
+          "@id": "dio:EntitySubstitution"
+        },
+        {
+          "@id": "dio:MergeFailure"
+        },
+        {
+          "@id": "dio:SplitFailure"
+        },
+        {
+          "@id": "dio:EntityOmission"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:EntitySubstitution",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Entity Substitution",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A failure in which an intended referent is reconstructed as another distinct referent.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReferentialReconstructionFailure"
+      },
+      "skos:scopeNote": {
+        "@value": "This concept does not redefine Identity Collapse and is not asserted to be its canonical form.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:IdentityCollapse"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:MergeFailure",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Merge Failure",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A failure in which two or more distinct referents are reconstructed as a single referential identity.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReferentialReconstructionFailure"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:SplitFailure",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Split Failure",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A failure in which one referentially continuous entity is reconstructed as two or more distinct referential identities.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReferentialReconstructionFailure"
+      },
+      "skos:related": {
+        "@id": "dio:SemanticFragmentation"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:EntityOmission",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Entity Omission",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A failure in which sufficient representational grounds are available to an observer within the relevant observation domain, yet no relevant reconstruction of the entity is produced.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReferentialReconstructionFailure"
+      },
+      "skos:scopeNote": {
+        "@value": "Does not include cases where relevant representations were unavailable, unacquired, uncrawled, unindexed, or unretrieved.",
+        "@language": "en"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:SemanticCoherenceFailure",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Semantic Coherence Failure",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReconstructionFailureMode"
+      },
+      "skos:narrower": {
+        "@id": "dio:SemanticFragmentation"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:SemanticFragmentation",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Semantic Fragmentation",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Loss of identity-preserving coherence among distributed reconstructions of the same referentially continuous entity while referential unity may remain preserved.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:SemanticCoherenceFailure"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:SplitFailure"
+        },
+        {
+          "@id": "dio:IdentityPreservingVariation"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.22257504"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:TemporalReconstructionFailure",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Temporal Reconstruction Failure",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReconstructionFailureMode"
+      },
+      "skos:narrower": [
+        {
+          "@id": "dio:TemporalDiscontinuity"
+        },
+        {
+          "@id": "dio:TemporalMisalignment"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:TemporalDiscontinuity",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Temporal Discontinuity",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Failure to preserve referential continuity across legitimate transformations of the same entity over time.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:TemporalReconstructionFailure"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ReferentialContinuity"
+        },
+        {
+          "@id": "dio:TemporalMisalignment"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.22257504"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:TemporalMisalignment",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Temporal Misalignment",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A failure in which the correct referent is identified but the reconstructed state is temporally inappropriate to the observational situation.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:TemporalReconstructionFailure"
+      },
+      "skos:related": {
+        "@id": "dio:TemporalDiscontinuity"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ContextualAdequacyFailure",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Contextual Adequacy Failure",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ReconstructionFailureMode"
+      },
+      "skos:narrower": {
+        "@id": "dio:ContextualDisplacement"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ContextualDisplacement",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Contextual Displacement",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A failure in which a factually supportable reconstruction is inadequate to the relevant observational context because another legitimate aspect of identity displaces the aspect currently relevant.",
+        "@language": "en"
+      },
+      "skos:broader": {
+        "@id": "dio:ContextualAdequacyFailure"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:IdentityCollapse",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Identity Collapse",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A phenomenon-level concept concerning impairment of the identity function of a particular entity, retained in the sense established in The Crisis of Entity Resolution in Heterogeneous AI Environments.",
+        "@language": "en"
+      },
+      "skos:scopeNote": {
+        "@value": "Not classified as a branch of the current Reconstruction Failure Mode hierarchy. The vocabulary does not assert whether individual failure modes cause, constitute, exhaust, or are required for Identity Collapse.",
+        "@language": "en"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.22257504"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:SemanticVulnerability",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Semantic Vulnerability",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A robustness-related property describing susceptibility of identity reconstruction to destabilization or disproportionate change under perturbations of the representational environment.",
+        "@language": "en"
+      },
+      "skos:scopeNote": {
+        "@value": "Not a Reconstruction Failure Mode.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:SemanticRobustness"
+        },
+        {
+          "@id": "dio:ReconstructionCapture"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.22257504"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:SemanticRobustness",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Semantic Robustness",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The conceptual counterpart of Semantic Vulnerability: robustness of identity reconstruction under perturbations of the representational environment.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:SemanticVulnerability"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    },
+    {
+      "@id": "dio:ReconstructionCapture",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Reconstruction Capture",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A concept used for cases in which a small subset of representations has disproportionate influence over the resulting reconstruction.",
+        "@language": "en"
+      },
+      "skos:related": {
+        "@id": "dio:SemanticVulnerability"
+      },
+      "skos:scopeNote": {
+        "@value": "Included because it is present in MVDIO; v0.1 does not further formalize its relationship to Semantic Vulnerability.",
+        "@language": "en"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:EntityResolutionAnomaly",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Entity Resolution Anomaly",
+        "@language": "en"
+      },
+      "skos:historyNote": {
+        "@value": "Historical grouping introduced in The Crisis of Entity Resolution in Heterogeneous AI Environments. Later work differentiates concepts previously grouped together into distinct analytical levels; this vocabulary therefore does not use Entity Resolution Anomaly as the current parent category for the revised concepts.",
+        "@language": "en"
+      },
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.22257504"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23269323"
+        }
+      ]
+    }
+  ]
+}
