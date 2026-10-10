@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIO Reconstruction Failure Modes × RAG Pipeline | Application Mapping</title>
+  <meta name="description" content="Derived DIO application mapping projecting Reconstruction Failure Modes onto generic retrieval-augmented generation pipeline loci, mechanisms, and observable symptoms.">
+  <meta name="author" content="Daniel Beránek">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://vocab.danielberanek.cz/mappings/rag-pipeline/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="text/markdown" href="/mappings/rag-pipeline-mapping.md" title="RAG mapping source — Markdown">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DIO Reconstruction Failure Modes × RAG Pipeline">
+  <meta property="og:description" content="Diagnostic projection of DIO Reconstruction Failure Modes onto a generic RAG pipeline.">
+  <meta property="og:url" content="https://vocab.danielberanek.cz/mappings/rag-pipeline/">
+  <meta property="og:site_name" content="DIO/ODI Reference Model">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1100px;margin:4rem auto;padding:0 1.4rem;line-height:1.65;color:#171717}
+    h1,h2{line-height:1.2}a{color:#174ea6}.status{padding:1rem 1.2rem;background:#f5f5f5;border-radius:.55rem}.note{border-left:4px solid #777;padding-left:1rem;color:#444}
+    table{border-collapse:collapse;width:100%;margin:1.5rem 0;font-size:.92rem}th,td{border:1px solid #ccc;padding:.65rem;vertical-align:top}th{background:#f1f1f1;text-align:left}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"TechArticle",
+    "@id":"https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+    "name":"Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline",
+    "description":"Derived diagnostic mapping from the DIO Reconstruction Failure Mode taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.",
+    "url":"https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+    "datePublished":"2026-10-10",
+    "license":"https://creativecommons.org/licenses/by/4.0/",
+    "author":{"@type":"Person","name":"Daniel Beránek","url":"https://danielberanek.cz/","sameAs":"https://orcid.org/0009-0004-0050-0264"},
+    "isPartOf":{"@type":"CreativeWork","name":"DIO/ODI Reference Model v0.2.0","url":"https://doi.org/10.5281/zenodo.23282752"},
+    "isBasedOn":[
+      {"@type":"CreativeWork","name":"Minimum Viable Digital Identity Optimization (DIO)","url":"https://doi.org/10.5281/zenodo.23226205"},
+      {"@type":"CreativeWork","name":"From Entity Resolution Anomalies to Reconstruction Failure Modes","url":"https://doi.org/10.5281/zenodo.23269323"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <p><a href="/mappings/">← Application Mappings</a> · <a href="/dio-odi/">Reference Vocabulary</a></p>
+  <h1>Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline</h1>
+  <div class="status">
+    <strong>Status:</strong> derived application layer included in DIO/ODI Reference Model v0.2.0.<br>
+    <strong>Archived release:</strong> <a href="https://doi.org/10.5281/zenodo.23282752">10.5281/zenodo.23282752</a>.<br>
+    <strong>Boundary:</strong> not part of the canonical DIO/ODI Reference Vocabulary and not a normative redefinition of DIO, ODI, RAG, or the failure taxonomy.
+  </div>
+
+  <h2>Purpose</h2>
+  <p>This mapping projects the current DIO Reconstruction Failure Mode taxonomy onto a generic retrieval-augmented generation pipeline. Its purpose is diagnostic: to show where RAG processing conditions can contribute to, expose, or amplify failures of digital-identity reconstruction.</p>
+  <p class="note">A DIO failure mode is defined by the resulting reconstruction, not by the technical stage at which an upstream defect occurs. The relation between RAG stages and DIO failure modes is therefore many-to-many.</p>
+
+  <h2>Generic RAG stages</h2>
+  <ol>
+    <li>source/corpus formation;</li><li>segmentation and indexing;</li><li>query interpretation and entity linking;</li><li>retrieval;</li><li>reranking and context assembly;</li><li>generation and synthesis;</li><li>output validation and citation.</li>
+  </ol>
+
+  <h2>Mapping</h2>
+  <table>
+    <thead><tr><th>DIO failure mode</th><th>Typical RAG locus/loci</th><th>Possible mechanism</th><th>DIO interpretation</th></tr></thead>
+    <tbody>
+      <tr><td><a href="/dio-odi/#EntitySubstitution">Entity Substitution</a></td><td>Query interpretation; entity linking; retrieval; synthesis</td><td>Evidence becomes anchored to a distinct but confusable referent.</td><td>The intended referent is reconstructed as another distinct referent.</td></tr>
+      <tr><td><a href="/dio-odi/#MergeFailure">Merge Failure</a></td><td>Indexing/entity linking; retrieval; context assembly; synthesis</td><td>Representations belonging to distinct referents are pooled under one working identity.</td><td>Distinct referents are reconstructed as a single referential identity.</td></tr>
+      <tr><td><a href="/dio-odi/#SplitFailure">Split Failure</a></td><td>Indexing/entity linking; retrieval; synthesis</td><td>Aliases, historical names, domains, identifiers, or legitimate transformations are treated as unrelated clusters.</td><td>Referential unity of one continuous entity is lost.</td></tr>
+      <tr><td><a href="/dio-odi/#EntityOmission">Entity Omission</a></td><td>Post-retrieval context use; generation; synthesis</td><td>Sufficient grounds are available to the effective observer, but the relevant entity reconstruction is not produced.</td><td>No relevant reconstruction is produced despite sufficient grounds within the observation domain; mere non-retrieval is outside this mode.</td></tr>
+      <tr><td><a href="/dio-odi/#SemanticFragmentation">Semantic Fragmentation</a></td><td>Context assembly; synthesis</td><td>Compatible representations are treated as disconnected semantic fragments.</td><td>Referential unity remains while identity-preserving semantic coherence is lost.</td></tr>
+      <tr><td><a href="/dio-odi/#TemporalDiscontinuity">Temporal Discontinuity</a></td><td>Indexing/version handling; retrieval; context assembly; synthesis</td><td>Successive legitimate states are not connected as transformations of the same referent.</td><td>Identity continuity across legitimate transformation is not preserved.</td></tr>
+      <tr><td><a href="/dio-odi/#TemporalMisalignment">Temporal Misalignment</a></td><td>Retrieval; reranking; context assembly; synthesis</td><td>Older or otherwise temporally inappropriate representations dominate.</td><td>The referent is correct but the reconstructed state is temporally inappropriate.</td></tr>
+      <tr><td><a href="/dio-odi/#ContextualDisplacement">Contextual Displacement</a></td><td>Query interpretation; reranking; context assembly; synthesis</td><td>A legitimate but contextually secondary identity aspect dominates the evidence relevant to the task.</td><td>A true reconstruction is contextually inadequate.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Related concepts outside the taxonomy</h2>
+  <p><a href="/dio-odi/#SemanticVulnerability">Semantic Vulnerability</a> can be used as a robustness-oriented lens for asking how susceptible reconstruction is to perturbations in retrieval conditions, source availability, ranking, or context composition. <a href="/dio-odi/#ReconstructionCapture">Reconstruction Capture</a> is relevant where a small subset of retrieved representations disproportionately dominates reconstruction. <a href="/dio-odi/#IdentityCollapse">Identity Collapse</a> remains a separate phenomenon-level concept.</p>
+
+  <h2>Interpretation boundary</h2>
+  <p>The mapping does not redefine DIO as a RAG framework, treat every RAG error as a DIO failure, assert one-to-one relations between pipeline stages and failure modes, or treat retrieval failure, hallucination, factual error, and source-quality problems as automatic synonyms for DIO concepts.</p>
+
+  <h2>Source basis</h2>
+  <ul>
+    <li>Beránek, D. (2026). <em>Minimum Viable Digital Identity Optimization (DIO)</em>. <a href="https://doi.org/10.5281/zenodo.23226205">DOI 10.5281/zenodo.23226205</a>.</li>
+    <li>Beránek, D. (2026). <em>From Entity Resolution Anomalies to Reconstruction Failure Modes</em>. <a href="https://doi.org/10.5281/zenodo.23269323">DOI 10.5281/zenodo.23269323</a>.</li>
+  </ul>
+
+  <p>The RAG stages and examples are generic analytical constructs, not claims of empirical validation.</p>
+  <p><a href="/mappings/rag-pipeline-mapping.md">Full Markdown source with detailed mechanisms, symptoms, and hypothetical incidents</a> · <a href="https://github.com/dan-beranek/dio-odi-reference-model">GitHub repository</a></p>
+  <p>Author: <strong>Daniel Beránek</strong> · ORCID 0009-0004-0050-0264 · License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</body>
+</html>
