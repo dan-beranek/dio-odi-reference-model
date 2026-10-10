@@ -27,7 +27,7 @@
   <path class="edge" d="M160 213 V250 H380 V285"/>
   <path class="edge" d="M160 213 V250 H525 V285"/>
 
-  <path class="edge" d="M440 213 V285"/>
+  <path class="edge" d="M440 213 V360"/>
   <path class="edge" d="M720 213 V250 H670 V285"/>
   <path class="edge" d="M720 213 V250 H815 V285"/>
   <path class="edge" d="M1000 213 V285"/>
@@ -36,8 +36,8 @@
   <path class="related" d="M90 333 C90 430,120 475,180 545"/>
   <text class="edge-label" x="126" y="456">related</text>
 
-  <path class="related" d="M380 333 C420 410,485 470,545 545"/>
-  <text class="edge-label" x="466" y="442">related, not equivalent</text>
+  <path class="related" d="M380 333 C390 345,410 352,440 360"/>
+  <text class="edge-label" x="500" y="347">related, not equivalent</text>
 
   <path class="related" d="M760 625 H900"/>
   <text class="edge-label" x="830" y="612">related</text>
