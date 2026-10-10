@@ -13,6 +13,49 @@ It does not replace the papers and does not claim to be a completed formal ontol
 
 The repository intentionally begins with **SKOS**. A future OWL layer should add stronger axioms only where the published corpus and subsequent review justify them.
 
+## Concept map
+
+The current Reconstruction Failure Mode taxonomy is non-exclusive and multi-level. Dashed relations mark related concepts that are deliberately kept outside, or distinct from, the taxonomic hierarchy.
+
+```mermaid
+flowchart TD
+    RFM["Reconstruction Failure Modes"]
+    RRF["Referential Reconstruction Failures"]
+    SCF["Semantic Coherence Failures"]
+    TRF["Temporal Reconstruction Failures"]
+    CAF["Contextual Adequacy Failures"]
+
+    RFM --> RRF
+    RFM --> SCF
+    RFM --> TRF
+    RFM --> CAF
+
+    RRF --> ES["Entity Substitution"]
+    RRF --> MF["Merge Failure"]
+    RRF --> SF["Split Failure"]
+    RRF --> EO["Entity Omission"]
+
+    SCF --> SFR["Semantic Fragmentation"]
+    TRF --> TD["Temporal Discontinuity"]
+    TRF --> TM["Temporal Misalignment"]
+    CAF --> CD["Contextual Displacement"]
+
+    IC["Identity Collapse\nphenomenon-level concept"]
+    SV["Semantic Vulnerability\nrobustness-related property"]
+    SR["Semantic Robustness"]
+    RC["Reconstruction Capture"]
+
+    ES -. related .-> IC
+    SV -. related .-> SR
+    SV -. related .-> RC
+    SF -. related, not equivalent .-> SFR
+
+    classDef outside stroke-dasharray: 5 5;
+    class IC,SV,SR,RC outside;
+```
+
+The standalone Mermaid source is available in `docs/concept-map.mmd`.
+
 ## Why this exists
 
 The DIO/ODI corpus is distributed across a manifesto, conceptual papers, revisions, and taxonomic notes. Free text preserves argument, nuance, genealogy, and uncertainty, but a machine must reconstruct the conceptual system from those distributed texts.
