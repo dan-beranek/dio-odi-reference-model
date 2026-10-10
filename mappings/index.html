@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIO/ODI Application Mappings</title>
+  <meta name="description" content="Derived DIO/ODI application mappings projecting canonical vocabulary concepts into external technical and analytical domains without modifying the Reference Vocabulary.">
+  <meta name="author" content="Daniel Beránek">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://vocab.danielberanek.cz/mappings/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DIO/ODI Application Mappings">
+  <meta property="og:description" content="Derived analytical layers applying DIO/ODI concepts to external technical and conceptual domains.">
+  <meta property="og:url" content="https://vocab.danielberanek.cz/mappings/">
+  <meta property="og:site_name" content="DIO/ODI Reference Model">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:900px;margin:4rem auto;padding:0 1.4rem;line-height:1.65;color:#171717}
+    h1,h2{line-height:1.2} a{color:#174ea6} code{background:#f2f2f2;padding:.15rem .35rem;border-radius:.25rem}
+    .note{border-left:4px solid #777;padding-left:1rem;color:#444}
+    .card{margin:1.5rem 0;padding:1.3rem 1.4rem;border:1px solid #d7d7d7;border-radius:.65rem;background:#fafafa}
+    .card h2{margin-top:0}.meta{color:#555;font-size:.95rem}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "@id":"https://vocab.danielberanek.cz/mappings/",
+    "name":"DIO/ODI Application Mappings",
+    "description":"Derived analytical layers applying DIO/ODI concepts to external technical and analytical domains without modifying the canonical Reference Vocabulary.",
+    "url":"https://vocab.danielberanek.cz/mappings/",
+    "license":"https://creativecommons.org/licenses/by/4.0/",
+    "creator":{"@type":"Person","name":"Daniel Beránek","url":"https://danielberanek.cz/","sameAs":"https://orcid.org/0009-0004-0050-0264"},
+    "hasPart":[
+      {"@type":"TechArticle","name":"Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline","url":"https://vocab.danielberanek.cz/mappings/rag-pipeline/"},
+      {"@type":"TechArticle","name":"Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences","url":"https://vocab.danielberanek.cz/mappings/hem-dio/"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <p><a href="/dio-odi/">← DIO/ODI Reference Vocabulary</a></p>
+  <h1>DIO/ODI Application Mappings</h1>
+  <p>Application Mappings are <strong>derived analytical layers</strong> that project concepts from the canonical DIO/ODI Reference Vocabulary into external technical or conceptual domains.</p>
+  <p class="note"><strong>Boundary:</strong> mappings do not modify the Reference Vocabulary, add canonical concept definitions, or imply that the external framework and DIO/ODI are equivalent. They make explicit, reviewable analytical relations between distinct conceptual systems.</p>
+
+  <section class="card">
+    <h2><a href="/mappings/rag-pipeline/">DIO Reconstruction Failure Modes × RAG Pipeline</a></h2>
+    <p>Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.</p>
+    <p class="meta"><strong>Status:</strong> included in DIO/ODI Reference Model v0.2.0 · <a href="https://doi.org/10.5281/zenodo.23282752">archived release</a></p>
+  </section>
+
+  <section class="card">
+    <h2><a href="/mappings/hem-dio/">HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences</a></h2>
+    <p>Uses the Heterogeneous Entity Matching taxonomy as an external axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability.</p>
+    <p class="meta"><strong>Status:</strong> post-v0.2.0 development on main · HEM source: <a href="https://doi.org/10.1016/j.datak.2026.102575">10.1016/j.datak.2026.102575</a></p>
+  </section>
+
+  <h2>Architecture</h2>
+  <p><strong>Reference Vocabulary = what DIO/ODI concepts mean.</strong><br>
+  <strong>Application Mapping = how those concepts can be analytically applied to an external domain.</strong></p>
+
+  <p>Repository: <a href="https://github.com/dan-beranek/dio-odi-reference-model">dan-beranek/dio-odi-reference-model</a></p>
+  <p>License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</body>
+</html>
