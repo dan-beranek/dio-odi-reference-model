@@ -4,7 +4,7 @@ Derived application mappings project the canonical DIO/ODI Reference Vocabulary 
 
 ## Available
 
-- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](rag-pipeline-mapping.md) — maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.
+- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](rag-pipeline-mapping.md) — maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. Archived as part of DIO/ODI Reference Model v0.2.0: https://doi.org/10.5281/zenodo.23282752
 
 ## Planned
 
