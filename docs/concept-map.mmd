@@ -1,0 +1,31 @@
+flowchart TD
+    RFM["Reconstruction Failure Modes"]
+    RRF["Referential Reconstruction Failures"]
+    SCF["Semantic Coherence Failures"]
+    TRF["Temporal Reconstruction Failures"]
+    CAF["Contextual Adequacy Failures"]
+
+    RFM --> RRF
+    RFM --> SCF
+    RFM --> TRF
+    RFM --> CAF
+
+    RRF --> ES["Entity Substitution"]
+    RRF --> MF["Merge Failure"]
+    RRF --> SF["Split Failure"]
+    RRF --> EO["Entity Omission"]
+
+    SCF --> SFR["Semantic Fragmentation"]
+    TRF --> TD["Temporal Discontinuity"]
+    TRF --> TM["Temporal Misalignment"]
+    CAF --> CD["Contextual Displacement"]
+
+    IC["Identity Collapse\nphenomenon-level concept"]
+    SV["Semantic Vulnerability\nrobustness-related property"]
+    SR["Semantic Robustness"]
+
+    SV -. related .-> SR
+    SF -. related, not equivalent .-> SFR
+
+    classDef outside stroke-dasharray: 5 5;
+    class IC,SV,SR outside;
