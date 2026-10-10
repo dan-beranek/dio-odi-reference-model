@@ -1,6 +1,7 @@
 # DIO/ODI Reference Model
 
-**Status:** v0.1.0 — SKOS-first, OWL-later  
+**Reference Model release:** v0.2.0  
+**Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
