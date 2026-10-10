@@ -1,7 +1,7 @@
 {
   "title": "DIO/ODI Reference Model",
-  "version": "0.1.0",
-  "status": "public-reference-vocabulary",
+  "version": "0.2.0",
+  "status": "public-reference-model",
   "namespace": "https://vocab.danielberanek.cz/dio-odi/#",
   "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
   "license": "CC-BY-4.0",
@@ -11,5 +11,14 @@
     "orcid": "0009-0004-0050-0264",
     "affiliation": "Independent Researcher, Brno, Czech Republic",
     "email": "dan@danielberanek.cz"
-  }
+  },
+  "reference_model_version": "0.2.0",
+  "reference_vocabulary_version": "0.1.0",
+  "derived_application_mappings": [
+    {
+      "title": "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline",
+      "path": "mappings/rag-pipeline-mapping.md",
+      "relation": "derived-application-layer"
+    }
+  ]
 }
