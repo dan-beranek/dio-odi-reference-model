@@ -16,7 +16,7 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model",
+    "name": "DIO/ODI Reference Model v0.3.0",
     "url": "https://vocab.danielberanek.cz/dio-odi/"
   },
   "isBasedOn": [
@@ -26,10 +26,22 @@
       "identifier": "https://doi.org/10.1016/j.datak.2026.102575",
       "url": "https://doi.org/10.1016/j.datak.2026.102575",
       "author": [
-        {"@type": "Person", "name": "Mohammad Hossein Moslemi"},
-        {"@type": "Person", "name": "Amir Mousavi"},
-        {"@type": "Person", "name": "Behshid Behkamal"},
-        {"@type": "Person", "name": "Mostafa Milani"}
+        {
+          "@type": "Person",
+          "name": "Mohammad Hossein Moslemi"
+        },
+        {
+          "@type": "Person",
+          "name": "Amir Mousavi"
+        },
+        {
+          "@type": "Person",
+          "name": "Behshid Behkamal"
+        },
+        {
+          "@type": "Person",
+          "name": "Mostafa Milani"
+        }
       ]
     },
     {
@@ -44,11 +56,26 @@
     }
   ],
   "about": [
-    {"@type": "Thing", "name": "Heterogeneous Entity Matching"},
-    {"@type": "Thing", "name": "Digital Identity Optimization"},
-    {"@type": "Thing", "name": "Entity matching"},
-    {"@type": "Thing", "name": "Identity reconstruction"},
-    {"@type": "Thing", "name": "Semantic Vulnerability"}
+    {
+      "@type": "Thing",
+      "name": "Heterogeneous Entity Matching"
+    },
+    {
+      "@type": "Thing",
+      "name": "Digital Identity Optimization"
+    },
+    {
+      "@type": "Thing",
+      "name": "Entity matching"
+    },
+    {
+      "@type": "Thing",
+      "name": "Identity reconstruction"
+    },
+    {
+      "@type": "Thing",
+      "name": "Semantic Vulnerability"
+    }
   ],
   "hasPart": {
     "@type": "ItemList",
@@ -63,9 +90,21 @@
           "name": "Multimodality",
           "description": "May contribute to Semantic Fragmentation or Split Failure and may increase Semantic Vulnerability.",
           "about": [
-            {"@type": "DefinedTerm", "name": "Semantic Fragmentation", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"},
-            {"@type": "DefinedTerm", "name": "Split Failure", "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure"},
-            {"@type": "DefinedTerm", "name": "Semantic Vulnerability", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"}
+            {
+              "@type": "DefinedTerm",
+              "name": "Semantic Fragmentation",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Split Failure",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Semantic Vulnerability",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"
+            }
           ]
         }
       },
@@ -76,7 +115,11 @@
           "@type": "CreativeWork",
           "name": "Format Heterogeneity",
           "description": "May increase Semantic Vulnerability and may contribute to referential failures where syntactic incompatibility reduces usable evidence.",
-          "about": {"@type": "DefinedTerm", "name": "Semantic Vulnerability", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"}
+          "about": {
+            "@type": "DefinedTerm",
+            "name": "Semantic Vulnerability",
+            "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"
+          }
         }
       },
       {
@@ -87,9 +130,21 @@
           "name": "Structural (Schema) Heterogeneity",
           "description": "May contribute to Merge Failure, Split Failure, or Semantic Fragmentation.",
           "about": [
-            {"@type": "DefinedTerm", "name": "Merge Failure", "url": "https://vocab.danielberanek.cz/dio-odi/#MergeFailure"},
-            {"@type": "DefinedTerm", "name": "Split Failure", "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure"},
-            {"@type": "DefinedTerm", "name": "Semantic Fragmentation", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"}
+            {
+              "@type": "DefinedTerm",
+              "name": "Merge Failure",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#MergeFailure"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Split Failure",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Semantic Fragmentation",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"
+            }
           ]
         }
       },
@@ -101,9 +156,21 @@
           "name": "Terminology & Language",
           "description": "May contribute to Entity Substitution, Split Failure, or Semantic Fragmentation.",
           "about": [
-            {"@type": "DefinedTerm", "name": "Entity Substitution", "url": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution"},
-            {"@type": "DefinedTerm", "name": "Split Failure", "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure"},
-            {"@type": "DefinedTerm", "name": "Semantic Fragmentation", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"}
+            {
+              "@type": "DefinedTerm",
+              "name": "Entity Substitution",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Split Failure",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Semantic Fragmentation",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"
+            }
           ]
         }
       },
@@ -115,8 +182,16 @@
           "name": "Contextual Variability",
           "description": "May contribute to Contextual Displacement or Entity Substitution.",
           "about": [
-            {"@type": "DefinedTerm", "name": "Contextual Displacement", "url": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement"},
-            {"@type": "DefinedTerm", "name": "Entity Substitution", "url": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution"}
+            {
+              "@type": "DefinedTerm",
+              "name": "Contextual Displacement",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Entity Substitution",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution"
+            }
           ]
         }
       },
@@ -128,9 +203,21 @@
           "name": "Granularity & Resolution",
           "description": "May contribute to Semantic Fragmentation or Contextual Displacement and may increase Semantic Vulnerability.",
           "about": [
-            {"@type": "DefinedTerm", "name": "Semantic Fragmentation", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"},
-            {"@type": "DefinedTerm", "name": "Contextual Displacement", "url": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement"},
-            {"@type": "DefinedTerm", "name": "Semantic Vulnerability", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"}
+            {
+              "@type": "DefinedTerm",
+              "name": "Semantic Fragmentation",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Contextual Displacement",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Semantic Vulnerability",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"
+            }
           ]
         }
       },
@@ -142,8 +229,16 @@
           "name": "Temporal Variability",
           "description": "May contribute to Temporal Misalignment or Temporal Discontinuity.",
           "about": [
-            {"@type": "DefinedTerm", "name": "Temporal Misalignment", "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalMisalignment"},
-            {"@type": "DefinedTerm", "name": "Temporal Discontinuity", "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalDiscontinuity"}
+            {
+              "@type": "DefinedTerm",
+              "name": "Temporal Misalignment",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalMisalignment"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Temporal Discontinuity",
+              "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalDiscontinuity"
+            }
           ]
         }
       },
@@ -154,9 +249,14 @@
           "@type": "CreativeWork",
           "name": "Data Quality",
           "description": "May increase Semantic Vulnerability and, depending on observation conditions, contribute to multiple Reconstruction Failure Modes.",
-          "about": {"@type": "DefinedTerm", "name": "Semantic Vulnerability", "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"}
+          "about": {
+            "@type": "DefinedTerm",
+            "name": "Semantic Vulnerability",
+            "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability"
+          }
         }
       }
     ]
-  }
+  },
+  "version": "0.3.0"
 }
