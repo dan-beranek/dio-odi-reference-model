@@ -1,10 +1,10 @@
-# Application mappings
+# Derived application mappings
 
-Application mappings project the DIO/ODI reference model onto adjacent technical or analytical domains. They are derived layers and must not silently redefine the core vocabulary.
+Derived application mappings project the canonical DIO/ODI Reference Vocabulary onto adjacent technical or analytical domains. They are explicitly outside the vocabulary itself: they apply its concepts without changing their canonical definitions or relations.
 
 ## Available
 
-- [RAG pipeline mapping](rag-pipeline-mapping.md) — maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.
+- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](rag-pipeline-mapping.md) — maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.
 
 ## Planned
 
