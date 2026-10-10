@@ -18,9 +18,22 @@
     {
       "title": "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline",
       "path": "mappings/rag-pipeline-mapping.md",
-      "relation": "derived-application-layer"
+      "frontend": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+      "relation": "derived-application-layer",
+      "release_status": "included-in-0.2.0",
+      "archived_release_doi": "10.5281/zenodo.23282752"
+    },
+    {
+      "title": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
+      "path": "mappings/hem-dio-mapping.md",
+      "frontend": "https://vocab.danielberanek.cz/mappings/hem-dio/",
+      "machine_readable_metadata": "mappings/hem-dio-mapping.jsonld",
+      "external_source_doi": "10.1016/j.datak.2026.102575",
+      "relation": "derived-application-layer",
+      "release_status": "post-0.2.0-unreleased"
     }
   ],
   "release_doi": "10.5281/zenodo.23282752",
-  "release_doi_url": "https://doi.org/10.5281/zenodo.23282752"
+  "release_doi_url": "https://doi.org/10.5281/zenodo.23282752",
+  "application_mappings_index": "https://vocab.danielberanek.cz/mappings/"
 }
