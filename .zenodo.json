@@ -1,0 +1,72 @@
+{
+  "title": "DIO/ODI Reference Model",
+  "creators": [
+    {
+      "name": "Beránek, Daniel",
+      "orcid": "0009-0004-0050-0264",
+      "affiliation": "Independent Researcher, Brno, Czech Republic"
+    }
+  ],
+  "description": "Versioned machine-readable reference model for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI), centered on a canonical SKOS/RDF Reference Vocabulary and explicitly separated derived Application Mappings.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "keywords": [
+    "Digital Identity Optimization",
+    "Ontology of Digital Identity",
+    "digital identity",
+    "identity reconstruction",
+    "entity resolution",
+    "SKOS",
+    "RDF",
+    "JSON-LD",
+    "semantic web",
+    "linked data",
+    "application mapping"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21610934",
+      "relation": "references",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "10.5281/zenodo.21839423",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.5281/zenodo.22257503",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.5281/zenodo.23226205",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.5281/zenodo.23269323",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1016/j.datak.2026.102575",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://danielberanek.cz/manifest-dio/",
+      "relation": "isDocumentedBy"
+    }
+  ],
+  "references": [
+    "Beránek, D. (2026). Manifest of Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI): Canonical Multilingual Edition (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21610934",
+    "Beránek, D. (2026). Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search. Zenodo. https://doi.org/10.5281/zenodo.21839423",
+    "Beránek, D. (2026). The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions (v1.1.0). Zenodo. https://doi.org/10.5281/zenodo.22416026",
+    "Beránek, D. (2026). Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23226205",
+    "Beránek, D. (2026). From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO. Zenodo. https://doi.org/10.5281/zenodo.23269323",
+    "Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). Heterogeneity in entity matching: A survey and experimental analysis. Data & Knowledge Engineering, 164, 102575. https://doi.org/10.1016/j.datak.2026.102575"
+  ]
+}
