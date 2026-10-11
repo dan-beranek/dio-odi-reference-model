@@ -1,0 +1,94 @@
+{
+  "registry_version": "1.0.0",
+  "relation_semantics": "Directed edges are expressed from subject to object using Zenodo/DataCite-style relation names where possible. Only edges with approved_for_zenodo=true should be projected automatically into .zenodo.json or historical Zenodo records.",
+  "relations": [
+    {
+      "subject": "manifest-v2-web",
+      "relation": "isNewVersionOf",
+      "object": "manifest-v1",
+      "approved_for_zenodo": false,
+      "note": "Useful corpus relation, but the living web edition is not itself a Zenodo deposition."
+    },
+    {
+      "subject": "dio-conceptual-framework",
+      "relation": "isDerivedFrom",
+      "object": "manifest-v1",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "crisis-entity-resolution",
+      "relation": "isDerivedFrom",
+      "object": "manifest-v1",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "mvdio",
+      "relation": "isDerivedFrom",
+      "object": "manifest-v1",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "taxonomic-note",
+      "relation": "isDerivedFrom",
+      "object": "mvdio",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "taxonomic-note",
+      "relation": "references",
+      "object": "crisis-entity-resolution",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "reference-model",
+      "relation": "references",
+      "object": "manifest-v1",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "reference-model",
+      "relation": "references",
+      "object": "dio-conceptual-framework",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "reference-model",
+      "relation": "references",
+      "object": "crisis-entity-resolution",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "reference-model",
+      "relation": "isDerivedFrom",
+      "object": "mvdio",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "reference-model",
+      "relation": "isDerivedFrom",
+      "object": "taxonomic-note",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "reference-model",
+      "relation": "references",
+      "object": "external:hem-2026",
+      "approved_for_zenodo": true
+    },
+    {
+      "subject": "reference-model",
+      "relation": "isDocumentedBy",
+      "object": "https://danielberanek.cz/manifest-dio/",
+      "approved_for_zenodo": true,
+      "note": "DIO/ODI hub providing manifest, publications, reference artifacts and updates."
+    },
+    {
+      "subject": "reference-model",
+      "relation": "isIdenticalTo",
+      "object": "https://vocab.danielberanek.cz/dio-odi/#",
+      "approved_for_zenodo": false,
+      "status": "semantic-review",
+      "note": "Existing/considered Zenodo relation. Keep out of automatic projection until the identity claim between an archived Reference Model package and the namespace is explicitly confirmed."
+    }
+  ]
+}
