@@ -82,22 +82,22 @@
     {
       "identifier": "10.5281/zenodo.21839423",
       "relation": "references",
-      "resource_type": "publication-article"
+      "resource_type": "publication-preprint"
     },
     {
       "identifier": "10.5281/zenodo.22257503",
       "relation": "references",
-      "resource_type": "publication-article"
+      "resource_type": "publication-preprint"
     },
     {
       "identifier": "10.5281/zenodo.23226205",
       "relation": "isDerivedFrom",
-      "resource_type": "publication-article"
+      "resource_type": "publication-preprint"
     },
     {
       "identifier": "10.5281/zenodo.23269323",
       "relation": "isDerivedFrom",
-      "resource_type": "publication-article"
+      "resource_type": "publication-preprint"
     },
     {
       "identifier": "10.1016/j.datak.2026.102575",
