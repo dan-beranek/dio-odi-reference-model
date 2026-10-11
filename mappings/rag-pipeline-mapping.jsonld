@@ -1,0 +1,133 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+  "name": "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline",
+  "description": "A derived diagnostic mapping from DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.",
+  "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-11",
+  "creativeWorkStatus": "Post-v0.3.0 live representation update",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Beránek",
+    "url": "https://danielberanek.cz/",
+    "sameAs": "https://orcid.org/0009-0004-0050-0264"
+  },
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "name": "DIO/ODI Reference Model",
+    "url": "https://vocab.danielberanek.cz/dio-odi/"
+  },
+  "isBasedOn": [
+    {
+      "@type": "CreativeWork",
+      "name": "Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity",
+      "url": "https://doi.org/10.5281/zenodo.23226205"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO",
+      "url": "https://doi.org/10.5281/zenodo.23269323"
+    }
+  ],
+  "citation": [
+    "https://doi.org/10.5281/zenodo.23289615",
+    "https://doi.org/10.5281/zenodo.23282752"
+  ],
+  "about": [
+    {"@type": "Thing", "name": "Digital Identity Optimization"},
+    {"@type": "Thing", "name": "Retrieval-augmented generation"},
+    {"@type": "Thing", "name": "Identity reconstruction"},
+    {"@type": "Thing", "name": "Reconstruction Failure Modes"}
+  ],
+  "hasPart": {
+    "@type": "ItemList",
+    "name": "DIO Reconstruction Failure Modes mapped to generic RAG loci",
+    "numberOfItems": 8,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Entity Substitution",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution",
+          "description": "Typical RAG loci: query interpretation, entity linking, retrieval, and synthesis. The intended referent is reconstructed as another distinct referent."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Merge Failure",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#MergeFailure",
+          "description": "Typical RAG loci: indexing or entity linking, retrieval, context assembly, and synthesis. Distinct referents are reconstructed as a single referential identity."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Split Failure",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure",
+          "description": "Typical RAG loci: indexing or entity linking, retrieval, and synthesis. Referential unity of one continuous entity is lost."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Entity Omission",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#EntityOmission",
+          "description": "Typical RAG loci: post-retrieval context use, generation, and synthesis. No relevant reconstruction is produced despite sufficient representational grounds within the observation domain."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Semantic Fragmentation",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation",
+          "description": "Typical RAG loci: context assembly and synthesis. Referential unity remains while identity-preserving semantic coherence is lost."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Temporal Discontinuity",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalDiscontinuity",
+          "description": "Typical RAG loci: indexing or version handling, retrieval, context assembly, and synthesis. Identity continuity across legitimate transformation is not preserved."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Temporal Misalignment",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalMisalignment",
+          "description": "Typical RAG loci: retrieval, reranking, context assembly, and synthesis. The referent is correct but the reconstructed state is temporally inappropriate."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Contextual Displacement",
+          "url": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement",
+          "description": "Typical RAG loci: query interpretation, reranking, context assembly, and synthesis. A true reconstruction is contextually inadequate because a secondary identity aspect displaces the one relevant to the observation context."
+        }
+      }
+    ]
+  }
+}
