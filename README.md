@@ -108,6 +108,7 @@ The namespace is owned by the author and is intended to remain stable independen
 - `metadata/works.json` — canonical operational registry of DIO/ODI works and Reference Model releases
 - `metadata/relations.json` — directed inter-work relation graph
 - `metadata/references.json` — canonical bibliographic references
+- `metadata/distributions.json` — external distribution and supplementary representations with typed relations
 - `metadata/README.md` — metadata-registry workflow and relation discipline
 
 ## Derived application mappings
