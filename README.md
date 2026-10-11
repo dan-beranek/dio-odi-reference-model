@@ -2,7 +2,7 @@
 
 **Reference Model release:** v0.3.1  
 **Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
-**Archive status:** v0.3.1 DOI pending  
+**Release DOI:** https://doi.org/10.5281/zenodo.23290683  
 **Previous archived release:** v0.3.0 — https://doi.org/10.5281/zenodo.23289615  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
@@ -137,7 +137,7 @@ In particular:
 
 ## Citation and archival release
 
-**Current release:** DIO/ODI Reference Model v0.3.1 — Zenodo DOI pending.
+**Current archived release:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
 
 **Previous archived release:** DIO/ODI Reference Model v0.3.0 — https://doi.org/10.5281/zenodo.23289615
 
