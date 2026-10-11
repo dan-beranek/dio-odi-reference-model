@@ -107,3 +107,18 @@ Use the actual publication state of each work and do not strengthen it through m
 - Externally published HEM source: `publication-article`
 
 A Zenodo-hosted research manuscript is not a journal article merely because Zenodo exposes an article-like publication category. Canonical metadata must preserve the distinction between a preprint and peer-reviewed journal publication.
+
+
+## Archival continuity and correction
+
+DIO/ODI metadata maintenance does not silently rewrite history in order to produce an artificially clean record.
+
+When a metadata error or weaker historical representation is identified:
+
+1. the archived historical state remains identifiable as the state that actually existed;
+2. the canonical current representation is corrected transparently;
+3. the correction must not imply that the earlier metadata state never existed;
+4. version, provenance, and relation information should preserve continuity between historical and corrected representations;
+5. a metadata correction alone does not justify creating a new research-object version unless the underlying files or substantive object have changed.
+
+This applies the DIO principle of identity-preserving change to the DIO/ODI corpus itself: continuity is maintained through explicit transformation and provenance, not by erasing earlier states.
