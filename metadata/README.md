@@ -37,3 +37,18 @@ For each canonical work, audit ResearchGate, Figshare, SSRN, Kaggle, Hugging Fac
 - other supported relation types where more accurate.
 
 Do not collapse all distribution channels into a generic equivalence relation.
+
+
+### Verification rule for existing Related Works
+
+Existing Zenodo relations are observations of previously entered metadata, not automatically canonical truth.
+
+Before approving a distribution relation:
+
+1. compare the actual files/content, not only titles and landing pages;
+2. determine whether the external object is the exact same research output, a modified/variant form, a distinct version, or a genuine supplement;
+3. use `IsIdenticalTo` only for the exact same research output stored in two locations;
+4. use `IsSupplementedBy` only when the external resource genuinely supplements the canonical resource;
+5. keep the relation unapproved if the distinction cannot be established safely.
+
+A prior relation already present on Zenodo may therefore be corrected during metadata normalization.
