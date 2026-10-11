@@ -12,7 +12,8 @@
     "@type": "Person",
     "name": "Daniel Beránek",
     "url": "https://danielberanek.cz/",
-    "sameAs": "https://orcid.org/0009-0004-0050-0264"
+    "sameAs": "https://orcid.org/0009-0004-0050-0264",
+    "@id": "https://danielberanek.cz/#person"
   },
   "isPartOf": {
     "@type": "CreativeWork",
