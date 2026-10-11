@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.2.0",
+  "registry_version": "1.3.0",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -21,7 +21,8 @@
       "canonical_hub": "https://danielberanek.cz/manifest-dio/",
       "note": "Canonical multilingual Zenodo edition.",
       "keyword_profile": "manifest-v1",
-      "keyword_profile_status": "proposal-for-review"
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     },
     {
       "id": "manifest-v2-web",
@@ -31,7 +32,8 @@
       "status": "living-web-edition",
       "note": "Living v2 web edition; not a Zenodo record.",
       "keyword_profile": "manifest-v2-web",
-      "keyword_profile_status": "proposal-for-review"
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     },
     {
       "id": "dio-conceptual-framework",
@@ -40,7 +42,8 @@
       "version_doi": "10.5281/zenodo.21839423",
       "publication_date": "2026-08-07",
       "keyword_profile": "dio-conceptual-framework",
-      "keyword_profile_status": "proposal-for-review"
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     },
     {
       "id": "crisis-entity-resolution",
@@ -61,7 +64,8 @@
       ],
       "current_version_doi": "10.5281/zenodo.22416026",
       "keyword_profile": "crisis-entity-resolution",
-      "keyword_profile_status": "proposal-for-review"
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     },
     {
       "id": "mvdio",
@@ -71,7 +75,8 @@
       "version_doi": "10.5281/zenodo.23226205",
       "publication_date": "2026-10-08",
       "keyword_profile": "mvdio",
-      "keyword_profile_status": "proposal-for-review"
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     },
     {
       "id": "taxonomic-note",
@@ -79,7 +84,8 @@
       "type": "publication-article",
       "version_doi": "10.5281/zenodo.23269323",
       "keyword_profile": "taxonomic-note",
-      "keyword_profile_status": "proposal-for-review"
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     },
     {
       "id": "reference-model",
@@ -108,7 +114,8 @@
         }
       ],
       "keyword_profile": "reference-model",
-      "keyword_profile_status": "proposal-for-review"
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     }
   ]
 }
