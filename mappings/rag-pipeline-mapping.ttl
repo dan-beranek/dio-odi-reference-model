@@ -60,9 +60,12 @@ rag:Mapping
     schema:name "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline"@en ;
     schema:url <https://vocab.danielberanek.cz/mappings/rag-pipeline/> ;
     schema:author <https://danielberanek.cz/#person> ;
-    schema:creativeWorkStatus "Post-v0.3.0 live Turtle representation"@en ;
-    schema:citation <https://doi.org/10.5281/zenodo.23289615>,
-                    <https://doi.org/10.5281/zenodo.23282752> ;
+    schema:creativeWorkStatus "Included in DIO/ODI Reference Model v0.3.1; archive DOI pending"@en ;
+    schema:isPartOf [
+        a schema:CreativeWork ;
+        schema:name "DIO/ODI Reference Model v0.3.1"@en ;
+        schema:url <https://vocab.danielberanek.cz/dio-odi/>
+    ] ;
     dcterms:source <https://doi.org/10.5281/zenodo.23226205>,
                    <https://doi.org/10.5281/zenodo.23269323> ;
     skos:scopeNote "This RDF graph is a derived Application Mapping layer. It does not modify the canonical DIO/ODI Reference Vocabulary, redefine RAG, or assert deterministic causality between a pipeline stage and a DIO Reconstruction Failure Mode."@en .
