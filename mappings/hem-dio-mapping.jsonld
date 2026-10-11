@@ -17,7 +17,8 @@
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "DIO/ODI Reference Model v0.3.0",
-    "url": "https://vocab.danielberanek.cz/dio-odi/"
+    "url": "https://doi.org/10.5281/zenodo.23289615",
+    "identifier": "https://doi.org/10.5281/zenodo.23289615"
   },
   "isBasedOn": [
     {
@@ -258,5 +259,6 @@
       }
     ]
   },
-  "version": "0.3.0"
+  "version": "0.3.0",
+  "citation": "https://doi.org/10.5281/zenodo.23289615"
 }
