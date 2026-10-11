@@ -27,7 +27,8 @@
       "machine_readable_metadata_introduced_in": "0.3.1",
       "turtle_rdf": "mappings/rag-pipeline-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
-      "introduced_archived_release_doi": "10.5281/zenodo.23282752"
+      "introduced_archived_release_doi": "10.5281/zenodo.23282752",
+      "archived_release_doi": "10.5281/zenodo.23290683"
     },
     {
       "title": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
@@ -41,17 +42,23 @@
       "machine_readable_metadata_introduced_in": "0.3.0",
       "turtle_rdf": "mappings/hem-dio-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
-      "previous_archived_release_doi": "10.5281/zenodo.23289615"
+      "previous_archived_release_doi": "10.5281/zenodo.23289615",
+      "archived_release_doi": "10.5281/zenodo.23290683"
     }
   ],
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
-  "archive_status": "pending-v0.3.1-doi",
+  "archive_status": "archived",
   "previous_archived_release": {
     "version": "0.3.0",
     "doi": "10.5281/zenodo.23289615",
     "doi_url": "https://doi.org/10.5281/zenodo.23289615"
   },
   "archived_release_history": [
+    {
+      "version": "0.3.1",
+      "doi": "10.5281/zenodo.23290683",
+      "doi_url": "https://doi.org/10.5281/zenodo.23290683"
+    },
     {
       "version": "0.3.0",
       "doi": "10.5281/zenodo.23289615",
@@ -62,5 +69,12 @@
       "doi": "10.5281/zenodo.23282752",
       "doi_url": "https://doi.org/10.5281/zenodo.23282752"
     }
-  ]
+  ],
+  "release_doi": "10.5281/zenodo.23290683",
+  "release_doi_url": "https://doi.org/10.5281/zenodo.23290683",
+  "current_archived_release": {
+    "version": "0.3.1",
+    "doi": "10.5281/zenodo.23290683",
+    "doi_url": "https://doi.org/10.5281/zenodo.23290683"
+  }
 }
