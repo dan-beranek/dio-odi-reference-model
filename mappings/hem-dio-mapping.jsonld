@@ -17,9 +17,8 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model v0.3.1",
-    "url": "https://doi.org/10.5281/zenodo.23290683",
-    "identifier": "https://doi.org/10.5281/zenodo.23290683"
+    "name": "DIO/ODI Reference Model v0.3.2",
+    "url": "https://vocab.danielberanek.cz/dio-odi/"
   },
   "isBasedOn": [
     {
@@ -260,9 +259,8 @@
       }
     ]
   },
-  "version": "0.3.1",
-  "citation": "https://doi.org/10.5281/zenodo.23290683",
-  "creativeWorkStatus": "Included in archived DIO/ODI Reference Model v0.3.1",
+  "version": "0.3.2",
+  "creativeWorkStatus": "Included in DIO/ODI Reference Model v0.3.2; archive DOI pending",
   "encoding": [
     {
       "@type": "MediaObject",
