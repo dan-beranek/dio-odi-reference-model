@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.5.0",
+  "registry_version": "1.6.0",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -97,8 +97,8 @@
       "reference_vocabulary_version": "0.1.0",
       "current_release": {
         "version": "0.3.2",
-        "doi": null,
-        "status": "release-prepared"
+        "doi": "10.5281/zenodo.23300703",
+        "status": "archived"
       },
       "releases": [
         {
@@ -112,6 +112,10 @@
         {
           "version": "0.3.1",
           "doi": "10.5281/zenodo.23290683"
+        },
+        {
+          "version": "0.3.2",
+          "doi": "10.5281/zenodo.23300703"
         }
       ],
       "keyword_profile": "reference-model",
