@@ -1,0 +1,100 @@
+{
+  "registry_version": "1.0.0",
+  "status": "operational-metadata-registry",
+  "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
+  "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
+  "author": {
+    "name": "Daniel Beránek",
+    "person_uri": "https://danielberanek.cz/#person",
+    "orcid": "0009-0004-0050-0264",
+    "affiliation": "Independent Researcher, Brno, Czech Republic"
+  },
+  "hub": "https://danielberanek.cz/manifest-dio/",
+  "works": [
+    {
+      "id": "manifest-v1",
+      "title": "Manifest of Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI): Canonical Multilingual Edition",
+      "type": "dataset",
+      "version": "1.0.0",
+      "version_doi": "10.5281/zenodo.21610934",
+      "publication_date": "2026-07-27",
+      "canonical_hub": "https://danielberanek.cz/manifest-dio/",
+      "note": "Canonical multilingual Zenodo edition."
+    },
+    {
+      "id": "manifest-v2-web",
+      "title": "Manifesto of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI)",
+      "type": "web-publication",
+      "canonical_url": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/",
+      "status": "living-web-edition",
+      "note": "Living v2 web edition; not a Zenodo record."
+    },
+    {
+      "id": "dio-conceptual-framework",
+      "title": "Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search",
+      "type": "publication-article",
+      "version_doi": "10.5281/zenodo.21839423",
+      "publication_date": "2026-08-07"
+    },
+    {
+      "id": "crisis-entity-resolution",
+      "title": "The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions",
+      "type": "publication-article",
+      "concept_doi": "10.5281/zenodo.22257503",
+      "preferred_relation_identifier": "10.5281/zenodo.22257503",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "doi": "10.5281/zenodo.22257504",
+          "publication_date": "2026-09-02"
+        },
+        {
+          "version": "1.1.0",
+          "doi": "10.5281/zenodo.22416026"
+        }
+      ],
+      "current_version_doi": "10.5281/zenodo.22416026"
+    },
+    {
+      "id": "mvdio",
+      "title": "Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity",
+      "type": "publication-article",
+      "version": "1.0.0",
+      "version_doi": "10.5281/zenodo.23226205",
+      "publication_date": "2026-10-08"
+    },
+    {
+      "id": "taxonomic-note",
+      "title": "From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO",
+      "type": "publication-article",
+      "version_doi": "10.5281/zenodo.23269323"
+    },
+    {
+      "id": "reference-model",
+      "title": "DIO/ODI Reference Model",
+      "type": "software",
+      "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
+      "canonical_namespace": "https://vocab.danielberanek.cz/dio-odi/#",
+      "namespace_document": "https://vocab.danielberanek.cz/dio-odi/",
+      "reference_vocabulary_version": "0.1.0",
+      "current_release": {
+        "version": "0.3.1",
+        "doi": "10.5281/zenodo.23290683"
+      },
+      "releases": [
+        {
+          "version": "0.2.0",
+          "doi": "10.5281/zenodo.23282752"
+        },
+        {
+          "version": "0.3.0",
+          "doi": "10.5281/zenodo.23289615"
+        },
+        {
+          "version": "0.3.1",
+          "doi": "10.5281/zenodo.23290683"
+        }
+      ]
+    }
+  ]
+}
