@@ -4,10 +4,11 @@
 
 ## Versions
 
-- Reference Model release: 0.3.0
+- Reference Model release: 0.3.1
 - Reference Vocabulary: 0.1.0
-- Archived release DOI: https://doi.org/10.5281/zenodo.23289615
-- Previous archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+- v0.3.1 archive status: DOI pending
+- Previous archived release: v0.3.0 — https://doi.org/10.5281/zenodo.23289615
+- Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
 ## Canonical vocabulary
 
@@ -27,18 +28,24 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline: https://vocab.danielberanek.cz/mappings/rag-pipeline/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md
   - JSON-LD: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.jsonld
-  - JSON-LD status: post-v0.3.0 live representation update
+  - JSON-LD introduced in: Reference Model v0.3.1
+  - Turtle RDF: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.ttl
+  - Turtle RDF introduced in: Reference Model v0.3.1
   - Introduced in: Reference Model v0.2.0
-  - Included in: Reference Model v0.3.0
+  - Included in: Reference Model v0.3.1
 - Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences: https://vocab.danielberanek.cz/mappings/hem-dio/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md
   - JSON-LD: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.jsonld
   - Conceptual bridge SVG: https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg
   - External HEM source DOI: https://doi.org/10.1016/j.datak.2026.102575
   - Introduced in: Reference Model v0.3.0
+  - Included in: Reference Model v0.3.1
+  - Turtle RDF: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl
+  - Turtle RDF introduced in: Reference Model v0.3.1
 
-## Archived releases
+## Releases
 
+- v0.3.1: archive DOI pending
 - v0.3.0: https://doi.org/10.5281/zenodo.23289615
 - v0.2.0: https://doi.org/10.5281/zenodo.23282752
 
