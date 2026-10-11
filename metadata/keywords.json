@@ -1,0 +1,142 @@
+{
+  "registry_version": "1.0.0",
+  "status": "canonical-keyword-registry",
+  "purpose": "Maintain a stable lexical identity across the DIO/ODI corpus while preserving work-specific topical precision.",
+  "export_policy": {
+    "rule": "For a canonical DIO/ODI work, export the invariant core keywords followed by that work's specific keywords. Do not export aliases unless explicitly approved.",
+    "ordering": "core-first-then-work-specific",
+    "deduplicate_case_insensitively": true,
+    "aliases_are_for_reconstruction_not_export": true
+  },
+  "core": [
+    {
+      "id": "digital-identity-optimization",
+      "value": "Digital Identity Optimization"
+    },
+    {
+      "id": "dio",
+      "value": "DIO"
+    },
+    {
+      "id": "ontology-of-digital-identity",
+      "value": "Ontology of Digital Identity"
+    },
+    {
+      "id": "odi",
+      "value": "ODI"
+    },
+    {
+      "id": "digital-identity",
+      "value": "digital identity"
+    },
+    {
+      "id": "identity-reconstruction",
+      "value": "identity reconstruction"
+    }
+  ],
+  "aliases": [
+    {
+      "canonical_id": "digital-identity-optimization",
+      "values": [
+        "digital identity optimization",
+        "Digital Identity Optimisation"
+      ],
+      "export": false
+    },
+    {
+      "canonical_id": "ontology-of-digital-identity",
+      "values": [
+        "ontology of digital identity"
+      ],
+      "export": false
+    },
+    {
+      "canonical_id": "identity-reconstruction",
+      "values": [
+        "Identity Reconstruction"
+      ],
+      "export": false
+    }
+  ],
+  "work_profiles": {
+    "manifest-v1": {
+      "include_core": true,
+      "specific": [
+        "semantic coherence",
+        "machine-readable identity",
+        "search engines",
+        "artificial intelligence"
+      ]
+    },
+    "manifest-v2-web": {
+      "include_core": true,
+      "specific": [
+        "K6 Semantic Connectome",
+        "semantic field",
+        "semantic coherence",
+        "machine-readable identity",
+        "artificial intelligence"
+      ]
+    },
+    "dio-conceptual-framework": {
+      "include_core": true,
+      "specific": [
+        "entity-based visibility",
+        "AI-mediated search",
+        "entity resolution",
+        "semantic coherence"
+      ]
+    },
+    "crisis-entity-resolution": {
+      "include_core": true,
+      "specific": [
+        "entity resolution",
+        "heterogeneous AI environments",
+        "Identity Collapse",
+        "Semantic Fragmentation",
+        "Temporal Discontinuity",
+        "Semantic Vulnerability"
+      ]
+    },
+    "mvdio": {
+      "include_core": true,
+      "specific": [
+        "Minimum Viable DIO",
+        "semantic field",
+        "distributed representational state",
+        "observation domain",
+        "reconstruction mechanism",
+        "Semantic Robustness",
+        "Reconstruction Capture"
+      ]
+    },
+    "taxonomic-note": {
+      "include_core": true,
+      "specific": [
+        "Reconstruction Failure Modes",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Fragmentation",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Displacement"
+      ]
+    },
+    "reference-model": {
+      "include_core": true,
+      "specific": [
+        "entity resolution",
+        "Reference Vocabulary",
+        "Application Mapping",
+        "SKOS",
+        "RDF",
+        "JSON-LD",
+        "semantic web",
+        "linked data",
+        "knowledge representation"
+      ]
+    }
+  }
+}
