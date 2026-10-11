@@ -22,11 +22,12 @@
       "relation": "derived-application-layer",
       "introduced_in": "0.2.0",
       "release_status": "included-in-0.3.1",
-      "previous_archived_release_doi": "10.5281/zenodo.23282752",
+      "previous_archived_release_doi": "10.5281/zenodo.23289615",
       "machine_readable_metadata": "mappings/rag-pipeline-mapping.jsonld",
       "machine_readable_metadata_introduced_in": "0.3.1",
       "turtle_rdf": "mappings/rag-pipeline-mapping.ttl",
-      "turtle_rdf_introduced_in": "0.3.1"
+      "turtle_rdf_introduced_in": "0.3.1",
+      "introduced_archived_release_doi": "10.5281/zenodo.23282752"
     },
     {
       "title": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
@@ -39,7 +40,8 @@
       "release_status": "included-in-0.3.1",
       "machine_readable_metadata_introduced_in": "0.3.0",
       "turtle_rdf": "mappings/hem-dio-mapping.ttl",
-      "turtle_rdf_introduced_in": "0.3.1"
+      "turtle_rdf_introduced_in": "0.3.1",
+      "previous_archived_release_doi": "10.5281/zenodo.23289615"
     }
   ],
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
