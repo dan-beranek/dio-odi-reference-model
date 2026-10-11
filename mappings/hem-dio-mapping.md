@@ -1,6 +1,7 @@
 # Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
 
 **Status:** Derived application layer introduced in DIO/ODI Reference Model v0.3.0  
+**Archived in current release:** https://doi.org/10.5281/zenodo.23289615  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external analytical framework and does not modify their definitions, hierarchy, or relations.  
 **Scope:** Diagnostic mapping between heterogeneity conditions identified in Heterogeneous Entity Matching (HEM) and possible DIO reconstruction consequences. It is not a claim of taxonomic equivalence or deterministic causality.
 
