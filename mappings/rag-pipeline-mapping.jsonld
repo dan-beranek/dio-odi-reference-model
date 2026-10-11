@@ -8,7 +8,7 @@
   "inLanguage": "en",
   "datePublished": "2026-10-10",
   "dateModified": "2026-10-11",
-  "creativeWorkStatus": "Included in archived DIO/ODI Reference Model v0.3.1",
+  "creativeWorkStatus": "Included in DIO/ODI Reference Model v0.3.2; archive DOI pending",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
     "@type": "Person",
@@ -19,9 +19,8 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model v0.3.1",
-    "url": "https://doi.org/10.5281/zenodo.23290683",
-    "identifier": "https://doi.org/10.5281/zenodo.23290683"
+    "name": "DIO/ODI Reference Model v0.3.2",
+    "url": "https://vocab.danielberanek.cz/dio-odi/"
   },
   "isBasedOn": [
     {
@@ -36,7 +35,6 @@
     }
   ],
   "citation": [
-    "https://doi.org/10.5281/zenodo.23290683",
     "https://doi.org/10.5281/zenodo.23289615",
     "https://doi.org/10.5281/zenodo.23282752"
   ],
@@ -145,7 +143,7 @@
       }
     ]
   },
-  "version": "0.3.1",
+  "version": "0.3.2",
   "encoding": [
     {
       "@type": "MediaObject",
