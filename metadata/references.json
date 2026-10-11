@@ -1,0 +1,37 @@
+{
+  "registry_version": "1.0.0",
+  "references": [
+    {
+      "id": "manifest-v1",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026). Manifest of Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI): Canonical Multilingual Edition (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21610934"
+    },
+    {
+      "id": "dio-conceptual-framework",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026). Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search. Zenodo. https://doi.org/10.5281/zenodo.21839423"
+    },
+    {
+      "id": "crisis-entity-resolution",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026). The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions (v1.1.0). Zenodo. https://doi.org/10.5281/zenodo.22416026",
+      "concept_doi": "10.5281/zenodo.22257503"
+    },
+    {
+      "id": "mvdio",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026). Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23226205"
+    },
+    {
+      "id": "taxonomic-note",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026). From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO. Zenodo. https://doi.org/10.5281/zenodo.23269323"
+    },
+    {
+      "id": "hem-2026",
+      "scope": "external",
+      "citation": "Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). Heterogeneity in entity matching: A survey and experimental analysis. Data & Knowledge Engineering, 164, 102575. https://doi.org/10.1016/j.datak.2026.102575",
+      "doi": "10.1016/j.datak.2026.102575"
+    }
+  ]
+}
