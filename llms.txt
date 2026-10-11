@@ -50,6 +50,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Relation graph: https://vocab.danielberanek.cz/metadata/relations.json
 - Canonical references: https://vocab.danielberanek.cz/metadata/references.json
 - Distribution representations: https://vocab.danielberanek.cz/metadata/distributions.json
+- Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json
 - Zenodo projection for future GitHub releases: repository root `/.zenodo.json`
 
 This registry is an operational metadata layer and does not modify the canonical DIO/ODI Reference Vocabulary.
