@@ -17,4 +17,8 @@
   <url><loc>https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://vocab.danielberanek.cz/examples/queries.sparql</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://vocab.danielberanek.cz/metadata/README.md</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://vocab.danielberanek.cz/metadata/works.json</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://vocab.danielberanek.cz/metadata/relations.json</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://vocab.danielberanek.cz/metadata/references.json</loc><lastmod>2026-10-11</lastmod></url>
 </urlset>
