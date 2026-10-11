@@ -60,8 +60,12 @@ hem:Mapping
     schema:name "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences"@en ;
     schema:url <https://vocab.danielberanek.cz/mappings/hem-dio/> ;
     schema:author <https://danielberanek.cz/#person> ;
-    schema:creativeWorkStatus "Post-v0.3.0 live Turtle representation"@en ;
-    schema:citation <https://doi.org/10.5281/zenodo.23289615> ;
+    schema:creativeWorkStatus "Included in DIO/ODI Reference Model v0.3.1; archive DOI pending"@en ;
+    schema:isPartOf [
+        a schema:CreativeWork ;
+        schema:name "DIO/ODI Reference Model v0.3.1"@en ;
+        schema:url <https://vocab.danielberanek.cz/dio-odi/>
+    ] ;
     dcterms:source <https://doi.org/10.1016/j.datak.2026.102575>,
                    <https://doi.org/10.5281/zenodo.23226205>,
                    <https://doi.org/10.5281/zenodo.23269323> ;
