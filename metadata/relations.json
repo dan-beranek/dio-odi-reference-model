@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.1.0",
+  "registry_version": "1.2.0",
   "relation_semantics": "Directed edges are expressed from subject to object using Zenodo/DataCite-style relation names where possible. Only edges with approved_for_zenodo=true should be projected automatically into .zenodo.json or historical Zenodo records.",
   "relations": [
     {
@@ -94,22 +94,34 @@
       "subject": "dio-conceptual-framework",
       "relation": "isIdenticalTo",
       "object": "distribution:dio-conceptual-framework:researchgate",
-      "approved_for_zenodo": true,
-      "relation_class": "distribution-representation"
+      "approved_for_zenodo": false,
+      "relation_class": "distribution-representation",
+      "observed_relation_on_zenodo": "isIdenticalTo",
+      "canonical_relation": null,
+      "status": "semantic-review",
+      "note": "Observed relation on the current Zenodo record. Do not treat it as canonical until the external representation has been compared at content/version level against the canonical work."
     },
     {
       "subject": "mvdio",
       "relation": "isSupplementedBy",
       "object": "distribution:mvdio:researchgate",
-      "approved_for_zenodo": true,
-      "relation_class": "distribution-representation"
+      "approved_for_zenodo": false,
+      "relation_class": "distribution-representation",
+      "observed_relation_on_zenodo": "isSupplementedBy",
+      "canonical_relation": null,
+      "status": "semantic-review",
+      "note": "Observed relation on the current Zenodo record. Do not treat it as canonical until the external representation has been compared at content/version level against the canonical work."
     },
     {
       "subject": "mvdio",
       "relation": "isSupplementedBy",
       "object": "distribution:mvdio:figshare",
-      "approved_for_zenodo": true,
-      "relation_class": "distribution-representation"
+      "approved_for_zenodo": false,
+      "relation_class": "distribution-representation",
+      "observed_relation_on_zenodo": "isSupplementedBy",
+      "canonical_relation": null,
+      "status": "semantic-review",
+      "note": "Observed relation on the current Zenodo record. Do not treat it as canonical until the external representation has been compared at content/version level against the canonical work."
     }
   ]
 }
