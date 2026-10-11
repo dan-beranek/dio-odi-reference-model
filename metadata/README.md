@@ -92,3 +92,18 @@ For canonical DIO/ODI records, descriptions should follow a stable high-level or
 7. **Epistemic boundary and use** — state what the work does not claim, preserve distinctions from stronger formalizations, and identify its intended interpretive/reuse role.
 
 The grammar constrains sequence and function, not wording. A work must not acquire concepts merely to fill a description block. Later descriptions may be structurally consistent while remaining faithful to the historical scope of each publication.
+
+
+## Resource type discipline
+
+Use the actual publication state of each work and do not strengthen it through metadata.
+
+- Manifest v1: `dataset`
+- DIO Conceptual Framework: `publication-preprint`
+- Crisis of Entity Resolution: `publication-preprint`
+- MVDIO: `publication-preprint`
+- Taxonomic Note: `publication-preprint`
+- DIO/ODI Reference Model: `software`
+- Externally published HEM source: `publication-article`
+
+A Zenodo-hosted research manuscript is not a journal article merely because Zenodo exposes an article-like publication category. Canonical metadata must preserve the distinction between a preprint and peer-reviewed journal publication.
