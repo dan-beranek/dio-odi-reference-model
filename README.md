@@ -104,6 +104,11 @@ The namespace is owned by the author and is intended to remain stable independen
 - `mappings/hem-dio/bridge.svg` — conceptual bridge diagram
 - `mappings/` — derived application layer, deliberately separate from the canonical vocabulary
 - `CITATION.cff` — repository citation metadata
+- `.zenodo.json` — Zenodo-specific metadata projection for future Reference Model releases
+- `metadata/works.json` — canonical operational registry of DIO/ODI works and Reference Model releases
+- `metadata/relations.json` — directed inter-work relation graph
+- `metadata/references.json` — canonical bibliographic references
+- `metadata/README.md` — metadata-registry workflow and relation discipline
 
 ## Derived application mappings
 
