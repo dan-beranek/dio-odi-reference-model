@@ -10,11 +10,12 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 - `relations.json` — directed inter-work relation graph. Only relations with `approved_for_zenodo: true` should be projected automatically into Zenodo metadata.
 - `references.json` — canonical bibliographic strings for internal and external references.
 - `distributions.json` — external distribution, identical, variant, and supplementary representations of each canonical work, preserving the exact relation type.
+- `keywords.json` — canonical invariant keyword core, work-specific keyword profiles, and non-export aliases.
 - root `.zenodo.json` — Zenodo-specific projection for future GitHub → Zenodo Reference Model releases.
 
 ## Workflow
 
-1. Maintain work identities, DOI/version information, relations, distribution representations, and citations here.
+1. Maintain work identities, DOI/version information, relations, distribution representations, keywords, and citations here.
 2. Before a new Reference Model release, ensure `.zenodo.json` reflects the approved subset of this registry.
 3. Zenodo GitHub archiving reads `.zenodo.json` for new releases.
 4. Existing historical Zenodo records are not retroactively changed by these files; they require a one-time metadata synchronization through Zenodo's editor, API, or browser automation.
@@ -52,3 +53,14 @@ Before approving a distribution relation:
 5. keep the relation unapproved if the distinction cannot be established safely.
 
 A prior relation already present on Zenodo may therefore be corrected during metadata normalization.
+
+
+## Keyword discipline
+
+Zenodo keywords are generated conceptually as:
+
+`invariant core + work-specific profile`
+
+The invariant core stabilizes lexical identity across the DIO/ODI corpus. Work-specific keywords preserve topical precision for each publication.
+
+Aliases in `keywords.json` support reconstruction and variant recognition but are not exported to Zenodo by default. This prevents synonym drift from fragmenting the canonical lexical identity.
