@@ -17,9 +17,8 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model v0.3.0",
-    "url": "https://doi.org/10.5281/zenodo.23289615",
-    "identifier": "https://doi.org/10.5281/zenodo.23289615"
+    "name": "DIO/ODI Reference Model v0.3.1",
+    "url": "https://vocab.danielberanek.cz/dio-odi/"
   },
   "isBasedOn": [
     {
@@ -260,6 +259,24 @@
       }
     ]
   },
-  "version": "0.3.0",
-  "citation": "https://doi.org/10.5281/zenodo.23289615"
+  "version": "0.3.1",
+  "citation": "https://doi.org/10.5281/zenodo.23289615",
+  "creativeWorkStatus": "Included in DIO/ODI Reference Model v0.3.1; archive DOI pending",
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl",
+      "encodingFormat": "text/turtle"
+    },
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg",
+      "encodingFormat": "image/svg+xml"
+    }
+  ]
 }
