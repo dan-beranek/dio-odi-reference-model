@@ -1,9 +1,9 @@
 # DIO/ODI Reference Model
 
-**Reference Model release:** v0.3.0  
+**Reference Model release:** v0.3.1  
 **Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
-**Release DOI:** https://doi.org/10.5281/zenodo.23289615  
-**Previous archived release:** v0.2.0 — https://doi.org/10.5281/zenodo.23282752  
+**Archive status:** v0.3.1 DOI pending  
+**Previous archived release:** v0.3.0 — https://doi.org/10.5281/zenodo.23289615  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
@@ -94,10 +94,12 @@ The namespace is owned by the author and is intended to remain stable independen
 - `examples/queries.sparql` — example machine queries
 - `mappings/index.html` — public index of derived Application Mappings
 - `mappings/rag-pipeline-mapping.md` — source for Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
-- `mappings/rag-pipeline-mapping.jsonld` — machine-readable RAG mapping representation (post-v0.3.0 live update)
+- `mappings/rag-pipeline-mapping.jsonld` — machine-readable RAG mapping representation (introduced in Reference Model v0.3.1)
+- `mappings/rag-pipeline-mapping.ttl` — Turtle RDF with qualified RAG mapping assertions (introduced in Reference Model v0.3.1)
 - `mappings/rag-pipeline/index.html` — human-readable RAG mapping frontend
 - `mappings/hem-dio-mapping.md` — source for Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
 - `mappings/hem-dio-mapping.jsonld` — machine-readable metadata and mapping items for the HEM × DIO mapping
+- `mappings/hem-dio-mapping.ttl` — Turtle RDF with qualified HEM × DIO mapping assertions (introduced in Reference Model v0.3.1)
 - `mappings/hem-dio/index.html` — human-readable HEM × DIO mapping frontend
 - `mappings/hem-dio/bridge.svg` — conceptual bridge diagram
 - `mappings/` — derived application layer, deliberately separate from the canonical vocabulary
@@ -109,10 +111,10 @@ These mappings are not part of the canonical vocabulary. They project vocabulary
 
 Public index: https://vocab.danielberanek.cz/mappings/
 
-- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework. Introduced in Reference Model v0.2.0 and retained in v0.3.0.
+- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework. Introduced in Reference Model v0.2.0 and included in v0.3.1.
 - [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
 
-The HEM × DIO mapping is introduced in **Reference Model v0.3.0** and archived as part of this release. The canonical Reference Vocabulary remains unchanged at v0.1.0.
+The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and is included in v0.3.1. The canonical Reference Vocabulary remains unchanged at v0.1.0.
 
 ## Primary sources
 
@@ -135,9 +137,11 @@ In particular:
 
 ## Citation and archival release
 
-**Current archived release:** DIO/ODI Reference Model v0.3.0 — https://doi.org/10.5281/zenodo.23289615
+**Current release:** DIO/ODI Reference Model v0.3.1 — Zenodo DOI pending.
 
-**Previous archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+**Previous archived release:** DIO/ODI Reference Model v0.3.0 — https://doi.org/10.5281/zenodo.23289615
+
+**Earlier archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
 A Reference Model release DOI identifies the versioned repository package. It is not asserted as the source of every vocabulary concept; concept provenance remains attached to the underlying DIO/ODI publications.
 
