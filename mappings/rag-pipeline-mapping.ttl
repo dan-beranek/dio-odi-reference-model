@@ -1,0 +1,345 @@
+@prefix rag: <https://vocab.danielberanek.cz/mappings/rag-pipeline/#> .
+
+@prefix map: <https://vocab.danielberanek.cz/mappings/#> .
+@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+map:MappingAssertion
+    a rdfs:Class ;
+    rdfs:label "Application Mapping assertion"@en ;
+    skos:definition "A qualified analytical assertion linking a source condition to a target DIO/ODI concept without asserting identity, equivalence, entailment, or deterministic causality."@en .
+
+map:sourceCondition
+    a rdf:Property ;
+    rdfs:label "source condition"@en ;
+    rdfs:domain map:MappingAssertion ;
+    skos:definition "The external condition, stage, or analytical factor from which an Application Mapping assertion starts."@en .
+
+map:targetConcept
+    a rdf:Property ;
+    rdfs:label "target concept"@en ;
+    rdfs:domain map:MappingAssertion ;
+    skos:definition "The DIO/ODI concept identified as a possible reconstruction consequence or susceptibility property in an Application Mapping assertion."@en .
+
+map:relationType
+    a rdf:Property ;
+    rdfs:label "relation type"@en ;
+    rdfs:domain map:MappingAssertion ;
+    skos:definition "The explicitly qualified, non-equivalence relation used by an Application Mapping assertion."@en .
+
+map:MayContributeTo
+    a skos:Concept ;
+    skos:prefLabel "may contribute to"@en ;
+    skos:definition "A non-deterministic analytical relation indicating that a source condition can participate in circumstances under which a target reconstruction consequence becomes possible or more likely, without asserting that the source condition is necessary or sufficient to produce that consequence."@en ;
+    skos:scopeNote "Must not be interpreted as causes, entails, implies, necessarily produces, or is equivalent to."@en .
+
+map:MayIncrease
+    a skos:Concept ;
+    skos:prefLabel "may increase"@en ;
+    skos:definition "A non-deterministic analytical relation indicating that a source condition can increase the susceptibility represented by a target property without asserting that the source condition alone determines or realizes a reconstruction failure."@en ;
+    skos:scopeNote "Used primarily for susceptibility properties such as Semantic Vulnerability. It must not be interpreted as deterministic causation."@en .
+
+map:MayIncreaseRiskOf
+    a skos:Concept ;
+    skos:prefLabel "may increase risk of"@en ;
+    skos:definition "A non-deterministic analytical relation indicating that a source condition can raise the risk of a target reconstruction failure under some observation and reconstruction conditions, without asserting that the failure necessarily follows."@en ;
+    skos:scopeNote "Must not be interpreted as causes or necessarily produces; the realized outcome depends on the observation domain, available representations, reconstruction mechanism, and their relative weighting."@en .
+
+<https://danielberanek.cz/#person>
+    a schema:Person ;
+    schema:name "Daniel Beránek" ;
+    schema:url <https://danielberanek.cz/> ;
+    schema:sameAs <https://orcid.org/0009-0004-0050-0264> .
+
+rag:Mapping
+    a schema:TechArticle ;
+    schema:name "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline"@en ;
+    schema:url <https://vocab.danielberanek.cz/mappings/rag-pipeline/> ;
+    schema:author <https://danielberanek.cz/#person> ;
+    schema:creativeWorkStatus "Post-v0.3.0 live Turtle representation"@en ;
+    schema:citation <https://doi.org/10.5281/zenodo.23289615>,
+                    <https://doi.org/10.5281/zenodo.23282752> ;
+    dcterms:source <https://doi.org/10.5281/zenodo.23226205>,
+                   <https://doi.org/10.5281/zenodo.23269323> ;
+    skos:scopeNote "This RDF graph is a derived Application Mapping layer. It does not modify the canonical DIO/ODI Reference Vocabulary, redefine RAG, or assert deterministic causality between a pipeline stage and a DIO Reconstruction Failure Mode."@en .
+
+rag:SourceCorpusFormation
+    a schema:DefinedTerm ;
+    skos:prefLabel "Source / corpus formation"@en ;
+    skos:definition "Formation and selection of the source corpus available to downstream retrieval-augmented generation processes."@en ;
+    skos:scopeNote "Local analytical stage used by this Application Mapping; it is not asserted as a universal or normative RAG architecture."@en .
+
+rag:SegmentationIndexing
+    a schema:DefinedTerm ;
+    skos:prefLabel "Segmentation and indexing"@en ;
+    skos:definition "Segmentation, representation, indexing, and related preparation of source material for retrieval."@en ;
+    skos:scopeNote "Local analytical stage used by this Application Mapping; it is not asserted as a universal or normative RAG architecture."@en .
+
+rag:QueryInterpretationEntityLinking
+    a schema:DefinedTerm ;
+    skos:prefLabel "Query interpretation and entity linking"@en ;
+    skos:definition "Interpretation of the request and resolution or linking of mentioned entities before or during retrieval."@en ;
+    skos:scopeNote "Local analytical stage used by this Application Mapping; it is not asserted as a universal or normative RAG architecture."@en .
+
+rag:Retrieval
+    a schema:DefinedTerm ;
+    skos:prefLabel "Retrieval"@en ;
+    skos:definition "Selection of candidate source representations or passages from the available indexed corpus."@en ;
+    skos:scopeNote "Local analytical stage used by this Application Mapping; it is not asserted as a universal or normative RAG architecture."@en .
+
+rag:RerankingContextAssembly
+    a schema:DefinedTerm ;
+    skos:prefLabel "Reranking and context assembly"@en ;
+    skos:definition "Ordering, filtering, and assembly of retrieved evidence into the effective context used for reconstruction."@en ;
+    skos:scopeNote "Local analytical stage used by this Application Mapping; it is not asserted as a universal or normative RAG architecture."@en .
+
+rag:GenerationSynthesis
+    a schema:DefinedTerm ;
+    skos:prefLabel "Generation and synthesis"@en ;
+    skos:definition "Generation or synthesis of an output reconstruction from the effective context and model state."@en ;
+    skos:scopeNote "Local analytical stage used by this Application Mapping; it is not asserted as a universal or normative RAG architecture."@en .
+
+rag:OutputValidationCitation
+    a schema:DefinedTerm ;
+    skos:prefLabel "Output validation and citation"@en ;
+    skos:definition "Post-generation checking, attribution, citation, or validation of a produced reconstruction."@en ;
+    skos:scopeNote "Local analytical stage used by this Application Mapping; it is not asserted as a universal or normative RAG architecture."@en .
+
+rag:QueryInterpretationEntityLinking_EntitySubstitution
+    a map:MappingAssertion ;
+    map:sourceCondition rag:QueryInterpretationEntityLinking ;
+    map:targetConcept dio:EntitySubstitution ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Query interpretation and entity linking may contribute to Entity Substitution when the request or available evidence is anchored to a distinct but confusable referent."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:Retrieval_EntitySubstitution
+    a map:MappingAssertion ;
+    map:sourceCondition rag:Retrieval ;
+    map:targetConcept dio:EntitySubstitution ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Retrieval may contribute to Entity Substitution when evidence associated with a distinct but confusable referent is selected and subsequently dominates reconstruction."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_EntitySubstitution
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:EntitySubstitution ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Entity Substitution when selected evidence is integrated into a coherent reconstruction of the wrong referent."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:SegmentationIndexing_MergeFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:SegmentationIndexing ;
+    map:targetConcept dio:MergeFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Segmentation and indexing may contribute to Merge Failure when representations of distinct referents are indexed or clustered without preserving identity-separating distinctions."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:QueryInterpretationEntityLinking_MergeFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:QueryInterpretationEntityLinking ;
+    map:targetConcept dio:MergeFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Query interpretation and entity linking may contribute to Merge Failure when distinct referents are resolved to one working entity representation."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:Retrieval_MergeFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:Retrieval ;
+    map:targetConcept dio:MergeFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Retrieval may contribute to Merge Failure when evidence belonging to distinct referents is selected into the same candidate set without adequate separation."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:RerankingContextAssembly_MergeFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:RerankingContextAssembly ;
+    map:targetConcept dio:MergeFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Reranking and context assembly may contribute to Merge Failure when evidence for distinct referents is combined into one effective reconstruction context."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_MergeFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:MergeFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Merge Failure when mixed evidence for distinct referents is integrated into one apparent identity."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:SegmentationIndexing_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:SegmentationIndexing ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Segmentation and indexing may contribute to Split Failure when aliases, identifiers, historical states, or other representations of one referent are indexed as disconnected identity clusters."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:QueryInterpretationEntityLinking_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:QueryInterpretationEntityLinking ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Query interpretation and entity linking may contribute to Split Failure when multiple representations of one referent are resolved as separate entities."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:Retrieval_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:Retrieval ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Retrieval may contribute to Split Failure when only one disconnected representation cluster is retrieved and evidence preserving referential unity is omitted from the effective evidence set."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Split Failure when evidence for one referent is presented as two or more independent identities."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:RerankingContextAssembly_EntityOmission
+    a map:MappingAssertion ;
+    map:sourceCondition rag:RerankingContextAssembly ;
+    map:targetConcept dio:EntityOmission ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Reranking and context assembly may contribute to Entity Omission when sufficient evidence for an entity is present in the effective observation domain but is suppressed or underweighted in the context used for generation."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_EntityOmission
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:EntityOmission ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Entity Omission when sufficient representational grounds are available in the effective context but no relevant entity reconstruction is produced."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:RerankingContextAssembly_SemanticFragmentation
+    a map:MappingAssertion ;
+    map:sourceCondition rag:RerankingContextAssembly ;
+    map:targetConcept dio:SemanticFragmentation ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Reranking and context assembly may contribute to Semantic Fragmentation when compatible representations of one referent are separated, imbalanced, or juxtaposed without preserving their semantic coherence."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_SemanticFragmentation
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:SemanticFragmentation ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Semantic Fragmentation when evidence recognized as belonging to one referent is not integrated into a coherent identity reconstruction."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:SegmentationIndexing_TemporalDiscontinuity
+    a map:MappingAssertion ;
+    map:sourceCondition rag:SegmentationIndexing ;
+    map:targetConcept dio:TemporalDiscontinuity ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Segmentation and indexing may contribute to Temporal Discontinuity when successive legitimate states of one referent are indexed without links preserving identity continuity across transformation."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:Retrieval_TemporalDiscontinuity
+    a map:MappingAssertion ;
+    map:sourceCondition rag:Retrieval ;
+    map:targetConcept dio:TemporalDiscontinuity ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Retrieval may contribute to Temporal Discontinuity when evidence connecting legitimate successive states of one referent is not selected into the effective evidence set."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:RerankingContextAssembly_TemporalDiscontinuity
+    a map:MappingAssertion ;
+    map:sourceCondition rag:RerankingContextAssembly ;
+    map:targetConcept dio:TemporalDiscontinuity ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Reranking and context assembly may contribute to Temporal Discontinuity when temporally successive states are separated or presented without continuity-preserving context."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_TemporalDiscontinuity
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:TemporalDiscontinuity ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Temporal Discontinuity when legitimate transformations of one referent are reconstructed as unrelated identities."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:Retrieval_TemporalMisalignment
+    a map:MappingAssertion ;
+    map:sourceCondition rag:Retrieval ;
+    map:targetConcept dio:TemporalMisalignment ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Retrieval may contribute to Temporal Misalignment when temporally inappropriate but otherwise valid representations are selected for a query requiring another temporal state."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:RerankingContextAssembly_TemporalMisalignment
+    a map:MappingAssertion ;
+    map:sourceCondition rag:RerankingContextAssembly ;
+    map:targetConcept dio:TemporalMisalignment ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Reranking and context assembly may contribute to Temporal Misalignment when older or otherwise temporally inappropriate representations dominate the effective context."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_TemporalMisalignment
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:TemporalMisalignment ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Temporal Misalignment when the correct referent is reconstructed using a temporal state inappropriate to the observation situation."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:QueryInterpretationEntityLinking_ContextualDisplacement
+    a map:MappingAssertion ;
+    map:sourceCondition rag:QueryInterpretationEntityLinking ;
+    map:targetConcept dio:ContextualDisplacement ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Query interpretation and entity linking may contribute to Contextual Displacement when the request is anchored to a legitimate but contextually secondary identity aspect."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:RerankingContextAssembly_ContextualDisplacement
+    a map:MappingAssertion ;
+    map:sourceCondition rag:RerankingContextAssembly ;
+    map:targetConcept dio:ContextualDisplacement ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Reranking and context assembly may contribute to Contextual Displacement when evidence for a legitimate but secondary identity aspect outweighs evidence relevant to the current observation context."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
+rag:GenerationSynthesis_ContextualDisplacement
+    a map:MappingAssertion ;
+    map:sourceCondition rag:GenerationSynthesis ;
+    map:targetConcept dio:ContextualDisplacement ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf rag:Mapping ;
+    skos:definition "Generation and synthesis may contribute to Contextual Displacement when a true but contextually secondary identity aspect becomes the dominant reconstruction."@en ;
+    skos:scopeNote "The stage does not deterministically cause the target DIO failure mode. The realized reconstruction depends on upstream and downstream processing, available representations, observation context, reconstruction mechanism, and whether other stages correct or amplify the condition."@en .
+
