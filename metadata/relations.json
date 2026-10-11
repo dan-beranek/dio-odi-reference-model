@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.0.0",
+  "registry_version": "1.1.0",
   "relation_semantics": "Directed edges are expressed from subject to object using Zenodo/DataCite-style relation names where possible. Only edges with approved_for_zenodo=true should be projected automatically into .zenodo.json or historical Zenodo records.",
   "relations": [
     {
@@ -89,6 +89,27 @@
       "approved_for_zenodo": false,
       "status": "semantic-review",
       "note": "Existing/considered Zenodo relation. Keep out of automatic projection until the identity claim between an archived Reference Model package and the namespace is explicitly confirmed."
+    },
+    {
+      "subject": "dio-conceptual-framework",
+      "relation": "isIdenticalTo",
+      "object": "distribution:dio-conceptual-framework:researchgate",
+      "approved_for_zenodo": true,
+      "relation_class": "distribution-representation"
+    },
+    {
+      "subject": "mvdio",
+      "relation": "isSupplementedBy",
+      "object": "distribution:mvdio:researchgate",
+      "approved_for_zenodo": true,
+      "relation_class": "distribution-representation"
+    },
+    {
+      "subject": "mvdio",
+      "relation": "isSupplementedBy",
+      "object": "distribution:mvdio:figshare",
+      "approved_for_zenodo": true,
+      "relation_class": "distribution-representation"
     }
   ]
 }
