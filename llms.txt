@@ -51,6 +51,9 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Canonical references: https://vocab.danielberanek.cz/metadata/references.json
 - Distribution representations: https://vocab.danielberanek.cz/metadata/distributions.json
 - Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json
+  - Grammar version: 2.0.0
+  - Status: canonical-approved
+  - Order: C0 Identity → C1 Environments → C2 Work positioning → C3 Mechanics → C4 K6 → C5 Failures/robustness → C6 Machine-readable representation
 - Zenodo projection for future GitHub releases: repository root `/.zenodo.json`
 
 This registry is an operational metadata layer and does not modify the canonical DIO/ODI Reference Vocabulary.
