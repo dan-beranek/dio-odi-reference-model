@@ -83,6 +83,7 @@
     "relations": "metadata/relations.json",
     "references": "metadata/references.json",
     "zenodo_projection": ".zenodo.json",
-    "distributions": "metadata/distributions.json"
+    "distributions": "metadata/distributions.json",
+    "keywords": "metadata/keywords.json"
   }
 }
