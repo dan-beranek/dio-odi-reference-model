@@ -3,6 +3,7 @@ message: "If you use this reference model or its derived application mappings, p
 title: "DIO/ODI Reference Model"
 type: software
 version: "0.3.1"
+doi: "10.5281/zenodo.23290683"
 abstract: "Versioned DIO/ODI reference model centered on a machine-readable SKOS vocabulary for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI), with stable concept URIs, provenance, Turtle and JSON-LD serializations, concept maps, and explicitly separated derived application mappings."
 authors:
   - family-names: "Beránek"
