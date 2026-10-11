@@ -8,7 +8,7 @@
   "inLanguage": "en",
   "datePublished": "2026-10-10",
   "dateModified": "2026-10-11",
-  "creativeWorkStatus": "Post-v0.3.0 live representation update",
+  "creativeWorkStatus": "Included in DIO/ODI Reference Model v0.3.1; archive DOI pending",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
     "@type": "Person",
@@ -19,7 +19,7 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model",
+    "name": "DIO/ODI Reference Model v0.3.1",
     "url": "https://vocab.danielberanek.cz/dio-odi/"
   },
   "isBasedOn": [
@@ -142,5 +142,18 @@
         }
       }
     ]
-  }
+  },
+  "version": "0.3.1",
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "MediaObject",
+      "contentUrl": "https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.ttl",
+      "encodingFormat": "text/turtle"
+    }
+  ]
 }
