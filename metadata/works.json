@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.4.0",
+  "registry_version": "1.5.0",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -38,7 +38,7 @@
     {
       "id": "dio-conceptual-framework",
       "title": "Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search",
-      "type": "publication-article",
+      "type": "publication-preprint",
       "version_doi": "10.5281/zenodo.21839423",
       "publication_date": "2026-08-07",
       "keyword_profile": "dio-conceptual-framework",
@@ -48,7 +48,7 @@
     {
       "id": "crisis-entity-resolution",
       "title": "The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions",
-      "type": "publication-article",
+      "type": "publication-preprint",
       "concept_doi": "10.5281/zenodo.22257503",
       "preferred_relation_identifier": "10.5281/zenodo.22257503",
       "versions": [
@@ -70,7 +70,7 @@
     {
       "id": "mvdio",
       "title": "Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity",
-      "type": "publication-article",
+      "type": "publication-preprint",
       "version": "1.0.0",
       "version_doi": "10.5281/zenodo.23226205",
       "publication_date": "2026-10-08",
@@ -81,7 +81,7 @@
     {
       "id": "taxonomic-note",
       "title": "From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO",
-      "type": "publication-article",
+      "type": "publication-preprint",
       "version_doi": "10.5281/zenodo.23269323",
       "keyword_profile": "taxonomic-note",
       "keyword_profile_status": "canonical-approved",
