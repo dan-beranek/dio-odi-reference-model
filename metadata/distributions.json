@@ -1,0 +1,53 @@
+{
+  "registry_version": "1.0.0",
+  "status": "partial-audit",
+  "semantics": "External distribution and supplementary representations of canonical DIO/ODI works. Relation types preserve the relation actually asserted or semantically justified; distribution does not imply identity.",
+  "relation_rule": "Use isIdenticalTo only for genuinely identical intellectual/content objects. Use isSupplementedBy, isVariantFormOf, isDocumentedBy, or another supported relation when that is more accurate. Do not normalize all external copies to one generic relation.",
+  "works": [
+    {
+      "work": "dio-conceptual-framework",
+      "audit_status": "verified-from-zenodo",
+      "representations": [
+        {
+          "id": "distribution:dio-conceptual-framework:researchgate",
+          "platform": "ResearchGate",
+          "identifier_type": "doi",
+          "identifier": "10.13140/RG.2.2.17127.41120",
+          "resource_type": "publication-preprint",
+          "relation_from_canonical": "isIdenticalTo",
+          "evidence": "Zenodo record 10.5281/zenodo.21839423 explicitly states that the record contains the identical preprint first published on ResearchGate and lists this DOI under Related works as Is identical to."
+        }
+      ]
+    },
+    {
+      "work": "mvdio",
+      "audit_status": "verified-from-zenodo",
+      "representations": [
+        {
+          "id": "distribution:mvdio:researchgate",
+          "platform": "ResearchGate",
+          "identifier_type": "doi",
+          "identifier": "10.13140/RG.2.2.10967.43682",
+          "resource_type": "publication-preprint",
+          "relation_from_canonical": "isSupplementedBy",
+          "evidence": "Zenodo record 10.5281/zenodo.23226205 lists this DOI under Related works as Is supplemented by."
+        },
+        {
+          "id": "distribution:mvdio:figshare",
+          "platform": "Figshare",
+          "identifier_type": "doi",
+          "identifier": "10.6084/m9.figshare.34231965",
+          "resource_type": "publication-preprint",
+          "relation_from_canonical": "isSupplementedBy",
+          "evidence": "Zenodo record 10.5281/zenodo.23226205 lists this DOI under Related works as Is supplemented by."
+        }
+      ]
+    }
+  ],
+  "audit_queue": [
+    "manifest-v1",
+    "crisis-entity-resolution",
+    "taxonomic-note",
+    "reference-model"
+  ]
+}
