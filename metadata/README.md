@@ -75,3 +75,20 @@ Rules:
 8. Keyword assignment must not retroactively project concepts into a work that the work does not substantively carry.
 
 This creates lexical and structural consistency across records while preserving the conceptual scope of each work.
+
+
+## Description discipline
+
+Zenodo Description is treated as a semantic identity surface, not as a repository tagline.
+
+For canonical DIO/ODI records, descriptions should follow a stable high-level order where supported by the work:
+
+1. **Identity and scope** — what the work is and how it positions DIO/ODI.
+2. **Corpus position and genealogy** — which earlier/later DIO/ODI works it develops, refines, references, or operationalizes.
+3. **Core conceptual content** — the main mechanisms, models, dimensions, or analytical distinctions carried by the work.
+4. **Failure / robustness structure** — Reconstruction Failure Modes, Semantic Vulnerability, Semantic Robustness, Identity Collapse, or related concepts where genuinely present.
+5. **Application / external mappings** — only where the work maps DIO/ODI into an external domain.
+6. **Metadata, distribution, and relation layer** — where relevant, explain versioning, provenance, distribution identity, typed relations, and machine-readable metadata.
+7. **Epistemic boundary and use** — state what the work does not claim, preserve distinctions from stronger formalizations, and identify its intended interpretive/reuse role.
+
+The grammar constrains sequence and function, not wording. A work must not acquire concepts merely to fill a description block. Later descriptions may be structurally consistent while remaining faithful to the historical scope of each publication.
