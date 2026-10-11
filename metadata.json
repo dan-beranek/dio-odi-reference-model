@@ -23,7 +23,9 @@
       "introduced_in": "0.2.0",
       "release_status": "included-in-0.3.0",
       "previous_archived_release_doi": "10.5281/zenodo.23282752",
-      "archived_release_doi": "10.5281/zenodo.23289615"
+      "archived_release_doi": "10.5281/zenodo.23289615",
+      "machine_readable_metadata": "mappings/rag-pipeline-mapping.jsonld",
+      "machine_readable_metadata_status": "post-0.3.0-live-update"
     },
     {
       "title": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
