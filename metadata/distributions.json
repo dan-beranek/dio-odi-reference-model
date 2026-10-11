@@ -1,12 +1,12 @@
 {
-  "registry_version": "1.1.0",
-  "status": "semantic-audit-required",
+  "registry_version": "1.2.0",
+  "status": "operational",
   "semantics": "External distribution and supplementary representations of canonical DIO/ODI works. Existing relation types observed on Zenodo are evidence of prior metadata choices, not automatically authoritative semantic classifications.",
   "relation_rule": "Treat existing Zenodo Related Works relation types as observed metadata until independently verified. IsIdenticalTo requires the exact same research output in two locations. IsSupplementedBy requires the related resource to be a genuine supplement, not merely another distribution copy. Where exact equivalence is not established, keep the relation under semantic review.",
   "works": [
     {
       "work": "dio-conceptual-framework",
-      "audit_status": "observed-on-zenodo-semantic-review-required",
+      "audit_status": "verified-by-author",
       "representations": [
         {
           "id": "distribution:dio-conceptual-framework:researchgate",
@@ -16,20 +16,16 @@
           "resource_type": "publication-preprint",
           "evidence": "Zenodo record 10.5281/zenodo.21839423 explicitly states that the record contains the identical preprint first published on ResearchGate and lists this DOI under Related works as Is identical to.",
           "observed_relation_on_zenodo": "isIdenticalTo",
-          "canonical_relation": null,
-          "semantic_status": "unverified",
-          "approved_for_zenodo": false,
-          "review_required": [
-            "compare files/content and version",
-            "determine whether the external object is identical, variant, version, or genuine supplement",
-            "assign DataCite/Zenodo relation only after semantic verification"
-          ]
+          "canonical_relation": "isIdenticalTo",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": true,
+          "verification_basis": "Author confirmation that the external distribution contains the same research output as the canonical Zenodo record."
         }
       ]
     },
     {
       "work": "mvdio",
-      "audit_status": "observed-on-zenodo-semantic-review-required",
+      "audit_status": "verified-by-author",
       "representations": [
         {
           "id": "distribution:mvdio:researchgate",
@@ -39,14 +35,10 @@
           "resource_type": "publication-preprint",
           "evidence": "Zenodo record 10.5281/zenodo.23226205 lists this DOI under Related works as Is supplemented by.",
           "observed_relation_on_zenodo": "isSupplementedBy",
-          "canonical_relation": null,
-          "semantic_status": "unverified",
-          "approved_for_zenodo": false,
-          "review_required": [
-            "compare files/content and version",
-            "determine whether the external object is identical, variant, version, or genuine supplement",
-            "assign DataCite/Zenodo relation only after semantic verification"
-          ]
+          "canonical_relation": "isIdenticalTo",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": true,
+          "verification_basis": "Author confirmation that the external distribution contains the same research output as the canonical Zenodo record."
         },
         {
           "id": "distribution:mvdio:figshare",
@@ -56,14 +48,10 @@
           "resource_type": "publication-preprint",
           "evidence": "Zenodo record 10.5281/zenodo.23226205 lists this DOI under Related works as Is supplemented by.",
           "observed_relation_on_zenodo": "isSupplementedBy",
-          "canonical_relation": null,
-          "semantic_status": "unverified",
-          "approved_for_zenodo": false,
-          "review_required": [
-            "compare files/content and version",
-            "determine whether the external object is identical, variant, version, or genuine supplement",
-            "assign DataCite/Zenodo relation only after semantic verification"
-          ]
+          "canonical_relation": "isIdenticalTo",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": true,
+          "verification_basis": "Author confirmation that the external distribution contains the same research output as the canonical Zenodo record."
         }
       ]
     }
@@ -72,8 +60,6 @@
     "manifest-v1",
     "crisis-entity-resolution",
     "taxonomic-note",
-    "reference-model",
-    "dio-conceptual-framework",
-    "mvdio"
+    "reference-model"
   ]
 }
