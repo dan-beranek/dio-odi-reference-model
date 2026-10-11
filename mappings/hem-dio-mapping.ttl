@@ -1,0 +1,297 @@
+@prefix hem: <https://vocab.danielberanek.cz/mappings/hem-dio/#> .
+
+@prefix map: <https://vocab.danielberanek.cz/mappings/#> .
+@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+map:MappingAssertion
+    a rdfs:Class ;
+    rdfs:label "Application Mapping assertion"@en ;
+    skos:definition "A qualified analytical assertion linking a source condition to a target DIO/ODI concept without asserting identity, equivalence, entailment, or deterministic causality."@en .
+
+map:sourceCondition
+    a rdf:Property ;
+    rdfs:label "source condition"@en ;
+    rdfs:domain map:MappingAssertion ;
+    skos:definition "The external condition, stage, or analytical factor from which an Application Mapping assertion starts."@en .
+
+map:targetConcept
+    a rdf:Property ;
+    rdfs:label "target concept"@en ;
+    rdfs:domain map:MappingAssertion ;
+    skos:definition "The DIO/ODI concept identified as a possible reconstruction consequence or susceptibility property in an Application Mapping assertion."@en .
+
+map:relationType
+    a rdf:Property ;
+    rdfs:label "relation type"@en ;
+    rdfs:domain map:MappingAssertion ;
+    skos:definition "The explicitly qualified, non-equivalence relation used by an Application Mapping assertion."@en .
+
+map:MayContributeTo
+    a skos:Concept ;
+    skos:prefLabel "may contribute to"@en ;
+    skos:definition "A non-deterministic analytical relation indicating that a source condition can participate in circumstances under which a target reconstruction consequence becomes possible or more likely, without asserting that the source condition is necessary or sufficient to produce that consequence."@en ;
+    skos:scopeNote "Must not be interpreted as causes, entails, implies, necessarily produces, or is equivalent to."@en .
+
+map:MayIncrease
+    a skos:Concept ;
+    skos:prefLabel "may increase"@en ;
+    skos:definition "A non-deterministic analytical relation indicating that a source condition can increase the susceptibility represented by a target property without asserting that the source condition alone determines or realizes a reconstruction failure."@en ;
+    skos:scopeNote "Used primarily for susceptibility properties such as Semantic Vulnerability. It must not be interpreted as deterministic causation."@en .
+
+map:MayIncreaseRiskOf
+    a skos:Concept ;
+    skos:prefLabel "may increase risk of"@en ;
+    skos:definition "A non-deterministic analytical relation indicating that a source condition can raise the risk of a target reconstruction failure under some observation and reconstruction conditions, without asserting that the failure necessarily follows."@en ;
+    skos:scopeNote "Must not be interpreted as causes or necessarily produces; the realized outcome depends on the observation domain, available representations, reconstruction mechanism, and their relative weighting."@en .
+
+<https://danielberanek.cz/#person>
+    a schema:Person ;
+    schema:name "Daniel Beránek" ;
+    schema:url <https://danielberanek.cz/> ;
+    schema:sameAs <https://orcid.org/0009-0004-0050-0264> .
+
+hem:Mapping
+    a schema:TechArticle ;
+    schema:name "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences"@en ;
+    schema:url <https://vocab.danielberanek.cz/mappings/hem-dio/> ;
+    schema:author <https://danielberanek.cz/#person> ;
+    schema:creativeWorkStatus "Post-v0.3.0 live Turtle representation"@en ;
+    schema:citation <https://doi.org/10.5281/zenodo.23289615> ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575>,
+                   <https://doi.org/10.5281/zenodo.23226205>,
+                   <https://doi.org/10.5281/zenodo.23269323> ;
+    skos:scopeNote "This RDF graph is a derived Application Mapping layer. It does not modify the canonical DIO/ODI Reference Vocabulary and does not assert taxonomic equivalence or deterministic causality between HEM and DIO concepts."@en .
+
+hem:Multimodality
+    a schema:DefinedTerm ;
+    skos:prefLabel "Multimodality"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:FormatHeterogeneity
+    a schema:DefinedTerm ;
+    skos:prefLabel "Format Heterogeneity"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:StructuralSchemaHeterogeneity
+    a schema:DefinedTerm ;
+    skos:prefLabel "Structural (Schema) Heterogeneity"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:TerminologyLanguage
+    a schema:DefinedTerm ;
+    skos:prefLabel "Terminology & Language"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:ContextualVariability
+    a schema:DefinedTerm ;
+    skos:prefLabel "Contextual Variability"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:GranularityResolution
+    a schema:DefinedTerm ;
+    skos:prefLabel "Granularity & Resolution"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:TemporalVariability
+    a schema:DefinedTerm ;
+    skos:prefLabel "Temporal Variability"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:DataQuality
+    a schema:DefinedTerm ;
+    skos:prefLabel "Data Quality"@en ;
+    dcterms:source <https://doi.org/10.1016/j.datak.2026.102575> ;
+    skos:scopeNote "Local URI representing an external HEM taxonomy term as used in this Application Mapping; it is not asserted as a DIO/ODI vocabulary concept or as a canonical RDF definition issued by the HEM authors."@en .
+
+hem:Multimodality_SemanticFragmentation
+    a map:MappingAssertion ;
+    map:sourceCondition hem:Multimodality ;
+    map:targetConcept dio:SemanticFragmentation ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Multimodality may contribute to Semantic Fragmentation when representations of the same referent distributed across modalities are integrated unevenly or remain semantically disconnected during reconstruction."@en ;
+    skos:scopeNote "Multimodality is neither necessary nor sufficient for Semantic Fragmentation. Cross-modal alignment, representation availability, observer capabilities, and synthesis can preserve coherence or allow fragmentation to materialize."@en .
+
+hem:Multimodality_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition hem:Multimodality ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Multimodality may contribute to Split Failure when representations of one referent in different modalities are treated as evidence for separate identity clusters rather than one continuous entity."@en ;
+    skos:scopeNote "The presence of multiple modalities does not cause Split Failure. Referential linking across modalities may preserve unity, and Split Failure can arise from other mechanisms."@en .
+
+hem:Multimodality_SemanticVulnerability
+    a map:MappingAssertion ;
+    map:sourceCondition hem:Multimodality ;
+    map:targetConcept dio:SemanticVulnerability ;
+    map:relationType map:MayIncrease ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Multimodality may increase Semantic Vulnerability when reconstruction becomes disproportionately sensitive to which modalities are available, legible, or weighted by the observer."@en ;
+    skos:scopeNote "This relation concerns susceptibility, not a realized failure. Multimodality may instead increase robustness when modalities provide coherent, mutually reinforcing evidence."@en .
+
+hem:FormatHeterogeneity_SemanticVulnerability
+    a map:MappingAssertion ;
+    map:sourceCondition hem:FormatHeterogeneity ;
+    map:targetConcept dio:SemanticVulnerability ;
+    map:relationType map:MayIncrease ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Format Heterogeneity may increase Semantic Vulnerability when syntactic incompatibility reduces the amount or balance of usable evidence available to the reconstruction mechanism."@en ;
+    skos:scopeNote "Format differences do not themselves constitute a DIO failure. Normalization, parsing, and transformation can neutralize the condition."@en .
+
+hem:FormatHeterogeneity_MergeFailure
+    a map:MappingAssertion ;
+    map:sourceCondition hem:FormatHeterogeneity ;
+    map:targetConcept dio:MergeFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Format Heterogeneity may contribute to Merge Failure when normalization or parsing removes distinctions that were useful for separating representations belonging to different referents."@en ;
+    skos:scopeNote "Format Heterogeneity does not necessarily merge entities; the outcome depends on normalization, entity linking, observation context, and other available identity-preserving constraints."@en .
+
+hem:FormatHeterogeneity_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition hem:FormatHeterogeneity ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Format Heterogeneity may contribute to Split Failure when otherwise compatible representations cannot be aligned because their formats remain mutually illegible or inconsistently normalized."@en ;
+    skos:scopeNote "Format Heterogeneity is not sufficient for Split Failure. Successful parsing and normalization can preserve referential unity."@en .
+
+hem:StructuralSchemaHeterogeneity_MergeFailure
+    a map:MappingAssertion ;
+    map:sourceCondition hem:StructuralSchemaHeterogeneity ;
+    map:targetConcept dio:MergeFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Structural or schema heterogeneity may contribute to Merge Failure when misaligned attributes or hierarchies create false correspondences between representations of distinct referents."@en ;
+    skos:scopeNote "Schema differences do not cause Merge Failure by themselves; mapping quality, identifiers, constraints, and reconstruction context determine whether false correspondences dominate."@en .
+
+hem:StructuralSchemaHeterogeneity_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition hem:StructuralSchemaHeterogeneity ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Structural or schema heterogeneity may contribute to Split Failure when identity-preserving correspondences across differently structured representations are not recognized."@en ;
+    skos:scopeNote "The relation is conditional: schema alignment or stable identifiers may preserve unity, and Split Failure may arise in the absence of schema heterogeneity."@en .
+
+hem:StructuralSchemaHeterogeneity_SemanticFragmentation
+    a map:MappingAssertion ;
+    map:sourceCondition hem:StructuralSchemaHeterogeneity ;
+    map:targetConcept dio:SemanticFragmentation ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Structural or schema heterogeneity may contribute to Semantic Fragmentation when compatible aspects of one referent remain separated because they are represented under incompatible attributes, hierarchies, or data structures."@en ;
+    skos:scopeNote "Structural heterogeneity does not entail semantic incoherence. Cross-schema mappings can preserve coherent reconstruction."@en .
+
+hem:TerminologyLanguage_EntitySubstitution
+    a map:MappingAssertion ;
+    map:sourceCondition hem:TerminologyLanguage ;
+    map:targetConcept dio:EntitySubstitution ;
+    map:relationType map:MayIncreaseRiskOf ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Terminology and language heterogeneity may increase the risk of Entity Substitution when aliases, translations, synonyms, or domain-specific labels weaken disambiguation between distinct but confusable referents."@en ;
+    skos:scopeNote "Terminological variation does not cause substitution. Identifiers, contextual constraints, multilingual alignment, and other evidence can preserve correct referential reconstruction."@en .
+
+hem:TerminologyLanguage_SplitFailure
+    a map:MappingAssertion ;
+    map:sourceCondition hem:TerminologyLanguage ;
+    map:targetConcept dio:SplitFailure ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Terminology and language heterogeneity may contribute to Split Failure when multiple names, aliases, languages, or domain vocabularies for one referent are treated as evidence for separate entities."@en ;
+    skos:scopeNote "The condition is neither necessary nor sufficient for Split Failure; successful alias resolution and multilingual linking can preserve referential unity."@en .
+
+hem:TerminologyLanguage_SemanticFragmentation
+    a map:MappingAssertion ;
+    map:sourceCondition hem:TerminologyLanguage ;
+    map:targetConcept dio:SemanticFragmentation ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Terminology and language heterogeneity may contribute to Semantic Fragmentation when semantically compatible descriptions of one referent remain disconnected because their terminology is not aligned."@en ;
+    skos:scopeNote "Terminological diversity can coexist with coherent identity reconstruction. Fragmentation materializes only when semantic alignment is insufficient for the observation context."@en .
+
+hem:ContextualVariability_ContextualDisplacement
+    a map:MappingAssertion ;
+    map:sourceCondition hem:ContextualVariability ;
+    map:targetConcept dio:ContextualDisplacement ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Contextual Variability may contribute to Contextual Displacement when a legitimate but contextually secondary representation of an entity dominates the aspect relevant to the current observation situation."@en ;
+    skos:scopeNote "Contextual variation is not itself displacement. The failure depends on which context is relevant, which evidence is available, and how the reconstruction mechanism weights competing identity aspects."@en .
+
+hem:ContextualVariability_EntitySubstitution
+    a map:MappingAssertion ;
+    map:sourceCondition hem:ContextualVariability ;
+    map:targetConcept dio:EntitySubstitution ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Contextual Variability may contribute to Entity Substitution when context-sensitive meanings or roles support an interpretation anchored to a distinct but confusable referent."@en ;
+    skos:scopeNote "Contextual variation does not necessarily produce substitution; adequate contextual disambiguation can preserve the intended referent."@en .
+
+hem:GranularityResolution_SemanticFragmentation
+    a map:MappingAssertion ;
+    map:sourceCondition hem:GranularityResolution ;
+    map:targetConcept dio:SemanticFragmentation ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Granularity and resolution heterogeneity may contribute to Semantic Fragmentation when representations of the same referent at different levels of detail resist integration into one coherent reconstruction."@en ;
+    skos:scopeNote "Different levels of detail can remain mutually compatible. Fragmentation depends on whether the reconstruction mechanism can preserve semantic coherence across those levels."@en .
+
+hem:GranularityResolution_ContextualDisplacement
+    a map:MappingAssertion ;
+    map:sourceCondition hem:GranularityResolution ;
+    map:targetConcept dio:ContextualDisplacement ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Granularity and resolution heterogeneity may contribute to Contextual Displacement when a representation that is too coarse or too specific displaces the level of identity relevant to the observation context."@en ;
+    skos:scopeNote "Granularity mismatch does not automatically create contextual inadequacy; the relevant level depends on the observer, task, and observation situation."@en .
+
+hem:GranularityResolution_SemanticVulnerability
+    a map:MappingAssertion ;
+    map:sourceCondition hem:GranularityResolution ;
+    map:targetConcept dio:SemanticVulnerability ;
+    map:relationType map:MayIncrease ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Granularity and resolution heterogeneity may increase Semantic Vulnerability when reconstruction becomes sensitive to which level of detail is available or preferentially weighted."@en ;
+    skos:scopeNote "This relation concerns susceptibility rather than realized failure, and heterogeneous resolution can also improve robustness when levels are coherently integrated."@en .
+
+hem:TemporalVariability_TemporalMisalignment
+    a map:MappingAssertion ;
+    map:sourceCondition hem:TemporalVariability ;
+    map:targetConcept dio:TemporalMisalignment ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Temporal Variability may contribute to Temporal Misalignment when representations corresponding to different temporal states are available to or weighted by the reconstruction mechanism in a way that produces a temporally inappropriate reconstruction of the correct referent."@en ;
+    skos:scopeNote "Temporal variability does not itself cause Temporal Misalignment; the realized reconstruction depends on the observation time, available representations, reconstruction mechanism, and their relative weighting."@en .
+
+hem:TemporalVariability_TemporalDiscontinuity
+    a map:MappingAssertion ;
+    map:sourceCondition hem:TemporalVariability ;
+    map:targetConcept dio:TemporalDiscontinuity ;
+    map:relationType map:MayContributeTo ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Temporal Variability may contribute to Temporal Discontinuity when legitimate successive states of one referent are treated as unrelated identities rather than transformations of a continuous entity."@en ;
+    skos:scopeNote "Change over time does not entail loss of identity continuity. Stable identifiers, transformation evidence, and temporal linking may preserve continuity."@en .
+
+hem:DataQuality_SemanticVulnerability
+    a map:MappingAssertion ;
+    map:sourceCondition hem:DataQuality ;
+    map:targetConcept dio:SemanticVulnerability ;
+    map:relationType map:MayIncrease ;
+    dcterms:isPartOf hem:Mapping ;
+    skos:definition "Data Quality heterogeneity may increase Semantic Vulnerability when missing, noisy, inconsistent, or outdated values make reconstruction disproportionately dependent on a reduced or distorted subset of evidence."@en ;
+    skos:scopeNote "Poor or uneven data quality does not determine a specific reconstruction failure. The realized outcome depends on which evidence remains usable, the observation domain, and the reconstruction mechanism."@en .
+
