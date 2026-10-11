@@ -94,6 +94,7 @@ The namespace is owned by the author and is intended to remain stable independen
 - `examples/queries.sparql` — example machine queries
 - `mappings/index.html` — public index of derived Application Mappings
 - `mappings/rag-pipeline-mapping.md` — source for Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
+- `mappings/rag-pipeline-mapping.jsonld` — machine-readable RAG mapping representation (post-v0.3.0 live update)
 - `mappings/rag-pipeline/index.html` — human-readable RAG mapping frontend
 - `mappings/hem-dio-mapping.md` — source for Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
 - `mappings/hem-dio-mapping.jsonld` — machine-readable metadata and mapping items for the HEM × DIO mapping
