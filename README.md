@@ -109,6 +109,7 @@ The namespace is owned by the author and is intended to remain stable independen
 - `metadata/relations.json` — directed inter-work relation graph
 - `metadata/references.json` — canonical bibliographic references
 - `metadata/distributions.json` — external distribution and supplementary representations with typed relations
+- `metadata/keywords.json` — invariant corpus keyword core, work-specific profiles, and non-export aliases
 - `metadata/README.md` — metadata-registry workflow and relation discipline
 
 ## Derived application mappings
