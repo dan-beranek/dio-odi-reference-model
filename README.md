@@ -152,6 +152,8 @@ In particular:
 
 A Reference Model release DOI identifies the versioned repository package. It is not asserted as the source of every vocabulary concept; concept provenance remains attached to the underlying DIO/ODI publications.
 
+Historical metadata states are not silently erased to create an artificially clean lineage. When an error is identified, the current canonical representation is corrected transparently while archived states remain identifiable as part of the provenance and temporal continuity of the artifact.
+
 ## License
 
 The reference vocabulary and repository documentation are licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. See `LICENSE.md`.
