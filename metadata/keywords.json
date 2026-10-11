@@ -1,36 +1,135 @@
 {
-  "registry_version": "1.1.0",
-  "status": "proposal-for-review",
-  "purpose": "Candidate keyword policy for stabilizing lexical identity across the DIO/ODI corpus while preserving work-specific topical precision.",
+  "registry_version": "2.0.0",
+  "status": "canonical-approved",
+  "approved_on": "2026-10-11",
+  "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for Zenodo and other metadata surfaces.",
+  "principles": [
+    "Keywords are an ordered metadata grammar, not an unordered bag of tags.",
+    "Chunk order is invariant across the corpus.",
+    "The identity invariant is always first.",
+    "The reconstruction-environment block is always second.",
+    "Within master chunks, selected terms retain the same relative order across works.",
+    "K6 is exported as a complete ordered block or not exported at all.",
+    "Work-specific positioning terms occupy C2 and may vary by work.",
+    "Aliases support recognition but are not exported by default.",
+    "Keyword assignment must not retroactively project concepts into a work that the work does not substantively carry."
+  ],
   "export_policy": {
-    "approved": false,
-    "rule": "Do not synchronize these proposals to Zenodo until explicitly approved.",
-    "preferred_structure": "shared invariant core + work-specific keywords",
+    "approved": true,
+    "chunk_order": [
+      "C0_identity_invariant",
+      "C1_reconstruction_environments",
+      "C2_work_positioning",
+      "C3_reconstruction_mechanics",
+      "C4_k6",
+      "C5_failures_robustness",
+      "C6_machine_readable_representation"
+    ],
+    "flattening_rule": "Concatenate active chunks in chunk_order; preserve term order inside each chunk; omit inactive terms; deduplicate case-insensitively without reordering.",
     "aliases_are_for_reconstruction_not_export": true
   },
-  "shared_core": {
-    "conservative": [
-      "Digital Identity Optimization",
-      "DIO",
-      "Ontology of Digital Identity",
-      "ODI",
-      "digital identity",
-      "identity reconstruction"
-    ],
-    "expansive": [
-      "Digital Identity Optimization",
-      "DIO",
-      "Ontology of Digital Identity",
-      "ODI",
-      "digital identity",
-      "identity reconstruction",
-      "entity reconstruction",
-      "semantic identity",
-      "machine-readable identity",
-      "semantic coherence",
-      "entity resolution",
-      "AI-mediated interpretation"
-    ]
+  "chunks": {
+    "C0_identity_invariant": {
+      "order": 0,
+      "label": "Identity invariant",
+      "scope": "global",
+      "terms": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction"
+      ]
+    },
+    "C1_reconstruction_environments": {
+      "order": 1,
+      "label": "Reconstruction environments",
+      "scope": "global",
+      "terms": [
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers"
+      ]
+    },
+    "C2_work_positioning": {
+      "order": 2,
+      "label": "Work positioning",
+      "scope": "work-specific",
+      "terms": []
+    },
+    "C3_reconstruction_mechanics": {
+      "order": 3,
+      "label": "Reconstruction mechanics",
+      "scope": "selective-master-order",
+      "terms": [
+        "semantic field",
+        "distributed representational state",
+        "observation domain",
+        "observer",
+        "reconstruction mechanism",
+        "identity-preserving constraints",
+        "identity-preserving variation",
+        "referential continuity",
+        "semantic coherence"
+      ]
+    },
+    "C4_k6": {
+      "order": 4,
+      "label": "K6 Semantic Connectome",
+      "scope": "all-or-nothing",
+      "terms": [
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction"
+      ]
+    },
+    "C5_failures_robustness": {
+      "order": 5,
+      "label": "Reconstruction failures and robustness",
+      "scope": "selective-master-order",
+      "terms": [
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness",
+        "Reconstruction Capture"
+      ]
+    },
+    "C6_machine_readable_representation": {
+      "order": 6,
+      "label": "Machine-readable and formal representation",
+      "scope": "selective-master-order",
+      "terms": [
+        "SKOS",
+        "RDF",
+        "JSON-LD",
+        "semantic web",
+        "linked data",
+        "knowledge representation",
+        "semantic interoperability",
+        "provenance",
+        "stable concept URIs"
+      ]
+    }
   },
   "aliases": [
     {
@@ -58,189 +157,398 @@
   ],
   "work_profiles": {
     "manifest-v1": {
-      "conservative": [
-        "semantic coherence",
-        "machine-readable identity",
-        "search engines",
-        "artificial intelligence"
-      ],
-      "expansive": [
-        "semantic coherence",
-        "machine-readable identity",
-        "search engines",
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [],
+        "C3_reconstruction_mechanics": [
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
         "artificial intelligence",
-        "entity identity",
-        "distributed representation",
-        "semantic consistency",
-        "trust",
-        "digital identity management",
-        "AI-readable identity",
-        "search engine interpretation",
-        "cross-system identity"
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "semantic coherence"
       ]
     },
     "manifest-v2-web": {
-      "conservative": [
-        "K6 Semantic Connectome",
-        "semantic field",
-        "semantic coherence",
-        "machine-readable identity",
-        "artificial intelligence"
-      ],
-      "expansive": [
-        "K6 Semantic Connectome",
-        "semantic field",
-        "semantic coherence",
-        "machine-readable identity",
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [],
+        "C3_reconstruction_mechanics": [
+          "semantic field",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Semantic Vulnerability",
+          "Semantic Robustness"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
         "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "semantic field",
+        "semantic coherence",
+        "K6 Semantic Connectome",
         "Entity",
         "Representation",
         "Interpretation",
         "Trust",
         "Relationship",
         "Reconstruction",
-        "semantic vulnerability",
-        "semantic robustness",
-        "distributed representational state"
+        "Semantic Vulnerability",
+        "Semantic Robustness"
       ]
     },
     "dio-conceptual-framework": {
-      "conservative": [
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [
+          "entity-based visibility",
+          "AI-mediated search"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
         "entity-based visibility",
         "AI-mediated search",
-        "entity resolution",
-        "semantic coherence"
-      ],
-      "expansive": [
-        "entity-based visibility",
-        "AI-mediated search",
-        "entity resolution",
         "semantic coherence",
-        "entity identity",
-        "AI visibility",
-        "search visibility",
-        "knowledge representation",
-        "semantic consistency",
-        "digital entity",
-        "machine interpretation"
+        "entity resolution"
       ]
     },
     "crisis-entity-resolution": {
-      "conservative": [
-        "entity resolution",
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [
+          "heterogeneous AI environments",
+          "data heterogeneity",
+          "semantic heterogeneity"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Identity Collapse",
+          "Semantic Vulnerability"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
         "heterogeneous AI environments",
-        "Identity Collapse",
-        "Semantic Fragmentation",
-        "Temporal Discontinuity",
-        "Semantic Vulnerability"
-      ],
-      "expansive": [
-        "entity resolution",
-        "heterogeneous AI environments",
-        "Identity Collapse",
-        "Semantic Fragmentation",
-        "Temporal Discontinuity",
-        "Semantic Vulnerability",
-        "semantic robustness",
-        "entity ambiguity",
-        "identity mismatch",
-        "cross-system identity",
         "data heterogeneity",
         "semantic heterogeneity",
-        "AI systems",
-        "identity reconstruction failure"
+        "semantic coherence",
+        "entity resolution",
+        "Semantic Fragmentation",
+        "Temporal Discontinuity",
+        "Identity Collapse",
+        "Semantic Vulnerability"
       ]
     },
     "mvdio": {
-      "conservative": [
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [
+          "Minimum Viable DIO",
+          "adversarial reduction",
+          "semantic field dynamics"
+        ],
+        "C3_reconstruction_mechanics": "all",
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Merge Failure",
+          "Split Failure",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
         "Minimum Viable DIO",
-        "semantic field",
-        "distributed representational state",
-        "observation domain",
-        "reconstruction mechanism",
-        "Semantic Robustness",
-        "Reconstruction Capture"
-      ],
-      "expansive": [
-        "Minimum Viable DIO",
+        "adversarial reduction",
+        "semantic field dynamics",
         "semantic field",
         "distributed representational state",
         "observation domain",
         "observer",
         "reconstruction mechanism",
-        "Semantic Robustness",
-        "Semantic Vulnerability",
-        "Reconstruction Capture",
         "identity-preserving constraints",
         "identity-preserving variation",
         "referential continuity",
-        "adversarial reduction",
-        "semantic field dynamics"
-      ]
-    },
-    "taxonomic-note": {
-      "conservative": [
-        "Reconstruction Failure Modes",
-        "Entity Substitution",
+        "semantic coherence",
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction",
+        "entity resolution",
         "Merge Failure",
         "Split Failure",
-        "Entity Omission",
-        "Semantic Fragmentation",
-        "Temporal Discontinuity",
-        "Temporal Misalignment",
-        "Contextual Displacement"
-      ],
-      "expansive": [
-        "Reconstruction Failure Modes",
-        "Referential Reconstruction Failures",
-        "Semantic Coherence Failures",
-        "Temporal Reconstruction Failures",
-        "Contextual Adequacy Failures",
-        "Entity Substitution",
-        "Merge Failure",
-        "Split Failure",
-        "Entity Omission",
         "Semantic Fragmentation",
         "Temporal Discontinuity",
         "Temporal Misalignment",
         "Contextual Displacement",
         "Identity Collapse",
         "Semantic Vulnerability",
+        "Semantic Robustness",
+        "Reconstruction Capture"
+      ]
+    },
+    "taxonomic-note": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [
+          "entity resolution anomalies"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Entity Substitution",
+          "Merge Failure",
+          "Split Failure",
+          "Entity Omission",
+          "Semantic Coherence Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
         "entity resolution anomalies",
-        "identity reconstruction failure"
+        "identity-preserving constraints",
+        "referential continuity",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness"
       ]
     },
     "reference-model": {
-      "conservative": [
-        "entity resolution",
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [
+          "Reference Vocabulary",
+          "Application Mapping",
+          "retrieval-augmented generation",
+          "RAG",
+          "heterogeneous entity matching",
+          "HEM"
+        ],
+        "C3_reconstruction_mechanics": "all",
+        "C4_k6": "all",
+        "C5_failures_robustness": "all",
+        "C6_machine_readable_representation": "all"
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
         "Reference Vocabulary",
         "Application Mapping",
-        "SKOS",
-        "RDF",
-        "JSON-LD",
-        "semantic web",
-        "linked data",
-        "knowledge representation"
-      ],
-      "expansive": [
+        "retrieval-augmented generation",
+        "RAG",
+        "heterogeneous entity matching",
+        "HEM",
+        "semantic field",
+        "distributed representational state",
+        "observation domain",
+        "observer",
+        "reconstruction mechanism",
+        "identity-preserving constraints",
+        "identity-preserving variation",
+        "referential continuity",
+        "semantic coherence",
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction",
         "entity resolution",
-        "Reference Vocabulary",
-        "Application Mapping",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "Semantic Robustness",
+        "Reconstruction Capture",
         "SKOS",
         "RDF",
         "JSON-LD",
         "semantic web",
         "linked data",
         "knowledge representation",
-        "controlled vocabulary",
-        "machine-readable semantics",
         "semantic interoperability",
-        "concept URI",
         "provenance",
-        "ontology engineering",
-        "reconstruction failure taxonomy",
-        "identity graph"
+        "stable concept URIs"
       ]
     }
-  }
+  },
+  "excluded_terms": [
+    {
+      "term": "digital entity",
+      "reason": "Avoids reifying a separate 'digital entity'; DIO distinguishes the entity from its digital identity and distributed representations."
+    },
+    {
+      "term": "machine-readable identity",
+      "reason": "Redundant with the intended DIO sense of digital identity."
+    },
+    {
+      "term": "machine interpretation",
+      "reason": "Replaced by explicit reconstruction environments and the canonical Interpretation dimension where relevant."
+    },
+    {
+      "term": "AI systems",
+      "reason": "Prefer the stable term 'artificial intelligence' in the environment chunk."
+    },
+    {
+      "term": "ontology engineering",
+      "reason": "Would overstate the formal ontological status of the current Reference Model."
+    },
+    {
+      "term": "identity graph",
+      "reason": "Would overstate the artifact as a graph formalism rather than describe its actual metadata/reference function."
+    },
+    {
+      "term": "semantic identity",
+      "reason": "Avoids introducing a new quasi-canonical term not required by the corpus."
+    },
+    {
+      "term": "entity reconstruction",
+      "reason": "Avoids competing with the canonical phrase 'identity reconstruction'."
+    }
+  ]
 }
