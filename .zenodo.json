@@ -14,16 +14,20 @@
   "language": "eng",
   "keywords": [
     "Digital Identity Optimization",
+    "DIO",
     "Ontology of Digital Identity",
+    "ODI",
     "digital identity",
     "identity reconstruction",
     "entity resolution",
+    "Reference Vocabulary",
+    "Application Mapping",
     "SKOS",
     "RDF",
     "JSON-LD",
     "semantic web",
     "linked data",
-    "application mapping"
+    "knowledge representation"
   ],
   "related_identifiers": [
     {
