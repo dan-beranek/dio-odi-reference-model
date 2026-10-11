@@ -6,7 +6,7 @@
 
 - Reference Model release: 0.3.1
 - Reference Vocabulary: 0.1.0
-- v0.3.1 archive status: DOI pending
+- Archived release DOI: https://doi.org/10.5281/zenodo.23290683
 - Previous archived release: v0.3.0 — https://doi.org/10.5281/zenodo.23289615
 - Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
@@ -45,7 +45,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 
 ## Releases
 
-- v0.3.1: archive DOI pending
+- v0.3.1: https://doi.org/10.5281/zenodo.23290683
 - v0.3.0: https://doi.org/10.5281/zenodo.23289615
 - v0.2.0: https://doi.org/10.5281/zenodo.23282752
 
