@@ -14,7 +14,8 @@
     "@type": "Person",
     "name": "Daniel Beránek",
     "url": "https://danielberanek.cz/",
-    "sameAs": "https://orcid.org/0009-0004-0050-0264"
+    "sameAs": "https://orcid.org/0009-0004-0050-0264",
+    "@id": "https://danielberanek.cz/#person"
   },
   "isPartOf": {
     "@type": "CreativeWork",
@@ -38,10 +39,22 @@
     "https://doi.org/10.5281/zenodo.23282752"
   ],
   "about": [
-    {"@type": "Thing", "name": "Digital Identity Optimization"},
-    {"@type": "Thing", "name": "Retrieval-augmented generation"},
-    {"@type": "Thing", "name": "Identity reconstruction"},
-    {"@type": "Thing", "name": "Reconstruction Failure Modes"}
+    {
+      "@type": "Thing",
+      "name": "Digital Identity Optimization"
+    },
+    {
+      "@type": "Thing",
+      "name": "Retrieval-augmented generation"
+    },
+    {
+      "@type": "Thing",
+      "name": "Identity reconstruction"
+    },
+    {
+      "@type": "Thing",
+      "name": "Reconstruction Failure Modes"
+    }
   ],
   "hasPart": {
     "@type": "ItemList",
