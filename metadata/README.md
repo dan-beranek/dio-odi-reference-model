@@ -57,10 +57,21 @@ A prior relation already present on Zenodo may therefore be corrected during met
 
 ## Keyword discipline
 
-Zenodo keywords are generated conceptually as:
+`keywords.json` defines a canonical **ordered metadata grammar**, not an unordered bag of tags.
 
-`invariant core + work-specific profile`
+The fixed chunk order is:
 
-The invariant core stabilizes lexical identity across the DIO/ODI corpus. Work-specific keywords preserve topical precision for each publication.
+`C0 Identity invariant → C1 Reconstruction environments → C2 Work positioning → C3 Reconstruction mechanics → C4 K6 → C5 Reconstruction failures and robustness → C6 Machine-readable representation`
 
-Aliases in `keywords.json` support reconstruction and variant recognition but are not exported to Zenodo by default. This prevents synonym drift from fragmenting the canonical lexical identity.
+Rules:
+
+1. C0 is always first and identical across the DIO/ODI corpus.
+2. C1 is always second and identifies the main reconstruction environments: artificial intelligence, search engines, knowledge graphs, and human observers.
+3. C2 is work-specific.
+4. C3, C5, and C6 are master-ordered chunks: works may activate only a subset, but selected terms retain the same relative order.
+5. C4 (K6) is all-or-nothing and always exported as the complete sequence: K6 Semantic Connectome, Entity, Representation, Interpretation, Trust, Relationship, Reconstruction.
+6. Flattened keyword arrays preserve chunk order and term order.
+7. Aliases support reconstruction and variant recognition but are not exported by default.
+8. Keyword assignment must not retroactively project concepts into a work that the work does not substantively carry.
+
+This creates lexical and structural consistency across records while preserving the conceptual scope of each work.
