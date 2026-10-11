@@ -60,12 +60,11 @@ rag:Mapping
     schema:name "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline"@en ;
     schema:url <https://vocab.danielberanek.cz/mappings/rag-pipeline/> ;
     schema:author <https://danielberanek.cz/#person> ;
-    schema:creativeWorkStatus "Included in archived DIO/ODI Reference Model v0.3.1"@en ;
+    schema:creativeWorkStatus "Included in DIO/ODI Reference Model v0.3.2; archive DOI pending"@en ;
     schema:isPartOf [
         a schema:CreativeWork ;
-        schema:name "DIO/ODI Reference Model v0.3.1"@en ;
-        schema:url <https://doi.org/10.5281/zenodo.23290683> ;
-        schema:identifier <https://doi.org/10.5281/zenodo.23290683>
+        schema:name "DIO/ODI Reference Model v0.3.2"@en ;
+        schema:url <https://vocab.danielberanek.cz/dio-odi/>
     ] ;
     dcterms:source <https://doi.org/10.5281/zenodo.23226205>,
                    <https://doi.org/10.5281/zenodo.23269323> ;
