@@ -26,6 +26,8 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Application Mappings index: https://vocab.danielberanek.cz/mappings/
 - Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline: https://vocab.danielberanek.cz/mappings/rag-pipeline/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md
+  - JSON-LD: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.jsonld
+  - JSON-LD status: post-v0.3.0 live representation update
   - Introduced in: Reference Model v0.2.0
   - Included in: Reference Model v0.3.0
 - Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences: https://vocab.danielberanek.cz/mappings/hem-dio/
