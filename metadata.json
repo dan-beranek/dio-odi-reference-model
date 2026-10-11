@@ -84,6 +84,8 @@
     "references": "metadata/references.json",
     "zenodo_projection": ".zenodo.json",
     "distributions": "metadata/distributions.json",
-    "keywords": "metadata/keywords.json"
+    "keywords": "metadata/keywords.json",
+    "keyword_grammar_version": "2.0.0",
+    "keyword_grammar_status": "canonical-approved"
   }
 }
