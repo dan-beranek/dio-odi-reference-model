@@ -13,6 +13,7 @@ Public index: https://vocab.danielberanek.cz/mappings/
 
 - Frontend: https://vocab.danielberanek.cz/mappings/rag-pipeline/
 - Source: [rag-pipeline-mapping.md](rag-pipeline-mapping.md)
+- JSON-LD: [rag-pipeline-mapping.jsonld](rag-pipeline-mapping.jsonld) — post-v0.3.0 live representation update
 - Introduced in: DIO/ODI Reference Model v0.2.0
 - Included in: DIO/ODI Reference Model v0.3.0 — https://doi.org/10.5281/zenodo.23289615
 - Archived release: https://doi.org/10.5281/zenodo.23282752
