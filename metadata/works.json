@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.1.0",
+  "registry_version": "1.2.0",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -20,7 +20,8 @@
       "publication_date": "2026-07-27",
       "canonical_hub": "https://danielberanek.cz/manifest-dio/",
       "note": "Canonical multilingual Zenodo edition.",
-      "keyword_profile": "manifest-v1"
+      "keyword_profile": "manifest-v1",
+      "keyword_profile_status": "proposal-for-review"
     },
     {
       "id": "manifest-v2-web",
@@ -29,7 +30,8 @@
       "canonical_url": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/",
       "status": "living-web-edition",
       "note": "Living v2 web edition; not a Zenodo record.",
-      "keyword_profile": "manifest-v2-web"
+      "keyword_profile": "manifest-v2-web",
+      "keyword_profile_status": "proposal-for-review"
     },
     {
       "id": "dio-conceptual-framework",
@@ -37,7 +39,8 @@
       "type": "publication-article",
       "version_doi": "10.5281/zenodo.21839423",
       "publication_date": "2026-08-07",
-      "keyword_profile": "dio-conceptual-framework"
+      "keyword_profile": "dio-conceptual-framework",
+      "keyword_profile_status": "proposal-for-review"
     },
     {
       "id": "crisis-entity-resolution",
@@ -57,7 +60,8 @@
         }
       ],
       "current_version_doi": "10.5281/zenodo.22416026",
-      "keyword_profile": "crisis-entity-resolution"
+      "keyword_profile": "crisis-entity-resolution",
+      "keyword_profile_status": "proposal-for-review"
     },
     {
       "id": "mvdio",
@@ -66,14 +70,16 @@
       "version": "1.0.0",
       "version_doi": "10.5281/zenodo.23226205",
       "publication_date": "2026-10-08",
-      "keyword_profile": "mvdio"
+      "keyword_profile": "mvdio",
+      "keyword_profile_status": "proposal-for-review"
     },
     {
       "id": "taxonomic-note",
       "title": "From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO",
       "type": "publication-article",
       "version_doi": "10.5281/zenodo.23269323",
-      "keyword_profile": "taxonomic-note"
+      "keyword_profile": "taxonomic-note",
+      "keyword_profile_status": "proposal-for-review"
     },
     {
       "id": "reference-model",
@@ -101,7 +107,8 @@
           "doi": "10.5281/zenodo.23290683"
         }
       ],
-      "keyword_profile": "reference-model"
+      "keyword_profile": "reference-model",
+      "keyword_profile_status": "proposal-for-review"
     }
   ]
 }
