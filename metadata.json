@@ -22,7 +22,8 @@
       "relation": "derived-application-layer",
       "introduced_in": "0.2.0",
       "release_status": "included-in-0.3.0",
-      "previous_archived_release_doi": "10.5281/zenodo.23282752"
+      "previous_archived_release_doi": "10.5281/zenodo.23282752",
+      "archived_release_doi": "10.5281/zenodo.23289615"
     },
     {
       "title": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
@@ -32,14 +33,22 @@
       "external_source_doi": "10.1016/j.datak.2026.102575",
       "relation": "derived-application-layer",
       "introduced_in": "0.3.0",
-      "release_status": "included-in-0.3.0"
+      "release_status": "included-in-0.3.0",
+      "archived_release_doi": "10.5281/zenodo.23289615"
     }
   ],
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
-  "archive_status": "pending-v0.3.0-doi",
+  "archive_status": "archived",
   "previous_archived_release": {
     "version": "0.2.0",
     "doi": "10.5281/zenodo.23282752",
     "doi_url": "https://doi.org/10.5281/zenodo.23282752"
+  },
+  "release_doi": "10.5281/zenodo.23289615",
+  "release_doi_url": "https://doi.org/10.5281/zenodo.23289615",
+  "current_archived_release": {
+    "version": "0.3.0",
+    "doi": "10.5281/zenodo.23289615",
+    "doi_url": "https://doi.org/10.5281/zenodo.23289615"
   }
 }
