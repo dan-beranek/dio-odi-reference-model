@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.0",
+  "registry_version": "1.3.1",
   "status": "operational",
   "semantics": "External distribution and supplementary representations of canonical DIO/ODI works. Existing relation types observed on Zenodo are evidence of prior metadata choices, not automatically authoritative semantic classifications.",
   "relation_rule": "Treat existing Zenodo Related Works relation types as observed metadata until independently verified. IsIdenticalTo requires the exact same research output in two locations. IsSupplementedBy requires the related resource to be a genuine supplement, not merely another distribution copy. Where exact equivalence is not established, keep the relation under semantic review.",
@@ -93,6 +93,19 @@
           "semantic_status": "verified-by-author",
           "approved_for_zenodo": true,
           "verification_basis": "Author confirmation that the external distribution contains the same research output as the canonical Zenodo record."
+        },
+        {
+          "id": "distribution:mvdio:ssrn",
+          "platform": "SSRN",
+          "identifier_type": "doi",
+          "identifier": "10.2139/ssrn.7582778",
+          "resource_type": "publication-preprint",
+          "evidence": "Zenodo record 10.5281/zenodo.23226205 lists this DOI under Related works as Is supplemented by.",
+          "observed_relation_on_zenodo": "isSupplementedBy",
+          "canonical_relation": null,
+          "semantic_status": "semantic-review",
+          "approved_for_zenodo": false,
+          "verification_basis": "Observed on the current Zenodo record; exact equivalence or supplementary status has not yet been independently verified."
         }
       ]
     }
@@ -101,6 +114,7 @@
     "manifest-v1",
     "crisis-entity-resolution",
     "taxonomic-note",
-    "reference-model"
+    "reference-model",
+    "mvdio:ssrn"
   ]
 }
