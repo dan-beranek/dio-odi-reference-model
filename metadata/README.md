@@ -55,6 +55,15 @@ Before approving a distribution relation:
 A prior relation already present on Zenodo may therefore be corrected during metadata normalization.
 
 
+### Version-scoped distribution relations
+
+Distribution relations may legitimately change between versions of the same canonical work.
+
+When a later Zenodo version differs from an external distribution copy, do not automatically inherit an earlier `isIdenticalTo` relation. Record the relation against the specific version for which it is valid and preserve the earlier relation as historical provenance where appropriate.
+
+Current-version relation semantics take precedence for projection to the current Zenodo record; historical relation semantics must not be retroactively overwritten.
+
+
 ## Keyword discipline
 
 `keywords.json` defines a canonical **ordered metadata grammar**, not an unordered bag of tags.
