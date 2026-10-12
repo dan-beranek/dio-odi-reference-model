@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.6.0",
+  "registry_version": "1.7.0",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -39,11 +39,26 @@
       "id": "dio-conceptual-framework",
       "title": "Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search",
       "type": "publication-preprint",
-      "version_doi": "10.5281/zenodo.21839423",
       "publication_date": "2026-08-07",
       "keyword_profile": "dio-conceptual-framework",
       "keyword_profile_status": "canonical-approved",
-      "keyword_grammar_version": "2.0.0"
+      "keyword_grammar_version": "2.0.0",
+      "versions": [
+        {
+          "version": "v1",
+          "doi": "10.5281/zenodo.21839423",
+          "publication_date": "2026-08-07"
+        },
+        {
+          "version": "1.1.0",
+          "doi": "10.5281/zenodo.23305929",
+          "publication_date": "2026-10-12"
+        }
+      ],
+      "current_version": "1.1.0",
+      "current_version_doi": "10.5281/zenodo.23305929",
+      "preferred_relation_identifier": "10.5281/zenodo.23305929",
+      "note": "Current canonical Zenodo version is v1.1.0. The earlier v1 record remains part of the archived version history."
     },
     {
       "id": "crisis-entity-resolution",
