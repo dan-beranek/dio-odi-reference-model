@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.0",
+  "registry_version": "1.4.0",
   "relation_semantics": "Directed edges are expressed from subject to object using Zenodo/DataCite-style relation names where possible. Only edges with approved_for_zenodo=true should be projected automatically into .zenodo.json or historical Zenodo records.",
   "relations": [
     {
@@ -91,17 +91,6 @@
       "note": "Existing/considered Zenodo relation. Keep out of automatic projection until the identity claim between an archived Reference Model package and the namespace is explicitly confirmed."
     },
     {
-      "subject": "dio-conceptual-framework",
-      "relation": "isIdenticalTo",
-      "object": "distribution:dio-conceptual-framework:researchgate",
-      "approved_for_zenodo": true,
-      "relation_class": "distribution-representation",
-      "observed_relation_on_zenodo": "isIdenticalTo",
-      "canonical_relation": "isIdenticalTo",
-      "status": "verified-by-author",
-      "note": "Verified by the author as an identical distribution copy of the same research output. Any existing Zenodo IsSupplementedBy relation for this copy should be corrected to IsIdenticalTo."
-    },
-    {
       "subject": "mvdio",
       "relation": "isIdenticalTo",
       "object": "distribution:mvdio:researchgate",
@@ -122,6 +111,42 @@
       "canonical_relation": "isIdenticalTo",
       "status": "verified-by-author",
       "note": "Verified by the author as an identical distribution copy of the same research output. Any existing Zenodo IsSupplementedBy relation for this copy should be corrected to IsIdenticalTo."
+    },
+    {
+      "subject": "dio-conceptual-framework",
+      "relation": "isVersionOf",
+      "object": "distribution:dio-conceptual-framework:researchgate",
+      "approved_for_zenodo": true,
+      "relation_class": "distribution-representation",
+      "applies_to_version_doi": "10.5281/zenodo.23305929",
+      "observed_relation_on_zenodo": "isVersionOf",
+      "canonical_relation": "isVersionOf",
+      "status": "verified-by-author",
+      "note": "The current Zenodo v1.1.0 record relates to the ResearchGate representation as Is version of. This current-version relation must not be retroactively projected onto the archived Zenodo v1 record."
+    },
+    {
+      "subject": "dio-conceptual-framework",
+      "relation": "isVersionOf",
+      "object": "distribution:dio-conceptual-framework:ssrn",
+      "approved_for_zenodo": true,
+      "relation_class": "distribution-representation",
+      "applies_to_version_doi": "10.5281/zenodo.23305929",
+      "observed_relation_on_zenodo": "isVersionOf",
+      "canonical_relation": "isVersionOf",
+      "status": "verified-by-author",
+      "note": "The current Zenodo v1.1.0 record relates to the SSRN representation as Is version of. This current-version relation must not be retroactively projected onto the archived Zenodo v1 record."
+    },
+    {
+      "subject": "dio-conceptual-framework",
+      "relation": "isVersionOf",
+      "object": "distribution:dio-conceptual-framework:figshare",
+      "approved_for_zenodo": true,
+      "relation_class": "distribution-representation",
+      "applies_to_version_doi": "10.5281/zenodo.23305929",
+      "observed_relation_on_zenodo": "isVersionOf",
+      "canonical_relation": "isVersionOf",
+      "status": "verified-by-author",
+      "note": "The current Zenodo v1.1.0 record relates to the Figshare representation as Is version of. This current-version relation must not be retroactively projected onto the archived Zenodo v1 record."
     }
   ]
 }
