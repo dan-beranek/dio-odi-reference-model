@@ -100,12 +100,12 @@
           "identifier_type": "doi",
           "identifier": "10.2139/ssrn.7582778",
           "resource_type": "publication-preprint",
-          "evidence": "Zenodo record 10.5281/zenodo.23226205 lists this DOI under Related works as Is supplemented by.",
+          "evidence": "Author confirmed on 2026-10-15 that SSRN DOI 10.2139/ssrn.7582778 is a published identical distribution of the canonical MVDIO Zenodo record.",
           "observed_relation_on_zenodo": "isSupplementedBy",
-          "canonical_relation": null,
-          "semantic_status": "semantic-review",
-          "approved_for_zenodo": false,
-          "verification_basis": "Observed on the current Zenodo record; exact equivalence or supplementary status has not yet been independently verified."
+          "canonical_relation": "isIdenticalTo",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": true,
+          "verification_basis": "Author confirmation that the SSRN publication is the same research output as the canonical Zenodo record."
         }
       ]
     }
@@ -114,7 +114,6 @@
     "manifest-v1",
     "crisis-entity-resolution",
     "taxonomic-note",
-    "reference-model",
-    "mvdio:ssrn"
+    "reference-model"
   ]
 }

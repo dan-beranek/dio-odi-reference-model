@@ -19,6 +19,7 @@
       "version_doi": "10.5281/zenodo.21610934",
       "publication_date": "2026-07-27",
       "canonical_hub": "https://danielberanek.cz/manifest-dio/",
+      "license": "CC-BY-4.0",
       "note": "Canonical multilingual Zenodo edition.",
       "keyword_profile": "manifest-v1",
       "keyword_profile_status": "canonical-approved",
@@ -30,6 +31,7 @@
       "type": "web-publication",
       "canonical_url": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/",
       "status": "living-web-edition",
+      "license": "CC-BY-4.0",
       "note": "Living v2 web edition; not a Zenodo record.",
       "keyword_profile": "manifest-v2-web",
       "keyword_profile_status": "canonical-approved",
@@ -40,6 +42,7 @@
       "title": "Digital Identity Optimization (DIO): A Conceptual Framework for Entity-Based Visibility in the Age of AI-Mediated Search",
       "type": "publication-preprint",
       "publication_date": "2026-08-07",
+      "license": "CC-BY-4.0",
       "keyword_profile": "dio-conceptual-framework",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",
@@ -66,6 +69,7 @@
       "type": "publication-preprint",
       "concept_doi": "10.5281/zenodo.22257503",
       "preferred_relation_identifier": "10.5281/zenodo.22257503",
+      "license": "CC-BY-4.0",
       "versions": [
         {
           "version": "1.0.0",
@@ -89,6 +93,7 @@
       "version": "1.0.0",
       "version_doi": "10.5281/zenodo.23226205",
       "publication_date": "2026-10-08",
+      "license": "CC-BY-4.0",
       "keyword_profile": "mvdio",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0"
@@ -98,6 +103,8 @@
       "title": "From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO",
       "type": "publication-preprint",
       "version_doi": "10.5281/zenodo.23269323",
+      "publication_date": "2026-10-09",
+      "license": "CC-BY-4.0",
       "keyword_profile": "taxonomic-note",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0"
@@ -110,12 +117,23 @@
       "canonical_namespace": "https://vocab.danielberanek.cz/dio-odi/#",
       "namespace_document": "https://vocab.danielberanek.cz/dio-odi/",
       "reference_vocabulary_version": "0.1.0",
+      "reference_vocabulary_doi": "10.5281/zenodo.23272898",
+      "reference_vocabulary_doi_url": "https://doi.org/10.5281/zenodo.23272898",
+      "reference_vocabulary_publication_date": "2026-10-10",
+      "publication_date": "2026-10-11",
+      "license": "CC-BY-4.0",
       "current_release": {
         "version": "0.3.2",
         "doi": "10.5281/zenodo.23300703",
+        "publication_date": "2026-10-11",
         "status": "archived"
       },
       "releases": [
+        {
+          "version": "0.1.0",
+          "doi": "10.5281/zenodo.23272898",
+          "publication_date": "2026-10-10"
+        },
         {
           "version": "0.2.0",
           "doi": "10.5281/zenodo.23282752"
@@ -130,7 +148,8 @@
         },
         {
           "version": "0.3.2",
-          "doi": "10.5281/zenodo.23300703"
+          "doi": "10.5281/zenodo.23300703",
+          "publication_date": "2026-10-11"
         }
       ],
       "keyword_profile": "reference-model",

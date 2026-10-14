@@ -113,6 +113,17 @@
       "note": "Verified by the author as an identical distribution copy of the same research output. Any existing Zenodo IsSupplementedBy relation for this copy should be corrected to IsIdenticalTo."
     },
     {
+      "subject": "mvdio",
+      "relation": "isIdenticalTo",
+      "object": "distribution:mvdio:ssrn",
+      "approved_for_zenodo": true,
+      "relation_class": "distribution-representation",
+      "observed_relation_on_zenodo": "isSupplementedBy",
+      "canonical_relation": "isIdenticalTo",
+      "status": "verified-by-author",
+      "note": "Author confirmed that SSRN DOI 10.2139/ssrn.7582778 is an identical distribution copy of the same research output. The existing Zenodo IsSupplementedBy relation should be corrected to IsIdenticalTo."
+    },
+    {
       "subject": "dio-conceptual-framework",
       "relation": "isVersionOf",
       "object": "distribution:dio-conceptual-framework:researchgate",
@@ -147,16 +158,6 @@
       "canonical_relation": "isVersionOf",
       "status": "verified-by-author",
       "note": "The current Zenodo v1.1.0 record relates to the Figshare representation as Is version of. This current-version relation must not be retroactively projected onto the archived Zenodo v1 record."
-    },
-    {
-      "subject": "mvdio",
-      "relation": "isSupplementedBy",
-      "object": "distribution:mvdio:ssrn",
-      "approved_for_zenodo": false,
-      "relation_class": "distribution-representation",
-      "observed_relation_on_zenodo": "isSupplementedBy",
-      "status": "semantic-review",
-      "note": "Zenodo record 10.5281/zenodo.23226205 currently lists SSRN DOI 10.2139/ssrn.7582778 as Is supplemented by. The external object has not yet been independently compared against the canonical MVDIO record, so do not strengthen, replace, or automatically project this relation until reviewed."
     }
   ]
 }
