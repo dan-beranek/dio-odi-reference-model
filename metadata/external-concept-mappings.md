@@ -14,9 +14,9 @@ This registry records candidate and reviewed semantic mappings from the canonica
 - Additional Wikidata candidates added after checking item descriptions: 4
 - Rejected candidate mappings recorded: 1
 - Approved mappings: 0
-- Wikipedia evidence records: 42 initial records plus a second thematic pass across linked data, UMBEL, JSON-LD, and entity-resolution literature
+- Wikipedia evidence records: 90 across 39 concepts after expanding the thematic candidate set
 
-The audit is partial. Wikipedia evidence has now been recorded at concept level for every inventoried concept with a relevant, identifiable article found in this pass. These are contextual references, not approved mappings. Some articles are deliberately distant analogues or contrastive cases; each note states the limited semantic value and the boundary of the comparison.
+The audit is partial. Wikipedia evidence is recorded at concept level for every inventoried concept, with a broader candidate set covering digital identity, record linkage, name resolution, linked data, ontology alignment, semiotics, personal identity, and related technical context. These are contextual references, not approved mappings. Some articles are deliberately distant analogues or contrastive cases; each note states the intended semantic value and boundary. This is a candidate-evidence pass: individual article content, redirects, and current page status still require source-by-source verification.
 
 ## Distinguish mapping targets from evidence sources
 - **Wikidata:** a structured mapping target, but only after checking the item's label, description, statements, and scope.
@@ -79,4 +79,4 @@ These are not endorsements. Merge Failure and Split Failure should be assessed s
 - **Identity — Wikidata Q254474:** the item describes the relation each thing bears to itself alone. This is not the same as DIO Referential Continuity across legitimate change. A tentative `skos:relatedMatch` candidate is recorded, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q254474)
 - **Trust — Wikidata Q659974:** the item frames trust as a feeling/certainty and classifies it in terms of emotion and belief. This is a poor fit for the DIO K6 dimension, which explicitly need not imply human psychology. This candidate has been rejected. [Wikidata item](https://www.wikidata.org/wiki/Q659974)
 
-The Wikipedia evidence URLs and their roles are listed per concept in the JSON registry. This is an initial curated evidence pass, not a claim that all potentially relevant Wikipedia pages or language editions have been exhausted.
+The Wikipedia evidence URLs and their roles are listed per concept in the JSON registry. The candidate set has been expanded with entity linking, semiotics, and ontology alignment references. This remains an initial evidence-discovery pass, not a claim that each page has been freshly verified or that all potentially relevant articles and language editions have been exhausted.
