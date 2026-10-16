@@ -42,9 +42,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIO",
       "sourceConceptId": "DIO",
       "sourceLabel": "Digital Identity Optimization",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No external mapping proposed. Digital identity and identity-resolution fields overlap with DIO's subject matter, but the applied optimization discipline is not equivalent to digital identity itself or to any single adjacent method.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
@@ -69,6 +69,22 @@
           "note": "Entity linking is one concrete technical field concerned with matching mentions to entities; it is a narrower neighboring problem within DIO's broader concern with digital-identity reconstruction.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/",
+          "role": "primary-definition",
+          "checkedOn": "2026-10-16",
+          "note": "The canonical manifesto distinguishes DIO as applied optimization practice from ODI as a theoretical study of digital identity and describes the six-dimensional connectome. This is the primary source for the local concept, not an external mapping target.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
+        },
+        {
+          "uri": "https://www.mdpi.com/2078-2489/17/1/85",
+          "role": "adjacent-research",
+          "checkedOn": "2026-10-16",
+          "note": "A 2026 survey of digital identity literature develops preliminary ontological structures across digital-identity disciplines. It is a research neighbor, but its focus on digital identity systems and governance does not define DIO as an optimization discipline.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -76,9 +92,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ODI",
       "sourceConceptId": "ODI",
       "sourceLabel": "Ontology of Digital Identity",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No external mapping proposed. A homonymous vocabulary titled Ontology of Digital Identity exists in LOV, but it is a different, security-oriented ontology. Treat as a name collision and disambiguation issue, not equivalence.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
@@ -119,6 +135,22 @@
           "note": "Ontology alignment addresses semantic correspondence across independently developed vocabularies; this is directly relevant to ODI's external-concept mapping problem, but does not define ODI as a whole.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.mdpi.com/2078-2489/17/1/85",
+          "role": "adjacent-research",
+          "checkedOn": "2026-10-16",
+          "note": "The paper surveys ontological foundations and proposes preliminary concept structures for digital identity. It is relevant as a neighboring research effort, but its scope and resulting conceptual structure differ from DIO/ODI; topical overlap alone does not establish a mapping.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
+        },
+        {
+          "uri": "https://www.identity.org/ontologies/identity.owl",
+          "role": "homonymous-concept",
+          "checkedOn": "2026-10-16",
+          "note": "The Linked Open Vocabularies catalogue lists an older ontology called Ontology of Digital Identity focused on mobile-phone/security concepts and based on P3P. The shared name is a potential collision, not evidence that it is the same framework; verify current URI availability before any technical reuse.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -126,9 +158,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#MVDIO",
       "sourceConceptId": "MVDIO",
       "sourceLabel": "Minimum Viable Digital Identity Optimization",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No external mapping candidate identified. The term denotes a DIO-specific minimum analytical framework; ontology-alignment and upper-vocabulary patterns are methodological analogies only.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_components",
@@ -153,6 +185,14 @@
           "note": "Ontology alignment offers a concrete example of a bounded interoperability task across vocabularies; it is a methodological analogy for a minimal model, not an equivalent framework.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/skos-reference/",
+          "role": "formal-vocabulary-context",
+          "checkedOn": "2026-10-16",
+          "note": "SKOS supports concept schemes and mapping relations, but it does not define a general 'minimum viable' identity-optimization framework. The standard is infrastructure for publishing this vocabulary, not a semantic match for MVDIO.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -160,9 +200,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticField",
       "sourceConceptId": "SemanticField",
       "sourceLabel": "Semantic Field",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No direct mapping proposed. The linguistic semantic-field concept is a useful theoretical neighbor, but DIO's cross-disciplinary relational construct is broader than a lexical field; preserve as contextual evidence.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
@@ -187,6 +227,14 @@
           "note": "Meaning is described relationally within sign processes rather than as an isolated label; this supports a relational view of semantic context but is not equivalent to the DIO semantic field.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Semantic_field",
+          "role": "lexical-neighbor",
+          "checkedOn": "2026-10-16",
+          "note": "In linguistics, a semantic field is a group of words related by meaning around a subject. DIO uses Semantic Field more broadly for a relational conceptual environment spanning disciplines, entities, representations, and interpretive practices. Shared terminology is relevant but extension differs.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -194,9 +242,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#K6",
       "sourceConceptId": "K6",
       "sourceLabel": "K6 Semantic Connectome",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No external mapping candidate identified. General semantic networks, ontology components, or upper-level vocabularies can model relations, but none establishes equivalence to this specific six-dimensional analytical connectome.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_components",
@@ -221,6 +269,14 @@
           "note": "Ontology alignment distinguishes different kinds of similarity and correspondence across vocabularies; this is useful context for relating dimensions, but does not validate the six K6 dimensions.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/",
+          "role": "primary-definition",
+          "checkedOn": "2026-10-16",
+          "note": "The manifesto defines the six dimensions Entity, Representation, Interpretation, Trust, Relationship, and Reconstruction as a recurring connectome. This anchors the DIO-specific construct; external models of semantic networks or ontology components are structural analogies, not matches.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -228,9 +284,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityDimension",
       "sourceConceptId": "EntityDimension",
       "sourceLabel": "Entity",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate proposed. The ordinary concept of an entity is foundational across knowledge representation, but DIO's Entity dimension is a role in its analytical connectome, not a claim that all uses of 'entity' are equivalent.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
@@ -239,6 +295,14 @@
           "note": "The article discusses digital identifiers and represented entities; this is context rather than a direct definition of the K6 dimension.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/skos-reference/",
+          "role": "formal-modeling-context",
+          "checkedOn": "2026-10-16",
+          "note": "SKOS treats concepts as units of thought and organizes them in schemes; this supports vocabulary modeling but does not supply an equivalent for DIO's Entity dimension, which is the referent under analysis rather than a vocabulary concept.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -943,9 +1007,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingVariation",
       "sourceConceptId": "IdentityPreservingVariation",
       "sourceLabel": "Identity-Preserving Variation",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No direct mapping proposed. Qualified identity and identity-over-time models are theoretical neighbors, but the DIO concept specifically distinguishes legitimate variation from fragmentation while preserving referential continuity.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Personal_identity",
@@ -962,6 +1026,14 @@
           "note": "The distinction between signifier and signified offers a distant way to think about variation in form without assuming a corresponding change in meaning; it does not establish when DIO identity is preserved.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://niklasl.github.io/quid/",
+          "role": "theoretical-neighbor",
+          "checkedOn": "2026-10-16",
+          "note": "The Qualified Identity Ontology discusses how identity representations can omit or qualify variation, locality, temporality, perspective, and intellectual differences. This is a meaningful theoretical neighbor to identity-preserving variation, but it does not define DIO's criterion of legitimate variation preserving referential continuity.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -969,9 +1041,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionFailureMode",
       "sourceConceptId": "ReconstructionFailureMode",
       "sourceLabel": "Reconstruction Failure Mode",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No external mapping proposed. Other technical taxonomies classify errors in entity resolution or knowledge-graph integration, but their task-specific classes do not match the DIO taxonomy as a whole.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -988,6 +1060,14 @@
           "note": "Record linkage research discusses matching errors and trade-offs, providing a neighboring technical error context without covering DIO's wider failure taxonomy.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.medrxiv.org/content/10.64898/2026.05.26.26354182v1.full",
+          "role": "failure-taxonomy-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "A 2026 preprint on knowledge-graph integration analyzes concrete failure modes in entity resolution and graph integration. It provides a methodological parallel for classifying realized errors, but its biomedical integration scope and individual failure definitions are not equivalent to the DIO taxonomy.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -995,9 +1075,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReferentialReconstructionFailure",
       "sourceConceptId": "ReferentialReconstructionFailure",
       "sourceLabel": "Referential Reconstruction Failure",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No direct mapping proposed. Record linkage and entity linking are relevant adjacent methods, but the DIO concept is a failure superclass covering substitution, merging, splitting, and omission under its own scope conditions.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
@@ -1014,6 +1094,22 @@
           "note": "The wrong-referent examples provide a concrete adjacent case of referential reconstruction failure at the level of textual mentions.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1266546",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage matches records referring to the same entity across data sources and is relevant to referential reconstruction. It is an adjacent process, not a general class of failures in reconstructing an intended referent.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q17012245",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Entity linking assigns mentions in text to entities in a knowledge base. This is a bounded subtask adjacent to referential reconstruction, but it does not cover the full failure class or distributed identity reconstruction.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
@@ -1309,9 +1405,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalReconstructionFailure",
       "sourceConceptId": "TemporalReconstructionFailure",
       "sourceLabel": "Temporal Reconstruction Failure",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No external mapping proposed. OWL-Time supplies temporal modeling primitives and synchronization is an adjacent process; neither defines the DIO failure superclass spanning temporal discontinuity and temporal misalignment.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Personal_identity",
@@ -1320,6 +1416,22 @@
           "note": "Identity-through-time debates provide conceptual context for temporal reconstruction failures, without equivalence.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/owl-time/",
+          "role": "formal-temporal-context",
+          "checkedOn": "2026-10-16",
+          "note": "OWL-Time provides a vocabulary for temporal entities, instants, intervals, and temporal relations. It can describe temporal context relevant to reconstruction, but does not model DIO's failure superclass for identity reconstruction across time.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1172333",
+          "role": "adjacent-process",
+          "checkedOn": "2026-10-16",
+          "note": "Data synchronization is an adjacent technical process for keeping states aligned across systems. It can help explain some temporal misalignment cases, but is not equivalent to the DIO failure class.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; this does not establish concept equivalence or a SKOS mapping."
         }
       ]
     },
