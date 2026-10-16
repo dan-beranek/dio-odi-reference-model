@@ -444,6 +444,22 @@
               "note": "Wikidata label, description and subclass/related statements checked."
             }
           ]
+        },
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q141646085",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:relatedMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Wikidata's GFO concept 'Persistant' addresses identity over time: different temporal presentations may have different properties yet remain the same. This is a closer theoretical neighbor to DIO Referential Continuity than identity-as-self-relation, but it belongs to a specific formal ontology and is not equivalent to DIO's operational referential criterion.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q141646085",
+              "role": "formal-ontology-neighbor",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata description and scope note checked; the GFO notion explicitly addresses identity over time under changing properties. Treat as a bounded theoretical relation, not equivalence."
+            }
+          ]
         }
       ],
       "auditNote": "Seed candidate only; not an approved mapping.",
