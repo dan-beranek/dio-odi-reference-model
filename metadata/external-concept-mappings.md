@@ -5,15 +5,17 @@ This registry records candidate and reviewed semantic mappings from the canonica
 
 ## Current state
 - Registry version: 0.1.0
-- State: initial inventory; audit incomplete
+- State: audit in progress; initial semantic checks completed for a subset of candidates
 - Source vocabulary: `vocabulary/dio-odi-skos.ttl`
 - Source blob at inventory time: `f7c33af7a9977b40c787daf5ab0328c1590b1ffe`
 - Vocabulary version: 0.1.0
 - Concepts inventoried: 39
-- Candidate mappings seeded for review: 6
+- Initial DBpedia candidates retained: 6 (unverified)
+- Additional Wikidata candidates added after checking item descriptions: 4
+- Rejected candidate mappings recorded: 1
 - Approved mappings: 0
 
-The six initial candidates were suggested in a prior analysis. Their target URIs and semantic relations are unverified. They must not be consumed as approved mappings.
+The six initial DBpedia candidates were suggested in a prior analysis. Their target URIs and semantic relations remain unverified. Additional Wikidata candidates have been checked for their item descriptions and recorded with explicit evidence, but remain candidates unless rejected. No mapping has been approved for publication.
 
 ## Source systems
 - **Wikidata:** map to a specific item URI (QID) only after checking the item's label, description, statements, and semantic scope.
@@ -65,3 +67,13 @@ These are not endorsements. Merge Failure and Split Failure should be assessed s
 6. Validate the registry against the JSON Schema.
 7. Generate a mapped Turtle distribution only after the audit has produced approved mappings.
 8. Preserve the canonical vocabulary unchanged unless a separately justified vocabulary change is required.
+
+
+## Initial evidence-based findings (2026-10-16)
+
+- **Record linkage — Wikidata Q1266546:** its description concerns joining records/entities across datasets and lists entity resolution as an alias. This is adjacent to the historical DIO term *Entity Resolution Anomaly*, but it does not define the anomaly itself. A tentative `skos:relatedMatch` candidate is recorded, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q1266546)
+- **False positives and false negatives — Wikidata Q18207010:** the item concerns data-reporting errors and is placed under type I/type II errors and binary classification. It is not equivalent to DIO Merge Failure or Split Failure. Separate weak `skos:relatedMatch` candidates are recorded for review, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q18207010)
+- **Identity — Wikidata Q254474:** the item describes the relation each thing bears to itself alone. This is not the same as DIO Referential Continuity across legitimate change. A tentative `skos:relatedMatch` candidate is recorded, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q254474)
+- **Trust — Wikidata Q659974:** the item frames trust as a feeling/certainty and classifies it in terms of emotion and belief. This is a poor fit for the DIO K6 dimension, which explicitly need not imply human psychology. This candidate has been rejected. [Wikidata item](https://www.wikidata.org/wiki/Q659974)
+
+These checks demonstrate why mappings must be based on scope and conceptual role, not label resemblance. The audit is partial; it does not imply that the remaining concepts have no useful external mappings.
