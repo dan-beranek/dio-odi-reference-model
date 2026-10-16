@@ -12,10 +12,10 @@ This registry records candidate and reviewed semantic mappings from the canonica
 - Concepts inventoried: 39
 - Concepts with a first-pass external evidence review: 39 of 39 (not an exhaustive search of every external vocabulary)
 - Evidence records across the registry: 148
-- Mapping records: 14 (13 candidate, 1 rejected, 0 approved)
+- Mapping records: 14 (3 candidate, 11 rejected, 0 approved)
 - Evidence records linking to Wikipedia: 97; Wikidata: 24; DBpedia: 0
 
-The first-pass evidence inventory now covers all 39 concepts. This does not mean every external vocabulary has been exhaustively searched or every evidence note independently validated in full. Evidence includes direct neighbors, methodological context, theoretical analogies, homonyms, and contrastive cases; these records do not themselves imply SKOS mappings. The separate mapping-decision phase remains open: candidates must be approved, rejected, or retained with a clear interoperability rationale.
+The first-pass evidence inventory now covers all 39 concepts. This does not mean every external vocabulary has been exhaustively searched or every evidence note independently validated in full. Evidence includes direct neighbors, methodological context, theoretical analogies, homonyms, and contrastive cases; these records do not themselves imply SKOS mappings. The initial batch review is complete: 3 candidates remain for author review, 11 mappings were rejected, and none was approved. The broader mapping audit remains open for author decisions and further targeted research.
 
 ## Distinguish mapping targets from evidence sources
 - **Wikidata:** a structured mapping target, but only after checking the item's label, description, statements, and scope.
@@ -74,9 +74,14 @@ The initial six DBpedia candidates are retained as unverified suggestions only:
 These are not endorsements. Merge Failure and Split Failure should be assessed separately even though the same external resource was proposed for both.
 
 ## Initial evidence-based findings (2026-10-16)
-- **Record linkage — Wikidata Q1266546:** its description concerns joining records/entities across datasets and lists entity resolution as an alias. This is adjacent to the historical DIO term *Entity Resolution Anomaly*, but it does not define the anomaly itself. A tentative `skos:relatedMatch` candidate is recorded, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q1266546)
-- **False positives and false negatives — Wikidata Q18207010:** the item concerns data-reporting errors and is placed under type I/type II errors and binary classification. It is not equivalent to DIO Merge Failure or Split Failure. Separate weak `skos:relatedMatch` candidates are recorded for review, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q18207010)
-- **Identity — Wikidata Q254474:** the item describes the relation each thing bears to itself alone. This is not the same as DIO Referential Continuity across legitimate change. A tentative `skos:relatedMatch` candidate is recorded, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q254474)
+- **Record linkage — Wikidata Q1266546:** its description concerns joining records/entities across datasets and lists entity resolution as an alias. This is adjacent to the historical DIO term *Entity Resolution Anomaly*, but it does not define the anomaly itself. Rejected as a mapping: record linkage is an adjacent process, not the anomaly/failure concept itself. Keep as contextual evidence only. [Wikidata item](https://www.wikidata.org/wiki/Q1266546)
+- **False positives and false negatives — Wikidata Q18207010:** the item concerns data-reporting errors and is placed under type I/type II errors and binary classification. It is not equivalent to DIO Merge Failure or Split Failure. The proposed mappings were rejected: these binary-classification/reporting errors do not describe referential merge or split failures. Keep as contrastive evidence only. [Wikidata item](https://www.wikidata.org/wiki/Q18207010)
+- **Identity — Wikidata Q254474:** the item describes the relation each thing bears to itself alone. This is not the same as DIO Referential Continuity across legitimate change. The proposed mapping was rejected: identity-as-self-relation is too distant from DIO's operational referential continuity. Keep as contrastive evidence only. [Wikidata item](https://www.wikidata.org/wiki/Q254474)
 - **Trust — Wikidata Q659974:** the item frames trust as a feeling/certainty and classifies it in terms of emotion and belief. This is a poor fit for the DIO K6 dimension, which explicitly need not imply human psychology. This candidate has been rejected. [Wikidata item](https://www.wikidata.org/wiki/Q659974)
 
 The Wikipedia evidence URLs and their roles are listed per concept in the JSON registry. The candidate set has been expanded with entity linking, semiotics, and ontology alignment references. All 17 distinct Wikipedia pages currently referenced in the evidence registry have now been opened and inspected at a high level; all 90 evidence entries reference one of those pages and carry `verified-page`. This confirms page accessibility and broad topical relevance, not exhaustive verification of each concept-to-source claim. Redirects and page titles were checked where surfaced by the page response; alternative language editions have not been audited.
+
+
+## Batch decision (2026-10-16)
+
+The 14 initial mapping records were reviewed. Three remain as candidates: Reconstruction → Wikidata Entity linking Q17012245 (`skos:narrowMatch`); Referential Continuity → GFO Persistant Q141646085 (`skos:relatedMatch`); Semantic Robustness → Wikidata Robustness Q403605 (`skos:broadMatch`). Eleven mappings were rejected, including all six unverified DBpedia suggestions, the generic false-positive/false-negative matches for Merge Failure and Split Failure, the self-relation identity item, and the record-linkage mapping for Entity Resolution Anomaly. None is approved. The rationale is recorded per mapping in `metadata/external-concept-mappings.json`; only approved mappings may be projected into mapped Turtle.
