@@ -21,6 +21,7 @@ A candidate is not approved merely because its target is topically adjacent. `sk
 | Referential Continuity | DBpedia Identity (philosophy) | Philosophical identity is relevant background, but the proposed broader-than relation is not established and the scope differs from temporal continuity under change. | Do not approve as `broadMatch`; contextual evidence is safer than mapping. |
 | Trust Dimension | Wikidata Q659974 — trust | The item describes reliance on another party's honesty and classifies trust under emotion/belief/psychological terminology. DIO's Trust dimension is explicitly context- and task-sensitive and need not imply human psychology. | **Reject** as a mapping candidate; use only as contrastive evidence if needed. |
 | Trust Dimension | DBpedia Trust (social science) | Social-science trust is relevant to the ordinary meaning but risks importing interpersonal/anthropomorphic assumptions into the DIO dimension. Its proposed `broadMatch` direction is not established. | Do not approve. Prefer contextual/contrastive evidence over a SKOS mapping. |
+| Semantic Robustness | Wikidata Q403605 — robustness | Wikidata defines robustness as the ability of an object, system, or property to resist perturbations. DIO Semantic Robustness specifically concerns identity reconstruction under perturbations of the representational environment, so the Wikidata concept plausibly has broader scope. | Retain as **candidate** `skos:broadMatch`; the direction is plausible, but author review is still needed before approval. |
 | Semantic Robustness | DBpedia Robustness (computer science) | A potentially relevant neighboring concept, but the resource has not been validated sufficiently here to determine its precise scope or whether it is broader than the DIO concept. | Keep **candidate** only; verify the DBpedia resource and compare definitions before deciding. |
 
 ## Verified source observations
@@ -29,10 +30,11 @@ A candidate is not approved merely because its target is topically adjacent. `sk
 - Wikidata Q18207010 describes **false positives and false negatives** as test/reporting errors and relates them to Type I/II errors and binary classification: https://www.wikidata.org/wiki/Q18207010
 - Wikidata Q254474 defines philosophical **identity** as the relation each thing bears to itself: https://www.wikidata.org/wiki/Q254474
 - Wikidata Q659974 describes **trust** as reliance on another party's honesty and includes psychological/emotional classifications: https://www.wikidata.org/wiki/Q659974
+- Wikidata Q403605 defines **robustness** as the ability of an object, system, or property to resist perturbations: https://www.wikidata.org/wiki/Q403605
 
 ## Outcome
 
-No candidate is promoted to `approved` in this audit. The best provisional mapping candidate is `EntityResolutionAnomaly skos:relatedMatch Q1266546`, because the neighboring technical concept is directly evidenced and the relation can be stated without claiming equivalence. It should remain a candidate until the vocabulary author confirms that this adjacency is useful for intended machine-readable interoperability.
+No candidate is promoted to `approved` in this audit. There are now two comparatively defensible provisional candidates: `EntityResolutionAnomaly skos:relatedMatch Q1266546`, because record linkage is a directly evidenced neighboring technical process; and `SemanticRobustness skos:broadMatch Q403605`, because general robustness plausibly has broader scope than robustness of identity reconstruction under representational perturbations. Both remain candidates until the vocabulary author confirms that the relation is useful for intended machine-readable interoperability.
 
 The Merge Failure and Split Failure links to false positives/false negatives should not be treated as mappings: their commonality is generic error language, not a sufficiently specific conceptual relation. The trust and philosophical-identity candidates are better handled as contextual/contrastive evidence unless a more precisely scoped external concept is found.
 
