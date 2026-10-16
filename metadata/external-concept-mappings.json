@@ -1,0 +1,407 @@
+{
+  "registryVersion": "0.1.0",
+  "status": "initial-audit-in-progress",
+  "createdFrom": {
+    "repository": "dan-beranek/dio-odi-reference-model",
+    "sourcePath": "vocabulary/dio-odi-skos.ttl",
+    "sourceBlobSha": "f7c33af7a9977b40c787daf5ab0328c1590b1ffe",
+    "vocabularyVersion": "0.1.0",
+    "canonicalNamespace": "https://vocab.danielberanek.cz/dio-odi/#",
+    "inventoryConceptCount": 39
+  },
+  "purpose": "Audit registry for candidate mappings from DIO/ODI Reference Vocabulary concepts to external concept identifiers. It is deliberately separate from the canonical vocabulary.",
+  "policy": {
+    "approvedOnlyInMappedTurtle": true,
+    "allowedRelations": [
+      "skos:closeMatch",
+      "skos:broadMatch",
+      "skos:narrowMatch",
+      "skos:relatedMatch"
+    ],
+    "disallowedRoutineRelations": [
+      "skos:exactMatch",
+      "owl:sameAs"
+    ],
+    "mappingDirectionNote": "For sourceConcept skos:broadMatch targetConcept, the target concept is broader than the source concept. For sourceConcept skos:narrowMatch targetConcept, the target concept is narrower than the source concept.",
+    "noMatchIsValidOutcome": true,
+    "wikipediaRole": "Supporting evidence and contextual verification; not treated as an equivalent structured mapping target by default.",
+    "externalSystems": [
+      "Wikidata",
+      "DBpedia"
+    ]
+  },
+  "concepts": [
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIO",
+      "sourceConceptId": "DIO",
+      "sourceLabel": "Digital Identity Optimization",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ODI",
+      "sourceConceptId": "ODI",
+      "sourceLabel": "Ontology of Digital Identity",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#MVDIO",
+      "sourceConceptId": "MVDIO",
+      "sourceLabel": "Minimum Viable Digital Identity Optimization",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticField",
+      "sourceConceptId": "SemanticField",
+      "sourceLabel": "Semantic Field",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#K6",
+      "sourceConceptId": "K6",
+      "sourceLabel": "K6 Semantic Connectome",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityDimension",
+      "sourceConceptId": "EntityDimension",
+      "sourceLabel": "Entity",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#RepresentationDimension",
+      "sourceConceptId": "RepresentationDimension",
+      "sourceLabel": "Representation",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#InterpretationDimension",
+      "sourceConceptId": "InterpretationDimension",
+      "sourceLabel": "Interpretation",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TrustDimension",
+      "sourceConceptId": "TrustDimension",
+      "sourceLabel": "Trust",
+      "reviewStatus": "in-review",
+      "mappings": [
+        {
+          "targetUri": "http://dbpedia.org/resource/Trust_(social_science)",
+          "sourceSystem": "DBpedia",
+          "mappingRelation": "skos:broadMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "unverified",
+          "rationale": "Unverified initial candidate proposed by Claude; social-science trust may not fit the task-sensitive, non-anthropomorphic DIO dimension",
+          "evidence": []
+        }
+      ],
+      "auditNote": "Seed candidate only; not an approved mapping."
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#RelationshipDimension",
+      "sourceConceptId": "RelationshipDimension",
+      "sourceLabel": "Relationship",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionDimension",
+      "sourceConceptId": "ReconstructionDimension",
+      "sourceLabel": "Reconstruction",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReferentialContinuity",
+      "sourceConceptId": "ReferentialContinuity",
+      "sourceLabel": "Referential Continuity",
+      "reviewStatus": "in-review",
+      "mappings": [
+        {
+          "targetUri": "http://dbpedia.org/resource/Identity_(philosophy)",
+          "sourceSystem": "DBpedia",
+          "mappingRelation": "skos:broadMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "unverified",
+          "rationale": "Unverified initial candidate proposed by Claude; philosophical identity may be adjacent but is not demonstrated to be broader than DIO referential continuity",
+          "evidence": []
+        }
+      ],
+      "auditNote": "Seed candidate only; not an approved mapping."
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DistributedRepresentationalState",
+      "sourceConceptId": "DistributedRepresentationalState",
+      "sourceLabel": "Distributed Digital Representational State",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#Observer",
+      "sourceConceptId": "Observer",
+      "sourceLabel": "Observer",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ObservationDomain",
+      "sourceConceptId": "ObservationDomain",
+      "sourceLabel": "Observation Domain",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionMechanism",
+      "sourceConceptId": "ReconstructionMechanism",
+      "sourceLabel": "Reconstruction Mechanism",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIOProblem",
+      "sourceConceptId": "DIOProblem",
+      "sourceLabel": "DIO Problem",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIOIntervention",
+      "sourceConceptId": "DIOIntervention",
+      "sourceLabel": "DIO Intervention",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraint",
+      "sourceConceptId": "IdentityPreservingConstraint",
+      "sourceLabel": "Identity-Preserving Constraint",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EssentialVector",
+      "sourceConceptId": "EssentialVector",
+      "sourceLabel": "Essential Vector",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingVariation",
+      "sourceConceptId": "IdentityPreservingVariation",
+      "sourceLabel": "Identity-Preserving Variation",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionFailureMode",
+      "sourceConceptId": "ReconstructionFailureMode",
+      "sourceLabel": "Reconstruction Failure Mode",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReferentialReconstructionFailure",
+      "sourceConceptId": "ReferentialReconstructionFailure",
+      "sourceLabel": "Referential Reconstruction Failure",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution",
+      "sourceConceptId": "EntitySubstitution",
+      "sourceLabel": "Entity Substitution",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#MergeFailure",
+      "sourceConceptId": "MergeFailure",
+      "sourceLabel": "Merge Failure",
+      "reviewStatus": "in-review",
+      "mappings": [
+        {
+          "targetUri": "http://dbpedia.org/resource/False_positives_and_false_negatives",
+          "sourceSystem": "DBpedia",
+          "mappingRelation": "skos:broadMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "unverified",
+          "rationale": "Unverified initial candidate proposed by Claude; target may describe error categories rather than a broader concept; scope requires verification",
+          "evidence": []
+        }
+      ],
+      "auditNote": "Seed candidate only; not an approved mapping."
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure",
+      "sourceConceptId": "SplitFailure",
+      "sourceLabel": "Split Failure",
+      "reviewStatus": "in-review",
+      "mappings": [
+        {
+          "targetUri": "http://dbpedia.org/resource/False_positives_and_false_negatives",
+          "sourceSystem": "DBpedia",
+          "mappingRelation": "skos:broadMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "unverified",
+          "rationale": "Unverified initial candidate proposed by Claude; target may describe error categories rather than a broader concept; scope requires verification",
+          "evidence": []
+        }
+      ],
+      "auditNote": "Seed candidate only; not an approved mapping."
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityOmission",
+      "sourceConceptId": "EntityOmission",
+      "sourceLabel": "Entity Omission",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticCoherenceFailure",
+      "sourceConceptId": "SemanticCoherenceFailure",
+      "sourceLabel": "Semantic Coherence Failure",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation",
+      "sourceConceptId": "SemanticFragmentation",
+      "sourceLabel": "Semantic Fragmentation",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalReconstructionFailure",
+      "sourceConceptId": "TemporalReconstructionFailure",
+      "sourceLabel": "Temporal Reconstruction Failure",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalDiscontinuity",
+      "sourceConceptId": "TemporalDiscontinuity",
+      "sourceLabel": "Temporal Discontinuity",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalMisalignment",
+      "sourceConceptId": "TemporalMisalignment",
+      "sourceLabel": "Temporal Misalignment",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ContextualAdequacyFailure",
+      "sourceConceptId": "ContextualAdequacyFailure",
+      "sourceLabel": "Contextual Adequacy Failure",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement",
+      "sourceConceptId": "ContextualDisplacement",
+      "sourceLabel": "Contextual Displacement",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityCollapse",
+      "sourceConceptId": "IdentityCollapse",
+      "sourceLabel": "Identity Collapse",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability",
+      "sourceConceptId": "SemanticVulnerability",
+      "sourceLabel": "Semantic Vulnerability",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticRobustness",
+      "sourceConceptId": "SemanticRobustness",
+      "sourceLabel": "Semantic Robustness",
+      "reviewStatus": "in-review",
+      "mappings": [
+        {
+          "targetUri": "http://dbpedia.org/resource/Robustness_(computer_science)",
+          "sourceSystem": "DBpedia",
+          "mappingRelation": "skos:broadMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "unverified",
+          "rationale": "Unverified initial candidate proposed by Claude; potential broader computer-science concept; URI and semantic scope require verification",
+          "evidence": []
+        }
+      ],
+      "auditNote": "Seed candidate only; not an approved mapping."
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionCapture",
+      "sourceConceptId": "ReconstructionCapture",
+      "sourceLabel": "Reconstruction Capture",
+      "reviewStatus": "not-reviewed",
+      "mappings": [],
+      "auditNote": ""
+    },
+    {
+      "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityResolutionAnomaly",
+      "sourceConceptId": "EntityResolutionAnomaly",
+      "sourceLabel": "Entity Resolution Anomaly",
+      "reviewStatus": "in-review",
+      "mappings": [
+        {
+          "targetUri": "http://dbpedia.org/resource/Record_linkage",
+          "sourceSystem": "DBpedia",
+          "mappingRelation": "skos:broadMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "unverified",
+          "rationale": "Unverified initial candidate proposed by Claude; historical grouping label; topical proximity to record linkage does not establish a broader-match relation",
+          "evidence": []
+        }
+      ],
+      "auditNote": "Seed candidate only; not an approved mapping."
+    }
+  ]
+}
