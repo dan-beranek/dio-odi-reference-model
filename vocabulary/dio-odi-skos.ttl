@@ -8,8 +8,7 @@ dio:ReferenceVocabulary a skos:ConceptScheme ;
   dcterms:creator "Daniel Beránek" ;
   dcterms:description "SKOS reference vocabulary derived from the DIO/ODI corpus."@en ;
   skos:hasTopConcept dio:ReconstructionFailureMode ;
-  dcterms:modified "2026-10-17"^^xsd:date ;
-  dcterms:hasVersion "0.1.1" .
+  dcterms:modified "2026-10-10"^^xsd:date .
 
 dio:DIO a skos:Concept ;
   skos:inScheme dio:ReferenceVocabulary ;
@@ -255,19 +254,3 @@ dio:EntityResolutionAnomaly a skos:Concept ;
   skos:historyNote "Historical grouping introduced in The Crisis of Entity Resolution in Heterogeneous AI Environments. Later work differentiates concepts previously grouped together into distinct analytical levels; this vocabulary therefore does not use Entity Resolution Anomaly as the current parent category for the revised concepts."@en ;
   dcterms:source <https://doi.org/10.5281/zenodo.22257504>, <https://doi.org/10.5281/zenodo.23269323> .
 
-
-# Established external terminology; included for reference, not as DIO-specific constructs.
-dio:KnowledgeGraph a skos:Concept ;
-  skos:inScheme dio:ReferenceVocabulary ;
-  skos:prefLabel "Knowledge Graph"@en ;
-  skos:altLabel "KG"@en ;
-  skos:definition "A graph-structured representation of knowledge in which nodes represent entities or concepts and edges represent semantic relationships between them."@en ;
-  skos:scopeNote "Established external terminology included for contextual reference only. It is not defined here as a DIO-specific construct and is not placed in the Reconstruction Failure Mode hierarchy."@en ;
-  dcterms:source <https://doi.org/10.18653/v1/2022.aacl-main.46> .
-
-dio:EntityLinking a skos:Concept ;
-  skos:inScheme dio:ReferenceVocabulary ;
-  skos:prefLabel "Entity Linking"@en ;
-  skos:definition "A task that associates entity mentions in text with corresponding entities or unambiguous identifiers in a knowledge base or knowledge graph."@en ;
-  skos:scopeNote "Established external terminology included for contextual reference only. It is not defined here as a DIO-specific construct and is not placed in the Reconstruction Failure Mode hierarchy. Do not conflate Entity Linking with Entity Resolution."@en ;
-  dcterms:source <https://doi.org/10.18653/v1/D19-1066>, <https://doi.org/10.18653/v1/2022.aacl-main.46> .
