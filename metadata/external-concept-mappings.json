@@ -35,7 +35,13 @@
       "DBpedia",
       "primary-literature"
     ],
-    "evidenceRecordingRule": "Concept-level evidence may be recorded without asserting a SKOS mapping. Evidence links support interpretation and candidate discovery; they do not themselves establish mappingRelation."
+    "evidenceRecordingRule": "Concept-level evidence may be recorded without asserting a SKOS mapping. Evidence links support interpretation and candidate discovery; they do not themselves establish mappingRelation.",
+    "registryPurpose": {
+      "practicalInteroperability": "Support machine-readable cross-scheme concept discovery where a defensible semantic mapping relation and, for hierarchical properties, direction can be established.",
+      "theoreticalCrosswalk": "Also record useful theoretical neighbors across disciplines and ontological frameworks, but keep them as qualified concept-level evidence unless a SKOS mapping relation itself is justified.",
+      "separationRule": "Theoretical relevance and source verification do not automatically justify or approve a SKOS mapping. Only mapping-level status approved may be projected into mapped Turtle.",
+      "currentCandidateDisposition": "Referential Continuity to GFO Persistant and Semantic Robustness to Wikidata Robustness remain candidates pending explicit author approval."
+    }
   },
   "concepts": [
     {
