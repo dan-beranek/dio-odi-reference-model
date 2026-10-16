@@ -488,15 +488,15 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionDimension",
       "sourceConceptId": "ReconstructionDimension",
       "sourceLabel": "Reconstruction",
-      "reviewStatus": "reviewed-with-candidates",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [
         {
           "targetUri": "https://www.wikidata.org/wiki/Q17012245",
           "sourceSystem": "Wikidata",
           "mappingRelation": "skos:narrowMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Retain as a candidate narrowMatch. Entity linking is a bounded mention-to-entity task that is narrower than DIO's reconstruction dimension, but the mapping remains provisional and is not an equivalence claim.",
+          "rationale": "Rejected after deeper review: entity linking is a bounded NLP task that maps textual mentions to knowledge-base entities, whereas DIO Reconstruction is a K6 analytical dimension describing identity reconstruction across distributed representations, time, context, and observer mechanisms. This is a methodological neighbor, not demonstrably a narrower concept within the same semantic hierarchy. Wikidata also lists 'entity resolution' as an alias for entity linking, which risks conflating the task with DIO's historical Entity Resolution Anomaly grouping. Keep as contextual evidence, not a SKOS mapping.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q17012245",
