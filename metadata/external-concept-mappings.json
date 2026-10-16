@@ -595,7 +595,7 @@
       "sourceLabel": "Observer",
       "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "A potentially useful formal-ontology neighbor exists in the Industrial Ontology Foundry's Observer class and ObserverRole. The DIO concept is composite (observer plus processing/reconstruction mechanism), so do not map yet; assess whether a narrow mapping would add interoperability or merely import an industrial agent model.",
+      "auditNote": "Keep Observer as the intentionally broad DIO concept: a human or machine observer together with its representation-reading/processing mechanism. Communication theory provides a useful narrower human-recipient neighborhood (receiver, audience, target audience), but none is a mapping for the whole DIO concept. Consider a separate human-specific sub-concept only if the model needs to distinguish a human interpreter/recipient from machine and legacy technological observers; do not add it to the canonical vocabulary implicitly during this external mapping audit.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -636,6 +636,54 @@
           "checkedOn": "2026-10-16",
           "verificationStatus": "verified-page",
           "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1339255",
+          "role": "communication-theory-neighbor",
+          "checkedOn": "2026-10-16",
+          "note": "Wikidata describes receiver as the receiving end of a communication channel in information theory. This is a useful process-role analogue for a human recipient, but it is not human-specific and does not cover DIO's composite observer plus processing/reconstruction mechanism.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Wikidata item opened and description/statements inspected on 2026-10-16; relevance is conceptual, not a mapping claim."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q2604680",
+          "role": "communication-theory-neighbor",
+          "checkedOn": "2026-10-16",
+          "note": "Target audience is defined as the intended or ideal recipient of a message or artistic expression and is associated with a group of humans. This is useful for a narrower human-facing recipient/audience sub-concept, but it assumes communicative intent and often a group, unlike DIO's observer, which may be a machine system that reconstructs identity without being an intended audience.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Wikidata item opened and description/statements inspected on 2026-10-16; relevance is conceptual, not a mapping claim."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q211198",
+          "role": "communication-theory-neighbor",
+          "checkedOn": "2026-10-16",
+          "note": "Audience is described as a group of people encountering a performance or work. Useful for the human public/audience aspect, but too group- and media-oriented to represent an individual human observer or the DIO superordinate concept.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Wikidata item description inspected on 2026-10-16; relevance is conceptual, not a mapping claim."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Source%E2%80%93message%E2%80%93channel%E2%80%93receiver_model_of_communication",
+          "role": "communication-theory-context",
+          "checkedOn": "2026-10-16",
+          "note": "The SMCR model explicitly separates source, message, channel, and receiver; the receiver decodes a message and may be a person or group. It provides a strong theoretical neighbor for a human recipient role, but DIO Observer is not merely a receiver in a linear communication event and also includes non-human reconstruction systems.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Wikipedia article opened and core model description inspected on 2026-10-16; contextual evidence only."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Audience_reception",
+          "role": "communication-theory-context",
+          "checkedOn": "2026-10-16",
+          "note": "Audience reception theory emphasizes active interpretation and potentially divergent readings of media messages. This is relevant to the human interpretation side of DIO, but its audience/media frame cannot represent machine observers or DIO's full reconstruction mechanism.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Wikipedia article opened and overview inspected on 2026-10-16; contextual evidence only."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Lasswell%27s_model_of_communication",
+          "role": "communication-theory-context",
+          "checkedOn": "2026-10-16",
+          "note": "Lasswell's 'to whom' dimension identifies the recipient/audience side of communication. Useful terminology for human-directed message reception, but not a direct model of DIO's cross-system observer.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Wikipedia article inspected on 2026-10-16; contextual evidence only."
         }
       ]
     },
