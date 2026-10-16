@@ -175,3 +175,36 @@ The following remaining concepts were reviewed for external mapping candidates. 
 - **Temporal Reconstruction Failure:** OWL-Time provides temporal modeling primitives, and data synchronization is an adjacent process; neither represents the DIO failure superclass spanning temporal discontinuity and temporal misalignment. [OWL-Time](https://www.w3.org/TR/owl-time/) · [Data synchronization](https://www.wikidata.org/wiki/Q1172333)
 
 These findings complete the first-pass evidence inventory for the remaining `not-reviewed` concepts in the current 39-concept vocabulary. They do not mean that every possible external vocabulary has been exhaustively searched. The next efficient step is to review the 14 existing mapping records as a batch and decide approve/reject/retain-as-candidate, rather than continue adding distant sources indefinitely.
+
+
+## Batch review of initial mapping candidates (2026-10-16)
+
+Reviewed the 14 mapping records against target scope, relation direction, URI verification, and likely interoperability value. No mapping was approved.
+
+| DIO/ODI concept | External target | Decision | Reason |
+|---|---|---|---|
+| Trust | DBpedia Trust (social science) | Rejected | URI/scope not independently verified; proposed broadMatch direction unsupported; social-science framing risks anthropomorphic narrowing. |
+| Trust | Wikidata Q659974 | Rejected | Psychological framing does not match DIO's task-sensitive, non-anthropomorphic dimension. |
+| Reconstruction | Wikidata Entity linking Q17012245 | Retain candidate: narrowMatch | Bounded mention-to-entity task is plausibly narrower than DIO reconstruction; not equivalent. |
+| Referential Continuity | DBpedia Identity (philosophy) | Rejected | URI/scope unverified; broader-match direction not established. |
+| Referential Continuity | Wikidata identity Q254474 | Rejected | Identity-as-self-relation is too distant from operational continuity through legitimate change. |
+| Referential Continuity | Wikidata GFO Persistant Q141646085 | Retain candidate: relatedMatch | Explicit formal-ontology treatment of identity over time despite changing properties; still differs from DIO's operational criterion. |
+| Merge Failure | DBpedia False positives and false negatives | Rejected | URI unverified; generic error categories do not establish a broader concept for referential merge failure. |
+| Split Failure | DBpedia False positives and false negatives | Rejected | URI unverified; generic error categories do not establish a broader concept for referential split failure. |
+| Merge Failure | Wikidata Q18207010 | Rejected | Binary classification/reporting errors do not describe multiple referents being collapsed. |
+| Split Failure | Wikidata Q18207010 | Rejected | Binary classification/reporting errors do not describe one referent being reconstructed as multiple identities. |
+| Semantic Robustness | DBpedia Robustness (computer science) | Rejected | URI/scope not independently verified; label alone does not establish broader-match direction. |
+| Semantic Robustness | Wikidata Robustness Q403605 | Retain candidate: broadMatch | General resistance to perturbation is plausibly broader, but the item has mixed philosophical/system-characteristic scope and needs author review. |
+| Entity Resolution Anomaly | DBpedia Record linkage | Rejected | URI unverified; record linkage is a process/method, not a broader anomaly concept. |
+| Entity Resolution Anomaly | Wikidata Record linkage Q1266546 | Rejected | Adjacent resolution process, not the anomaly/failure concept itself; association alone is insufficient for a cross-scheme mapping. |
+
+### Result
+
+- 14 mapping records reviewed.
+- 3 retained as candidates: Entity linking for Reconstruction; GFO Persistant for Referential Continuity; Robustness for Semantic Robustness.
+- 11 rejected; 0 approved.
+- No canonical DIO/ODI concepts were added or altered.
+- The six initial DBpedia suggestions were rejected as mappings because URI/scope verification and relation direction were not established. This does not erase the contextual evidence or claim that the topics are unrelated.
+- Candidate mappings remain outside any derived mapped Turtle until explicit approval.
+
+The decisions follow the SKOS mapping model: broad/narrow matches assert hierarchy, while relatedMatch asserts a meaningful associative mapping between concepts in different schemes; it is not a general-purpose “these topics are connected” link. See [SKOS Reference, Mapping Properties](https://www.w3.org/TR/skos-reference/#mapping).
