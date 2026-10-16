@@ -67,7 +67,9 @@
         "mappingDirectionNote",
         "noMatchIsValidOutcome",
         "wikipediaRole",
-        "externalSystems"
+        "mappingTargetSystems",
+        "evidenceSources",
+        "evidenceRecordingRule"
       ],
       "properties": {
         "approvedOnlyInMappedTurtle": {
@@ -101,12 +103,22 @@
         "wikipediaRole": {
           "type": "string"
         },
-        "externalSystems": {
+        "mappingTargetSystems": {
           "type": "array",
           "items": {
             "type": "string"
           },
           "uniqueItems": true
+        },
+        "evidenceSources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "evidenceRecordingRule": {
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -222,6 +234,33 @@
           },
           "auditNote": {
             "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "uri",
+                "role"
+              ],
+              "properties": {
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "checkedOn": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
           }
         },
         "additionalProperties": false
