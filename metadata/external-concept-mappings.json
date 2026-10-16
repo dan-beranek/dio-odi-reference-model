@@ -392,7 +392,7 @@
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
-          "note": "Name resolution is one narrow reconstruction-related task: resolving textual mentions to referents.",
+          "note": "Name resolution resolves textual expressions to referents, illustrating one narrow computational reconstruction task; it does not cover DIO's distributed, temporal, or cross-system reconstruction scope.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -401,14 +401,6 @@
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Record linkage reconciles records that may describe the same entity across sources; it is a narrower reconstruction task.",
-          "verificationStatus": "verified-page",
-          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
-        },
-        {
-          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
-          "role": "adjacent-method",
-          "checkedOn": "2026-10-16",
-          "note": "Name resolution assigns textual mentions to referents, an instance of referential reconstruction at a narrower NLP scale.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -520,7 +512,7 @@
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "processing-context",
           "checkedOn": "2026-10-16",
-          "note": "The article offers a narrow software-processing example of resolving references; it does not define the DIO observer.",
+          "note": "Name-resolution software is an example of a computational process that selects referents from context. It is relevant only to distinguish a machine-side processing agent from DIO's broader observer concept; the article does not define an observer.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -692,7 +684,7 @@
           "uri": "https://en.wikipedia.org/wiki/Meaning_(semiotics)",
           "role": "contrastive-context",
           "checkedOn": "2026-10-16",
-          "note": "Relational theories of meaning caution against treating a sign's meaning as an isolated surface label; this is relevant background for identity-preserving constraints, but does not define DIO's essential vector.",
+          "note": "Relational accounts of meaning caution against reducing interpretation to a surface label. This is background for why an identity-preserving core cannot be inferred from wording alone; it does not define DIO's Essential Vector.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
@@ -936,7 +928,7 @@
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "contrastive-structure",
           "checkedOn": "2026-10-16",
-          "note": "Linked data shows how explicit links can connect distributed descriptions; this offers a structural contrast for cases where semantic relations fail to cohere.",
+          "note": "Linked data makes links among resources explicit, but explicit links alone do not guarantee that distributed descriptions cohere into a consistent reconstructed identity. This is a contrastive boundary case, not a definition of semantic coherence failure.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -978,7 +970,7 @@
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "contrastive-structure",
           "checkedOn": "2026-10-16",
-          "note": "Interlinking resources across datasets is a useful contrast to fragmentation among representations; linked data does not guarantee coherent identity reconstruction.",
+          "note": "Linked data offers a contrast: resources can be explicitly interlinked while their descriptions may still remain semantically fragmented or inconsistent. The technology itself does not guarantee integrated identity reconstruction.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -1048,7 +1040,7 @@
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
           "role": "temporal-context",
           "checkedOn": "2026-10-16",
-          "note": "The article describes identifiers and changing state data; this is adjacent context for temporal mismatch, not a direct match.",
+          "note": "The broad digital-identity topic provides background for identifiers and identity data that may change over time, but the article is not evidence of temporal misalignment as a defined failure mode. Retain as contextual background only.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
@@ -1066,15 +1058,7 @@
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "contextual-interpretation",
           "checkedOn": "2026-10-16",
-          "note": "The article's context-dependent resolution examples are relevant to contextual adequacy, but the DIO concept is broader.",
-          "verificationStatus": "verified-page",
-          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
-        },
-        {
-          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
-          "role": "context-sensitive-resolution",
-          "checkedOn": "2026-10-16",
-          "note": "The article's examples show that identifying a referent depends on context; DIO contextual adequacy is broader than name resolution.",
+          "note": "Context-sensitive name resolution illustrates that a referent may be identified using surrounding context; this is a narrow NLP example, whereas DIO contextual adequacy concerns the sufficiency of context for reconstructing identity across traces.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -1100,15 +1084,7 @@
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "contextual-interpretation",
           "checkedOn": "2026-10-16",
-          "note": "Context changing which referent a name denotes is an adjacent illustration of contextual displacement, not an equivalent definition.",
-          "verificationStatus": "verified-page",
-          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
-        },
-        {
-          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
-          "role": "context-sensitive-resolution",
-          "checkedOn": "2026-10-16",
-          "note": "The same name can refer to different entities in different contexts, a narrow example of context changing the appropriate referential interpretation.",
+          "note": "Name resolution illustrates how context can change which referent is selected for an ambiguous expression. This is an example of context-dependent reference, not by itself a DIO displacement failure; displacement requires an inappropriate shift in the reconstructed referent or identity.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -1134,7 +1110,7 @@
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
           "role": "contrastive-context",
           "checkedOn": "2026-10-16",
-          "note": "The article provides broad context for digital identity, while DIO Identity Collapse remains a distinct phenomenon-level concept.",
+          "note": "The general digital-identity topic establishes the broad domain; it does not describe DIO's Identity Collapse phenomenon. Retain only as a domain-boundary contrast, not as evidence that the failure mode is independently recognized.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
@@ -1206,7 +1182,7 @@
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
           "role": "adjacent-method-context",
           "checkedOn": "2026-10-16",
-          "note": "Record-linkage workflows provide a distant example of how selected data and matching procedures can shape a resulting identity decision; no direct match is asserted.",
+          "note": "Record-linkage procedures select records and apply matching criteria, so they can illustrate how input selection and matching rules constrain a particular identity decision. This is a limited process-level analogy, not evidence for DIO Reconstruction Capture as a general phenomenon.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
@@ -1214,7 +1190,7 @@
           "uri": "https://en.wikipedia.org/wiki/JSON-LD",
           "role": "representation-priority-context",
           "checkedOn": "2026-10-16",
-          "note": "JSON-LD contexts determine how terms in a document map to semantic identifiers; this illustrates how a limited representational layer can strongly shape machine interpretation, not reconstruction capture as a whole.",
+          "note": "A JSON-LD context maps terms to identifiers and can therefore affect how a processor interprets a document. This is a narrow example of representational choices shaping machine interpretation, not evidence for the full DIO Reconstruction Capture concept.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
