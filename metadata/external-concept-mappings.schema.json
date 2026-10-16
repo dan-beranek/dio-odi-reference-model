@@ -268,6 +268,10 @@
                     "inaccessible"
                   ],
                   "description": "Source verification state. verified-in-search-result means the current search result exposed page content; it is not a full page-by-page audit."
+                },
+                "verificationNote": {
+                  "type": "string",
+                  "description": "Brief scope/limitations note for the recorded verification state."
                 }
               },
               "additionalProperties": false
