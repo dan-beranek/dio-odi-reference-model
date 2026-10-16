@@ -79,6 +79,18 @@
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The article describes concepts, attributes and relations in ontologies; useful structural context, not equivalence."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "technical-context",
+          "checkedOn": "2026-10-16",
+          "note": "Linked data demonstrates publication and interlinking of machine-readable resources; useful infrastructure context, not an ontology of digital identity itself."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/UMBEL",
+          "role": "mapping-architecture-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "UMBEL is an example of an upper mapping layer connecting concepts across sources. It is a methodological precedent for cross-source mapping, not a theoretical equivalent of ODI."
         }
       ]
     },
@@ -95,6 +107,12 @@
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The discussion of concepts and relations offers a distant structural analogy for a minimum analytical model, not a mapping."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/UMBEL",
+          "role": "methodological-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "UMBEL illustrates how a relatively compact upper layer can support mappings across disparate vocabularies; this is an architectural analogy, not a direct match."
         }
       ]
     },
@@ -111,6 +129,12 @@
           "role": "conceptual-context",
           "checkedOn": "2026-10-16",
           "note": "An ontology's domain of discourse is a distant modeling analogue for a semantic field; the concepts are not equivalent."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "structural-context",
+          "checkedOn": "2026-10-16",
+          "note": "Linked data emphasizes relations among identified resources; this helps situate the web of semantic relations around a field, but a semantic field is not the same thing as linked data."
         }
       ]
     },
@@ -127,6 +151,12 @@
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The article's treatment of concepts, attributes and relations is a broad structural analogy for distinguishing dimensions and their relations."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/UMBEL",
+          "role": "mapping-architecture-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "UMBEL's upper-layer mapping approach is a distant architectural analogy for connecting heterogeneous concepts; it does not validate K6's six dimensions."
         }
       ]
     },
@@ -159,6 +189,12 @@
           "role": "adjacent-concept",
           "checkedOn": "2026-10-16",
           "note": "Digital identity representations and identifiers are relevant instances of representation, but do not exhaust the DIO dimension."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "representation-infrastructure",
+          "checkedOn": "2026-10-16",
+          "note": "Linked data uses URIs and machine-readable structured descriptions to represent and interlink resources, a technical example within the broader representation dimension."
         }
       ]
     },
@@ -233,6 +269,12 @@
           "role": "formal-relation-model",
           "checkedOn": "2026-10-16",
           "note": "FOAF is a machine-readable vocabulary for describing relations between people and objects; an adjacent example of formalized relations, not a definition of DIO Relationship."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "formal-relational-context",
+          "checkedOn": "2026-10-16",
+          "note": "Linked data explicitly connects resources through named relations, offering a technical example of formalized relationships; DIO Relationship is broader and observer-sensitive."
         }
       ]
     },
@@ -249,6 +291,18 @@
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
           "note": "Name resolution is one narrow reconstruction-related task: resolving textual mentions to referents."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage reconciles records that may describe the same entity across sources; it is a narrower reconstruction task."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Name resolution assigns textual mentions to referents, an instance of referential reconstruction at a narrower NLP scale."
         }
       ]
     },
@@ -307,6 +361,18 @@
           "role": "contextual-concept",
           "checkedOn": "2026-10-16",
           "note": "The article describes distributed identifiers and digital-object metadata that provide adjacent context for distributed representations."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "direct-adjacent-context",
+          "checkedOn": "2026-10-16",
+          "note": "Linked data describes machine-readable resources and links distributed across datasets; it is a useful technical subset of the broader distributed representational state."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/JSON-LD",
+          "role": "serialization-context",
+          "checkedOn": "2026-10-16",
+          "note": "JSON-LD shows how JSON documents can carry linked-data semantics through an explicit context; it is one serialization mechanism, not the distributed state itself."
         }
       ]
     },
@@ -355,6 +421,18 @@
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Record linkage provides a concrete identity-reconciliation mechanism across data sources, narrower than DIO reconstruction."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "technical-mechanism",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage is a concrete mechanism for matching records across data sources; it does not cover all human and machine reconstruction mechanisms in DIO."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/JSON-LD",
+          "role": "machine-readable-representation",
+          "checkedOn": "2026-10-16",
+          "note": "JSON-LD enables structured, linked representations that downstream processors can interpret; it concerns representation infrastructure rather than reconstruction as a whole."
         }
       ]
     },
@@ -387,6 +465,12 @@
           "role": "method-context",
           "checkedOn": "2026-10-16",
           "note": "Record-linkage procedures are examples of interventions on reconciliation processes, not DIO interventions as a whole."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "intervention-context",
+          "checkedOn": "2026-10-16",
+          "note": "Publishing and interlinking structured resources can change the evidence available to observers; this is one possible technical intervention context, not a definition of DIO intervention."
         }
       ]
     },
@@ -403,6 +487,12 @@
           "role": "philosophical-context",
           "checkedOn": "2026-10-16",
           "note": "Criteria of identity over time are conceptually adjacent to identity-preserving constraints, but the theoretical scopes differ."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "identifier-and-reference-context",
+          "checkedOn": "2026-10-16",
+          "note": "Stable URIs and explicit references help distinguish resources across datasets; this is a technical condition relevant to identity preservation, not a sufficient criterion for it."
         }
       ]
     },
@@ -419,6 +509,12 @@
           "role": "conceptual-analogy",
           "checkedOn": "2026-10-16",
           "note": "Debates about criteria of identity offer a distant analogy for a minimal identity-preserving core; no claim of equivalence is made."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "identifier-and-reference-context",
+          "checkedOn": "2026-10-16",
+          "note": "The role of URIs as identifiers offers a narrow technical example of a potentially identity-preserving constraint; it must not be mistaken for a universal essential vector."
         }
       ]
     },
@@ -451,6 +547,12 @@
           "role": "example-of-failure",
           "checkedOn": "2026-10-16",
           "note": "The article's ambiguous-reference examples illustrate a narrow failure class relevant to referential reconstruction."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "failure-taxonomy-context",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage research discusses matching errors and trade-offs, providing a neighboring technical error context without covering DIO's wider failure taxonomy."
         }
       ]
     },
@@ -467,6 +569,12 @@
           "role": "adjacent-failure-context",
           "checkedOn": "2026-10-16",
           "note": "Record-linkage errors can result in incorrect identity assignments, an adjacent technical failure context rather than equivalence."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "direct-adjacent-failure-context",
+          "checkedOn": "2026-10-16",
+          "note": "The wrong-referent examples provide a concrete adjacent case of referential reconstruction failure at the level of textual mentions."
         }
       ]
     },
@@ -599,6 +707,18 @@
           "role": "structural-context",
           "checkedOn": "2026-10-16",
           "note": "The article describes semantic relations among concepts; this is broad context for coherence, not a direct match."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "contrastive-structure",
+          "checkedOn": "2026-10-16",
+          "note": "Linked data shows how explicit links can connect distributed descriptions; this offers a structural contrast for cases where semantic relations fail to cohere."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/UMBEL",
+          "role": "mapping-context",
+          "checkedOn": "2026-10-16",
+          "note": "UMBEL was designed to relate concepts across disparate sources, a relevant interoperability context for semantic coherence without being equivalent to DIO's failure concept."
         }
       ]
     },
@@ -615,6 +735,18 @@
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The article's emphasis on relations among concepts offers a distant structural contrast for fragmentation among representations."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "contrastive-structure",
+          "checkedOn": "2026-10-16",
+          "note": "Interlinking resources across datasets is a useful contrast to fragmentation among representations; linked data does not guarantee coherent identity reconstruction."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/UMBEL",
+          "role": "mapping-context",
+          "checkedOn": "2026-10-16",
+          "note": "Cross-vocabulary mapping illustrates one approach to reducing conceptual isolation, but not the same phenomenon as DIO semantic fragmentation."
         }
       ]
     },
@@ -679,6 +811,12 @@
           "role": "contextual-interpretation",
           "checkedOn": "2026-10-16",
           "note": "The article's context-dependent resolution examples are relevant to contextual adequacy, but the DIO concept is broader."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "context-sensitive-resolution",
+          "checkedOn": "2026-10-16",
+          "note": "The article's examples show that identifying a referent depends on context; DIO contextual adequacy is broader than name resolution."
         }
       ]
     },
@@ -695,6 +833,12 @@
           "role": "contextual-interpretation",
           "checkedOn": "2026-10-16",
           "note": "Context changing which referent a name denotes is an adjacent illustration of contextual displacement, not an equivalent definition."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "context-sensitive-resolution",
+          "checkedOn": "2026-10-16",
+          "note": "The same name can refer to different entities in different contexts, a narrow example of context changing the appropriate referential interpretation."
         }
       ]
     },
@@ -753,6 +897,12 @@
           "role": "adjacent-concept",
           "checkedOn": "2026-10-16",
           "note": "Computer-science robustness is a useful neighboring concept for resistance to perturbations, but its scope is not identical to semantic robustness in DIO."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "infrastructure-context",
+          "checkedOn": "2026-10-16",
+          "note": "Linked representations can make relations explicit but do not by themselves ensure robustness of identity reconstruction under perturbation; useful as a boundary case."
         }
       ]
     },
@@ -769,6 +919,12 @@
           "role": "adjacent-method-context",
           "checkedOn": "2026-10-16",
           "note": "Record-linkage workflows provide a distant example of how selected data and matching procedures can shape a resulting identity decision; no direct match is asserted."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/JSON-LD",
+          "role": "representation-priority-context",
+          "checkedOn": "2026-10-16",
+          "note": "JSON-LD contexts determine how terms in a document map to semantic identifiers; this illustrates how a limited representational layer can strongly shape machine interpretation, not reconstruction capture as a whole."
         }
       ]
     },
@@ -817,6 +973,12 @@
           "role": "adjacent-concept",
           "checkedOn": "2026-10-16",
           "note": "Name resolution is a narrower NLP analogue involving assigning mentions to referents, not a definition of the DIO concept."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Linked_data",
+          "role": "contrastive-method",
+          "checkedOn": "2026-10-16",
+          "note": "Linked data interlinks identified resources, while record linkage/entity resolution decides whether records refer to the same entity; the distinction helps delimit the historical DIO grouping."
         }
       ]
     }
