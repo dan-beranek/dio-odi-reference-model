@@ -136,3 +136,25 @@ SHACL graph conformance is not semantic identity coherence; linguistic coherence
 
 ### Decision
 No mappings added in this pass. The external sources are useful as formal modeling infrastructure, theoretical neighbors, or contrastive examples, but do not justify SKOS relations at the current level of scope precision.
+
+## Observer: human recipient vs. cross-system observer (2026-10-16)
+
+The canonical DIO concept deliberately defines **Observer** as “a human or machine observer together with the mechanism through which it reads or processes representations.” It must remain broader than a human audience: the DIO observer can be a person, AI system, search engine, knowledge-graph-mediated process, or legacy technology, depending on the observation domain and the reconstruction mechanism.
+
+Communication theory offers a useful adjacent vocabulary for the human-facing case:
+- **Receiver** — Wikidata Q1339255 describes the receiving end of a communication channel in information theory. This is a process role, not a human-only class and not the DIO composite concept. [Wikidata](https://www.wikidata.org/wiki/Q1339255)
+- **Target audience** — Wikidata Q2604680 defines the intended or ideal recipient of a message or artistic expression, usually a group of humans. Useful when intentional address matters; it excludes unintended observers and non-human systems. [Wikidata](https://www.wikidata.org/wiki/Q2604680)
+- **Audience** — Wikidata Q211198 describes a group of people encountering a show or work. Useful for the public/reception side, but too group- and media-oriented to cover an individual observer or the DIO superordinate concept. [Wikidata](https://www.wikidata.org/wiki/Q211198)
+- **SMCR receiver** — Berlo's source–message–channel–receiver model distinguishes source, message, channel, and receiver, with the receiver decoding a message. It is a strong theoretical neighbor for message reception, but not a direct DIO mapping. [Wikipedia](https://en.wikipedia.org/wiki/Source%E2%80%93message%E2%80%93channel%E2%80%93receiver_model_of_communication)
+- **Audience reception** — reception theory emphasizes active interpretation and divergent readings. Relevant to human interpretation, but bounded by its media/audience frame. [Wikipedia](https://en.wikipedia.org/wiki/Audience_reception)
+- **Lasswell's “to whom”** — identifies the recipient/audience dimension of communication, again as a communication-role framework rather than an equivalent to DIO Observer. [Wikipedia](https://en.wikipedia.org/wiki/Lasswell%27s_model_of_communication)
+
+### Design implication
+
+Do **not** map DIO Observer to audience, target audience, or receiver as if these were equivalent. The useful next question is whether the canonical vocabulary needs a distinct subordinate concept such as **Human Observer**, **Human Recipient**, or **Human Interpreter**. These names are not interchangeable:
+- **Human Observer** is broad and fits a person observing/reconstructing an entity, whether or not a message was intentionally addressed to them.
+- **Human Recipient** is best when the relevant role is receiving a message or representation.
+- **Human Interpreter** foregrounds meaning-making and interpretation, but risks narrowing the concept to semiotic/interpretive activity.
+- **Audience** implies a communicative or media setting and often a group; it is likely too narrow as the general human counterpart.
+
+This would be a **vocabulary-design decision**, not an external mapping approval. If added, the new concept should be explicitly narrower than Observer in the DIO hierarchy and retain the general concept's human/machine/technology neutrality. No new canonical concept or SKOS mapping is created by this evidence pass.
