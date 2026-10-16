@@ -5,7 +5,7 @@ Scope: the 90 evidence records in `metadata/external-concept-mappings.json`, cov
 
 ## Purpose and limits
 
-This is a semantic-usefulness review, not a SKOS mapping approval. Evidence may be retained because it offers a direct technical neighbor, a bounded methodological/structural analogy, or an explicit contrast. A source does not become a mapping target merely because it is useful evidence. No `skos:exactMatch` or `owl:sameAs` is implied.
+This is a semantic-usefulness review, not a SKOS mapping approval. A first cleanup pass has since been applied to the evidence registry: three redundant name-resolution records and one duplicate record-linkage record were removed, and several weak notes were made more precise. Evidence may be retained because it offers a direct technical neighbor, a bounded methodological/structural analogy, or an explicit contrast. A source does not become a mapping target merely because it is useful evidence. No `skos:exactMatch` or `owl:sameAs` is implied.
 
 The review is based on the recorded source notes and the high-level page checks. It is not a line-by-line validation of every note against a cited passage. Where the relationship is only analogical, the notes must preserve that boundary.
 
@@ -70,7 +70,7 @@ The review is based on the recorded source notes and the high-level page checks.
 
 ## Recommended next sequence
 
-1. Apply the low-risk duplicate consolidations in the evidence registry, preserving any distinct rationale.
-2. Strengthen or remove the weakest evidence notes identified above.
+1. **Completed first pass:** consolidated four redundant evidence records and clarified notes for contextual adequacy/displacement, temporal misalignment, identity collapse, observer, reconstruction capture, essential vector, semantic coherence, and semantic fragmentation.
+2. Review the remaining distant evidence selectively; preserve it when it contributes a clearly articulated contrast or analogy, rather than deleting it merely for being indirect.
 3. Review each existing Wikidata/DBpedia mapping candidate against the actual target definition and the intended SKOS relation.
 4. Only then consider generating a derived mapped Turtle file from the canonical vocabulary plus approved mappings.
