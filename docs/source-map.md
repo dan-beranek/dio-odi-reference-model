@@ -19,10 +19,3 @@
 | Entity Substitution | Taxonomic Note | Current; DOI 10.5281/zenodo.23269323 |
 | Entity Omission | Taxonomic Note | Current; DOI 10.5281/zenodo.23269323 |
 | Revised hierarchical Reconstruction Failure Modes | Taxonomic Note | Current; DOI 10.5281/zenodo.23269323 |
-| Knowledge Graph (KG) | Schneider et al. (2022), DOI 10.18653/v1/2022.aacl-main.46 | External reference term; no DIO-specific mapping asserted |
-| Entity Linking | Rosales-Méndez et al. (2019), DOI 10.18653/v1/D19-1066 | External reference term; distinct from Entity Resolution; no DIO-specific mapping asserted |
-
-A later source may refine the conceptual role of an earlier term without erasing the earlier publication.
-
-
-Manifest v2 source URL: https://danielberanek.cz/manifesto-of-digital-identity-optimization-dio-and-ontology-of-digital-identity-odi/
