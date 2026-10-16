@@ -51,21 +51,24 @@
           "role": "contextual-concept",
           "checkedOn": "2026-10-16",
           "note": "Digital identity is a broad technical and social context for DIO, not a definition of the optimization discipline.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Record linkage is an adjacent technical problem concerning identity resolution across data sources, narrower than DIO's full scope.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Entity_linking",
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Entity linking is one concrete technical field concerned with matching mentions to entities; it is a narrower neighboring problem within DIO's broader concern with digital-identity reconstruction.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -81,34 +84,41 @@
           "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
           "role": "conceptual-context",
           "checkedOn": "2026-10-16",
-          "note": "Information-science ontology is relevant to ODI as a conceptual and relational modeling practice, but does not define the DIO/ODI theory."
+          "note": "Information-science ontology is relevant to ODI as a conceptual and relational modeling practice, but does not define the DIO/ODI theory.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_components",
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The article describes concepts, attributes and relations in ontologies; useful structural context, not equivalence.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "technical-context",
           "checkedOn": "2026-10-16",
           "note": "Linked data demonstrates publication and interlinking of machine-readable resources; useful infrastructure context, not an ontology of digital identity itself.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/UMBEL",
           "role": "mapping-architecture-analogy",
           "checkedOn": "2026-10-16",
-          "note": "UMBEL is an example of an upper mapping layer connecting concepts across sources. It is a methodological precedent for cross-source mapping, not a theoretical equivalent of ODI."
+          "note": "UMBEL is an example of an upper mapping layer connecting concepts across sources. It is a methodological precedent for cross-source mapping, not a theoretical equivalent of ODI.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
           "role": "methodological-context",
           "checkedOn": "2026-10-16",
           "note": "Ontology alignment addresses semantic correspondence across independently developed vocabularies; this is directly relevant to ODI's external-concept mapping problem, but does not define ODI as a whole.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -125,20 +135,24 @@
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The discussion of concepts and relations offers a distant structural analogy for a minimum analytical model, not a mapping.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/UMBEL",
           "role": "methodological-analogy",
           "checkedOn": "2026-10-16",
-          "note": "UMBEL illustrates how a relatively compact upper layer can support mappings across disparate vocabularies; this is an architectural analogy, not a direct match."
+          "note": "UMBEL illustrates how a relatively compact upper layer can support mappings across disparate vocabularies; this is an architectural analogy, not a direct match.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
           "role": "methodological-analogy",
           "checkedOn": "2026-10-16",
           "note": "Ontology alignment offers a concrete example of a bounded interoperability task across vocabularies; it is a methodological analogy for a minimal model, not an equivalent framework.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -154,20 +168,25 @@
           "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
           "role": "conceptual-context",
           "checkedOn": "2026-10-16",
-          "note": "An ontology's domain of discourse is a distant modeling analogue for a semantic field; the concepts are not equivalent."
+          "note": "An ontology's domain of discourse is a distant modeling analogue for a semantic field; the concepts are not equivalent.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "structural-context",
           "checkedOn": "2026-10-16",
           "note": "Linked data emphasizes relations among identified resources; this helps situate the web of semantic relations around a field, but a semantic field is not the same thing as linked data.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Meaning_(semiotics)",
           "role": "conceptual-context",
           "checkedOn": "2026-10-16",
-          "note": "Meaning is described relationally within sign processes rather than as an isolated label; this supports a relational view of semantic context but is not equivalent to the DIO semantic field."
+          "note": "Meaning is described relationally within sign processes rather than as an isolated label; this supports a relational view of semantic context but is not equivalent to the DIO semantic field.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -184,20 +203,24 @@
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The article's treatment of concepts, attributes and relations is a broad structural analogy for distinguishing dimensions and their relations.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/UMBEL",
           "role": "mapping-architecture-analogy",
           "checkedOn": "2026-10-16",
-          "note": "UMBEL's upper-layer mapping approach is a distant architectural analogy for connecting heterogeneous concepts; it does not validate K6's six dimensions."
+          "note": "UMBEL's upper-layer mapping approach is a distant architectural analogy for connecting heterogeneous concepts; it does not validate K6's six dimensions.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
           "role": "structural-context",
           "checkedOn": "2026-10-16",
           "note": "Ontology alignment distinguishes different kinds of similarity and correspondence across vocabularies; this is useful context for relating dimensions, but does not validate the six K6 dimensions.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -214,7 +237,8 @@
           "role": "contextual-concept",
           "checkedOn": "2026-10-16",
           "note": "The article discusses digital identifiers and represented entities; this is context rather than a direct definition of the K6 dimension.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -231,21 +255,24 @@
           "role": "adjacent-concept",
           "checkedOn": "2026-10-16",
           "note": "Digital identity representations and identifiers are relevant instances of representation, but do not exhaust the DIO dimension.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "representation-infrastructure",
           "checkedOn": "2026-10-16",
           "note": "Linked data uses URIs and machine-readable structured descriptions to represent and interlink resources, a technical example within the broader representation dimension.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Signified_and_signifier",
           "role": "theoretical-context",
           "checkedOn": "2026-10-16",
           "note": "The signifier/signified distinction separates a sign's form from the concept it evokes, a useful contrast for distinguishing digital representation from interpreted identity; it is not a direct mapping.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -262,13 +289,16 @@
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
           "note": "Name resolution involves interpreting a name in context to identify its referent; a narrow technical analogue, not the full DIO interpretation dimension.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Sign_(semiotics)",
           "role": "conceptual-context",
           "checkedOn": "2026-10-16",
-          "note": "Semiotics models meaning through relations among sign, object and interpreter/interpretant; this offers a theoretical context for interpretation while DIO's dimension concerns reconstruction across digital traces."
+          "note": "Semiotics models meaning through relations among sign, object and interpreter/interpretant; this offers a theoretical context for interpretation while DIO's dimension concerns reconstruction across digital traces.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -310,7 +340,9 @@
           "uri": "https://en.wikipedia.org/wiki/Trust_(social_science)",
           "role": "contrastive-context",
           "checkedOn": "2026-10-16",
-          "note": "Useful as a contrastive account of interpersonal/social trust; its human-centered framing must not be imported uncritically into DIO's non-anthropomorphic dimension."
+          "note": "Useful as a contrastive account of interpersonal/social trust; its human-centered framing must not be imported uncritically into DIO's non-anthropomorphic dimension.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -327,20 +359,24 @@
           "role": "formal-relation-model",
           "checkedOn": "2026-10-16",
           "note": "FOAF is a machine-readable vocabulary for describing relations between people and objects; an adjacent example of formalized relations, not a definition of DIO Relationship.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "formal-relational-context",
           "checkedOn": "2026-10-16",
           "note": "Linked data explicitly connects resources through named relations, offering a technical example of formalized relationships; DIO Relationship is broader and observer-sensitive.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Sign_(semiotics)",
           "role": "relational-analogy",
           "checkedOn": "2026-10-16",
-          "note": "Semiotic models define a sign through relations among sign, object and interpreter; this is a theoretical example of relational meaning, not the full observer-sensitive DIO Relationship dimension."
+          "note": "Semiotic models define a sign through relations among sign, object and interpreter; this is a theoretical example of relational meaning, not the full observer-sensitive DIO Relationship dimension.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -357,28 +393,32 @@
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
           "note": "Name resolution is one narrow reconstruction-related task: resolving textual mentions to referents.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Record linkage reconciles records that may describe the same entity across sources; it is a narrower reconstruction task.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Name resolution assigns textual mentions to referents, an instance of referential reconstruction at a narrower NLP scale.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Entity_linking",
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
           "note": "Entity linking is a narrower task of assigning textual mentions to knowledge-base entities, illustrating one component of referential reconstruction without covering DIO's distributed and temporal scope.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -421,14 +461,16 @@
           "role": "philosophical-context",
           "checkedOn": "2026-10-16",
           "note": "Personal identity debates concern identity across time and change; this is a conceptual analogue, not an equivalent mapping for referential continuity.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Signified_and_signifier",
           "role": "contrastive-context",
           "checkedOn": "2026-10-16",
           "note": "The distinction between sign form and concept helps separate a changing representation from what it is taken to signify; this is a conceptual contrast, not a theory of temporal referential continuity.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -445,20 +487,24 @@
           "role": "contextual-concept",
           "checkedOn": "2026-10-16",
           "note": "The article describes distributed identifiers and digital-object metadata that provide adjacent context for distributed representations.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "direct-adjacent-context",
           "checkedOn": "2026-10-16",
           "note": "Linked data describes machine-readable resources and links distributed across datasets; it is a useful technical subset of the broader distributed representational state.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/JSON-LD",
           "role": "serialization-context",
           "checkedOn": "2026-10-16",
-          "note": "JSON-LD shows how JSON documents can carry linked-data semantics through an explicit context; it is one serialization mechanism, not the distributed state itself."
+          "note": "JSON-LD shows how JSON documents can carry linked-data semantics through an explicit context; it is one serialization mechanism, not the distributed state itself.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -475,13 +521,16 @@
           "role": "processing-context",
           "checkedOn": "2026-10-16",
           "note": "The article offers a narrow software-processing example of resolving references; it does not define the DIO observer.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Sign_(semiotics)",
           "role": "theoretical-context",
           "checkedOn": "2026-10-16",
-          "note": "Semiotic accounts make the interpreter relevant to how a sign is understood; this is a distant conceptual parallel to DIO's observer, not an assertion that DIO's observer is a human interpreter."
+          "note": "Semiotic accounts make the interpreter relevant to how a sign is understood; this is a distant conceptual parallel to DIO's observer, not an assertion that DIO's observer is a human interpreter.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -497,7 +546,9 @@
           "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
           "role": "domain-context",
           "checkedOn": "2026-10-16",
-          "note": "The notion of a domain of discourse is a distant conceptual analogue for a bounded observation domain, not a direct match."
+          "note": "The notion of a domain of discourse is a distant conceptual analogue for a bounded observation domain, not a direct match.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -514,20 +565,24 @@
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Record linkage provides a concrete identity-reconciliation mechanism across data sources, narrower than DIO reconstruction.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
           "role": "technical-mechanism",
           "checkedOn": "2026-10-16",
           "note": "Record linkage is a concrete mechanism for matching records across data sources; it does not cover all human and machine reconstruction mechanisms in DIO.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/JSON-LD",
           "role": "machine-readable-representation",
           "checkedOn": "2026-10-16",
-          "note": "JSON-LD enables structured, linked representations that downstream processors can interpret; it concerns representation infrastructure rather than reconstruction as a whole."
+          "note": "JSON-LD enables structured, linked representations that downstream processors can interpret; it concerns representation infrastructure rather than reconstruction as a whole.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -544,7 +599,8 @@
           "role": "example-of-adjacent-problem",
           "checkedOn": "2026-10-16",
           "note": "Ambiguous name resolution illustrates a local referential problem that may resemble one DIO problem class, not the whole concept.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -561,14 +617,16 @@
           "role": "method-context",
           "checkedOn": "2026-10-16",
           "note": "Record-linkage procedures are examples of interventions on reconciliation processes, not DIO interventions as a whole.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "intervention-context",
           "checkedOn": "2026-10-16",
           "note": "Publishing and interlinking structured resources can change the evidence available to observers; this is one possible technical intervention context, not a definition of DIO intervention.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -585,21 +643,24 @@
           "role": "philosophical-context",
           "checkedOn": "2026-10-16",
           "note": "Criteria of identity over time are conceptually adjacent to identity-preserving constraints, but the theoretical scopes differ.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "identifier-and-reference-context",
           "checkedOn": "2026-10-16",
           "note": "Stable URIs and explicit references help distinguish resources across datasets; this is a technical condition relevant to identity preservation, not a sufficient criterion for it.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
           "role": "methodological-context",
           "checkedOn": "2026-10-16",
           "note": "Ontology alignment requires deciding which semantic correspondences are defensible across differing representations; this is a methodological analogy for constraints on identity-preserving variation, not a direct match.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -616,20 +677,24 @@
           "role": "conceptual-analogy",
           "checkedOn": "2026-10-16",
           "note": "Debates about criteria of identity offer a distant analogy for a minimal identity-preserving core; no claim of equivalence is made.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "identifier-and-reference-context",
           "checkedOn": "2026-10-16",
           "note": "The role of URIs as identifiers offers a narrow technical example of a potentially identity-preserving constraint; it must not be mistaken for a universal essential vector.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Meaning_(semiotics)",
           "role": "contrastive-context",
           "checkedOn": "2026-10-16",
-          "note": "Relational theories of meaning caution against treating a sign's meaning as an isolated surface label; this is relevant background for identity-preserving constraints, but does not define DIO's essential vector."
+          "note": "Relational theories of meaning caution against treating a sign's meaning as an isolated surface label; this is relevant background for identity-preserving constraints, but does not define DIO's essential vector.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -646,14 +711,16 @@
           "role": "conceptual-context",
           "checkedOn": "2026-10-16",
           "note": "Identity-through-change debates provide broad context for variation that preserves identity.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Signified_and_signifier",
           "role": "conceptual-analogy",
           "checkedOn": "2026-10-16",
           "note": "The distinction between signifier and signified offers a distant way to think about variation in form without assuming a corresponding change in meaning; it does not establish when DIO identity is preserved.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -670,14 +737,16 @@
           "role": "example-of-failure",
           "checkedOn": "2026-10-16",
           "note": "The article's ambiguous-reference examples illustrate a narrow failure class relevant to referential reconstruction.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
           "role": "failure-taxonomy-context",
           "checkedOn": "2026-10-16",
           "note": "Record linkage research discusses matching errors and trade-offs, providing a neighboring technical error context without covering DIO's wider failure taxonomy.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -694,14 +763,16 @@
           "role": "adjacent-failure-context",
           "checkedOn": "2026-10-16",
           "note": "Record-linkage errors can result in incorrect identity assignments, an adjacent technical failure context rather than equivalence.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "direct-adjacent-failure-context",
           "checkedOn": "2026-10-16",
           "note": "The wrong-referent examples provide a concrete adjacent case of referential reconstruction failure at the level of textual mentions.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -718,14 +789,16 @@
           "role": "example-of-adjacent-failure",
           "checkedOn": "2026-10-16",
           "note": "Resolving a mention to the wrong referent is a close illustrative example of substitution, but the article's scope is narrower.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Entity_linking",
           "role": "failure-contrast",
           "checkedOn": "2026-10-16",
           "note": "Entity-linking systems must choose among candidate entities for ambiguous mentions, illustrating how a mention can be assigned to the wrong entity; the DIO substitution concept is not limited to NLP systems.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -768,7 +841,8 @@
           "role": "adjacent-error-context",
           "checkedOn": "2026-10-16",
           "note": "Record linkage can involve incorrectly linking records for distinct entities; this is relevant to merge failure but is not a direct semantic mapping.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -811,7 +885,8 @@
           "role": "adjacent-error-context",
           "checkedOn": "2026-10-16",
           "note": "Failure to link records that refer to the same entity is adjacent to split failure; the DIO concept is framed at the reconstructed-identity level.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -828,14 +903,16 @@
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
           "note": "The article's name-resolution task offers context for failures to resolve a referent, but not all such failures meet DIO's omission definition.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Entity_linking",
           "role": "coverage-context",
           "checkedOn": "2026-10-16",
           "note": "Entity-linking tasks make explicit the problem of linking mentions to entities; missed or unlinked mentions provide a narrow technical analogue for omission, not a definition of DIO Entity Omission.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -852,27 +929,32 @@
           "role": "structural-context",
           "checkedOn": "2026-10-16",
           "note": "The article describes semantic relations among concepts; this is broad context for coherence, not a direct match.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "contrastive-structure",
           "checkedOn": "2026-10-16",
           "note": "Linked data shows how explicit links can connect distributed descriptions; this offers a structural contrast for cases where semantic relations fail to cohere.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/UMBEL",
           "role": "mapping-context",
           "checkedOn": "2026-10-16",
-          "note": "UMBEL was designed to relate concepts across disparate sources, a relevant interoperability context for semantic coherence without being equivalent to DIO's failure concept."
+          "note": "UMBEL was designed to relate concepts across disparate sources, a relevant interoperability context for semantic coherence without being equivalent to DIO's failure concept.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
           "role": "adjacent-problem",
           "checkedOn": "2026-10-16",
           "note": "Ontology alignment addresses semantic correspondence between heterogeneous vocabularies; failed or poor alignment is an adjacent interoperability problem, not the same as DIO semantic coherence failure.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -889,27 +971,32 @@
           "role": "structural-analogy",
           "checkedOn": "2026-10-16",
           "note": "The article's emphasis on relations among concepts offers a distant structural contrast for fragmentation among representations.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "contrastive-structure",
           "checkedOn": "2026-10-16",
           "note": "Interlinking resources across datasets is a useful contrast to fragmentation among representations; linked data does not guarantee coherent identity reconstruction.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/UMBEL",
           "role": "mapping-context",
           "checkedOn": "2026-10-16",
-          "note": "Cross-vocabulary mapping illustrates one approach to reducing conceptual isolation, but not the same phenomenon as DIO semantic fragmentation."
+          "note": "Cross-vocabulary mapping illustrates one approach to reducing conceptual isolation, but not the same phenomenon as DIO semantic fragmentation.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
           "role": "contrastive-method",
           "checkedOn": "2026-10-16",
           "note": "Ontology alignment is one method for relating independently developed vocabularies; it provides a contrast to fragmented semantic descriptions but does not guarantee coherent digital-identity reconstruction.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -926,7 +1013,8 @@
           "role": "temporal-context",
           "checkedOn": "2026-10-16",
           "note": "Identity-through-time debates provide conceptual context for temporal reconstruction failures, without equivalence.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -943,7 +1031,8 @@
           "role": "temporal-context",
           "checkedOn": "2026-10-16",
           "note": "Persistence of identity through change is a philosophical analogue; DIO temporal discontinuity is a narrower reconstruction failure.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -960,7 +1049,8 @@
           "role": "temporal-context",
           "checkedOn": "2026-10-16",
           "note": "The article describes identifiers and changing state data; this is adjacent context for temporal mismatch, not a direct match.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -977,21 +1067,24 @@
           "role": "contextual-interpretation",
           "checkedOn": "2026-10-16",
           "note": "The article's context-dependent resolution examples are relevant to contextual adequacy, but the DIO concept is broader.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "context-sensitive-resolution",
           "checkedOn": "2026-10-16",
           "note": "The article's examples show that identifying a referent depends on context; DIO contextual adequacy is broader than name resolution.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Entity_linking",
           "role": "context-sensitive-method",
           "checkedOn": "2026-10-16",
           "note": "Entity linking uses textual and graph context to disambiguate mentions; this illustrates why context affects referent selection, while DIO contextual adequacy extends beyond entity-linking systems.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -1008,21 +1101,24 @@
           "role": "contextual-interpretation",
           "checkedOn": "2026-10-16",
           "note": "Context changing which referent a name denotes is an adjacent illustration of contextual displacement, not an equivalent definition.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "context-sensitive-resolution",
           "checkedOn": "2026-10-16",
           "note": "The same name can refer to different entities in different contexts, a narrow example of context changing the appropriate referential interpretation.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Entity_linking",
           "role": "ambiguity-context",
           "checkedOn": "2026-10-16",
           "note": "Entity-linking systems resolve ambiguous mentions against contextual evidence; this is a narrow example of context changing the selected referent, not an equivalent definition of contextual displacement.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -1039,7 +1135,8 @@
           "role": "contrastive-context",
           "checkedOn": "2026-10-16",
           "note": "The article provides broad context for digital identity, while DIO Identity Collapse remains a distinct phenomenon-level concept.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -1055,7 +1152,9 @@
           "uri": "https://en.wikipedia.org/wiki/Robustness_(computer_science)",
           "role": "contrastive-context",
           "checkedOn": "2026-10-16",
-          "note": "Robustness is the conceptual counterpart used to frame susceptibility to perturbation; only an adjacent relationship is intended."
+          "note": "Robustness is the conceptual counterpart used to frame susceptibility to perturbation; only an adjacent relationship is intended.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -1081,14 +1180,17 @@
           "uri": "https://en.wikipedia.org/wiki/Robustness_(computer_science)",
           "role": "adjacent-concept",
           "checkedOn": "2026-10-16",
-          "note": "Computer-science robustness is a useful neighboring concept for resistance to perturbations, but its scope is not identical to semantic robustness in DIO."
+          "note": "Computer-science robustness is a useful neighboring concept for resistance to perturbations, but its scope is not identical to semantic robustness in DIO.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "infrastructure-context",
           "checkedOn": "2026-10-16",
           "note": "Linked representations can make relations explicit but do not by themselves ensure robustness of identity reconstruction under perturbation; useful as a boundary case.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -1105,13 +1207,16 @@
           "role": "adjacent-method-context",
           "checkedOn": "2026-10-16",
           "note": "Record-linkage workflows provide a distant example of how selected data and matching procedures can shape a resulting identity decision; no direct match is asserted.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/JSON-LD",
           "role": "representation-priority-context",
           "checkedOn": "2026-10-16",
-          "note": "JSON-LD contexts determine how terms in a document map to semantic identifiers; this illustrates how a limited representational layer can strongly shape machine interpretation, not reconstruction capture as a whole."
+          "note": "JSON-LD contexts determine how terms in a document map to semantic identifiers; this illustrates how a limited representational layer can strongly shape machine interpretation, not reconstruction capture as a whole.",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     },
@@ -1154,28 +1259,32 @@
           "role": "historical-and-adjacent-context",
           "checkedOn": "2026-10-16",
           "note": "Record linkage/entity resolution is the historical neighboring field; it does not define the DIO anomaly concept.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
           "role": "adjacent-concept",
           "checkedOn": "2026-10-16",
           "note": "Name resolution is a narrower NLP analogue involving assigning mentions to referents, not a definition of the DIO concept.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Linked_data",
           "role": "contrastive-method",
           "checkedOn": "2026-10-16",
           "note": "Linked data interlinks identified resources, while record linkage/entity resolution decides whether records refer to the same entity; the distinction helps delimit the historical DIO grouping.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         },
         {
           "uri": "https://en.wikipedia.org/wiki/Entity_linking",
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Entity linking connects textual mentions to knowledge-base entities using text and graph context; it is a close technical neighbor to entity resolution, but not the DIO anomaly or its broader identity-reconstruction scope.",
-          "verificationStatus": "verified-in-search-result"
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
         }
       ]
     }
