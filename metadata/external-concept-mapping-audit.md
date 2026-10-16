@@ -247,3 +247,12 @@ The current Wikidata definition describes robustness as the ability of an object
 ### Decision
 
 Keep both candidates provisionally. The primary-source checks strengthen their rationales but do not remove the difference in semantic scope. No mapping is approved automatically by source verification. The registry still contains 14 mapping records: 2 candidates, 12 rejected, 0 approved. The canonical DIO/ODI vocabulary remains unchanged.
+
+
+## Policy decision: dual-purpose registry (2026-10-16)
+
+The registry is intended to support both **practical interoperability** and **theoretical crosswalk/discovery**, while keeping the two layers separate. Distant but meaningful relations should not be suppressed from the evidence inventory merely because they do not justify a mapping. Conversely, topical or theoretical relevance alone does not justify a SKOS mapping: every approved relation must be meaningful as a cross-scheme concept relation, and hierarchical mapping direction must be defensible.
+
+This policy decision does not approve either remaining candidate. GFO Persistant remains a candidate because it offers a formal-ontology crosswalk to temporal identity/persistence but is not the same semantic type as DIO Referential Continuity. Wikidata Robustness remains a candidate because the general perturbation-resistance concept plausibly subsumes DIO Semantic Robustness, but the target is mixed-scope and the hierarchy is not explicitly established between schemes. Keep both out of mapped Turtle pending explicit author approval.
+
+**Current registry file is authoritative for mapping status.** Earlier sections in this audit document contain historical intermediate results; where a previous interim count or candidate status conflicts with the current JSON registry or the final candidate-scope check above, use the current JSON registry and the final candidate-scope check.
