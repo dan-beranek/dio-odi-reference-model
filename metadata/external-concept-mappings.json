@@ -572,13 +572,19 @@
           "mappingRelation": "skos:relatedMatch",
           "reviewStatus": "candidate",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Retain as a candidate relatedMatch. GFO Persistant explicitly models identity over time despite changing properties, making it a meaningful formal-ontology neighbor. Its theoretical commitment and extension differ from DIO's operational referential-continuity criterion; author approval is still required.",
+          "rationale": "Retain as a candidate relatedMatch after checking the primary GFO definition. The GFO Persistant explicitly captures identity over time by a formal universal whose presential instances may have different properties at different times. This is a meaningful theoretical alignment with DIO Referential Continuity, but the concepts have different semantic types and theoretical commitments: GFO supplies a formal ontological category; DIO supplies an operational criterion for treating a changing entity as the same referent. The associative mapping may help ontology-level discovery, but should be approved only if that interoperability use is intended.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q141646085",
               "role": "formal-ontology-neighbor",
               "checkedOn": "2026-10-16",
               "note": "Wikidata description and scope note checked; the GFO notion explicitly addresses identity over time under changing properties. Treat as a bounded theoretical relation, not equivalence."
+            },
+            {
+              "uri": "https://w3id.org/gfo/base/Persistant",
+              "role": "primary-formal-ontology-definition",
+              "checkedOn": "2026-10-16",
+              "note": "The GFO specification states that Persistants are universals used to capture identity over time; instances are presentials, which can have different properties at different times while being treated as the same. This confirms the theoretical relation but also shows that the target is a specific ontological category, not DIO's operational continuity criterion."
             }
           ]
         }
@@ -1668,13 +1674,19 @@
           "mappingRelation": "skos:broadMatch",
           "reviewStatus": "candidate",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Retain as a candidate broadMatch. Wikidata defines robustness as resistance to perturbations, plausibly broader than DIO Semantic Robustness under representational perturbation. Because the item is a general, mixed-scope concept (including philosophical and system-characteristic uses), the intended hierarchy should be author-reviewed before approval.",
+          "rationale": "Retain as a candidate broadMatch after checking the current Wikidata definition and statements. The target defines robustness as the ability of an object, system, or property to tolerate or resist perturbations affecting behavior; it is classified as both a philosophical concept and a system characteristic, with superclass quality. DIO Semantic Robustness specializes this general perturbation-resistance idea to identity reconstruction under perturbations of the representational environment, so the broadMatch direction is plausible. The target is polysemous and the cross-scheme hierarchy is not formally asserted by Wikidata; author approval is still required.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q403605",
               "role": "concept-description",
               "checkedOn": "2026-10-16",
               "note": "Wikidata label, description, aliases and high-level statements checked; its general perturbation-resistance definition appears broader than the DIO concept, but the mapping remains provisional."
+            },
+            {
+              "uri": "https://www.wikidata.org/wiki/Q403605",
+              "role": "concept-definition-and-hierarchy",
+              "checkedOn": "2026-10-16",
+              "note": "Current item definition describes resistance/tolerance to perturbations; statements include instance-of philosophical concept and system characteristic, subclass-of quality, and partial coincidence with constancy/permanence. This supports a broad general concept but also confirms mixed scope."
             }
           ]
         }
