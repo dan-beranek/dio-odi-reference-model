@@ -384,8 +384,25 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionDimension",
       "sourceConceptId": "ReconstructionDimension",
       "sourceLabel": "Reconstruction",
-      "reviewStatus": "not-reviewed",
-      "mappings": [],
+      "reviewStatus": "in-review",
+      "mappings": [
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q17012245",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:narrowMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Wikidata defines entity linking as assigning a unique identity to entities mentioned in text. This is a bounded computational task within the broader DIO reconstruction dimension, which also covers distributed representations, temporal continuity, context, and multiple observer mechanisms. Candidate narrowMatch only; do not treat entity linking as equivalent to DIO reconstruction.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q17012245",
+              "role": "adjacent-method",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata label, description, aliases and high-level statements checked. Entity linking is a specific text-to-entity assignment task and appears narrower than DIO's reconstruction dimension."
+            }
+          ]
+        }
+      ],
       "auditNote": "",
       "evidence": [
         {
