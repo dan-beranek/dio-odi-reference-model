@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DIO/ODI External Concept Mappings Registry",
+  "type": "object",
+  "required": [
+    "registryVersion",
+    "status",
+    "createdFrom",
+    "purpose",
+    "policy",
+    "concepts"
+  ],
+  "properties": {
+    "registryVersion": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "initial-audit-in-progress",
+        "audit-in-progress",
+        "reviewed",
+        "released"
+      ]
+    },
+    "createdFrom": {
+      "type": "object",
+      "required": [
+        "repository",
+        "sourcePath",
+        "sourceBlobSha",
+        "vocabularyVersion",
+        "canonicalNamespace",
+        "inventoryConceptCount"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "sourceBlobSha": {
+          "type": "string"
+        },
+        "vocabularyVersion": {
+          "type": "string"
+        },
+        "canonicalNamespace": {
+          "type": "string"
+        },
+        "inventoryConceptCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "approvedOnlyInMappedTurtle",
+        "allowedRelations",
+        "disallowedRoutineRelations",
+        "mappingDirectionNote",
+        "noMatchIsValidOutcome",
+        "wikipediaRole",
+        "externalSystems"
+      ],
+      "properties": {
+        "approvedOnlyInMappedTurtle": {
+          "type": "boolean"
+        },
+        "allowedRelations": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "skos:closeMatch",
+              "skos:broadMatch",
+              "skos:narrowMatch",
+              "skos:relatedMatch"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "disallowedRoutineRelations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "mappingDirectionNote": {
+          "type": "string"
+        },
+        "noMatchIsValidOutcome": {
+          "type": "boolean"
+        },
+        "wikipediaRole": {
+          "type": "string"
+        },
+        "externalSystems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "concepts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sourceConcept",
+          "sourceConceptId",
+          "sourceLabel",
+          "reviewStatus",
+          "mappings",
+          "auditNote"
+        ],
+        "properties": {
+          "sourceConcept": {
+            "type": "string"
+          },
+          "sourceConceptId": {
+            "type": "string"
+          },
+          "sourceLabel": {
+            "type": "string"
+          },
+          "reviewStatus": {
+            "enum": [
+              "not-reviewed",
+              "in-review",
+              "reviewed-no-match",
+              "reviewed-with-candidates",
+              "approved-mappings"
+            ]
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "targetUri",
+                "sourceSystem",
+                "mappingRelation",
+                "reviewStatus",
+                "verificationStatus",
+                "rationale",
+                "evidence"
+              ],
+              "properties": {
+                "targetUri": {
+                  "type": "string"
+                },
+                "sourceSystem": {
+                  "enum": [
+                    "Wikidata",
+                    "DBpedia",
+                    "other"
+                  ]
+                },
+                "mappingRelation": {
+                  "enum": [
+                    "skos:closeMatch",
+                    "skos:broadMatch",
+                    "skos:narrowMatch",
+                    "skos:relatedMatch"
+                  ]
+                },
+                "reviewStatus": {
+                  "enum": [
+                    "candidate",
+                    "approved",
+                    "rejected"
+                  ]
+                },
+                "verificationStatus": {
+                  "enum": [
+                    "unverified",
+                    "uri-verified",
+                    "semantically-reviewed"
+                  ]
+                },
+                "rationale": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "uri",
+                      "role"
+                    ],
+                    "properties": {
+                      "uri": {
+                        "type": "string"
+                      },
+                      "role": {
+                        "type": "string"
+                      },
+                      "checkedOn": {
+                        "type": "string"
+                      },
+                      "note": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "auditNote": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
