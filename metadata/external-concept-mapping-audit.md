@@ -61,3 +61,27 @@ No mapping candidate. Wikidata Q1132459 describes fragmentation of memory/storag
 
 ### Decision
 This pass adds contextual evidence, not SKOS mappings. That is intentional: the sources support neighboring tasks, failure contexts, or analogies, but not a sufficiently well-defined mapping relation. Candidate count remains unchanged; the four concepts remain under review pending author-level decision on whether contextual evidence alone is enough to mark each concept reviewed.
+
+
+## Follow-up audit — Temporal Discontinuity, Semantic Vulnerability, Identity Collapse, Contextual Displacement, Semantic Coherence Failure, Reconstruction Capture (2026-10-16)
+
+### Temporal Discontinuity
+No mapping candidate. Wikidata ontology modeling discusses temporal extent, interval relations, and entities persisting through time; the Stanford Encyclopedia of Philosophy's identity-over-time entry gives theoretical context for persistence through change. Neither denotes the specific DIO failure mode. Sources: https://www.wikidata.org/wiki/Wikidata:WikiProject_Ontology/Ontology_Course/Modeling_time ; https://seop.illc.uva.nl/entries///identity-time/
+
+### Semantic Vulnerability
+No mapping candidate. Wikidata Q631425 defines computer vulnerability as a security weakness that can reduce information assurance. This is adjacent but domain-specific; it may import attacker/security assumptions absent from DIO's concept. Source: https://www.wikidata.org/wiki/Q631425
+
+### Identity Collapse
+No mapping candidate. Wikidata Q3354876 is a psychological identity-crisis concept, while Q844569 describes social identity as qualities and expressions characterizing people or groups. These are lexical/disciplinary false friends, not DIO's reconstruction failure mode. Sources: https://www.wikidata.org/wiki/Q3354876 ; https://www.wikidata.org/wiki/Q844569
+
+### Contextual Displacement
+No mapping candidate. Wikidata Q47555586 identifies research on context drift/shift in human memory. It is a distant analogy for context-dependent interpretation, not an external concept for DIO contextual displacement. Source: https://www.wikidata.org/wiki/Q47555586
+
+### Semantic Coherence Failure
+No mapping candidate. Linguistic coherence is relevant background for connected meaning in discourse, but it does not capture DIO's specific failure of identity reconstruction. Source: https://en.wikipedia.org/wiki/Coherence_(linguistics)
+
+### Reconstruction Capture
+No mapping candidate. Information retrieval is an upstream technical context for how observers access representations, not a stable concept equivalent to reconstruction capture. Source: https://en.wikipedia.org/wiki/Information_retrieval
+
+### Decision
+As in the prior pass, these links are recorded as contextual/contrastive evidence only. Lexical overlap and neighboring mechanisms do not justify a SKOS mapping relation.
