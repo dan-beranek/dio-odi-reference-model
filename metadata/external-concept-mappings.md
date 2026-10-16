@@ -90,3 +90,17 @@ The 14 initial mapping records were reviewed. Two remain as candidates: Referent
 ## Primary-source check of the two remaining candidates (2026-10-16)
 
 Both candidates were checked against their current target definitions and, for GFO Persistant, the primary GFO specification. GFO Persistant has a substantive relation to Referential Continuity but differs in semantic type and formal-ontological commitment; retain `skos:relatedMatch` only as a candidate for ontology-level discovery. Wikidata Robustness Q403605 defines general resistance to perturbations and is classified as a philosophical concept and system characteristic under quality, supporting a plausible `skos:broadMatch` to DIO Semantic Robustness. Its mixed scope and the lack of an asserted cross-scheme hierarchy mean it remains a candidate. Status remains 14 records (2 candidate, 12 rejected, 0 approved); no mapping is approved without explicit review.
+
+
+## Policy clarification: interoperability and theoretical neighbors (2026-10-16)
+
+The registry serves two related but distinct purposes:
+
+1. **Practical interoperability:** discoverable cross-scheme mappings that help systems align concepts. These require a defensible semantic relation and, for hierarchical properties, a defensible direction.
+2. **Theoretical crosswalk and conceptual discovery:** identify external concepts that illuminate a DIO/ODI concept across disciplinary or ontological frameworks, even where the semantic types differ.
+
+These purposes must not be conflated. A useful theoretical neighbor may be recorded as concept-level evidence with an explicit explanation of the connection and its limits, without becoming a SKOS mapping. Use a mapping property only where the relation itself is meaningful between concepts in separate schemes, not merely because the sources discuss related topics. In particular, `skos:relatedMatch` is not a general-purpose association edge.
+
+This policy permits distant but semantically informative evidence, including Wikipedia as a discovery and context source, while preserving a conservative threshold for approved mappings. It does not automatically approve the two current candidates. **Referential Continuity → GFO Persistant** remains a theoretical-neighbor candidate whose value depends on whether a formal-ontology crosswalk is useful to external consumers. **Semantic Robustness → Wikidata Robustness** remains a broader-concept candidate whose polysemous target and cross-scheme hierarchy require author judgment. Source verification strengthens rationale; it does not itself establish a mapping.
+
+No new DIO/ODI concepts are introduced by this policy, and no candidate or evidence record is projected into mapped Turtle unless its mapping status is explicitly `approved`.
