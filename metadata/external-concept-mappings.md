@@ -43,7 +43,8 @@ Each concept can carry an `evidence` array independently of its `mappings`. An e
 - `uri`: the source article or document;
 - `role`: why it is relevant (e.g. `adjacent-concept`, `contrastive-context`, `temporal-context`);
 - `checkedOn`: date checked;
-- `note`: the specific semantic connection and its limitation.
+- `note`: the specific semantic connection and its limitation;
+- `verificationStatus` (optional): the level of source checking completed. `verified-in-search-result` means relevant page content was visible in a current search result, not that a full page review has been completed.
 
 A concept-level evidence record does not imply a target mapping, does not change mapping status, and must not be projected into mapped Turtle as a SKOS relation. Evidence should be added when it improves conceptual interpretation, including for distant analogies and counterexamples. Do not manufacture a connection just to fill every concept's evidence list.
 
@@ -79,4 +80,4 @@ These are not endorsements. Merge Failure and Split Failure should be assessed s
 - **Identity — Wikidata Q254474:** the item describes the relation each thing bears to itself alone. This is not the same as DIO Referential Continuity across legitimate change. A tentative `skos:relatedMatch` candidate is recorded, not approved. [Wikidata item](https://www.wikidata.org/wiki/Q254474)
 - **Trust — Wikidata Q659974:** the item frames trust as a feeling/certainty and classifies it in terms of emotion and belief. This is a poor fit for the DIO K6 dimension, which explicitly need not imply human psychology. This candidate has been rejected. [Wikidata item](https://www.wikidata.org/wiki/Q659974)
 
-The Wikipedia evidence URLs and their roles are listed per concept in the JSON registry. The candidate set has been expanded with entity linking, semiotics, and ontology alignment references. This remains an initial evidence-discovery pass, not a claim that each page has been freshly verified or that all potentially relevant articles and language editions have been exhausted.
+The Wikipedia evidence URLs and their roles are listed per concept in the JSON registry. The candidate set has been expanded with entity linking, semiotics, and ontology alignment references. Search-result content has been checked for a subset of articles; the registry marks those entries explicitly. This remains a partial audit, not a claim that all pages, redirects, or language editions have been exhausted.
