@@ -19,13 +19,12 @@
         "@language": "en"
       },
       "dcterms:modified": {
-        "@value": "2026-10-17",
+        "@value": "2026-10-10",
         "@type": "xsd:date"
       },
       "skos:hasTopConcept": {
         "@id": "dio:ReconstructionFailureMode"
-      },
-      "dcterms:hasVersion": "0.1.1"
+      }
     },
     {
       "@id": "dio:DIO",
@@ -1160,61 +1159,6 @@
         },
         {
           "@id": "https://doi.org/10.5281/zenodo.23269323"
-        }
-      ]
-    },
-    {
-      "@id": "dio:KnowledgeGraph",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
-      },
-      "skos:prefLabel": {
-        "@value": "Knowledge Graph",
-        "@language": "en"
-      },
-      "skos:altLabel": {
-        "@value": "KG",
-        "@language": "en"
-      },
-      "skos:definition": {
-        "@value": "A graph-structured representation of knowledge in which nodes represent entities or concepts and edges represent semantic relationships between them.",
-        "@language": "en"
-      },
-      "skos:scopeNote": {
-        "@value": "Established external terminology included for contextual reference only. It is not defined here as a DIO-specific construct and is not placed in the Reconstruction Failure Mode hierarchy.",
-        "@language": "en"
-      },
-      "dcterms:source": [
-        {
-          "@id": "https://doi.org/10.18653/v1/2022.aacl-main.46"
-        }
-      ]
-    },
-    {
-      "@id": "dio:EntityLinking",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
-      },
-      "skos:prefLabel": {
-        "@value": "Entity Linking",
-        "@language": "en"
-      },
-      "skos:definition": {
-        "@value": "A task that associates entity mentions in text with corresponding entities or unambiguous identifiers in a knowledge base or knowledge graph.",
-        "@language": "en"
-      },
-      "skos:scopeNote": {
-        "@value": "Established external terminology included for contextual reference only. It is not defined here as a DIO-specific construct and is not placed in the Reconstruction Failure Mode hierarchy. Do not conflate Entity Linking with Entity Resolution.",
-        "@language": "en"
-      },
-      "dcterms:source": [
-        {
-          "@id": "https://doi.org/10.18653/v1/D19-1066"
-        },
-        {
-          "@id": "https://doi.org/10.18653/v1/2022.aacl-main.46"
         }
       ]
     }
