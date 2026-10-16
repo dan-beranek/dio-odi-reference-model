@@ -57,6 +57,12 @@
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Record linkage is an adjacent technical problem concerning identity resolution across data sources, narrower than DIO's full scope."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Entity_linking",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Entity linking is one concrete technical field concerned with matching mentions to entities; it is a narrower neighboring problem within DIO's broader concern with digital-identity reconstruction."
         }
       ]
     },
@@ -91,6 +97,12 @@
           "role": "mapping-architecture-analogy",
           "checkedOn": "2026-10-16",
           "note": "UMBEL is an example of an upper mapping layer connecting concepts across sources. It is a methodological precedent for cross-source mapping, not a theoretical equivalent of ODI."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
+          "role": "methodological-context",
+          "checkedOn": "2026-10-16",
+          "note": "Ontology alignment addresses semantic correspondence across independently developed vocabularies; this is directly relevant to ODI's external-concept mapping problem, but does not define ODI as a whole."
         }
       ]
     },
@@ -113,6 +125,12 @@
           "role": "methodological-analogy",
           "checkedOn": "2026-10-16",
           "note": "UMBEL illustrates how a relatively compact upper layer can support mappings across disparate vocabularies; this is an architectural analogy, not a direct match."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
+          "role": "methodological-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "Ontology alignment offers a concrete example of a bounded interoperability task across vocabularies; it is a methodological analogy for a minimal model, not an equivalent framework."
         }
       ]
     },
@@ -135,6 +153,12 @@
           "role": "structural-context",
           "checkedOn": "2026-10-16",
           "note": "Linked data emphasizes relations among identified resources; this helps situate the web of semantic relations around a field, but a semantic field is not the same thing as linked data."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Meaning_(semiotics)",
+          "role": "conceptual-context",
+          "checkedOn": "2026-10-16",
+          "note": "Meaning is described relationally within sign processes rather than as an isolated label; this supports a relational view of semantic context but is not equivalent to the DIO semantic field."
         }
       ]
     },
@@ -157,6 +181,12 @@
           "role": "mapping-architecture-analogy",
           "checkedOn": "2026-10-16",
           "note": "UMBEL's upper-layer mapping approach is a distant architectural analogy for connecting heterogeneous concepts; it does not validate K6's six dimensions."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
+          "role": "structural-context",
+          "checkedOn": "2026-10-16",
+          "note": "Ontology alignment distinguishes different kinds of similarity and correspondence across vocabularies; this is useful context for relating dimensions, but does not validate the six K6 dimensions."
         }
       ]
     },
@@ -195,6 +225,12 @@
           "role": "representation-infrastructure",
           "checkedOn": "2026-10-16",
           "note": "Linked data uses URIs and machine-readable structured descriptions to represent and interlink resources, a technical example within the broader representation dimension."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Signified_and_signifier",
+          "role": "theoretical-context",
+          "checkedOn": "2026-10-16",
+          "note": "The signifier/signified distinction separates a sign's form from the concept it evokes, a useful contrast for distinguishing digital representation from interpreted identity; it is not a direct mapping."
         }
       ]
     },
@@ -211,6 +247,12 @@
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
           "note": "Name resolution involves interpreting a name in context to identify its referent; a narrow technical analogue, not the full DIO interpretation dimension."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Sign_(semiotics)",
+          "role": "conceptual-context",
+          "checkedOn": "2026-10-16",
+          "note": "Semiotics models meaning through relations among sign, object and interpreter/interpretant; this offers a theoretical context for interpretation while DIO's dimension concerns reconstruction across digital traces."
         }
       ]
     },
@@ -275,6 +317,12 @@
           "role": "formal-relational-context",
           "checkedOn": "2026-10-16",
           "note": "Linked data explicitly connects resources through named relations, offering a technical example of formalized relationships; DIO Relationship is broader and observer-sensitive."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Sign_(semiotics)",
+          "role": "relational-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "Semiotic models define a sign through relations among sign, object and interpreter; this is a theoretical example of relational meaning, not the full observer-sensitive DIO Relationship dimension."
         }
       ]
     },
@@ -303,6 +351,12 @@
           "role": "adjacent-method",
           "checkedOn": "2026-10-16",
           "note": "Name resolution assigns textual mentions to referents, an instance of referential reconstruction at a narrower NLP scale."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Entity_linking",
+          "role": "adjacent-process",
+          "checkedOn": "2026-10-16",
+          "note": "Entity linking is a narrower task of assigning textual mentions to knowledge-base entities, illustrating one component of referential reconstruction without covering DIO's distributed and temporal scope."
         }
       ]
     },
@@ -345,6 +399,12 @@
           "role": "philosophical-context",
           "checkedOn": "2026-10-16",
           "note": "Personal identity debates concern identity across time and change; this is a conceptual analogue, not an equivalent mapping for referential continuity."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Signified_and_signifier",
+          "role": "contrastive-context",
+          "checkedOn": "2026-10-16",
+          "note": "The distinction between sign form and concept helps separate a changing representation from what it is taken to signify; this is a conceptual contrast, not a theory of temporal referential continuity."
         }
       ]
     },
@@ -389,6 +449,12 @@
           "role": "processing-context",
           "checkedOn": "2026-10-16",
           "note": "The article offers a narrow software-processing example of resolving references; it does not define the DIO observer."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Sign_(semiotics)",
+          "role": "theoretical-context",
+          "checkedOn": "2026-10-16",
+          "note": "Semiotic accounts make the interpreter relevant to how a sign is understood; this is a distant conceptual parallel to DIO's observer, not an assertion that DIO's observer is a human interpreter."
         }
       ]
     },
@@ -493,6 +559,12 @@
           "role": "identifier-and-reference-context",
           "checkedOn": "2026-10-16",
           "note": "Stable URIs and explicit references help distinguish resources across datasets; this is a technical condition relevant to identity preservation, not a sufficient criterion for it."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
+          "role": "methodological-context",
+          "checkedOn": "2026-10-16",
+          "note": "Ontology alignment requires deciding which semantic correspondences are defensible across differing representations; this is a methodological analogy for constraints on identity-preserving variation, not a direct match."
         }
       ]
     },
@@ -515,6 +587,12 @@
           "role": "identifier-and-reference-context",
           "checkedOn": "2026-10-16",
           "note": "The role of URIs as identifiers offers a narrow technical example of a potentially identity-preserving constraint; it must not be mistaken for a universal essential vector."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Meaning_(semiotics)",
+          "role": "contrastive-context",
+          "checkedOn": "2026-10-16",
+          "note": "Relational theories of meaning caution against treating a sign's meaning as an isolated surface label; this is relevant background for identity-preserving constraints, but does not define DIO's essential vector."
         }
       ]
     },
@@ -531,6 +609,12 @@
           "role": "conceptual-context",
           "checkedOn": "2026-10-16",
           "note": "Identity-through-change debates provide broad context for variation that preserves identity."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Signified_and_signifier",
+          "role": "conceptual-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "The distinction between signifier and signified offers a distant way to think about variation in form without assuming a corresponding change in meaning; it does not establish when DIO identity is preserved."
         }
       ]
     },
@@ -591,6 +675,12 @@
           "role": "example-of-adjacent-failure",
           "checkedOn": "2026-10-16",
           "note": "Resolving a mention to the wrong referent is a close illustrative example of substitution, but the article's scope is narrower."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Entity_linking",
+          "role": "failure-contrast",
+          "checkedOn": "2026-10-16",
+          "note": "Entity-linking systems must choose among candidate entities for ambiguous mentions, illustrating how a mention can be assigned to the wrong entity; the DIO substitution concept is not limited to NLP systems."
         }
       ]
     },
@@ -691,6 +781,12 @@
           "role": "adjacent-process",
           "checkedOn": "2026-10-16",
           "note": "The article's name-resolution task offers context for failures to resolve a referent, but not all such failures meet DIO's omission definition."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Entity_linking",
+          "role": "coverage-context",
+          "checkedOn": "2026-10-16",
+          "note": "Entity-linking tasks make explicit the problem of linking mentions to entities; missed or unlinked mentions provide a narrow technical analogue for omission, not a definition of DIO Entity Omission."
         }
       ]
     },
@@ -719,6 +815,12 @@
           "role": "mapping-context",
           "checkedOn": "2026-10-16",
           "note": "UMBEL was designed to relate concepts across disparate sources, a relevant interoperability context for semantic coherence without being equivalent to DIO's failure concept."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
+          "role": "adjacent-problem",
+          "checkedOn": "2026-10-16",
+          "note": "Ontology alignment addresses semantic correspondence between heterogeneous vocabularies; failed or poor alignment is an adjacent interoperability problem, not the same as DIO semantic coherence failure."
         }
       ]
     },
@@ -747,6 +849,12 @@
           "role": "mapping-context",
           "checkedOn": "2026-10-16",
           "note": "Cross-vocabulary mapping illustrates one approach to reducing conceptual isolation, but not the same phenomenon as DIO semantic fragmentation."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_alignment",
+          "role": "contrastive-method",
+          "checkedOn": "2026-10-16",
+          "note": "Ontology alignment is one method for relating independently developed vocabularies; it provides a contrast to fragmented semantic descriptions but does not guarantee coherent digital-identity reconstruction."
         }
       ]
     },
@@ -817,6 +925,12 @@
           "role": "context-sensitive-resolution",
           "checkedOn": "2026-10-16",
           "note": "The article's examples show that identifying a referent depends on context; DIO contextual adequacy is broader than name resolution."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Entity_linking",
+          "role": "context-sensitive-method",
+          "checkedOn": "2026-10-16",
+          "note": "Entity linking uses textual and graph context to disambiguate mentions; this illustrates why context affects referent selection, while DIO contextual adequacy extends beyond entity-linking systems."
         }
       ]
     },
@@ -839,6 +953,12 @@
           "role": "context-sensitive-resolution",
           "checkedOn": "2026-10-16",
           "note": "The same name can refer to different entities in different contexts, a narrow example of context changing the appropriate referential interpretation."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Entity_linking",
+          "role": "ambiguity-context",
+          "checkedOn": "2026-10-16",
+          "note": "Entity-linking systems resolve ambiguous mentions against contextual evidence; this is a narrow example of context changing the selected referent, not an equivalent definition of contextual displacement."
         }
       ]
     },
@@ -979,6 +1099,12 @@
           "role": "contrastive-method",
           "checkedOn": "2026-10-16",
           "note": "Linked data interlinks identified resources, while record linkage/entity resolution decides whether records refer to the same entity; the distinction helps delimit the historical DIO grouping."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Entity_linking",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Entity linking connects textual mentions to knowledge-base entities using text and graph context; it is a close technical neighbor to entity resolution, but not the DIO anomaly or its broader identity-reconstruction scope."
         }
       ]
     }
