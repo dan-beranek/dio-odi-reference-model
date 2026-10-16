@@ -5,18 +5,17 @@ This registry records candidate and reviewed semantic mappings from the canonica
 
 ## Current state
 - Registry version: 0.1.0
-- State: audit in progress; initial semantic checks completed for a subset of candidates
+- State: first-pass concept/evidence inventory complete; candidate-mapping decisions remain in progress
 - Source vocabulary: `vocabulary/dio-odi-skos.ttl`
 - Source blob at inventory time: `f7c33af7a9977b40c787daf5ab0328c1590b1ffe`
 - Vocabulary version: 0.1.0
 - Concepts inventoried: 39
-- Initial DBpedia candidates retained: 6 (unverified)
-- Additional Wikidata candidates added after checking item descriptions: 4
-- Rejected candidate mappings recorded: 1
-- Approved mappings: 0
-- Wikipedia evidence records: 90 across 39 concepts after expanding the thematic candidate set
+- Concepts with a first-pass external evidence review: 39 of 39 (not an exhaustive search of every external vocabulary)
+- Evidence records across the registry: 148
+- Mapping records: 14 (13 candidate, 1 rejected, 0 approved)
+- Evidence records linking to Wikipedia: 97; Wikidata: 24; DBpedia: 0
 
-The audit is partial. Wikipedia evidence is recorded at concept level for every inventoried concept, with a broader candidate set covering digital identity, record linkage, name resolution, linked data, ontology alignment, semiotics, personal identity, and related technical context. These are contextual references, not approved mappings. Some articles are deliberately distant analogues or contrastive cases; each note states the intended semantic value and boundary. This is a candidate-evidence pass: individual article content, redirects, and current page status still require source-by-source verification.
+The first-pass evidence inventory now covers all 39 concepts. This does not mean every external vocabulary has been exhaustively searched or every evidence note independently validated in full. Evidence includes direct neighbors, methodological context, theoretical analogies, homonyms, and contrastive cases; these records do not themselves imply SKOS mappings. The separate mapping-decision phase remains open: candidates must be approved, rejected, or retained with a clear interoperability rationale.
 
 ## Distinguish mapping targets from evidence sources
 - **Wikidata:** a structured mapping target, but only after checking the item's label, description, statements, and scope.
