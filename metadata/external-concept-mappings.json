@@ -350,9 +350,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#RelationshipDimension",
       "sourceConceptId": "RelationshipDimension",
       "sourceLabel": "Relationship",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. PROV-O can encode provenance and historical relations among entities, activities, and agents, but does not capture the DIO-specific observer–entity relationship as defined.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/FOAF",
@@ -377,6 +377,14 @@
           "note": "Semiotic models define a sign through relations among sign, object and interpreter; this is a theoretical example of relational meaning, not the full observer-sensitive DIO Relationship dimension.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/prov-o/",
+          "role": "formal-modeling-context",
+          "note": "PROV-O models provenance relations among entities, activities, and agents. It can describe historical traces and relations around representations, but does not model DIO's persistent, historically sedimented observer–entity relationship as a single equivalent concept.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
         }
       ]
     },
@@ -537,9 +545,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#Observer",
       "sourceConceptId": "Observer",
       "sourceLabel": "Observer",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "A potentially useful formal-ontology neighbor exists in the Industrial Ontology Foundry's Observer class and ObserverRole. The DIO concept is composite (observer plus processing/reconstruction mechanism), so do not map yet; assess whether a narrow mapping would add interoperability or merely import an industrial agent model.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -556,6 +564,30 @@
           "note": "Semiotic accounts make the interpreter relevant to how a sign is understood; this is a distant conceptual parallel to DIO's observer, not an assertion that DIO's observer is a human interpreter.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://spec.industrialontologies.org/portal/release/202603/productservicesystem/Observer.html",
+          "role": "ontology-neighbor",
+          "note": "Industrial Ontology Foundry defines Observer as an agent that has an observer role, with examples including a person or system that watches, notices, or measures. This is a useful formal neighbor, but it is grounded in an industrial agent ontology and does not explicitly model the DIO observer together with its reconstruction mechanism.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://spec.industrialontologies.org/portal/release/202603/productservicesystem/ObserverRole.html",
+          "role": "ontology-neighbor",
+          "note": "ObserverRole is a role held by a person, group, or engineered system when it perceives/notices an entity and distinguishes it from others. Stronger semantic proximity to the DIO observer function, but still not the same composite concept.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model",
+          "role": "formal-ontology-context",
+          "note": "TERN/SOSA observation modeling connects an observer or sensor, an observed feature, procedure, and time/context. It supports modeling the relations around observation, not a direct mapping for DIO Observer or Observation Domain.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
         }
       ]
     },
@@ -563,9 +595,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ObservationDomain",
       "sourceConceptId": "ObservationDomain",
       "sourceLabel": "Observation Domain",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. SOSA/TERN supplies useful modeling patterns for observation context (time, place, feature, procedure), but DIO Observation Domain is an evaluation boundary, not an observation event or sensor context.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
@@ -574,6 +606,22 @@
           "note": "The notion of a domain of discourse is a distant conceptual analogue for a bounded observation domain, not a direct match.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model",
+          "role": "formal-ontology-context",
+          "note": "The TERN/SOSA model situates observations in space, time, site, visit, and feature-of-interest relations. This is a useful analogue for explicit observational conditions, but Observation Domain in DIO is a bounded set of situations against which optimization is evaluated.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q193181",
+          "role": "adjacent-concept",
+          "note": "Wikidata observation is active acquisition of information from a source. It names an activity rather than the bounded domain in which a DIO intervention is evaluated.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
         }
       ]
     },
@@ -625,9 +673,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIOIntervention",
       "sourceConceptId": "DIOIntervention",
       "sourceLabel": "DIO Intervention",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. PROV-O can represent intervention activities and provenance, while ontology alignment is one possible technique; neither is equivalent to the intentional, systematic representational change defined by DIO.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
@@ -644,6 +692,22 @@
           "note": "Publishing and interlinking structured resources can change the evidence available to observers; this is one possible technical intervention context, not a definition of DIO intervention.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/prov-o/",
+          "role": "formal-modeling-context",
+          "note": "PROV-O represents activities and their relations to entities and agents, which can help describe provenance of an intervention. It does not define the DIO-specific intentional change to distributed representations or their relations.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1224764",
+          "role": "adjacent-method",
+          "note": "Ontology alignment is a concrete intervention-like method for finding correspondences between vocabularies, but it is only one possible technique and not equivalent to DIO Intervention.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
         }
       ]
     },
@@ -651,9 +715,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraint",
       "sourceConceptId": "IdentityPreservingConstraint",
       "sourceLabel": "Identity-Preserving Constraint",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. GFO persistence and OWL-Time offer temporal/identity modeling context, but neither denotes the minimal conditions whose preservation licenses DIO identity continuity.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Personal_identity",
@@ -678,6 +742,22 @@
           "note": "Ontology alignment requires deciding which semantic correspondences are defensible across differing representations; this is a methodological analogy for constraints on identity-preserving variation, not a direct match.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q141646085",
+          "role": "theoretical-neighbor",
+          "note": "GFO Persistant concerns entities that retain identity over time despite changes in properties. It is relevant to persistence criteria, but does not itself represent the DIO constraint whose preservation licenses legitimate variation in reconstruction.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.w3.org/TR/owl-time/",
+          "role": "formal-modeling-context",
+          "note": "OWL-Time models temporal entities, intervals, and temporal relations. It can help represent when identity-preserving conditions hold, but it does not define the constraints themselves.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
         }
       ]
     },
@@ -685,9 +765,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EssentialVector",
       "sourceConceptId": "EssentialVector",
       "sourceLabel": "Essential Vector",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. No external concept was found that denotes a minimal set of identity-preserving constraints without importing metaphysical essence or mathematical-vector assumptions.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Personal_identity",
@@ -712,6 +792,22 @@
           "note": "Relational accounts of meaning caution against reducing interpretation to a surface label. This is background for why an identity-preserving core cannot be inferred from wording alone; it does not define DIO's Essential Vector.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q17012245",
+          "role": "contrastive-context",
+          "note": "Entity linking resolves mentions to entities, but has no concept corresponding to the minimal core of identity-preserving constraints. Included as a contrastive reminder that a resolution task is not an identity criterion.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.w3.org/TR/skos-reference/",
+          "role": "vocabulary-modeling-context",
+          "note": "SKOS provides vocabulary concepts and semantic relations but does not prescribe a domain-specific essential vector or minimal set of identity-preserving constraints.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
         }
       ]
     },
@@ -1171,9 +1267,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ContextualAdequacyFailure",
       "sourceConceptId": "ContextualAdequacyFailure",
       "sourceLabel": "Contextual Adequacy Failure",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. Pragmatics and ontology alignment are useful neighboring contexts, but neither is a specific concept for failure to reconstruct an entity adequately within a defined observation context.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -1190,6 +1286,22 @@
           "note": "Entity linking uses textual and graph context to disambiguate mentions; this illustrates why context affects referent selection, while DIO contextual adequacy extends beyond entity-linking systems.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Pragmatics",
+          "role": "conceptual-context",
+          "note": "Pragmatics studies how context contributes to meaning and interpretation. This is useful theoretical context for contextual adequacy, but is too broad and not a failure-mode mapping target.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1224764",
+          "role": "methodological-context",
+          "note": "Ontology alignment concerns correspondences between concepts across ontologies. It can expose mismatches of scope or context but is a method, not the DIO failure mode of inadequate contextual reconstruction.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source page inspected on 2026-10-16 for conceptual relevance; this does not itself establish a SKOS mapping."
         }
       ]
     },
