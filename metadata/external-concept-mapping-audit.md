@@ -85,3 +85,30 @@ No mapping candidate. Information retrieval is an upstream technical context for
 
 ### Decision
 As in the prior pass, these links are recorded as contextual/contrastive evidence only. Lexical overlap and neighboring mechanisms do not justify a SKOS mapping relation.
+
+
+## Follow-up audit — Observer, Observation Domain, Relationship, Identity-Preserving Constraint, Essential Vector, Contextual Adequacy Failure, DIO Intervention (2026-10-16)
+
+### Observer
+The Industrial Ontology Foundry defines an Observer as an agent with an observer role, and its ObserverRole definition explicitly includes people, groups, and engineered systems that perceive an entity and distinguish it from others. This is the strongest formal-ontology neighbor in this pass. However, DIO's Observer also includes the mechanism through which the observer processes representations; the IFO class does not explicitly capture that composite. Keep as contextual evidence; no mapping candidate yet. Sources: https://spec.industrialontologies.org/portal/release/202603/productservicesystem/Observer.html ; https://spec.industrialontologies.org/portal/release/202603/productservicesystem/ObserverRole.html
+
+### Observation Domain
+TERN/SOSA models observation with temporal, spatial, procedural, and feature-of-interest context. This provides useful modeling patterns, but DIO Observation Domain is a bounded set of situations against which an optimization is evaluated, not an observation event or sensor context. Wikidata's Observation item likewise describes an activity, not the domain boundary. Sources: https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model ; https://www.wikidata.org/wiki/Q193181
+
+### Relationship Dimension
+PROV-O can represent provenance relations among entities, activities, and agents. These relations may help describe historical traces surrounding representations, but do not equate to DIO's persistent, historically sedimented observer–entity relationship. Source: https://www.w3.org/TR/prov-o/
+
+### Identity-Preserving Constraint
+GFO Persistant is a theoretical neighbor because it concerns identity over time despite changing properties; OWL-Time can represent temporal extents and relations. Neither denotes the DIO constraints whose preservation licenses legitimate variation while maintaining referential continuity. Sources: https://www.wikidata.org/wiki/Q141646085 ; https://www.w3.org/TR/owl-time/
+
+### Essential Vector
+No mapping candidate. Entity linking resolves mentions to entities but does not define a minimal core of identity-preserving constraints. SKOS itself is a vocabulary model, not a theory of identity essence. Sources: https://www.wikidata.org/wiki/Q17012245 ; https://www.w3.org/TR/skos-reference/
+
+### Contextual Adequacy Failure
+Pragmatics provides broad theoretical context for how context affects interpretation, while ontology alignment addresses correspondences between concepts. Neither is a specific external concept for inadequate identity reconstruction within a defined observation domain. Sources: https://en.wikipedia.org/wiki/Pragmatics ; https://www.wikidata.org/wiki/Q1224764
+
+### DIO Intervention
+PROV-O can describe activities and provenance, while ontology alignment is one possible technique for changing or reconciling representations. Neither is equivalent to the DIO concept of an intentional, systematic change to the distributed representational state or relations among representations. Sources: https://www.w3.org/TR/prov-o/ ; https://www.wikidata.org/wiki/Q1224764
+
+### Decision
+This pass adds contextual evidence but no SKOS mappings. The Industrial Ontology Foundry's Observer/ObserverRole deserves a focused author review later because it is a formally defined, machine-readable neighboring concept; even there, a mapping should not be added unless the scope and direction are defensible.
