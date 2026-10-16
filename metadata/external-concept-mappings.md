@@ -85,3 +85,8 @@ The Wikipedia evidence URLs and their roles are listed per concept in the JSON r
 ## Batch decision (2026-10-16)
 
 The 14 initial mapping records were reviewed. Two remain as candidates: Referential Continuity → GFO Persistant Q141646085 (`skos:relatedMatch`); Semantic Robustness → Wikidata Robustness Q403605 (`skos:broadMatch`). Twelve mappings were rejected, including all six unverified DBpedia suggestions, the generic false-positive/false-negative matches for Merge Failure and Split Failure, the self-relation identity item, the record-linkage mapping for Entity Resolution Anomaly, and Entity linking for Reconstruction (rejected after deeper scope review as a task/method rather than a narrower concept in the same semantic hierarchy). None is approved. The rationale is recorded per mapping in `metadata/external-concept-mappings.json`; only approved mappings may be projected into mapped Turtle.
+
+
+## Primary-source check of the two remaining candidates (2026-10-16)
+
+Both candidates were checked against their current target definitions and, for GFO Persistant, the primary GFO specification. GFO Persistant has a substantive relation to Referential Continuity but differs in semantic type and formal-ontological commitment; retain `skos:relatedMatch` only as a candidate for ontology-level discovery. Wikidata Robustness Q403605 defines general resistance to perturbations and is classified as a philosophical concept and system characteristic under quality, supporting a plausible `skos:broadMatch` to DIO Semantic Robustness. Its mixed scope and the lack of an asserted cross-scheme hierarchy mean it remains a candidate. Status remains 14 records (2 candidate, 12 rejected, 0 approved); no mapping is approved without explicit review.
