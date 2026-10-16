@@ -797,9 +797,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution",
       "sourceConceptId": "EntitySubstitution",
       "sourceLabel": "Entity Substitution",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No direct mapping candidate added in this pass. Entity linking is the process domain, while Entity Substitution is a specific erroneous outcome; Wikidata conflation is closer to Merge Failure.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -816,6 +816,22 @@
           "note": "Entity-linking systems must choose among candidate entities for ambiguous mentions, illustrating how a mention can be assigned to the wrong entity; the DIO substitution concept is not limited to NLP systems.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q17012245",
+          "role": "adjacent-method",
+          "note": "Entity linking assigns mentions to entities; relevant to the assignment step, but not equivalent to the failure of assigning an intended referent to a different entity.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Help:Conflation",
+          "role": "contrastive-context",
+          "note": "Wikidata's conflation guidance describes one entity representing multiple distinct things, which is closer to Merge Failure than to substitution of one intended referent by another.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
         }
       ]
     },
@@ -911,9 +927,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityOmission",
       "sourceConceptId": "EntityOmission",
       "sourceLabel": "Entity Omission",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No suitable stable external concept identifier was verified. Missing-node / knowledge-graph incompleteness terminology is relevant contextual evidence, but its scope can include absent data structures rather than omission of an intended referent during identity reconstruction.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -930,6 +946,22 @@
           "note": "Entity-linking tasks make explicit the problem of linking mentions to entities; missed or unlinked mentions provide a narrow technical analogue for omission, not a definition of DIO Entity Omission.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://academ.us/article/2607.25959/",
+          "role": "research-context",
+          "note": "A recent paper describes missing nodes and missing statements in knowledge graphs as forms of incompleteness. This is useful evidence for the general missing-entity problem, but not a stable external concept identifier for DIO Entity Omission.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Link_analysis",
+          "role": "conceptual-context",
+          "note": "The article discusses incompleteness and missing data/links as limitations of link analysis. This is contextual evidence, not a mapping target.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
         }
       ]
     },
@@ -979,9 +1011,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation",
       "sourceConceptId": "SemanticFragmentation",
       "sourceLabel": "Semantic Fragmentation",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. The generic Wikidata fragmentation item is a lexical false friend. Memory fragmentation offers only a distant analogy around loss of integration/coherence and is not a valid SKOS mapping.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_components",
@@ -1014,6 +1046,22 @@
           "note": "Ontology alignment is one method for relating independently developed vocabularies; it provides a contrast to fragmented semantic descriptions but does not guarantee coherent digital-identity reconstruction.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1132459",
+          "role": "contrastive-context",
+          "note": "The Wikidata item for fragmentation concerns non-contiguous allocation of memory or storage. Despite the lexical overlap, its extension is unrelated to DIO semantic fragmentation.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Fragmentation_of_memory",
+          "role": "distant-analogy",
+          "note": "Memory fragmentation describes difficulty integrating elements into a coherent whole. This is a distant structural analogy only; its psychological/clinical domain must not be imported into DIO.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
         }
       ]
     },
@@ -1057,9 +1105,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalMisalignment",
       "sourceConceptId": "TemporalMisalignment",
       "sourceLabel": "Temporal Misalignment",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. Data synchronization is a neighboring process, and dynamic time warping is a domain-specific alignment method; neither is a suitable broader or equivalent concept for the DIO failure mode without an explicitly narrower operational definition.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
@@ -1068,6 +1116,30 @@
           "note": "The broad digital-identity topic provides background for identifiers and identity data that may change over time, but the article is not evidence of temporal misalignment as a defined failure mode. Retain as contextual background only.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1172333",
+          "role": "adjacent-process",
+          "note": "Data synchronization is the process of maintaining consistency across data stores. It is relevant to temporal alignment across distributed representations, but describes a corrective process rather than temporal misalignment as a failure.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Dynamic_time_warping",
+          "role": "technical-analogy",
+          "note": "Dynamic time warping addresses temporal alignment of sequences and explicitly discusses random temporal misalignment. This is a domain-specific signal-processing method, not a concept equivalent to DIO temporal misalignment.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Wikidata:WikiProject_Ontology/Ontology_Course/Modeling_time",
+          "role": "modeling-context",
+          "note": "Wikidata ontology modeling notes discuss temporal extent and entities that persist through time while maintaining identity; useful temporal-modeling context, not a mapping target.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Page/search result inspected on 2026-10-16 for topical relevance; this does not establish a SKOS mapping."
         }
       ]
     },
