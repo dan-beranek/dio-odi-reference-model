@@ -1140,6 +1140,22 @@
           "verificationStatus": "unverified",
           "rationale": "Unverified initial candidate proposed by Claude; potential broader computer-science concept; URI and semantic scope require verification",
           "evidence": []
+        },
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q403605",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:broadMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Wikidata defines robustness as the ability of an object, system, or property to resist perturbations. This is plausibly broader than DIO Semantic Robustness, which specifically concerns identity reconstruction under perturbations of the representational environment. Candidate only: confirm that the broad-match scope is acceptable for the vocabulary's intended use.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q403605",
+              "role": "concept-description",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata label, description, aliases and high-level statements checked; its general perturbation-resistance definition appears broader than the DIO concept, but the mapping remains provisional."
+            }
+          ]
         }
       ],
       "auditNote": "Seed candidate only; not an approved mapping.",
