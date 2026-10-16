@@ -402,15 +402,15 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TrustDimension",
       "sourceConceptId": "TrustDimension",
       "sourceLabel": "Trust",
-      "reviewStatus": "reviewed-with-candidates",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [
         {
           "targetUri": "http://dbpedia.org/resource/Trust_(social_science)",
           "sourceSystem": "DBpedia",
           "mappingRelation": "skos:broadMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "unverified",
-          "rationale": "Unverified initial candidate proposed by Claude; social-science trust may not fit the task-sensitive, non-anthropomorphic DIO dimension",
+          "rationale": "Rejected in the batch review: the DBpedia URI was never independently verified and the proposed broadMatch direction is not established. The social-science framing is not sufficient to map DIO's task-sensitive, non-anthropomorphic Trust dimension. Keep the source as contextual evidence only.",
           "evidence": []
         },
         {
@@ -488,7 +488,7 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionDimension",
       "sourceConceptId": "ReconstructionDimension",
       "sourceLabel": "Reconstruction",
-      "reviewStatus": "in-review",
+      "reviewStatus": "reviewed-with-candidates",
       "mappings": [
         {
           "targetUri": "https://www.wikidata.org/wiki/Q17012245",
@@ -496,7 +496,7 @@
           "mappingRelation": "skos:narrowMatch",
           "reviewStatus": "candidate",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Wikidata defines entity linking as assigning a unique identity to entities mentioned in text. This is a bounded computational task within the broader DIO reconstruction dimension, which also covers distributed representations, temporal continuity, context, and multiple observer mechanisms. Candidate narrowMatch only; do not treat entity linking as equivalent to DIO reconstruction.",
+          "rationale": "Retain as a candidate narrowMatch. Entity linking is a bounded mention-to-entity task that is narrower than DIO's reconstruction dimension, but the mapping remains provisional and is not an equivalence claim.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q17012245",
@@ -539,24 +539,24 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReferentialContinuity",
       "sourceConceptId": "ReferentialContinuity",
       "sourceLabel": "Referential Continuity",
-      "reviewStatus": "in-review",
+      "reviewStatus": "reviewed-with-candidates",
       "mappings": [
         {
           "targetUri": "http://dbpedia.org/resource/Identity_(philosophy)",
           "sourceSystem": "DBpedia",
           "mappingRelation": "skos:broadMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "unverified",
-          "rationale": "Unverified initial candidate proposed by Claude; philosophical identity may be adjacent but is not demonstrated to be broader than DIO referential continuity",
+          "rationale": "Rejected in the batch review: the DBpedia URI was not independently verified, and the proposed broadMatch direction is unsupported. Philosophical identity is a theoretical neighbor, not demonstrably a broader concept for DIO Referential Continuity.",
           "evidence": []
         },
         {
           "targetUri": "https://www.wikidata.org/wiki/Q254474",
           "sourceSystem": "Wikidata",
           "mappingRelation": "skos:relatedMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Wikidata identity (Q254474) describes the relation each thing bears to itself alone. This is philosophical identity, not temporal referential continuity under legitimate change; only a tentative relatedMatch is plausible and may be rejected.",
+          "rationale": "Rejected in the batch review: identity-as-the-relation a thing bears to itself is too far from DIO's operational criterion of referential continuity through legitimate change. Preserve as contrastive evidence, not a SKOS mapping.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q254474",
@@ -572,7 +572,7 @@
           "mappingRelation": "skos:relatedMatch",
           "reviewStatus": "candidate",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Wikidata's GFO concept 'Persistant' addresses identity over time: different temporal presentations may have different properties yet remain the same. This is a closer theoretical neighbor to DIO Referential Continuity than identity-as-self-relation, but it belongs to a specific formal ontology and is not equivalent to DIO's operational referential criterion.",
+          "rationale": "Retain as a candidate relatedMatch. GFO Persistant explicitly models identity over time despite changing properties, making it a meaningful formal-ontology neighbor. Its theoretical commitment and extension differ from DIO's operational referential-continuity criterion; author approval is still required.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q141646085",
@@ -1159,24 +1159,24 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#MergeFailure",
       "sourceConceptId": "MergeFailure",
       "sourceLabel": "Merge Failure",
-      "reviewStatus": "in-review",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [
         {
           "targetUri": "http://dbpedia.org/resource/False_positives_and_false_negatives",
           "sourceSystem": "DBpedia",
           "mappingRelation": "skos:broadMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "unverified",
-          "rationale": "Unverified initial candidate proposed by Claude; target may describe error categories rather than a broader concept; scope requires verification",
+          "rationale": "Rejected in the batch review: the DBpedia URI was not independently verified, and generic false-positive/false-negative categories do not establish a broader concept for either DIO Merge Failure or Split Failure.",
           "evidence": []
         },
         {
           "targetUri": "https://www.wikidata.org/wiki/Q18207010",
           "sourceSystem": "Wikidata",
           "mappingRelation": "skos:relatedMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Wikidata describes false positives and false negatives as types of data-reporting error and places them under type I/type II errors and binary classification. This is not equivalent to the DIO referential failure concept; at most it is a weak adjacent analytical relation and may be rejected after review.",
+          "rationale": "Rejected in the batch review: false positives and false negatives in binary classification/reporting do not describe the specific referential merge failure (distinct referents collapsed) or split failure (one referent reconstructed as multiple identities). Retain as contrastive evidence only.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q18207010",
@@ -1203,24 +1203,24 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure",
       "sourceConceptId": "SplitFailure",
       "sourceLabel": "Split Failure",
-      "reviewStatus": "in-review",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [
         {
           "targetUri": "http://dbpedia.org/resource/False_positives_and_false_negatives",
           "sourceSystem": "DBpedia",
           "mappingRelation": "skos:broadMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "unverified",
-          "rationale": "Unverified initial candidate proposed by Claude; target may describe error categories rather than a broader concept; scope requires verification",
+          "rationale": "Rejected in the batch review: the DBpedia URI was not independently verified, and generic false-positive/false-negative categories do not establish a broader concept for either DIO Merge Failure or Split Failure.",
           "evidence": []
         },
         {
           "targetUri": "https://www.wikidata.org/wiki/Q18207010",
           "sourceSystem": "Wikidata",
           "mappingRelation": "skos:relatedMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Wikidata describes false positives and false negatives as types of data-reporting error and places them under type I/type II errors and binary classification. This is not equivalent to the DIO referential failure concept; at most it is a weak adjacent analytical relation and may be rejected after review.",
+          "rationale": "Rejected in the batch review: false positives and false negatives in binary classification/reporting do not describe the specific referential merge failure (distinct referents collapsed) or split failure (one referent reconstructed as multiple identities). Retain as contrastive evidence only.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q18207010",
@@ -1651,15 +1651,15 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticRobustness",
       "sourceConceptId": "SemanticRobustness",
       "sourceLabel": "Semantic Robustness",
-      "reviewStatus": "in-review",
+      "reviewStatus": "reviewed-with-candidates",
       "mappings": [
         {
           "targetUri": "http://dbpedia.org/resource/Robustness_(computer_science)",
           "sourceSystem": "DBpedia",
           "mappingRelation": "skos:broadMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "unverified",
-          "rationale": "Unverified initial candidate proposed by Claude; potential broader computer-science concept; URI and semantic scope require verification",
+          "rationale": "Rejected in the batch review: the DBpedia URI and scope were not independently verified, and a broader-match direction cannot be justified from the label alone. The verified Wikidata robustness concept is the stronger candidate.",
           "evidence": []
         },
         {
@@ -1668,7 +1668,7 @@
           "mappingRelation": "skos:broadMatch",
           "reviewStatus": "candidate",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Wikidata defines robustness as the ability of an object, system, or property to resist perturbations. This is plausibly broader than DIO Semantic Robustness, which specifically concerns identity reconstruction under perturbations of the representational environment. Candidate only: confirm that the broad-match scope is acceptable for the vocabulary's intended use.",
+          "rationale": "Retain as a candidate broadMatch. Wikidata defines robustness as resistance to perturbations, plausibly broader than DIO Semantic Robustness under representational perturbation. Because the item is a general, mixed-scope concept (including philosophical and system-characteristic uses), the intended hierarchy should be author-reviewed before approval.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q403605",
@@ -1737,24 +1737,24 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityResolutionAnomaly",
       "sourceConceptId": "EntityResolutionAnomaly",
       "sourceLabel": "Entity Resolution Anomaly",
-      "reviewStatus": "in-review",
+      "reviewStatus": "reviewed-no-match",
       "mappings": [
         {
           "targetUri": "http://dbpedia.org/resource/Record_linkage",
           "sourceSystem": "DBpedia",
           "mappingRelation": "skos:broadMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "unverified",
-          "rationale": "Unverified initial candidate proposed by Claude; historical grouping label; topical proximity to record linkage does not establish a broader-match relation",
+          "rationale": "Rejected in the batch review: the DBpedia URI was not independently verified, and record linkage is a process/method rather than a broader concept for the DIO anomaly/failure grouping.",
           "evidence": []
         },
         {
           "targetUri": "https://www.wikidata.org/wiki/Q1266546",
           "sourceSystem": "Wikidata",
           "mappingRelation": "skos:relatedMatch",
-          "reviewStatus": "candidate",
+          "reviewStatus": "rejected",
           "verificationStatus": "semantically-reviewed",
-          "rationale": "Wikidata describes record linkage as joining records/entities across datasets and lists entity resolution as an alias. This is adjacent to the historical DIO grouping, but does not define the anomaly/failure concept itself; relatedMatch is the strongest defensible initial relation, pending author review.",
+          "rationale": "Rejected in the batch review: record linkage is an adjacent identity-resolution process, not the anomaly or failure concept itself. A generic associative relationship is not enough to justify a cross-scheme SKOS mapping; retain the item as contextual evidence.",
           "evidence": [
             {
               "uri": "https://www.wikidata.org/wiki/Q1266546",
