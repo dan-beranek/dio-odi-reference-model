@@ -232,3 +232,18 @@ The W3C SKOS Reference defines mapping properties as alignment links between con
 - 12 mappings rejected.
 - 0 approved.
 - No canonical vocabulary changes; no mappings projected into derived Turtle.
+
+
+## Final candidate scope check: GFO Persistant and Wikidata Robustness (2026-10-16)
+
+### Referential Continuity → GFO Persistant (Q141646085), `skos:relatedMatch`
+
+The primary GFO specification confirms that Persistants are universals used to capture identity over time; their presential instances can have different properties at different times while still being treated as the same. This establishes a substantive theoretical relation, not just a shared label. However, the semantic types differ: GFO's Persistant is a specific formal-ontological category, while DIO Referential Continuity is an operational criterion for treating a changing entity as the same referent for analytical purposes. A `relatedMatch` may be useful for ontology-level discovery, but it should be approved only if that kind of theoretical crosswalk is within the registry's interoperability goal. [GFO Persistant definition](https://w3id.org/gfo/base/Persistant) · [Wikidata Q141646085](https://www.wikidata.org/wiki/Q141646085)
+
+### Semantic Robustness → Wikidata Robustness (Q403605), `skos:broadMatch`
+
+The current Wikidata definition describes robustness as the ability of an object, system, or property to tolerate or resist perturbations that affect behavior. The item is classified both as a philosophical concept and a system characteristic, has superclass `quality`, and is partially coincident with constancy and permanence. This supports the direction of a plausible broadMatch: DIO Semantic Robustness specializes perturbation resistance to identity reconstruction under changes in the representational environment. The target's mixed scope and the absence of an explicitly asserted hierarchy mean that the mapping remains a candidate rather than an approved relation. [Wikidata Q403605](https://www.wikidata.org/wiki/Q403605)
+
+### Decision
+
+Keep both candidates provisionally. The primary-source checks strengthen their rationales but do not remove the difference in semantic scope. No mapping is approved automatically by source verification. The registry still contains 14 mapping records: 2 candidates, 12 rejected, 0 approved. The canonical DIO/ODI vocabulary remains unchanged.
