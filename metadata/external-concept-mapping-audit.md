@@ -43,3 +43,21 @@ No candidate is promoted to `approved` in this audit. There are now three compar
 The Merge Failure and Split Failure links to false positives/false negatives should not be treated as mappings: their commonality is generic error language, not a sufficiently specific conceptual relation. The trust and philosophical-identity candidates are better handled as contextual/contrastive evidence unless a more precisely scoped external concept is found.
 
 DBpedia targets were not promoted: direct page retrieval was not reliable in this pass, and in any event a DBpedia URI derived from the same Wikipedia topic should not be counted as independent corroboration.
+
+
+## Follow-up audit — Entity Substitution, Entity Omission, Temporal Misalignment, Semantic Fragmentation (2026-10-16)
+
+### Entity Substitution
+No new mapping candidate. Entity linking (Wikidata Q17012245) is a neighboring task that assigns mentions to entities, not the substitution failure itself. Wikidata's own conflation guidance describes one record/entity representing multiple distinct things; that is closer to Merge Failure than to Entity Substitution. Sources: https://www.wikidata.org/wiki/Q17012245 ; https://www.wikidata.org/wiki/Help:Conflation
+
+### Entity Omission
+No mapping candidate. Research on knowledge-graph inconsistencies describes missing nodes and missing statements as graph incompleteness, while the Wikipedia article on link analysis discusses missing data and links. These are useful contextual evidence but do not establish a stable external concept with the same scope as omission of an intended referent during identity reconstruction. Sources: https://academ.us/article/2607.25959/ ; https://en.wikipedia.org/wiki/Link_analysis
+
+### Temporal Misalignment
+No mapping candidate. Wikidata's data-synchronization concept describes a process for maintaining consistency across data stores, not the failure state of temporal misalignment. Dynamic time warping is a domain-specific sequence-alignment method that can address temporal misalignment, not an equivalent concept. Wikidata ontology modeling provides context for temporal extents and identity persistence. Sources: https://www.wikidata.org/wiki/Q1172333 ; https://en.wikipedia.org/wiki/Dynamic_time_warping ; https://www.wikidata.org/wiki/Wikidata:WikiProject_Ontology/Ontology_Course/Modeling_time
+
+### Semantic Fragmentation
+No mapping candidate. Wikidata Q1132459 describes fragmentation of memory/storage allocation, a lexical false friend rather than semantic fragmentation. Wikipedia's memory-fragmentation article offers a distant structural analogy involving loss of integration/coherence, but belongs to a psychological/clinical domain and must not be treated as a mapping. Sources: https://www.wikidata.org/wiki/Q1132459 ; https://en.wikipedia.org/wiki/Fragmentation_of_memory
+
+### Decision
+This pass adds contextual evidence, not SKOS mappings. That is intentional: the sources support neighboring tasks, failure contexts, or analogies, but not a sufficiently well-defined mapping relation. Candidate count remains unchanged; the four concepts remain under review pending author-level decision on whether contextual evidence alone is enough to mark each concept reviewed.
