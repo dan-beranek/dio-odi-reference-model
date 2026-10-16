@@ -1,7 +1,18 @@
 # DIO/ODI Reference Model
 
-**Reference Model release:** v0.3.2  
-**Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
+---
+
+## DIO/ODI — Vocabulary & Reference Model
+
+A machine-readable vocabulary and a reference model for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
+
+- **Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
+- **Reference Model & Source Repository:** https://github.com/dan-beranek/dio-odi-reference-model/
+
+---
+
+**Latest archived Reference Model release:** v0.3.2  
+**Reference Vocabulary working revision:** v0.1.1 — SKOS-first, OWL-later  
 **Release DOI:** https://doi.org/10.5281/zenodo.23300703  
 **Previous archived release:** v0.3.1 — https://doi.org/10.5281/zenodo.23290683  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
@@ -121,7 +132,7 @@ Public index: https://vocab.danielberanek.cz/mappings/
 - [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework. Introduced in Reference Model v0.2.0 and included in v0.3.2.
 - [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
 
-The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and is included in v0.3.2. The canonical Reference Vocabulary remains unchanged at v0.1.0.
+The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and is included in v0.3.2. The archived Reference Model v0.3.2 contains Reference Vocabulary v0.1.0; the working vocabulary in `main` advances to v0.1.1 and is not yet represented by that archived release.
 
 ## Primary sources
 
