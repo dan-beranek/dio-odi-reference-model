@@ -1,6 +1,6 @@
 {
   "registryVersion": "0.1.0",
-  "status": "initial-audit-in-progress",
+  "status": "audit-in-progress",
   "createdFrom": {
     "repository": "dan-beranek/dio-odi-reference-model",
     "sourcePath": "vocabulary/dio-odi-skos.ttl",
@@ -99,7 +99,7 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TrustDimension",
       "sourceConceptId": "TrustDimension",
       "sourceLabel": "Trust",
-      "reviewStatus": "in-review",
+      "reviewStatus": "reviewed-with-candidates",
       "mappings": [
         {
           "targetUri": "http://dbpedia.org/resource/Trust_(social_science)",
@@ -109,6 +109,22 @@
           "verificationStatus": "unverified",
           "rationale": "Unverified initial candidate proposed by Claude; social-science trust may not fit the task-sensitive, non-anthropomorphic DIO dimension",
           "evidence": []
+        },
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q659974",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:relatedMatch",
+          "reviewStatus": "rejected",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Rejected as a mapping candidate: Wikidata describes trust as a feeling or certainty and classifies it as a positive/basic emotion and belief. The DIO K6 dimension is explicitly task-sensitive and need not imply human psychology, so this target risks importing the wrong conceptual scope.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q659974",
+              "role": "concept-description",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata description, statements and sitelinks checked; psychological framing conflicts with the DIO definition."
+            }
+          ]
         }
       ],
       "auditNote": "Seed candidate only; not an approved mapping."
@@ -143,6 +159,22 @@
           "verificationStatus": "unverified",
           "rationale": "Unverified initial candidate proposed by Claude; philosophical identity may be adjacent but is not demonstrated to be broader than DIO referential continuity",
           "evidence": []
+        },
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q254474",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:relatedMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Wikidata identity (Q254474) describes the relation each thing bears to itself alone. This is philosophical identity, not temporal referential continuity under legitimate change; only a tentative relatedMatch is plausible and may be rejected.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q254474",
+              "role": "concept-description",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata label, description and subclass/related statements checked."
+            }
+          ]
         }
       ],
       "auditNote": "Seed candidate only; not an approved mapping."
@@ -257,6 +289,22 @@
           "verificationStatus": "unverified",
           "rationale": "Unverified initial candidate proposed by Claude; target may describe error categories rather than a broader concept; scope requires verification",
           "evidence": []
+        },
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q18207010",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:relatedMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Wikidata describes false positives and false negatives as types of data-reporting error and places them under type I/type II errors and binary classification. This is not equivalent to the DIO referential failure concept; at most it is a weak adjacent analytical relation and may be rejected after review.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q18207010",
+              "role": "concept-description",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata description and hierarchy checked; it concerns false positive/negative reporting errors."
+            }
+          ]
         }
       ],
       "auditNote": "Seed candidate only; not an approved mapping."
@@ -275,6 +323,22 @@
           "verificationStatus": "unverified",
           "rationale": "Unverified initial candidate proposed by Claude; target may describe error categories rather than a broader concept; scope requires verification",
           "evidence": []
+        },
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q18207010",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:relatedMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Wikidata describes false positives and false negatives as types of data-reporting error and places them under type I/type II errors and binary classification. This is not equivalent to the DIO referential failure concept; at most it is a weak adjacent analytical relation and may be rejected after review.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q18207010",
+              "role": "concept-description",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata description and hierarchy checked; it concerns false positive/negative reporting errors."
+            }
+          ]
         }
       ],
       "auditNote": "Seed candidate only; not an approved mapping."
@@ -399,6 +463,22 @@
           "verificationStatus": "unverified",
           "rationale": "Unverified initial candidate proposed by Claude; historical grouping label; topical proximity to record linkage does not establish a broader-match relation",
           "evidence": []
+        },
+        {
+          "targetUri": "https://www.wikidata.org/wiki/Q1266546",
+          "sourceSystem": "Wikidata",
+          "mappingRelation": "skos:relatedMatch",
+          "reviewStatus": "candidate",
+          "verificationStatus": "semantically-reviewed",
+          "rationale": "Wikidata describes record linkage as joining records/entities across datasets and lists entity resolution as an alias. This is adjacent to the historical DIO grouping, but does not define the anomaly/failure concept itself; relatedMatch is the strongest defensible initial relation, pending author review.",
+          "evidence": [
+            {
+              "uri": "https://www.wikidata.org/wiki/Q1266546",
+              "role": "concept-description",
+              "checkedOn": "2026-10-16",
+              "note": "Wikidata label, description and aliases checked; entity resolution is listed as an alias."
+            }
+          ]
         }
       ],
       "auditNote": "Seed candidate only; not an approved mapping."
