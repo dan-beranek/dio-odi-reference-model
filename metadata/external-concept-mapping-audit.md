@@ -23,6 +23,7 @@ A candidate is not approved merely because its target is topically adjacent. `sk
 | Trust Dimension | Wikidata Q659974 — trust | The item describes reliance on another party's honesty and classifies trust under emotion/belief/psychological terminology. DIO's Trust dimension is explicitly context- and task-sensitive and need not imply human psychology. | **Reject** as a mapping candidate; use only as contrastive evidence if needed. |
 | Trust Dimension | DBpedia Trust (social science) | Social-science trust is relevant to the ordinary meaning but risks importing interpersonal/anthropomorphic assumptions into the DIO dimension. Its proposed `broadMatch` direction is not established. | Do not approve. Prefer contextual/contrastive evidence over a SKOS mapping. |
 | Semantic Robustness | Wikidata Q403605 — robustness | Wikidata defines robustness as the ability of an object, system, or property to resist perturbations. DIO Semantic Robustness specifically concerns identity reconstruction under perturbations of the representational environment, so the Wikidata concept plausibly has broader scope. | Retain as **candidate** `skos:broadMatch`; the direction is plausible, but author review is still needed before approval. |
+| Reconstruction Dimension | Wikidata Q17012245 — entity linking | Wikidata defines entity linking as assigning a unique identity to entities mentioned in text. This is a bounded text-to-entity task within DIO reconstruction, which also covers distributed representations, temporal continuity, context, and multiple observer mechanisms. | Retain as **candidate** `skos:narrowMatch`; useful as a narrow technical subtask, not an equivalent to reconstruction as a whole. |
 | Semantic Robustness | DBpedia Robustness (computer science) | A potentially relevant neighboring concept, but the resource has not been validated sufficiently here to determine its precise scope or whether it is broader than the DIO concept. | Keep **candidate** only; verify the DBpedia resource and compare definitions before deciding. |
 
 ## Verified source observations
@@ -33,6 +34,7 @@ A candidate is not approved merely because its target is topically adjacent. `sk
 - Wikidata Q141646085 describes GFO **Persistant** as a formal-ontology notion used to account for identity over time despite changes in properties: https://www.wikidata.org/wiki/Q141646085
 - Wikidata Q659974 describes **trust** as reliance on another party's honesty and includes psychological/emotional classifications: https://www.wikidata.org/wiki/Q659974
 - Wikidata Q403605 defines **robustness** as the ability of an object, system, or property to resist perturbations: https://www.wikidata.org/wiki/Q403605
+- Wikidata Q17012245 defines **entity linking** as assigning a unique identity to entities mentioned in text: https://www.wikidata.org/wiki/Q17012245
 
 ## Outcome
 
