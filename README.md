@@ -1,15 +1,5 @@
 # DIO/ODI Reference Model
 
----
-
-## DIO/ODI — Vocabulary & Reference Model
-
-A machine-readable vocabulary and a reference model for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
-
-- **Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
-- **Reference Model & Source Repository:** https://github.com/dan-beranek/dio-odi-reference-model/
-
----
 
 **Reference Model release:** v0.3.2  
 **Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
@@ -94,6 +84,11 @@ Example concept URI:
 `https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation`
 
 The namespace is owned by the author and is intended to remain stable independently of the repository host.
+
+## Vocabulary and source repository
+
+- **Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
+- **Reference Model & Source Repository:** https://github.com/dan-beranek/dio-odi-reference-model/
 
 ## Files
 
