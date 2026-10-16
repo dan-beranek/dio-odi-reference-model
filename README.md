@@ -1,6 +1,5 @@
 # DIO/ODI Reference Model
 
-
 **Reference Model release:** v0.3.2  
 **Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
 **Release DOI:** https://doi.org/10.5281/zenodo.23300703  
