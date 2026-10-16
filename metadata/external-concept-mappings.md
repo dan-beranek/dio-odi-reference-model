@@ -14,7 +14,7 @@ This registry records candidate and reviewed semantic mappings from the canonica
 - Additional Wikidata candidates added after checking item descriptions: 4
 - Rejected candidate mappings recorded: 1
 - Approved mappings: 0
-- Wikipedia evidence records added: 42 across 39 DIO/ODI concepts
+- Wikipedia evidence records: 42 initial records plus a second thematic pass across linked data, UMBEL, JSON-LD, and entity-resolution literature
 
 The audit is partial. Wikipedia evidence has now been recorded at concept level for every inventoried concept with a relevant, identifiable article found in this pass. These are contextual references, not approved mappings. Some articles are deliberately distant analogues or contrastive cases; each note states the limited semantic value and the boundary of the comparison.
 
