@@ -246,9 +246,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#RepresentationDimension",
       "sourceConceptId": "RepresentationDimension",
       "sourceLabel": "Representation",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. PROV-O and JSON-LD describe provenance and representational infrastructure, not the full DIO analytical dimension of representation.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
@@ -273,6 +273,22 @@
           "note": "The signifier/signified distinction separates a sign's form from the concept it evokes, a useful contrast for distinguishing digital representation from interpreted identity; it is not a direct mapping.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/prov-o/",
+          "role": "formal-modeling-context",
+          "note": "PROV-O distinguishes entities, activities, agents, and provenance relations, helping describe representations and their histories, but does not define DIO's representation dimension as a whole.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
+        },
+        {
+          "uri": "https://www.w3.org/TR/json-ld11/",
+          "role": "technical-context",
+          "note": "JSON-LD provides a method for expressing linked data in JSON; it is a representational format, not the broader DIO analytical dimension of representation.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
         }
       ]
     },
@@ -280,9 +296,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#InterpretationDimension",
       "sourceConceptId": "InterpretationDimension",
       "sourceLabel": "Interpretation",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. Semiotic interpretation is relevant theoretical context, but DIO's dimension includes interpretation across heterogeneous human and machine observers and is not equivalent to a single semiotic construct.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -299,6 +315,22 @@
           "note": "Semiotics models meaning through relations among sign, object and interpreter/interpretant; this offers a theoretical context for interpretation while DIO's dimension concerns reconstruction across digital traces.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Interpretant",
+          "role": "semiotic-context",
+          "note": "The semiotic concept of interpretant is relevant to meaning produced through sign interpretation, but does not map to DIO's full interpretation dimension across human and machine observers.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q193181",
+          "role": "adjacent-concept",
+          "note": "Observation is information acquisition, not the interpretive process that assigns significance to a representation.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
         }
       ]
     },
@@ -511,9 +543,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DistributedRepresentationalState",
       "sourceConceptId": "DistributedRepresentationalState",
       "sourceLabel": "Distributed Digital Representational State",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. PROV-O and JSON-LD model parts of the infrastructure (provenance and linked-data expression) but do not capture the full distributed state defined by DIO.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
@@ -538,6 +570,22 @@
           "note": "JSON-LD shows how JSON documents can carry linked-data semantics through an explicit context; it is one serialization mechanism, not the distributed state itself.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/prov-o/",
+          "role": "formal-modeling-context",
+          "note": "PROV-O can represent provenance across entities, activities, and agents, one component of a distributed representational state, but not the full state including content, metadata, identifiers, availability, and relations.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
+        },
+        {
+          "uri": "https://www.w3.org/TR/json-ld11/",
+          "role": "technical-context",
+          "note": "JSON-LD is a serialization and linked-data mechanism that can expose interlinked representations; it is an implementation format rather than the modeled state itself.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
         }
       ]
     },
@@ -629,9 +677,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionMechanism",
       "sourceConceptId": "ReconstructionMechanism",
       "sourceLabel": "Reconstruction Mechanism",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. SOSA and entity linking provide concrete domain-specific mechanisms, not a general equivalent of DIO identity reconstruction mechanisms.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
@@ -648,6 +696,22 @@
           "note": "JSON-LD enables structured, linked representations that downstream processors can interpret; it concerns representation infrastructure rather than reconstruction as a whole.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.w3.org/TR/sosa/",
+          "role": "formal-modeling-context",
+          "note": "SOSA models sensors, observations, procedures, and features of interest. This is a useful pattern for explicitly modeling observer mechanisms, but it is domain-oriented and not equivalent to general identity reconstruction.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q17012245",
+          "role": "adjacent-method",
+          "note": "Entity linking is one bounded computational mechanism for mapping text mentions to entities, but does not represent the broader set of mechanisms by which observers reconstruct digital identity.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
         }
       ]
     },
@@ -655,9 +719,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIOProblem",
       "sourceConceptId": "DIOProblem",
       "sourceLabel": "DIO Problem",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate. Ontology alignment and SHACL can reveal particular kinds of mismatch or graph nonconformance, but DIO Problem is broader and evaluated against legitimate identity-reconstruction objectives within an observation domain.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -666,6 +730,22 @@
           "note": "Ambiguous name resolution illustrates a local referential problem that may resemble one DIO problem class, not the whole concept.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q1224764",
+          "role": "adjacent-method",
+          "note": "Ontology alignment can reveal semantic correspondence problems between vocabularies, but it is a method and not a general concept for inadequacy of identity reconstruction, continuity, or robustness within an observation domain.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
+        },
+        {
+          "uri": "https://www.w3.org/TR/shacl/",
+          "role": "technical-context",
+          "note": "SHACL validates RDF graphs against declared shapes and constraints. It can detect some structural conformance problems but cannot by itself determine whether a digital identity reconstruction is legitimate or coherent.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
         }
       ]
     },
@@ -1067,7 +1147,7 @@
       "sourceLabel": "Semantic Coherence Failure",
       "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "No mapping candidate added. Linguistic coherence is relevant background, but DIO's concept specifically concerns failure in identity reconstruction and is not equivalent to discourse coherence.",
+      "auditNote": "No mapping candidate. Structural graph validation and linguistic coherence are useful contrasts, but neither establishes the same scope as failure of semantic coherence in identity reconstruction.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_components",
@@ -1108,6 +1188,14 @@
           "checkedOn": "2026-10-16",
           "verificationStatus": "verified-page",
           "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
+        },
+        {
+          "uri": "https://www.w3.org/TR/shacl/",
+          "role": "contrastive-technical-context",
+          "note": "SHACL can detect graph constraint violations, but syntactic/structural conformance is not the same as semantic coherence of a reconstructed identity.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected on 2026-10-16 for contextual relevance; not evidence of equivalence."
         }
       ]
     },
