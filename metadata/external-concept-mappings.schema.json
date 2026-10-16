@@ -257,6 +257,17 @@
                 },
                 "note": {
                   "type": "string"
+                },
+                "verificationStatus": {
+                  "type": "string",
+                  "enum": [
+                    "verified-in-search-result",
+                    "verified-page",
+                    "redirected",
+                    "unverified",
+                    "inaccessible"
+                  ],
+                  "description": "Source verification state. verified-in-search-result means the current search result exposed page content; it is not a full page-by-page audit."
                 }
               },
               "additionalProperties": false
