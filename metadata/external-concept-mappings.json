@@ -24,11 +24,18 @@
     ],
     "mappingDirectionNote": "For sourceConcept skos:broadMatch targetConcept, the target concept is broader than the source concept. For sourceConcept skos:narrowMatch targetConcept, the target concept is narrower than the source concept.",
     "noMatchIsValidOutcome": true,
-    "wikipediaRole": "Supporting evidence and contextual verification; not treated as an equivalent structured mapping target by default.",
-    "externalSystems": [
+    "wikipediaRole": "Contextual and conceptual evidence only by default, not a mapping target. Record semantically useful adjacent concepts even when the relationship is distant; state the exact connection and limitation. Wikipedia and DBpedia are not independent corroboration when the DBpedia resource derives from the same Wikipedia article.",
+    "mappingTargetSystems": [
       "Wikidata",
       "DBpedia"
-    ]
+    ],
+    "evidenceSources": [
+      "Wikipedia",
+      "Wikidata",
+      "DBpedia",
+      "primary-literature"
+    ],
+    "evidenceRecordingRule": "Concept-level evidence may be recorded without asserting a SKOS mapping. Evidence links support interpretation and candidate discovery; they do not themselves establish mappingRelation."
   },
   "concepts": [
     {
@@ -37,7 +44,21 @@
       "sourceLabel": "Digital Identity Optimization",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Digital_identity",
+          "role": "contextual-concept",
+          "checkedOn": "2026-10-16",
+          "note": "Digital identity is a broad technical and social context for DIO, not a definition of the optimization discipline."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage is an adjacent technical problem concerning identity resolution across data sources, narrower than DIO's full scope."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ODI",
@@ -45,7 +66,21 @@
       "sourceLabel": "Ontology of Digital Identity",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
+          "role": "conceptual-context",
+          "checkedOn": "2026-10-16",
+          "note": "Information-science ontology is relevant to ODI as a conceptual and relational modeling practice, but does not define the DIO/ODI theory."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_components",
+          "role": "structural-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "The article describes concepts, attributes and relations in ontologies; useful structural context, not equivalence."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#MVDIO",
@@ -53,7 +88,15 @@
       "sourceLabel": "Minimum Viable Digital Identity Optimization",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_components",
+          "role": "structural-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "The discussion of concepts and relations offers a distant structural analogy for a minimum analytical model, not a mapping."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticField",
@@ -61,7 +104,15 @@
       "sourceLabel": "Semantic Field",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
+          "role": "conceptual-context",
+          "checkedOn": "2026-10-16",
+          "note": "An ontology's domain of discourse is a distant modeling analogue for a semantic field; the concepts are not equivalent."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#K6",
@@ -69,7 +120,15 @@
       "sourceLabel": "K6 Semantic Connectome",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_components",
+          "role": "structural-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "The article's treatment of concepts, attributes and relations is a broad structural analogy for distinguishing dimensions and their relations."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityDimension",
@@ -77,7 +136,15 @@
       "sourceLabel": "Entity",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Digital_identity",
+          "role": "contextual-concept",
+          "checkedOn": "2026-10-16",
+          "note": "The article discusses digital identifiers and represented entities; this is context rather than a direct definition of the K6 dimension."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#RepresentationDimension",
@@ -85,7 +152,15 @@
       "sourceLabel": "Representation",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Digital_identity",
+          "role": "adjacent-concept",
+          "checkedOn": "2026-10-16",
+          "note": "Digital identity representations and identifiers are relevant instances of representation, but do not exhaust the DIO dimension."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#InterpretationDimension",
@@ -93,7 +168,15 @@
       "sourceLabel": "Interpretation",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "adjacent-process",
+          "checkedOn": "2026-10-16",
+          "note": "Name resolution involves interpreting a name in context to identify its referent; a narrow technical analogue, not the full DIO interpretation dimension."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TrustDimension",
@@ -127,7 +210,15 @@
           ]
         }
       ],
-      "auditNote": "Seed candidate only; not an approved mapping."
+      "auditNote": "Seed candidate only; not an approved mapping.",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Trust_(social_science)",
+          "role": "contrastive-context",
+          "checkedOn": "2026-10-16",
+          "note": "Useful as a contrastive account of interpersonal/social trust; its human-centered framing must not be imported uncritically into DIO's non-anthropomorphic dimension."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#RelationshipDimension",
@@ -135,7 +226,15 @@
       "sourceLabel": "Relationship",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/FOAF",
+          "role": "formal-relation-model",
+          "checkedOn": "2026-10-16",
+          "note": "FOAF is a machine-readable vocabulary for describing relations between people and objects; an adjacent example of formalized relations, not a definition of DIO Relationship."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionDimension",
@@ -143,7 +242,15 @@
       "sourceLabel": "Reconstruction",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "adjacent-process",
+          "checkedOn": "2026-10-16",
+          "note": "Name resolution is one narrow reconstruction-related task: resolving textual mentions to referents."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReferentialContinuity",
@@ -177,7 +284,15 @@
           ]
         }
       ],
-      "auditNote": "Seed candidate only; not an approved mapping."
+      "auditNote": "Seed candidate only; not an approved mapping.",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Personal_identity",
+          "role": "philosophical-context",
+          "checkedOn": "2026-10-16",
+          "note": "Personal identity debates concern identity across time and change; this is a conceptual analogue, not an equivalent mapping for referential continuity."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DistributedRepresentationalState",
@@ -185,7 +300,15 @@
       "sourceLabel": "Distributed Digital Representational State",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Digital_identity",
+          "role": "contextual-concept",
+          "checkedOn": "2026-10-16",
+          "note": "The article describes distributed identifiers and digital-object metadata that provide adjacent context for distributed representations."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#Observer",
@@ -193,7 +316,15 @@
       "sourceLabel": "Observer",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "processing-context",
+          "checkedOn": "2026-10-16",
+          "note": "The article offers a narrow software-processing example of resolving references; it does not define the DIO observer."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ObservationDomain",
@@ -201,7 +332,15 @@
       "sourceLabel": "Observation Domain",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
+          "role": "domain-context",
+          "checkedOn": "2026-10-16",
+          "note": "The notion of a domain of discourse is a distant conceptual analogue for a bounded observation domain, not a direct match."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionMechanism",
@@ -209,7 +348,15 @@
       "sourceLabel": "Reconstruction Mechanism",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "adjacent-method",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage provides a concrete identity-reconciliation mechanism across data sources, narrower than DIO reconstruction."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIOProblem",
@@ -217,7 +364,15 @@
       "sourceLabel": "DIO Problem",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "example-of-adjacent-problem",
+          "checkedOn": "2026-10-16",
+          "note": "Ambiguous name resolution illustrates a local referential problem that may resemble one DIO problem class, not the whole concept."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#DIOIntervention",
@@ -225,7 +380,15 @@
       "sourceLabel": "DIO Intervention",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "method-context",
+          "checkedOn": "2026-10-16",
+          "note": "Record-linkage procedures are examples of interventions on reconciliation processes, not DIO interventions as a whole."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraint",
@@ -233,7 +396,15 @@
       "sourceLabel": "Identity-Preserving Constraint",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Personal_identity",
+          "role": "philosophical-context",
+          "checkedOn": "2026-10-16",
+          "note": "Criteria of identity over time are conceptually adjacent to identity-preserving constraints, but the theoretical scopes differ."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EssentialVector",
@@ -241,7 +412,15 @@
       "sourceLabel": "Essential Vector",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Personal_identity",
+          "role": "conceptual-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "Debates about criteria of identity offer a distant analogy for a minimal identity-preserving core; no claim of equivalence is made."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingVariation",
@@ -249,7 +428,15 @@
       "sourceLabel": "Identity-Preserving Variation",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Personal_identity",
+          "role": "conceptual-context",
+          "checkedOn": "2026-10-16",
+          "note": "Identity-through-change debates provide broad context for variation that preserves identity."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionFailureMode",
@@ -257,7 +444,15 @@
       "sourceLabel": "Reconstruction Failure Mode",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "example-of-failure",
+          "checkedOn": "2026-10-16",
+          "note": "The article's ambiguous-reference examples illustrate a narrow failure class relevant to referential reconstruction."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReferentialReconstructionFailure",
@@ -265,7 +460,15 @@
       "sourceLabel": "Referential Reconstruction Failure",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "adjacent-failure-context",
+          "checkedOn": "2026-10-16",
+          "note": "Record-linkage errors can result in incorrect identity assignments, an adjacent technical failure context rather than equivalence."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntitySubstitution",
@@ -273,7 +476,15 @@
       "sourceLabel": "Entity Substitution",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "example-of-adjacent-failure",
+          "checkedOn": "2026-10-16",
+          "note": "Resolving a mention to the wrong referent is a close illustrative example of substitution, but the article's scope is narrower."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#MergeFailure",
@@ -307,7 +518,15 @@
           ]
         }
       ],
-      "auditNote": "Seed candidate only; not an approved mapping."
+      "auditNote": "Seed candidate only; not an approved mapping.",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "adjacent-error-context",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage can involve incorrectly linking records for distinct entities; this is relevant to merge failure but is not a direct semantic mapping."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure",
@@ -341,7 +560,15 @@
           ]
         }
       ],
-      "auditNote": "Seed candidate only; not an approved mapping."
+      "auditNote": "Seed candidate only; not an approved mapping.",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "adjacent-error-context",
+          "checkedOn": "2026-10-16",
+          "note": "Failure to link records that refer to the same entity is adjacent to split failure; the DIO concept is framed at the reconstructed-identity level."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityOmission",
@@ -349,7 +576,15 @@
       "sourceLabel": "Entity Omission",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "adjacent-process",
+          "checkedOn": "2026-10-16",
+          "note": "The article's name-resolution task offers context for failures to resolve a referent, but not all such failures meet DIO's omission definition."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticCoherenceFailure",
@@ -357,7 +592,15 @@
       "sourceLabel": "Semantic Coherence Failure",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_components",
+          "role": "structural-context",
+          "checkedOn": "2026-10-16",
+          "note": "The article describes semantic relations among concepts; this is broad context for coherence, not a direct match."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticFragmentation",
@@ -365,7 +608,15 @@
       "sourceLabel": "Semantic Fragmentation",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Ontology_components",
+          "role": "structural-analogy",
+          "checkedOn": "2026-10-16",
+          "note": "The article's emphasis on relations among concepts offers a distant structural contrast for fragmentation among representations."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalReconstructionFailure",
@@ -373,7 +624,15 @@
       "sourceLabel": "Temporal Reconstruction Failure",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Personal_identity",
+          "role": "temporal-context",
+          "checkedOn": "2026-10-16",
+          "note": "Identity-through-time debates provide conceptual context for temporal reconstruction failures, without equivalence."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalDiscontinuity",
@@ -381,7 +640,15 @@
       "sourceLabel": "Temporal Discontinuity",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Personal_identity",
+          "role": "temporal-context",
+          "checkedOn": "2026-10-16",
+          "note": "Persistence of identity through change is a philosophical analogue; DIO temporal discontinuity is a narrower reconstruction failure."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalMisalignment",
@@ -389,7 +656,15 @@
       "sourceLabel": "Temporal Misalignment",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Digital_identity",
+          "role": "temporal-context",
+          "checkedOn": "2026-10-16",
+          "note": "The article describes identifiers and changing state data; this is adjacent context for temporal mismatch, not a direct match."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ContextualAdequacyFailure",
@@ -397,7 +672,15 @@
       "sourceLabel": "Contextual Adequacy Failure",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "contextual-interpretation",
+          "checkedOn": "2026-10-16",
+          "note": "The article's context-dependent resolution examples are relevant to contextual adequacy, but the DIO concept is broader."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement",
@@ -405,7 +688,15 @@
       "sourceLabel": "Contextual Displacement",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "contextual-interpretation",
+          "checkedOn": "2026-10-16",
+          "note": "Context changing which referent a name denotes is an adjacent illustration of contextual displacement, not an equivalent definition."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityCollapse",
@@ -413,7 +704,15 @@
       "sourceLabel": "Identity Collapse",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Digital_identity",
+          "role": "contrastive-context",
+          "checkedOn": "2026-10-16",
+          "note": "The article provides broad context for digital identity, while DIO Identity Collapse remains a distinct phenomenon-level concept."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability",
@@ -421,7 +720,15 @@
       "sourceLabel": "Semantic Vulnerability",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Robustness_(computer_science)",
+          "role": "contrastive-context",
+          "checkedOn": "2026-10-16",
+          "note": "Robustness is the conceptual counterpart used to frame susceptibility to perturbation; only an adjacent relationship is intended."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticRobustness",
@@ -439,7 +746,15 @@
           "evidence": []
         }
       ],
-      "auditNote": "Seed candidate only; not an approved mapping."
+      "auditNote": "Seed candidate only; not an approved mapping.",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Robustness_(computer_science)",
+          "role": "adjacent-concept",
+          "checkedOn": "2026-10-16",
+          "note": "Computer-science robustness is a useful neighboring concept for resistance to perturbations, but its scope is not identical to semantic robustness in DIO."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionCapture",
@@ -447,7 +762,15 @@
       "sourceLabel": "Reconstruction Capture",
       "reviewStatus": "not-reviewed",
       "mappings": [],
-      "auditNote": ""
+      "auditNote": "",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "adjacent-method-context",
+          "checkedOn": "2026-10-16",
+          "note": "Record-linkage workflows provide a distant example of how selected data and matching procedures can shape a resulting identity decision; no direct match is asserted."
+        }
+      ]
     },
     {
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#EntityResolutionAnomaly",
@@ -481,7 +804,21 @@
           ]
         }
       ],
-      "auditNote": "Seed candidate only; not an approved mapping."
+      "auditNote": "Seed candidate only; not an approved mapping.",
+      "evidence": [
+        {
+          "uri": "https://en.wikipedia.org/wiki/Record_linkage",
+          "role": "historical-and-adjacent-context",
+          "checkedOn": "2026-10-16",
+          "note": "Record linkage/entity resolution is the historical neighboring field; it does not define the DIO anomaly concept."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
+          "role": "adjacent-concept",
+          "checkedOn": "2026-10-16",
+          "note": "Name resolution is a narrower NLP analogue involving assigning mentions to referents, not a definition of the DIO concept."
+        }
+      ]
     }
   ]
 }
