@@ -12,10 +12,10 @@ This registry records candidate and reviewed semantic mappings from the canonica
 - Concepts inventoried: 39
 - Concepts with a first-pass external evidence review: 39 of 39 (not an exhaustive search of every external vocabulary)
 - Evidence records across the registry: 148
-- Mapping records: 14 (3 candidate, 11 rejected, 0 approved)
+- Mapping records: 14 (2 candidate, 12 rejected, 0 approved)
 - Evidence records linking to Wikipedia: 97; Wikidata: 24; DBpedia: 0
 
-The first-pass evidence inventory now covers all 39 concepts. This does not mean every external vocabulary has been exhaustively searched or every evidence note independently validated in full. Evidence includes direct neighbors, methodological context, theoretical analogies, homonyms, and contrastive cases; these records do not themselves imply SKOS mappings. The initial batch review is complete: 3 candidates remain for author review, 11 mappings were rejected, and none was approved. The broader mapping audit remains open for author decisions and further targeted research.
+The first-pass evidence inventory now covers all 39 concepts. This does not mean every external vocabulary has been exhaustively searched or every evidence note independently validated in full. Evidence includes direct neighbors, methodological context, theoretical analogies, homonyms, and contrastive cases; these records do not themselves imply SKOS mappings. The initial batch review and a deeper candidate review are complete: 2 candidates remain for author review, 12 mappings were rejected, and none was approved. The broader mapping audit remains open for author decisions and further targeted research.
 
 ## Distinguish mapping targets from evidence sources
 - **Wikidata:** a structured mapping target, but only after checking the item's label, description, statements, and scope.
@@ -84,4 +84,4 @@ The Wikipedia evidence URLs and their roles are listed per concept in the JSON r
 
 ## Batch decision (2026-10-16)
 
-The 14 initial mapping records were reviewed. Three remain as candidates: Reconstruction → Wikidata Entity linking Q17012245 (`skos:narrowMatch`); Referential Continuity → GFO Persistant Q141646085 (`skos:relatedMatch`); Semantic Robustness → Wikidata Robustness Q403605 (`skos:broadMatch`). Eleven mappings were rejected, including all six unverified DBpedia suggestions, the generic false-positive/false-negative matches for Merge Failure and Split Failure, the self-relation identity item, and the record-linkage mapping for Entity Resolution Anomaly. None is approved. The rationale is recorded per mapping in `metadata/external-concept-mappings.json`; only approved mappings may be projected into mapped Turtle.
+The 14 initial mapping records were reviewed. Two remain as candidates: Referential Continuity → GFO Persistant Q141646085 (`skos:relatedMatch`); Semantic Robustness → Wikidata Robustness Q403605 (`skos:broadMatch`). Twelve mappings were rejected, including all six unverified DBpedia suggestions, the generic false-positive/false-negative matches for Merge Failure and Split Failure, the self-relation identity item, the record-linkage mapping for Entity Resolution Anomaly, and Entity linking for Reconstruction (rejected after deeper scope review as a task/method rather than a narrower concept in the same semantic hierarchy). None is approved. The rationale is recorded per mapping in `metadata/external-concept-mappings.json`; only approved mappings may be projected into mapped Turtle.
