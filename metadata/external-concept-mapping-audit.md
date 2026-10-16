@@ -112,3 +112,27 @@ PROV-O can describe activities and provenance, while ontology alignment is one p
 
 ### Decision
 This pass adds contextual evidence but no SKOS mappings. The Industrial Ontology Foundry's Observer/ObserverRole deserves a focused author review later because it is a formally defined, machine-readable neighboring concept; even there, a mapping should not be added unless the scope and direction are defensible.
+
+
+## Follow-up audit — Representation, Interpretation, Distributed State, Reconstruction Mechanism, DIO Problem, Semantic Coherence Failure (2026-10-16)
+
+### Representation Dimension
+PROV-O describes provenance among entities, activities, and agents; JSON-LD provides a linked-data expression mechanism. Both are useful infrastructure contexts, but neither is equivalent to the full DIO analytical dimension of representation. Sources: https://www.w3.org/TR/prov-o/ ; https://www.w3.org/TR/json-ld11/
+
+### Interpretation Dimension
+The semiotic interpretant is a useful theoretical neighbor for meaning generated through sign interpretation. Wikidata's observation concept describes information acquisition rather than interpretation. Neither captures the full DIO dimension across heterogeneous human and machine observers. Sources: https://en.wikipedia.org/wiki/Interpretant ; https://www.wikidata.org/wiki/Q193181
+
+### Distributed Representational State
+PROV-O can encode provenance and JSON-LD can express linked representations, but the DIO concept includes a wider observable state: content, attributes, metadata, identifiers, provenance, availability, and relations among representations. No mapping candidate. Sources: https://www.w3.org/TR/prov-o/ ; https://www.w3.org/TR/json-ld11/
+
+### Reconstruction Mechanism
+SOSA models sensors, observations, procedures, and features of interest; entity linking is a specific mention-to-entity task. These are concrete neighboring mechanisms, not a general equivalent for the range of mechanisms by which observers reconstruct digital identity. Sources: https://www.w3.org/TR/sosa/ ; https://www.wikidata.org/wiki/Q17012245
+
+### DIO Problem
+Ontology alignment can identify correspondences between vocabularies, while SHACL validates RDF graphs against declared constraints. These techniques can reveal specific mismatches or structural defects, but neither captures DIO Problem's broader evaluation of reconstruction, continuity, or robustness relative to a legitimate objective and observation domain. Sources: https://www.wikidata.org/wiki/Q1224764 ; https://www.w3.org/TR/shacl/
+
+### Semantic Coherence Failure
+SHACL graph conformance is not semantic identity coherence; linguistic coherence concerns connectedness of discourse rather than the specific failure of identity reconstruction. These sources are useful contrasts, not mapping targets. Sources: https://www.w3.org/TR/shacl/ ; https://en.wikipedia.org/wiki/Coherence_(linguistics)
+
+### Decision
+No mappings added in this pass. The external sources are useful as formal modeling infrastructure, theoretical neighbors, or contrastive examples, but do not justify SKOS relations at the current level of scope precision.
