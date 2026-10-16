@@ -969,9 +969,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticCoherenceFailure",
       "sourceConceptId": "SemanticCoherenceFailure",
       "sourceLabel": "Semantic Coherence Failure",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. Linguistic coherence is relevant background, but DIO's concept specifically concerns failure in identity reconstruction and is not equivalent to discourse coherence.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Ontology_components",
@@ -1004,6 +1004,14 @@
           "note": "Ontology alignment addresses semantic correspondence between heterogeneous vocabularies; failed or poor alignment is an adjacent interoperability problem, not the same as DIO semantic coherence failure.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Coherence_(linguistics)",
+          "role": "conceptual-context",
+          "note": "Linguistic coherence concerns meaningful connectedness of discourse. It is relevant background for semantic coherence but does not define DIO's identity-reconstruction failure mode.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
         }
       ]
     },
@@ -1087,9 +1095,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#TemporalDiscontinuity",
       "sourceConceptId": "TemporalDiscontinuity",
       "sourceLabel": "Temporal Discontinuity",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. Temporal ontology modeling and philosophical identity-over-time literature are useful theoretical context, but neither identifies the specific DIO failure mode as a stable external concept.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Personal_identity",
@@ -1098,6 +1106,22 @@
           "note": "Persistence of identity through change is a philosophical analogue; DIO temporal discontinuity is a narrower reconstruction failure.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Wikidata:WikiProject_Ontology/Ontology_Course/Modeling_time",
+          "role": "temporal-modeling-context",
+          "note": "Discusses temporal extent, qualitative relations between intervals, and entities persisting through time. Useful for framing temporal continuity/discontinuity, but not a vocabulary concept specifically denoting DIO temporal discontinuity.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
+        },
+        {
+          "uri": "https://seop.illc.uva.nl/entries///identity-time/",
+          "role": "theoretical-context",
+          "note": "Philosophical account of identity over time and change. Provides theoretical context for persistence criteria, not a direct mapping target.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
         }
       ]
     },
@@ -1173,9 +1197,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement",
       "sourceConceptId": "ContextualDisplacement",
       "sourceLabel": "Contextual Displacement",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. Context drift in memory research is only a distant analogy and does not establish a SKOS mapping.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Name_resolution_(semantics_and_text_extraction)",
@@ -1192,6 +1216,14 @@
           "note": "Entity-linking systems resolve ambiguous mentions against contextual evidence; this is a narrow example of context changing the selected referent, not an equivalent definition of contextual displacement.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q47555586",
+          "role": "distant-analogy",
+          "note": "The paper record concerns context drift/shift in human memory research. It is a distant analogy for context-dependent interpretation, not an external concept for referential contextual displacement.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
         }
       ]
     },
@@ -1199,9 +1231,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#IdentityCollapse",
       "sourceConceptId": "IdentityCollapse",
       "sourceLabel": "Identity Collapse",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. Wikidata identity-crisis and social-identity items are lexical/disciplinary false friends rather than matches for DIO Identity Collapse.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Digital_identity",
@@ -1210,6 +1242,22 @@
           "note": "The general digital-identity topic establishes the broad domain; it does not describe DIO's Identity Collapse phenomenon. Retain only as a domain-boundary contrast, not as evidence that the failure mode is independently recognized.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q3354876",
+          "role": "contrastive-context",
+          "note": "Identity crisis refers to failure to achieve ego identity during adolescent development. Despite lexical overlap, it is a psychological concept and not DIO identity collapse in machine/human reconstruction.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q844569",
+          "role": "contrastive-context",
+          "note": "Social identity is a set of qualities and expressions characterizing a person or group. This is a different sense of identity from DIO's failure mode in which distinct or conflicting traces collapse into an inadequate reconstruction.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
         }
       ]
     },
@@ -1217,9 +1265,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability",
       "sourceConceptId": "SemanticVulnerability",
       "sourceLabel": "Semantic Vulnerability",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. General computer-security vulnerability is a related metaphor/domain concept, but it may import attacker/security assumptions absent from the DIO definition. Keep contextual unless a source specifically defines semantic or representational vulnerability in a compatible scope.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Robustness_(computer_science)",
@@ -1228,6 +1276,14 @@
           "note": "Robustness is the conceptual counterpart used to frame susceptibility to perturbation; only an adjacent relationship is intended.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://www.wikidata.org/wiki/Q631425",
+          "role": "adjacent-concept",
+          "note": "General computer vulnerability is a security weakness allowing an attacker to reduce information assurance. DIO Semantic Vulnerability concerns fragility of identity reconstruction; security vulnerability is a related but domain-specific concept and should not be mapped without a tighter scope match.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
         }
       ]
     },
@@ -1287,9 +1343,9 @@
       "sourceConcept": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionCapture",
       "sourceConceptId": "ReconstructionCapture",
       "sourceLabel": "Reconstruction Capture",
-      "reviewStatus": "not-reviewed",
+      "reviewStatus": "in-review",
       "mappings": [],
-      "auditNote": "",
+      "auditNote": "No mapping candidate added. Information retrieval is an upstream technical context, not the capture/failure phenomenon itself; no direct external concept identifier was validated.",
       "evidence": [
         {
           "uri": "https://en.wikipedia.org/wiki/Record_linkage",
@@ -1306,6 +1362,14 @@
           "note": "A JSON-LD context maps terms to identifiers and can therefore affect how a processor interprets a document. This is a narrow example of representational choices shaping machine interpretation, not evidence for the full DIO Reconstruction Capture concept.",
           "verificationStatus": "verified-page",
           "verificationNote": "Page opened and article content inspected at a high level on 2026-10-16; this confirms accessibility and broad topical relevance, not exhaustive validation of every evidence note."
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Information_retrieval",
+          "role": "technical-context",
+          "note": "Information retrieval is relevant as a mechanism by which observers access representations, but it is much broader and does not denote reconstruction capture as a failure mode.",
+          "checkedOn": "2026-10-16",
+          "verificationStatus": "verified-page",
+          "verificationNote": "Source inspected at a high level on 2026-10-16; topical relevance only, not proof of a SKOS mapping."
         }
       ]
     },
