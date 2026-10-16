@@ -208,3 +208,27 @@ Reviewed the 14 mapping records against target scope, relation direction, URI ve
 - Candidate mappings remain outside any derived mapped Turtle until explicit approval.
 
 The decisions follow the SKOS mapping model: broad/narrow matches assert hierarchy, while relatedMatch asserts a meaningful associative mapping between concepts in different schemes; it is not a general-purpose “these topics are connected” link. See [SKOS Reference, Mapping Properties](https://www.w3.org/TR/skos-reference/#mapping).
+
+
+## Deeper review of remaining candidates: entity linking rejected (2026-10-16)
+
+A second pass checked the remaining candidate definitions against the canonical concept definitions and the W3C SKOS mapping model.
+
+### Reconstruction → Entity linking (Wikidata Q17012245): reject
+
+Wikidata defines entity linking as assigning a unique identity to entities mentioned in text; the current research literature likewise treats it as mapping mentions in text to entries in a knowledge base or nodes in a knowledge graph. This is a specific NLP task, while DIO Reconstruction is a K6 analytical dimension spanning distributed representations, temporal continuity, context, and observer mechanisms. It is therefore a methodological neighbor, not demonstrably a narrower concept in the same semantic hierarchy. The Wikidata item also lists “entity resolution” as an alias, which can blur the distinction between this task and DIO's historical Entity Resolution Anomaly grouping. Retain the item as contextual evidence, not as a SKOS mapping. Sources: [Wikidata Q17012245](https://www.wikidata.org/wiki/Q17012245), [ACM Computing Surveys review](https://doi.org/10.1145/3795134), [Wikipedia: Entity linking](https://en.wikipedia.org/wiki/Entity_linking).
+
+### Remaining candidates
+
+- **Referential Continuity → GFO Persistant (Q141646085), relatedMatch:** retain as a candidate. GFO explicitly models persistence across time despite changing properties. This is a meaningful theoretical neighbor to the DIO criterion that an entity can change while remaining the same referent for analytical purposes. It remains a formal-ontology construct, not an interchangeable operational criterion. [Wikidata Q141646085](https://www.wikidata.org/wiki/Q141646085) · [GFO definition](https://onto-med.github.io/GFO/release/latest/index-en.html)
+- **Semantic Robustness → Wikidata Robustness (Q403605), broadMatch:** retain as a candidate. Its definition—resistance or tolerance to perturbations—supports a plausible broader/narrower relationship. However, the Wikidata item combines philosophical and system-characteristic framings, so the intended scope should be checked before approval. [Wikidata Q403605](https://www.wikidata.org/wiki/Q403605)
+
+The W3C SKOS Reference defines mapping properties as alignment links between concepts in different schemes that are inherent in the concepts' meanings. Hierarchical mappings assert broader/narrower structure; relatedMatch asserts an associative mapping. Mere methodological adjacency does not suffice. [W3C SKOS Reference, §10](https://www.w3.org/TR/skos-reference/#mapping).
+
+### Updated result
+
+- 14 mapping records total.
+- 2 candidates remain for author review.
+- 12 mappings rejected.
+- 0 approved.
+- No canonical vocabulary changes; no mappings projected into derived Turtle.
