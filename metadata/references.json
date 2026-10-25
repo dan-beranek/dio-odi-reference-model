@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.2.0",
+  "registry_version": "1.3.0",
   "references": [
     {
       "id": "manifest-v1",
@@ -40,6 +40,36 @@
       "scope": "internal",
       "citation": "Beránek, D. (2026, 22 October). Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution. Zenodo. https://doi.org/10.5281/zenodo.23580733",
       "doi": "10.5281/zenodo.23580733"
+    },
+    {
+      "id": "opa-core-docs",
+      "scope": "external",
+      "citation": "Open Policy Agent. (n.d.). Open Policy Agent documentation. Retrieved 25 October 2026, from https://www.openpolicyagent.org/docs",
+      "url": "https://www.openpolicyagent.org/docs"
+    },
+    {
+      "id": "opa-decision-logs",
+      "scope": "external",
+      "citation": "Open Policy Agent. (n.d.). Decision Logs. Open Policy Agent documentation. Retrieved 25 October 2026, from https://www.openpolicyagent.org/docs/management-decision-logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs"
+    },
+    {
+      "id": "opa-bundles",
+      "scope": "external",
+      "citation": "Open Policy Agent. (n.d.). Bundles. Open Policy Agent documentation. Retrieved 25 October 2026, from https://www.openpolicyagent.org/docs/management-bundles",
+      "url": "https://www.openpolicyagent.org/docs/management-bundles"
+    },
+    {
+      "id": "cedar-authorization-guide",
+      "scope": "external",
+      "citation": "How Cedar authorization works. (n.d.). Cedar Policy Language Reference Guide. Retrieved 25 October 2026, from https://docs.cedarpolicy.com/auth/authorization.html",
+      "url": "https://docs.cedarpolicy.com/auth/authorization.html"
+    },
+    {
+      "id": "cedar-policy-syntax",
+      "scope": "external",
+      "citation": "Basic policy construction in Cedar. (n.d.). Cedar Policy Language Reference Guide. Retrieved 25 October 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html",
+      "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html"
     }
   ]
 }
