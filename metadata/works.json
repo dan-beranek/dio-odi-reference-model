@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.7.1",
+  "registry_version": "1.8.0",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -108,6 +108,14 @@
       "keyword_profile": "taxonomic-note",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0"
+    },
+    {
+      "id": "commit-boundary-paper",
+      "title": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution",
+      "type": "publication-preprint",
+      "version_doi": "10.5281/zenodo.23580733",
+      "publication_date": "2026-10-22",
+      "note": "Defines a commit-time authorization guardrail for persistent identity-changing mutations in Agentic Entity Resolution and explicitly leaves broader control of hypothesis-conditioned evidence acquisition and feedback as a separate research direction."
     },
     {
       "id": "reference-model",
