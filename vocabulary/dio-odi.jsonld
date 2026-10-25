@@ -15,6 +15,7 @@
         "@language": "en"
       },
       "dcterms:creator": "Daniel Beránek",
+      "dcterms:identifier": { "@id": "https://doi.org/10.5281/zenodo.23272897" },
       "dcterms:description": {
         "@value": "SKOS reference vocabulary derived from the DIO/ODI corpus.",
         "@language": "en"
