@@ -2,7 +2,6 @@
 
 **Current archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
 **Live Reference Vocabulary:** v0.2.0 — SKOS-first, OWL-later  
-**Live Reference Vocabulary:** v0.2.0 — SKOS-first, OWL-later  
 **Vocabulary included in archived v0.5.0:** v0.2.0  
 **Previous archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
 **Earlier archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
