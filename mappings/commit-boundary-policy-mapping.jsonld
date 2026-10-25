@@ -1,0 +1,202 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+  "name": "Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization",
+  "description": "A derived application mapping from DIO/ODI-informed commit-boundary authorization obligations to Policy-as-Code mechanisms and integration requirements, using OPA/Rego and Cedar as technical reference points. It does not claim native implementation or semantic equivalence.",
+  "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "creativeWorkStatus": "Live derived application mapping; not yet included in an archived Reference Model release",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Beránek",
+    "url": "https://danielberanek.cz/",
+    "sameAs": "https://orcid.org/0009-0004-0050-0264",
+    "@id": "https://danielberanek.cz/#person"
+  },
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "name": "DIO/ODI Reference Model — live source tree",
+    "url": "https://github.com/dan-beranek/dio-odi-reference-model"
+  },
+  "isBasedOn": [
+    {
+      "@type": "CreativeWork",
+      "name": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution",
+      "url": "https://zenodo.org/records/23580733"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Open Policy Agent documentation",
+      "url": "https://www.openpolicyagent.org/docs"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Open Policy Agent Decision Logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Open Policy Agent Bundles",
+      "url": "https://www.openpolicyagent.org/docs/management-bundles"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "How Cedar authorization works",
+      "url": "https://docs.cedarpolicy.com/auth/authorization.html"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Basic policy construction in Cedar",
+      "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html"
+    }
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Digital Identity Optimization"
+    },
+    {
+      "@type": "Thing",
+      "name": "Ontology of Digital Identity"
+    },
+    {
+      "@type": "Thing",
+      "name": "Agentic Entity Resolution"
+    },
+    {
+      "@type": "Thing",
+      "name": "Commit-time authorization"
+    },
+    {
+      "@type": "Thing",
+      "name": "Policy-as-Code"
+    },
+    {
+      "@type": "Thing",
+      "name": "Open Policy Agent"
+    },
+    {
+      "@type": "Thing",
+      "name": "Cedar Policy Language"
+    },
+    {
+      "@type": "Thing",
+      "name": "Identity-preserving constraints"
+    },
+    {
+      "@type": "Thing",
+      "name": "Claim-specific evidence"
+    }
+  ],
+  "hasPart": {
+    "@type": "ItemList",
+    "name": "DIO/ODI commit-boundary obligations mapped to Policy-as-Code capabilities and integration requirements",
+    "numberOfItems": 11,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Explicit mutation and operational scope",
+          "description": "OPA structured input and Cedar principal/action/resource/context can represent a proposed operation; identity-changing scope must still be defined by the integrating application."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Claim-specific evidence support",
+          "description": "Structured input and policy rules can inspect declared claim and evidence metadata, but evidence authenticity, provenance and eligibility require trusted integration."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Identity-preserving constraints",
+          "description": "Policy predicates can evaluate supplied candidate-state attributes against configured constraints; they do not generate the domain's identity model or validate unprovided facts."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Violation versus unknown evidence",
+          "description": "OPA can return structured application-defined states. Cedar returns Allow or Deny with diagnostics; the DIO/ODI multi-state semantics require explicit modeling and integration."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Observation context and temporal validity",
+          "description": "Temporal and contextual inputs can be represented in policy data, but their meaning and validity need domain modeling."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Policy revision freshness",
+          "description": "OPA decision logs can include bundle revision; integration must still ensure the applicable revision remains valid at commit time."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Graph state freshness",
+          "description": "Expected state versions may be supplied to the engine, but a transaction or compare-and-swap check is required at the protected write boundary."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Enforcement at all protected write paths",
+          "description": "OPA separates decision-making from enforcement; Cedar returns decisions to the calling application. The integration must prevent bypass of the protected write path."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Evidence-to-commit audit trail",
+          "description": "OPA decision logs and Cedar diagnostics can contribute to auditability, but the complete evidence, version and commit record requires application-level integration."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Unknown, timeout and evaluation-error handling",
+          "description": "Non-success and unknown states need explicit fail-closed or deferral behavior; absence of a valid decision must not authorize a persistent mutation."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Authorization does not prove semantic truth",
+          "description": "Allow or PASS describes conformance to encoded policy and supplied inputs; it does not independently establish that the reconstructed identity relation is true."
+        }
+      }
+    ]
+  },
+  "isAccessibleForFree": true
+}
