@@ -1,6 +1,6 @@
 # Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
 
-**Status:** Base mapping introduced in DIO/ODI Reference Model v0.2.0 and first included in archived v0.3.2. Iterative/hypothesis-conditioned evidence-acquisition extension added on 25 October 2026, included in archived v0.4.0, and carried forward in v0.5.0.  
+**Status:** Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0, retained in archived v0.3.x releases. Iterative/hypothesis-conditioned evidence-acquisition extension added on 25 October 2026, first included in archived v0.4.0, and carried forward in v0.5.0.  
 **Current archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
 **Previous archived release containing this mapping:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external technical domain and does not modify their definitions or relations.  
