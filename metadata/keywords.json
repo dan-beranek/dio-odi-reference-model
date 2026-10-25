@@ -1,7 +1,7 @@
 {
-  "registry_version": "2.0.0",
+  "registry_version": "2.1.0",
   "status": "canonical-approved",
-  "approved_on": "2026-10-11",
+  "approved_on": "2026-10-25",
   "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for Zenodo and other metadata surfaces.",
   "principles": [
     "Keywords are an ordered metadata grammar, not an unordered bag of tags.",
@@ -446,8 +446,12 @@
           "Application Mapping",
           "retrieval-augmented generation",
           "RAG",
+          "iterative evidence acquisition",
+          "hypothesis-conditioned evidence acquisition",
           "heterogeneous entity matching",
-          "HEM"
+          "HEM",
+          "agentic entity resolution",
+          "policy-as-code"
         ],
         "C3_reconstruction_mechanics": "all",
         "C4_k6": "all",
@@ -469,8 +473,12 @@
         "Application Mapping",
         "retrieval-augmented generation",
         "RAG",
+        "iterative evidence acquisition",
+        "hypothesis-conditioned evidence acquisition",
         "heterogeneous entity matching",
         "HEM",
+        "agentic entity resolution",
+        "policy-as-code",
         "semantic field",
         "distributed representational state",
         "observation domain",
