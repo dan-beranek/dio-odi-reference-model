@@ -170,5 +170,8 @@ This mapping is derived from the current DIO/ODI Reference Model and its source 
 
 - Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. https://doi.org/10.5281/zenodo.23226205
 - Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO*. https://doi.org/10.5281/zenodo.23269323
+- Beránek, D. (2026, 22 October). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*. Zenodo, record 23580733: https://zenodo.org/records/23580733. This later work distinguishes commit-time authorization from the broader hypothesis-conditioned evidence-acquisition and feedback problem examined in the live extension.
+
+The first two works ground the original DIO diagnostic mapping. *Constraining the Commit Boundary* is a later developmental reference; its inclusion does not imply that it implements or empirically validates this mapping extension.
 
 The RAG stages and incidents in this document are generic analytical examples, not claims of empirical validation.
