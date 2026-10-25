@@ -1,8 +1,8 @@
 # Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization
 
-**Status:** derived application layer added to the live Reference Model source tree on 2026-10-25; not yet included in an archived Reference Model release  
-**Reference Model:** current archived release v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
-**Reference Vocabulary:** v0.1.0; unchanged by this mapping  
+**Status:** derived application mapping included in archived Reference Model v0.4.0; it remains outside the canonical vocabulary  
+**Reference Model:** current archived release v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
+**Live Reference Vocabulary:** v0.2.0; this mapping does not modify its definitions or relations  
 **Frontend:** https://vocab.danielberanek.cz/mappings/commit-boundary-policy/  
 **JSON-LD:** https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.jsonld  
 **Turtle RDF:** https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.ttl  
