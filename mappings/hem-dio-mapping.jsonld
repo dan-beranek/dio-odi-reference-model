@@ -6,7 +6,7 @@
   "description": "A derived analytical mapping between heterogeneity conditions identified in Heterogeneous Entity Matching (HEM) and possible DIO reconstruction consequences. It does not assert taxonomic equivalence or deterministic causality.",
   "url": "https://vocab.danielberanek.cz/mappings/hem-dio/",
   "inLanguage": "en",
-  "dateModified": "2026-10-11",
+  "dateModified": "2026-10-25",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
     "@type": "Person",
@@ -17,9 +17,9 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model v0.3.2",
-    "url": "https://doi.org/10.5281/zenodo.23300703",
-    "identifier": "https://doi.org/10.5281/zenodo.23300703"
+    "name": "DIO/ODI Reference Model v0.5.0",
+    "url": "https://doi.org/10.5281/zenodo.23643845",
+    "identifier": "https://doi.org/10.5281/zenodo.23643845"
   },
   "isBasedOn": [
     {
@@ -261,7 +261,7 @@
     ]
   },
   "version": "0.3.2",
-  "creativeWorkStatus": "Included in archived DIO/ODI Reference Model v0.3.2",
+  "creativeWorkStatus": "Introduced in DIO/ODI Reference Model v0.3.0 and included in archived v0.3.2; carried forward in archived v0.4.0 and current v0.5.0.",
   "encoding": [
     {
       "@type": "MediaObject",

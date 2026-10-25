@@ -129,5 +129,5 @@
   ],
   "version": "0.5.0",
   "publication_date": "2026-10-25",
-  "notes": "Prepared Reference Model v0.5.0 snapshot. Introduces Reference Vocabulary v0.2.0 with a distinct plural Identity-Preserving Constraints concept and a history note on the retained singular concept. Earlier references are not retroactively migrated, and no semantic relation between the singular and plural concepts is asserted. GitHub Release and Zenodo archival pending."
+  "notes": "Archived DIO/ODI Reference Model v0.5.0 snapshot (DOI: https://doi.org/10.5281/zenodo.23643845). Incorporates Reference Vocabulary v0.2.0, including the distinct plural Identity-Preserving Constraints concept and a history note on the retained singular entry. Earlier references are not retroactively migrated, and no semantic relation between the singular and plural concepts is asserted. Update version-specific metadata before preparing a future release."
 }

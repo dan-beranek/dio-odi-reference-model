@@ -7,6 +7,7 @@
 dio:ReferenceVocabulary a skos:ConceptScheme ;
   skos:prefLabel "DIO/ODI Reference Vocabulary"@en ;
   dcterms:creator "Daniel Beránek" ;
+  dcterms:identifier <https://doi.org/10.5281/zenodo.23272897> ;
   dcterms:description "SKOS reference vocabulary derived from the DIO/ODI corpus."@en ;
   owl:versionInfo "0.2.0" ;
   skos:hasTopConcept dio:ReconstructionFailureMode ;

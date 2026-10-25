@@ -15,13 +15,13 @@ Public index: https://vocab.danielberanek.cz/mappings/
 - Source: [rag-pipeline-mapping.md](rag-pipeline-mapping.md)
 - JSON-LD: [rag-pipeline-mapping.jsonld](rag-pipeline-mapping.jsonld) — introduced in Reference Model v0.3.1
 - Turtle RDF: [rag-pipeline-mapping.ttl](rag-pipeline-mapping.ttl) — introduced in Reference Model v0.3.1 with qualified mapping assertions
-- Introduced in: DIO/ODI Reference Model v0.2.0
-- Included in: DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
-- Previous archived release containing this base mapping: DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
-- Iterative/hypothesis-conditioned extension added: 2026-10-25; included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Introduced and initially archived in: DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+- Retained in subsequent archived v0.3.x releases, including v0.3.1 and v0.3.2
+- Iterative/hypothesis-conditioned extension added: 2026-10-25; first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Carried forward in current archived Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 - Development link: *Constraining the Commit Boundary* (published 2026-10-22) — https://zenodo.org/records/23580733
 
-Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. A live extension added on 2026-10-25 examines iterative and hypothesis-conditioned evidence acquisition in relation to the upstream research boundary identified in [Constraining the Commit Boundary](https://zenodo.org/records/23580733). The base mapping was first included in archived v0.3.2; the iterative/hypothesis-conditioned extension is included in archived v0.4.0.
+Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. A live extension added on 2026-10-25 examines iterative and hypothesis-conditioned evidence acquisition in relation to the upstream research boundary identified in [Constraining the Commit Boundary](https://zenodo.org/records/23580733). The base mapping was introduced and archived in v0.2.0 and retained in subsequent v0.3.x releases; the iterative/hypothesis-conditioned extension was first included in archived v0.4.0 and is carried forward in archived v0.5.0.
 
 ### Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
 
@@ -34,6 +34,7 @@ Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented gen
 - Introduced in: DIO/ODI Reference Model v0.3.0
 - Included in: DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
 - Carried forward in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Carried forward in current archived Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
 Uses the Heterogeneous Entity Matching taxonomy of Moslemi et al. as an external analytical axis. HEM categories characterize heterogeneous input conditions; DIO concepts characterize possible consequences for identity reconstruction. The mapping is many-to-many and diagnostic, not taxonomic equivalence.
 
@@ -46,7 +47,7 @@ Uses the Heterogeneous Entity Matching taxonomy of Moslemi et al. as an external
 - DIO/ODI source: https://zenodo.org/records/23580733
 - External technical references: OPA documentation (https://www.openpolicyagent.org/docs); Cedar authorization guide (https://docs.cedarpolicy.com/auth/authorization.html)
 - Added to live source tree: 2026-10-25
-- Archival status: included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
 Maps commit-boundary authorization obligations to relevant Policy-as-Code capabilities and the additional policy-modeling, trusted-evidence, enforcement, freshness, and transactional mechanisms needed for an integration. OPA/Rego and Cedar are reference points only; the mapping does not claim either engine natively implements the commit-boundary contract.
 

@@ -21,16 +21,19 @@
       "frontend": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
       "relation": "derived-application-layer",
       "introduced_in": "0.2.0",
-      "release_status": "included-in-0.4.0",
-      "previous_archived_release_doi": "10.5281/zenodo.23300703",
+      "release_status": "included-in-0.5.0",
+      "previous_archived_release_doi": "10.5281/zenodo.23632619",
       "machine_readable_metadata": "mappings/rag-pipeline-mapping.jsonld",
       "machine_readable_metadata_introduced_in": "0.3.1",
       "turtle_rdf": "mappings/rag-pipeline-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
       "introduced_archived_release_doi": "10.5281/zenodo.23282752",
-      "archived_release_doi": "10.5281/zenodo.23632619",
-      "base_mapping_first_included_in": "0.3.2",
-      "live_extension_included_in": "0.4.0"
+      "archived_release_doi": "10.5281/zenodo.23643845",
+      "base_mapping_first_included_in": "0.2.0",
+      "live_extension_included_in": "0.4.0",
+      "earlier_archived_release_doi": "10.5281/zenodo.23300703",
+      "base_mapping_first_archived_release_doi": "10.5281/zenodo.23282752",
+      "live_extension_first_included_in": "0.4.0"
     },
     {
       "title": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
@@ -40,12 +43,14 @@
       "external_source_doi": "10.1016/j.datak.2026.102575",
       "relation": "derived-application-layer",
       "introduced_in": "0.3.0",
-      "release_status": "included-in-0.4.0",
+      "release_status": "included-in-0.5.0",
       "machine_readable_metadata_introduced_in": "0.3.0",
       "turtle_rdf": "mappings/hem-dio-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
-      "previous_archived_release_doi": "10.5281/zenodo.23300703",
-      "archived_release_doi": "10.5281/zenodo.23632619"
+      "previous_archived_release_doi": "10.5281/zenodo.23632619",
+      "archived_release_doi": "10.5281/zenodo.23643845",
+      "earlier_archived_release_doi": "10.5281/zenodo.23300703",
+      "first_archived_release_doi": "10.5281/zenodo.23289615"
     },
     {
       "title": "Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization",
@@ -53,10 +58,12 @@
       "frontend": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
       "relation": "derived-application-layer",
       "introduced_in": "0.4.0",
-      "release_status": "included-in-0.4.0",
-      "archived_release_doi": "10.5281/zenodo.23632619",
+      "release_status": "included-in-0.5.0",
+      "archived_release_doi": "10.5281/zenodo.23643845",
       "machine_readable_metadata": "mappings/commit-boundary-policy-mapping.jsonld",
-      "turtle_rdf": "mappings/commit-boundary-policy-mapping.ttl"
+      "turtle_rdf": "mappings/commit-boundary-policy-mapping.ttl",
+      "first_archived_release_doi": "10.5281/zenodo.23632619",
+      "previous_archived_release_doi": "10.5281/zenodo.23632619"
     }
   ],
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
