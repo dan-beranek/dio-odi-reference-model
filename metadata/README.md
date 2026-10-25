@@ -18,7 +18,8 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 1. Maintain work identities, DOI/version information, relations, distribution representations, keywords, and citations here.
 2. Before a new Reference Model release, ensure `.zenodo.json` reflects the approved subset of this registry.
 3. Zenodo GitHub archiving reads `.zenodo.json` for new releases.
-4. Existing historical Zenodo records are not retroactively changed by these files; they require a one-time metadata synchronization through Zenodo's editor, API, or browser automation.
+4. Existing historical Zenodo records are not retroactively changed by these files; they require metadata synchronization through Zenodo's editor, API, or browser automation.
+5. Zenodo assigns the version-specific DOI only after the GitHub Release is archived. Do not guess or prepopulate that DOI in the tagged snapshot. After publication, synchronize `metadata/works.json`, `README.md`, and `CITATION.cff` in the live `main` branch with the minted DOI; do not rewrite the immutable archived snapshot.
 
 ## Relation discipline
 
