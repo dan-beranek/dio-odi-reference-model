@@ -261,7 +261,7 @@
     ]
   },
   "version": "0.3.2",
-  "creativeWorkStatus": "First included in archived DIO/ODI Reference Model v0.3.2; carried forward in archived v0.4.0 and current v0.5.0.",
+  "creativeWorkStatus": "Introduced in DIO/ODI Reference Model v0.3.0 and included in archived v0.3.2; carried forward in archived v0.4.0 and current v0.5.0.",
   "encoding": [
     {
       "@type": "MediaObject",
