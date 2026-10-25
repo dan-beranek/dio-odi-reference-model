@@ -88,15 +88,21 @@ cbpa:BindMutationScope
     schema:name "Bind authorization to the proposed mutation and its scope"@en ;
     schema:description "The authorization request identifies the proposed operation, target, and permitted operational scope."@en .
 
+cbpa:BindMutationScope skos:related dio:MergeFailure, dio:SplitFailure .
+
 cbpa:ClaimSpecificEvidence
     a schema:DefinedTerm ;
     schema:name "Claim-specific evidence support"@en ;
     schema:description "Every required proposition has evidence eligible to support that particular claim, with controlled provenance and validity."@en .
 
+cbpa:ClaimSpecificEvidence skos:related dio:IdentityPreservingConstraint .
+
 cbpa:IdentityPreservingConstraints
     a schema:DefinedTerm ;
     schema:name "Identity-preserving constraints over candidate state"@en ;
     schema:description "Configured constraints are evaluated against the proposed mutation and relevant candidate state."@en .
+
+cbpa:IdentityPreservingConstraints skos:related dio:IdentityPreservingConstraint, dio:ReferentialContinuity, dio:SemanticFragmentation .
 
 cbpa:DistinguishBreachFromUnknown
     a schema:DefinedTerm ;
@@ -107,6 +113,8 @@ cbpa:TemporalContext
     a schema:DefinedTerm ;
     schema:name "Observation context and temporal validity"@en ;
     schema:description "Decision inputs preserve the relevant observation context and the temporal validity of claims and evidence."@en .
+
+cbpa:TemporalContext skos:related dio:TemporalDiscontinuity, dio:TemporalMisalignment, dio:ContextualDisplacement .
 
 cbpa:PolicyFreshness
     a schema:DefinedTerm ;
