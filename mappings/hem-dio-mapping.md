@@ -2,7 +2,7 @@
 
 **Status:** Derived application layer introduced in DIO/ODI Reference Model v0.3.0, included in v0.3.2, and carried forward in archived v0.4.0 and v0.5.0  
 **Current archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
-**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683  
+**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external analytical framework and does not modify their definitions, hierarchy, or relations.  
 **Scope:** Diagnostic mapping between heterogeneity conditions identified in Heterogeneous Entity Matching (HEM) and possible DIO reconstruction consequences. It is not a claim of taxonomic equivalence or deterministic causality.  
 **JSON-LD:** https://vocab.danielberanek.cz/mappings/hem-dio-mapping.jsonld  
@@ -101,7 +101,9 @@ The HEM taxonomy and its category labels are attributed to this source. The HEM 
 
 - Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. https://doi.org/10.5281/zenodo.23226205
 - Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO*. https://doi.org/10.5281/zenodo.23269323
-- DIO/ODI Reference Vocabulary v0.1.0: https://vocab.danielberanek.cz/dio-odi/
+- Original vocabulary basis: DIO/ODI Reference Vocabulary v0.1.0 — Zenodo version DOI https://doi.org/10.5281/zenodo.23272898
+- Stable Concept DOI for all Reference Vocabulary versions: https://doi.org/10.5281/zenodo.23272897
+- Current vocabulary page: https://vocab.danielberanek.cz/dio-odi/
 
 ## Provenance note
 
