@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIO/ODI Commit-Boundary × Policy-as-Code | Application Mapping</title>
+  <meta name="description" content="Maps DIO/ODI-informed commit-boundary authorization obligations to Policy-as-Code capabilities and integration gaps, using OPA/Rego and Cedar as technical reference points.">
+  <meta name="author" content="Daniel Beránek">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://vocab.danielberanek.cz/mappings/commit-boundary-policy/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="text/markdown" href="/mappings/commit-boundary-policy-mapping.md" title="Commit-Boundary × Policy-as-Code mapping source — Markdown">
+  <link rel="alternate" type="application/ld+json" href="/mappings/commit-boundary-policy-mapping.jsonld" title="Commit-Boundary × Policy-as-Code mapping — JSON-LD">
+  <link rel="alternate" type="text/turtle" href="/mappings/commit-boundary-policy-mapping.ttl" title="Commit-Boundary × Policy-as-Code mapping — Turtle RDF">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization">
+  <meta property="og:description" content="An analytical mapping from commit-boundary obligations to policy decision, enforcement, and integration requirements.">
+  <meta property="og:url" content="https://vocab.danielberanek.cz/mappings/commit-boundary-policy/">
+  <meta property="og:site_name" content="DIO/ODI Reference Model">
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1100px;margin:4rem auto;padding:0 1.4rem;line-height:1.65;color:#171717}
+    h1,h2,h3{line-height:1.2} a{color:#174ea6} code{background:#f2f2f2;padding:.15rem .35rem;border-radius:.25rem}
+    .note{border-left:4px solid #777;padding-left:1rem;color:#444}.status{padding:1rem 1.2rem;background:#f5f5f5;border-radius:.55rem;margin:1.2rem 0}
+    .table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;margin:1.5rem 0;font-size:.94rem;min-width:850px}th,td{border:1px solid #ccc;padding:.7rem;vertical-align:top}th{background:#f1f1f1;text-align:left}
+    .source{padding:1.1rem 1.3rem;border:1px solid #ddd;border-radius:.55rem;background:#fafafa}
+    .tag{display:inline-block;border:1px solid #bbb;border-radius:99px;padding:.12rem .55rem;font-size:.85rem}
+    pre{overflow:auto;background:#f7f7f7;padding:1rem;border-radius:.5rem;border:1px solid #e1e1e1} 
+    @media(prefers-color-scheme:dark){body{background:#111;color:#eee}a{color:#8ab4f8}.note{color:#ccc}.status,.source,pre{background:#1d1d1d;border-color:#444}th{background:#252525}td,th{border-color:#555}code{background:#252525}}
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+  "name": "Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization",
+  "description": "A derived application mapping from DIO/ODI-informed commit-boundary authorization obligations to Policy-as-Code mechanisms and integration requirements, using OPA/Rego and Cedar as technical reference points. It does not claim native implementation or semantic equivalence.",
+  "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+  "inLanguage": "en",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "creativeWorkStatus": "Live derived application mapping; not yet included in an archived Reference Model release",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Beránek",
+    "url": "https://danielberanek.cz/",
+    "sameAs": "https://orcid.org/0009-0004-0050-0264",
+    "@id": "https://danielberanek.cz/#person"
+  },
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "name": "DIO/ODI Reference Model — live source tree",
+    "url": "https://github.com/dan-beranek/dio-odi-reference-model"
+  },
+  "isBasedOn": [
+    {
+      "@type": "CreativeWork",
+      "name": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution",
+      "url": "https://zenodo.org/records/23580733"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Open Policy Agent documentation",
+      "url": "https://www.openpolicyagent.org/docs"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Open Policy Agent Decision Logs",
+      "url": "https://www.openpolicyagent.org/docs/management-decision-logs"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Open Policy Agent Bundles",
+      "url": "https://www.openpolicyagent.org/docs/management-bundles"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "How Cedar authorization works",
+      "url": "https://docs.cedarpolicy.com/auth/authorization.html"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Basic policy construction in Cedar",
+      "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html"
+    }
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Digital Identity Optimization"
+    },
+    {
+      "@type": "Thing",
+      "name": "Ontology of Digital Identity"
+    },
+    {
+      "@type": "Thing",
+      "name": "Agentic Entity Resolution"
+    },
+    {
+      "@type": "Thing",
+      "name": "Commit-time authorization"
+    },
+    {
+      "@type": "Thing",
+      "name": "Policy-as-Code"
+    },
+    {
+      "@type": "Thing",
+      "name": "Open Policy Agent"
+    },
+    {
+      "@type": "Thing",
+      "name": "Cedar Policy Language"
+    },
+    {
+      "@type": "Thing",
+      "name": "Identity-preserving constraints"
+    },
+    {
+      "@type": "Thing",
+      "name": "Claim-specific evidence"
+    }
+  ],
+  "hasPart": {
+    "@type": "ItemList",
+    "name": "DIO/ODI commit-boundary obligations mapped to Policy-as-Code capabilities and integration requirements",
+    "numberOfItems": 11,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Explicit mutation and operational scope",
+          "description": "OPA structured input and Cedar principal/action/resource/context can represent a proposed operation; identity-changing scope must still be defined by the integrating application."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Claim-specific evidence support",
+          "description": "Structured input and policy rules can inspect declared claim and evidence metadata, but evidence authenticity, provenance and eligibility require trusted integration."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Identity-preserving constraints",
+          "description": "Policy predicates can evaluate supplied candidate-state attributes against configured constraints; they do not generate the domain's identity model or validate unprovided facts."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Violation versus unknown evidence",
+          "description": "OPA can return structured application-defined states. Cedar returns Allow or Deny with diagnostics; the DIO/ODI multi-state semantics require explicit modeling and integration."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Observation context and temporal validity",
+          "description": "Temporal and contextual inputs can be represented in policy data, but their meaning and validity need domain modeling."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Policy revision freshness",
+          "description": "OPA decision logs can include bundle revision; integration must still ensure the applicable revision remains valid at commit time."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Graph state freshness",
+          "description": "Expected state versions may be supplied to the engine, but a transaction or compare-and-swap check is required at the protected write boundary."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Enforcement at all protected write paths",
+          "description": "OPA separates decision-making from enforcement; Cedar returns decisions to the calling application. The integration must prevent bypass of the protected write path."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Evidence-to-commit audit trail",
+          "description": "OPA decision logs and Cedar diagnostics can contribute to auditability, but the complete evidence, version and commit record requires application-level integration."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Unknown, timeout and evaluation-error handling",
+          "description": "Non-success and unknown states need explicit fail-closed or deferral behavior; absence of a valid decision must not authorize a persistent mutation."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Authorization does not prove semantic truth",
+          "description": "Allow or PASS describes conformance to encoded policy and supplied inputs; it does not independently establish that the reconstructed identity relation is true."
+        }
+      }
+    ]
+  },
+  "isAccessibleForFree": true
+}
+
+  </script>
+</head>
+<body>
+  <p><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">DIO/ODI Hub — Manifest, publications, reference artifacts &amp; updates</a> · <a href="/mappings/">Application Mappings</a> · <a href="/dio-odi/">Reference Vocabulary</a></p>
+  <h1>Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization</h1>
+
+  <div class="status">
+    <strong>Status:</strong> live derived application mapping added on 25 October 2026; <strong>not yet included in an archived Reference Model release</strong>.<br>
+    <strong>Reference Vocabulary:</strong> v0.1.0; unchanged.<br>
+    <strong>Boundary:</strong> this mapping does not claim that OPA, Cedar, or any other policy engine natively implements the commit-boundary contract.
+  </div>
+
+  <h2>Purpose</h2>
+  <p>This mapping examines how the authorization obligations described in <em>Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution</em> can be represented, evaluated, enforced, and audited in a Policy-as-Code architecture. Open Policy Agent (OPA/Rego) and Cedar are documented reference points, not preselected or validated implementations.</p>
+  <p class="note"><strong>Evidence usable for reasoning ≠ evidence eligible to authorize a persistent identity mutation.</strong> A policy engine can evaluate the request and conditions supplied to it. That does not, by itself, establish the truth of the identity hypothesis, authenticate evidence, discover all material conflicts, or make the later graph write atomic.</p>
+
+  <h2>Mapping</h2>
+  <p>The mapping proceeds from a DIO/ODI-informed contract obligation to a policy representation/evaluation mechanism and the residual conditions required for enforcement. Relations are analytical, not equivalence claims.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Contract obligation</th><th>Policy-as-Code correspondence</th><th>OPA / Rego</th><th>Cedar</th><th>Relation and residual requirement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1. Bind authorization to the proposed mutation.</strong></td><td>Represent operation, target, actor or service, and operational scope.</td><td>OPA accepts arbitrary structured input and evaluates it against Rego policies.</td><td>Authorization request uses principal, action, resource, and context (PARC).</td><td><span class="tag">Relevant mechanism</span><br>The application must define the protected identity-changing actions and targets.</td></tr>
+      <tr><td><strong>2. Require support for each required proposition.</strong></td><td>Carry required claims and claim-specific evidence references.</td><td>Rego can inspect structured evidence metadata and return a structured decision.</td><td>Claims and evidence metadata can be represented in entity attributes or request context where the application schema permits.</td><td><span class="tag">Requires policy modeling</span><br>Evidence provenance, authenticity, scope, and eligibility need trusted validation. An agent must not self-certify them.</td></tr>
+      <tr><td><strong>3. Evaluate identity-preserving constraints.</strong></td><td>Express configured constraints as predicates over the proposed operation and candidate state.</td><td>Rego can evaluate predicates over supplied input and policy data.</td><td>Conditions can evaluate attributes of the principal, resource, and context.</td><td><span class="tag">Requires policy modeling</span><br>The domain constraint set and trustworthy candidate-state representation remain application responsibilities.</td></tr>
+      <tr><td><strong>4. Distinguish breach from unknown evidence.</strong></td><td>Preserve PASS, BREACH, and UNKNOWN_EVIDENCE as distinct states.</td><td>OPA can return application-defined structured results; the policy and caller define their meanings.</td><td>Cedar returns Allow or Deny with diagnostics, including policy evaluation errors; that is not the DIO/ODI multi-state contract.</td><td><span class="tag">Requires explicit integration</span><br>A denial is not necessarily a semantic breach; a missing or erroneous decision must not become authorization.</td></tr>
+      <tr><td><strong>5. Bind the decision to context and time.</strong></td><td>Include observation time, evidence-validity intervals, and relevant context.</td><td>These values can be supplied in structured input and inspected by Rego.</td><td>Context and entity attributes can supply values for policy conditions.</td><td><span class="tag">Requires policy modeling</span><br>The engine does not independently determine the correct temporal interpretation of identity.</td></tr>
+      <tr><td><strong>6. Keep policy revision valid at commit.</strong></td><td>Record the revision used and check that it is still applicable.</td><td>Decision logs can include the associated bundle revision; bundle distribution is eventually consistent.</td><td>The host should record an identifier for the exact policy set used; this mapping assumes no built-in commit-time policy lock.</td><td><span class="tag">Requires integration</span><br>Revalidate or reject when the applicable policy has changed. An audit record is not a freshness guarantee.</td></tr>
+      <tr><td><strong>7. Keep graph state valid at commit.</strong></td><td>Bind authorization to a candidate snapshot or expected graph version.</td><td>OPA can inspect a version supplied as input but does not make the later graph transaction atomic.</td><td>A version can be supplied as context or resource data, but Cedar does not lock the graph store.</td><td><span class="tag">Requires integration</span><br>Re-check the state version at the protected write boundary using a transaction or compare-and-swap.</td></tr>
+      <tr><td><strong>8. Enforce the decision at the protected write.</strong></td><td>Make the write conditional on a valid decision for the same operation.</td><td>OPA separates policy decision-making from policy enforcement; the caller/enforcer must act on the result.</td><td>The calling application must enforce Cedar's authorization response.</td><td><span class="tag">Requires integration</span><br>Every effect-capable write path must enforce the contract; an alternate route must not bypass it.</td></tr>
+      <tr><td><strong>9. Preserve audit provenance.</strong></td><td>Bind evidence references, request, policy/state versions, decision, and commit outcome.</td><td>Decision logs can include input, result, decision ID, and bundle metadata; sensitive fields need deliberate masking.</td><td>Decision diagnostics help explain the result; complete evidence/commit linkage remains application-level.</td><td><span class="tag">Relevant mechanism</span><br>Neither engine alone provides the complete evidence-to-commit record described here.</td></tr>
+      <tr><td><strong>10. Handle unknowns and failures safely.</strong></td><td>Define deferral or fail-closed behavior for missing, timeout, unavailable, or erroneous decisions.</td><td>The caller must distinguish valid results from undefined results, transport failure, or evaluation error.</td><td>Evaluation diagnostics are available; the application defines their effect on the protected operation.</td><td><span class="tag">Requires integration</span><br>UNKNOWN, timeout, and unavailable authorization must not be interpreted as PASS.</td></tr>
+      <tr><td><strong>11. Do not treat authorization as semantic truth.</strong></td><td>Constrain interpretation of Allow/PASS to the encoded policy and supplied input.</td><td>OPA returns the result of the queried policy under the current input/policy data.</td><td>Allow means a permit policy matched without an applicable forbid decision under Cedar's algorithm.</td><td><span class="tag">Not established by the decision</span><br>Neither result independently proves that the real-world identity relation is true.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Illustrative request shape</h2>
+  <p>A stable integration contract could carry the proposed mutation, the required propositions and their evidence references, the expected candidate-state version, and the applicable context/policy revision. The following is a conceptual shape, not an OPA or Cedar native schema and not executable policy code:</p>
+  <pre>{
+  "operation": {
+    "kind": "identity_merge",
+    "target": "candidate-graph-mutation",
+    "scope": "declared-operational-scope"
+  },
+  "required_claims": [
+    {
+      "proposition": "same_legal_entity",
+      "evidence_refs": ["evidence-record-1", "evidence-record-2"],
+      "evidence_state": "application-defined-state"
+    }
+  ],
+  "candidate_state": {
+    "expected_graph_version": "version-id"
+  },
+  "authorization_context": {
+    "observed_at": "timestamp",
+    "policy_revision": "revision-id"
+  }
+}</pre>
+  <p>The field semantics must be defined by the application. A string such as PASS or an evidence reference is not proof by itself: the authorization path needs trusted validation outputs, controlled provenance, and binding to the candidate operation and state.</p>
+
+  <h2>Worked interpretation: a high-confidence merge</h2>
+  <p>Suppose an agent proposes merging two supplier records and assigns its identity hypothesis a confidence of 0.97. The score can guide exploratory reasoning or prioritization, but it is not, by itself, authorization to change the persistent graph.</p>
+  <p>A DIO/ODI-informed integration asks whether the operation is in scope; every required proposition has eligible claim-specific support; material conflicts are resolved or explicitly block authorization; configured identity-preserving constraints pass; and the policy and graph versions remain valid at the protected commit boundary.</p>
+  <p>If a required claim lacks eligible support, the outcome may be deferral or UNKNOWN rather than a low-confidence estimate converted into a permit. If the graph version changes after authorization, the earlier decision must not automatically authorize the stale mutation. Even when all encoded conditions pass, Allow means that the configured contract passed against the supplied input; it does not independently prove real-world identity.</p>
+
+  <h2>What the mapping does and does not establish</h2>
+  <h3>It establishes</h3>
+  <ul>
+    <li>An analytical bridge from published DIO/ODI commit-boundary obligations to Policy-as-Code mechanisms.</li>
+    <li>A separation between policy decision, enforcement, evidence validation, and atomic graph commitment.</li>
+    <li>Explicit integration gaps that remain even when a policy engine is available.</li>
+    <li>A comparison basis that does not conflate semantic authorization with ordinary access-control decisions.</li>
+  </ul>
+  <h3>It does not establish</h3>
+  <ul>
+    <li>That OPA, Cedar, or any other engine natively implements the MVDIO Supervisor Layer.</li>
+    <li>That an engine validates the truth or provenance of evidence merely because it receives structured input.</li>
+    <li>That a decision prevents stale-state commits or bypass unless the integration enforces those conditions.</li>
+    <li>That DIO/ODI-informed policies outperform an equally informed generic policy design. This remains an empirical question.</li>
+    <li>That the proposed integration has been implemented, benchmarked, or independently evaluated.</li>
+    <li>That this mapping adds a canonical DIO/ODI concept or modifies the Reference Vocabulary.</li>
+  </ul>
+
+  <h2>Interpretation boundary</h2>
+  <p>This is a <strong>derived, non-normative application mapping</strong>. OPA and Cedar are distinct systems with different request and decision models. The mapping identifies capabilities and gaps; it does not treat their constructs as interchangeable.</p>
+  <p>The scope is authorization of a proposed persistent identity mutation. The mapping does not model the full hypothesis-conditioned evidence-acquisition loop, downstream mutation propagation, dependency-aware cascade mitigation, or post-commit identity recovery. It does not claim these problems are solved by adding a policy engine.</p>
+
+  <h2>Source basis</h2>
+  <div class="source">
+    <p><strong>DIO/ODI source:</strong> Beránek, D. (2026). <em>Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution</em>. <a href="https://zenodo.org/records/23580733" target="_blank" rel="noopener noreferrer">Zenodo record 23580733</a>. The paper supplies the commit-boundary obligations mapped here; this mapping adds no performance results.</p>
+    <p><strong>OPA:</strong> <a href="https://www.openpolicyagent.org/docs" target="_blank" rel="noopener noreferrer">Core documentation</a> · <a href="https://www.openpolicyagent.org/docs/management-decision-logs" target="_blank" rel="noopener noreferrer">Decision Logs</a> · <a href="https://www.openpolicyagent.org/docs/management-bundles" target="_blank" rel="noopener noreferrer">Bundles</a>.</p>
+    <p><strong>Cedar:</strong> <a href="https://docs.cedarpolicy.com/auth/authorization.html" target="_blank" rel="noopener noreferrer">How Cedar authorization works</a> · <a href="https://docs.cedarpolicy.com/policies/syntax-policy.html" target="_blank" rel="noopener noreferrer">Basic policy construction</a>.</p>
+    <p>External sources document the technical capabilities. The obligation-to-mechanism relations and the residual requirements are the analytical interpretation in this mapping, not claims made by the OPA or Cedar documentation.</p>
+  </div>
+
+  <h2>Source and machine-readable metadata</h2>
+  <ul>
+    <li><a href="/mappings/commit-boundary-policy-mapping.md">Markdown source</a></li>
+    <li><a href="/mappings/commit-boundary-policy-mapping.jsonld">JSON-LD representation</a></li>
+    <li><a href="/mappings/commit-boundary-policy-mapping.ttl">Turtle RDF — qualified mapping assertions</a></li>
+    <li><a href="/mappings/">Application Mappings index</a></li>
+    <li><a href="https://github.com/dan-beranek/dio-odi-reference-model" target="_blank" rel="noopener noreferrer">Reference Model source repository</a></li>
+  </ul>
+  <p>Author: <strong>Daniel Beránek</strong> · ORCID 0009-0004-0050-0264 · License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.</p>
+</body>
+</html>
