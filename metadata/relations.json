@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.4.1",
+  "registry_version": "1.5.0",
   "relation_semantics": "Directed edges are expressed from subject to object using Zenodo/DataCite-style relation names where possible. Only edges with approved_for_zenodo=true should be projected automatically into .zenodo.json or historical Zenodo records.",
   "relations": [
     {
@@ -158,6 +158,13 @@
       "canonical_relation": "isVersionOf",
       "status": "verified-by-author",
       "note": "The current Zenodo v1.1.0 record relates to the Figshare representation as Is version of. This current-version relation must not be retroactively projected onto the archived Zenodo v1 record."
+    },
+    {
+      "subject": "reference-model",
+      "relation": "references",
+      "object": "commit-boundary-paper",
+      "approved_for_zenodo": true,
+      "note": "The v0.4.0 application-mapping layer uses this paper as a source for commit-boundary authorization and distinguishes that boundary from iterative/hypothesis-conditioned evidence acquisition."
     }
   ]
 }
