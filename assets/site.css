@@ -50,18 +50,32 @@ h1,
 h2,
 h3,
 h4 {
+  width: min(100%, var(--reading-measure));
   max-width: var(--reading-measure);
   margin-inline: auto;
   color: var(--text);
   line-height: 1.22;
+  text-align: left;
   text-wrap: pretty;
 }
 
 h1 {
+  width: min(100%, 58ch);
   max-width: 58ch;
   margin-block: 1.6rem 1.1rem;
   font-size: clamp(1.85rem, 3vw, 2.55rem);
   letter-spacing: -0.025em;
+}
+
+body.page--vocabulary > h1,
+body.page--index > h1 {
+  width: min(100%, var(--reading-measure));
+  max-width: var(--reading-measure);
+}
+
+body.page--mapping > h1 {
+  width: min(100%, 58ch);
+  max-width: 58ch;
 }
 
 h2 {
@@ -76,8 +90,10 @@ h3 {
 
 p,
 li {
+  width: min(100%, var(--reading-measure));
   max-width: var(--reading-measure);
   margin-inline: auto;
+  text-align: left;
 }
 
 p {
@@ -202,8 +218,23 @@ blockquote {
   background: var(--surface);
 }
 
-.card h2 {
+.card h2,
+.derived-layer > h2 {
   margin-top: 0;
+}
+
+.mapping-entry {
+  max-width: 100%;
+  margin: 1.3rem auto 1.8rem;
+  padding: 0.9rem 1.15rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--link);
+  border-radius: 0.6rem;
+  background: var(--surface);
+}
+
+.mapping-entry p:last-child {
+  margin-bottom: 0;
 }
 
 .meta,
