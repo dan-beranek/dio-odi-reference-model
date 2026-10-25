@@ -88,6 +88,7 @@ The namespace is owned by the author and is intended to remain stable independen
 ## Vocabulary and source repository
 
 - **Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
+- **Vocabulary Concept DOI (all versions):** https://doi.org/10.5281/zenodo.23272897
 - **Reference Model & Source Repository:** https://github.com/dan-beranek/dio-odi-reference-model/
 
 ## Files
@@ -128,10 +129,10 @@ These mappings are not part of the canonical vocabulary. They project vocabulary
 
 Public index: https://vocab.danielberanek.cz/mappings/
 
-- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. The live page includes an iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 and linked to the scope boundary identified in [Constraining the Commit Boundary](https://zenodo.org/records/23580733) (published 2026-10-22). The base mapping first appeared in v0.3.2; the extension is included in archived v0.4.0.
+- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. The live page includes an iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 and linked to the scope boundary identified in [Constraining the Commit Boundary](https://zenodo.org/records/23580733) (published 2026-10-22). The base mapping first appeared in v0.3.2; the extension was included in archived v0.4.0 and carried forward in archived v0.5.0.
 - [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
 
-- [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the source tree on 2026-10-25 and included in archived Reference Model v0.4.0: https://doi.org/10.5281/zenodo.23632619.
+- [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the source tree on 2026-10-25 and first included in archived Reference Model v0.4.0: https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0: https://doi.org/10.5281/zenodo.23643845.
 
 The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and remains included in archived v0.4.0. The archived v0.4.0 package contains Reference Vocabulary v0.1.0. The archived v0.5.0 snapshot incorporates live Reference Vocabulary v0.2.0, including the new plural Identity-Preserving Constraints concept and a historical note on the retained singular entry. Earlier uses of the singular URI are not retroactively migrated, and no semantic relation between the two concepts is asserted. The snapshot carries forward the Commit-Boundary × Policy-as-Code mapping and the iterative/hypothesis-conditioned RAG extension.
 
