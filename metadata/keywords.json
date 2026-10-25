@@ -1,5 +1,5 @@
 {
-  "registry_version": "2.1.0",
+  "registry_version": "2.2.0",
   "status": "canonical-approved",
   "approved_on": "2026-10-25",
   "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for Zenodo and other metadata surfaces.",
@@ -451,7 +451,9 @@
           "heterogeneous entity matching",
           "HEM",
           "agentic entity resolution",
-          "policy-as-code"
+          "policy-as-code",
+          "commit-boundary authorization",
+          "authorization guardrail"
         ],
         "C3_reconstruction_mechanics": "all",
         "C4_k6": "all",
@@ -479,6 +481,8 @@
         "HEM",
         "agentic entity resolution",
         "policy-as-code",
+        "commit-boundary authorization",
+        "authorization guardrail",
         "semantic field",
         "distributed representational state",
         "observation domain",
