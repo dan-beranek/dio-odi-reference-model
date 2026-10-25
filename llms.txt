@@ -32,7 +32,9 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.ttl
   - Turtle RDF introduced in: Reference Model v0.3.1
   - Introduced in: Reference Model v0.2.0
-  - Included in: Reference Model v0.3.2
+  - Included in: Reference Model v0.3.2 (base mapping)
+  - Live extension added: 2026-10-25 — iterative and hypothesis-conditioned evidence acquisition; not in archived v0.3.2
+  - Development context: Constraining the Commit Boundary, published 2026-10-22: https://zenodo.org/records/23580733
 - Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences: https://vocab.danielberanek.cz/mappings/hem-dio/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md
   - JSON-LD: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.jsonld
