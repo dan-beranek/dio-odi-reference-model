@@ -1,6 +1,6 @@
 # Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
 
-**Status:** Derived application layer introduced in DIO/ODI Reference Model v0.2.0 and included in v0.3.2  
+**Status:** Base mapping introduced in DIO/ODI Reference Model v0.2.0 and included in archived v0.3.2. Iterative/hypothesis-conditioned evidence-acquisition extension added to the live source tree on 25 October 2026; not included in the archived package.  
 **Current release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
 **Previous archived release containing this mapping:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external technical domain and does not modify their definitions or relations.  
@@ -114,6 +114,43 @@ The user asks about an entity in a specific present-day professional context. Re
 [Reconstruction Capture](https://vocab.danielberanek.cz/dio-odi/#ReconstructionCapture) is especially relevant to RAG because a small subset of retrieved representations can disproportionately dominate the generated reconstruction. The current vocabulary records it as related to Semantic Vulnerability but does not formalize a stronger relation.
 
 [Identity Collapse](https://vocab.danielberanek.cz/dio-odi/#IdentityCollapse) remains a phenomenon-level concept outside the current failure-mode hierarchy. This mapping does not assert that any RAG failure mode causes, constitutes, exhausts, or is required for Identity Collapse.
+
+## Development context and temporal lineage
+
+This page now contains the original RAG-to-DIO mapping and a later analytical extension. Their temporal and conceptual relationship is part of the artifact's provenance.
+
+- **10 October 2026 — Base RAG × DIO mapping.** The original mapping was published as a diagnostic projection from DIO Reconstruction Failure Modes to generic RAG pipeline loci, mechanisms, and observable symptoms. The base mapping is included in archived DIO/ODI Reference Model v0.3.2.
+- **22 October 2026 — Commit-boundary research.** In [*Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*](https://zenodo.org/records/23580733), the analysis distinguishes evidence available for exploratory reasoning from evidence eligible to authorize a persistent identity-changing mutation. It explicitly leaves broader dependency-aware control of hypothesis-conditioned evidence acquisition and feedback as a separate research direction.
+- **25 October 2026 — Live analytical extension.** The section below extends the earlier RAG mapping to examine that upstream evidentiary process: how a working hypothesis can influence subsequent query selection, evidence exposure, and hypothesis updates. This extension is motivated by the boundary made explicit in the later paper; it is not claimed to be contained in, implemented by, or empirically validated by that paper.
+
+The relationship is developmental, not a claim of deterministic causality: the RAG mapping supplies the earlier process-to-reconstruction diagnostic layer; the commit-boundary paper isolates a downstream authorization boundary and explicitly does not solve the upstream feedback problem; this live extension examines that previously separated question in relation to the existing RAG mapping. The extension was added to the live source tree on 25 October 2026 and is **not included in the archived v0.3.2 package**. The canonical DIO/ODI Reference Vocabulary remains unchanged.
+
+## Iterative and Hypothesis-Conditioned Evidence Acquisition
+
+The existing RAG mapping locates possible reconstruction pressures across pipeline stages. It does not explicitly model dependencies that span successive retrieval and reasoning steps. In agentic retrieval, a working hypothesis at step (t) may influence the next query, tool call, source choice, or selection of candidate evidence. The returned and selected material then informs a subsequent hypothesis, which in turn shapes later search:
+
+**working hypothesis → next retrieval action → exposed/selected evidence → updated hypothesis → subsequent retrieval action**
+
+This is a process-level extension across existing RAG loci, not a new canonical DIO/ODI concept or an additional stage that every RAG architecture must implement.
+
+| Analytical condition | What it adds beyond the existing RAG matrix | Possible DIO relevance | Interpretation limit |
+| --- | --- | --- | --- |
+| **Hypothesis-conditioned query selection** | The current working hypothesis influences which follow-up questions, tools, or source paths are explored. | Changes in evidence exposure may interact with existing failure modes such as Entity Substitution, Merge Failure, or Contextual Displacement, depending on the resulting reconstruction. | Hypothesis-conditioned search is normal in agentic systems; it is not itself proof of bias or failure. |
+| **Path-dependent evidence acquisition** | Later evidence and explored alternatives depend partly on earlier retrieval results and intermediate interpretations. | An early referential or contextual error may remain unchallenged or be amplified if later steps inherit its assumptions; other steps may also correct it. | Dependence across steps does not establish that the evidence is false or that the final reconstruction is defective. |
+| **Evidence-lineage dependence** | Several retrieved documents, summaries, or agent outputs may inherit a shared source or earlier claim, so their number does not establish independent evidentiary support. | This matters when judging whether apparently convergent representations provide distinct support for a reconstruction or claim. It may be relevant to Merge Failure or Entity Substitution only when a defective reconstruction is actually produced. | Shared provenance is not inherently defective. Independence must not be inferred from document counts, citations, or agent counts alone. |
+| **Cross-agent hypothesis propagation** | In a multi-agent configuration, one agent's hypothesis, partial match, or summary may condition another agent's retrieval and interpretation. | Apparent agreement may reflect a shared premise rather than independent examination; possible reconstruction consequences remain outcome-dependent. | This is a multi-agent special case, not a definition of agentic retrieval. Multiple agents can also provide genuinely complementary evidence. |
+
+These are local analytical labels for this extension, not a new taxonomy of DIO/ODI failure modes. Their relations to existing DIO/ODI concepts are conditional and non-deterministic. The relevant DIO failure mode remains defined by the resulting reconstruction, not by the mere existence of an iterative search process.
+
+### Relation to the commit boundary
+
+The distinction from [*Constraining the Commit Boundary*](https://zenodo.org/records/23580733) is complementary:
+
+- **This extension** examines how a hypothesis may shape the evidentiary path before a final identity-changing decision.
+- **The commit-boundary paper** specifies conditions under which the proposed persistent mutation may be authorized.
+- **Neither artifact claims that the other problem is solved by its own contribution.** A commit guardrail can constrain a write under its declared evidence contract; this extension does not claim to correct the upstream acquisition process, and it does not propose a complete control or recovery mechanism.
+
+A high confidence score or agreement among several agents is therefore not, by itself, evidence that the supporting retrieval paths were independent. Conversely, evidence dependence alone does not prove that a hypothesis is wrong. The mapping identifies a question to inspect, not a universal verdict on agentic retrieval.
 
 ## Interpretation boundary
 
