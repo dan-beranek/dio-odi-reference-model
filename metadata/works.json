@@ -124,7 +124,7 @@
       "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
       "canonical_namespace": "https://vocab.danielberanek.cz/dio-odi/#",
       "namespace_document": "https://vocab.danielberanek.cz/dio-odi/",
-      "reference_vocabulary_version": "0.1.0",
+      "reference_vocabulary_version": "0.2.0",
       "reference_vocabulary_doi": "10.5281/zenodo.23272897",
       "reference_vocabulary_doi_url": "https://doi.org/10.5281/zenodo.23272897",
       "reference_vocabulary_publication_date": "2026-10-10",
@@ -179,9 +179,9 @@
         "version": "0.4.0",
         "doi": "10.5281/zenodo.23632619"
       },
-      "reference_vocabulary_version_doi": "10.5281/zenodo.23272898",
-      "reference_vocabulary_version_doi_url": "https://doi.org/10.5281/zenodo.23272898",
-      "current_reference_vocabulary_version": "0.2.0"
+      "reference_vocabulary_initial_archived_version": "0.1.0",
+      "reference_vocabulary_initial_archived_version_doi": "10.5281/zenodo.23272898",
+      "reference_vocabulary_initial_archived_version_doi_url": "https://doi.org/10.5281/zenodo.23272898"
     }
   ]
 }
