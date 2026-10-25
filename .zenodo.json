@@ -116,6 +116,26 @@
       "identifier": "10.5281/zenodo.23580733",
       "relation": "references",
       "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://www.openpolicyagent.org/docs",
+      "relation": "references"
+    },
+    {
+      "identifier": "https://www.openpolicyagent.org/docs/management-decision-logs",
+      "relation": "references"
+    },
+    {
+      "identifier": "https://www.openpolicyagent.org/docs/management-bundles",
+      "relation": "references"
+    },
+    {
+      "identifier": "https://docs.cedarpolicy.com/auth/authorization.html",
+      "relation": "references"
+    },
+    {
+      "identifier": "https://docs.cedarpolicy.com/policies/syntax-policy.html",
+      "relation": "references"
     }
   ],
   "references": [
@@ -125,7 +145,12 @@
     "Beránek, D. (2026). Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23226205",
     "Beránek, D. (2026). From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO. Zenodo. https://doi.org/10.5281/zenodo.23269323",
     "Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). Heterogeneity in entity matching: A survey and experimental analysis. Data & Knowledge Engineering, 164, 102575. https://doi.org/10.1016/j.datak.2026.102575",
-    "Beránek, D. (2026, 22 October). Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution. Zenodo. https://doi.org/10.5281/zenodo.23580733"
+    "Beránek, D. (2026, 22 October). Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution. Zenodo. https://doi.org/10.5281/zenodo.23580733",
+    "Open Policy Agent. (n.d.). Open Policy Agent documentation. Retrieved 25 October 2026, from https://www.openpolicyagent.org/docs",
+    "Open Policy Agent. (n.d.). Decision Logs. Open Policy Agent documentation. Retrieved 25 October 2026, from https://www.openpolicyagent.org/docs/management-decision-logs",
+    "Open Policy Agent. (n.d.). Bundles. Open Policy Agent documentation. Retrieved 25 October 2026, from https://www.openpolicyagent.org/docs/management-bundles",
+    "How Cedar authorization works. (n.d.). Cedar Policy Language Reference Guide. Retrieved 25 October 2026, from https://docs.cedarpolicy.com/auth/authorization.html",
+    "Basic policy construction in Cedar. (n.d.). Cedar Policy Language Reference Guide. Retrieved 25 October 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html"
   ],
   "version": "0.5.0",
   "publication_date": "2026-10-25",
