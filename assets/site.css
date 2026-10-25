@@ -16,7 +16,7 @@
   --code-bg: #25252b;
   --diagram-bg: #ffffff;
   --content-width: 72rem;
-  --reading-measure: 78ch;
+  --reading-measure: 44rem;
   --page-gutter: clamp(1rem, 2.2vw, 1.6rem);
 }
 
