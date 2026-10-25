@@ -1,6 +1,6 @@
 {
   "title": "DIO/ODI Reference Model",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "status": "public-reference-model",
   "namespace": "https://vocab.danielberanek.cz/dio-odi/#",
   "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
@@ -12,7 +12,7 @@
     "affiliation": "Independent Researcher, Brno, Czech Republic",
     "email": "dan@danielberanek.cz"
   },
-  "reference_model_version": "0.4.0",
+  "reference_model_version": "0.5.0",
   "reference_vocabulary_version": "0.2.0",
   "derived_application_mappings": [
     {
@@ -62,11 +62,16 @@
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
   "archive_status": "archived",
   "previous_archived_release": {
-    "version": "0.3.2",
-    "doi": "10.5281/zenodo.23300703",
-    "doi_url": "https://doi.org/10.5281/zenodo.23300703"
+    "version": "0.4.0",
+    "doi": "10.5281/zenodo.23632619",
+    "doi_url": "https://doi.org/10.5281/zenodo.23632619"
   },
   "archived_release_history": [
+    {
+      "version": "0.5.0",
+      "doi": "10.5281/zenodo.23643845",
+      "doi_url": "https://doi.org/10.5281/zenodo.23643845"
+    },
     {
       "version": "0.4.0",
       "doi": "10.5281/zenodo.23632619",
@@ -105,23 +110,17 @@
     "keyword_grammar_status": "canonical-approved"
   },
   "current_release": {
-    "version": "0.4.0",
-    "archive_status": "archived",
-    "doi": "10.5281/zenodo.23632619",
-    "doi_url": "https://doi.org/10.5281/zenodo.23632619"
-  },
-  "release_doi": "10.5281/zenodo.23632619",
-  "release_doi_url": "https://doi.org/10.5281/zenodo.23632619",
-  "current_archived_release": {
-    "version": "0.4.0",
-    "doi": "10.5281/zenodo.23632619",
-    "doi_url": "https://doi.org/10.5281/zenodo.23632619"
-  },
-  "current_archived_reference_vocabulary_version": "0.1.0",
-  "prepared_release": {
     "version": "0.5.0",
-    "archive_status": "prepared",
-    "reference_vocabulary_version": "0.2.0",
-    "note": "Prepared snapshot introduces Identity-Preserving Constraints as a distinct plural concept and retains the singular URI as a historical entry without asserting a semantic relation."
-  }
+    "archive_status": "archived",
+    "doi": "10.5281/zenodo.23643845",
+    "doi_url": "https://doi.org/10.5281/zenodo.23643845"
+  },
+  "release_doi": "10.5281/zenodo.23643845",
+  "release_doi_url": "https://doi.org/10.5281/zenodo.23643845",
+  "current_archived_release": {
+    "version": "0.5.0",
+    "doi": "10.5281/zenodo.23643845",
+    "doi_url": "https://doi.org/10.5281/zenodo.23643845"
+  },
+  "current_archived_reference_vocabulary_version": "0.2.0"
 }
