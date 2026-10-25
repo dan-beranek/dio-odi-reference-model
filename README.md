@@ -1,9 +1,9 @@
 # DIO/ODI Reference Model
 
-**Reference Model release:** v0.3.2  
+**Prepared Reference Model release:** v0.4.0 (GitHub Release and Zenodo archival pending)  
 **Reference Vocabulary:** v0.1.0 — SKOS-first, OWL-later  
-**Release DOI:** https://doi.org/10.5281/zenodo.23300703  
-**Previous archived release:** v0.3.1 — https://doi.org/10.5281/zenodo.23290683  
+**Previous archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
+**DOI note:** Zenodo assigns the version-specific DOI after the GitHub Release is archived; the live repository metadata is synchronized after publication.  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
@@ -132,7 +132,7 @@ Public index: https://vocab.danielberanek.cz/mappings/
 
 - [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the live source tree on 2026-10-25; not yet included in an archived Reference Model release.
 
-The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and is included in v0.3.2. The canonical Reference Vocabulary remains at v0.1.0. The Commit-Boundary × Policy-as-Code mapping is a later live-source addition and is not represented as part of the archived v0.3.2 package.
+The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and remains included in v0.4.0. The canonical Reference Vocabulary remains unchanged at v0.1.0. The prepared v0.4.0 snapshot includes the Commit-Boundary × Policy-as-Code mapping and the 25 October 2026 iterative/hypothesis-conditioned extension to the RAG mapping; these are derived application-layer additions and do not redefine the canonical vocabulary.
 
 ## Primary sources
 
@@ -155,9 +155,11 @@ In particular:
 
 ## Citation and archival release
 
-**Current archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+**Prepared source snapshot:** DIO/ODI Reference Model v0.4.0. Its version-specific DOI is assigned by Zenodo during GitHub release archival and is added to the live repository metadata after publication.
 
-**Previous archived release:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
+**Previous archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+
+**Earlier archived release:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
 
 **Earlier archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
