@@ -1,6 +1,6 @@
 {
   "title": "DIO/ODI Reference Model",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "status": "public-reference-model",
   "namespace": "https://vocab.danielberanek.cz/dio-odi/#",
   "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
@@ -12,8 +12,8 @@
     "affiliation": "Independent Researcher, Brno, Czech Republic",
     "email": "dan@danielberanek.cz"
   },
-  "reference_model_version": "0.3.2",
-  "reference_vocabulary_version": "0.1.0",
+  "reference_model_version": "0.4.0",
+  "reference_vocabulary_version": "0.2.0",
   "derived_application_mappings": [
     {
       "title": "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline",
@@ -21,14 +21,16 @@
       "frontend": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
       "relation": "derived-application-layer",
       "introduced_in": "0.2.0",
-      "release_status": "included-in-0.3.2",
-      "previous_archived_release_doi": "10.5281/zenodo.23290683",
+      "release_status": "included-in-0.4.0",
+      "previous_archived_release_doi": "10.5281/zenodo.23300703",
       "machine_readable_metadata": "mappings/rag-pipeline-mapping.jsonld",
       "machine_readable_metadata_introduced_in": "0.3.1",
       "turtle_rdf": "mappings/rag-pipeline-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
       "introduced_archived_release_doi": "10.5281/zenodo.23282752",
-      "archived_release_doi": "10.5281/zenodo.23300703"
+      "archived_release_doi": "10.5281/zenodo.23632619",
+      "base_mapping_first_included_in": "0.3.2",
+      "live_extension_included_in": "0.4.0"
     },
     {
       "title": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
@@ -38,22 +40,38 @@
       "external_source_doi": "10.1016/j.datak.2026.102575",
       "relation": "derived-application-layer",
       "introduced_in": "0.3.0",
-      "release_status": "included-in-0.3.2",
+      "release_status": "included-in-0.4.0",
       "machine_readable_metadata_introduced_in": "0.3.0",
       "turtle_rdf": "mappings/hem-dio-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
-      "previous_archived_release_doi": "10.5281/zenodo.23290683",
-      "archived_release_doi": "10.5281/zenodo.23300703"
+      "previous_archived_release_doi": "10.5281/zenodo.23300703",
+      "archived_release_doi": "10.5281/zenodo.23632619"
+    },
+    {
+      "title": "Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization",
+      "path": "mappings/commit-boundary-policy-mapping.md",
+      "frontend": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+      "relation": "derived-application-layer",
+      "introduced_in": "0.4.0",
+      "release_status": "included-in-0.4.0",
+      "archived_release_doi": "10.5281/zenodo.23632619",
+      "machine_readable_metadata": "mappings/commit-boundary-policy-mapping.jsonld",
+      "turtle_rdf": "mappings/commit-boundary-policy-mapping.ttl"
     }
   ],
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
   "archive_status": "archived",
   "previous_archived_release": {
-    "version": "0.3.1",
-    "doi": "10.5281/zenodo.23290683",
-    "doi_url": "https://doi.org/10.5281/zenodo.23290683"
+    "version": "0.3.2",
+    "doi": "10.5281/zenodo.23300703",
+    "doi_url": "https://doi.org/10.5281/zenodo.23300703"
   },
   "archived_release_history": [
+    {
+      "version": "0.4.0",
+      "doi": "10.5281/zenodo.23632619",
+      "doi_url": "https://doi.org/10.5281/zenodo.23632619"
+    },
     {
       "version": "0.3.2",
       "doi": "10.5281/zenodo.23300703",
@@ -87,16 +105,23 @@
     "keyword_grammar_status": "canonical-approved"
   },
   "current_release": {
-    "version": "0.3.2",
+    "version": "0.4.0",
     "archive_status": "archived",
-    "doi": "10.5281/zenodo.23300703",
-    "doi_url": "https://doi.org/10.5281/zenodo.23300703"
+    "doi": "10.5281/zenodo.23632619",
+    "doi_url": "https://doi.org/10.5281/zenodo.23632619"
   },
-  "release_doi": "10.5281/zenodo.23300703",
-  "release_doi_url": "https://doi.org/10.5281/zenodo.23300703",
+  "release_doi": "10.5281/zenodo.23632619",
+  "release_doi_url": "https://doi.org/10.5281/zenodo.23632619",
   "current_archived_release": {
-    "version": "0.3.2",
-    "doi": "10.5281/zenodo.23300703",
-    "doi_url": "https://doi.org/10.5281/zenodo.23300703"
+    "version": "0.4.0",
+    "doi": "10.5281/zenodo.23632619",
+    "doi_url": "https://doi.org/10.5281/zenodo.23632619"
+  },
+  "current_archived_reference_vocabulary_version": "0.1.0",
+  "prepared_release": {
+    "version": "0.5.0",
+    "archive_status": "prepared",
+    "reference_vocabulary_version": "0.2.0",
+    "note": "Prepared snapshot introduces Identity-Preserving Constraints as a distinct plural concept and retains the singular URI as a historical entry without asserting a semantic relation."
   }
 }

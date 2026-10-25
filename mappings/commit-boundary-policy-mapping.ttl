@@ -63,7 +63,7 @@ cbpa:Mapping
     schema:datePublished "2026-10-25" ;
     schema:dateModified "2026-10-25" ;
     schema:license <https://creativecommons.org/licenses/by/4.0/> ;
-    schema:creativeWorkStatus "Live derived application mapping; not yet included in an archived Reference Model release"@en ;
+    schema:creativeWorkStatus "Included in archived DIO/ODI Reference Model v0.4.0; retained as a derived application mapping outside the canonical vocabulary"@en ;
     schema:isPartOf [
         a schema:CreativeWork ;
         schema:name "DIO/ODI Reference Model — live source tree"@en ;
