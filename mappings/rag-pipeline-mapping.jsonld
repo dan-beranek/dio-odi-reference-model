@@ -8,7 +8,7 @@
   "inLanguage": "en",
   "datePublished": "2026-10-10",
   "dateModified": "2026-10-25",
-  "creativeWorkStatus": "Base mapping first included in archived DIO/ODI Reference Model v0.3.2; the iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 was first included in archived v0.4.0 and carried forward in v0.5.0.",
+  "creativeWorkStatus": "Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0 and retained in archived v0.3.x releases; the iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 was first included in archived v0.4.0 and carried forward in v0.5.0.",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
     "@type": "Person",
