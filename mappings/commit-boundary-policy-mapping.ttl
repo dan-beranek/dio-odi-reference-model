@@ -1,0 +1,259 @@
+@prefix cbpa: <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/#> .
+@prefix map: <https://vocab.danielberanek.cz/mappings/#> .
+@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
+@prefix opa: <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/#opa-terms/> .
+@prefix cedar: <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/#cedar-terms/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# This is a derived application graph. It does not modify the canonical vocabulary.
+# The local policy-engine terms below describe external concepts as used in this mapping;
+# they are not asserted to be official vocabularies published by OPA or Cedar.
+
+cbpa:MappingAssertion
+    a rdfs:Class ;
+    rdfs:label "Commit-boundary Policy-as-Code mapping assertion"@en ;
+    rdfs:subClassOf map:MappingAssertion ;
+    skos:definition "A qualified analytical assertion connecting a DIO/ODI-informed commit-boundary obligation with a Policy-as-Code mechanism and identifying the extent of the relation."@en .
+
+cbpa:contractObligation
+    a rdf:Property ;
+    rdfs:label "contract obligation"@en ;
+    rdfs:domain cbpa:MappingAssertion ;
+    skos:definition "The DIO/ODI-informed obligation that an authorization architecture must address before a persistent identity mutation."@en .
+
+cbpa:policyMechanism
+    a rdf:Property ;
+    rdfs:label "policy mechanism"@en ;
+    rdfs:domain cbpa:MappingAssertion ;
+    skos:definition "An external policy, decision, diagnostic, logging, or enforcement mechanism relevant to the obligation."@en .
+
+cbpa:relationType
+    a rdf:Property ;
+    rdfs:label "mapping relation type"@en ;
+    rdfs:domain cbpa:MappingAssertion ;
+    skos:definition "A qualified relation specifying whether the external mechanism provides a relevant capability, requires additional modeling, or leaves a property unestablished."@en .
+
+cbpa:RelevantMechanism
+    a skos:Concept ;
+    skos:prefLabel "relevant mechanism"@en ;
+    skos:definition "The external system documents a capability relevant to part of the obligation, without asserting complete contract conformance."@en .
+
+cbpa:RequiresPolicyModeling
+    a skos:Concept ;
+    skos:prefLabel "requires policy modeling"@en ;
+    skos:definition "The capability must be expressed through application-defined policy, data, predicates, or state semantics."@en .
+
+cbpa:RequiresIntegration
+    a skos:Concept ;
+    skos:prefLabel "requires integration"@en ;
+    skos:definition "Conformance depends on application, trusted evidence, transaction, or enforcement components beyond the policy decision alone."@en .
+
+cbpa:NotEstablishedByDecision
+    a skos:Concept ;
+    skos:prefLabel "not established by the decision"@en ;
+    skos:definition "The decision result does not by itself prove the associated semantic or operational property."@en .
+
+cbpa:Mapping
+    a schema:TechArticle ;
+    schema:name "Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization"@en ;
+    schema:url <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/> ;
+    schema:author <https://danielberanek.cz/#person> ;
+    schema:datePublished "2026-10-25" ;
+    schema:dateModified "2026-10-25" ;
+    schema:license <https://creativecommons.org/licenses/by/4.0/> ;
+    schema:creativeWorkStatus "Live derived application mapping; not yet included in an archived Reference Model release"@en ;
+    schema:isPartOf [
+        a schema:CreativeWork ;
+        schema:name "DIO/ODI Reference Model — live source tree"@en ;
+        schema:url <https://github.com/dan-beranek/dio-odi-reference-model>
+    ] ;
+    dcterms:source <https://zenodo.org/records/23580733>,
+                   <https://www.openpolicyagent.org/docs>,
+                   <https://www.openpolicyagent.org/docs/management-decision-logs>,
+                   <https://www.openpolicyagent.org/docs/management-bundles>,
+                   <https://docs.cedarpolicy.com/auth/authorization.html>,
+                   <https://docs.cedarpolicy.com/policies/syntax-policy.html> ;
+    skos:scopeNote "This graph maps DIO/ODI-informed commit-boundary obligations to relevant Policy-as-Code capabilities and integration requirements. It does not assert implementation, semantic equivalence, or independent validation."@en .
+
+<https://danielberanek.cz/#person>
+    a schema:Person ;
+    schema:name "Daniel Beránek" ;
+    schema:url <https://danielberanek.cz/> ;
+    schema:sameAs <https://orcid.org/0009-0004-0050-0264> .
+
+cbpa:BindMutationScope
+    a schema:DefinedTerm ;
+    schema:name "Bind authorization to the proposed mutation and its scope"@en ;
+    schema:description "The authorization request identifies the proposed operation, target, and permitted operational scope."@en .
+
+cbpa:ClaimSpecificEvidence
+    a schema:DefinedTerm ;
+    schema:name "Claim-specific evidence support"@en ;
+    schema:description "Every required proposition has evidence eligible to support that particular claim, with controlled provenance and validity."@en .
+
+cbpa:IdentityPreservingConstraints
+    a schema:DefinedTerm ;
+    schema:name "Identity-preserving constraints over candidate state"@en ;
+    schema:description "Configured constraints are evaluated against the proposed mutation and relevant candidate state."@en .
+
+cbpa:DistinguishBreachFromUnknown
+    a schema:DefinedTerm ;
+    schema:name "Distinguish breach from unknown evidence"@en ;
+    schema:description "A constraint violation is kept distinct from insufficient, missing, or unresolved evidence."@en .
+
+cbpa:TemporalContext
+    a schema:DefinedTerm ;
+    schema:name "Observation context and temporal validity"@en ;
+    schema:description "Decision inputs preserve the relevant observation context and the temporal validity of claims and evidence."@en .
+
+cbpa:PolicyFreshness
+    a schema:DefinedTerm ;
+    schema:name "Policy revision freshness at commit"@en ;
+    schema:description "The policy version used by an authorization decision remains the applicable version at the protected commit boundary."@en .
+
+cbpa:StateFreshness
+    a schema:DefinedTerm ;
+    schema:name "Graph state freshness at commit"@en ;
+    schema:description "The graph state at commitment matches the state version against which the mutation was authorized."@en .
+
+cbpa:ProtectedEnforcement
+    a schema:DefinedTerm ;
+    schema:name "Enforcement at every protected write path"@en ;
+    schema:description "The authorization decision is enforced for the exact proposed operation by all paths capable of making the protected mutation."@en .
+
+cbpa:AuditBinding
+    a schema:DefinedTerm ;
+    schema:name "Evidence-to-commit audit binding"@en ;
+    schema:description "The evidence, policy revision, graph state, authorization result, and committed mutation can be traced as one qualified operation."@en .
+
+cbpa:UnknownHandling
+    a schema:DefinedTerm ;
+    schema:name "Safe handling of unknown and error states"@en ;
+    schema:description "Unknown evidence, timeout, unavailable engine, and evaluation errors cannot silently authorize persistent mutation."@en .
+
+cbpa:SemanticTruthBoundary
+    a schema:DefinedTerm ;
+    schema:name "Authorization is not semantic truth"@en ;
+    schema:description "Policy conformance for supplied inputs is not independent proof that an identity hypothesis is true."@en .
+
+opa:StructuredInputAndRules
+    a schema:DefinedTerm ;
+    schema:name "OPA structured input and Rego policy evaluation"@en ;
+    schema:url <https://www.openpolicyagent.org/docs> ;
+    skos:scopeNote "OPA accepts structured input and can produce structured outputs. This local mapping label is not an official OPA vocabulary term."@en .
+
+opa:DecisionLogs
+    a schema:DefinedTerm ;
+    schema:name "OPA decision logs and bundle revision metadata"@en ;
+    schema:url <https://www.openpolicyagent.org/docs/management-decision-logs> ;
+    skos:scopeNote "Decision logs can include request input, result, decision identifier, and bundle revision metadata; they do not by themselves bind a later persistent graph write."@en .
+
+opa:BundleDistribution
+    a schema:DefinedTerm ;
+    schema:name "OPA bundle distribution and updates"@en ;
+    schema:url <https://www.openpolicyagent.org/docs/management-bundles> ;
+    skos:scopeNote "Bundle updates are designed to be distributed to running OPA instances and are eventually consistent; a commit-time policy freshness condition still requires integration."@en .
+
+cedar:PARCRequest
+    a schema:DefinedTerm ;
+    schema:name "Cedar principal, action, resource, and context request"@en ;
+    schema:url <https://docs.cedarpolicy.com/auth/authorization.html> ;
+    skos:scopeNote "Cedar authorization requests use principal, action, resource, and context. This local mapping label is not an official Cedar vocabulary term."@en .
+
+cedar:AllowDenyDiagnostics
+    a schema:DefinedTerm ;
+    schema:name "Cedar Allow/Deny authorization response and diagnostics"@en ;
+    schema:url <https://docs.cedarpolicy.com/auth/authorization.html> ;
+    skos:scopeNote "Cedar returns Allow or Deny with diagnostics including policy evaluation errors; that response is not equivalent to the complete DIO/ODI multi-state evidence contract."@en .
+
+cbpa:Assertion01
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:BindMutationScope ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:PARCRequest ;
+    cbpa:relationType cbpa:RelevantMechanism ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "Structured policy input can represent the proposed operation and scope, but the application must define the protected identity-changing actions and targets."@en .
+
+cbpa:Assertion02
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:ClaimSpecificEvidence ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:PARCRequest ;
+    cbpa:relationType cbpa:RequiresPolicyModeling ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "Claim-specific support, evidence roles, provenance, and temporal validity must be modeled in trusted application data and policy; neither engine establishes those facts merely by receiving them."@en .
+
+cbpa:Assertion03
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:IdentityPreservingConstraints ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:PARCRequest ;
+    cbpa:relationType cbpa:RequiresPolicyModeling ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "Policy predicates can evaluate a configured constraint over supplied candidate-state data, but the domain-specific constraint set and trustworthy candidate state remain external responsibilities."@en .
+
+cbpa:Assertion04
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:DistinguishBreachFromUnknown ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:AllowDenyDiagnostics ;
+    cbpa:relationType cbpa:RequiresPolicyModeling ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "OPA can return application-defined structured results, while Cedar returns Allow/Deny and diagnostics; the DIO/ODI distinction among PASS, BREACH, and UNKNOWN_EVIDENCE requires explicit integration semantics."@en .
+
+cbpa:Assertion05
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:TemporalContext ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:PARCRequest ;
+    cbpa:relationType cbpa:RequiresPolicyModeling ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "Contextual and temporal values can be represented in policy input, but the correct observation context and validity semantics must be supplied by the application."@en .
+
+cbpa:Assertion06
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:PolicyFreshness ;
+    cbpa:policyMechanism opa:DecisionLogs, opa:BundleDistribution ;
+    cbpa:relationType cbpa:RequiresIntegration ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "OPA can expose the bundle revision associated with a decision; the protected commit path must still determine whether that policy revision remains applicable when the mutation is written."@en .
+
+cbpa:Assertion07
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:StateFreshness ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:PARCRequest ;
+    cbpa:relationType cbpa:RequiresIntegration ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "A policy input can carry an expected graph version, but only the state-owning integration can re-check the version and enforce the check atomically at commit."@en .
+
+cbpa:Assertion08
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:ProtectedEnforcement ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:AllowDenyDiagnostics ;
+    cbpa:relationType cbpa:RequiresIntegration ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "A policy decision must be enforced on the protected write path and bound to the exact operation; an upstream Allow or PASS result does not prevent bypass on its own."@en .
+
+cbpa:Assertion09
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:AuditBinding ;
+    cbpa:policyMechanism opa:DecisionLogs, cedar:AllowDenyDiagnostics ;
+    cbpa:relationType cbpa:RequiresIntegration ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "Policy decision logs and diagnostics can contribute to auditability, but a complete trace connecting evidence provenance, state/policy versions, and the actual committed mutation requires application-level binding."@en .
+
+cbpa:Assertion10
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:UnknownHandling ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:AllowDenyDiagnostics ;
+    cbpa:relationType cbpa:RequiresIntegration ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "The integration must explicitly handle undefined results, evaluation errors, timeouts, unavailable engines, and UNKNOWN evidence without defaulting to an authorized mutation."@en .
+
+cbpa:Assertion11
+    a cbpa:MappingAssertion ;
+    cbpa:contractObligation cbpa:SemanticTruthBoundary ;
+    cbpa:policyMechanism opa:StructuredInputAndRules, cedar:AllowDenyDiagnostics ;
+    cbpa:relationType cbpa:NotEstablishedByDecision ;
+    dcterms:isPartOf cbpa:Mapping ;
+    skos:definition "An authorization decision states the result of the encoded policy under supplied input; it does not independently establish the real-world truth of an identity hypothesis."@en .
