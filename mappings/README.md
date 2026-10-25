@@ -17,9 +17,11 @@ Public index: https://vocab.danielberanek.cz/mappings/
 - Turtle RDF: [rag-pipeline-mapping.ttl](rag-pipeline-mapping.ttl) — introduced in Reference Model v0.3.1 with qualified mapping assertions
 - Introduced in: DIO/ODI Reference Model v0.2.0
 - Included in: DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
-- Previous archived release containing this mapping: DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
+- Previous archived release containing this base mapping: DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
+- Live extension added: 2026-10-25; not yet included in an archived Reference Model release
+- Development link: *Constraining the Commit Boundary* (published 2026-10-22) — https://zenodo.org/records/23580733
 
-Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents.
+Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. A live extension added on 2026-10-25 examines iterative and hypothesis-conditioned evidence acquisition in relation to the upstream research boundary identified in [Constraining the Commit Boundary](https://zenodo.org/records/23580733). The base mapping is included in archived v0.3.2; the extension is not.
 
 ### Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
 
