@@ -1,10 +1,11 @@
 # DIO/ODI Reference Model
 
-**Prepared Reference Model release:** v0.5.0 (GitHub Release and Zenodo archival pending)  
-**Current archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
+**Current archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
 **Live Reference Vocabulary:** v0.2.0 — SKOS-first, OWL-later  
-**Vocabulary included in archived v0.4.0:** v0.1.0  
-**Previous archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
+**Live Reference Vocabulary:** v0.2.0 — SKOS-first, OWL-later  
+**Vocabulary included in archived v0.5.0:** v0.2.0  
+**Previous archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
+**Earlier archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
@@ -133,7 +134,7 @@ Public index: https://vocab.danielberanek.cz/mappings/
 
 - [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the source tree on 2026-10-25 and included in archived Reference Model v0.4.0: https://doi.org/10.5281/zenodo.23632619.
 
-The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and remains included in archived v0.4.0. The archived v0.4.0 package contains Reference Vocabulary v0.1.0. The prepared v0.5.0 snapshot incorporates live Reference Vocabulary v0.2.0, including the new plural Identity-Preserving Constraints concept and a historical note on the retained singular entry. Earlier uses of the singular URI are not retroactively migrated, and no semantic relation between the two concepts is asserted. The snapshot carries forward the Commit-Boundary × Policy-as-Code mapping and the iterative/hypothesis-conditioned RAG extension.
+The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and remains included in archived v0.4.0. The archived v0.4.0 package contains Reference Vocabulary v0.1.0. The archived v0.5.0 snapshot incorporates live Reference Vocabulary v0.2.0, including the new plural Identity-Preserving Constraints concept and a historical note on the retained singular entry. Earlier uses of the singular URI are not retroactively migrated, and no semantic relation between the two concepts is asserted. The snapshot carries forward the Commit-Boundary × Policy-as-Code mapping and the iterative/hypothesis-conditioned RAG extension.
 
 ## Primary sources
 
@@ -156,11 +157,11 @@ In particular:
 
 ## Citation and archival release
 
-**Prepared source snapshot:** DIO/ODI Reference Model v0.5.0. GitHub Release and Zenodo archival are pending.
+**Current archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
-**Current archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+**Previous archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
 
-**Previous archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+**Earlier archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
 
 **Earlier archived release:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
 
