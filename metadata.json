@@ -29,10 +29,10 @@
       "turtle_rdf_introduced_in": "0.3.1",
       "introduced_archived_release_doi": "10.5281/zenodo.23282752",
       "archived_release_doi": "10.5281/zenodo.23643845",
-      "base_mapping_first_included_in": "0.3.2",
+      "base_mapping_first_included_in": "0.2.0",
       "live_extension_included_in": "0.4.0",
       "earlier_archived_release_doi": "10.5281/zenodo.23300703",
-      "base_mapping_first_archived_release_doi": "10.5281/zenodo.23300703",
+      "base_mapping_first_archived_release_doi": "10.5281/zenodo.23282752",
       "live_extension_first_included_in": "0.4.0"
     },
     {
@@ -50,7 +50,7 @@
       "previous_archived_release_doi": "10.5281/zenodo.23632619",
       "archived_release_doi": "10.5281/zenodo.23643845",
       "earlier_archived_release_doi": "10.5281/zenodo.23300703",
-      "first_archived_release_doi": "10.5281/zenodo.23290683"
+      "first_archived_release_doi": "10.5281/zenodo.23289615"
     },
     {
       "title": "Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization",
