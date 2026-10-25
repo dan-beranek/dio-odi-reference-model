@@ -85,11 +85,37 @@
     },
     {
       "@type": "Thing",
-      "name": "Identity-preserving constraints"
+      "name": "Claim-specific evidence"
     },
     {
-      "@type": "Thing",
-      "name": "Claim-specific evidence"
+      "@type": "DefinedTerm",
+      "name": "Identity-Preserving Constraint",
+      "url": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraint"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Merge Failure",
+      "url": "https://vocab.danielberanek.cz/dio-odi/#MergeFailure"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Split Failure",
+      "url": "https://vocab.danielberanek.cz/dio-odi/#SplitFailure"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Temporal Discontinuity",
+      "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalDiscontinuity"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Temporal Misalignment",
+      "url": "https://vocab.danielberanek.cz/dio-odi/#TemporalMisalignment"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Contextual Displacement",
+      "url": "https://vocab.danielberanek.cz/dio-odi/#ContextualDisplacement"
     }
   ],
   "hasPart": {
