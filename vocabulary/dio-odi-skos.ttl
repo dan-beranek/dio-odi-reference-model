@@ -7,8 +7,9 @@ dio:ReferenceVocabulary a skos:ConceptScheme ;
   skos:prefLabel "DIO/ODI Reference Vocabulary"@en ;
   dcterms:creator "Daniel Beránek" ;
   dcterms:description "SKOS reference vocabulary derived from the DIO/ODI corpus."@en ;
+  dcterms:hasVersion "0.2.0" ;
   skos:hasTopConcept dio:ReconstructionFailureMode ;
-  dcterms:modified "2026-10-10"^^xsd:date .
+  dcterms:modified "2026-10-25"^^xsd:date .
 
 dio:DIO a skos:Concept ;
   skos:inScheme dio:ReferenceVocabulary ;
@@ -119,6 +120,7 @@ dio:DIOIntervention a skos:Concept ;
 dio:IdentityPreservingConstraint a skos:Concept ;
   skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Identity-Preserving Constraint"@en ;
   skos:definition "A condition whose preservation allows differing reconstructions or transformations to remain legitimately anchored to the same referentially continuous entity."@en ;
+  skos:historyNote "Retained as a historical vocabulary entry for traceability to the vocabulary state preceding v0.2.0. The collective term Identity-Preserving Constraints is introduced separately in v0.2.0. This note records editorial history only and does not assert a semantic relation between the two concepts."@en ;
   skos:related dio:ReferentialContinuity, dio:EssentialVector ;
   dcterms:source <https://doi.org/10.5281/zenodo.23226205> .
 
@@ -127,6 +129,13 @@ dio:EssentialVector a skos:Concept ;
   skos:definition "The minimal relevant core of identity-preserving constraints; the term does not imply a metaphysical essence or necessarily a numerical vector space."@en ;
   skos:related dio:IdentityPreservingConstraint ;
   dcterms:source <https://doi.org/10.5281/zenodo.21610934>, <https://doi.org/10.5281/zenodo.23226205> .
+
+dio:IdentityPreservingConstraints a skos:Concept ;
+  skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Identity-Preserving Constraints"@en ;
+  skos:definition "A domain-configured set of conditions evaluated to determine whether differing reconstructions or transformations may legitimately be attributed to the same referentially continuous entity."@en ;
+  skos:scopeNote "The applicable set may vary by entity class, operational domain, and observation context; this concept does not specify a universal or context-free constraint inventory."@en ;
+  skos:related dio:ReferentialContinuity, dio:EssentialVector ;
+  dcterms:source <https://doi.org/10.5281/zenodo.23226205>, <https://doi.org/10.5281/zenodo.23580733> .
 
 dio:IdentityPreservingVariation a skos:Concept ;
   skos:inScheme dio:ReferenceVocabulary ; skos:prefLabel "Identity-Preserving Variation"@en ;

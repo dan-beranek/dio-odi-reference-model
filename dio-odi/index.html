@@ -29,7 +29,7 @@
   "name": "DIO/ODI Reference Vocabulary",
   "description": "Canonical machine-readable reference vocabulary for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI).",
   "url": "https://vocab.danielberanek.cz/dio-odi/",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "creator": {
     "@type": "Person",
@@ -74,12 +74,13 @@
         "@language": "en"
       },
       "dcterms:modified": {
-        "@value": "2026-10-10",
+        "@value": "2026-10-25",
         "@type": "xsd:date"
       },
       "skos:hasTopConcept": {
         "@id": "dio:ReconstructionFailureMode"
-      }
+      },
+      "dcterms:hasVersion": "0.2.0"
     },
     {
       "@id": "dio:DIO",
@@ -636,7 +637,11 @@
         {
           "@id": "https://doi.org/10.5281/zenodo.23226205"
         }
-      ]
+      ],
+      "skos:historyNote": {
+        "@value": "Retained as a historical vocabulary entry for traceability to the vocabulary state preceding v0.2.0. The collective term Identity-Preserving Constraints is introduced separately in v0.2.0. This note records editorial history only and does not assert a semantic relation between the two concepts.",
+        "@language": "en"
+      }
     },
     {
       "@id": "dio:EssentialVector",
@@ -661,6 +666,41 @@
         },
         {
           "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:IdentityPreservingConstraints",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Identity-Preserving Constraints",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A domain-configured set of conditions evaluated to determine whether differing reconstructions or transformations may legitimately be attributed to the same referentially continuous entity.",
+        "@language": "en"
+      },
+      "skos:scopeNote": {
+        "@value": "The applicable set may vary by entity class, operational domain, and observation context; this concept does not specify a universal or context-free constraint inventory.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ReferentialContinuity"
+        },
+        {
+          "@id": "dio:EssentialVector"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23580733"
         }
       ]
     },
@@ -1224,7 +1264,7 @@
 <body class="page page--vocabulary">
   <p><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">← DIO/ODI Hub — Manifest, publications, reference artifacts &amp; updates</a> · <a href="/mappings/">Application Mappings</a></p>
   <h1>DIO/ODI Reference Vocabulary</h1>
-  <p><strong>Reference Vocabulary version:</strong> 0.1.0<br><strong>Reference Model release:</strong> 0.3.2<br><strong>Archived release:</strong> <a href="https://doi.org/10.5281/zenodo.23300703" target="_blank" rel="noopener noreferrer">v0.3.2 — 10.5281/zenodo.23300703</a><br><strong>Previous archived release:</strong> <a href="https://doi.org/10.5281/zenodo.23290683" target="_blank" rel="noopener noreferrer">v0.3.1 — 10.5281/zenodo.23290683</a></p>
+  <p><strong>Reference Vocabulary version:</strong> 0.2.0<br><strong>Reference Model release:</strong> 0.3.2<br><strong>Archived release:</strong> <a href="https://doi.org/10.5281/zenodo.23300703" target="_blank" rel="noopener noreferrer">v0.3.2 — 10.5281/zenodo.23300703</a><br><strong>Previous archived release:</strong> <a href="https://doi.org/10.5281/zenodo.23290683" target="_blank" rel="noopener noreferrer">v0.3.1 — 10.5281/zenodo.23290683</a></p>
   <p><strong>Canonical namespace:</strong> <code>https://vocab.danielberanek.cz/dio-odi/#</code></p>
   <p>This document identifies the machine-readable reference vocabulary derived from the published corpus of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).</p>
 

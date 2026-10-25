@@ -1,4 +1,4 @@
-# DIO/ODI terminology — v0.1
+# DIO/ODI terminology — v0.2.0
 
 This file is the human-readable companion to `dio-odi-skos.ttl`.
 
@@ -27,7 +27,7 @@ The vocabulary does **not** model these as a sequential pipeline.
 - Reconstruction Mechanism
 - DIO Problem
 - DIO Intervention
-- Identity-Preserving Constraint
+- Identity-Preserving Constraints
 - Essential Vector
 - Identity-Preserving Variation
 
@@ -52,7 +52,7 @@ The hierarchy is non-exclusive and multi-level.
 
 ### Identity Collapse
 
-Retained as a phenomenon-level concept in the sense established in *The Crisis of Entity Resolution in Heterogeneous AI Environments*. v0.1 does not assert a causal, constitutive, exhaustive, or necessary relationship between Identity Collapse and individual Reconstruction Failure Modes.
+Retained as a phenomenon-level concept in the sense established in *The Crisis of Entity Resolution in Heterogeneous AI Environments*. The vocabulary does not assert a causal, constitutive, exhaustive, or necessary relationship between Identity Collapse and individual Reconstruction Failure Modes.
 
 ### Semantic Vulnerability
 
@@ -65,5 +65,9 @@ Direct conceptual counterpart: **Semantic Robustness**.
 Present in MVDIO and retained as a related concept. v0.1 deliberately does not strengthen its relation to Semantic Vulnerability beyond `skos:related`.
 
 ## Historical vocabulary
+
+### Identity-Preserving Constraint
+
+The singular URI is retained as a historical vocabulary entry for traceability to the vocabulary state preceding v0.2.0. Earlier papers and mappings that use it are not retroactively migrated. The current collective term **Identity-Preserving Constraints** has a separate URI and definition. No semantic relation between the two vocabulary concepts is asserted.
 
 **Entity Resolution Anomaly** is retained only as a historical grouping label. The current hierarchy should not be reconstructed by treating it as the parent class of Identity Collapse, Semantic Fragmentation, Temporal Discontinuity, and Semantic Vulnerability.
