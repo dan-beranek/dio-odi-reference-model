@@ -1222,11 +1222,16 @@
   </script>
 </head>
 <body class="page page--vocabulary">
-  <p><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">← DIO/ODI Hub — Manifest, publications, reference artifacts &amp; updates</a></p>
+  <p><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">← DIO/ODI Hub — Manifest, publications, reference artifacts &amp; updates</a> · <a href="/mappings/">Application Mappings</a></p>
   <h1>DIO/ODI Reference Vocabulary</h1>
   <p><strong>Reference Vocabulary version:</strong> 0.1.0<br><strong>Reference Model release:</strong> 0.3.2<br><strong>Archived release:</strong> <a href="https://doi.org/10.5281/zenodo.23300703" target="_blank" rel="noopener noreferrer">v0.3.2 — 10.5281/zenodo.23300703</a><br><strong>Previous archived release:</strong> <a href="https://doi.org/10.5281/zenodo.23290683" target="_blank" rel="noopener noreferrer">v0.3.1 — 10.5281/zenodo.23290683</a></p>
   <p><strong>Canonical namespace:</strong> <code>https://vocab.danielberanek.cz/dio-odi/#</code></p>
   <p>This document identifies the machine-readable reference vocabulary derived from the published corpus of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).</p>
+
+  <aside class="mapping-entry" aria-label="Application Mappings">
+    <p><strong>Application Mappings:</strong> Explore derived analyses that apply DIO/ODI concepts to external technical domains without changing the canonical vocabulary.</p>
+    <p><a href="/mappings/"><strong>Browse Application Mappings →</strong></a></p>
+  </aside>
 
   <p class="note">The vocabulary is intentionally SKOS-first. It provides stable concept identifiers, definitions, broader/narrower and related-concept relations, provenance, and revision notes without presenting the current model as a completed OWL ontology.</p>
 
@@ -1252,6 +1257,7 @@
     <ul>
       <li><a href="/mappings/rag-pipeline/">Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline</a> — diagnostic projection of the current failure-mode taxonomy onto generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. Introduced in Reference Model v0.2.0 and included in v0.3.2.</li>
       <li><a href="/mappings/hem-dio/">Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences</a> — analytical bridge from externally defined HEM heterogeneity conditions to possible DIO reconstruction consequences and Semantic Vulnerability. Introduced in Reference Model v0.3.0 and included in v0.3.2.</li>
+      <li><a href="/mappings/commit-boundary-policy/">Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization</a> — maps commit-boundary authorization obligations to Policy-as-Code capabilities and residual integration requirements, using OPA/Rego and Cedar as technical reference points. Added to the live source tree on 25 October 2026; not yet included in an archived Reference Model release.</li>
     </ul>
   </section>
 
