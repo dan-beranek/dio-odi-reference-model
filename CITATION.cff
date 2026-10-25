@@ -21,5 +21,6 @@ keywords:
   - knowledge representation
   - entity resolution
 date-released: "2026-10-25"
+doi: "10.5281/zenodo.23643845"
 repository-code: "https://github.com/dan-beranek/dio-odi-reference-model"
 license: "CC-BY-4.0"
