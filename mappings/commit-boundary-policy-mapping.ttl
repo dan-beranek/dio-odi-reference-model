@@ -1,5 +1,4 @@
 @prefix cbpa: <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/#> .
-@prefix map: <https://vocab.danielberanek.cz/mappings/#> .
 @prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
 @prefix opa: <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/#opa-terms/> .
 @prefix cedar: <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/#cedar-terms/> .
@@ -16,7 +15,6 @@
 cbpa:MappingAssertion
     a rdfs:Class ;
     rdfs:label "Commit-boundary Policy-as-Code mapping assertion"@en ;
-    rdfs:subClassOf map:MappingAssertion ;
     skos:definition "A qualified analytical assertion connecting a DIO/ODI-informed commit-boundary obligation with a Policy-as-Code mechanism and identifying the extent of the relation."@en .
 
 cbpa:contractObligation
