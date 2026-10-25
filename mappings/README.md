@@ -34,6 +34,19 @@ Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented gen
 
 Uses the Heterogeneous Entity Matching taxonomy of Moslemi et al. as an external analytical axis. HEM categories characterize heterogeneous input conditions; DIO concepts characterize possible consequences for identity reconstruction. The mapping is many-to-many and diagnostic, not taxonomic equivalence.
 
+### Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization
+
+- Frontend: https://vocab.danielberanek.cz/mappings/commit-boundary-policy/
+- Source: [commit-boundary-policy-mapping.md](commit-boundary-policy-mapping.md)
+- JSON-LD: [commit-boundary-policy-mapping.jsonld](commit-boundary-policy-mapping.jsonld)
+- Turtle RDF: [commit-boundary-policy-mapping.ttl](commit-boundary-policy-mapping.ttl)
+- DIO/ODI source: https://zenodo.org/records/23580733
+- External technical references: OPA documentation (https://www.openpolicyagent.org/docs); Cedar authorization guide (https://docs.cedarpolicy.com/auth/authorization.html)
+- Added to live source tree: 2026-10-25
+- Archival status: not yet included in an archived Reference Model release
+
+Maps commit-boundary authorization obligations to relevant Policy-as-Code capabilities and the additional policy-modeling, trusted-evidence, enforcement, freshness, and transactional mechanisms needed for an integration. OPA/Rego and Cedar are reference points only; the mapping does not claim either engine natively implements the commit-boundary contract.
+
 ## Boundary
 
 Nothing in this directory automatically becomes part of the canonical DIO/ODI Reference Vocabulary. New mappings may apply existing concepts, cite external frameworks, and propose explicitly labeled analytical relations, but they must not silently modify canonical definitions, hierarchy, or provenance.
