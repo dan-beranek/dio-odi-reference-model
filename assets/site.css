@@ -78,6 +78,19 @@ body.page--mapping > h1 {
   max-width: 58ch;
 }
 
+/* Explicit mapping-page override: align section headings with the same reading measure as prose. */
+body.page--mapping > h2,
+body.page--mapping > h3,
+body.page--mapping > h4 {
+  display: block;
+  width: min(100%, var(--reading-measure));
+  max-width: var(--reading-measure);
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 0;
+  text-indent: 0;
+}
+
 h2 {
   margin-top: 2.4rem;
   font-size: clamp(1.35rem, 2vw, 1.75rem);
