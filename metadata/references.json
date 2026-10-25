@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.1.0",
+  "registry_version": "1.2.0",
   "references": [
     {
       "id": "manifest-v1",
@@ -34,6 +34,12 @@
       "scope": "external",
       "citation": "Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). Heterogeneity in entity matching: A survey and experimental analysis. Data & Knowledge Engineering, 164, 102575. https://doi.org/10.1016/j.datak.2026.102575",
       "doi": "10.1016/j.datak.2026.102575"
+    },
+    {
+      "id": "commit-boundary-paper",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026, 22 October). Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution. Zenodo. https://doi.org/10.5281/zenodo.23580733",
+      "doi": "10.5281/zenodo.23580733"
     }
   ]
 }
