@@ -14,6 +14,7 @@
 ## Canonical vocabulary
 
 - Namespace document: https://vocab.danielberanek.cz/dio-odi/
+- Zenodo Concept DOI (all Reference Vocabulary versions): https://doi.org/10.5281/zenodo.23272897
 - Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
 - Turtle / SKOS: https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl
 - JSON-LD: https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld
@@ -34,7 +35,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF introduced in: Reference Model v0.3.1
   - Introduced in: Reference Model v0.2.0
   - Base mapping first archived in: Reference Model v0.3.2
-  - Iterative/hypothesis-conditioned evidence-acquisition extension: included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+  - Iterative/hypothesis-conditioned evidence-acquisition extension: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845
   - Development context: Constraining the Commit Boundary, published 2026-10-22: https://zenodo.org/records/23580733
 - Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences: https://vocab.danielberanek.cz/mappings/hem-dio/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md
@@ -42,7 +43,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Conceptual bridge SVG: https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg
   - External HEM source DOI: https://doi.org/10.1016/j.datak.2026.102575
   - Introduced in: Reference Model v0.3.0
-  - Included in: Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+  - Included in: Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in current archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl
   - Turtle RDF introduced in: Reference Model v0.3.1
 - Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization: https://vocab.danielberanek.cz/mappings/commit-boundary-policy/
@@ -51,7 +52,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.ttl
   - External technical references: OPA and Cedar
   - Added to live source tree: 2026-10-25
-  - Archival status: included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+  - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
 ## Corpus metadata registry
 
