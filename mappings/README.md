@@ -22,7 +22,7 @@ Public index: https://vocab.danielberanek.cz/mappings/
 - Carried forward in current archived Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 - Development link: *Constraining the Commit Boundary* (published 2026-10-22) — https://zenodo.org/records/23580733
 
-Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. A live extension added on 2026-10-25 examines iterative and hypothesis-conditioned evidence acquisition in relation to the upstream research boundary identified in [Constraining the Commit Boundary](https://zenodo.org/records/23580733). The base mapping was first included in archived v0.3.2; the iterative/hypothesis-conditioned extension is included in archived v0.4.0.
+Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. A live extension added on 2026-10-25 examines iterative and hypothesis-conditioned evidence acquisition in relation to the upstream research boundary identified in [Constraining the Commit Boundary](https://zenodo.org/records/23580733). The base mapping was first included in archived v0.3.2; the iterative/hypothesis-conditioned extension was first included in archived v0.4.0 and is carried forward in archived v0.5.0.
 
 ### Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
 
