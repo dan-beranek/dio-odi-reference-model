@@ -107,6 +107,10 @@ The namespace is owned by the author and is intended to remain stable independen
 - `mappings/hem-dio-mapping.ttl` — Turtle RDF with qualified HEM × DIO mapping assertions (introduced in Reference Model v0.3.1)
 - `mappings/hem-dio/index.html` — human-readable HEM × DIO mapping frontend
 - `mappings/hem-dio/bridge.svg` — conceptual bridge diagram
+- `mappings/commit-boundary-policy-mapping.md` — source for Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization
+- `mappings/commit-boundary-policy-mapping.jsonld` — machine-readable metadata and mapping items
+- `mappings/commit-boundary-policy-mapping.ttl` — Turtle RDF with qualified commit-boundary mapping assertions
+- `mappings/commit-boundary-policy/index.html` — human-readable Policy-as-Code mapping frontend
 - `mappings/` — derived application layer, deliberately separate from the canonical vocabulary
 - `CITATION.cff` — repository citation metadata
 - `.zenodo.json` — Zenodo-specific metadata projection for future Reference Model releases
@@ -126,7 +130,9 @@ Public index: https://vocab.danielberanek.cz/mappings/
 - [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. It does not redefine DIO as a RAG framework. Introduced in Reference Model v0.2.0 and included in v0.3.2.
 - [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
 
-The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and is included in v0.3.2. The canonical Reference Vocabulary remains at v0.1.0.
+- [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the live source tree on 2026-10-25; not yet included in an archived Reference Model release.
+
+The HEM × DIO mapping was introduced in **Reference Model v0.3.0** and is included in v0.3.2. The canonical Reference Vocabulary remains at v0.1.0. The Commit-Boundary × Policy-as-Code mapping is a later live-source addition and is not represented as part of the archived v0.3.2 package.
 
 ## Primary sources
 
