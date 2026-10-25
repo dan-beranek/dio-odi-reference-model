@@ -7,6 +7,8 @@
 | Semantic Field | Manifest v2 (web) + MVDIO | Current model label |
 | MVDIO core analytical distinctions | MVDIO, DOI 10.5281/zenodo.23226205 | Current |
 | Essential Vector | Manifest → reinterpreted in MVDIO | Revised |
+| Identity-Preserving Constraints | MVDIO, DOI 10.5281/zenodo.23226205; Commit-Boundary paper, DOI 10.5281/zenodo.23580733 | Current collective term; introduced in vocabulary v0.2.0 |
+| Identity-Preserving Constraint | MVDIO, DOI 10.5281/zenodo.23226205 | Retained as historical vocabulary entry; earlier references are not retroactively migrated |
 | Identity Collapse | Crisis, DOI 10.5281/zenodo.22257504 | Retained; not redefined in current taxonomy |
 | Semantic Fragmentation | Crisis → refined in MVDIO / Taxonomic Note | Current |
 | Temporal Discontinuity | Crisis → refined in MVDIO / Taxonomic Note | Current |

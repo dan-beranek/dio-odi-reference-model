@@ -3,7 +3,8 @@
     "dio": "https://vocab.danielberanek.cz/dio-odi/#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "dcterms": "http://purl.org/dc/terms/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#"
   },
   "@graph": [
     {
@@ -19,12 +20,13 @@
         "@language": "en"
       },
       "dcterms:modified": {
-        "@value": "2026-10-10",
+        "@value": "2026-10-25",
         "@type": "xsd:date"
       },
       "skos:hasTopConcept": {
         "@id": "dio:ReconstructionFailureMode"
-      }
+      },
+      "owl:versionInfo": "0.2.0"
     },
     {
       "@id": "dio:DIO",
@@ -581,7 +583,11 @@
         {
           "@id": "https://doi.org/10.5281/zenodo.23226205"
         }
-      ]
+      ],
+      "skos:historyNote": {
+        "@value": "Retained as a historical vocabulary entry for traceability to the vocabulary state preceding v0.2.0. The collective term Identity-Preserving Constraints is introduced separately in v0.2.0. This note records editorial history only and does not assert a semantic relation between the two concepts.",
+        "@language": "en"
+      }
     },
     {
       "@id": "dio:EssentialVector",
@@ -606,6 +612,41 @@
         },
         {
           "@id": "https://doi.org/10.5281/zenodo.23226205"
+        }
+      ]
+    },
+    {
+      "@id": "dio:IdentityPreservingConstraints",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "dio:ReferenceVocabulary"
+      },
+      "skos:prefLabel": {
+        "@value": "Identity-Preserving Constraints",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A domain-configured set of conditions evaluated to determine whether differing reconstructions or transformations may legitimately be attributed to the same referentially continuous entity.",
+        "@language": "en"
+      },
+      "skos:scopeNote": {
+        "@value": "The applicable set may vary by entity class, operational domain, and observation context; this concept does not specify a universal or context-free constraint inventory.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "dio:ReferentialContinuity"
+        },
+        {
+          "@id": "dio:EssentialVector"
+        }
+      ],
+      "dcterms:source": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23226205"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23580733"
         }
       ]
     },
