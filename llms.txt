@@ -42,6 +42,13 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Included in: Reference Model v0.3.2
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl
   - Turtle RDF introduced in: Reference Model v0.3.1
+- Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization: https://vocab.danielberanek.cz/mappings/commit-boundary-policy/
+  - Source Markdown: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.md
+  - JSON-LD: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.jsonld
+  - Turtle RDF: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.ttl
+  - External technical references: OPA and Cedar
+  - Added to live source tree: 2026-10-25
+  - Archival status: not yet included in an archived Reference Model release
 
 ## Corpus metadata registry
 
