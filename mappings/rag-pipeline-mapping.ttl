@@ -7,6 +7,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 map:MappingAssertion
     a rdfs:Class ;
@@ -60,7 +61,10 @@ rag:Mapping
     schema:name "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline"@en ;
     schema:url <https://vocab.danielberanek.cz/mappings/rag-pipeline/> ;
     schema:author <https://danielberanek.cz/#person> ;
-    schema:creativeWorkStatus "Included in archived DIO/ODI Reference Model v0.3.2"@en ;
+    schema:datePublished "2026-10-10"^^xsd:date ;
+    schema:dateModified "2026-10-25"^^xsd:date ;
+    schema:creativeWorkStatus "Base mapping included in archived DIO/ODI Reference Model v0.3.2; iterative/hypothesis-conditioned evidence-acquisition extension added to the live source tree on 2026-10-25 and not included in that archive"@en ;
+    schema:hasPart rag:IterativeHypothesisConditionedEvidenceAcquisition ;
     schema:isPartOf [
         a schema:CreativeWork ;
         schema:name "DIO/ODI Reference Model v0.3.2"@en ;
@@ -68,8 +72,19 @@ rag:Mapping
         schema:identifier <https://doi.org/10.5281/zenodo.23300703>
     ] ;
     dcterms:source <https://doi.org/10.5281/zenodo.23226205>,
-                   <https://doi.org/10.5281/zenodo.23269323> ;
+                   <https://doi.org/10.5281/zenodo.23269323>,
+                   <https://zenodo.org/records/23580733> ;
     skos:scopeNote "This RDF graph is a derived Application Mapping layer. It does not modify the canonical DIO/ODI Reference Vocabulary, redefine RAG, or assert deterministic causality between a pipeline stage and a DIO Reconstruction Failure Mode."@en .
+
+rag:IterativeHypothesisConditionedEvidenceAcquisition
+    a schema:CreativeWork ;
+    schema:name "Iterative and Hypothesis-Conditioned Evidence Acquisition"@en ;
+    schema:dateCreated "2026-10-25"^^xsd:date ;
+    schema:creativeWorkStatus "Live extension; not included in archived DIO/ODI Reference Model v0.3.2"@en ;
+    schema:isPartOf rag:Mapping ;
+    schema:isBasedOn <https://zenodo.org/records/23580733> ;
+    schema:description "A live analytical extension examining how working hypotheses may condition subsequent retrieval actions, evidence exposure, evidence-lineage dependence, and cross-agent hypothesis propagation. It is motivated by the separate upstream research direction identified in Constraining the Commit Boundary and does not claim implementation or empirical validation."@en ;
+    skos:scopeNote "This extension is not a canonical DIO/ODI concept or a new taxonomy of reconstruction failure modes. Relations to existing DIO/ODI concepts are conditional and non-deterministic."@en .
 
 rag:SourceCorpusFormation
     a schema:DefinedTerm ;
