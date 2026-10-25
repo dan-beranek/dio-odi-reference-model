@@ -15,8 +15,7 @@ Public index: https://vocab.danielberanek.cz/mappings/
 - Source: [rag-pipeline-mapping.md](rag-pipeline-mapping.md)
 - JSON-LD: [rag-pipeline-mapping.jsonld](rag-pipeline-mapping.jsonld) — introduced in Reference Model v0.3.1
 - Turtle RDF: [rag-pipeline-mapping.ttl](rag-pipeline-mapping.ttl) — introduced in Reference Model v0.3.1 with qualified mapping assertions
-- Introduced in: DIO/ODI Reference Model v0.2.0
-- Initially archived in: DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+- Introduced and initially archived in: DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 - Retained in subsequent archived v0.3.x releases, including v0.3.1 and v0.3.2
 - Iterative/hypothesis-conditioned extension added: 2026-10-25; first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
 - Carried forward in current archived Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
