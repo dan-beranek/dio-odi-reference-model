@@ -4,11 +4,11 @@
 
 ## Versions
 
-- Current archived Reference Model release: 0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Current archived Reference Model release: 0.5.0 — https://doi.org/10.5281/zenodo.23643845
 - Live Reference Vocabulary: 0.2.0
-- Vocabulary included in archived v0.4.0: 0.1.0
-- Prepared Reference Model release: 0.5.0 (GitHub Release and Zenodo archival pending)
-- Previous archived release: v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+- Vocabulary included in archived v0.5.0: 0.2.0
+- Previous archived release: v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Earlier archived release: v0.3.2 — https://doi.org/10.5281/zenodo.23300703
 - Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
 ## Canonical vocabulary
@@ -70,7 +70,7 @@ This registry is an operational metadata layer and does not modify the canonical
 
 ## Releases
 
-- v0.5.0: prepared snapshot — GitHub Release and Zenodo archival pending
+- v0.5.0: https://doi.org/10.5281/zenodo.23643845
 - v0.4.0: https://doi.org/10.5281/zenodo.23632619
 - v0.3.2: https://doi.org/10.5281/zenodo.23300703
 - v0.3.1: https://doi.org/10.5281/zenodo.23290683
