@@ -8,7 +8,7 @@
   "inLanguage": "en",
   "datePublished": "2026-10-10",
   "dateModified": "2026-10-25",
-  "creativeWorkStatus": "Base mapping first included in archived DIO/ODI Reference Model v0.3.2; the iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 is included in archived v0.4.0.",
+  "creativeWorkStatus": "Base mapping first included in archived DIO/ODI Reference Model v0.3.2; the iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 was first included in archived v0.4.0 and carried forward in v0.5.0.",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
     "@type": "Person",
@@ -19,9 +19,9 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model v0.4.0",
-    "url": "https://doi.org/10.5281/zenodo.23632619",
-    "identifier": "https://doi.org/10.5281/zenodo.23632619"
+    "name": "DIO/ODI Reference Model v0.5.0",
+    "url": "https://doi.org/10.5281/zenodo.23643845",
+    "identifier": "https://doi.org/10.5281/zenodo.23643845"
   },
   "isBasedOn": [
     {
@@ -170,7 +170,7 @@
         "url": "https://zenodo.org/records/23580733",
         "datePublished": "2026-10-22"
       },
-      "creativeWorkStatus": "Iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25; included in archived DIO/ODI Reference Model v0.4.0."
+      "creativeWorkStatus": "Iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25; first included in archived DIO/ODI Reference Model v0.4.0 and carried forward in v0.5.0."
     }
   ],
   "version": "0.4.0",
