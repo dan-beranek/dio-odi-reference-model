@@ -2,12 +2,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 dio:ReferenceVocabulary a skos:ConceptScheme ;
   skos:prefLabel "DIO/ODI Reference Vocabulary"@en ;
   dcterms:creator "Daniel Beránek" ;
   dcterms:description "SKOS reference vocabulary derived from the DIO/ODI corpus."@en ;
-  dcterms:hasVersion "0.2.0" ;
+  owl:versionInfo "0.2.0" ;
   skos:hasTopConcept dio:ReconstructionFailureMode ;
   dcterms:modified "2026-10-25"^^xsd:date .
 
