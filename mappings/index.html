@@ -17,22 +17,44 @@
   <meta property="og:site_name" content="DIO/ODI Reference Model">
   <link rel="stylesheet" href="/assets/site.css?v=20261025-5">
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "@id":"https://vocab.danielberanek.cz/mappings/",
-    "name":"DIO/ODI Application Mappings",
-    "description":"Derived analytical layers applying DIO/ODI concepts to external technical and analytical domains without modifying the canonical Reference Vocabulary.",
-    "url":"https://vocab.danielberanek.cz/mappings/",
-    "license":"https://creativecommons.org/licenses/by/4.0/",
-    "creator":{"@type":"Person","@id":"https://danielberanek.cz/#person","name":"Daniel Beránek","url":"https://danielberanek.cz/","sameAs":"https://orcid.org/0009-0004-0050-0264"},
-    "hasPart":[
-      {"@type":"TechArticle","name":"Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline","url":"https://vocab.danielberanek.cz/mappings/rag-pipeline/"},
-      {"@type":"TechArticle","name":"Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences","url":"https://vocab.danielberanek.cz/mappings/hem-dio/"},
-      {"@type":"TechArticle","name":"Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization","url":"https://vocab.danielberanek.cz/mappings/commit-boundary-policy/","datePublished":"2026-10-25"}
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://vocab.danielberanek.cz/mappings/",
+  "name": "DIO/ODI Application Mappings",
+  "description": "Derived analytical layers applying DIO/ODI concepts to external technical and analytical domains without modifying the canonical Reference Vocabulary.",
+  "url": "https://vocab.danielberanek.cz/mappings/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Person",
+    "@id": "https://danielberanek.cz/#person",
+    "name": "Daniel Beránek",
+    "url": "https://danielberanek.cz/",
+    "sameAs": "https://orcid.org/0009-0004-0050-0264"
+  },
+  "hasPart": [
+    {
+      "@type": "TechArticle",
+      "name": "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline",
+      "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+      "datePublished": "2026-10-10",
+      "dateModified": "2026-10-25",
+      "description": "Base DIO reconstruction failure-mode mapping to generic RAG loci; live extension on iterative and hypothesis-conditioned evidence acquisition added on 2026-10-25 and not included in archived Reference Model v0.3.2."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences",
+      "url": "https://vocab.danielberanek.cz/mappings/hem-dio/"
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization",
+      "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+      "datePublished": "2026-10-25"
+    }
+  ]
+}
+</script>
 </head>
 <body class="page page--index">
   <p><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">DIO/ODI Hub — Manifest, publications, reference artifacts &amp; updates</a> · <a href="/dio-odi/">Reference Vocabulary</a></p>
@@ -42,8 +64,8 @@
 
   <section class="card">
     <h2><a href="/mappings/rag-pipeline/">DIO Reconstruction Failure Modes × RAG Pipeline</a></h2>
-    <p>Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. Available as a human-readable frontend, Markdown source, JSON-LD, and Turtle RDF with qualified mapping assertions.</p>
-    <p class="meta"><strong>Status:</strong> introduced in v0.2.0; included in <a href="https://doi.org/10.5281/zenodo.23300703" target="_blank" rel="noopener noreferrer">DIO/ODI Reference Model v0.3.2</a></p>
+    <p>Maps current DIO Reconstruction Failure Modes to generic retrieval-augmented generation pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. The live page also documents iterative and hypothesis-conditioned evidence acquisition as a later extension connected to the Commit-Boundary research trajectory.</p>
+    <p class="meta"><strong>Status:</strong> base mapping introduced in v0.2.0 and included in <a href="https://doi.org/10.5281/zenodo.23300703" target="_blank" rel="noopener noreferrer">DIO/ODI Reference Model v0.3.2</a>; live extension added 25 October 2026 and not yet included in an archived release.</p>
   </section>
 
   <section class="card">
