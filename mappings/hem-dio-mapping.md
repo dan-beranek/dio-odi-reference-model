@@ -88,22 +88,15 @@ This mapping should not be read as:
 
 The mapping is an analytical projection: it uses HEM as an externally developed taxonomy of heterogeneous input conditions and DIO as a vocabulary for describing possible consequences for identity reconstruction.
 
-## Source basis
+## References
 
-### HEM source
+1. Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). Heterogeneity in entity matching: A survey and experimental analysis. *Data & Knowledge Engineering, 164*, Article 102575. DOI [10.1016/j.datak.2026.102575](https://doi.org/10.1016/j.datak.2026.102575).
 
-Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). *Heterogeneity in entity matching: A survey and experimental analysis*. **Data & Knowledge Engineering, 164**, 102575.  
-https://doi.org/10.1016/j.datak.2026.102575
+2. Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. Zenodo. DOI [10.5281/zenodo.23226205](https://doi.org/10.5281/zenodo.23226205).
 
-The HEM taxonomy and its category labels are attributed to this source. The HEM paper distinguishes representation and semantic heterogeneity and presents eight second-level categories used in this mapping.
+3. Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)*. Zenodo. DOI [10.5281/zenodo.23269323](https://doi.org/10.5281/zenodo.23269323).
 
-### DIO/ODI sources
-
-- Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. https://doi.org/10.5281/zenodo.23226205
-- Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO*. https://doi.org/10.5281/zenodo.23269323
-- Original vocabulary basis: DIO/ODI Reference Vocabulary v0.1.0 — Zenodo version DOI https://doi.org/10.5281/zenodo.23272898
-- Stable Concept DOI for all Reference Vocabulary versions: https://doi.org/10.5281/zenodo.23272897
-- Current vocabulary page: https://vocab.danielberanek.cz/dio-odi/
+4. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* [Reference vocabulary, version 0.1.0]. Zenodo. Version DOI [10.5281/zenodo.23272898](https://doi.org/10.5281/zenodo.23272898); Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). Current vocabulary: [version 0.2.0](https://vocab.danielberanek.cz/dio-odi/).
 
 ## Provenance note
 
