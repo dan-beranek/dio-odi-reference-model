@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900" role="img" aria-labelledby="title desc">
+<title id="title">DIO/ODI-Informed Commit-Boundary Authorization Architecture</title>
+<desc id="desc">Architecture overview linking DIO and ODI diagnostic distinctions to domain-configured identity-preserving constraints, claim-specific evidence promotion, a two-phase supervisor, and an atomic commit boundary. The guarantee is conditional on seven assumptions. Full dependency-aware evidence-flow control is outside the present architecture.</desc>
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,4 L0,8 z" fill="#374151"/></marker>
+  <style>
+    text { font-family: "Libertinus Sans", "Arial", sans-serif; fill: #20252b; }
+    .section { font-size: 16px; font-weight: 700; letter-spacing: .45px; fill: #374151; }
+    .node { fill: #ffffff; stroke: #475569; stroke-width: 1.6; rx: 10; ry: 10; }
+    .nodeLight { fill: #f7f8fa; stroke: #64748b; stroke-width: 1.5; rx: 10; ry: 10; }
+    .nodeStrong { fill: #eef1f4; stroke: #374151; stroke-width: 2; rx: 10; ry: 10; }
+    .title { font-size: 16px; font-weight: 700; }
+    .body { font-size: 14px; }
+    .small { font-size: 12px; fill: #4b5563; }
+    .tiny { font-size: 11px; fill: #4b5563; }
+    .arrow { fill: none; stroke: #374151; stroke-width: 1.8; marker-end: url(#arrow); }
+    .label { font-size: 12px; fill: #4b5563; text-anchor: middle; }
+    .band { fill: #f4f5f7; stroke: #6b7280; stroke-width: 1.2; rx: 8; ry: 8; }
+    .future { fill: #fff; stroke: #7b8490; stroke-width: 1.4; stroke-dasharray: 7 5; rx: 10; ry: 10; }
+  </style>
+</defs>
+<rect x="0" y="0" width="1100" height="900" fill="#ffffff"/>
+
+<!-- 1. Diagnostic-to-constraint design -->
+<text x="36" y="28" class="section">1 · DIAGNOSTIC-TO-CONSTRAINT DESIGN</text>
+<rect x="35" y="43" width="285" height="94" class="node"/>
+<text x="177" y="70" text-anchor="middle" class="title">DIO/ODI diagnostics</text>
+<text x="177" y="96" text-anchor="middle" class="body">RRF · SCF · TRF · CAF</text>
+<text x="177" y="119" text-anchor="middle" class="small">selected reconstruction-failure distinctions</text>
+<rect x="405" y="43" width="275" height="94" class="nodeLight"/>
+<text x="542" y="76" text-anchor="middle" class="title">Constraint binding  μΩ</text>
+<text x="542" y="102" text-anchor="middle" class="small">domain-governed design step</text>
+<rect x="765" y="43" width="300" height="94" class="node"/>
+<text x="915" y="70" text-anchor="middle" class="title">Identity-preserving constraints  V_E</text>
+<text x="915" y="96" text-anchor="middle" class="body">domain-configured constraint set</text>
+<text x="915" y="119" text-anchor="middle" class="small">entity class · context · mutation class</text>
+<path d="M320 90 H398" class="arrow"/><text x="359" y="78" class="label">inform</text>
+<path d="M680 90 H758" class="arrow"/><text x="719" y="78" class="label">instantiates</text>
+
+<!-- 2. Mutation context -->
+<text x="36" y="174" class="section">2 · AGENTIC ER AND MUTATION CONTEXT</text>
+<rect x="35" y="190" width="245" height="82" class="node"/>
+<text x="157" y="220" text-anchor="middle" class="title">Agentic ER Planner</text>
+<text x="157" y="245" text-anchor="middle" class="small">provisional hypotheses and reasoning</text>
+<rect x="365" y="190" width="270" height="82" class="node"/>
+<text x="500" y="220" text-anchor="middle" class="title">Proposed mutation  m</text>
+<text x="500" y="245" text-anchor="middle" class="small">operation · target · effect scope</text>
+<rect x="720" y="190" width="345" height="82" class="nodeLight"/>
+<text x="892" y="219" text-anchor="middle" class="title">Supervisor derives required claims  q_m</text>
+<text x="892" y="245" text-anchor="middle" class="small">from m, domain constraints V_E, and versioned policy</text>
+<path d="M280 231 H357" class="arrow"/><text x="318" y="218" class="label">proposes</text>
+<path d="M635 231 H712" class="arrow"/><text x="673" y="218" class="label">derives</text>
+
+<!-- 3. Evidence governance -->
+<text x="36" y="309" class="section">3 · EVIDENCE ADMISSION AND CLAIM-SPECIFIC ELIGIBILITY</text>
+<rect x="35" y="325" width="155" height="93" class="node"/>
+<text x="112" y="360" text-anchor="middle" class="title">Observation</text>
+<text x="112" y="384" text-anchor="middle" class="small">retrieved material</text>
+<rect x="225" y="325" width="185" height="93" class="nodeLight"/>
+<text x="317" y="352" text-anchor="middle" class="title">P_quar</text>
+<text x="317" y="375" text-anchor="middle" class="body">QUARANTINE_EVIDENCE</text>
+<text x="317" y="398" text-anchor="middle" class="tiny">admission conflict check</text>
+<rect x="445" y="325" width="175" height="93" class="nodeLight"/>
+<text x="532" y="352" text-anchor="middle" class="title">P_active</text>
+<text x="532" y="375" text-anchor="middle" class="body">UNVERIFIED</text>
+<text x="532" y="394" text-anchor="middle" class="tiny">Planner-visible</text>
+<text x="532" y="409" text-anchor="middle" class="tiny">not positive authorization support</text>
+<rect x="655" y="325" width="210" height="93" class="node"/>
+<text x="760" y="352" text-anchor="middle" class="title">Claim-specific promotion</text>
+<text x="760" y="375" text-anchor="middle" class="small">q_m · ω · policy</text>
+<text x="760" y="394" text-anchor="middle" class="tiny">recorded provenance</text>
+<text x="760" y="409" text-anchor="middle" class="tiny">and validation basis</text>
+<rect x="900" y="325" width="165" height="93" class="nodeStrong"/>
+<text x="982" y="352" text-anchor="middle" class="title">P_auth(q_m, ω)</text>
+<text x="982" y="375" text-anchor="middle" class="small">claim-specific</text>
+<text x="982" y="394" text-anchor="middle" class="tiny">authorization-eligible</text>
+<text x="982" y="409" text-anchor="middle" class="tiny">evidence</text>
+<path d="M190 371 H218" class="arrow"/>
+<path d="M410 371 H438" class="arrow"/>
+<path d="M620 371 H648" class="arrow"/>
+<path d="M865 371 H893" class="arrow"/>
+
+<!-- 4. Two-phase supervisor -->
+<text x="36" y="458" class="section">4 · TWO-PHASE SUPERVISOR AND PROTECTED COMMIT</text>
+<rect x="35" y="475" width="290" height="124" class="nodeLight"/>
+<text x="180" y="504" text-anchor="middle" class="title">PHASE 1 · PRE-EXECUTION</text>
+<text x="180" y="531" text-anchor="middle" class="body">Authorize proposed mutation</text>
+<text x="180" y="555" text-anchor="middle" class="small">q_m · V_E · P_auth · conflict state</text>
+<text x="180" y="579" text-anchor="middle" class="small">issues α_m: claims · scope · versions</text>
+<rect x="370" y="475" width="330" height="124" class="nodeLight"/>
+<text x="535" y="504" text-anchor="middle" class="title">PHASE 2 · POST-EXECUTION</text>
+<text x="535" y="531" text-anchor="middle" class="body">Validate isolated candidate G_cand</text>
+<text x="535" y="555" text-anchor="middle" class="small">α_m · G_cand · proposition coverage</text>
+<text x="535" y="579" text-anchor="middle" class="small">P_active / P_quar conflicts · V_E · snapshot σ_c</text>
+<rect x="750" y="475" width="180" height="124" class="nodeStrong"/>
+<text x="840" y="504" text-anchor="middle" class="title">Commit gate</text>
+<text x="840" y="531" text-anchor="middle" class="small">PASS</text>
+<text x="840" y="553" text-anchor="middle" class="small">AND ScopeValid</text>
+<text x="840" y="575" text-anchor="middle" class="small">AND VersionsValid</text>
+<rect x="965" y="475" width="100" height="124" class="node"/>
+<text x="1015" y="515" text-anchor="middle" class="title">Atomic</text>
+<text x="1015" y="537" text-anchor="middle" class="title">commit</text>
+<text x="1015" y="565" text-anchor="middle" class="tiny">G_prod · v_G</text>
+<path d="M325 537 H362" class="arrow"/>
+<path d="M700 537 H742" class="arrow"/>
+<path d="M930 537 H957" class="arrow"/>
+<path d="M840 599 V622" class="arrow"/>
+<rect x="750" y="627" width="315" height="55" class="node"/>
+<text x="907" y="650" text-anchor="middle" class="body">BREACH: reject / escalate</text>
+<text x="907" y="671" text-anchor="middle" class="body">UNKNOWN_EVIDENCE: defer</text>
+
+<!-- Conditional guarantee and future research -->
+<rect x="35" y="710" width="1030" height="80" class="band"/>
+<text x="550" y="735" text-anchor="middle" class="title">CONDITIONAL GUARANTEE · ASSUMPTIONS 1–7</text>
+<text x="550" y="759" text-anchor="middle" class="small">Domain-policy adequacy · sound claim-specific promotion · fail-closed behavior · enforced protected-write path</text>
+<text x="550" y="779" text-anchor="middle" class="small">derived claims · scope/version integrity · recorded-basis and eligibility integrity</text>
+<rect x="175" y="818" width="750" height="70" class="future"/>
+<text x="550" y="844" text-anchor="middle" class="title">OUTSIDE THE PRESENT ARCHITECTURE · FUTURE RESEARCH</text>
+<text x="550" y="869" text-anchor="middle" class="small">Dependency-aware evidence lineage and control of the full hypothesis-conditioned feedback loop</text>
+</svg>

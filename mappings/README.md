@@ -51,6 +51,21 @@ Uses the Heterogeneous Entity Matching taxonomy of Moslemi et al. as an external
 
 Maps commit-boundary authorization obligations to relevant Policy-as-Code capabilities and the additional policy-modeling, trusted-evidence, enforcement, freshness, and transactional mechanisms needed for an integration. OPA/Rego and Cedar are reference points only; the mapping does not claim either engine natively implements the commit-boundary contract.
 
+
+### Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture
+
+- Frontend: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/
+- Source: [agentic-er-commit-boundary-architecture-mapping.md](agentic-er-commit-boundary-architecture-mapping.md)
+- JSON-LD: [agentic-er-commit-boundary-architecture-mapping.jsonld](agentic-er-commit-boundary-architecture-mapping.jsonld) — 104 local architecture concepts and 154 qualified relation assertions
+- Turtle RDF: [agentic-er-commit-boundary-architecture-mapping.ttl](agentic-er-commit-boundary-architecture-mapping.ttl)
+- Architecture diagram: [agentic-er-architecture/architecture.svg](agentic-er-architecture/architecture.svg)
+- Public source paper: arXiv:2610.37407 v1 — https://arxiv.org/abs/2610.37407; corresponding Zenodo record: https://zenodo.org/records/23580733
+- Section-level alignment: separate working manuscript `constraining_the_commit_boundary_v48`, dated 2026-11-04; this draft is not represented as the public arXiv v1 text
+- Canonical reference layer checked against Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845; Reference Vocabulary v0.2.0 — https://doi.org/10.5281/zenodo.23272897
+- Added to live source tree: 2026-11-04; draft 0.2.0, not included in archived Reference Model v0.5.0
+
+Maps the internal conceptual and functional relations of the DIO/ODI-informed Agentic Entity Resolution commit-boundary proposal: selected diagnostics, domain-governed constraint binding, mutation-specific required propositions, claim-specific evidence eligibility, two-phase authorization, conditional commit invariant, assumptions, and prospective evaluation design. It is complementary to the Commit-Boundary × Policy-as-Code mapping, which projects selected contract obligations into OPA/Rego and Cedar. The architecture mapping remains non-normative, does not modify canonical vocabulary, and claims neither implementation nor empirical validation.
+
 ## Boundary
 
 Nothing in this directory automatically becomes part of the canonical DIO/ODI Reference Vocabulary. New mappings may apply existing concepts, cite external frameworks, and propose explicitly labeled analytical relations, but they must not silently modify canonical definitions, hierarchy, or provenance.

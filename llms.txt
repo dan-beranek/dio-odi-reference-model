@@ -54,6 +54,15 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Added to live source tree: 2026-10-25
   - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
+
+- Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture (draft 0.2.0): https://vocab.danielberanek.cz/mappings/agentic-er-architecture/
+  - Source Markdown: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.md
+  - JSON-LD: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld
+  - Turtle RDF: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.ttl
+  - Architecture SVG: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/architecture.svg
+  - Added to live source tree: 2026-11-04; not included in archived Reference Model v0.5.0
+  - Section-level source: unpublished working manuscript v48; public source arXiv:2610.37407 v1 is distinguished separately
+
 ## Corpus metadata registry
 
 - Registry guide: https://vocab.danielberanek.cz/metadata/README.md
