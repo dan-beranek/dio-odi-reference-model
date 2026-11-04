@@ -113,6 +113,10 @@ The namespace is owned by the author and is intended to remain stable independen
 - `mappings/commit-boundary-policy-mapping.jsonld` — machine-readable metadata and mapping items
 - `mappings/commit-boundary-policy-mapping.ttl` — Turtle RDF with qualified commit-boundary mapping assertions
 - `mappings/commit-boundary-policy/index.html` — human-readable Policy-as-Code mapping frontend
+- `mappings/agentic-er-commit-boundary-architecture-mapping.md` — source for the DIO/ODI-informed Agentic ER commit-boundary architecture mapping (draft 0.2.0)
+- `mappings/agentic-er-commit-boundary-architecture-mapping.jsonld` — JSON-LD with local architecture concepts and qualified relation assertions
+- `mappings/agentic-er-commit-boundary-architecture-mapping.ttl` — Turtle RDF serialization of the qualified architecture assertions
+- `mappings/agentic-er-architecture/index.html` and `architecture.svg` — human-readable architecture mapping frontend and diagram
 - `mappings/` — derived application layer, deliberately separate from the canonical vocabulary
 - `CITATION.cff` — repository citation metadata
 - `.zenodo.json` — Zenodo-specific metadata projection for future Reference Model releases
@@ -133,6 +137,8 @@ Public index: https://vocab.danielberanek.cz/mappings/
 - [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
 
 - [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the source tree on 2026-10-25 and first included in archived Reference Model v0.4.0: https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0: https://doi.org/10.5281/zenodo.23643845.
+
+- [Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture](https://vocab.danielberanek.cz/mappings/agentic-er-architecture/) — reconstructs the internal architecture relations of the Agentic ER commit-boundary proposal, from diagnostic distinctions and domain constraint binding through claim-specific evidence, two-phase authorization, assumptions, and prospective evaluation. Added to the live source tree on 2026-11-04 as draft 0.2.0; it is not part of archived Reference Model v0.5.0 and does not modify the canonical vocabulary.
 
 The HEM × DIO mapping was introduced in **Reference Model v0.3.0**, included in archived v0.3.2, and carried forward in archived v0.4.0 and v0.5.0. The archived v0.4.0 package contains Reference Vocabulary v0.1.0. The archived v0.5.0 snapshot incorporates live Reference Vocabulary v0.2.0, including the new plural Identity-Preserving Constraints concept and a historical note on the retained singular entry. Earlier uses of the singular URI are not retroactively migrated, and no semantic relation between the two concepts is asserted. The snapshot carries forward the Commit-Boundary × Policy-as-Code mapping and the iterative/hypothesis-conditioned RAG extension.
 

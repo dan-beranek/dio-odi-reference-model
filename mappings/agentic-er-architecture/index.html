@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIO/ODI-Informed Agentic ER Commit-Boundary Architecture Mapping</title>
+  <meta name="description" content="A derived, machine-readable architecture mapping of the DIO/ODI-informed commit-boundary authorization proposal for Agentic Entity Resolution. It links diagnostics, constraints, evidence eligibility, two-phase authorization, assumptions, and evaluation design." />
+  <meta name="author" content="Daniel Beránek">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://vocab.danielberanek.cz/mappings/agentic-er-architecture/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="alternate" type="text/markdown" href="/mappings/agentic-er-commit-boundary-architecture-mapping.md" title="Architecture mapping — Markdown">
+  <link rel="alternate" type="application/ld+json" href="/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld" title="Architecture mapping — JSON-LD">
+  <link rel="alternate" type="text/turtle" href="/mappings/agentic-er-commit-boundary-architecture-mapping.ttl" title="Architecture mapping — Turtle RDF">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DIO/ODI-Informed Agentic ER Commit-Boundary Architecture Mapping">
+  <meta property="og:description" content="An explicit architecture-level relation map for the DIO/ODI-informed Agentic ER commit-boundary proposal.">
+  <meta property="og:url" content="https://vocab.danielberanek.cz/mappings/agentic-er-architecture/">
+  <meta property="og:site_name" content="DIO/ODI Reference Model">
+  <link rel="stylesheet" href="/assets/site.css?v=20261104-1">
+  <style>
+    .architecture-figure { margin: 1.5rem auto; max-width: 1100px; }
+    .architecture-figure img { display: block; width: 100%; height: auto; border: 1px solid #d6dbe1; background: #fff; }
+    .architecture-figure figcaption { margin-top: .65rem; color: #4b5563; font-size: .93rem; }
+    .resource-links { display: flex; flex-wrap: wrap; gap: .8rem 1.25rem; }
+    .resource-links a { white-space: nowrap; }
+    .relation-list { padding-left: 1.25rem; }
+    .relation-list li { margin: .35rem 0; }
+    .status-note { border-left: 3px solid #6b7280; padding: .65rem 1rem; background: #f7f8fa; }
+    code.uri { overflow-wrap: anywhere; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+    "name": "DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping",
+    "description": "A derived, non-normative architecture mapping of internal conceptual and functional relations in the DIO/ODI-informed Agentic ER commit-boundary proposal. It reuses canonical DIO/ODI URIs and does not modify the Reference Vocabulary.",
+    "url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+    "inLanguage": "en",
+    "dateCreated": "2026-11-03",
+    "dateModified": "2026-11-04",
+    "creativeWorkStatus": "Draft 0.2.0; aligned with working manuscript constraining_the_commit_boundary_v48; public preprint arXiv v1 identified separately",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "author": {
+      "@type": "Person",
+      "name": "Daniel Beránek",
+      "url": "https://danielberanek.cz/",
+      "sameAs": "https://orcid.org/0009-0004-0050-0264",
+      "@id": "https://danielberanek.cz/#person"
+    },
+    "isPartOf": {
+      "@type": "CreativeWork",
+      "name": "DIO/ODI Reference Model",
+      "url": "https://github.com/dan-beranek/dio-odi-reference-model"
+    },
+    "isBasedOn": [
+      {"@type": "ScholarlyArticle", "name": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution", "url": "https://arxiv.org/abs/2610.37407"},
+      {"@type": "CreativeWork", "name": "DIO/ODI Reference Vocabulary v0.2.0", "url": "https://vocab.danielberanek.cz/dio-odi/"}
+    ],
+    "about": [
+      {"@type": "Thing", "name": "Digital Identity Optimization"},
+      {"@type": "Thing", "name": "Ontology of Digital Identity"},
+      {"@type": "Thing", "name": "Agentic Entity Resolution"},
+      {"@type": "Thing", "name": "Commit-boundary authorization"},
+      {"@type": "Thing", "name": "Claim-specific evidence promotion"}
+    ]
+  }
+  </script>
+</head>
+<body class="page page--mapping page--architecture">
+  <p><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">DIO/ODI Hub — Manifest, publications, reference artifacts &amp; updates</a> · <a href="/mappings/">Derived Mappings</a> · <a href="/dio-odi/">Reference Vocabulary</a></p>
+  <h1>DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping</h1>
+
+  <div class="status-note">
+    <strong>Status:</strong> derived architecture mapping · draft v0.2.0 · 4 November 2026.<br>
+    <strong>Source alignment:</strong> working manuscript <code>constraining_the_commit_boundary_v48</code> (4 November 2026); public arXiv:2610.37407 v1 is identified separately. Reference layer checked against Reference Model v0.5.0 and Reference Vocabulary v0.2.0.<br>
+    <strong>Boundary:</strong> this mapping is not part of the canonical DIO/ODI Reference Vocabulary. It reuses canonical concept URIs and defines paper-specific architecture constructs only in its local namespace.<br>
+    <strong>Validation:</strong> conceptual relation model; not an implementation, formal proof, or empirical result.
+  </div>
+
+  <h2>Purpose</h2>
+  <p>This mapping makes explicit the internal relations among the diagnostic inputs, domain-governed constraint binding, mutation-specific propositions, evidence states, two-phase Supervisor, commit invariant, assumptions, and prospective evaluation protocol described in working manuscript <code>constraining_the_commit_boundary_v48</code>. Its section anchors refer to that 4 November 2026 working draft; public arXiv:2610.37407 v1 is identified separately and is not presumed to have identical section-level wording.</p>
+  <p><strong>Diagnostic distinctions → domain-configured constraints → mutation-specific claims → claim-specific evidence eligibility → two-phase authorization → protected commit.</strong></p>
+
+  <figure class="architecture-figure">
+    <img src="architecture.svg" alt="Architecture diagram: DIO/ODI diagnostic distinctions inform domain-governed constraint binding and identity-preserving constraints. The Agentic ER Planner proposes a mutation; the Supervisor derives required propositions. Retrieved observations pass through quarantine, UNVERIFIED active evidence, and claim-specific promotion into authorization-eligible evidence. Phase 1 authorizes the proposed mutation, Phase 2 validates the isolated candidate, and the commit gate requires PASS, valid scope, and valid versions. The guarantee depends on Assumptions 1–7. Dependency-aware evidence-flow control is shown outside the current architecture as future research.">
+    <figcaption>Overview of the architecture-level relations. The dashed lower boundary represents future research outside the current commit-boundary contract. The detailed evidence admission and promotion diagram remains in the source paper.</figcaption>
+  </figure>
+
+  <h2>How to read the mapping</h2>
+  <section class="card">
+    <h3>1. Diagnostic foundation and constraint binding</h3>
+    <p>The architecture draws on the canonical DIO/ODI vocabulary. Selected referential, semantic, temporal, and contextual reconstruction-failure distinctions inform a partial, domain-governed constraint-binding function ϼΩ. Its output is a domain-configured constraint set V_E, not an automatic inference from SKOS hierarchy.</p>
+    <p>The paper also gives concrete but explicitly illustrative mappings from selected canonical distinctions to domain-level constraint patterns.</p>
+    <div class="table-wrap"><table><thead><tr><th>Current DIO/ODI distinction</th><th>Domain-level constraint pattern</th><th>Authorization consequence</th></tr></thead><tbody>
+      <tr><td>Entity Substitution / Merge Failure</td><td>Lexical similarity or commercial adjacency does not establish co-reference.</td><td>Do not merge without claim-specific evidence supporting the required co-reference proposition.</td></tr>
+      <tr><td>Temporal Discontinuity / Temporal Misalignment</td><td>Rename and continuity claims are bound to the relevant referent and validity interval.</td><td>Defer when temporal applicability or continuity is unresolved.</td></tr>
+      <tr><td>Semantic Fragmentation</td><td>Materially incompatible claims affecting identity remain a conflict until reconciled.</td><td>Clustering alone cannot resolve the conflict; defer the affected mutation.</td></tr>
+       <tr><td>Contextual Displacement</td><td><code>brand_of</code> may be adequate in a brand catalogue but insufficient for legal-entity identity in a compliance context.</td><td>Preserve relation typing and require evidence appropriate to the observation purpose.</td></tr>
+      <tr><td>Split Failure / valid continuity</td><td>Documented, temporally applicable evidence may support that distinct records denote one continuing entity.</td><td>Resolve only when claim-specific evidence and applicable constraints pass.</td></tr>
+    </tbody></table></div>
+    <p class="meta">The JSON-LD and Turtle graph mark these example mappings with the epistemic status <code>illustrative</code>.</p>
+  </section>
+  <section class="card">
+    <h3>2. Mutation and proposition binding</h3>
+    <p>The Supervisor derives the required proposition set q<sub>m</sub> from the proposed mutation, its target/effect scope, and the applicable versioned domain policy. The Planner cannot substitute or weaken this set. The authorization record α<sub>m</sub> binds the derived claims, operation scope, and relevant versions.</p>
+  </section>
+  <section class="card">
+    <h3>3. Evidence admission and claim-specific eligibility</h3>
+    <p>Observations enter quarantine before possible admission to P<sub>active</sub> as <code>UNVERIFIED</code>. That status permits Planner reasoning but is not positive authorization support. A separate claim-specific promotion process establishes eligibility for a particular proposition, role, observation domain, and temporal applicability. The eligible set P<sub>auth</sub>(q<sub>m</sub>, ω) is a subset of P<sub>active</sub>, not a separate physical repository. Promotion excludes recorded shared-origin observations from independent corroboration and excludes shadow-derived claim bases. Authorization-eligible evidence can carry support, contradiction, or unresolved-indication roles; eligibility is not a verdict that a source is universally true.</p>
+  </section>
+  <section class="card">
+    <h3>4. Two-phase Supervisor and commit boundary</h3>
+    <p>Phase 1 evaluates the proposed mutation and, on PASS, issues α<sub>m</sub>. Phase 2 validates the isolated realized candidate, re-derives q<sub>m</sub>, checks proposition coverage and conflicts, and verifies scope and versions against a consistent commit snapshot σ<sub>c</sub>.</p>
+    <p>A protected commit requires <code>EvaluateGraphConstraints = PASS</code>, <code>ScopeValid</code>, and <code>VersionsValid</code>. Status precedence is <code>BREACH</code> &gt; <code>UNKNOWN_EVIDENCE</code> &gt; <code>PASS</code>. <code>UNKNOWN_EVIDENCE</code> leads to <code>HALT_HITL</code> only when policy requires review and a reviewer is available; otherwise it leads to <code>DEFER_UNRESOLVED</code>. Human adjudication requires a fresh authorization decision against current versions. One common retry budget applies across both lifecycle phases.</p>
+  </section>
+  <section class="card">
+    <h3>5. Conditional guarantee</h3>
+    <p>The invariant is conditional on seven assumptions: domain-policy adequacy, correct claim-specific promotion, fail-closed authorization, enforced protected-write classification, Supervisor-derived claims, scope/version integrity, and integrity of the recorded promotion basis. The mapping does not claim semantic correctness or detection of unrecorded provenance dependencies.</p>
+  </section>
+  <section class="card">
+    <h3>6. Prospective evaluation</h3>
+    <p>The protocol compares Baselines A, B, and C with a DIO/ODI-informed Challenger. Baseline C versus Challenger isolates the incremental mapping question. The comparison controls the case inventory, domain facts, evidence-promotion process, validator class and configuration, action resources, and decision budget; policy-derived q<sub>m</sub> differences are reported. Case construction is independent of frozen policy authorship and includes a taxonomy-neutral stratum. Baseline C authors are blinded to the DIO/ODI diagnostic mapping and Challenger policy. Prior DIO/ODI exposure is recorded; stronger inference requires independently constituted author teams allocated randomly or by expertise blocks, with uncertainty reflecting between-team variation.</p>
+    <p>Task- and policy-family-specific margins for acceptable coverage loss (<code>δ_SRC</code>) and false-commit increase (<code>δ_RFCR</code>) must be justified and fixed before outcomes, together with the uncertainty procedure. The binding success routes are (1) L<sub>S</sub> &gt; −δ<sub>SRC</sub> and U<sub>R</sub> &lt; 0, or (2) L<sub>S</sub> &gt; 0 and U<sub>R</sub> ≤ δ<sub>RFCR</sub>. The uncertainty procedure must account for the two-route OR structure (e.g. simultaneous bounds or another justified multiplicity-control approach). If RFCR is undefined in either condition, RFCR-based routes are non-evaluable. Correctness, safety, admissibility, resolvability, and benignness use a common independent evaluation reference; PEVR separately assesses each condition’s operational contract.</p>
+    <p><strong>No experimental results are reported.</strong> A generic baseline that matches or Pareto-dominates the Challenger counts against incremental mapping value for the task and policy family tested, not against DIO/ODI as a broader framework.</p>
+  </section>
+  <section class="card">
+    <h3>7. Future-research boundary</h3>
+    <p>Dependency-aware evidence lineage and control of the full hypothesis-conditioned feedback loop are explicitly outside the current architecture and remain future work.</p>
+  </section>
+
+  <h2>Machine-readable resources</h2>
+  <p class="resource-links">
+    <a href="/mappings/agentic-er-commit-boundary-architecture-mapping.md">Markdown source</a>
+    <a href="/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld">JSON-LD</a>
+    <a href="/mappings/agentic-er-commit-boundary-architecture-mapping.ttl">Turtle RDF</a>
+    <a href="architecture.svg">Architecture SVG</a>
+  </p>
+  <p>The qualified relation assertions include a source section, an interpretation note, and an epistemic status: <code>specified</code>, <code>assumed</code>, <code>illustrative</code>, <code>proposed-evaluation</code>, or <code>future-research</code>. These assertions remain in the derived architecture namespace.</p>
+
+  <h2>Relation to the existing Policy-as-Code mapping</h2>
+  <p>This artifact is complementary to the <a href="/mappings/commit-boundary-policy/">DIO/ODI Commit-Boundary Contract – Policy-as-Code Authorization mapping</a>. The present mapping reconstructs internal architecture relations; the existing mapping projects selected authorization obligations into OQA/Rego and Cedar capabilities and integration requirements.</p>
+
+  <h2>Sources</h2>
+  <ol>
+    <li>Beáánek, D. (2026). <em>Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution</em>. <a href="https://arxiv.org/abs/2610.37407">arXiv:2610.37407</a> – <a href="https://zenodo.org/records/23580733">Zenodo record</a>.</li>
+    <li><a href="/dio-odi/">DIO/ODI Reference Vocabulary v0.2.0</a> · <a href="https://doi.org/10.5281/zenodo.23272897">Concept DOI</a>.</li>
+    <li><a href="/mappings/commit-boundary-policy/">DIO/ODI Commit-Boundary Contract – Policy-as-Code Authorization</a>.</li>
+  </ol>
+  <p class="meta">Daniel Beránek – ORCID <a href="https://orcid.org/0009-0004-0050-0264">0009-0004-0050-0264</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</body>
+</html>

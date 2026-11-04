@@ -1,0 +1,1710 @@
+@prefix arc: <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#> .
+@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Derived architecture mapping; it does not modify the canonical DIO/ODI Reference Vocabulary.
+
+arc:Mapping a schema:TechArticle ;
+  schema:name "DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping"@en ;
+  schema:description "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed commit-boundary authorization proposal for Agentic Entity Resolution."@en ;
+  schema:url <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/> ;
+  schema:version "0.2.0-draft" ;
+  schema:dateCreated "2026-11-03"^^xsd:date ;
+  schema:dateModified "2026-11-04"^^xsd:date ;
+  schema:license <https://creativecommons.org/licenses/by/4.0/> ;
+  schema:isPartOf <https://github.com/dan-beranek/dio-odi-reference-model> ;
+  dcterms:source <https://arxiv.org/abs/2610.37407>, <https://vocab.danielberanek.cz/dio-odi/#>, <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/> ;
+  arc:artifactType "derived-architecture-mapping" ;
+  arc:canonicalVocabularyModified false ;
+  arc:implementationStatus "not-implemented-by-this-artifact" ;
+  arc:empiricalValidationStatus "not-empirically-validated" ;
+  arc:sourceManuscriptVersion "constraining_the_commit_boundary_v48 (working draft, 2026-11-04)" ;
+  arc:publicSourceVersion "arXiv:2610.37407 v1" ;
+  arc:canonicalReferenceLayer "DIO/ODI Reference Vocabulary v0.2.0; Reference Model v0.5.0" .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> a schema:CreativeWork ;
+  schema:name "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution"@en ;
+  schema:version "48 (working draft)" ;
+  schema:dateModified "2026-11-04"^^xsd:date ;
+  schema:encodingFormat "text/markdown" ;
+  arc:sourceFileName "constraining_the_commit_boundary_v48.md" ;
+  arc:sourceStatus "working-draft-not-publicly-released" .
+
+arc:ArchitectureComponent a rdfs:Class ; rdfs:label "architecture component"@en ; rdfs:comment "A locally defined component of the proposed Agentic ER commit-boundary architecture."@en .
+arc:RelationAssertion a rdfs:Class ; rdfs:label "qualified relation assertion"@en ; rdfs:comment "A relation qualified with source section, interpretation note, and epistemic status."@en .
+arc:EpistemicStatus a rdfs:Class ; rdfs:label "epistemic status"@en ; rdfs:comment "A status distinguishing specified, assumed, illustrative, prospective, and future-research relations."@en .
+arc:Assumption a rdfs:Class ; rdfs:label "assumption"@en ; rdfs:comment "A precondition of the conditional commit property."@en .
+arc:epistemicStatus a rdf:Property ; rdfs:label "epistemic status"@en ; rdfs:comment "The status of the qualified relation assertion."@en .
+arc:sourceSection a rdf:Property ; rdfs:label "source section"@en ; rdfs:comment "The section or algorithm in the source paper grounding the relation."@en .
+arc:interpretationNote a rdf:Property ; rdfs:label "interpretation note"@en ; rdfs:comment "An authored qualification of the relation semantics."@en .
+arc:informedBy a rdf:Property ; rdfs:label "informed by"@en ; rdfs:comment "A conceptual or diagnostic source informs the architecture."@en .
+arc:mapsSelectedDistinctionsFrom a rdf:Property ; rdfs:label "maps selected distinctions from"@en ; rdfs:comment "The binding function takes selected diagnostic distinctions as inputs."@en .
+arc:producesOrInforms a rdf:Property ; rdfs:label "produces or informs"@en ; rdfs:comment "The binding step produces or informs a domain-configured constraint set."@en .
+arc:boundIn a rdf:Property ; rdfs:label "bound in"@en ; rdfs:comment "A derived proposition set is bound in an authorization record."@en .
+arc:visibleTo a rdf:Property ; rdfs:label "visible to"@en ; rdfs:comment "An evidence set is available to a component for reasoning."@en .
+arc:producesEligibilityFor a rdf:Property ; rdfs:label "produces eligibility for"@en ; rdfs:comment "Promotion grants eligibility only for a particular claim, role, and context."@en .
+arc:guards a rdf:Property ; rdfs:label "guards"@en ; rdfs:comment "An invariant constrains admission to a protected persistence boundary."@en .
+arc:conditionalOn a rdf:Property ; rdfs:label "conditional on"@en ; rdfs:comment "A stated guarantee depends on explicit assumptions."@en .
+arc:complementaryTo a rdf:Property ; rdfs:label "complementary to"@en ; rdfs:comment "A separate derived mapping covers a complementary analytical layer."@en .
+arc:sourceManuscriptVersion a rdf:Property ; rdfs:label "source manuscript version"@en ; rdfs:comment "The working manuscript version used for section-level alignment."@en .
+arc:publicSourceVersion a rdf:Property ; rdfs:label "public source version"@en ; rdfs:comment "The separately identified public preprint version."@en .
+arc:canonicalReferenceLayer a rdf:Property ; rdfs:label "canonical reference layer"@en ; rdfs:comment "The DIO/ODI reference artifact versions used to resolve canonical URIs."@en .
+arc:workingManuscript a rdf:Property ; rdfs:label "working manuscript"@en ; rdfs:comment "The unpublished working manuscript used for section-level source anchors."@en .
+arc:sourceFileName a rdf:Property ; rdfs:label "source file name"@en ; rdfs:comment "The working manuscript filename used by this mapping."@en .
+arc:sourceStatus a rdf:Property ; rdfs:label "source status"@en ; rdfs:comment "The publication status of the working manuscript source."@en .
+arc:informedBy a rdf:Property ; rdfs:label "informedBy"@en .
+arc:informedBy a rdf:Property ; rdfs:label "informedBy"@en .
+arc:referencesAnalyticalLayer a rdf:Property ; rdfs:label "referencesAnalyticalLayer"@en .
+arc:addresses a rdf:Property ; rdfs:label "addresses"@en .
+arc:analyzesPossiblePathway a rdf:Property ; rdfs:label "analyzesPossiblePathway"@en .
+arc:mayAriseThrough a rdf:Property ; rdfs:label "mayAriseThrough"@en .
+arc:mapsSelectedDistinctionsFrom a rdf:Property ; rdfs:label "mapsSelectedDistinctionsFrom"@en .
+arc:usesDiagnosticBranch a rdf:Property ; rdfs:label "usesDiagnosticBranch"@en .
+arc:usesDiagnosticBranch a rdf:Property ; rdfs:label "usesDiagnosticBranch"@en .
+arc:usesDiagnosticBranch a rdf:Property ; rdfs:label "usesDiagnosticBranch"@en .
+arc:usesDiagnosticBranch a rdf:Property ; rdfs:label "usesDiagnosticBranch"@en .
+arc:producesOrInforms a rdf:Property ; rdfs:label "producesOrInforms"@en .
+arc:configuredBy a rdf:Property ; rdfs:label "configuredBy"@en .
+arc:scopedTo a rdf:Property ; rdfs:label "scopedTo"@en .
+arc:usesConcept a rdf:Property ; rdfs:label "usesConcept"@en .
+arc:mayOperationalize a rdf:Property ; rdfs:label "mayOperationalize"@en .
+arc:mapsIllustrativelyTo a rdf:Property ; rdfs:label "mapsIllustrativelyTo"@en .
+arc:mapsIllustrativelyTo a rdf:Property ; rdfs:label "mapsIllustrativelyTo"@en .
+arc:mapsIllustrativelyTo a rdf:Property ; rdfs:label "mapsIllustrativelyTo"@en .
+arc:mapsIllustrativelyTo a rdf:Property ; rdfs:label "mapsIllustrativelyTo"@en .
+arc:mapsIllustrativelyTo a rdf:Property ; rdfs:label "mapsIllustrativelyTo"@en .
+arc:mapsIllustrativelyTo a rdf:Property ; rdfs:label "mapsIllustrativelyTo"@en .
+arc:mapsIllustrativelyTo a rdf:Property ; rdfs:label "mapsIllustrativelyTo"@en .
+arc:proposes a rdf:Property ; rdfs:label "proposes"@en .
+arc:hasClass a rdf:Property ; rdfs:label "hasClass"@en .
+arc:determinesRequirementsThrough a rdf:Property ; rdfs:label "determinesRequirementsThrough"@en .
+arc:inputTo a rdf:Property ; rdfs:label "inputTo"@en .
+arc:boundIn a rdf:Property ; rdfs:label "boundIn"@en .
+arc:binds a rdf:Property ; rdfs:label "binds"@en .
+arc:bindsVersionContext a rdf:Property ; rdfs:label "bindsVersionContext"@en .
+arc:initiallyEnters a rdf:Property ; rdfs:label "initiallyEnters"@en .
+arc:controlsAdmissionFrom a rdf:Property ; rdfs:label "controlsAdmissionFrom"@en .
+arc:mayAdmitAsUnverified a rdf:Property ; rdfs:label "mayAdmitAsUnverified"@en .
+arc:hasStatus a rdf:Property ; rdfs:label "hasStatus"@en .
+arc:visibleTo a rdf:Property ; rdfs:label "visibleTo"@en .
+arc:notSufficientByItselfFor a rdf:Property ; rdfs:label "notSufficientByItselfFor"@en .
+arc:mayIndicate a rdf:Property ; rdfs:label "mayIndicate"@en .
+arc:evaluates a rdf:Property ; rdfs:label "evaluates"@en .
+arc:isScopedBy a rdf:Property ; rdfs:label "isScopedBy"@en .
+arc:assesses a rdf:Property ; rdfs:label "assesses"@en .
+arc:requiresSoundExecutionUnder a rdf:Property ; rdfs:label "requiresSoundExecutionUnder"@en .
+arc:producesEligibilityFor a rdf:Property ; rdfs:label "producesEligibilityFor"@en .
+arc:hasPossibleRole a rdf:Property ; rdfs:label "hasPossibleRole"@en .
+arc:hasPossibleRole a rdf:Property ; rdfs:label "hasPossibleRole"@en .
+arc:hasPossibleRole a rdf:Property ; rdfs:label "hasPossibleRole"@en .
+arc:supportsAssessmentOf a rdf:Property ; rdfs:label "supportsAssessmentOf"@en .
+arc:includes a rdf:Property ; rdfs:label "includes"@en .
+arc:issuesOnPass a rdf:Property ; rdfs:label "issuesOnPass"@en .
+arc:includes a rdf:Property ; rdfs:label "includes"@en .
+arc:evaluates a rdf:Property ; rdfs:label "evaluates"@en .
+arc:checksConsistencyOf a rdf:Property ; rdfs:label "checksConsistencyOf"@en .
+arc:usesSnapshot a rdf:Property ; rdfs:label "usesSnapshot"@en .
+arc:evaluatedWithin a rdf:Property ; rdfs:label "evaluatedWithin"@en .
+arc:evaluatesConstraintsFrom a rdf:Property ; rdfs:label "evaluatesConstraintsFrom"@en .
+arc:checksPropositionCoverageFrom a rdf:Property ; rdfs:label "checksPropositionCoverageFrom"@en .
+arc:requires a rdf:Property ; rdfs:label "requires"@en .
+arc:requires a rdf:Property ; rdfs:label "requires"@en .
+arc:guards a rdf:Property ; rdfs:label "guards"@en .
+arc:requiresOutcome a rdf:Property ; rdfs:label "requiresOutcome"@en .
+arc:requires a rdf:Property ; rdfs:label "requires"@en .
+arc:requires a rdf:Property ; rdfs:label "requires"@en .
+arc:leadsTo a rdf:Property ; rdfs:label "leadsTo"@en .
+arc:leadsTo a rdf:Property ; rdfs:label "leadsTo"@en .
+arc:permitsSubjectToOtherChecks a rdf:Property ; rdfs:label "permitsSubjectToOtherChecks"@en .
+arc:isExpressedBy a rdf:Property ; rdfs:label "isExpressedBy"@en .
+arc:conditionalOn a rdf:Property ; rdfs:label "conditionalOn"@en .
+arc:includesAssumption a rdf:Property ; rdfs:label "includesAssumption"@en .
+arc:includesAssumption a rdf:Property ; rdfs:label "includesAssumption"@en .
+arc:includesAssumption a rdf:Property ; rdfs:label "includesAssumption"@en .
+arc:includesAssumption a rdf:Property ; rdfs:label "includesAssumption"@en .
+arc:includesAssumption a rdf:Property ; rdfs:label "includesAssumption"@en .
+arc:includesAssumption a rdf:Property ; rdfs:label "includesAssumption"@en .
+arc:includesAssumption a rdf:Property ; rdfs:label "includesAssumption"@en .
+arc:compares a rdf:Property ; rdfs:label "compares"@en .
+arc:compares a rdf:Property ; rdfs:label "compares"@en .
+arc:compares a rdf:Property ; rdfs:label "compares"@en .
+arc:compares a rdf:Property ; rdfs:label "compares"@en .
+arc:isolatesIncrementalValueThrough a rdf:Property ; rdfs:label "isolatesIncrementalValueThrough"@en .
+arc:authoredWithout a rdf:Property ; rdfs:label "authoredWithout"@en .
+arc:replicateAcross a rdf:Property ; rdfs:label "replicateAcross"@en .
+arc:replicateAcross a rdf:Property ; rdfs:label "replicateAcross"@en .
+arc:uses a rdf:Property ; rdfs:label "uses"@en .
+arc:usesGroundTruth a rdf:Property ; rdfs:label "usesGroundTruth"@en .
+arc:tests a rdf:Property ; rdfs:label "tests"@en .
+arc:designatesAsFutureResearch a rdf:Property ; rdfs:label "designatesAsFutureResearch"@en .
+arc:extendsBeyond a rdf:Property ; rdfs:label "extendsBeyond"@en .
+arc:complementaryTo a rdf:Property ; rdfs:label "complementaryTo"@en .
+arc:holdsConstantAcrossComparedConditions a rdf:Property ; rdfs:label "holdsConstantAcrossComparedConditions"@en .
+arc:holdsConstantAcrossComparedConditions a rdf:Property ; rdfs:label "holdsConstantAcrossComparedConditions"@en .
+arc:holdsConstantAcrossComparedConditions a rdf:Property ; rdfs:label "holdsConstantAcrossComparedConditions"@en .
+arc:holdsConstantAcrossComparedConditions a rdf:Property ; rdfs:label "holdsConstantAcrossComparedConditions"@en .
+arc:holdsConstantAcrossComparedConditions a rdf:Property ; rdfs:label "holdsConstantAcrossComparedConditions"@en .
+arc:holdsConstantAcrossComparedConditions a rdf:Property ; rdfs:label "holdsConstantAcrossComparedConditions"@en .
+arc:governedBy a rdf:Property ; rdfs:label "governedBy"@en .
+arc:uses a rdf:Property ; rdfs:label "uses"@en .
+arc:isSubsetOf a rdf:Property ; rdfs:label "isSubsetOf"@en .
+arc:includes a rdf:Property ; rdfs:label "includes"@en .
+arc:bindsVersion a rdf:Property ; rdfs:label "bindsVersion"@en .
+arc:bindsVersion a rdf:Property ; rdfs:label "bindsVersion"@en .
+arc:bindsVersion a rdf:Property ; rdfs:label "bindsVersion"@en .
+arc:conditionallyBindsVersion a rdf:Property ; rdfs:label "conditionallyBindsVersion"@en .
+arc:fixes a rdf:Property ; rdfs:label "fixes"@en .
+arc:bindsEvidenceRecordForEachClaim a rdf:Property ; rdfs:label "bindsEvidenceRecordForEachClaim"@en .
+arc:rechecksBoundEvidenceRecordsAgainst a rdf:Property ; rdfs:label "rechecksBoundEvidenceRecordsAgainst"@en .
+arc:appliesRestriction a rdf:Property ; rdfs:label "appliesRestriction"@en .
+arc:appliesRestriction a rdf:Property ; rdfs:label "appliesRestriction"@en .
+arc:mayReturn a rdf:Property ; rdfs:label "mayReturn"@en .
+arc:mayReturn a rdf:Property ; rdfs:label "mayReturn"@en .
+arc:mayReturn a rdf:Property ; rdfs:label "mayReturn"@en .
+arc:prioritizes a rdf:Property ; rdfs:label "prioritizes"@en .
+arc:thenPrioritizes a rdf:Property ; rdfs:label "thenPrioritizes"@en .
+arc:lowestPriority a rdf:Property ; rdfs:label "lowestPriority"@en .
+arc:mayEnterConditionalBranch a rdf:Property ; rdfs:label "mayEnterConditionalBranch"@en .
+arc:requiresNewDecision a rdf:Property ; rdfs:label "requiresNewDecision"@en .
+arc:uses a rdf:Property ; rdfs:label "uses"@en .
+arc:appliesAcross a rdf:Property ; rdfs:label "appliesAcross"@en .
+arc:appliesAcross a rdf:Property ; rdfs:label "appliesAcross"@en .
+arc:scopedBy a rdf:Property ; rdfs:label "scopedBy"@en .
+arc:scopedBy a rdf:Property ; rdfs:label "scopedBy"@en .
+arc:hasClass a rdf:Property ; rdfs:label "hasClass"@en .
+arc:derivesRequirementsThrough a rdf:Property ; rdfs:label "derivesRequirementsThrough"@en .
+arc:usesCommonReference a rdf:Property ; rdfs:label "usesCommonReference"@en .
+arc:apply a rdf:Property ; rdfs:label "apply"@en .
+arc:constructsOrReviews a rdf:Property ; rdfs:label "constructsOrReviews"@en .
+arc:includesStratum a rdf:Property ; rdfs:label "includesStratum"@en .
+arc:allocatedBy a rdf:Property ; rdfs:label "allocatedBy"@en .
+arc:recordsExposureIn a rdf:Property ; rdfs:label "recordsExposureIn"@en .
+arc:holdsConstantAcrossComparedConditions a rdf:Property ; rdfs:label "holdsConstantAcrossComparedConditions"@en .
+arc:governedBy a rdf:Property ; rdfs:label "governedBy"@en .
+arc:identifiedBy a rdf:Property ; rdfs:label "identifiedBy"@en .
+arc:usesAnalysisUnit a rdf:Property ; rdfs:label "usesAnalysisUnit"@en .
+arc:triggersNonEvaluabilityWhen a rdf:Property ; rdfs:label "triggersNonEvaluabilityWhen"@en .
+arc:distinguishes a rdf:Property ; rdfs:label "distinguishes"@en .
+arc:heldConstantBetween a rdf:Property ; rdfs:label "heldConstantBetween"@en .
+arc:inputToDerivation a rdf:Property ; rdfs:label "inputToDerivation"@en .
+arc:inputTo a rdf:Property ; rdfs:label "inputTo"@en .
+arc:inputTo a rdf:Property ; rdfs:label "inputTo"@en .
+arc:inputTo a rdf:Property ; rdfs:label "inputTo"@en .
+arc:derives a rdf:Property ; rdfs:label "derives"@en .
+arc:locallyConfigures a rdf:Property ; rdfs:label "locallyConfigures"@en .
+arc:includesVersionOf a rdf:Property ; rdfs:label "includesVersionOf"@en .
+arc:includesVersionOf a rdf:Property ; rdfs:label "includesVersionOf"@en .
+arc:includesVersionOf a rdf:Property ; rdfs:label "includesVersionOf"@en .
+arc:conditionallyIncludesVersionOf a rdf:Property ; rdfs:label "conditionallyIncludesVersionOf"@en .
+arc:coversChangesTo a rdf:Property ; rdfs:label "coversChangesTo"@en .
+arc:countsRetryBy a rdf:Property ; rdfs:label "countsRetryBy"@en .
+arc:classifiesAt a rdf:Property ; rdfs:label "classifiesAt"@en .
+arc:usesDecisionBranch a rdf:Property ; rdfs:label "usesDecisionBranch"@en .
+arc:allocatesTeamsBy a rdf:Property ; rdfs:label "allocatesTeamsBy"@en .
+arc:records a rdf:Property ; rdfs:label "records"@en .
+arc:usesIndependentAdjudicators a rdf:Property ; rdfs:label "usesIndependentAdjudicators"@en .
+arc:separatesContractComplianceFrom a rdf:Property ; rdfs:label "separatesContractComplianceFrom"@en .
+arc:reports a rdf:Property ; rdfs:label "reports"@en .
+arc:accountsForAlternativeRouteMultiplicityThrough a rdf:Property ; rdfs:label "accountsForAlternativeRouteMultiplicityThrough"@en .
+
+arc:Architecture a arc:Architecture ; schema:name "DIO/ODI-informed Agentic ER commit-boundary architecture"@en ; schema:description "The proposed conceptual architecture connecting diagnostics, domain constraints, evidence eligibility, two-phase authorization, and protected commit."@en .
+arc:AgenticERContext a arc:Context ; schema:name "Agentic Entity Resolution context"@en ; schema:description "An iterative ER setting in which an agent plans actions, acquires evidence, updates hypotheses, and proposes identity-changing graph mutations."@en .
+arc:Planner a arc:Component ; schema:name "Agentic ER Planner"@en ; schema:description "The component that maintains provisional hypotheses, reasons over Planner-visible evidence, and proposes operations."@en .
+arc:ApparentVerification a arc:AnalyticalConstruct ; schema:name "Apparent verification"@en ; schema:description "A possible feedback-path effect in which hypothesis-conditioned retrieval yields observations that appear to confirm a hypothesis without independently establishing the intended referent."@en .
+arc:HypothesisConditionedRetrieval a arc:Process ; schema:name "Hypothesis-conditioned retrieval"@en ; schema:description "Evidence acquisition whose query or selection is influenced by an earlier identity hypothesis."@en .
+arc:ConstraintBindingFunction a arc:ArchitectureComponent ; schema:name "Domain-governed constraint-binding function μΩ"@en ; schema:description "A partial design-time mapping from selected DIO/ODI diagnostic distinctions to explicit domain-configured identity-preserving constraints; not automatic SKOS entailment."@en .
+arc:DomainPolicy a arc:Policy ; schema:name "Versioned domain policy"@en ; schema:description "A versioned policy configuring applicable identity-preserving constraints, required propositions, observation context, temporal conditions, and mutation scope."@en .
+arc:DomainConfiguredConstraints a arc:ConstraintSet ; schema:name "Domain-configured identity-preserving constraints V_E"@en ; schema:description "The configured conditions evaluated for a declared entity class, observation context, temporal scope where relevant, and mutation class."@en .
+arc:ExampleReferentCoreferenceConstraint a arc:IllustrativeConstraint ; schema:name "Illustrative referent co-reference requirement"@en ; schema:description "An example domain constraint: lexical similarity or a shared commercial neighborhood does not by itself establish that two records denote the same referent."@en .
+arc:ExampleTemporalApplicabilityConstraint a arc:IllustrativeConstraint ; schema:name "Illustrative temporal-applicability requirement"@en ; schema:description "An example domain constraint: a rename or continuity claim must apply to the relevant referent and validity interval."@en .
+arc:ExampleMaterialConflictRetentionConstraint a arc:IllustrativeConstraint ; schema:name "Illustrative material-conflict retention requirement"@en ; schema:description "An example domain constraint: materially incompatible identity-related claims remain a conflict until reconciled; clustering alone does not reconcile them."@en .
+arc:ExampleContextualRelationAdequacyConstraint a arc:IllustrativeConstraint ; schema:name "Illustrative context-sensitive relation-adequacy requirement"@en ; schema:description "An example domain constraint: a relation such as brand_of may be adequate in a brand catalogue but insufficient for a legal-entity identity proposition in a compliance context."@en .
+arc:ExampleContinuitySupportConstraint a arc:IllustrativeConstraint ; schema:name "Illustrative continuity-support requirement"@en ; schema:description "An example domain constraint: documented, temporally applicable evidence may establish that distinct records refer to one continuing entity."@en .
+arc:MutationClass a arc:OperationClass ; schema:name "Protected mutation class"@en ; schema:description "The operation/effect class used to determine whether a proposed action can alter shared identity interpretation and which propositions are required."@en .
+arc:ProposedMutation a arc:Operation ; schema:name "Proposed mutation m"@en ; schema:description "A proposed operation with a declared target and effect scope; potentially protected when it can alter shared identity interpretation."@en .
+arc:RequiredPropositionSet a arc:ClaimSet ; schema:name "Required proposition set q_m"@en ; schema:description "The mutation-specific identity or continuity proposition set derived by the Supervisor from the mutation and applicable versioned policy."@en .
+arc:AuthorizationRecord a arc:AuthorizationRecord ; schema:name "Authorization record α_m"@en ; schema:description "A record binding the derived proposition set to the proposed operation, target/effect scope, policy version, and relevant state versions."@en .
+arc:EvidenceObservation a arc:EvidenceItem ; schema:name "Retrieved evidence observation"@en ; schema:description "An observation returned by a retrieval or tool action before it is admitted to a shared evidence set."@en .
+arc:QuarantineEvidence a arc:EvidenceSet ; schema:name "Quarantined evidence P_quar"@en ; schema:description "Evidence retained outside the Planner-visible active set pending admission or adjudication."@en .
+arc:AdmissionConflictCheck a arc:Process ; schema:name "Evidence-admission conflict check"@en ; schema:description "A mutation-independent check that can retain an observation in quarantine when a material conflict is detected or indeterminate; absence of a detected conflict is not positive support."@en .
+arc:ActiveEvidenceSet a arc:EvidenceSet ; schema:name "Planner-visible active evidence P_active"@en ; schema:description "The evidence set available to the Planner; it may contain UNVERIFIED observations and can expose unresolved conflict indications, but does not itself provide positive authorization support. Claim-specific P_auth is an eligibility subset of this admitted set, not a separate physical store."@en .
+arc:UnverifiedStatus a arc:EvidenceStatus ; schema:name "UNVERIFIED evidence status"@en ; schema:description "An admission-level status meaning claim-specific eligibility has not been established for the proposition under assessment; it is not a universal truth or falsity label."@en .
+arc:ClaimSpecificPromotion a arc:Process ; schema:name "Claim-specific evidence promotion"@en ; schema:description "A separate, auditable assessment of an evidence item's role and eligibility for a particular proposition, observation domain, temporal applicability, and declared policy."@en .
+arc:AuthorizationEligibleEvidenceSet a arc:EvidenceSet ; schema:name "Claim-specific authorization-eligible evidence P_auth(q_m, ω)"@en ; schema:description "A proposition- and context-specific eligibility subset of P_active, not a separate physical repository; recorded roles can include support, contradiction, or unresolved indication."@en .
+arc:SupportRole a arc:EvidenceRole ; schema:name "Positive claim-support role"@en ; schema:description "A recorded evidentiary role that can satisfy a required positive proposition when its validation basis and applicability meet the declared policy."@en .
+arc:ContradictionRole a arc:EvidenceRole ; schema:name "Claim-specific contradiction role"@en ; schema:description "A recorded evidentiary role that may establish a relevant contradiction or policy prohibition for a specific proposition."@en .
+arc:UnresolvedIndicationRole a arc:EvidenceRole ; schema:name "Unresolved material-conflict indication"@en ; schema:description "A recorded role indicating a possible material conflict that remains unresolved or indeterminate and therefore prevents PASS."@en .
+arc:Phase1Authorization a arc:SupervisorPhase ; schema:name "Phase 1 — pre-execution authorization"@en ; schema:description "The Supervisor's pre-execution evaluation of the proposed operation, required propositions, eligible evidence, applicable constraints, conflicts, scope, and relevant versions."@en .
+arc:Phase2Validation a arc:SupervisorPhase ; schema:name "Phase 2 — post-execution candidate validation"@en ; schema:description "The Supervisor's post-execution evaluation of the isolated realized candidate graph, re-derived claims, evidence roles, conflicts, constraints, scope, and versions at a consistent snapshot."@en .
+arc:CandidateGraph a arc:GraphState ; schema:name "Candidate graph G_cand"@en ; schema:description "The isolated candidate graph resulting from the proposed mutation and evaluated before it can affect persistent shared identity state."@en .
+arc:CommitSnapshot a arc:Snapshot ; schema:name "Consistent commit-time snapshot σ_c"@en ; schema:description "The consistent snapshot of relevant production graph, active/quarantined evidence, eligibility state, policy, optional shadow store, and their versions."@en .
+arc:ProtectedCommitBoundary a arc:EnforcementBoundary ; schema:name "Protected commit boundary"@en ; schema:description "The enforcement boundary at which a persistent identity-changing mutation is admitted only if the commit invariant, scope, and version conditions pass."@en .
+arc:CommitInvariant a arc:Invariant ; schema:name "Commit invariant"@en ; schema:description "The interface invariant requiring EvaluateGraphConstraints=PASS, valid authorized scope, and valid bound versions at the commit point."@en .
+arc:ScopeValidity a arc:AuthorizationCondition ; schema:name "Scope validity"@en ; schema:description "The condition that the realized operation, target, and effects remain within the authorization record's bound scope."@en .
+arc:VersionValidity a arc:ConsistencyCondition ; schema:name "Version integrity"@en ; schema:description "The condition that graph, evidence, policy, and optional shadow versions remain valid through atomic commitment against the same snapshot."@en .
+arc:OutcomePASS a arc:EvaluationOutcome ; schema:name "PASS"@en ; schema:description "The evaluation outcome indicating that required positive conditions have claim-specific support, no applicable prohibition is established, and conflict status is CLEAR."@en .
+arc:OutcomeBREACH a arc:EvaluationOutcome ; schema:name "BREACH"@en ; schema:description "The evaluation outcome indicating an established relevant contradiction or explicit prohibitive-constraint violation; the candidate is rejected/escalated."@en .
+arc:OutcomeUNKNOWN a arc:EvaluationOutcome ; schema:name "UNKNOWN_EVIDENCE"@en ; schema:description "The evaluation outcome indicating insufficient positive support or an unresolved/indeterminate material conflict; the protected mutation is deferred."@en .
+arc:AssumptionsSet a arc:AssumptionSet ; schema:name "Assumptions 1–7"@en ; schema:description "Seven stated conditions with distinct roles: fail-closed outcome semantics, enforcement premises, and evidence/policy adequacy conditions."@en .
+arc:Assumption1 a arc:Assumption ; schema:name "Assumption 1 — domain-policy adequacy"@en ; schema:description "V_E expresses relevant identity-preserving constraints for the entity class, context, time, and mutation type."@en .
+arc:Assumption2 a arc:Assumption ; schema:name "Assumption 2 — claim-specific promotion correctness"@en ; schema:description "Evidence enters P_auth only when the promotion process correctly applies the declared claim-specific policy and contract."@en .
+arc:Assumption3 a arc:Assumption ; schema:name "Assumption 3 — fail-closed authorization"@en ; schema:description "Insufficient evidence or an unresolved material conflict does not authorize an irreversible identity change."@en .
+arc:Assumption4 a arc:Assumption ; schema:name "Assumption 4 — enforced and conservative mutation classification"@en ; schema:description "Every relevant production write passes through the Supervisor and any operation that may alter shared identity interpretation is treated as protected."@en .
+arc:Assumption5 a arc:Assumption ; schema:name "Assumption 5 — Supervisor-derived authorization propositions"@en ; schema:description "The Supervisor derives q_m from the mutation, target/effect scope, and versioned policy; the Planner cannot replace or weaken it."@en .
+arc:Assumption6 a arc:Assumption ; schema:name "Assumption 6 — scope and version integrity"@en ; schema:description "The authorized operation/scope and relevant graph, evidence, policy, and optional shadow versions remain valid through the commit point."@en .
+arc:Assumption7 a arc:Assumption ; schema:name "Assumption 7 — recorded-basis and eligibility integrity"@en ; schema:description "The promotion process controls eligibility metadata and applies provenance restrictions to the recorded basis; unrecorded derivations remain outside the guarantee."@en .
+arc:ConditionalGuarantee a arc:Guarantee ; schema:name "Conditional commit-boundary guarantee"@en ; schema:description "The protected commit property stated by the interface invariant, conditional on Assumptions 1–7; it is not a theorem of semantic correctness."@en .
+arc:EvaluationProtocol a arc:EvaluationDesign ; schema:name "Proposed evaluation protocol"@en ; schema:description "A prospective comparative evaluation using independently constructed cases, common outcome adjudication, matched controls, an explicit decision rule, and author-team-aware uncertainty; no experimental results are claimed."@en .
+arc:BaselineA a arc:EvaluationCondition ; schema:name "Baseline A — unconstrained Agentic ER"@en ; schema:description "An Agentic ER condition without the proposed mutation-authorization boundary."@en .
+arc:BaselineB a arc:EvaluationCondition ; schema:name "Baseline B — conventional identifier/default-deny rules"@en ; schema:description "A condition using conventional identifier constraints and abstention when required evidence is missing."@en .
+arc:BaselineC a arc:EvaluationCondition ; schema:name "Baseline C — generic authorization boundary"@en ; schema:description "A generic two-phase mutation gate with claim-specific evidence separation but policy rules authored without the DIO/ODI diagnostic mapping."@en .
+arc:Challenger a arc:EvaluationCondition ; schema:name "Challenger — DIO/ODI-informed guardrail"@en ; schema:description "The same gate and controlled resources as Baseline C, with shared domain facts organized through the DIO/ODI diagnostic-to-constraint mapping."@en .
+arc:PolicyAuthoringTeams a arc:EvaluationControl ; schema:name "Independent policy-authoring teams"@en ; schema:description "Independently constituted authoring teams used to reduce team-specific policy-authoring skill as a confound in the Baseline C–Challenger comparison."@en .
+arc:CaseInventory a arc:EvaluationControl ; schema:name "Shared case inventory"@en ; schema:description "The same prespecified cases and splits used for Baseline C and Challenger."@en .
+arc:DomainFactInventory a arc:EvaluationControl ; schema:name "Shared domain-fact inventory"@en ; schema:description "The same underlying domain-fact annotations are available to both compared conditions."@en .
+arc:EvidencePromotionProcess a arc:EvaluationControl ; schema:name "Shared evidence-promotion process"@en ; schema:description "The same claim-specific promotion process is used in Baseline C and Challenger so its quality is not the treatment contrast."@en .
+arc:ValidatorClass a arc:EvaluationControl ; schema:name "Matched validator class"@en ; schema:description "The same validator class and configuration are used in Baseline C and Challenger; policy-derived q_m differences are reported because they are part of the intended policy-organization pathway."@en .
+arc:ActionResourceBudget a arc:EvaluationControl ; schema:name "Matched action resources"@en ; schema:description "The compared conditions receive matched action/tool resources."@en .
+arc:DecisionBudget a arc:EvaluationControl ; schema:name "Matched decision budget"@en ; schema:description "The compared conditions receive a matched decision budget."@en .
+arc:PolicyAuthoringProtocol a arc:EvaluationControl ; schema:name "Policy-authoring and blinding protocol"@en ; schema:description "A prespecified protocol matches authoring effort and relevant expertise, prevents cross-condition policy leakage, and records whether replication across independent teams is performed."@en .
+arc:PrespecifiedDecisionMargins a arc:EvaluationControl ; schema:name "Prespecified decision margins δ_SRC and δ_RFCR"@en ; schema:description "Task- and policy-family-specific non-inferiority and materiality margins selected before outcomes are examined, with a prespecified uncertainty procedure."@en .
+arc:IndependentGroundTruth a arc:EvaluationResource ; schema:name "Independent ground-truth annotations"@en ; schema:description "Independent labels used to distinguish policy-permitted mutations from referential correctness and to calculate outcome metrics."@en .
+arc:IncrementalValueHypothesis a arc:EvaluationHypothesis ; schema:name "Incremental-value hypothesis for DIO/ODI mapping"@en ; schema:description "The empirical hypothesis that diagnostic organization and its explicit constraint mapping improve the safety/coverage trade-off beyond a matched generic authorization boundary."@en .
+arc:DependencyAwareEvidenceFlow a arc:FutureResearch ; schema:name "Dependency-aware evidence flow"@en ; schema:description "A possible future layer for recording hypothesis/action/query/observation/claim derivation lineage and controlling feedback into planning."@en .
+arc:ObservationContext a arc:PolicyScope ; schema:name "Bound observation context ω"@en ; schema:description "The observation context fixed by the domain-policy instance bound through v_pol; it is not a free evaluation input."@en .
+arc:TargetEffectScope a arc:AuthorizationScope ; schema:name "Mutation target/effect scope"@en ; schema:description "The declared target and permitted effect scope supplied to mutation-specific required-claim derivation and bound in authorization."@en .
+arc:AuthorizationEligibilityState a arc:EvidenceState ; schema:name "Authorization-eligibility state"@en ; schema:description "The versioned state of proposition- and context-specific promotion eligibility, included in the consistent snapshot."@en .
+arc:GraphVersion a arc:StateVersion ; schema:name "Graph version v_G"@en ; schema:description "The graph-state version bound for a protected mutation and revalidated atomically at commit."@en .
+arc:EvidenceStateVersion a arc:StateVersion ; schema:name "Evidence-state version v_E"@en ; schema:description "One version covering P_active, P_quar, and authorization-eligibility changes, including admission, adjudication, promotion, demotion, and revocation."@en .
+arc:PolicyVersion a arc:StateVersion ; schema:name "Domain-policy version v_pol"@en ; schema:description "The version of the domain-policy instance that fixes applicable constraints, observation context, temporal conditions, and required-claim derivation."@en .
+arc:ShadowVersion a arc:StateVersion ; schema:name "Shadow-state version v_S"@en ; schema:description "The version of isolated shadow state when a shadow layer is used and bound to the relevant action."@en .
+arc:PromotionValidationRecord a arc:EvidenceRecord ; schema:name "Promotion/validation record identifier"@en ; schema:description "A stable identifier for the claim-specific promotion and validation basis relied on for each required proposition."@en .
+arc:SharedOriginIndependenceRule a arc:PromotionConstraint ; schema:name "Recorded shared-origin independence restriction"@en ; schema:description "A promotion restriction that prevents observations with recorded shared upstream query, hypothesis, source, or derivation origins from being counted as independent corroboration merely because they are separate items."@en .
+arc:ShadowLineageExclusionRule a arc:PromotionConstraint ; schema:name "Recorded shadow-lineage exclusion"@en ; schema:description "A promotion restriction excluding a shadow candidate and recorded claims transitively based on shadow content from positive authorization support."@en .
+arc:AdmissionConflictOutcome a arc:OutcomeSet ; schema:name "Admission conflict outcome"@en ; schema:description "A mutation-independent admission result distinguishing conflict, no conflict detected, and indeterminate; no-conflict-detected is not positive identity evidence."@en .
+arc:AdmissionConflict a arc:AdmissionOutcome ; schema:name "CONFLICT admission result"@en ; schema:description "A supported material conflict that retains the observation in quarantine."@en .
+arc:AdmissionNoConflictDetected a arc:AdmissionOutcome ; schema:name "NO_CONFLICT_DETECTED admission result"@en ; schema:description "The admission check did not establish a conflict; this is not a guarantee that all conflicts are absent and is not positive identity evidence."@en .
+arc:AdmissionIndeterminate a arc:AdmissionOutcome ; schema:name "INDETERMINATE admission result"@en ; schema:description "A plausible material conflict that cannot be resolved on the available admission basis and therefore retains the observation in quarantine."@en .
+arc:StatusPrecedenceRule a arc:EvaluationRule ; schema:name "Evaluation-status precedence rule"@en ; schema:description "The required aggregation order BREACH before UNKNOWN_EVIDENCE before PASS."@en .
+arc:HumanAdjudicationBranch a arc:ControlBranch ; schema:name "Policy-conditioned human-adjudication branch"@en ; schema:description "A conditional UNKNOWN_EVIDENCE path to human adjudication only when policy requires it and a reviewer is available."@en .
+arc:FreshAuthorizationDecision a arc:AuthorizationDecision ; schema:name "Fresh authorization decision"@en ; schema:description "A new authorization evaluation against current evidence, policy, graph, and relevant state versions after human adjudication changes case disposition."@en .
+arc:CommonRetryBudget a arc:ResourceControl ; schema:name "Common retry budget"@en ; schema:description "One retry budget shared across stale-snapshot, version-conflict, shadow-state, and evidence-admission compare-and-swap retry triggers in the two-phase lifecycle."@en .
+arc:CorrectiveIdentityMutation a arc:OperationClass ; schema:name "Corrective split or un-merge mutation"@en ; schema:description "A protected identity-changing correction, including splitting or un-merging, with policy-defined propositions distinct from merge authorization."@en .
+arc:CommonEvaluationReference a arc:EvaluationResource ; schema:name "Common independent evaluation reference"@en ; schema:description "The condition-independent annotation reference for correctness, safety, admissibility, resolvability, and benignness used by SRC, UAR, and FPIR."@en .
+arc:IndependentCaseConstruction a arc:EvaluationControl ; schema:name "Independent case and stratum construction"@en ; schema:description "Construction or review of test cases and strata by a party outside both policy-authoring teams and without access to frozen condition policies."@en .
+arc:TaxonomyNeutralStratum a arc:EvaluationControl ; schema:name "Taxonomy-neutral evaluation stratum"@en ; schema:description "A stratum defined from observable case facts without DIO/ODI diagnostic labels, reported alongside diagnostic strata."@en .
+arc:OutcomeAdjudicators a arc:EvaluationControl ; schema:name "Independent outcome adjudicators"@en ; schema:description "Adjudicators independent of policy authors and masked to condition where practicable, applying the common evaluation reference."@en .
+arc:AuthorTeamAllocation a arc:EvaluationControl ; schema:name "Prespecified author-team allocation"@en ; schema:description "Random or expertise-blocked assignment of independent author teams to conditions for stronger comparative inference."@en .
+arc:PriorDIOExposureRecord a arc:EvaluationControl ; schema:name "Prior DIO/ODI exposure record"@en ; schema:description "A record of policy authors' prior exposure to DIO/ODI materials, used to assess possible contamination of the authoring contrast."@en .
+arc:ValidatorConfiguration a arc:EvaluationControl ; schema:name "Matched validator configuration"@en ; schema:description "The validator configuration held constant across Baseline C and Challenger; policy-derived q_m differences are recorded rather than suppressed."@en .
+arc:OutcomeCountingCodebook a arc:EvaluationControl ; schema:name "Outcome counting codebook"@en ; schema:description "A prespecified codebook for unique operation attempts, retries, terminal case resolution, non-match outcomes, unknown outcomes, confusion-matrix mapping, and zero denominators."@en .
+arc:UniqueMutationAttempt a arc:EvaluationUnit ; schema:name "Unique protected mutation attempt"@en ; schema:description "A mutation intention identified by operation_id; retries and re-evaluations for the same operation_id count once."@en .
+arc:OutcomeCutoff a arc:EvaluationControl ; schema:name "Fixed outcome and reconciliation cutoff"@en ; schema:description "The prespecified observation-window endpoint at which terminal case and transaction outcomes are classified; unresolved transaction outcomes remain unknown."@en .
+arc:UndefinedRFCRBranch a arc:DecisionRule ; schema:name "Undefined-RFCR decision branch"@en ; schema:description "If RFCR is undefined in either condition, RFCR-based comparative routes are non-evaluable and do not establish safety superiority or inferiority."@en .
+arc:MultiplicityControlRule a arc:EvaluationControl ; schema:name "Two-route inference calibration"@en ; schema:description "The prespecified uncertainty procedure accounts for the alternative-route OR decision structure and calibrates the overall claim criterion, for example through simultaneous bounds or another justified multiplicity-control approach."@en .
+arc:AuthorTeamPerformanceContrast a arc:EvaluationUnit ; schema:name "Author-team-level performance contrast"@en ; schema:description "The primary aggregation target for stronger multi-team inference, respecting between-team variation rather than treating repeated runs as independent authoring replications."@en .
+arc:RequiredClaimDerivation a arc:AuthorizationFunction ; schema:name "Supervisor-side required-claim derivation"@en ; schema:description "The derivation operation that takes the proposed mutation, target/effect scope, configured constraints, and applicable policy version to produce q_m."@en .
+arc:TemporalApplicability a arc:PolicyScope ; schema:name "Temporal applicability scope"@en ; schema:description "The validity interval or temporal condition against which a claim or configured constraint is assessed where relevant."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> a arc:EpistemicStatus ; schema:name "specified"@en ; schema:description "Explicitly defined in the current conceptual architecture or interface specification."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> a arc:EpistemicStatus ; schema:name "assumed"@en ; schema:description "Required for the conditional property but not independently established by the architecture."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> a arc:EpistemicStatus ; schema:name "illustrative"@en ; schema:description "A possible pathway or example, not asserted as universal or inevitable."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> a arc:EpistemicStatus ; schema:name "proposed evaluation"@en ; schema:description "A prospective evaluation element; no empirical result is asserted."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/future-research> a arc:EpistemicStatus ; schema:name "future research"@en ; schema:description "A direction explicitly outside the current architecture."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/canonical-reference> a arc:EpistemicStatus ; schema:name "canonical reference"@en ; schema:description "An existing canonical DIO/ODI concept referenced without redefining it."@en .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R001> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:informedBy ;
+  rdf:object dio:DIO ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§1; §5.2" ;
+  arc:interpretationNote "The architecture explicitly draws on the DIO framework as its applied diagnostic basis." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R002> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:informedBy ;
+  rdf:object dio:ODI ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§1; §5.2" ;
+  arc:interpretationNote "ODI supplies the conceptual layer for the identity and reconstruction distinctions used by the paper." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R003> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:referencesAnalyticalLayer ;
+  rdf:object dio:MVDIO ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6" ;
+  arc:interpretationNote "The proposed Supervisor is named as an MVDIO Supervisor Layer; this relation does not imply that the architecture is a complete MVDIO implementation." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R004> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:addresses ;
+  rdf:object arc:AgenticERContext ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§1; §3" ;
+  arc:interpretationNote "The target setting is Agentic Entity Resolution with persistent identity-changing graph mutations." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R005> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:analyzesPossiblePathway ;
+  rdf:object arc:ApparentVerification ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§4.1" ;
+  arc:interpretationNote "Apparent verification is a possible hypothesis-conditioned feedback pathway, not an inevitable outcome." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R006> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ApparentVerification ;
+  rdf:predicate arc:mayAriseThrough ;
+  rdf:object arc:HypothesisConditionedRetrieval ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§4.1" ;
+  arc:interpretationNote "A mistaken hypothesis may condition later query/action selection and make retrieved material appear confirmatory." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R007> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConstraintBindingFunction ;
+  rdf:predicate arc:mapsSelectedDistinctionsFrom ;
+  rdf:object dio:ReconstructionFailureMode ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The mapping is partial and restricted to selected diagnostic distinctions; it does not cover or redefine the full vocabulary." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R008> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConstraintBindingFunction ;
+  rdf:predicate arc:usesDiagnosticBranch ;
+  rdf:object dio:ReferentialReconstructionFailure ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R009> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConstraintBindingFunction ;
+  rdf:predicate arc:usesDiagnosticBranch ;
+  rdf:object dio:SemanticCoherenceFailure ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R010> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConstraintBindingFunction ;
+  rdf:predicate arc:usesDiagnosticBranch ;
+  rdf:object dio:TemporalReconstructionFailure ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R011> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConstraintBindingFunction ;
+  rdf:predicate arc:usesDiagnosticBranch ;
+  rdf:object dio:ContextualAdequacyFailure ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R012> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConstraintBindingFunction ;
+  rdf:predicate arc:producesOrInforms ;
+  rdf:object arc:DomainConfiguredConstraints ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The output is supplied as explicit domain policy, not generated by automatic SKOS entailment." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R013> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainConfiguredConstraints ;
+  rdf:predicate arc:configuredBy ;
+  rdf:object arc:DomainPolicy ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.2; §5.4" ;
+  arc:interpretationNote "Adequacy of the configured constraint set is Assumption 1." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R014> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainPolicy ;
+  rdf:predicate arc:scopedTo ;
+  rdf:object dio:ObservationDomain ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.1; §5.2" ;
+  arc:interpretationNote "The applicable policy represents the observation context and relevant temporal conditions." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R015> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainConfiguredConstraints ;
+  rdf:predicate arc:usesConcept ;
+  rdf:object dio:IdentityPreservingConstraints ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/canonical-reference> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The mapping reuses the canonical identity-preserving constraints concept without adding a new canonical definition." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R016> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainConfiguredConstraints ;
+  rdf:predicate arc:mayOperationalize ;
+  rdf:object dio:ReferentialContinuity ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2; §7" ;
+  arc:interpretationNote "Referential continuity is one identity property that domain-configured constraints may need to preserve." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R081> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject dio:EntitySubstitution ;
+  rdf:predicate arc:mapsIllustrativelyTo ;
+  rdf:object arc:ExampleReferentCoreferenceConstraint ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The example rejects lexical similarity or commercial adjacency as sufficient proof of co-reference; the actual evidentiary rule remains domain-configured." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R082> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject dio:MergeFailure ;
+  rdf:predicate arc:mapsIllustrativelyTo ;
+  rdf:object arc:ExampleReferentCoreferenceConstraint ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The example requires claim-specific co-reference support before merging distinct records; it is not a universal fixed predicate. The same protected boundary applies to corrective splits and un-merges under mutation-specific policy claims." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R083> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject dio:TemporalDiscontinuity ;
+  rdf:predicate arc:mapsIllustrativelyTo ;
+  rdf:object arc:ExampleTemporalApplicabilityConstraint ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The example binds rename or continuity claims to the relevant referent and validity interval." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R084> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject dio:TemporalMisalignment ;
+  rdf:predicate arc:mapsIllustrativelyTo ;
+  rdf:object arc:ExampleTemporalApplicabilityConstraint ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The example makes temporal applicability part of the mutation-specific authorization assessment." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R085> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject dio:SemanticFragmentation ;
+  rdf:predicate arc:mapsIllustrativelyTo ;
+  rdf:object arc:ExampleMaterialConflictRetentionConstraint ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The mapping covers the identity-affecting subset of Semantic Fragmentation: materially incompatible identity-related claims remain unresolved until reconciled; other attribute-level incompatibilities remain governed by domain policy." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R086> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject dio:ContextualDisplacement ;
+  rdf:predicate arc:mapsIllustrativelyTo ;
+  rdf:object arc:ExampleContextualRelationAdequacyConstraint ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "A relation may be adequate in one observation purpose and insufficient for a different identity proposition in another." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R087> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject dio:SplitFailure ;
+  rdf:predicate arc:mapsIllustrativelyTo ;
+  rdf:object arc:ExampleContinuitySupportConstraint ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "The paper also gives a positive continuity case: distinct records may be resolved when documented, temporally applicable evidence supports one continuing referent." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R017> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Planner ;
+  rdf:predicate arc:proposes ;
+  rdf:object arc:ProposedMutation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.2; Algorithm 1" ;
+  arc:interpretationNote "The Planner proposes an action; it does not define or weaken the required authorization claim set." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R018> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ProposedMutation ;
+  rdf:predicate arc:hasClass ;
+  rdf:object arc:MutationClass ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §6.2" ;
+  arc:interpretationNote "The operation and its realized or potential shared effects determine whether it is treated as protected." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R019> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:MutationClass ;
+  rdf:predicate arc:determinesRequirementsThrough ;
+  rdf:object arc:DomainPolicy ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; Algorithm 1" ;
+  arc:interpretationNote "The applicable versioned policy and proposed mutation determine the propositions required for authorization." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R020> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ProposedMutation ;
+  rdf:predicate arc:inputTo ;
+  rdf:object arc:RequiredPropositionSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; Algorithm 1" ;
+  arc:interpretationNote "The Supervisor derives q_m from the proposed operation, target/effect scope, configured constraint set V_E, and versioned policy v_pol; the separate relations record each input." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R021> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:RequiredPropositionSet ;
+  rdf:predicate arc:boundIn ;
+  rdf:object arc:AuthorizationRecord ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.2" ;
+  arc:interpretationNote "The derived proposition set is bound in α_m and cannot be replaced or weakened by the Planner." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R022> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationRecord ;
+  rdf:predicate arc:binds ;
+  rdf:object arc:ProposedMutation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §6.2" ;
+  arc:interpretationNote "The authorization record is specific to the proposed action and its target/effect scope." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R023> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationRecord ;
+  rdf:predicate arc:bindsVersionContext ;
+  rdf:object arc:CommitSnapshot ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §6.2" ;
+  arc:interpretationNote "Relevant graph, evidence, policy, and optional shadow versions are bound to authorization and rechecked at commit." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R024> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvidenceObservation ;
+  rdf:predicate arc:initiallyEnters ;
+  rdf:object arc:QuarantineEvidence ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; Algorithm 2" ;
+  arc:interpretationNote "Retrieved observations first enter quarantine before any Planner-visible admission." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R025> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AdmissionConflictCheck ;
+  rdf:predicate arc:controlsAdmissionFrom ;
+  rdf:object arc:QuarantineEvidence ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; Algorithm 2" ;
+  arc:interpretationNote "A conflict or indeterminate result retains the item in quarantine; no detected conflict is not positive support." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R026> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AdmissionConflictCheck ;
+  rdf:predicate arc:mayAdmitAsUnverified ;
+  rdf:object arc:ActiveEvidenceSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; Algorithm 2" ;
+  arc:interpretationNote "Only an item passing the admission gate is admitted to P_active as UNVERIFIED." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R027> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ActiveEvidenceSet ;
+  rdf:predicate arc:hasStatus ;
+  rdf:object arc:UnverifiedStatus ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Admission to P_active confers UNVERIFIED status and no positive authorization support." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R028> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ActiveEvidenceSet ;
+  rdf:predicate arc:visibleTo ;
+  rdf:object arc:Planner ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; §6" ;
+  arc:interpretationNote "The Planner may use active UNVERIFIED material for provisional reasoning." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R029> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ActiveEvidenceSet ;
+  rdf:predicate arc:notSufficientByItselfFor ;
+  rdf:object arc:RequiredPropositionSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Planner-visible UNVERIFIED evidence cannot satisfy a required positive authorization proposition." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R030> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ActiveEvidenceSet ;
+  rdf:predicate arc:mayIndicate ;
+  rdf:object arc:UnresolvedIndicationRole ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "UNVERIFIED material may indicate an unresolved conflict and cause deferral, but it cannot itself establish a mutation-level BREACH or positive support." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R031> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ClaimSpecificPromotion ;
+  rdf:predicate arc:evaluates ;
+  rdf:object arc:EvidenceObservation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Promotion evaluates the specific proposition, source/provenance basis, evidentiary role, applicability, validation basis, and policy version." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R032> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ClaimSpecificPromotion ;
+  rdf:predicate arc:isScopedBy ;
+  rdf:object dio:ObservationDomain ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Evidence eligibility is bound to observation context and relevant temporal applicability." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R033> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ClaimSpecificPromotion ;
+  rdf:predicate arc:assesses ;
+  rdf:object arc:RequiredPropositionSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Promotion is proposition-specific and cannot be inferred from document relevance, query match, or Planner confidence alone." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R034> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ClaimSpecificPromotion ;
+  rdf:predicate arc:requiresSoundExecutionUnder ;
+  rdf:object arc:DomainPolicy ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.3; Assumption 2" ;
+  arc:interpretationNote "The architecture depends on correct application of the stated promotion contract; it does not validate the validator independently." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R035> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ClaimSpecificPromotion ;
+  rdf:predicate arc:producesEligibilityFor ;
+  rdf:object arc:AuthorizationEligibleEvidenceSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Promotion grants eligibility only for the assessed proposition, role, context, and applicability." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R036> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationEligibleEvidenceSet ;
+  rdf:predicate arc:hasPossibleRole ;
+  rdf:object arc:SupportRole ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; §5.4" ;
+  arc:interpretationNote "Only support-role evidence can satisfy a required positive proposition." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R037> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationEligibleEvidenceSet ;
+  rdf:predicate arc:hasPossibleRole ;
+  rdf:object arc:ContradictionRole ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; §5.4" ;
+  arc:interpretationNote "A claim-specific contradiction may establish a prohibitive condition or BREACH." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R038> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationEligibleEvidenceSet ;
+  rdf:predicate arc:hasPossibleRole ;
+  rdf:object arc:UnresolvedIndicationRole ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; §5.4" ;
+  arc:interpretationNote "An unresolved indication prevents PASS until resolved under policy." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R039> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationEligibleEvidenceSet ;
+  rdf:predicate arc:supportsAssessmentOf ;
+  rdf:object arc:RequiredPropositionSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; §5.4" ;
+  arc:interpretationNote "The set is claim-specific and records evidence roles; membership alone is not sufficient without proposition-specific support." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R040> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:includes ;
+  rdf:object arc:Phase1Authorization ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.2; Algorithm 1" ;
+  arc:interpretationNote "Phase 1 governs pre-execution authorization of the proposed mutation." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R041> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase1Authorization ;
+  rdf:predicate arc:issuesOnPass ;
+  rdf:object arc:AuthorizationRecord ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.2; Algorithm 1" ;
+  arc:interpretationNote "A successful pre-execution evaluation issues a version- and scope-bound authorization record." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R042> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:includes ;
+  rdf:object arc:Phase2Validation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.3; Algorithm 2" ;
+  arc:interpretationNote "Phase 2 validates the realized candidate before persistent commit." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R043> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:evaluates ;
+  rdf:object arc:CandidateGraph ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.3; Algorithm 2" ;
+  arc:interpretationNote "The realized operation is applied to an isolated candidate graph for post-execution validation." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R044> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:checksConsistencyOf ;
+  rdf:object arc:AuthorizationRecord ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.3; Algorithm 2" ;
+  arc:interpretationNote "The required claim set is re-derived and compared with the set bound in α_m." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R045> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:usesSnapshot ;
+  rdf:object arc:CommitSnapshot ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.3" ;
+  arc:interpretationNote "The candidate, evidence stores, authorization eligibility, policy, and version checks are evaluated against one consistent snapshot." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R046> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CandidateGraph ;
+  rdf:predicate arc:evaluatedWithin ;
+  rdf:object arc:CommitSnapshot ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.3" ;
+  arc:interpretationNote "The isolated candidate is assessed against the same consistent commit-time snapshot; the snapshot is not asserted to contain the candidate graph as persistent state." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R047> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:evaluatesConstraintsFrom ;
+  rdf:object arc:DomainConfiguredConstraints ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.3" ;
+  arc:interpretationNote "The candidate graph is assessed against the applicable domain-configured constraints." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R048> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:checksPropositionCoverageFrom ;
+  rdf:object arc:AuthorizationEligibleEvidenceSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.3" ;
+  arc:interpretationNote "Each required proposition must have claim-specific support with an applicable recorded validation basis." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R049> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:requires ;
+  rdf:object arc:ScopeValidity ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.1; §6.3" ;
+  arc:interpretationNote "The realized operation must remain within the scope bound by the authorization record." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R050> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:requires ;
+  rdf:object arc:VersionValidity ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.1; §6.3" ;
+  arc:interpretationNote "Graph, evidence, policy, and optional shadow versions must remain valid atomically at the commit point." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R051> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitInvariant ;
+  rdf:predicate arc:guards ;
+  rdf:object arc:ProtectedCommitBoundary ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "The invariant is an interface contract for the protected persistence boundary." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R052> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitInvariant ;
+  rdf:predicate arc:requiresOutcome ;
+  rdf:object arc:OutcomePASS ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.3" ;
+  arc:interpretationNote "A protected mutation cannot commit unless EvaluateGraphConstraints returns PASS." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R053> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitInvariant ;
+  rdf:predicate arc:requires ;
+  rdf:object arc:ScopeValidity ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Valid scope is a conjunctive commit requirement." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R054> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitInvariant ;
+  rdf:predicate arc:requires ;
+  rdf:object arc:VersionValidity ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Valid bound versions at the same commit snapshot are a conjunctive requirement." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R055> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomeBREACH ;
+  rdf:predicate arc:leadsTo ;
+  rdf:object arc:ProtectedCommitBoundary ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; §6.3" ;
+  arc:interpretationNote "BREACH blocks commit and leads to rejection/escalation." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R056> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomeUNKNOWN ;
+  rdf:predicate arc:leadsTo ;
+  rdf:object arc:ProtectedCommitBoundary ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; §6.3" ;
+  arc:interpretationNote "UNKNOWN_EVIDENCE blocks commit and leads to deferral, not a semantic verdict that the identity claim is false." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R057> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomePASS ;
+  rdf:predicate arc:permitsSubjectToOtherChecks ;
+  rdf:object arc:ProtectedCommitBoundary ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.3" ;
+  arc:interpretationNote "PASS is necessary but not sufficient without valid scope and versions." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R058> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConditionalGuarantee ;
+  rdf:predicate arc:isExpressedBy ;
+  rdf:object arc:CommitInvariant ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "The conditional property is summarized by the commit interface invariant." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R059> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ConditionalGuarantee ;
+  rdf:predicate arc:conditionalOn ;
+  rdf:object arc:AssumptionsSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "The guarantee depends on the seven explicit assumptions and does not prove semantic truth." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R060> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AssumptionsSet ;
+  rdf:predicate arc:includesAssumption ;
+  rdf:object arc:Assumption1 ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Assumption 1 is a stated precondition of the conditional commit property." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R061> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AssumptionsSet ;
+  rdf:predicate arc:includesAssumption ;
+  rdf:object arc:Assumption2 ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Assumption 2 is a stated precondition of the conditional commit property." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R062> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AssumptionsSet ;
+  rdf:predicate arc:includesAssumption ;
+  rdf:object arc:Assumption3 ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Assumption 3 is a stated precondition of the conditional commit property." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R063> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AssumptionsSet ;
+  rdf:predicate arc:includesAssumption ;
+  rdf:object arc:Assumption4 ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Assumption 4 is a stated precondition of the conditional commit property." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R064> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AssumptionsSet ;
+  rdf:predicate arc:includesAssumption ;
+  rdf:object arc:Assumption5 ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Assumption 5 is a stated precondition of the conditional commit property." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R065> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AssumptionsSet ;
+  rdf:predicate arc:includesAssumption ;
+  rdf:object arc:Assumption6 ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Assumption 6 is a stated precondition of the conditional commit property." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R066> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AssumptionsSet ;
+  rdf:predicate arc:includesAssumption ;
+  rdf:object arc:Assumption7 ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Assumption 7 is a stated precondition of the conditional commit property." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R067> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:compares ;
+  rdf:object arc:BaselineA ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Unconstrained Agentic ER condition without the protected mutation-authorization boundary." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R068> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:compares ;
+  rdf:object arc:BaselineB ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Conventional identifier/default-deny condition." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R069> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:compares ;
+  rdf:object arc:BaselineC ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Generic two-phase authorization boundary without the DIO/ODI diagnostic mapping." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R070> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:compares ;
+  rdf:object arc:Challenger ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "DIO/ODI-informed challenger using the same fact inventory, evidence process, validator class, resources, and budget as C." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R071> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:isolatesIncrementalValueThrough ;
+  rdf:object arc:BaselineC ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1; §8.2" ;
+  arc:interpretationNote "The C–Challenger contrast is the relevant test of the incremental mapping contribution." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R072> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:BaselineC ;
+  rdf:predicate arc:authoredWithout ;
+  rdf:object arc:ConstraintBindingFunction ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Baseline C authoring teams are not given the DIO/ODI diagnostic mapping or category labels." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R073> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:PolicyAuthoringTeams ;
+  rdf:predicate arc:replicateAcross ;
+  rdf:object arc:BaselineC ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Multiple independently constituted teams per condition are required for stronger comparative inference; one team per condition yields an exploratory team-level comparison." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R074> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:PolicyAuthoringTeams ;
+  rdf:predicate arc:replicateAcross ;
+  rdf:object arc:Challenger ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The Challenger condition should be repeated across independent authoring teams under matched protocol and facts." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R075> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:uses ;
+  rdf:object arc:PrespecifiedDecisionMargins ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "Task- and policy-family-specific δ_SRC and δ_RFCR margins and the uncertainty procedure are fixed before outcomes are examined." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R076> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:usesGroundTruth ;
+  rdf:object arc:IndependentGroundTruth ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1; §8.2" ;
+  arc:interpretationNote "Independent annotations separately identify policy-permitted mutations and referential correctness." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R077> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:tests ;
+  rdf:object arc:IncrementalValueHypothesis ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1; §8.2" ;
+  arc:interpretationNote "The test concerns incremental mapping value for the evaluated task and policy family, not DIO/ODI as a whole." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R078> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:designatesAsFutureResearch ;
+  rdf:object arc:DependencyAwareEvidenceFlow ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/future-research> ;
+  arc:sourceSection "§5.5; §9.1" ;
+  arc:interpretationNote "Dependency-aware flow is outside the current architecture and is designated as a separate future direction." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R079> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DependencyAwareEvidenceFlow ;
+  rdf:predicate arc:extendsBeyond ;
+  rdf:object arc:ProtectedCommitBoundary ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/future-research> ;
+  arc:sourceSection "§5.5; §9.1" ;
+  arc:interpretationNote "This future layer would address upstream derivation lineage and feedback into planning, which the current commit invariant does not control." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R080> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Architecture ;
+  rdf:predicate arc:complementaryTo ;
+  rdf:object <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/> ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "derived mapping scope" ;
+  arc:interpretationNote "The existing Policy-as-Code mapping projects selected obligations into OPA/Rego and Cedar; this artifact models internal architecture relations instead." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R088> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:holdsConstantAcrossComparedConditions ;
+  rdf:object arc:CaseInventory ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Baseline C and Challenger use the same prespecified case inventory and dataset splits." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R089> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:holdsConstantAcrossComparedConditions ;
+  rdf:object arc:DomainFactInventory ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Both conditions use the same underlying domain facts; the diagnostic organization and mapping are the intended treatment difference." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R090> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:holdsConstantAcrossComparedConditions ;
+  rdf:object arc:EvidencePromotionProcess ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The evidence-promotion process is held constant so the C–Challenger contrast does not conflate mapping value with promotion quality." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R091> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:holdsConstantAcrossComparedConditions ;
+  rdf:object arc:ValidatorClass ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The compared conditions use the same validator class under the proposed matched design." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R092> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:holdsConstantAcrossComparedConditions ;
+  rdf:object arc:ActionResourceBudget ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Action/tool resources are matched between Baseline C and Challenger." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R093> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:holdsConstantAcrossComparedConditions ;
+  rdf:object arc:DecisionBudget ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The decision budget is matched between Baseline C and Challenger." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R094> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:governedBy ;
+  rdf:object arc:PolicyAuthoringProtocol ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The protocol controls authoring effort, relevant expertise, information leakage, freezing of counterpart policies, and replication reporting." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R095> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Challenger ;
+  rdf:predicate arc:uses ;
+  rdf:object arc:ConstraintBindingFunction ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The Challenger condition is the generic authorization boundary augmented with the specified DIO/ODI diagnostic-to-constraint mapping." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R096> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationEligibleEvidenceSet ;
+  rdf:predicate arc:isSubsetOf ;
+  rdf:object arc:ActiveEvidenceSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "P_auth(q_m,ω) is explicitly a claim- and context-specific eligibility subset of P_active, not a separate physical repository." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R097> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitSnapshot ;
+  rdf:predicate arc:includes ;
+  rdf:object arc:AuthorizationEligibilityState ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; Algorithm 2" ;
+  arc:interpretationNote "The consistent snapshot includes authorization-eligibility state as well as P_active, P_quar, policy, graph, and optional shadow state." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R098> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationRecord ;
+  rdf:predicate arc:bindsVersion ;
+  rdf:object arc:GraphVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §5.4" ;
+  arc:interpretationNote "Protected graph mutations bind v_G and revalidate it atomically at commit." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R099> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationRecord ;
+  rdf:predicate arc:bindsVersion ;
+  rdf:object arc:EvidenceStateVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §5.4" ;
+  arc:interpretationNote "One v_E covers active/quarantined evidence and authorization-eligibility changes, including intake and promotion/demotion/revocation." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R100> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationRecord ;
+  rdf:predicate arc:bindsVersion ;
+  rdf:object arc:PolicyVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §5.4" ;
+  arc:interpretationNote "The relevant domain-policy version v_pol is bound and checked at authorization and commit." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R101> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationRecord ;
+  rdf:predicate arc:conditionallyBindsVersion ;
+  rdf:object arc:ShadowVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §5.4" ;
+  arc:interpretationNote "The shadow version v_S is bound when a shadow layer is used and relevant to the action." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R102> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainPolicy ;
+  rdf:predicate arc:fixes ;
+  rdf:object arc:ObservationContext ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.1; §5.4" ;
+  arc:interpretationNote "The context ω in P_auth(q_m,ω) is fixed by the policy instance bound through v_pol, not a free runtime variable." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R103> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AuthorizationRecord ;
+  rdf:predicate arc:bindsEvidenceRecordForEachClaim ;
+  rdf:object arc:PromotionValidationRecord ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; Algorithm 1" ;
+  arc:interpretationNote "For every required proposition, α_m identifies the promotion/validation record relied on for its claim-specific support." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R104> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:Phase2Validation ;
+  rdf:predicate arc:rechecksBoundEvidenceRecordsAgainst ;
+  rdf:object arc:CommitSnapshot ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; Algorithm 2" ;
+  arc:interpretationNote "Phase 2 verifies that each referenced support record remains present and applicable in the same σ_c snapshot." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R105> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ClaimSpecificPromotion ;
+  rdf:predicate arc:appliesRestriction ;
+  rdf:object arc:SharedOriginIndependenceRule ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Recorded shared upstream query, hypothesis, source, or derivation paths do not count as independent corroboration merely because observations are separate items." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R106> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ClaimSpecificPromotion ;
+  rdf:predicate arc:appliesRestriction ;
+  rdf:object arc:ShadowLineageExclusionRule ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "Promotion excludes shadow candidates and recorded claim bases that transitively cite shadow content." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R107> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AdmissionConflictCheck ;
+  rdf:predicate arc:mayReturn ;
+  rdf:object arc:AdmissionConflict ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; Algorithm 2" ;
+  arc:interpretationNote "A supported material conflict retains the observation in quarantine." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R108> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AdmissionConflictCheck ;
+  rdf:predicate arc:mayReturn ;
+  rdf:object arc:AdmissionNoConflictDetected ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; Algorithm 2" ;
+  arc:interpretationNote "No conflict detected means only that this check did not establish a conflict; it is not identity support or proof that no conflict exists." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R109> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:AdmissionConflictCheck ;
+  rdf:predicate arc:mayReturn ;
+  rdf:object arc:AdmissionIndeterminate ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3; Algorithm 2" ;
+  arc:interpretationNote "An unresolved or plausible conflict retains the observation in quarantine." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R110> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:StatusPrecedenceRule ;
+  rdf:predicate arc:prioritizes ;
+  rdf:object arc:OutcomeBREACH ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "BREACH has highest priority and blocks PASS even if other required conditions are unknown." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R111> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:StatusPrecedenceRule ;
+  rdf:predicate arc:thenPrioritizes ;
+  rdf:object arc:OutcomeUNKNOWN ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "UNKNOWN_EVIDENCE takes precedence over PASS when no established BREACH is present." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R112> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:StatusPrecedenceRule ;
+  rdf:predicate arc:lowestPriority ;
+  rdf:object arc:OutcomePASS ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.3" ;
+  arc:interpretationNote "PASS is available only when no BREACH or UNKNOWN_EVIDENCE condition applies." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R113> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomeUNKNOWN ;
+  rdf:predicate arc:mayEnterConditionalBranch ;
+  rdf:object arc:HumanAdjudicationBranch ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "Algorithm 1 step 9; Algorithm 2 step 11; §6.3" ;
+  arc:interpretationNote "HITL is returned only when policy requires human review and a reviewer is available; otherwise the result is DEFER_UNRESOLVED." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R114> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:HumanAdjudicationBranch ;
+  rdf:predicate arc:requiresNewDecision ;
+  rdf:object arc:FreshAuthorizationDecision ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §6.3" ;
+  arc:interpretationNote "Any human adjudication that changes disposition requires a new authorization decision against current versions; it cannot revive stale authority." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R115> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:FreshAuthorizationDecision ;
+  rdf:predicate arc:uses ;
+  rdf:object arc:CommitSnapshot ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; §6.3" ;
+  arc:interpretationNote "The new decision is evaluated against current relevant graph, evidence, eligibility, policy, and shadow state versions." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R116> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommonRetryBudget ;
+  rdf:predicate arc:appliesAcross ;
+  rdf:object arc:Phase1Authorization ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; Algorithm 1" ;
+  arc:interpretationNote "The retry budget is shared across retry triggers rather than independently reset by each phase." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R117> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommonRetryBudget ;
+  rdf:predicate arc:appliesAcross ;
+  rdf:object arc:Phase2Validation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; Algorithm 2 step 13" ;
+  arc:interpretationNote "The same retry budget covers version/snapshot conflicts, shadow version changes, and evidence admission compare-and-swap retries." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R118> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainConfiguredConstraints ;
+  rdf:predicate arc:scopedBy ;
+  rdf:object arc:ObservationContext ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2; §5.4" ;
+  arc:interpretationNote "Configured constraints are scoped to the observation context fixed by the applicable policy." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R119> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainConfiguredConstraints ;
+  rdf:predicate arc:scopedBy ;
+  rdf:object arc:TemporalApplicability ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2; §5.3" ;
+  arc:interpretationNote "Temporal applicability is an explicit scope dimension where continuity or state claims depend on a validity interval." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R120> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ProposedMutation ;
+  rdf:predicate arc:hasClass ;
+  rdf:object arc:CorrectiveIdentityMutation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.1" ;
+  arc:interpretationNote "Splits and corrective un-merges are protected when they can alter shared identity interpretation; each has policy-defined required propositions." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R121> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CorrectiveIdentityMutation ;
+  rdf:predicate arc:derivesRequirementsThrough ;
+  rdf:object arc:DomainPolicy ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4" ;
+  arc:interpretationNote "Corrective operations do not inherit authorization from the earlier merge; the versioned domain policy defines their own q_m." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R122> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:usesCommonReference ;
+  rdf:object arc:CommonEvaluationReference ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1; §8.2" ;
+  arc:interpretationNote "SRC, UAR, and FPIR use a condition-independent evaluation reference rather than either condition's authored policy." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R123> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomeAdjudicators ;
+  rdf:predicate arc:apply ;
+  rdf:object arc:CommonEvaluationReference ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Outcome adjudicators are independent of policy authors and masked to condition where practicable." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R124> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:IndependentCaseConstruction ;
+  rdf:predicate arc:constructsOrReviews ;
+  rdf:object arc:CaseInventory ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The case inventory and strata are constructed or independently reviewed without access to frozen condition policies." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R125> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:includesStratum ;
+  rdf:object arc:TaxonomyNeutralStratum ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "A factual taxonomy-neutral stratum is reported alongside the diagnostic strata." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R126> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:PolicyAuthoringTeams ;
+  rdf:predicate arc:allocatedBy ;
+  rdf:object arc:AuthorTeamAllocation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "For stronger inference, independent author teams are assigned by a prespecified random or expertise-blocked procedure." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R127> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:PolicyAuthoringTeams ;
+  rdf:predicate arc:recordsExposureIn ;
+  rdf:object arc:PriorDIOExposureRecord ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Prior DIO/ODI familiarity is recorded to assess possible contamination of the authoring contrast." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R128> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:holdsConstantAcrossComparedConditions ;
+  rdf:object arc:ValidatorConfiguration ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The validator configuration is shared; policy-derived q_m differences are explicitly reported as part of the treatment pathway." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R129> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:governedBy ;
+  rdf:object arc:OutcomeCountingCodebook ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "The codebook defines operation_id attempts, retries, cutoff, terminal resolution, non-match outcomes, unknown outcomes, confusion mapping, and zero denominators." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R130> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:UniqueMutationAttempt ;
+  rdf:predicate arc:identifiedBy ;
+  rdf:object arc:OutcomeCutoff ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "Operation identifiers define unique attempt units; terminal outcomes are classified at a prespecified cutoff and unresolved outcomes remain unknown." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R131> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:usesAnalysisUnit ;
+  rdf:object arc:AuthorTeamPerformanceContrast ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1; §8.2" ;
+  arc:interpretationNote "Stronger comparative inference respects between-team variation; repeated runs of a single policy are not authoring replications." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R132> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomeUNKNOWN ;
+  rdf:predicate arc:triggersNonEvaluabilityWhen ;
+  rdf:object arc:UndefinedRFCRBranch ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "If RFCR is undefined in either condition, RFCR-based routes are non-evaluable rather than interpreted as safety superiority or inferiority." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R133> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:distinguishes ;
+  rdf:object arc:OutcomeCutoff ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "A fixed reconciliation cutoff separates final unresolved outcomes from cases resolved within the observation window." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R134> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvidencePromotionProcess ;
+  rdf:predicate arc:heldConstantBetween ;
+  rdf:object arc:BaselineC ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "The promotion process is a common control and shared-origin tests alone do not isolate the DIO/ODI mapping contribution." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R135> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:ProposedMutation ;
+  rdf:predicate arc:inputToDerivation ;
+  rdf:object arc:RequiredClaimDerivation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; Algorithm 1" ;
+  arc:interpretationNote "The proposed mutation is one input to supervisor-side required-claim derivation." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R136> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:TargetEffectScope ;
+  rdf:predicate arc:inputTo ;
+  rdf:object arc:RequiredClaimDerivation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; Algorithm 1" ;
+  arc:interpretationNote "The mutation target and potential/realized effect scope are explicit inputs to q_m derivation." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R137> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainConfiguredConstraints ;
+  rdf:predicate arc:inputTo ;
+  rdf:object arc:RequiredClaimDerivation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2; §5.4" ;
+  arc:interpretationNote "The configured domain constraints V_E inform the mutation-specific propositions required for authorization." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R138> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:PolicyVersion ;
+  rdf:predicate arc:inputTo ;
+  rdf:object arc:RequiredClaimDerivation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; §6.1" ;
+  arc:interpretationNote "The applicable versioned domain policy supplies the context and rules used to derive q_m." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R139> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:RequiredClaimDerivation ;
+  rdf:predicate arc:derives ;
+  rdf:object arc:RequiredPropositionSet ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.4; Algorithm 1" ;
+  arc:interpretationNote "The Supervisor derives q_m; the Planner cannot replace or weaken the result." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R140> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:DomainConfiguredConstraints ;
+  rdf:predicate arc:locallyConfigures ;
+  rdf:object dio:IdentityPreservingConstraints ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§5.2" ;
+  arc:interpretationNote "V_E is a local, domain-supplied configuration of the canonical collective concept; this is not a subclass assertion or a canonical vocabulary extension." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R141> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitSnapshot ;
+  rdf:predicate arc:includesVersionOf ;
+  rdf:object arc:GraphVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; Algorithm 2" ;
+  arc:interpretationNote "The consistent snapshot includes the graph version." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R142> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitSnapshot ;
+  rdf:predicate arc:includesVersionOf ;
+  rdf:object arc:EvidenceStateVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; Algorithm 2" ;
+  arc:interpretationNote "The consistent snapshot includes the complete evidence-state version, including authorization eligibility." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R143> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitSnapshot ;
+  rdf:predicate arc:includesVersionOf ;
+  rdf:object arc:PolicyVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; Algorithm 2" ;
+  arc:interpretationNote "The consistent snapshot includes the applicable policy version." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R144> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:CommitSnapshot ;
+  rdf:predicate arc:conditionallyIncludesVersionOf ;
+  rdf:object arc:ShadowVersion ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1; Algorithm 2" ;
+  arc:interpretationNote "The consistent snapshot includes shadow version v_S when shadow state is used." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R145> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvidenceStateVersion ;
+  rdf:predicate arc:coversChangesTo ;
+  rdf:object arc:AuthorizationEligibilityState ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
+  arc:sourceSection "§6.1" ;
+  arc:interpretationNote "Promotion, demotion, or revocation of authorization eligibility advances the same v_E used for P_active and P_quar." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R146> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomeCountingCodebook ;
+  rdf:predicate arc:countsRetryBy ;
+  rdf:object arc:UniqueMutationAttempt ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "Retries and re-evaluations with the same operation_id count as one mutation attempt." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R147> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:OutcomeCountingCodebook ;
+  rdf:predicate arc:classifiesAt ;
+  rdf:object arc:OutcomeCutoff ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "A fixed cutoff classifies terminal case and transaction outcomes; outcomes still unknown remain unknown." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R148> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:usesDecisionBranch ;
+  rdf:object arc:UndefinedRFCRBranch ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "An undefined RFCR in either compared condition makes RFCR-dependent routes non-evaluable, not positive or negative evidence." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R149> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:allocatesTeamsBy ;
+  rdf:object arc:AuthorTeamAllocation ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Independent teams are randomly or expertise-block allocated for stronger comparative inference." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R150> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:records ;
+  rdf:object arc:PriorDIOExposureRecord ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Prior DIO/ODI exposure is recorded to identify possible treatment contamination." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R151> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:usesIndependentAdjudicators ;
+  rdf:object arc:OutcomeAdjudicators ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1" ;
+  arc:interpretationNote "Outcome adjudicators are independent of policy authors and masked to condition where practicable." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R152> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:separatesContractComplianceFrom ;
+  rdf:object arc:CommonEvaluationReference ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1; §8.2" ;
+  arc:interpretationNote "PEVR uses each condition's operational contract; SRC, UAR, and FPIR use the common independent reference." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R153> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:reports ;
+  rdf:object arc:AuthorTeamPerformanceContrast ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.1; §8.2" ;
+  arc:interpretationNote "Stronger inference reflects between-team variation; repeated runs of one policy do not count as independent teams." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R154> a rdf:Statement, arc:RelationAssertion ;
+  rdf:subject arc:EvaluationProtocol ;
+  rdf:predicate arc:accountsForAlternativeRouteMultiplicityThrough ;
+  rdf:object arc:MultiplicityControlRule ;
+  arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> ;
+  arc:sourceSection "§8.2" ;
+  arc:interpretationNote "The overall inference procedure accounts for the two-route OR decision structure when calibrating uncertainty and the claim criterion." ;
+  dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48> .
+
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> a arc:EpistemicStatus ; schema:name "specified"@en ; schema:description "Explicitly defined in the current conceptual architecture or interface specification."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed> a arc:EpistemicStatus ; schema:name "assumed"@en ; schema:description "Required for the conditional property but not independently established by the architecture."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> a arc:EpistemicStatus ; schema:name "illustrative"@en ; schema:description "A possible pathway or example, not asserted as universal or inevitable."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/proposed-evaluation> a arc:EpistemicStatus ; schema:name "proposed evaluation"@en ; schema:description "A prospective evaluation element; no empirical result is asserted."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/future-research> a arc:EpistemicStatus ; schema:name "future research"@en ; schema:description "A direction explicitly outside the current architecture."@en .
+<https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/canonical-reference> a arc:EpistemicStatus ; schema:name "canonical reference"@en ; schema:description "An existing canonical DIO/ODI concept referenced without redefining it."@en .
