@@ -90,13 +90,14 @@ The mapping is an analytical projection: it uses HEM as an externally developed 
 
 ## References
 
-1. Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). Heterogeneity in entity matching: A survey and experimental analysis. *Data & Knowledge Engineering, 164*, Article 102575. DOI [10.1016/j.datak.2026.102575](https://doi.org/10.1016/j.datak.2026.102575).
+1. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* [Reference vocabulary, version 0.1.0]. Zenodo. Version DOI [10.5281/zenodo.23272898](https://doi.org/10.5281/zenodo.23272898); Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). Current vocabulary: [version 0.2.0](https://vocab.danielberanek.cz/dio-odi/).
 
-2. Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. Zenodo. DOI [10.5281/zenodo.23226205](https://doi.org/10.5281/zenodo.23226205).
+2. Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)*. Zenodo. DOI [10.5281/zenodo.23269323](https://doi.org/10.5281/zenodo.23269323).
 
-3. Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)*. Zenodo. DOI [10.5281/zenodo.23269323](https://doi.org/10.5281/zenodo.23269323).
+3. Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. Zenodo. DOI [10.5281/zenodo.23226205](https://doi.org/10.5281/zenodo.23226205).
 
-4. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* [Reference vocabulary, version 0.1.0]. Zenodo. Version DOI [10.5281/zenodo.23272898](https://doi.org/10.5281/zenodo.23272898); Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). Current vocabulary: [version 0.2.0](https://vocab.danielberanek.cz/dio-odi/).
+4. Moslemi, M. H., Mousavi, A., Behkamal, B., & Milani, M. (2026). Heterogeneity in entity matching: A survey and experimental analysis. *Data & Knowledge Engineering, 164*, Article 102575. DOI [10.1016/j.datak.2026.102575](https://doi.org/10.1016/j.datak.2026.102575).
+
 
 ## Provenance note
 
