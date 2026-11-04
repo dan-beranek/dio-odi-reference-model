@@ -399,3 +399,25 @@ iframe {
     scroll-behavior: auto;
   }
 }
+
+
+/* Consistent bibliographic presentation across derived mapping pages. */
+.references {
+  margin-block: 1rem 1.5rem;
+  padding-left: 1.6rem;
+}
+
+.references li {
+  margin-block: 0.65rem;
+  padding-left: 0.2rem;
+}
+
+.references a {
+  overflow-wrap: anywhere;
+}
+
+.reference-note {
+  margin-block: 1rem 1.5rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
