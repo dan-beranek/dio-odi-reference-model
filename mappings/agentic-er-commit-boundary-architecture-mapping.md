@@ -263,22 +263,17 @@ Every qualified relation assertion in JSON-LD and Turtle carries a source sectio
 
 The RDF representation uses qualified relation assertions so that the subject–predicate–object relation, source section, explanatory note, and epistemic status remain associated. It does not add these local architecture terms or relations to the canonical SKOS vocabulary.
 
-## 10. Sources
+## 10. References
 
-### Primary source
+1. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Archived record: Zenodo. DOI [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
 
-Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*. Public version: arXiv:2610.37407 v1. <https://arxiv.org/abs/2610.37407> · Zenodo record: <https://zenodo.org/records/23580733>. Section-level working source for this mapping: `constraining_the_commit_boundary_v48`, 4 November 2026 (unpublished working draft).
+2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.5.0) [Software]. Zenodo. DOI [10.5281/zenodo.23643845](https://doi.org/10.5281/zenodo.23643845).
 
-### Canonical DIO/ODI reference layer
+3. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* [Reference vocabulary, version 0.2.0]. Zenodo. Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). [Current vocabulary page](https://vocab.danielberanek.cz/dio-odi/).
 
-DIO/ODI Reference Vocabulary v0.2.0. <https://vocab.danielberanek.cz/dio-odi/> · Concept DOI: <https://doi.org/10.5281/zenodo.23272897>.
+4. Beránek, D. (2026, October 25). *DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization* [Application mapping]. DIO/ODI Reference Model. https://vocab.danielberanek.cz/mappings/commit-boundary-policy/.
 
-DIO/ODI Reference Model v0.5.0. <https://doi.org/10.5281/zenodo.23643845>.
-
-### Complementary derived mapping
-
-Beránek, D. (2026). *Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization*. <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/>.
-
+Section-level anchors align with the author’s unpublished working manuscript dated 4 November 2026. The public arXiv citation identifies version 1 separately; the working manuscript is not presented as a published bibliographic source.
 ---
 
 **Author:** Daniel Beránek · ORCID 0009-0004-0050-0264  
