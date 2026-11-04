@@ -164,14 +164,18 @@ This mapping should not be read as:
 
 Its narrower claim is that the DIO Reconstruction Failure Mode taxonomy provides a useful diagnostic layer for describing **how an entity's identity is reconstructed incorrectly or inadequately** in systems where retrieval and generation jointly shape the observable reconstruction.
 
-## Source basis
+## References
 
-This mapping is derived from the current DIO/ODI Reference Model and its source corpus, especially:
+1. Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. Zenodo. DOI [10.5281/zenodo.23226205](https://doi.org/10.5281/zenodo.23226205).
 
-- Beránek, D. (2026). *Minimum Viable Digital Identity Optimization (DIO): From Adversarial Reduction to the Semantic Field Dynamics of Digital Identity*. https://doi.org/10.5281/zenodo.23226205
-- Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable DIO*. https://doi.org/10.5281/zenodo.23269323
-- Beránek, D. (2026, 22 October). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*. Zenodo, record 23580733: https://zenodo.org/records/23580733. This later work distinguishes commit-time authorization from the broader hypothesis-conditioned evidence-acquisition and feedback problem examined in the live extension.
+2. Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)*. Zenodo. DOI [10.5281/zenodo.23269323](https://doi.org/10.5281/zenodo.23269323).
 
-The first two works ground the original DIO diagnostic mapping. *Constraining the Commit Boundary* is a later developmental reference; its inclusion does not imply that it implements or empirically validates this mapping extension.
+3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.5.0) [Software]. Zenodo. DOI [10.5281/zenodo.23643845](https://doi.org/10.5281/zenodo.23643845).
+
+4. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* [Reference vocabulary, version 0.2.0]. Zenodo. Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). [Current vocabulary page](https://vocab.danielberanek.cz/dio-odi/).
+
+5. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Archived record: Zenodo. DOI [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
+
+The first two works provide the DIO diagnostic basis for the original mapping. The Reference Model and vocabulary identify the current semantic reference layer. The Agentic ER preprint is a later developmental reference to the commit-time boundary; its inclusion does not imply that it implements or empirically validates this RAG mapping extension.
 
 The RAG stages and incidents in this document are generic analytical examples, not claims of empirical validation.
