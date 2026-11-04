@@ -265,7 +265,7 @@ The RDF representation uses qualified relation assertions so that the subject–
 
 ## 10. References
 
-1. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Zenodo. Concept DOI [10.5281/zenodo.23580732](https://doi.org/10.5281/zenodo.23580732); version DOI [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
+1. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Zenodo. Concept DOI [10.5281/zenodo.23580732](https://doi.org/10.5281/zenodo.23580732).
 
 2. Beránek, D. (2026, October 25). *DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization* [Application mapping]. DIO/ODI Reference Model. https://vocab.danielberanek.cz/mappings/commit-boundary-policy/.
 
