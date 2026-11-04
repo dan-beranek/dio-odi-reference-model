@@ -1,7 +1,7 @@
 {
   "title": "DIO/ODI Reference Model",
-  "version": "0.5.0",
-  "status": "public-reference-model",
+  "version": "0.6.0",
+  "status": "release-candidate",
   "namespace": "https://vocab.danielberanek.cz/dio-odi/#",
   "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
   "license": "CC-BY-4.0",
@@ -12,7 +12,7 @@
     "affiliation": "Independent Researcher, Brno, Czech Republic",
     "email": "dan@danielberanek.cz"
   },
-  "reference_model_version": "0.5.0",
+  "reference_model_version": "0.6.0",
   "reference_vocabulary_version": "0.2.0",
   "derived_application_mappings": [
     {
@@ -64,6 +64,22 @@
       "turtle_rdf": "mappings/commit-boundary-policy-mapping.ttl",
       "first_archived_release_doi": "10.5281/zenodo.23632619",
       "previous_archived_release_doi": "10.5281/zenodo.23632619"
+    },
+    {
+      "title": "Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture",
+      "path": "mappings/agentic-er-commit-boundary-architecture-mapping.md",
+      "frontend": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+      "relation": "derived-architecture-layer",
+      "mapping_version": "0.3.0",
+      "release_status": "prepared-for-0.6.0",
+      "machine_readable_metadata": "mappings/agentic-er-commit-boundary-architecture-mapping.jsonld",
+      "turtle_rdf": "mappings/agentic-er-commit-boundary-architecture-mapping.ttl",
+      "architecture_svg": "mappings/agentic-er-architecture/architecture.svg",
+      "local_architecture_concepts": 120,
+      "qualified_relation_assertions": 206,
+      "source_alignment": "production manuscript v55 (2026-11-04); prepared for arXiv v2",
+      "canonical_reference_vocabulary_version": "0.2.0",
+      "canonical_vocabulary_modified": false
     }
   ],
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
@@ -129,5 +145,14 @@
     "doi": "10.5281/zenodo.23643845",
     "doi_url": "https://doi.org/10.5281/zenodo.23643845"
   },
-  "current_archived_reference_vocabulary_version": "0.2.0"
+  "current_archived_reference_vocabulary_version": "0.2.0",
+  "release_candidate": {
+    "version": "0.6.0",
+    "based_on_archived_release": "0.5.0",
+    "based_on_archived_release_doi": "10.5281/zenodo.23643845",
+    "archive_status": "prepared-for-github-release-and-zenodo-archiving",
+    "version_doi": null,
+    "reference_vocabulary_version": "0.2.0",
+    "note": "The version-specific DOI is intentionally unset until Zenodo archives the GitHub Release."
+  }
 }

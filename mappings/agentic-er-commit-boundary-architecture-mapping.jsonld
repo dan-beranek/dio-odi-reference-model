@@ -35,11 +35,11 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Mapping",
       "@type": "schema:TechArticle",
       "schema:name": "DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping",
-      "schema:description": "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed commit-boundary authorization proposal for Agentic Entity Resolution. It reuses canonical DIO/ODI URIs and does not modify the Reference Vocabulary.",
+      "schema:description": "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed Agentic ER commit-boundary proposal. Version 0.3.0 is aligned to production manuscript v55 and explicitly represents action-specific authorization, staging isolation, claim-specific conflict evaluation, and quarantine disposition. It reuses canonical DIO/ODI URIs and does not modify the Reference Vocabulary.",
       "schema:url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
-      "schema:version": "0.2.0-draft",
+      "schema:version": "0.3.0",
       "schema:dateCreated": "2026-11-03",
-      "schema:dateModified": "2026-11-04",
+      "schema:dateModified": "2026-11-05",
       "schema:inLanguage": "en",
       "schema:license": "https://creativecommons.org/licenses/by/4.0/",
       "schema:author": {
@@ -67,31 +67,31 @@
       ],
       "arc:artifactType": "derived-architecture-mapping",
       "arc:workingManuscript": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       },
-      "arc:sourceManuscriptVersion": "constraining_the_commit_boundary_v48 (working draft, 2026-11-04)",
-      "arc:publicSourceVersion": "arXiv:2610.37407 v1",
-      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.0; Reference Model v0.5.0",
+      "arc:sourceManuscriptVersion": "Constraining_the_Commit_Boundary_v55_production.md (production manuscript, 2026-11-04; prepared for arXiv v2)",
+      "arc:publicSourceVersion": "arXiv:2610.37407; v55 is the production manuscript used for section-level alignment, not a claim that v2 was already public when this mapping was prepared",
+      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.0; DIO/ODI Reference Model v0.6.0 release candidate",
       "arc:canonicalVocabularyModified": false,
       "arc:implementationStatus": "not-implemented-by-this-artifact",
       "arc:empiricalValidationStatus": "not-empirically-validated",
       "arc:complementaryMapping": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/"
     },
     {
-      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48",
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
       "@type": "schema:CreativeWork",
       "schema:name": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution",
-      "schema:version": "48 (working draft)",
+      "schema:version": "55 (production manuscript)",
       "schema:dateModified": "2026-11-04",
       "schema:encodingFormat": "text/markdown",
-      "arc:sourceFileName": "constraining_the_commit_boundary_v48.md",
-      "arc:sourceStatus": "working-draft-not-publicly-released"
+      "arc:sourceFileName": "Constraining_the_Commit_Boundary_v55_production.md",
+      "arc:sourceStatus": "production-manuscript-for-arXiv-v2-submission; not-yet-public"
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Architecture",
       "@type": "arc:Architecture",
       "schema:name": "DIO/ODI-informed Agentic ER commit-boundary architecture",
-      "schema:description": "The proposed conceptual architecture connecting diagnostics, domain constraints, evidence eligibility, two-phase authorization, and protected commit."
+      "schema:description": "The proposed conceptual architecture connecting DIO/ODI diagnostics, domain-configured constraints, claim-specific evidence eligibility, action-specific authorization, two-phase validation, and protected commit."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AgenticERContext",
@@ -187,7 +187,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationRecord",
       "@type": "arc:AuthorizationRecord",
       "schema:name": "Authorization record α_m",
-      "schema:description": "A record binding the derived proposition set to the proposed operation, target/effect scope, policy version, and relevant state versions."
+      "schema:description": "A record binding the derived proposition set to the proposed operation, target/effect scope, applicable policy version, and action-specific state versions. A REVERSIBLE_WRITE additionally binds the shadow version and any separately versioned staging-isolation state relevant to the action."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#EvidenceObservation",
@@ -205,7 +205,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AdmissionConflictCheck",
       "@type": "arc:Process",
       "schema:name": "Evidence-admission conflict check",
-      "schema:description": "A mutation-independent check that can retain an observation in quarantine when a material conflict is detected or indeterminate; absence of a detected conflict is not positive support."
+      "schema:description": "A mutation-independent evidence-admission check, distinct from the claim-specific conflict check used to evaluate a proposed mutation. It does not depend on mutation-specific q_m; conflict or indeterminate results retain evidence in quarantine."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ActiveEvidenceSet",
@@ -253,13 +253,13 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Phase1Authorization",
       "@type": "arc:SupervisorPhase",
       "schema:name": "Phase 1 — pre-execution authorization",
-      "schema:description": "The Supervisor's pre-execution evaluation of the proposed operation, required propositions, eligible evidence, applicable constraints, conflicts, scope, and relevant versions."
+      "schema:description": "The Supervisor's pre-execution evaluation of the proposed operation, action class, required propositions, claim-specific evidence, conflicts, scope, policy, and action-relevant versions. READ, STAGE_LOCAL, REVERSIBLE_WRITE, and IRREVERSIBLE_WRITE have distinct authorization paths."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Phase2Validation",
       "@type": "arc:SupervisorPhase",
       "schema:name": "Phase 2 — post-execution candidate validation",
-      "schema:description": "The Supervisor's post-execution evaluation of the isolated realized candidate graph, re-derived claims, evidence roles, conflicts, constraints, scope, and versions at a consistent snapshot."
+      "schema:description": "The Supervisor's post-execution validation of the realized operation. It confirms no shared effects for STAGE_LOCAL, validates isolated and version-bound staging for REVERSIBLE_WRITE, and validates protected candidate graph mutations against claim-specific evidence, conflicts, scope, and a consistent snapshot."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CandidateGraph",
@@ -271,7 +271,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CommitSnapshot",
       "@type": "arc:Snapshot",
       "schema:name": "Consistent commit-time snapshot σ_c",
-      "schema:description": "The consistent snapshot of relevant production graph, active/quarantined evidence, eligibility state, policy, optional shadow store, and their versions."
+      "schema:description": "The consistent snapshot of the relevant production graph, active/quarantined evidence, eligibility state, policy, optional shadow store, and their versions. It also includes staging-isolation state and its version when a REVERSIBLE_WRITE is evaluated and that state is separately versioned."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ProtectedCommitBoundary",
@@ -295,7 +295,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#VersionValidity",
       "@type": "arc:ConsistencyCondition",
       "schema:name": "Version integrity",
-      "schema:description": "The condition that graph, evidence, policy, and optional shadow versions remain valid through atomic commitment against the same snapshot."
+      "schema:description": "The condition that graph, complete evidence state, policy, optional shadow state, and any separately versioned staging-isolation state bound to the action remain valid at the required atomic linearization or commit point."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#OutcomePASS",
@@ -355,7 +355,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Assumption6",
       "@type": "arc:Assumption",
       "schema:name": "Assumption 6 — scope and version integrity",
-      "schema:description": "The authorized operation/scope and relevant graph, evidence, policy, and optional shadow versions remain valid through the commit point."
+      "schema:description": "The authorized operation/scope and all action-relevant graph, evidence, policy, optional shadow, and separately versioned staging-isolation state remain valid through the applicable linearization or commit point."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Assumption7",
@@ -487,7 +487,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibilityState",
       "@type": "arc:EvidenceState",
       "schema:name": "Authorization-eligibility state",
-      "schema:description": "The versioned state of proposition- and context-specific promotion eligibility, included in the consistent snapshot."
+      "schema:description": "The versioned state of proposition- and context-specific promotion eligibility. The Planner and raw tool outputs cannot directly set or alter this state; only the designated claim-specific promotion process or a versioned policy/adjudication operation may change it."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#GraphVersion",
@@ -577,7 +577,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CommonRetryBudget",
       "@type": "arc:ResourceControl",
       "schema:name": "Common retry budget",
-      "schema:description": "One retry budget shared across stale-snapshot, version-conflict, shadow-state, and evidence-admission compare-and-swap retry triggers in the two-phase lifecycle."
+      "schema:description": "One retry budget shared across stale-snapshot, graph/evidence/policy/shadow version conflicts, separately versioned staging-isolation-state conflicts, and evidence-admission compare-and-swap retry triggers across the lifecycle."
     },
     {
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CorrectiveIdentityMutation",
@@ -729,10 +729,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§1; §5.2",
+      "arc:sourceSection": "§1; §3; §5.2",
       "arc:interpretationNote": "The architecture explicitly draws on the DIO framework as its applied diagnostic basis.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -753,10 +753,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§1; §5.2",
+      "arc:sourceSection": "§1; §3; §5.2",
       "arc:interpretationNote": "ODI supplies the conceptual layer for the identity and reconstruction distinctions used by the paper.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -777,10 +777,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§6",
+      "arc:sourceSection": "§6.1",
       "arc:interpretationNote": "The proposed Supervisor is named as an MVDIO Supervisor Layer; this relation does not imply that the architecture is a complete MVDIO implementation.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -804,7 +804,7 @@
       "arc:sourceSection": "§1; §3",
       "arc:interpretationNote": "The target setting is Agentic Entity Resolution with persistent identity-changing graph mutations.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -828,7 +828,7 @@
       "arc:sourceSection": "§4.1",
       "arc:interpretationNote": "Apparent verification is a possible hypothesis-conditioned feedback pathway, not an inevitable outcome.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -852,7 +852,7 @@
       "arc:sourceSection": "§4.1",
       "arc:interpretationNote": "A mistaken hypothesis may condition later query/action selection and make retrieved material appear confirmatory.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -873,10 +873,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The mapping is partial and restricted to selected diagnostic distinctions; it does not cover or redefine the full vocabulary.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -897,10 +897,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -921,10 +921,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -945,10 +945,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -969,10 +969,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -993,10 +993,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The output is supplied as explicit domain policy, not generated by automatic SKOS entailment.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1017,10 +1017,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed"
       },
-      "arc:sourceSection": "§5.2; §5.4",
+      "arc:sourceSection": "§3; §5.2; §5.4",
       "arc:interpretationNote": "Adequacy of the configured constraint set is Assumption 1.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1041,10 +1041,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.1; §5.2",
+      "arc:sourceSection": "§3; §5.1; §5.2",
       "arc:interpretationNote": "The applicable policy represents the observation context and relevant temporal conditions.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1065,10 +1065,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/canonical-reference"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The mapping reuses the canonical identity-preserving constraints concept without adding a new canonical definition.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1089,10 +1089,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2; §7",
+      "arc:sourceSection": "§5.2; §7.4",
       "arc:interpretationNote": "Referential continuity is one identity property that domain-configured constraints may need to preserve.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1113,10 +1113,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The example rejects lexical similarity or commercial adjacency as sufficient proof of co-reference; the actual evidentiary rule remains domain-configured.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1137,10 +1137,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The example requires claim-specific co-reference support before merging distinct records; it is not a universal fixed predicate. The same protected boundary applies to corrective splits and un-merges under mutation-specific policy claims.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1161,10 +1161,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The example binds rename or continuity claims to the relevant referent and validity interval.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1185,10 +1185,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The example makes temporal applicability part of the mutation-specific authorization assessment.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1209,10 +1209,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The mapping covers the identity-affecting subset of Semantic Fragmentation: materially incompatible identity-related claims remain unresolved until reconciled; other attribute-level incompatibilities remain governed by domain policy.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1233,10 +1233,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "A relation may be adequate in one observation purpose and insufficient for a different identity proposition in another.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1257,10 +1257,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "The paper also gives a positive continuity case: distinct records may be resolved when documented, temporally applicable evidence supports one continuing referent.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1284,7 +1284,7 @@
       "arc:sourceSection": "§6.2; Algorithm 1",
       "arc:interpretationNote": "The Planner proposes an action; it does not define or weaken the required authorization claim set.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1308,7 +1308,7 @@
       "arc:sourceSection": "§6.1; §6.2",
       "arc:interpretationNote": "The operation and its realized or potential shared effects determine whether it is treated as protected.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1332,7 +1332,7 @@
       "arc:sourceSection": "§5.4; Algorithm 1",
       "arc:interpretationNote": "The applicable versioned policy and proposed mutation determine the propositions required for authorization.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1356,7 +1356,7 @@
       "arc:sourceSection": "§5.4; Algorithm 1",
       "arc:interpretationNote": "The Supervisor derives q_m from the proposed operation, target/effect scope, configured constraint set V_E, and versioned policy v_pol; the separate relations record each input.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1380,7 +1380,7 @@
       "arc:sourceSection": "§5.4; §6.2",
       "arc:interpretationNote": "The derived proposition set is bound in α_m and cannot be replaced or weakened by the Planner.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1404,7 +1404,7 @@
       "arc:sourceSection": "§6.1; §6.2",
       "arc:interpretationNote": "The authorization record is specific to the proposed action and its target/effect scope.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1428,7 +1428,7 @@
       "arc:sourceSection": "§6.1; §6.2",
       "arc:interpretationNote": "Relevant graph, evidence, policy, and optional shadow versions are bound to authorization and rechecked at commit.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1452,7 +1452,7 @@
       "arc:sourceSection": "§5.3; Algorithm 2",
       "arc:interpretationNote": "Retrieved observations first enter quarantine before any Planner-visible admission.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1476,7 +1476,7 @@
       "arc:sourceSection": "§5.3; Algorithm 2",
       "arc:interpretationNote": "A conflict or indeterminate result retains the item in quarantine; no detected conflict is not positive support.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1500,7 +1500,7 @@
       "arc:sourceSection": "§5.3; Algorithm 2",
       "arc:interpretationNote": "Only an item passing the admission gate is admitted to P_active as UNVERIFIED.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1524,7 +1524,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Admission to P_active confers UNVERIFIED status and no positive authorization support.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1545,10 +1545,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.3; §6",
+      "arc:sourceSection": "§5.3; §6.1; §6.2",
       "arc:interpretationNote": "The Planner may use active UNVERIFIED material for provisional reasoning.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1572,7 +1572,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Planner-visible UNVERIFIED evidence cannot satisfy a required positive authorization proposition.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1596,7 +1596,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "UNVERIFIED material may indicate an unresolved conflict and cause deferral, but it cannot itself establish a mutation-level BREACH or positive support.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1620,7 +1620,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Promotion evaluates the specific proposition, source/provenance basis, evidentiary role, applicability, validation basis, and policy version.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1644,7 +1644,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Evidence eligibility is bound to observation context and relevant temporal applicability.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1668,7 +1668,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Promotion is proposition-specific and cannot be inferred from document relevance, query match, or Planner confidence alone.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1689,10 +1689,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/assumed"
       },
-      "arc:sourceSection": "§5.3; Assumption 2",
+      "arc:sourceSection": "§5.3; §5.4 (Assumption 2)",
       "arc:interpretationNote": "The architecture depends on correct application of the stated promotion contract; it does not validate the validator independently.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1716,7 +1716,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Promotion grants eligibility only for the assessed proposition, role, context, and applicability.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1740,7 +1740,7 @@
       "arc:sourceSection": "§5.3; §5.4",
       "arc:interpretationNote": "Only support-role evidence can satisfy a required positive proposition.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1764,7 +1764,7 @@
       "arc:sourceSection": "§5.3; §5.4",
       "arc:interpretationNote": "A claim-specific contradiction may establish a prohibitive condition or BREACH.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1788,7 +1788,7 @@
       "arc:sourceSection": "§5.3; §5.4",
       "arc:interpretationNote": "An unresolved indication prevents PASS until resolved under policy.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1812,7 +1812,7 @@
       "arc:sourceSection": "§5.3; §5.4",
       "arc:interpretationNote": "The set is claim-specific and records evidence roles; membership alone is not sufficient without proposition-specific support.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1836,7 +1836,7 @@
       "arc:sourceSection": "§6.2; Algorithm 1",
       "arc:interpretationNote": "Phase 1 governs pre-execution authorization of the proposed mutation.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1860,7 +1860,7 @@
       "arc:sourceSection": "§6.2; Algorithm 1",
       "arc:interpretationNote": "A successful pre-execution evaluation issues a version- and scope-bound authorization record.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1884,7 +1884,7 @@
       "arc:sourceSection": "§6.3; Algorithm 2",
       "arc:interpretationNote": "Phase 2 validates the realized candidate before persistent commit.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1908,7 +1908,7 @@
       "arc:sourceSection": "§6.3; Algorithm 2",
       "arc:interpretationNote": "The realized operation is applied to an isolated candidate graph for post-execution validation.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1932,7 +1932,7 @@
       "arc:sourceSection": "§6.3; Algorithm 2",
       "arc:interpretationNote": "The required claim set is re-derived and compared with the set bound in α_m.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1956,7 +1956,7 @@
       "arc:sourceSection": "§5.4; §6.3",
       "arc:interpretationNote": "The candidate, evidence stores, authorization eligibility, policy, and version checks are evaluated against one consistent snapshot.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -1980,7 +1980,7 @@
       "arc:sourceSection": "§5.4; §6.3",
       "arc:interpretationNote": "The isolated candidate is assessed against the same consistent commit-time snapshot; the snapshot is not asserted to contain the candidate graph as persistent state.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2004,7 +2004,7 @@
       "arc:sourceSection": "§5.4; §6.3",
       "arc:interpretationNote": "The candidate graph is assessed against the applicable domain-configured constraints.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2028,7 +2028,7 @@
       "arc:sourceSection": "§5.4; §6.3",
       "arc:interpretationNote": "Each required proposition must have claim-specific support with an applicable recorded validation basis.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2052,7 +2052,7 @@
       "arc:sourceSection": "§5.4; §6.1; §6.3",
       "arc:interpretationNote": "The realized operation must remain within the scope bound by the authorization record.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2076,7 +2076,7 @@
       "arc:sourceSection": "§5.4; §6.1; §6.3",
       "arc:interpretationNote": "Graph, evidence, policy, and optional shadow versions must remain valid atomically at the commit point.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2100,7 +2100,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "The invariant is an interface contract for the protected persistence boundary.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2124,7 +2124,7 @@
       "arc:sourceSection": "§5.4; §6.3",
       "arc:interpretationNote": "A protected mutation cannot commit unless EvaluateGraphConstraints returns PASS.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2148,7 +2148,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Valid scope is a conjunctive commit requirement.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2172,7 +2172,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Valid bound versions at the same commit snapshot are a conjunctive requirement.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2196,7 +2196,7 @@
       "arc:sourceSection": "§5.3; §6.3",
       "arc:interpretationNote": "BREACH blocks commit and leads to rejection/escalation.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2220,7 +2220,7 @@
       "arc:sourceSection": "§5.3; §6.3",
       "arc:interpretationNote": "UNKNOWN_EVIDENCE blocks commit and leads to deferral, not a semantic verdict that the identity claim is false.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2244,7 +2244,7 @@
       "arc:sourceSection": "§5.4; §6.3",
       "arc:interpretationNote": "PASS is necessary but not sufficient without valid scope and versions.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2268,7 +2268,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "The conditional property is summarized by the commit interface invariant.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2292,7 +2292,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "The guarantee depends on the seven explicit assumptions and does not prove semantic truth.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2316,7 +2316,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Assumption 1 is a stated precondition of the conditional commit property.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2340,7 +2340,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Assumption 2 is a stated precondition of the conditional commit property.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2364,7 +2364,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Assumption 3 is a stated precondition of the conditional commit property.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2388,7 +2388,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Assumption 4 is a stated precondition of the conditional commit property.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2412,7 +2412,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Assumption 5 is a stated precondition of the conditional commit property.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2436,7 +2436,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Assumption 6 is a stated precondition of the conditional commit property.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2460,7 +2460,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Assumption 7 is a stated precondition of the conditional commit property.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2484,7 +2484,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Unconstrained Agentic ER condition without the protected mutation-authorization boundary.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2508,7 +2508,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Conventional identifier/default-deny condition.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2532,7 +2532,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Generic two-phase authorization boundary without the DIO/ODI diagnostic mapping.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2556,7 +2556,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "DIO/ODI-informed challenger using the same fact inventory, evidence process, validator class, resources, and budget as C.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2580,7 +2580,7 @@
       "arc:sourceSection": "§8.1; §8.2",
       "arc:interpretationNote": "The C–Challenger contrast is the relevant test of the incremental mapping contribution.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2604,7 +2604,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Baseline C authoring teams are not given the DIO/ODI diagnostic mapping or category labels.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2628,7 +2628,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Multiple independently constituted teams per condition are required for stronger comparative inference; one team per condition yields an exploratory team-level comparison.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2652,7 +2652,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The Challenger condition should be repeated across independent authoring teams under matched protocol and facts.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2676,7 +2676,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "Task- and policy-family-specific δ_SRC and δ_RFCR margins and the uncertainty procedure are fixed before outcomes are examined.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2700,7 +2700,7 @@
       "arc:sourceSection": "§8.1; §8.2",
       "arc:interpretationNote": "Independent annotations separately identify policy-permitted mutations and referential correctness.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2724,7 +2724,7 @@
       "arc:sourceSection": "§8.1; §8.2",
       "arc:interpretationNote": "The test concerns incremental mapping value for the evaluated task and policy family, not DIO/ODI as a whole.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2748,7 +2748,7 @@
       "arc:sourceSection": "§5.5; §9.1",
       "arc:interpretationNote": "Dependency-aware flow is outside the current architecture and is designated as a separate future direction.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2772,7 +2772,7 @@
       "arc:sourceSection": "§5.5; §9.1",
       "arc:interpretationNote": "This future layer would address upstream derivation lineage and feedback into planning, which the current commit invariant does not control.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2796,7 +2796,7 @@
       "arc:sourceSection": "derived mapping scope",
       "arc:interpretationNote": "The existing Policy-as-Code mapping projects selected obligations into OPA/Rego and Cedar; this artifact models internal architecture relations instead.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2820,7 +2820,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Baseline C and Challenger use the same prespecified case inventory and dataset splits.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2844,7 +2844,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Both conditions use the same underlying domain facts; the diagnostic organization and mapping are the intended treatment difference.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2868,7 +2868,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The evidence-promotion process is held constant so the C–Challenger contrast does not conflate mapping value with promotion quality.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2892,7 +2892,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The compared conditions use the same validator class under the proposed matched design.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2916,7 +2916,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Action/tool resources are matched between Baseline C and Challenger.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2940,7 +2940,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The decision budget is matched between Baseline C and Challenger.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2964,7 +2964,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The protocol controls authoring effort, relevant expertise, information leakage, freezing of counterpart policies, and replication reporting.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -2988,7 +2988,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The Challenger condition is the generic authorization boundary augmented with the specified DIO/ODI diagnostic-to-constraint mapping.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3012,7 +3012,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "P_auth(q_m,ω) is explicitly a claim- and context-specific eligibility subset of P_active, not a separate physical repository.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3036,7 +3036,7 @@
       "arc:sourceSection": "§6.1; Algorithm 2",
       "arc:interpretationNote": "The consistent snapshot includes authorization-eligibility state as well as P_active, P_quar, policy, graph, and optional shadow state.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3060,7 +3060,7 @@
       "arc:sourceSection": "§6.1; §5.4",
       "arc:interpretationNote": "Protected graph mutations bind v_G and revalidate it atomically at commit.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3084,7 +3084,7 @@
       "arc:sourceSection": "§6.1; §5.4",
       "arc:interpretationNote": "One v_E covers active/quarantined evidence and authorization-eligibility changes, including intake and promotion/demotion/revocation.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3108,7 +3108,7 @@
       "arc:sourceSection": "§6.1; §5.4",
       "arc:interpretationNote": "The relevant domain-policy version v_pol is bound and checked at authorization and commit.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3132,7 +3132,7 @@
       "arc:sourceSection": "§6.1; §5.4",
       "arc:interpretationNote": "The shadow version v_S is bound when a shadow layer is used and relevant to the action.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3156,7 +3156,7 @@
       "arc:sourceSection": "§5.1; §5.4",
       "arc:interpretationNote": "The context ω in P_auth(q_m,ω) is fixed by the policy instance bound through v_pol, not a free runtime variable.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3180,7 +3180,7 @@
       "arc:sourceSection": "§5.4; Algorithm 1",
       "arc:interpretationNote": "For every required proposition, α_m identifies the promotion/validation record relied on for its claim-specific support.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3204,7 +3204,7 @@
       "arc:sourceSection": "§5.4; Algorithm 2",
       "arc:interpretationNote": "Phase 2 verifies that each referenced support record remains present and applicable in the same σ_c snapshot.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3228,7 +3228,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Recorded shared upstream query, hypothesis, source, or derivation paths do not count as independent corroboration merely because observations are separate items.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3252,7 +3252,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "Promotion excludes shadow candidates and recorded claim bases that transitively cite shadow content.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3276,7 +3276,7 @@
       "arc:sourceSection": "§5.3; Algorithm 2",
       "arc:interpretationNote": "A supported material conflict retains the observation in quarantine.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3300,7 +3300,7 @@
       "arc:sourceSection": "§5.3; Algorithm 2",
       "arc:interpretationNote": "No conflict detected means only that this check did not establish a conflict; it is not identity support or proof that no conflict exists.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3324,7 +3324,7 @@
       "arc:sourceSection": "§5.3; Algorithm 2",
       "arc:interpretationNote": "An unresolved or plausible conflict retains the observation in quarantine.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3348,7 +3348,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "BREACH has highest priority and blocks PASS even if other required conditions are unknown.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3372,7 +3372,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "UNKNOWN_EVIDENCE takes precedence over PASS when no established BREACH is present.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3396,7 +3396,7 @@
       "arc:sourceSection": "§5.3",
       "arc:interpretationNote": "PASS is available only when no BREACH or UNKNOWN_EVIDENCE condition applies.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3420,7 +3420,7 @@
       "arc:sourceSection": "Algorithm 1 step 9; Algorithm 2 step 11; §6.3",
       "arc:interpretationNote": "HITL is returned only when policy requires human review and a reviewer is available; otherwise the result is DEFER_UNRESOLVED.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3444,7 +3444,7 @@
       "arc:sourceSection": "§6.1; §6.3",
       "arc:interpretationNote": "Any human adjudication that changes disposition requires a new authorization decision against current versions; it cannot revive stale authority.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3468,7 +3468,7 @@
       "arc:sourceSection": "§6.1; §6.3",
       "arc:interpretationNote": "The new decision is evaluated against current relevant graph, evidence, eligibility, policy, and shadow state versions.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3492,7 +3492,7 @@
       "arc:sourceSection": "§6.1; Algorithm 1",
       "arc:interpretationNote": "The retry budget is shared across retry triggers rather than independently reset by each phase.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3516,7 +3516,7 @@
       "arc:sourceSection": "§6.1; Algorithm 2 step 13",
       "arc:interpretationNote": "The same retry budget covers version/snapshot conflicts, shadow version changes, and evidence admission compare-and-swap retries.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3537,10 +3537,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2; §5.4",
+      "arc:sourceSection": "§3; §5.2; §5.4",
       "arc:interpretationNote": "Configured constraints are scoped to the observation context fixed by the applicable policy.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3561,10 +3561,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2; §5.3",
+      "arc:sourceSection": "§3; §5.2; §5.3",
       "arc:interpretationNote": "Temporal applicability is an explicit scope dimension where continuity or state claims depend on a validity interval.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3588,7 +3588,7 @@
       "arc:sourceSection": "§5.4; §6.1",
       "arc:interpretationNote": "Splits and corrective un-merges are protected when they can alter shared identity interpretation; each has policy-defined required propositions.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3612,7 +3612,7 @@
       "arc:sourceSection": "§5.4",
       "arc:interpretationNote": "Corrective operations do not inherit authorization from the earlier merge; the versioned domain policy defines their own q_m.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3636,7 +3636,7 @@
       "arc:sourceSection": "§8.1; §8.2",
       "arc:interpretationNote": "SRC, UAR, and FPIR use a condition-independent evaluation reference rather than either condition's authored policy.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3660,7 +3660,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Outcome adjudicators are independent of policy authors and masked to condition where practicable.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3684,7 +3684,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The case inventory and strata are constructed or independently reviewed without access to frozen condition policies.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3708,7 +3708,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "A factual taxonomy-neutral stratum is reported alongside the diagnostic strata.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3732,7 +3732,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "For stronger inference, independent author teams are assigned by a prespecified random or expertise-blocked procedure.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3756,7 +3756,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Prior DIO/ODI familiarity is recorded to assess possible contamination of the authoring contrast.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3780,7 +3780,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The validator configuration is shared; policy-derived q_m differences are explicitly reported as part of the treatment pathway.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3804,7 +3804,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "The codebook defines operation_id attempts, retries, cutoff, terminal resolution, non-match outcomes, unknown outcomes, confusion mapping, and zero denominators.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3828,7 +3828,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "Operation identifiers define unique attempt units; terminal outcomes are classified at a prespecified cutoff and unresolved outcomes remain unknown.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3852,7 +3852,7 @@
       "arc:sourceSection": "§8.1; §8.2",
       "arc:interpretationNote": "Stronger comparative inference respects between-team variation; repeated runs of a single policy are not authoring replications.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3876,7 +3876,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "If RFCR is undefined in either condition, RFCR-based routes are non-evaluable rather than interpreted as safety superiority or inferiority.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3900,7 +3900,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "A fixed reconciliation cutoff separates final unresolved outcomes from cases resolved within the observation window.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3924,7 +3924,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "The promotion process is a common control and shared-origin tests alone do not isolate the DIO/ODI mapping contribution.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3948,7 +3948,7 @@
       "arc:sourceSection": "§5.4; Algorithm 1",
       "arc:interpretationNote": "The proposed mutation is one input to supervisor-side required-claim derivation.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3972,7 +3972,7 @@
       "arc:sourceSection": "§5.4; Algorithm 1",
       "arc:interpretationNote": "The mutation target and potential/realized effect scope are explicit inputs to q_m derivation.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -3993,10 +3993,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2; §5.4",
+      "arc:sourceSection": "§3; §5.2; §5.4",
       "arc:interpretationNote": "The configured domain constraints V_E inform the mutation-specific propositions required for authorization.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4020,7 +4020,7 @@
       "arc:sourceSection": "§5.4; §6.1",
       "arc:interpretationNote": "The applicable versioned domain policy supplies the context and rules used to derive q_m.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4044,7 +4044,7 @@
       "arc:sourceSection": "§5.4; Algorithm 1",
       "arc:interpretationNote": "The Supervisor derives q_m; the Planner cannot replace or weaken the result.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4065,10 +4065,10 @@
       "arc:epistemicStatus": {
         "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
       },
-      "arc:sourceSection": "§5.2",
+      "arc:sourceSection": "§3; §5.2",
       "arc:interpretationNote": "V_E is a local, domain-supplied configuration of the canonical collective concept; this is not a subclass assertion or a canonical vocabulary extension.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4092,7 +4092,7 @@
       "arc:sourceSection": "§6.1; Algorithm 2",
       "arc:interpretationNote": "The consistent snapshot includes the graph version.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4116,7 +4116,7 @@
       "arc:sourceSection": "§6.1; Algorithm 2",
       "arc:interpretationNote": "The consistent snapshot includes the complete evidence-state version, including authorization eligibility.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4140,7 +4140,7 @@
       "arc:sourceSection": "§6.1; Algorithm 2",
       "arc:interpretationNote": "The consistent snapshot includes the applicable policy version.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4164,7 +4164,7 @@
       "arc:sourceSection": "§6.1; Algorithm 2",
       "arc:interpretationNote": "The consistent snapshot includes shadow version v_S when shadow state is used.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4188,7 +4188,7 @@
       "arc:sourceSection": "§6.1",
       "arc:interpretationNote": "Promotion, demotion, or revocation of authorization eligibility advances the same v_E used for P_active and P_quar.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4212,7 +4212,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "Retries and re-evaluations with the same operation_id count as one mutation attempt.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4236,7 +4236,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "A fixed cutoff classifies terminal case and transaction outcomes; outcomes still unknown remain unknown.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4260,7 +4260,7 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "An undefined RFCR in either compared condition makes RFCR-dependent routes non-evaluable, not positive or negative evidence.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4284,7 +4284,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Independent teams are randomly or expertise-block allocated for stronger comparative inference.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4308,7 +4308,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Prior DIO/ODI exposure is recorded to identify possible treatment contamination.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4332,7 +4332,7 @@
       "arc:sourceSection": "§8.1",
       "arc:interpretationNote": "Outcome adjudicators are independent of policy authors and masked to condition where practicable.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4356,7 +4356,7 @@
       "arc:sourceSection": "§8.1; §8.2",
       "arc:interpretationNote": "PEVR uses each condition's operational contract; SRC, UAR, and FPIR use the common independent reference.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4380,7 +4380,7 @@
       "arc:sourceSection": "§8.1; §8.2",
       "arc:interpretationNote": "Stronger inference reflects between-team variation; repeated runs of one policy do not count as independent teams.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     },
     {
@@ -4404,7 +4404,1351 @@
       "arc:sourceSection": "§8.2",
       "arc:interpretationNote": "The overall inference procedure accounts for the two-route OR decision structure when calibrating uncertainty and the claim criterion.",
       "dcterms:source": {
-        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v48"
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReadAction",
+      "@type": "arc:OperationClass",
+      "schema:name": "READ",
+      "schema:description": "Retrieval or exploration within a declared scope. Its authorization is scope/policy-bound but does not pre-bind unrelated graph or evidence versions that would force replay of the retrieval; the returned observation is admitted against the current evidence state."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StageLocalAction",
+      "@type": "arc:OperationClass",
+      "schema:name": "STAGE_LOCAL",
+      "schema:description": "Local preparation with no shared-state effects. Its authorization binds local dependency versions only when the declared operation explicitly depends on them; post-execution validation confirms that no shared-state effects occurred."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction",
+      "@type": "arc:OperationClass",
+      "schema:name": "REVERSIBLE_WRITE",
+      "schema:description": "A provisional write authorized only to an isolated staging target such as G_shadow. It must be positively shown to be separated from production identity state, Planner-visible shared identity state, downstream consumers, and P_auth inputs; it never authorizes publication to G_prod."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#IrreversibleWriteAction",
+      "@type": "arc:OperationClass",
+      "schema:name": "IRREVERSIBLE_WRITE",
+      "schema:description": "The protected action class for operations whose realized or potential shared effects can persistently alter identity interpretation. Ambiguous classification or unverifiable staging isolation is handled through this protected path."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ProductionGraph",
+      "@type": "arc:GraphState",
+      "schema:name": "Production graph G_prod",
+      "schema:description": "The persistent shared graph whose identity interpretation must not be affected by a REVERSIBLE_WRITE."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ShadowGraph",
+      "@type": "arc:GraphState",
+      "schema:name": "Isolated shadow graph G_shadow",
+      "schema:description": "A staging target for an explicitly authorized REVERSIBLE_WRITE. Staging there is provisional and does not authorize publication to the production graph."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState",
+      "@type": "arc:IsolationState",
+      "schema:name": "Staging-isolation state",
+      "schema:description": "The separately represented state describing whether a staging target is isolated from production identity state, Planner-visible shared identity state, downstream consumers, and all P_auth inputs. It is included in the relevant snapshot for REVERSIBLE_WRITE evaluation."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationVersion",
+      "@type": "arc:StateVersion",
+      "schema:name": "Separately represented staging-isolation-state version",
+      "schema:description": "An optional version identifier for staging-isolation state when that state is separately versioned. The manuscript requires any such relevant version to be bound and revalidated but does not prescribe a dedicated symbol."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#LocalDependencyVersion",
+      "@type": "arc:StateVersion",
+      "schema:name": "Action-bound local dependency version",
+      "schema:description": "A version of a local dependency explicitly bound when a STAGE_LOCAL operation depends on it. Shared-state versions are not required for that action unless the operation explicitly depends on them."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#PlannerVisibleSharedIdentityState",
+      "@type": "arc:EvidenceState",
+      "schema:name": "Planner-visible shared identity state",
+      "schema:description": "Shared identity-related state visible to the Planner, from which a REVERSIBLE_WRITE must remain isolated."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#DownstreamConsumers",
+      "@type": "arc:Component",
+      "schema:name": "Downstream consumers",
+      "schema:description": "External or downstream consumers that must not observe effects of a provisional REVERSIBLE_WRITE before a protected production mutation is separately authorized."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck",
+      "@type": "arc:Process",
+      "schema:name": "Claim-specific conflict check",
+      "schema:description": "A mutation-specific CheckClaimConflict(q_m, P_auth, P_active, P_quar), distinct from the mutation-independent evidence-admission check. It determines whether material conflict bearing on the required propositions is clear, established, or indeterminate."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictClear",
+      "@type": "arc:ClaimConflictOutcome",
+      "schema:name": "CLEAR",
+      "schema:description": "No unresolved material conflict bearing on the required propositions is detected in the checked evidence state. CLEAR is a necessary conflict condition for PASS, not proof that unobserved conflicts do not exist."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictDetected",
+      "@type": "arc:ClaimConflictOutcome",
+      "schema:name": "CONFLICT",
+      "schema:description": "Claim-specific authorization-eligible evidence establishes a relevant contradiction or policy-prohibitive condition for a required proposition."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictIndeterminate",
+      "@type": "arc:ClaimConflictOutcome",
+      "schema:name": "INDETERMINATE",
+      "schema:description": "A possible material conflict is indicated only by UNVERIFIED or quarantined evidence, or by authorization-eligible items that cannot be reconciled under applicable authority and temporal rules."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineDispositionDecision",
+      "@type": "arc:Process",
+      "schema:name": "Quarantine disposition under policy/adjudication",
+      "schema:description": "A mapping label for the policy-designated adjudication or versioned-rule decision that changes a quarantined item's disposition. The decision is recorded, advances evidence-state version, and requires a fresh admission check before release; release to P_active confers only UNVERIFIED status, not claim-specific eligibility."
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R155",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Architecture"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#distinguishesActionClass"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReadAction"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1",
+      "arc:interpretationNote": "The interface defines READ as a distinct action class with scope-bound retrieval authorization.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R156",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Architecture"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#distinguishesActionClass"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StageLocalAction"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1",
+      "arc:interpretationNote": "The interface defines STAGE_LOCAL as a distinct action class requiring no shared-state effects.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R157",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Architecture"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#distinguishesActionClass"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1",
+      "arc:interpretationNote": "The interface defines REVERSIBLE_WRITE as a provisional, isolated staging action rather than a production commit.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R158",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Architecture"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#distinguishesActionClass"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#IrreversibleWriteAction"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1",
+      "arc:interpretationNote": "The interface defines IRREVERSIBLE_WRITE as the protected path for operations with potentially persistent shared identity effects.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R159",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReadAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#doesNotPrebindUnrelatedVersionOf"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#GraphVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "A READ does not bind a pre-retrieval graph version whose unrelated change would force the retrieval to be replayed.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R160",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReadAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#doesNotPrebindUnrelatedVersionOf"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#EvidenceStateVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "A READ does not bind a pre-retrieval evidence version whose unrelated change would force the retrieval to be replayed.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R161",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReadAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#admitsAgainstCurrentVersionOf"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#EvidenceStateVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "The returned observation is admitted against the current evidence-state version after retrieval; a stale unrelated pre-retrieval version does not cause READ replay.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R162",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReadAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#returnsObservationTo"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineEvidence"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "A READ result is first placed in quarantine and only then considered for admission to P_active as UNVERIFIED.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R163",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StageLocalAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#bindsOnlyRequiredVersionOf"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#LocalDependencyVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "A STAGE_LOCAL authorization binds a local dependency version only when the declared local operation explicitly depends on it.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R164",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StageLocalAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#requiresPostExecutionConfirmationBy"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Phase2Validation"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "After local execution the Supervisor confirms that no shared-state effects occurred; otherwise the result is rejected.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R165",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#stagesOnlyInto"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ShadowGraph"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "A REVERSIBLE_WRITE is authorized only for isolated staging in G_shadow.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R166",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#doesNotAuthorizePublicationTo"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ProductionGraph"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "A staging authorization is not permission to publish or merge the candidate into G_prod; a later production mutation needs a new protected authorization.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R167",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#requiresPositiveVerificationOf"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "Isolation must be positively established under policy; if it cannot be verified, the candidate is discarded and no staging write occurs.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R168",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#bindsVersion"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ShadowVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "The action binds and revalidates v_S for the shadow staging target.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R169",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#bindsVersion"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#PolicyVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "The action binds and revalidates the applicable domain-policy version v_pol.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R170",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#conditionallyBindsVersion"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "If staging-isolation state is separately versioned, that version is bound to the authorization and checked at the staging linearization point; no dedicated symbol is prescribed.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R171",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#separatesStagingFrom"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ProductionGraph"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "The staging target must be isolated from production identity state.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R172",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#separatesStagingFrom"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#PlannerVisibleSharedIdentityState"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "The staging target must be isolated from Planner-visible shared identity state.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R173",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#separatesStagingFrom"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#DownstreamConsumers"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "The staging target must be isolated from downstream consumers.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R174",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#separatesStagingFrom"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibleEvidenceSet"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "The staging target and its effects must remain isolated from all P_auth inputs.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R175",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CommitSnapshot"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#includesWhenEvaluating"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "The consistent snapshot includes staging-isolation state when a REVERSIBLE_WRITE is evaluated.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R176",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CommitSnapshot"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#conditionallyIncludesVersionOf"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "The snapshot includes the version of staging-isolation state when that state is separately versioned.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R177",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#VersionValidity"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#coversWhenBound"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "VersionsValid covers every staging-relevant version bound to the REVERSIBLE_WRITE authorization, including a separately represented isolation-state version.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R178",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#comparesVersionsAndWritesAtSameLinearizationPointAs"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CommitSnapshot"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "The shadow write and the comparison of v_S, v_pol, and every other staging-relevant bound version are one atomic operation at the action's linearization point.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R179",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#advancesOnSuccessfulStaging"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ShadowVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "A successful isolated staging operation advances v_S and returns SHADOW_STAGED_PROVISIONAL.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R180",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#retriesVersionMismatchWithin"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#CommonRetryBudget"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 2",
+      "arc:interpretationNote": "A staging-relevant version mismatch prevents the write and triggers RETRY_REEVALUATE or TRANSACTION_RETRY_EXHAUSTED under the common retry budget.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R181",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#mustBePositivelyEstablishedBefore"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ReversibleWriteAction"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1",
+      "arc:interpretationNote": "A candidate may be classified as REVERSIBLE_WRITE only when the isolation conditions are positively established under policy.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R182",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#StagingIsolationState"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#uncertaintyRoutesOperationTo"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#IrreversibleWriteAction"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§6.1; Algorithm 1; Algorithm 2",
+      "arc:interpretationNote": "If classification or isolation is uncertain, the intended shared effect is treated as IRREVERSIBLE_WRITE and must use the protected authorization path.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R183",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AdmissionConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#isIndependentOf"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#RequiredPropositionSet"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; Algorithm 2",
+      "arc:interpretationNote": "The admission conflict check is mutation-independent and does not depend on mutation-specific q_m; it decides quarantine admission, not claim support.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R184",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Phase1Authorization"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#uses"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §6.2; Algorithm 1",
+      "arc:interpretationNote": "The pre-execution authorization checks claim-specific material conflicts bearing on q_m.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R185",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Phase2Validation"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#uses"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §6.3; Algorithm 2",
+      "arc:interpretationNote": "The post-execution evaluation rechecks claim-specific conflicts for the realized candidate against the same snapshot.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R186",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#evaluates"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#RequiredPropositionSet"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "The conflict check is scoped to the mutation-specific required proposition set q_m.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R187",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assesses"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibleEvidenceSet"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "Claim-specific authorization-eligible evidence can establish a relevant contradiction or policy-prohibitive condition.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R188",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assesses"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ActiveEvidenceSet"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "UNVERIFIED material in P_active can indicate a possible material conflict and produce INDETERMINATE, but cannot itself establish mutation-level BREACH or positive support.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R189",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assesses"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineEvidence"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "Materially relevant quarantined evidence can indicate an unresolved conflict and therefore prevent PASS.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R190",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#returns"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictClear"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "CLEAR is returned only when no unresolved material conflict bearing on q_m is detected in the checked evidence state.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R191",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#returns"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictDetected"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "CONFLICT is returned only when claim-specific authorization-eligible evidence establishes a relevant contradiction or prohibitive condition.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R192",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictCheck"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#returns"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictIndeterminate"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "INDETERMINATE is returned when a possible conflict is indicated by UNVERIFIED or quarantined evidence, or conflicting eligible items cannot be reconciled under policy.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R193",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictClear"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#permitsPassOnlyWithOtherRequirementsSatisfied"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#OutcomePASS"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "CLEAR is necessary but not sufficient for PASS; positive support, constraints, scope, and versions must also pass.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R194",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictDetected"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#prevents"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#OutcomePASS"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "An established claim-specific conflict prevents PASS.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R195",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictIndeterminate"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#prevents"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#OutcomePASS"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "An unresolved or indeterminate material conflict prevents PASS.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R196",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictDetected"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#yieldsWhenProhibitiveConditionIsEstablished"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#OutcomeBREACH"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "A relevant contradiction or explicit prohibitive condition established by authorization-eligible evidence is evaluated as BREACH.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R197",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimConflictIndeterminate"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#yields"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#OutcomeUNKNOWN"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §5.4",
+      "arc:interpretationNote": "A possible or unreconciled material conflict is UNKNOWN_EVIDENCE rather than a semantic verdict that the identity claim is false.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R198",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineDispositionDecision"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#isGovernedBy"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#DomainPolicy"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3",
+      "arc:interpretationNote": "A quarantined item's disposition is determined by a policy-designated adjudication or a versioned rule, not by escalation alone.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R199",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineDispositionDecision"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#advances"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#EvidenceStateVersion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §6.1",
+      "arc:interpretationNote": "A recorded disposition decision advances v_E because the relevant evidence state has changed.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R200",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineDispositionDecision"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#requiresReadmissionThrough"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AdmissionConflictCheck"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; Algorithm 2",
+      "arc:interpretationNote": "Before release from quarantine to P_active, the disposition must be recorded and a fresh admission check must be run against current evidence state.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R201",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineDispositionDecision"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#releasesOnlyAsUnverifiedTo"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ActiveEvidenceSet"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3",
+      "arc:interpretationNote": "Release to P_active confers only UNVERIFIED status; it does not confer claim-specific authorization eligibility.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R202",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineDispositionDecision"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#doesNotDirectlyPromoteInto"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibleEvidenceSet"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3",
+      "arc:interpretationNote": "Quarantine disposition is not claim-specific promotion; separate promotion is required for any P_auth eligibility.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R203",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibilityState"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#mayBeChangedOnlyThrough"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#ClaimSpecificPromotion"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §6.1",
+      "arc:interpretationNote": "Eligibility metadata may be written or changed by the designated claim-specific promotion process.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R204",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#QuarantineDispositionDecision"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#doesNotDirectlyChangeEligibility"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibilityState"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §6.1",
+      "arc:interpretationNote": "A quarantine-disposition decision that releases an item to P_active confers only UNVERIFIED status and does not itself change claim-specific authorization eligibility; any separate versioned policy/adjudication change to eligibility must trigger a fresh authorization decision.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R205",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Planner"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#cannotAlterDirectly"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibilityState"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §6.1",
+      "arc:interpretationNote": "The Planner cannot directly assign or alter authorization-eligibility metadata.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
+      }
+    },
+    {
+      "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R206",
+      "@type": [
+        "arc:RelationAssertion",
+        "rdf:Statement"
+      ],
+      "rdf:subject": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#EvidenceObservation"
+      },
+      "rdf:predicate": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#cannotSetDirectly"
+      },
+      "rdf:object": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#AuthorizationEligibilityState"
+      },
+      "arc:epistemicStatus": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified"
+      },
+      "arc:sourceSection": "§5.3; §6.1",
+      "arc:interpretationNote": "Raw tool outputs cannot directly assign or alter authorization-eligibility metadata.",
+      "dcterms:source": {
+        "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55"
       }
     }
   ]
