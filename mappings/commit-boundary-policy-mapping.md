@@ -111,24 +111,25 @@ This is a **derived, non-normative application mapping**. It does not redefine t
 
 The mapping is about authorization of a proposed persistent identity mutation. It does not model the full hypothesis-conditioned evidence-acquisition loop, downstream mutation propagation, dependency-aware cascade mitigation, or post-commit identity recovery. Those are separate problems and are not implied to be solved by adding a policy engine.
 
-## Source basis
+## References
 
-### DIO/ODI source
+1. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Archived record: Zenodo. DOI [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
 
-Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*. Zenodo record 23580733.  
-https://zenodo.org/records/23580733
+2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.5.0) [Software]. Zenodo. DOI [10.5281/zenodo.23643845](https://doi.org/10.5281/zenodo.23643845).
 
-The paper specifies the commit-boundary authorization obligations mapped here. This mapping is a derived application layer; it is not part of that paper's experimental validation and does not add performance results.
+3. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* [Reference vocabulary, version 0.2.0]. Zenodo. Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). [Current vocabulary page](https://vocab.danielberanek.cz/dio-odi/).
 
-### External technical sources
+4. Cedar Policy Language Reference Guide. (n.d.). *Basic policy construction in Cedar* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html.
 
-- Open Policy Agent. *Open Policy Agent documentation* — policy evaluation over structured input and separation of decision-making from enforcement. https://www.openpolicyagent.org/docs
-- Open Policy Agent. *Decision Logs* — decision inputs, outputs, decision identifiers, and bundle revision metadata. https://www.openpolicyagent.org/docs/management-decision-logs
-- Open Policy Agent. *Bundles* — policy/data distribution and update behavior, including eventual consistency. https://www.openpolicyagent.org/docs/management-bundles
-- Cedar Policy Language Reference Guide. *How Cedar authorization works* — request structure, Allow/Deny decisions, evaluation rules, and diagnostics. https://docs.cedarpolicy.com/auth/authorization.html
-- Cedar Policy Language Reference Guide. *Basic policy construction in Cedar* — policy scope and conditions. https://docs.cedarpolicy.com/policies/syntax-policy.html
+5. Cedar Policy Language Reference Guide. (n.d.). *How Cedar authorization works* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/auth/authorization.html.
 
-The external sources document the capabilities described. The DIO/ODI obligations-to-mechanism relations and residual requirements are the analytical interpretation made in this mapping; they are not claims made by the OPA or Cedar documentation.
+6. Open Policy Agent. (n.d.). *Bundles* [Documentation]. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs/management-bundles.
+
+7. Open Policy Agent. (n.d.). *Decision logs* [Documentation]. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs/management-decision-logs.
+
+8. Open Policy Agent. (n.d.). *Open Policy Agent documentation*. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs.
+
+The cited platform documentation describes OPA and Cedar capabilities. The obligation-to-mechanism relations and residual integration requirements are the author’s analytical interpretation, not claims made by the cited documentation.
 
 ## Source and machine-readable metadata
 
