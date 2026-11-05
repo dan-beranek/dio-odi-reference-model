@@ -1,5 +1,5 @@
 {
-  "registry_version": "2.3.0",
+  "registry_version": "2.4.0",
   "status": "canonical-approved",
   "approved_on": "2026-11-05",
   "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for Zenodo and other metadata surfaces.",
@@ -538,6 +538,81 @@
         "semantic interoperability",
         "provenance",
         "stable concept URIs"
+      ]
+    },
+    "commit-boundary-paper": {
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": "all",
+        "C2_work_positioning": [
+          "Agentic Entity Resolution",
+          "commit-boundary authorization",
+          "identity-changing mutations",
+          "claim-specific evidence promotion",
+          "authorization-eligible evidence"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Entity Substitution",
+          "Merge Failure",
+          "Split Failure",
+          "Entity Omission",
+          "Semantic Coherence Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement"
+        ],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "resolved_keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "search engines",
+        "knowledge graphs",
+        "human observers",
+        "Agentic Entity Resolution",
+        "commit-boundary authorization",
+        "identity-changing mutations",
+        "claim-specific evidence promotion",
+        "authorization-eligible evidence",
+        "observation domain",
+        "identity-preserving constraints",
+        "referential continuity",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Referential Reconstruction Failures",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Coherence Failures",
+        "Semantic Fragmentation",
+        "Temporal Reconstruction Failures",
+        "Temporal Discontinuity",
+        "Temporal Misalignment",
+        "Contextual Adequacy Failures",
+        "Contextual Displacement",
+        "provenance"
       ]
     }
   },
