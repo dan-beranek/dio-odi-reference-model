@@ -64,7 +64,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.ttl
   - Architecture SVG: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/architecture.svg
   - Version 0.3.0 aligned to production manuscript v55 (2026-11-04); included in archived Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
-  - Section-level source: unpublished working manuscript v48; public source arXiv:2610.37407 v1 is distinguished separately
+  - Section-level source: unpublished production manuscript v55 (2026-11-04), prepared for arXiv v2; public source arXiv:2610.37407 v1 is distinguished separately
 
 ## Corpus metadata registry
 
