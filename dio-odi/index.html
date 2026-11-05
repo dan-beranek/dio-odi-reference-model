@@ -20,17 +20,22 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="text/turtle" href="/vocabulary/dio-odi-skos.ttl" title="DIO/ODI Reference Vocabulary — Turtle">
   <link rel="alternate" type="application/ld+json" href="/vocabulary/dio-odi.jsonld" title="DIO/ODI Reference Vocabulary — JSON-LD">
+  <link rel="describedby" type="text/turtle" href="/vocabulary/dio-odi-dcat.ttl" title="DIO/ODI Reference Vocabulary — DCAT dataset description">
   <link rel="stylesheet" href="/assets/site.css?v=20261025-5">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "DefinedTermSet",
-  "@id": "https://vocab.danielberanek.cz/dio-odi/",
+  "@id": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
   "name": "DIO/ODI Reference Vocabulary",
   "description": "Canonical machine-readable reference vocabulary for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI).",
   "url": "https://vocab.danielberanek.cz/dio-odi/",
-  "identifier": "https://doi.org/10.5281/zenodo.23272897",
   "version": "0.2.1",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "@id": "https://doi.org/10.5281/zenodo.23272897",
+    "name": "DIO/ODI Reference Model"
+  },
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "creator": {
     "@type": "Person",
@@ -52,6 +57,58 @@
     }
   ]
 }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://vocab.danielberanek.cz/dio-odi/#dataset",
+    "name": "DIO/ODI Reference Vocabulary v0.2.1",
+    "description": "Version 0.2.1 of the canonical DIO/ODI SKOS reference vocabulary: 40 concepts with stable concept URIs, labels, definitions, semantic relations, provenance, and historical notes. This metadata-only update preserves the v0.2.0 concept inventory and semantic relations.",
+    "url": "https://vocab.danielberanek.cz/dio-odi/",
+    "identifier": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+    "version": "0.2.1",
+    "datePublished": "2026-11-05",
+    "dateModified": "2026-11-05",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "inLanguage": "en",
+    "keywords": [
+      "Digital Identity Optimization",
+      "Ontology of Digital Identity",
+      "SKOS",
+      "RDF",
+      "JSON-LD",
+      "knowledge organization system",
+      "controlled vocabulary"
+    ],
+    "creator": {
+      "@id": "https://danielberanek.cz/#person"
+    },
+    "isPartOf": {
+      "@type": "CreativeWork",
+      "@id": "https://doi.org/10.5281/zenodo.23272897",
+      "name": "DIO/ODI Reference Model"
+    },
+    "mainEntity": {
+      "@id": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary"
+    },
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "@id": "https://vocab.danielberanek.cz/dio-odi/#turtle-distribution",
+        "name": "Turtle / SKOS",
+        "contentUrl": "https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl",
+        "encodingFormat": "text/turtle"
+      },
+      {
+        "@type": "DataDownload",
+        "@id": "https://vocab.danielberanek.cz/dio-odi/#jsonld-distribution",
+        "name": "JSON-LD",
+        "contentUrl": "https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld",
+        "encodingFormat": "application/ld+json"
+      }
+    ]
+  }
   </script>
   <script id="dio-odi-jsonld" type="application/ld+json">
 {
@@ -1307,7 +1364,7 @@
 <body class="page page--vocabulary">
   <p><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">← DIO/ODI Hub — Manifest, publications, reference artifacts &amp; updates</a> · <a href="/mappings/">Application Mappings</a></p>
   <h1>DIO/ODI Reference Vocabulary</h1>
-  <p><strong>Live Reference Vocabulary version:</strong> 0.2.0<br><strong>Zenodo Concept DOI (all vocabulary versions):</strong> <a href="https://doi.org/10.5281/zenodo.23272897" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23272897</a><br><strong>Current archived Reference Model:</strong> <a href="https://doi.org/10.5281/zenodo.23966487" target="_blank" rel="noopener noreferrer">v0.6.0 — 10.5281/zenodo.23966487</a><br><strong>Vocabulary included in archived v0.6.0:</strong> v0.2.0<br><strong>Previous archived Reference Model:</strong> <a href="https://doi.org/10.5281/zenodo.23643845" target="_blank" rel="noopener noreferrer">v0.5.0 — 10.5281/zenodo.23643845</a></p>
+  <p><strong>Live Reference Vocabulary version:</strong> 0.2.1<br><strong>Zenodo — DIO/ODI Reference Model Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.23272897" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23272897</a><br><strong>Current archived Reference Model:</strong> <a href="https://doi.org/10.5281/zenodo.23966487" target="_blank" rel="noopener noreferrer">v0.6.0 — 10.5281/zenodo.23966487</a><br><strong>Vocabulary included in archived v0.6.0:</strong> v0.2.0<br><strong>Previous archived Reference Model:</strong> <a href="https://doi.org/10.5281/zenodo.23643845" target="_blank" rel="noopener noreferrer">v0.5.0 — 10.5281/zenodo.23643845</a></p>
   <p><strong>Canonical namespace:</strong> <code>https://vocab.danielberanek.cz/dio-odi/#</code></p>
   <p>This document identifies the machine-readable reference vocabulary derived from the published corpus of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).</p>
 
@@ -1349,7 +1406,7 @@
   <ul>
     <li><a href="https://github.com/dan-beranek/dio-odi-reference-model" target="_blank" rel="noopener noreferrer">GitHub repository</a></li>
     <li><a href="/mappings/">Application Mappings index</a></li>
-    <li><a href="https://doi.org/10.5281/zenodo.23272897" target="_blank" rel="noopener noreferrer">DIO/ODI Reference Vocabulary — Zenodo Concept DOI (all versions)</a></li>
+    <li><a href="https://doi.org/10.5281/zenodo.23272897" target="_blank" rel="noopener noreferrer">DIO/ODI Reference Model — Concept DOI (all versions)</a></li>
     <li><a href="https://doi.org/10.5281/zenodo.23966487" target="_blank" rel="noopener noreferrer">Current Zenodo archive — DIO/ODI Reference Model v0.6.0</a></li>
     <li><a href="https://doi.org/10.5281/zenodo.23643845" target="_blank" rel="noopener noreferrer">Previous Zenodo archive — DIO/ODI Reference Model v0.5.0</a></li>
     <li><a href="https://doi.org/10.5281/zenodo.23632619" target="_blank" rel="noopener noreferrer">Earlier Zenodo archive — DIO/ODI Reference Model v0.4.0</a></li>
