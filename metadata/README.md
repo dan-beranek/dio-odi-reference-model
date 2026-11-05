@@ -98,6 +98,8 @@ Rules:
 6. Flattened keyword arrays preserve chunk order and term order.
 7. Aliases support reconstruction and variant recognition but are not exported by default.
 8. Keyword assignment must not retroactively project concepts into a work that the work does not substantively carry.
+9. Every exportable metadata surface that supports the complete sequence, including `.zenodo.json` and `CITATION.cff`, must use the exact resolved sequence for its work profile; do not maintain manually curated shorter parallel sets.
+10. `registry_version` identifies the keyword-registry data version; `keyword_grammar_version` identifies the structural grammar version. These version fields are distinct and must not be conflated.
 
 This creates lexical and structural consistency across records while preserving the conceptual scope of each work.
 
