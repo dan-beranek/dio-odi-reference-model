@@ -4,10 +4,10 @@
 
 ## Versions
 
-- Current archived Reference Model release: 0.5.0 — https://doi.org/10.5281/zenodo.23643845
-- Current source-tree release candidate: 0.6.0 — prepared for Zenodo; archive and version DOI pending
-- Live Reference Vocabulary: 0.2.0
-- Vocabulary included in archived v0.5.0: 0.2.0
+- Current archived Reference Model release: 0.6.0 — https://doi.org/10.5281/zenodo.23966487
+- Current source-tree state: main (post-v0.6.0 live vocabulary metadata update)
+- Live Reference Vocabulary: 0.2.1 — metadata-only update; concept model unchanged from v0.2.0
+- Vocabulary included in archived v0.6.0: 0.2.0
 - Previous archived release: v0.4.0 — https://doi.org/10.5281/zenodo.23632619
 - Earlier archived release: v0.3.2 — https://doi.org/10.5281/zenodo.23300703
 - Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
@@ -56,12 +56,12 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
 
-- Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture (version 0.3.0 release candidate): https://vocab.danielberanek.cz/mappings/agentic-er-architecture/
+- Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture (version 0.3.0): https://vocab.danielberanek.cz/mappings/agentic-er-architecture/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.md
   - JSON-LD: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.ttl
   - Architecture SVG: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/architecture.svg
-  - Version 0.3.0 aligned to production manuscript v55 (2026-11-04); prepared for inclusion in Reference Model v0.6.0; Zenodo archive pending
+  - Version 0.3.0 aligned to production manuscript v55 (2026-11-04); included in archived Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
   - Section-level source: unpublished working manuscript v48; public source arXiv:2610.37407 v1 is distinguished separately
 
 ## Corpus metadata registry
@@ -81,6 +81,7 @@ This registry is an operational metadata layer and does not modify the canonical
 
 ## Releases
 
+- v0.6.0: https://doi.org/10.5281/zenodo.23966487
 - v0.5.0: https://doi.org/10.5281/zenodo.23643845
 - v0.4.0: https://doi.org/10.5281/zenodo.23632619
 - v0.3.2: https://doi.org/10.5281/zenodo.23300703
