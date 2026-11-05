@@ -11,7 +11,7 @@ dio:ReferenceVocabulary a skos:ConceptScheme ;
   skos:prefLabel "DIO/ODI Reference Vocabulary"@en ;
   dcterms:title "DIO/ODI Reference Vocabulary"@en ;
   dcterms:creator <https://danielberanek.cz/#person> ;
-  dcterms:identifier <https://doi.org/10.5281/zenodo.23272897> ;
+  dcterms:isPartOf <https://doi.org/10.5281/zenodo.23272897> ;
   dcterms:description "SKOS reference vocabulary derived from the DIO/ODI corpus."@en ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
   dcterms:issued "2026-11-05"^^xsd:date ;

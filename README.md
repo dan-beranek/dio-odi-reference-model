@@ -90,13 +90,14 @@ The namespace is owned by the author and is intended to remain stable independen
 ## Vocabulary and source repository
 
 - **Vocabulary:** https://vocab.danielberanek.cz/dio-odi/
-- **Vocabulary Concept DOI (all versions):** https://doi.org/10.5281/zenodo.23272897
+- **DIO/ODI Reference Model Concept DOI (all model versions):** https://doi.org/10.5281/zenodo.23272897
 - **Reference Model & Source Repository:** https://github.com/dan-beranek/dio-odi-reference-model/
 
 ## Files
 
 - `vocabulary/dio-odi-skos.ttl` — canonical SKOS/RDF vocabulary
 - `vocabulary/dio-odi.jsonld` — JSON-LD serialization
+- `vocabulary/dio-odi-dcat.ttl` — DCAT 3 dataset and distribution metadata for the canonical vocabulary
 - `docs/terminology.md` — human-readable vocabulary
 - `docs/source-map.md` — concept-to-source provenance
 - `docs/concept-map.mmd` — Mermaid overview

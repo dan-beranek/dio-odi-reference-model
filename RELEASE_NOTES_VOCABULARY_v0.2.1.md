@@ -3,7 +3,7 @@
 **Release date:** 2026-11-05  
 **Release type:** Metadata-only maintenance update  
 **Previous vocabulary version:** v0.2.0  
-**Vocabulary concept DOI (all versions):** https://doi.org/10.5281/zenodo.23272897
+**Parent DIO/ODI Reference Model Concept DOI:** https://doi.org/10.5281/zenodo.23272897
 
 ## Scope
 
@@ -16,6 +16,9 @@ Version 0.2.1 synchronizes and enriches the vocabulary-level metadata across the
 - Adds Dublin Core metadata for title, license, issue date, modification date, and language.
 - Adds VANN preferred namespace prefix and namespace URI metadata.
 - Adds a FOAF page link to the public vocabulary documentation.
+- Adds a DCAT 3 dataset description with direct Turtle and JSON-LD distributions.
+- Adds Schema.org `Dataset` structured data to the landing page, including the distributions required for Google Dataset Search eligibility.
+- Corrects the parent-resource relation: the Zenodo Concept DOI identifies the DIO/ODI Reference Model, so it is represented as `dcterms:isPartOf`, not as the vocabulary's own identifier.
 - Synchronizes the version metadata and author graph across both machine-readable serializations and the embedded HTML graph.
 
 ## Preservation statement

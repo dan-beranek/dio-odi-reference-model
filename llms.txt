@@ -15,10 +15,12 @@
 ## Canonical vocabulary
 
 - Namespace document: https://vocab.danielberanek.cz/dio-odi/
-- Zenodo Concept DOI (all Reference Vocabulary versions): https://doi.org/10.5281/zenodo.23272897
+- DIO/ODI Reference Model — Zenodo Concept DOI (all model versions): https://doi.org/10.5281/zenodo.23272897
 - Canonical namespace: https://vocab.danielberanek.cz/dio-odi/#
 - Turtle / SKOS: https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl
 - JSON-LD: https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld
+- DCAT 3 dataset description: https://vocab.danielberanek.cz/vocabulary/dio-odi-dcat.ttl
+- Schema.org Dataset structured data: embedded in the vocabulary landing page for Google Dataset Search
 - Human-readable terminology: https://vocab.danielberanek.cz/docs/terminology.md
 - Concept-to-source map: https://vocab.danielberanek.cz/docs/source-map.md
 - Concept map: https://vocab.danielberanek.cz/docs/concept-map.svg
