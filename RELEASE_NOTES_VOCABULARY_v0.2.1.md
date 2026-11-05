@@ -3,7 +3,7 @@
 **Release date:** 2026-11-05  
 **Release type:** Metadata-only maintenance update  
 **Previous vocabulary version:** v0.2.0  
-**Vocabulary concept DOI (all versions):** https://doi.org/10.5281/zenodo.23272897
+**Parent DIO/ODI Reference Model Concept DOI:** https://doi.org/10.5281/zenodo.23272897
 
 ## Scope
 
