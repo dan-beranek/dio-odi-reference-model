@@ -3,15 +3,31 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 dio:ReferenceVocabulary a skos:ConceptScheme ;
   skos:prefLabel "DIO/ODI Reference Vocabulary"@en ;
-  dcterms:creator "Daniel Beránek" ;
+  dcterms:title "DIO/ODI Reference Vocabulary"@en ;
+  dcterms:creator <https://danielberanek.cz/#person> ;
   dcterms:identifier <https://doi.org/10.5281/zenodo.23272897> ;
   dcterms:description "SKOS reference vocabulary derived from the DIO/ODI corpus."@en ;
-  owl:versionInfo "0.2.0" ;
-  skos:hasTopConcept dio:ReconstructionFailureMode ;
-  dcterms:modified "2026-10-25"^^xsd:date .
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dcterms:issued "2026-11-05"^^xsd:date ;
+  dcterms:modified "2026-11-05"^^xsd:date ;
+  dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
+  vann:preferredNamespacePrefix "dio" ;
+  vann:preferredNamespaceUri "https://vocab.danielberanek.cz/dio-odi/#" ;
+  foaf:page <https://vocab.danielberanek.cz/dio-odi/> ;
+  owl:versionInfo "0.2.1" ;
+  skos:hasTopConcept dio:ReconstructionFailureMode .
+
+<https://danielberanek.cz/#person>
+  a schema:Person, dcterms:Agent ;
+  schema:name "Daniel Beránek" ;
+  schema:url <https://danielberanek.cz/> ;
+  schema:sameAs <https://orcid.org/0009-0004-0050-0264> .
 
 dio:DIO a skos:Concept ;
   skos:inScheme dio:ReferenceVocabulary ;
