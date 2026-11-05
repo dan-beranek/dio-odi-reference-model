@@ -8,8 +8,7 @@
 - Current source-tree state: main (post-v0.6.0 live vocabulary metadata update)
 - Live Reference Vocabulary: 0.2.1 — metadata-only update; concept model unchanged from v0.2.0
 - Vocabulary included in archived v0.6.0: 0.2.0
-- Previous archived release: v0.5.0 — https://doi.org/10.5281/zenodo.23643845
-- Earlier archived release: v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Previous archived release: v0.4.0 — https://doi.org/10.5281/zenodo.23632619
 - Earlier archived release: v0.3.2 — https://doi.org/10.5281/zenodo.23300703
 - Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
@@ -39,7 +38,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF introduced in: Reference Model v0.3.1
   - Introduced in: Reference Model v0.2.0
   - Base mapping introduced and first archived in: Reference Model v0.2.0
-  - Iterative/hypothesis-conditioned evidence-acquisition extension: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845 and v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+  - Iterative/hypothesis-conditioned evidence-acquisition extension: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845
   - Development context: Constraining the Commit Boundary, published 2026-10-22: https://zenodo.org/records/23580733
 - Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences: https://vocab.danielberanek.cz/mappings/hem-dio/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md
@@ -47,7 +46,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Conceptual bridge SVG: https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg
   - External HEM source DOI: https://doi.org/10.1016/j.datak.2026.102575
   - Introduced in: Reference Model v0.3.0
-  - Included in: Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845 and current archived v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+  - Included in: Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in current archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl
   - Turtle RDF introduced in: Reference Model v0.3.1
 - Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization: https://vocab.danielberanek.cz/mappings/commit-boundary-policy/
@@ -56,7 +55,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.ttl
   - External technical references: OPA and Cedar
   - Added to live source tree: 2026-10-25
-  - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845 and v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+  - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
 
 - Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture (version 0.3.0): https://vocab.danielberanek.cz/mappings/agentic-er-architecture/
@@ -75,6 +74,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Canonical references: https://vocab.danielberanek.cz/metadata/references.json
 - Distribution representations: https://vocab.danielberanek.cz/metadata/distributions.json
 - Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json
+  - Keyword registry version: 2.3.0
   - Grammar version: 2.0.0
   - Status: canonical-approved
   - Order: C0 Identity → C1 Environments → C2 Work positioning → C3 Mechanics → C4 K6 → C5 Failures/robustness → C6 Machine-readable representation
