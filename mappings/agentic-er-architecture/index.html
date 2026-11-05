@@ -21,7 +21,7 @@
   <style>
     .architecture-figure { margin: 1.5rem auto; max-width: 1100px; }
     .architecture-figure img { display: block; width: 100%; height: auto; border: 1px solid #d6dbe1; background: #fff; }
-    .architecture-figure figcaption { margin-top: .65rem; color: #4b5563; font-size: .93rem; }
+    .architecture-figure figcaption { margin-top: .65rem; color: var(--muted); font-size: .93rem; }
     .resource-links { display: flex; flex-wrap: wrap; gap: .8rem 1.25rem; }
     .resource-links a { white-space: nowrap; }
     .relation-list { padding-left: 1.25rem; }
@@ -81,6 +81,7 @@
   <h2>Purpose</h2>
   <p>The paper and this mapping form one coordinated research artefact: the paper specifies the proposed architecture, while the mapping formalizes its internal conceptual and functional relations. The Markdown source and JSON-LD and Turtle/RDF serializations expose the same relational model for human inspection and machine processing. This mapping makes explicit the relations among diagnostic inputs, domain-governed constraint binding, mutation-specific propositions, evidence states, two-phase Supervisor, commit invariant, assumptions, and prospective evaluation protocol described in production manuscript v55. Its section anchors refer to the 4 November 2026 production source prepared for arXiv v2; the current public arXiv:2610.37407 v1 predecessor is identified separately.</p>
   <p><strong>Diagnostic distinctions → domain-configured constraints → mutation-specific claims → claim-specific evidence eligibility → two-phase authorization → protected commit.</strong></p>
+  <p class="format-links"><a href="/mappings/agentic-er-commit-boundary-architecture-mapping.md">Markdown source</a> · <a href="/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld">JSON-LD</a> · <a href="/mappings/agentic-er-commit-boundary-architecture-mapping.ttl">Turtle / RDF</a> · <a href="/mappings/agentic-er-architecture/architecture.svg">Architecture SVG</a></p>
 
   <figure class="architecture-figure">
     <img src="architecture.svg" alt="Architecture diagram: DIO/ODI diagnostic distinctions inform domain-governed constraint binding and identity-preserving constraints. The Agentic ER Planner proposes a mutation; the Supervisor derives required propositions. Retrieved observations pass through quarantine, UNVERIFIED active evidence, and claim-specific promotion into authorization-eligible evidence. Phase 1 authorizes the proposed mutation, Phase 2 validates the isolated candidate, and the commit gate requires PASS, valid scope, and valid versions. The guarantee depends on Assumptions 1–7. Dependency-aware evidence-flow control is shown outside the current architecture as future research.">
