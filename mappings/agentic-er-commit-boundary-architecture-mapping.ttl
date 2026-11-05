@@ -10,7 +10,7 @@
 
 arc:Mapping a schema:TechArticle ;
   schema:name "DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping"@en ;
-  schema:description "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed commit-boundary authorization proposal for Agentic Entity Resolution."@en ;
+  schema:description "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed commit-boundary authorization proposal for Agentic Entity Resolution. Together with its source paper, it forms one coordinated research artefact: the paper specifies the architecture and this mapping formalizes its internal conceptual and functional relations."@en ;
   schema:url <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/> ;
   schema:version "0.3.0" ;
   schema:dateCreated "2026-11-03"^^xsd:date ;
