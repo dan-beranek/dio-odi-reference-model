@@ -4,7 +4,10 @@
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "dcterms": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "owl": "http://www.w3.org/2002/07/owl#"
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "https://schema.org/",
+    "vann": "http://purl.org/vocab/vann/",
+    "foaf": "http://xmlns.com/foaf/0.1/"
   },
   "@graph": [
     {
@@ -14,20 +17,57 @@
         "@value": "DIO/ODI Reference Vocabulary",
         "@language": "en"
       },
-      "dcterms:creator": "Daniel Beránek",
-      "dcterms:identifier": { "@id": "https://doi.org/10.5281/zenodo.23272897" },
+      "dcterms:creator": {
+        "@id": "https://danielberanek.cz/#person"
+      },
+      "dcterms:identifier": {
+        "@id": "https://doi.org/10.5281/zenodo.23272897"
+      },
       "dcterms:description": {
         "@value": "SKOS reference vocabulary derived from the DIO/ODI corpus.",
         "@language": "en"
       },
       "dcterms:modified": {
-        "@value": "2026-10-25",
+        "@value": "2026-11-05",
         "@type": "xsd:date"
       },
       "skos:hasTopConcept": {
         "@id": "dio:ReconstructionFailureMode"
       },
-      "owl:versionInfo": "0.2.0"
+      "owl:versionInfo": "0.2.1",
+      "dcterms:title": {
+        "@value": "DIO/ODI Reference Vocabulary",
+        "@language": "en"
+      },
+      "dcterms:license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "dcterms:issued": {
+        "@value": "2026-11-05",
+        "@type": "xsd:date"
+      },
+      "dcterms:language": {
+        "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
+      },
+      "vann:preferredNamespacePrefix": "dio",
+      "vann:preferredNamespaceUri": "https://vocab.danielberanek.cz/dio-odi/#",
+      "foaf:page": {
+        "@id": "https://vocab.danielberanek.cz/dio-odi/"
+      }
+    },
+    {
+      "@id": "https://danielberanek.cz/#person",
+      "@type": [
+        "schema:Person",
+        "dcterms:Agent"
+      ],
+      "schema:name": "Daniel Beránek",
+      "schema:url": {
+        "@id": "https://danielberanek.cz/"
+      },
+      "schema:sameAs": {
+        "@id": "https://orcid.org/0009-0004-0050-0264"
+      }
     },
     {
       "@id": "dio:DIO",
