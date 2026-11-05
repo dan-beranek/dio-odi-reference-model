@@ -134,6 +134,14 @@ a:hover {
   color: var(--link-hover);
 }
 
+.format-links {
+  margin-block: 0.95rem 1.35rem;
+}
+
+.format-links a {
+  white-space: nowrap;
+}
+
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
