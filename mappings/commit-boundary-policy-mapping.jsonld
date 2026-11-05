@@ -7,8 +7,8 @@
   "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
   "inLanguage": "en",
   "datePublished": "2026-10-25",
-  "dateModified": "2026-10-25",
-  "creativeWorkStatus": "First included in archived DIO/ODI Reference Model v0.4.0 and carried forward in v0.5.0; the live artifact remains a derived application mapping outside the canonical vocabulary.",
+  "dateModified": "2026-11-05",
+  "creativeWorkStatus": "First included in archived DIO/ODI Reference Model v0.4.0 and carried forward in archived v0.5.0 and v0.6.0; the live artifact remains a derived application mapping outside the canonical vocabulary.",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
     "@type": "Person",
