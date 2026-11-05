@@ -27,6 +27,18 @@
       "@id": "dcterms:source",
       "@type": "@id"
     },
+    "archivedIn": {
+      "@id": "arc:archivedIn",
+      "@type": "@id"
+    },
+    "formsCoordinatedResearchArtifactWith": {
+      "@id": "arc:formsCoordinatedResearchArtifactWith",
+      "@type": "@id"
+    },
+    "formalizesArchitectureSpecifiedIn": {
+      "@id": "arc:formalizesArchitectureSpecifiedIn",
+      "@type": "@id"
+    },
     "name": "schema:name",
     "description": "schema:description"
   },
@@ -35,7 +47,7 @@
       "@id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#Mapping",
       "@type": "schema:TechArticle",
       "schema:name": "DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping",
-      "schema:description": "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed Agentic ER commit-boundary proposal. Version 0.3.0 is aligned to production manuscript v55 and explicitly represents action-specific authorization, staging isolation, claim-specific conflict evaluation, and quarantine disposition. It reuses canonical DIO/ODI URIs and does not modify the Reference Vocabulary.",
+      "schema:description": "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed Agentic ER commit-boundary proposal. Together with its source paper, it forms one coordinated research artefact: the paper specifies the architecture and this mapping formalizes its internal conceptual and functional relations. Version 0.3.0 is aligned to production manuscript v55 and explicitly represents action-specific authorization, staging isolation, claim-specific conflict evaluation, and quarantine disposition. It reuses canonical DIO/ODI URIs and does not modify the Reference Vocabulary.",
       "schema:url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
       "schema:version": "0.3.0",
       "schema:dateCreated": "2026-11-03",
@@ -51,7 +63,9 @@
       "schema:isPartOf": {
         "@type": "schema:CreativeWork",
         "schema:name": "DIO/ODI Reference Model",
-        "schema:url": "https://github.com/dan-beranek/dio-odi-reference-model"
+        "schema:version": "0.6.0",
+        "schema:url": "https://doi.org/10.5281/zenodo.23966487",
+        "schema:sameAs": "https://github.com/dan-beranek/dio-odi-reference-model"
       },
       "schema:isBasedOn": [
         {
@@ -71,7 +85,11 @@
       },
       "arc:sourceManuscriptVersion": "Constraining_the_Commit_Boundary_v55_production.md (production manuscript, 2026-11-04; prepared for arXiv v2)",
       "arc:publicSourceVersion": "arXiv:2610.37407; v55 is the production manuscript used for section-level alignment, not a claim that v2 was already public when this mapping was prepared",
-      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.0; DIO/ODI Reference Model v0.6.0 release candidate",
+      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.0; DIO/ODI Reference Model v0.6.0",
+      "archivedIn": "https://doi.org/10.5281/zenodo.23966487",
+      "formsCoordinatedResearchArtifactWith": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
+      "formalizesArchitectureSpecifiedIn": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
+      "arc:serializationFormats": ["Markdown", "JSON-LD", "Turtle/RDF"],
       "arc:canonicalVocabularyModified": false,
       "arc:implementationStatus": "not-implemented-by-this-artifact",
       "arc:empiricalValidationStatus": "not-empirically-validated",

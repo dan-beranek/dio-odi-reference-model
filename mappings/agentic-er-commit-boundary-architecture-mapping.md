@@ -2,18 +2,18 @@
 
 **Artifact type:** derived architecture mapping  
 **Version:** 0.3.0  
-**Status:** author-curated, non-normative release candidate; aligned to production manuscript v55 (4 November 2026), prepared for arXiv v2  
+**Status:** author-curated, non-normative mapping; version 0.3.0, archived as part of DIO/ODI Reference Model v0.6.0  
 **Canonical namespace:** `https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#`  
 **Source paper:** Daniel Beránek, *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*, [arXiv:2610.37407](https://arxiv.org/abs/2610.37407); current public predecessor [v1 Zenodo record](https://zenodo.org/records/23580733). **Section-level source:** production manuscript `Constraining_the_Commit_Boundary_v55_production.md`, dated 4 November 2026 and prepared for arXiv v2; it is not represented as an already-public version.  
-**Reference Model:** v0.6.0 release candidate, pending Zenodo archive; Reference Vocabulary v0.2.0  
+**Reference Model:** v0.6.0 — [Zenodo DOI](https://doi.org/10.5281/zenodo.23966487); Reference Vocabulary v0.2.0  
 **Model size:** 120 local architecture concepts; 206 qualified relation assertions  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## 1. Purpose
 
-This artifact makes explicit the internal conceptual and functional relations of the DIO/ODI-informed commit-boundary architecture proposed for Agentic Entity Resolution (ER). It is a derived architecture mapping, not a new canonical vocabulary and not an implementation specification.
+This mapping and the associated paper form one coordinated research artefact, not a paper with an incidental technical appendix. The paper specifies the proposed DIO/ODI-informed commit-boundary architecture for Agentic Entity Resolution (ER); this mapping formalizes its internal conceptual and functional relations, and its JSON-LD and Turtle/RDF files serialize that same relational model for machine processing. The mapping is a derived, non-normative layer, not a new canonical vocabulary or an implementation specification.
 
-The source paper presents several connected mechanisms across its diagnostic analysis, constraint-binding proposal, evidence-promotion contract, authorization invariant, abstract interface algorithms, illustrative cases, and prospective evaluation protocol. This mapping brings those relations into one inspectable and machine-readable representation.
+The paper presents several connected mechanisms across its diagnostic analysis, constraint-binding proposal, evidence-promotion contract, authorization invariant, abstract interface algorithms, illustrative cases, and prospective evaluation protocol. The mapping makes their relations inspectable, qualified, and machine-readable.
 
 Its central path is:
 
@@ -284,7 +284,7 @@ Dependency-aware evidence lineage and control of the full hypothesis-conditioned
 | `future-research` | Explicitly outside the present architecture and reserved for later investigation |
 | `canonical-reference` | An existing DIO/ODI Reference Vocabulary concept reused without redefining it |
 
-Every qualified relation assertion in JSON-LD and Turtle carries a source section, interpretation note, and epistemic status. Section references anchor assertions to production manuscript `Constraining_the_Commit_Boundary_v55_production.md` dated 4 November 2026. The public arXiv v1 is identified as the published source counterpart; section-level anchors in this release candidate follow production manuscript v55 prepared for arXiv v2.
+Every qualified relation assertion in JSON-LD and Turtle carries a source section, interpretation note, and epistemic status. Section references anchor assertions to production manuscript `Constraining_the_Commit_Boundary_v55_production.md` dated 4 November 2026. The public arXiv v1 is identified as the published source counterpart; section-level anchors in mapping v0.3.0 follow production manuscript v55 prepared for arXiv v2.
 
 ## 9. Machine-readable files
 
@@ -301,9 +301,10 @@ The JSON-LD graph contains 120 local architecture concepts and 206 qualified rel
 
 2. Beránek, D. (2026, October 25). *DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization* [Application mapping]. DIO/ODI Reference Model. https://vocab.danielberanek.cz/mappings/commit-boundary-policy/.
 
-3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.5.0) [Software]. Zenodo. DOI [10.5281/zenodo.23643845](https://doi.org/10.5281/zenodo.23643845).
+3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0) [Software]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
+4. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.5.0) [Software]. Zenodo. DOI [10.5281/zenodo.23643845](https://doi.org/10.5281/zenodo.23643845).
 
-4. Beránek, D. (2026). *DIO/ODI Reference Model* [Reference vocabulary, version 0.2.0]. Zenodo. Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). [Current vocabulary page](https://vocab.danielberanek.cz/dio-odi/).
+5. Beránek, D. (2026). *DIO/ODI Reference Model* [Reference vocabulary, version 0.2.0]. Zenodo. Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). [Current vocabulary page](https://vocab.danielberanek.cz/dio-odi/).
 
 Section-level anchors align with production manuscript v55 dated 4 November 2026, used as an unpublished source for the pending arXiv v2 submission. The public arXiv citation identifies the current v1 predecessor separately.
 ---

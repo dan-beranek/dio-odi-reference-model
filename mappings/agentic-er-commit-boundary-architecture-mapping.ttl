@@ -10,13 +10,14 @@
 
 arc:Mapping a schema:TechArticle ;
   schema:name "DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping"@en ;
-  schema:description "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed commit-boundary authorization proposal for Agentic Entity Resolution."@en ;
+  schema:description "A derived, non-normative, machine-readable architecture mapping of the DIO/ODI-informed commit-boundary authorization proposal for Agentic Entity Resolution. Together with its source paper, it forms one coordinated research artefact: the paper specifies the architecture and this mapping formalizes its internal conceptual and functional relations."@en ;
   schema:url <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/> ;
   schema:version "0.3.0" ;
   schema:dateCreated "2026-11-03"^^xsd:date ;
   schema:dateModified "2026-11-05"^^xsd:date ;
   schema:license <https://creativecommons.org/licenses/by/4.0/> ;
-  schema:isPartOf <https://github.com/dan-beranek/dio-odi-reference-model> ;
+  schema:isPartOf <https://doi.org/10.5281/zenodo.23966487> ;
+  schema:codeRepository <https://github.com/dan-beranek/dio-odi-reference-model> ;
   dcterms:source <https://arxiv.org/abs/2610.37407>, <https://vocab.danielberanek.cz/dio-odi/#>, <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/> ;
   arc:artifactType "derived-architecture-mapping" ;
   arc:canonicalVocabularyModified false ;
@@ -24,7 +25,11 @@ arc:Mapping a schema:TechArticle ;
   arc:empiricalValidationStatus "not-empirically-validated" ;
   arc:sourceManuscriptVersion "constraining_the_commit_boundary_v55 (production manuscript, 2026-11-04)" ;
   arc:publicSourceVersion "arXiv:2610.37407; v55 production manuscript used for v2 section alignment" ;
-  arc:canonicalReferenceLayer "DIO/ODI Reference Vocabulary v0.2.0; Reference Model v0.6.0 release candidate" .
+  arc:canonicalReferenceLayer "DIO/ODI Reference Vocabulary v0.2.0; Reference Model v0.6.0" ;
+  arc:archivedIn <https://doi.org/10.5281/zenodo.23966487> ;
+  arc:formsCoordinatedResearchArtifactWith <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> ;
+  arc:formalizesArchitectureSpecifiedIn <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> ;
+  arc:serializationFormat "Markdown", "JSON-LD", "Turtle/RDF" .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> a schema:CreativeWork ;
   schema:name "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution"@en ;
@@ -55,6 +60,10 @@ arc:complementaryTo a rdf:Property ; rdfs:label "complementary to"@en ; rdfs:com
 arc:sourceManuscriptVersion a rdf:Property ; rdfs:label "source manuscript version"@en ; rdfs:comment "The working manuscript version used for section-level alignment."@en .
 arc:publicSourceVersion a rdf:Property ; rdfs:label "public source version"@en ; rdfs:comment "The separately identified public preprint version."@en .
 arc:canonicalReferenceLayer a rdf:Property ; rdfs:label "canonical reference layer"@en ; rdfs:comment "The DIO/ODI reference artifact versions used to resolve canonical URIs."@en .
+arc:archivedIn a rdf:Property ; rdfs:label "archived in"@en ; rdfs:comment "The versioned Reference Model archive containing this mapping."@en .
+arc:formsCoordinatedResearchArtifactWith a rdf:Property ; rdfs:label "forms coordinated research artefact with"@en ; rdfs:comment "Identifies the paper/manuscript with which this mapping forms one coordinated research artefact."@en .
+arc:formalizesArchitectureSpecifiedIn a rdf:Property ; rdfs:label "formalizes architecture specified in"@en ; rdfs:comment "The mapping formalizes relations of the architecture specified in the identified source manuscript."@en .
+arc:serializationFormat a rdf:Property ; rdfs:label "serialization format"@en .
 arc:workingManuscript a rdf:Property ; rdfs:label "working manuscript"@en ; rdfs:comment "The unpublished working manuscript used for section-level source anchors."@en .
 arc:sourceFileName a rdf:Property ; rdfs:label "source file name"@en ; rdfs:comment "The working manuscript filename used by this mapping."@en .
 arc:sourceStatus a rdf:Property ; rdfs:label "source status"@en ; rdfs:comment "The publication status of the working manuscript source."@en .

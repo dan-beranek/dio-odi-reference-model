@@ -61,10 +61,11 @@ Maps commit-boundary authorization obligations to relevant Policy-as-Code capabi
 - Architecture diagram: [agentic-er-architecture/architecture.svg](agentic-er-architecture/architecture.svg)
 - Public source paper: arXiv:2610.37407 v1 — https://arxiv.org/abs/2610.37407; corresponding Zenodo record: https://zenodo.org/records/23580733
 - Section-level alignment: production manuscript `Constraining_the_Commit_Boundary_v55_production.md`, dated 2026-11-04 and prepared for arXiv v2; it is not represented as an already-public arXiv version
-- Canonical vocabulary checked against Reference Vocabulary v0.2.0 — https://doi.org/10.5281/zenodo.23272897; prepared for inclusion in Reference Model v0.6.0 release candidate
-- Added to live source tree: 2026-11-04; version 0.3.0 release candidate, aligned to production manuscript v55 and prepared for inclusion in Reference Model v0.6.0; Zenodo archiving pending
+- Canonical vocabulary: Reference Vocabulary v0.2.0 — https://doi.org/10.5281/zenodo.23272897
+- Archived in: DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+- Added to live source tree: 2026-11-04; mapping version 0.3.0, aligned to production manuscript v55 and prepared for arXiv v2
 
-Maps the internal conceptual and functional relations of the DIO/ODI-informed Agentic Entity Resolution commit-boundary proposal: selected diagnostics, domain-governed constraint binding, mutation-specific required propositions, claim-specific evidence eligibility, two-phase authorization, conditional commit invariant, assumptions, and prospective evaluation design. It is complementary to the Commit-Boundary × Policy-as-Code mapping, which projects selected contract obligations into OPA/Rego and Cedar. The architecture mapping remains non-normative, does not modify canonical vocabulary, and claims neither implementation nor empirical validation.
+Together, the arXiv paper and this mapping form a coordinated research artefact: the paper specifies the proposed architecture, while the mapping formalizes its internal conceptual and functional relations. The Markdown source and its JSON-LD and Turtle/RDF serializations expose that same relational model for human inspection and machine processing. The mapping covers selected diagnostics, domain-governed constraint binding, mutation-specific required propositions, claim-specific evidence eligibility, two-phase authorization, the conditional commit invariant, assumptions, and prospective evaluation design. It is complementary to the Commit-Boundary × Policy-as-Code mapping, which projects selected contract obligations into OPA/Rego and Cedar. This mapping is a non-normative derived layer, does not modify canonical vocabulary, and claims neither implementation nor empirical validation.
 
 ## Boundary
 
