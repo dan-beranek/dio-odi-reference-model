@@ -32,6 +32,7 @@
     "heterogeneous entity matching",
     "HEM",
     "agentic entity resolution",
+    "staging isolation",
     "policy-as-code",
     "commit-boundary authorization",
     "authorization guardrail",
