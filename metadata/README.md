@@ -21,6 +21,21 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 4. Existing historical Zenodo records are not retroactively changed by these files; they require metadata synchronization through Zenodo's editor, API, or browser automation.
 5. Zenodo assigns the version-specific DOI only after the GitHub Release is archived. Do not guess or prepopulate that DOI in the tagged snapshot. After publication, synchronize `metadata/works.json`, `README.md`, and `CITATION.cff` in the live `main` branch with the minted DOI; do not rewrite the immutable archived snapshot.
 
+## Reference Vocabulary identity and parent Reference Model DOI
+
+The canonical DIO/ODI Reference Vocabulary is identified by its own SKOS ConceptScheme URI:
+
+`https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary`
+
+The Zenodo Concept DOI `10.5281/zenodo.23272897` identifies the **DIO/ODI Reference Model**, not the Reference Vocabulary as an independently archived object. The vocabulary is a component of that broader Reference Model. Therefore:
+
+- use the vocabulary URI as the identifier of the SKOS ConceptScheme;
+- represent its relation to the parent Reference Model with `dcterms:isPartOf` (or the equivalent Schema.org relationship);
+- never label the Reference Model Concept DOI as a vocabulary-specific DOI;
+- distinguish the live vocabulary version from the vocabulary state included in a particular archived Reference Model release.
+
+The live vocabulary is v0.2.1; archived Reference Model v0.6.0 contains the earlier vocabulary state v0.2.0. The vocabulary currently has no separate version-specific Zenodo DOI.
+
 ## Relation discipline
 
 The graph is intentionally conservative. A relation should not be strengthened merely to make the graph denser.
