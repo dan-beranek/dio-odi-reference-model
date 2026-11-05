@@ -51,7 +51,9 @@
       "schema:isPartOf": {
         "@type": "schema:CreativeWork",
         "schema:name": "DIO/ODI Reference Model",
-        "schema:url": "https://github.com/dan-beranek/dio-odi-reference-model"
+        "schema:version": "0.6.0",
+        "schema:url": "https://doi.org/10.5281/zenodo.23966487",
+        "schema:sameAs": "https://github.com/dan-beranek/dio-odi-reference-model"
       },
       "schema:isBasedOn": [
         {
@@ -71,7 +73,11 @@
       },
       "arc:sourceManuscriptVersion": "Constraining_the_Commit_Boundary_v55_production.md (production manuscript, 2026-11-04; prepared for arXiv v2)",
       "arc:publicSourceVersion": "arXiv:2610.37407; v55 is the production manuscript used for section-level alignment, not a claim that v2 was already public when this mapping was prepared",
-      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.0; DIO/ODI Reference Model v0.6.0 release candidate",
+      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.0; DIO/ODI Reference Model v0.6.0",
+      "arc:archivedIn": "https://doi.org/10.5281/zenodo.23966487",
+      "arc:formsCoordinatedResearchArtifactWith": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
+      "arc:formalizesArchitectureSpecifiedIn": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
+      "arc:serializationFormats": ["Markdown", "JSON-LD", "Turtle/RDF"]
       "arc:canonicalVocabularyModified": false,
       "arc:implementationStatus": "not-implemented-by-this-artifact",
       "arc:empiricalValidationStatus": "not-empirically-validated",
