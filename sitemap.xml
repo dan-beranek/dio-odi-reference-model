@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vocab.danielberanek.cz/dio-odi/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/docs/concept-map.svg</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/docs/terminology.md</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/docs/source-map.md</loc>
