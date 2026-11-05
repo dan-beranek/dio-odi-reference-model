@@ -1,7 +1,7 @@
 {
-  "registry_version": "2.2.0",
+  "registry_version": "2.3.0",
   "status": "canonical-approved",
-  "approved_on": "2026-10-25",
+  "approved_on": "2026-11-05",
   "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for Zenodo and other metadata surfaces.",
   "principles": [
     "Keywords are an ordered metadata grammar, not an unordered bag of tags.",
@@ -12,7 +12,8 @@
     "K6 is exported as a complete ordered block or not exported at all.",
     "Work-specific positioning terms occupy C2 and may vary by work.",
     "Aliases support recognition but are not exported by default.",
-    "Keyword assignment must not retroactively project concepts into a work that the work does not substantively carry."
+    "Keyword assignment must not retroactively project concepts into a work that the work does not substantively carry.",
+    "Exportable metadata surfaces preserve the complete resolved keyword sequence for the relevant work profile whenever the target format supports it; do not create manually curated parallel subsets."
   ],
   "export_policy": {
     "approved": true,
@@ -26,7 +27,9 @@
       "C6_machine_readable_representation"
     ],
     "flattening_rule": "Concatenate active chunks in chunk_order; preserve term order inside each chunk; omit inactive terms; deduplicate case-insensitively without reordering.",
-    "aliases_are_for_reconstruction_not_export": true
+    "aliases_are_for_reconstruction_not_export": true,
+    "complete_sequence_for_exportable_surfaces": true,
+    "projection_rule": "For a supported metadata surface, export the complete resolved keyword sequence for the relevant work profile without manual curation. Apply a reduced projection only when a verified target-format constraint requires it, and document that deterministic projection separately."
   },
   "chunks": {
     "C0_identity_invariant": {
@@ -151,6 +154,13 @@
       "canonical": "identity reconstruction",
       "values": [
         "Identity Reconstruction"
+      ],
+      "export": false
+    },
+    {
+      "canonical": "agentic entity resolution",
+      "values": [
+        "Agentic Entity Resolution"
       ],
       "export": false
     }
@@ -451,6 +461,7 @@
           "heterogeneous entity matching",
           "HEM",
           "agentic entity resolution",
+          "staging isolation",
           "policy-as-code",
           "commit-boundary authorization",
           "authorization guardrail"
@@ -480,6 +491,7 @@
         "heterogeneous entity matching",
         "HEM",
         "agentic entity resolution",
+        "staging isolation",
         "policy-as-code",
         "commit-boundary authorization",
         "authorization guardrail",
