@@ -77,7 +77,7 @@
       "arc:archivedIn": "https://doi.org/10.5281/zenodo.23966487",
       "arc:formsCoordinatedResearchArtifactWith": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
       "arc:formalizesArchitectureSpecifiedIn": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
-      "arc:serializationFormats": ["Markdown", "JSON-LD", "Turtle/RDF"]
+      "arc:serializationFormats": ["Markdown", "JSON-LD", "Turtle/RDF"],
       "arc:canonicalVocabularyModified": false,
       "arc:implementationStatus": "not-implemented-by-this-artifact",
       "arc:empiricalValidationStatus": "not-empirically-validated",
