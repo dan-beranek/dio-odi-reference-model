@@ -131,9 +131,9 @@
       "publication_date": "2026-10-11",
       "license": "CC-BY-4.0",
       "current_release": {
-        "version": "0.5.0",
-        "doi": "10.5281/zenodo.23643845",
-        "publication_date": "2026-10-25",
+        "version": "0.6.0",
+        "doi": "10.5281/zenodo.23966487",
+        "publication_date": "2026-11-05",
         "status": "archived",
         "reference_vocabulary_version": "0.2.0"
       },
@@ -170,27 +170,25 @@
           "doi": "10.5281/zenodo.23643845",
           "publication_date": "2026-10-25",
           "reference_vocabulary_version": "0.2.0"
+        },
+        {
+          "version": "0.6.0",
+          "doi": "10.5281/zenodo.23966487",
+          "publication_date": "2026-11-05",
+          "reference_vocabulary_version": "0.2.0"
         }
       ],
       "keyword_profile": "reference-model",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",
       "previous_archived_release": {
-        "version": "0.4.0",
-        "doi": "10.5281/zenodo.23632619"
+        "version": "0.5.0",
+        "doi": "10.5281/zenodo.23643845"
       },
       "reference_vocabulary_initial_archived_version": "0.1.0",
       "reference_vocabulary_initial_archived_version_doi": "10.5281/zenodo.23272898",
       "reference_vocabulary_initial_archived_version_doi_url": "https://doi.org/10.5281/zenodo.23272898",
-      "release_candidate": {
-        "version": "0.6.0",
-        "based_on": "0.5.0",
-        "based_on_doi": "10.5281/zenodo.23643845",
-        "status": "prepared-for-github-release-and-zenodo-archiving",
-        "version_doi": null,
-        "reference_vocabulary_version": "0.2.0",
-        "note": "Archives the accumulated main-branch state since v0.5.0, including Agentic ER Architecture Mapping v0.3.0. Do not populate a version-specific DOI before Zenodo archives the GitHub Release."
-      }
+      "release_candidate": null
     }
   ]
 }
