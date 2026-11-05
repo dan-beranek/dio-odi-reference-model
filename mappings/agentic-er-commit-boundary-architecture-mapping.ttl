@@ -18,7 +18,7 @@ arc:Mapping a schema:TechArticle ;
   schema:license <https://creativecommons.org/licenses/by/4.0/> ;
   schema:isPartOf <https://doi.org/10.5281/zenodo.23966487> ;
   schema:codeRepository <https://github.com/dan-beranek/dio-odi-reference-model> ;
-  dcterms:source <https://arxiv.org/abs/2610.37407>, <https://vocab.danielberanek.cz/dio-odi/#>, <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/> ;
+  dcterms:source <https://arxiv.org/abs/2610.37407>, <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary>, <https://vocab.danielberanek.cz/mappings/commit-boundary-policy/> ;
   arc:artifactType "derived-architecture-mapping" ;
   arc:canonicalVocabularyModified false ;
   arc:implementationStatus "not-implemented-by-this-artifact" ;

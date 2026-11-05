@@ -76,7 +76,7 @@
         {
           "@type": "schema:CreativeWork",
           "schema:name": "DIO/ODI Reference Vocabulary v0.2.0",
-          "schema:url": "https://vocab.danielberanek.cz/dio-odi/"
+          "schema:url": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary"
         }
       ],
       "arc:artifactType": "derived-architecture-mapping",
@@ -89,7 +89,11 @@
       "archivedIn": "https://doi.org/10.5281/zenodo.23966487",
       "formsCoordinatedResearchArtifactWith": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
       "formalizesArchitectureSpecifiedIn": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
-      "arc:serializationFormats": ["Markdown", "JSON-LD", "Turtle/RDF"],
+      "arc:serializationFormats": [
+        "Markdown",
+        "JSON-LD",
+        "Turtle/RDF"
+      ],
       "arc:canonicalVocabularyModified": false,
       "arc:implementationStatus": "not-implemented-by-this-artifact",
       "arc:empiricalValidationStatus": "not-empirically-validated",

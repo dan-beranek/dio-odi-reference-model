@@ -304,7 +304,7 @@ The JSON-LD graph contains 120 local architecture concepts and 206 qualified rel
 3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0) [Software]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
 4. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.5.0) [Software]. Zenodo. DOI [10.5281/zenodo.23643845](https://doi.org/10.5281/zenodo.23643845).
 
-5. Beránek, D. (2026). *DIO/ODI Reference Model* [Reference vocabulary, version 0.2.0]. Zenodo. Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). [Current vocabulary page](https://vocab.danielberanek.cz/dio-odi/).
+5. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* [SKOS ConceptScheme; version 0.2.0 as included in Reference Model v0.6.0]. DIO/ODI Reference Model. [Canonical ConceptScheme URI](https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary).
 
 Section-level anchors align with production manuscript v55 dated 4 November 2026, used as an unpublished source for the pending arXiv v2 submission. The public arXiv citation identifies the current v1 predecessor separately.
 ---
