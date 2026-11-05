@@ -115,7 +115,7 @@ The namespace is owned by the author and is intended to remain stable independen
 - `mappings/commit-boundary-policy-mapping.jsonld` — machine-readable metadata and mapping items
 - `mappings/commit-boundary-policy-mapping.ttl` — Turtle RDF with qualified commit-boundary mapping assertions
 - `mappings/commit-boundary-policy/index.html` — human-readable Policy-as-Code mapping frontend
-- `mappings/agentic-er-commit-boundary-architecture-mapping.md` — source for the DIO/ODI-informed Agentic ER commit-boundary architecture mapping (version 0.3.0 release candidate)
+- `mappings/agentic-er-commit-boundary-architecture-mapping.md` — source for the DIO/ODI-informed Agentic ER commit-boundary architecture mapping (version 0.3.0, included in archived Reference Model v0.6.0)
 - `mappings/agentic-er-commit-boundary-architecture-mapping.jsonld` — JSON-LD with local architecture concepts and qualified relation assertions
 - `mappings/agentic-er-commit-boundary-architecture-mapping.ttl` — Turtle RDF serialization of the qualified architecture assertions
 - `mappings/agentic-er-architecture/index.html` and `architecture.svg` — human-readable architecture mapping frontend and diagram
