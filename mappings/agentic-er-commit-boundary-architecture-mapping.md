@@ -1,11 +1,12 @@
 # DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping
 
 **Artifact type:** derived architecture mapping  
-**Draft version:** 0.2.0-draft  
-**Status:** author-curated, non-normative draft; aligned to working manuscript `constraining_the_commit_boundary_v48` (4 November 2026)  
+**Version:** 0.3.0  
+**Status:** author-curated, non-normative release candidate; aligned to production manuscript v55 (4 November 2026), prepared for arXiv v2  
 **Canonical namespace:** `https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#`  
-**Public source paper:** Daniel Beránek, *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*, [arXiv:2610.37407](https://arxiv.org/abs/2610.37407), v1; corresponding [Zenodo record](https://zenodo.org/records/23580733). **Section-level source:** separate working manuscript `constraining_the_commit_boundary_v48`, dated 4 November 2026; all section and algorithm anchors in this mapping refer to that working draft, not necessarily to identical wording in public arXiv v1.  
-**Reference Model:** DIO/ODI Reference Model v0.5.0; Reference Vocabulary v0.2.0  
+**Source paper:** Daniel Beránek, *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*, [arXiv:2610.37407](https://arxiv.org/abs/2610.37407); current public predecessor [v1 Zenodo record](https://zenodo.org/records/23580733). **Section-level source:** production manuscript `Constraining_the_Commit_Boundary_v55_production.md`, dated 4 November 2026 and prepared for arXiv v2; it is not represented as an already-public version.  
+**Reference Model:** v0.6.0 release candidate, pending Zenodo archive; Reference Vocabulary v0.2.0  
+**Model size:** 120 local architecture concepts; 206 qualified relation assertions  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## 1. Purpose
@@ -18,7 +19,7 @@ Its central path is:
 
 **DIO/ODI diagnostic distinctions → domain-governed constraint binding → mutation-specific proposition requirements → claim-specific evidence eligibility → two-phase authorization → protected commit.**
 
-The mapping also represents the different logical roles of the seven stated conditions, evidence-admission and status-precedence outcomes, version/snapshot bindings, the conditional human-adjudication path, and prospective evaluation controls. These are representations of the working draft, not claims that the architecture has been implemented or empirically evaluated.
+The mapping also represents the different logical roles of the seven stated conditions, evidence-admission and status-precedence outcomes, version/snapshot bindings, the conditional human-adjudication path, and prospective evaluation controls. These are representations of production manuscript v55, not claims that the architecture has been implemented or empirically evaluated.
 
 ## 2. Relationship to the existing DIO/ODI resources
 
@@ -57,7 +58,7 @@ The first is an architecture-level reconstruction; the second is an external tec
 
 ![DIO/ODI-informed commit-boundary architecture](agentic-er-architecture/architecture.svg)
 
-The diagram is the human-readable overview of the same conceptual relations represented in the JSON-LD and Turtle files. Solid arrows show relations specified in the current architecture. The lower dashed region identifies future work outside the present commit-boundary contract. The guarantee band is conditional on Assumptions 1–7; Section 7.5 distinguishes enforcement premises from adequacy conditions and the fail-closed outcome rule.
+The diagram is the human-readable overview of the same conceptual relations represented in the JSON-LD and Turtle files. Solid arrows show relations specified in the current architecture. The lower dashed region identifies future work outside the present commit-boundary contract. The guarantee band is conditional on Assumptions 1–7; Section 7.6 distinguishes enforcement premises from adequacy conditions and the fail-closed outcome rule.
 
 ## 5. Canonical DIO/ODI concepts reused
 
@@ -124,6 +125,15 @@ Paper-specific constructs are defined only in the local mapping namespace. They 
 | `OutcomeCountingCodebook` / `OutcomeCutoff` | Prespecified operation IDs, retry counts, terminal case resolution, confusion matrix, zero-denominator, and reconciliation rules | proposed-evaluation |
 | `MultiplicityControlRule` | Uncertainty calibration for the two-route OR decision structure | proposed-evaluation |
 | `DependencyAwareEvidenceFlow` | Broader tracking/control of hypothesis-conditioned derivation lineage | future research |
+| `ReadAction`, `StageLocalAction`, `ReversibleWriteAction`, `IrreversibleWriteAction` | Four action classes with distinct scope, effect, and authorization semantics | specified |
+| `ProductionGraph` / `ShadowGraph` | Persistent production graph and isolated provisional staging target | specified |
+| `StagingIsolationState` | State of isolation from production, Planner-visible shared identity state, downstream consumers, and `P_auth` inputs | specified |
+| `StagingIsolationVersion` | Version of staging-isolation state when separately versioned; no dedicated symbol is prescribed | specified when separately represented |
+| `LocalDependencyVersion` | Version of a local dependency explicitly bound by `STAGE_LOCAL` only when the operation depends on it | specified |
+| `PlannerVisibleSharedIdentityState` / `DownstreamConsumers` | Shared state and consumers from which provisional staging must remain isolated | specified |
+| `ClaimConflictCheck` | Mutation-specific `CheckClaimConflict(q_m, P_auth, P_active, P_quar)`, distinct from admission conflict checking | specified |
+| `ClaimConflictClear`, `ClaimConflictDetected`, `ClaimConflictIndeterminate` | `CLEAR`, `CONFLICT`, and `INDETERMINATE` outcomes of the mutation-specific conflict check | specified |
+| `QuarantineDispositionDecision` | Recorded policy/adjudication decision that advances evidence state and triggers fresh admission before release | specified |
 ## 7. Relationship groups
 
 ### 7.1 Diagnostic foundation and constraint binding
@@ -173,6 +183,10 @@ Retrieved observations first enter \(P_{quar}\). The admission check returns one
 
 A separate promotion decision evaluates the specific proposition, observation domain \(\omega\), temporal applicability, evidentiary role, recorded provenance, validation basis, and applicable policy/version. Eligibility is a subset relation, not physical separation:
 
+A second, mutation-specific check is distinct from admission checking: `CheckClaimConflict(q_m, P_auth, P_active, P_quar)`. It returns `CLEAR` only when no unresolved material conflict bearing on the propositions in `q_m` is detected; `CONFLICT` only when claim-specific authorization-eligible evidence establishes a relevant contradiction or prohibitive condition; and `INDETERMINATE` when a possible conflict is indicated only by `UNVERIFIED` or quarantined evidence, or eligible conflicts cannot be reconciled under the applicable authority and temporal rules. `CONFLICT` and `INDETERMINATE` both prevent `PASS`; an established prohibitive condition yields `BREACH`, while unresolved/indeterminate conflict yields `UNKNOWN_EVIDENCE`.
+
+A quarantined item is not released merely because it has been escalated. A policy-designated adjudication or versioned rule must determine and record its disposition, advance the evidence-state version, and trigger a fresh admission check before release to `P_active`. Release confers only `UNVERIFIED` status; it is not promotion into `P_auth`. Eligibility metadata may be changed only through the designated claim-specific promotion process or a versioned policy/adjudication operation; neither the Planner nor raw tool output may set it directly.
+
 \[
 P_{auth}(q_m,\omega) \subseteq P_{active}.
 \]
@@ -193,7 +207,25 @@ The promotion contract also applies two explicit provenance restrictions. First,
 `Promotion → grants eligibilityFor → specific proposition / role / context`  
 `α_m → identifies per proposition → promotion/validation record`
 
-### 7.4 Two-phase authorization and commit
+### 7.4 Action-specific authorization and staging isolation
+
+The interface distinguishes four operation classes rather than treating every tool action as a graph mutation:
+
+- `READ` authorizes retrieval within a declared scope. It does not bind pre-retrieval graph or evidence versions whose unrelated change would force the retrieval to be replayed. The returned observation is admitted against the current evidence-state version through the quarantine protocol.
+- `STAGE_LOCAL` authorizes local preparation with no shared-state effects. It binds a local dependency version only when the declared operation explicitly depends on it; post-execution validation confirms the absence of shared effects.
+- `REVERSIBLE_WRITE` authorizes only provisional staging to an isolated target such as `G_shadow`. The staging target must be separated from production identity state, Planner-visible shared identity state, downstream consumers, and all `P_auth` inputs. The authorization binds `v_S`, the applicable policy version `v_{pol}`, and any separately versioned staging-isolation state relevant to the action. The manuscript does not prescribe a dedicated symbol for that optional isolation-state version.
+- `IRREVERSIBLE_WRITE` is the protected path for a realized or potential shared effect that can alter identity interpretation. If isolation or operation classification is uncertain, the action is treated as `IRREVERSIBLE_WRITE`, not as provisionally reversible. The term describes the authorization boundary and does not assert that technical rollback is impossible.
+
+For `REVERSIBLE_WRITE`, the consistent snapshot includes staging-isolation state and its version when separately versioned. The shadow write and comparison of `v_S`, `v_{pol}`, and every other bound staging-relevant version occur atomically at the action's linearization point. A mismatch prevents staging and consumes the common retry budget; successful staging advances `v_S` and returns `SHADOW_STAGED_PROVISIONAL`, but does not authorize publication to `G_{prod}`. If isolation cannot be verified, the candidate is discarded; any shared-identity attempt must restart through the protected `IRREVERSIBLE_WRITE` path.
+
+**Relation sequence:**
+
+`READ → scoped retrieval → quarantine → current-state admission`  
+`STAGE_LOCAL → local-only preparation → post-execution no-shared-effect confirmation`  
+`REVERSIBLE_WRITE → positive isolation verification → version-bound atomic stage in G_shadow`  
+`IRREVERSIBLE_WRITE → two-phase authorization → protected production commit`
+
+### 7.5 Two-phase authorization and commit
 
 **Phase 1 — Pre-execution authorization** derives the required claims and checks the proposed protected operation against the applicable policy, claim-specific evidence eligibility, conflicts, and declared scope. If the preconditions pass, it issues \(\alpha_m\), binding the claim set, operation scope, relevant versions, and the promotion/validation record identifiers relied upon for each required proposition.
 
@@ -209,7 +241,7 @@ Status aggregation follows `BREACH` > `UNKNOWN_EVIDENCE` > `PASS`. `BREACH` lead
 
 The same protected boundary applies to merges, splits, and corrective un-merges when their realized or potential shared effects can alter identity interpretation. The policy derives a mutation-specific proposition set for each operation; a corrective operation does not inherit authority from the earlier mutation.
 
-### 7.5 Guarantee and assumptions
+### 7.6 Guarantee and assumptions
 
 The commit invariant is an interface invariant, not a theorem of semantic correctness. The seven stated conditions have different logical roles and should not be read as interchangeable premises:
 
@@ -223,7 +255,7 @@ The commit invariant is an interface invariant, not a theorem of semantic correc
 
 The Supervisor does not independently authenticate every source, prove semantic truth, detect conflicts absent from its inputs, or reconstruct provenance derivations that are not recorded.
 
-### 7.6 Evaluation relations
+### 7.7 Evaluation relations
 
 The proposed protocol compares **at least four** conditions: unconstrained Agentic ER (Baseline A), conventional identifier/default-deny rules (Baseline B), a generic two-phase authorization boundary (Baseline C), and the DIO/ODI-informed Challenger. The Baseline C–Challenger comparison tests incremental diagnostic-to-constraint organization.
 
@@ -237,7 +269,7 @@ Before outcomes are examined, task- and policy-family-specific margins for accep
 
 The counting codebook defines a unique attempted protected mutation by `operation_id`; retries/re-evaluations for the same operation count once. It also fixes the observation/reconciliation cutoff, terminal resolution (including correct non-match outcomes), benign/resolvable/admissible labels, confusion-matrix mapping, and zero-denominator conventions. Still-unknown transaction outcomes at the cutoff remain unknown. Policy-authoring and corpus-construction costs are reported separately from system CCR unless expressly included under a declared common costing horizon.
 
-### 7.7 Future-research boundary
+### 7.8 Future-research boundary
 
 Dependency-aware evidence lineage and control of the full hypothesis-conditioned Plan–Act–Observe–Update loop are represented as a future-research extension, not a current Supervisor capability. The present architecture governs authorization at the protected persistence boundary; it does not eliminate upstream hypothesis-conditioned retrieval or prove that observations are independent.
 
@@ -252,7 +284,7 @@ Dependency-aware evidence lineage and control of the full hypothesis-conditioned
 | `future-research` | Explicitly outside the present architecture and reserved for later investigation |
 | `canonical-reference` | An existing DIO/ODI Reference Vocabulary concept reused without redefining it |
 
-Every qualified relation assertion in JSON-LD and Turtle carries a source section, interpretation note, and epistemic status. Section references anchor assertions to working manuscript `constraining_the_commit_boundary_v48` dated 4 November 2026. The public arXiv v1 is identified as the published source counterpart, but this mapping does not imply that every v48 section-level detail is already present in v1.
+Every qualified relation assertion in JSON-LD and Turtle carries a source section, interpretation note, and epistemic status. Section references anchor assertions to production manuscript `Constraining_the_Commit_Boundary_v55_production.md` dated 4 November 2026. The public arXiv v1 is identified as the published source counterpart; section-level anchors in this release candidate follow production manuscript v55 prepared for arXiv v2.
 
 ## 9. Machine-readable files
 
@@ -261,7 +293,7 @@ Every qualified relation assertion in JSON-LD and Turtle carries a source sectio
 - [Architecture SVG](agentic-er-architecture/architecture.svg)
 - [Human-readable architecture page](agentic-er-architecture/)
 
-The RDF representation uses qualified relation assertions so that the subject–predicate–object relation, source section, explanatory note, and epistemic status remain associated. It does not add these local architecture terms or relations to the canonical SKOS vocabulary.
+The JSON-LD graph contains 120 local architecture concepts and 206 qualified relation assertions. The RDF representation uses qualified relation assertions so that the subject–predicate–object relation, source section, explanatory note, and epistemic status remain associated. It does not add these local architecture terms or relations to the canonical SKOS vocabulary.
 
 ## 10. References
 
@@ -273,8 +305,8 @@ The RDF representation uses qualified relation assertions so that the subject–
 
 4. Beránek, D. (2026). *DIO/ODI Reference Model* [Reference vocabulary, version 0.2.0]. Zenodo. Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). [Current vocabulary page](https://vocab.danielberanek.cz/dio-odi/).
 
-Section-level anchors align with the author’s unpublished working manuscript dated 4 November 2026. The public arXiv citation identifies version 1 separately; the working manuscript is not presented as a published bibliographic source.
+Section-level anchors align with production manuscript v55 dated 4 November 2026, used as an unpublished source for the pending arXiv v2 submission. The public arXiv citation identifies the current v1 predecessor separately.
 ---
 
 **Author:** Daniel Beránek · ORCID 0009-0004-0050-0264  
-**Status note:** mapping draft v0.2.0-draft, section-aligned to manuscript v48 dated 4 November 2026. This is a derived, non-normative architecture representation. It does not modify the DIO/ODI Reference Vocabulary and does not claim an implemented or empirically validated system.
+**Status note:** mapping v0.3.0, section-aligned to production manuscript v55 dated 4 November 2026. This is a derived, non-normative architecture representation. It does not modify the DIO/ODI Reference Vocabulary and does not claim an implemented or empirically validated system.
