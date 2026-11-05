@@ -1,10 +1,14 @@
-# DIO/ODI Reference Model v0.6.0 — release candidate
+# DIO/ODI Reference Model v0.6.0 — release notes
 
-**Status:** prepared for GitHub Release and Zenodo archiving. The archived v0.5.0 record remains the latest published release until v0.6.0 is archived.
+**Archive status:** Published on Zenodo on 5 November 2026.  
+**Version DOI:** https://doi.org/10.5281/zenodo.23966487  
+**GitHub tag:** https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.6.0
+
+The immutable `v0.6.0` tag preserves the source snapshot prepared before Zenodo assigned the version-specific DOI. The live `main` branch has since been synchronized with the minted identifier.
 
 ## Scope
 
-This release candidate archives the accumulated repository state since v0.5.0, not only the new Agentic ER mapping. The current main branch is 98 commits ahead of the v0.5.0 tag and includes updates to existing RAG, HEM, and Commit-Boundary × Policy-as-Code mappings; corpus metadata registries; vocabulary serializations and reference metadata; web frontends, indexes, and machine-readable discovery files.
+This release archives the accumulated repository state since v0.5.0, not only the new Agentic ER mapping. The current main branch is 98 commits ahead of the v0.5.0 tag and includes updates to existing RAG, HEM, and Commit-Boundary × Policy-as-Code mappings; corpus metadata registries; vocabulary serializations and reference metadata; web frontends, indexes, and machine-readable discovery files.
 
 ## New architecture mapping
 
@@ -28,4 +32,4 @@ The mapping reuses canonical DIO/ODI identifiers and defines paper-specific cons
 - Canonical Reference Vocabulary: **0.2.0** (unchanged).
 - Previous archived Reference Model release: **0.5.0**, DOI <https://doi.org/10.5281/zenodo.23643845>.
 
-The v0.6.0 version-specific DOI is intentionally not prepopulated. Zenodo assigns it after the GitHub Release is archived. Once the record is public, synchronize the minted DOI in the live metadata, README, and CITATION.cff; do not rewrite the immutable archived snapshot.
+Zenodo assigned the v0.6.0 version-specific DOI after the GitHub Release was archived: https://doi.org/10.5281/zenodo.23966487. The live `main` branch now records this DOI in `metadata.json`, `metadata/works.json`, `README.md`, and `CITATION.cff`. The immutable `v0.6.0` tag remains unchanged.
