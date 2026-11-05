@@ -1,10 +1,11 @@
 # DIO/ODI Reference Model
 
-**Current archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
-**Current source-tree release candidate:** v0.6.0 — prepared for Zenodo; version DOI pending  
+**Current archived release:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
+**Current source-tree version:** v0.6.0 (`main`)  
 **Live Reference Vocabulary:** v0.2.0 — SKOS-first, OWL-later  
-**Vocabulary included in archived v0.5.0:** v0.2.0  
-**Previous archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
+**Vocabulary included in archived v0.6.0:** v0.2.0  
+**Previous archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
+**Earlier archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
 **Earlier archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
@@ -139,7 +140,7 @@ Public index: https://vocab.danielberanek.cz/mappings/
 
 - [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the source tree on 2026-10-25 and first included in archived Reference Model v0.4.0: https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0: https://doi.org/10.5281/zenodo.23643845.
 
-- [Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture](https://vocab.danielberanek.cz/mappings/agentic-er-architecture/) — reconstructs the internal architecture relations of the Agentic ER commit-boundary proposal, from diagnostic distinctions and domain constraint binding through claim-specific evidence, two-phase authorization, assumptions, and prospective evaluation. Added to the live source tree on 2026-11-04 as version 0.3.0 release candidate; it is not part of archived Reference Model v0.5.0 and does not modify the canonical vocabulary.
+- [Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture](https://vocab.danielberanek.cz/mappings/agentic-er-architecture/) — reconstructs the internal architecture relations of the Agentic ER commit-boundary proposal, from diagnostic distinctions and domain constraint binding through claim-specific evidence, two-phase authorization, assumptions, and prospective evaluation. Added to the live source tree on 2026-11-04 as version 0.3.0 and included in archived Reference Model v0.6.0: https://doi.org/10.5281/zenodo.23966487. It is a non-normative derived layer and does not modify the canonical vocabulary.
 
 The HEM × DIO mapping was introduced in **Reference Model v0.3.0**, included in archived v0.3.2, and carried forward in archived v0.4.0 and v0.5.0. The archived v0.4.0 package contains Reference Vocabulary v0.1.0. The archived v0.5.0 snapshot incorporates live Reference Vocabulary v0.2.0, including the new plural Identity-Preserving Constraints concept and a historical note on the retained singular entry. Earlier uses of the singular URI are not retroactively migrated, and no semantic relation between the two concepts is asserted. The snapshot carries forward the Commit-Boundary × Policy-as-Code mapping and the iterative/hypothesis-conditioned RAG extension.
 
@@ -164,9 +165,11 @@ In particular:
 
 ## Citation and archival release
 
-**Current archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
+**Current archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
 
-**Previous archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+**Previous archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
+
+**Earlier archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
 
 **Earlier archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
 
