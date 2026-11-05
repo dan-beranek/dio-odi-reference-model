@@ -115,7 +115,10 @@
       "type": "publication-preprint",
       "version_doi": "10.5281/zenodo.23580733",
       "publication_date": "2026-10-22",
-      "note": "Defines a commit-time authorization guardrail for persistent identity-changing mutations in Agentic Entity Resolution and explicitly leaves broader control of hypothesis-conditioned evidence acquisition and feedback as a separate research direction."
+      "note": "Defines a commit-time authorization guardrail for persistent identity-changing mutations in Agentic Entity Resolution and explicitly leaves broader control of hypothesis-conditioned evidence acquisition and feedback as a separate research direction.",
+      "keyword_profile": "commit-boundary-paper",
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     },
     {
       "id": "reference-model",
