@@ -61,7 +61,8 @@ Maps commit-boundary authorization obligations to relevant Policy-as-Code capabi
 - Architecture diagram: [agentic-er-architecture/architecture.svg](agentic-er-architecture/architecture.svg)
 - Public source paper: arXiv:2610.37407 v1 — https://arxiv.org/abs/2610.37407; corresponding Zenodo record: https://zenodo.org/records/23580733
 - Section-level alignment: production manuscript `Constraining_the_Commit_Boundary_v55_production.md`, dated 2026-11-04 and prepared for arXiv v2; it is not represented as an already-public arXiv version
-- Canonical vocabulary: Reference Vocabulary v0.2.0 — https://doi.org/10.5281/zenodo.23272897
+- Canonical Reference Vocabulary identity: https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary
+- Vocabulary state used by this mapping: v0.2.0, included in archived Reference Model v0.6.0
 - Archived in: DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
 - Added to live source tree: 2026-11-04; mapping version 0.3.0, aligned to production manuscript v55 and prepared for arXiv v2
 
