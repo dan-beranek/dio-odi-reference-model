@@ -38,8 +38,8 @@
     "url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
     "inLanguage": "en",
     "dateCreated": "2026-11-03",
-    "dateModified": "2026-11-05",
-    "creativeWorkStatus": "Non-normative derived mapping v0.3.0; archived in DIO/ODI Reference Model v0.6.0; section-aligned with production manuscript v55 prepared for arXiv v2",
+    "dateModified": "2026-11-06",
+    "creativeWorkStatus": "Non-normative derived mapping v0.3.1; provenance synchronized to public arXiv v2; v0.3.0 remains archived in DIO/ODI Reference Model v0.6.0; section-aligned to production manuscript v55",
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "author": {
       "@type": "Person",
@@ -54,7 +54,7 @@
       "url": "https://github.com/dan-beranek/dio-odi-reference-model"
     },
     "isBasedOn": [
-      {"@type": "ScholarlyArticle", "name": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution", "url": "https://arxiv.org/abs/2610.37407"},
+      {"@type": "ScholarlyArticle", "name": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution", "url": "https://arxiv.org/abs/2610.37407v2"},
       {"@type": "CreativeWork", "name": "DIO/ODI Reference Vocabulary v0.2.0", "url": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary"}
     ],
     "about": [
@@ -72,8 +72,8 @@
   <h1>DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping</h1>
 
   <div class="status">
-    <strong>Status:</strong> derived, non-normative architecture mapping · v0.3.0 · archived in Reference Model v0.6.0.<br>
-    <strong>Source alignment:</strong> production manuscript v55 (4 November 2026), prepared for arXiv v2; the current public arXiv:2610.37407 v1 predecessor is identified separately. Reference layer: Reference Model v0.6.0 (Zenodo <a href="https://doi.org/10.5281/zenodo.23966487">10.5281/zenodo.23966487</a>) and Reference Vocabulary v0.2.0.<br>
+    <strong>Status:</strong> derived, non-normative architecture mapping · live version 0.3.1; version 0.3.0 archived in Reference Model v0.6.0.<br>
+    <strong>Source alignment:</strong> public paper version: arXiv <a href="https://arxiv.org/abs/2610.37407v2">v2</a> (5 November 2026); stable Concept URL: <a href="https://arxiv.org/abs/2610.37407">arXiv:2610.37407</a>. Section-level anchors follow production manuscript v55 (4 November 2026). Earlier Zenodo version 1 record: <a href="https://zenodo.org/records/23580733">10.5281/zenodo.23580733</a>. Reference layer: Reference Model v0.6.0 (Zenodo <a href="https://doi.org/10.5281/zenodo.23966487">10.5281/zenodo.23966487</a>) and Reference Vocabulary v0.2.0.<br>
     <strong>Boundary:</strong> this mapping is not part of the canonical DIO/ODI Reference Vocabulary. It reuses canonical concept URIs and defines paper-specific architecture constructs only in its local namespace.<br>
     <strong>Validation:</strong> conceptual relation model; not an implementation, formal proof, or empirical result.
   </div>
@@ -81,7 +81,7 @@
   <p class="format-links"><a href="/mappings/agentic-er-commit-boundary-architecture-mapping.md">Markdown source</a> · <a href="/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld">JSON-LD</a> · <a href="/mappings/agentic-er-commit-boundary-architecture-mapping.ttl">Turtle / RDF</a> · <a href="/mappings/agentic-er-architecture/architecture.svg">Architecture SVG</a></p>
 
   <h2>Purpose</h2>
-  <p>The paper and this mapping form one coordinated research artefact: the paper specifies the proposed architecture, while the mapping formalizes its internal conceptual and functional relations. The Markdown source and JSON-LD and Turtle/RDF serializations expose the same relational model for human inspection and machine processing. This mapping makes explicit the relations among diagnostic inputs, domain-governed constraint binding, mutation-specific propositions, evidence states, two-phase Supervisor, commit invariant, assumptions, and prospective evaluation protocol described in production manuscript v55. Its section anchors refer to the 4 November 2026 production source prepared for arXiv v2; the current public arXiv:2610.37407 v1 predecessor is identified separately.</p>
+  <p>The paper and this mapping form one coordinated research artefact: the paper specifies the proposed architecture, while the mapping formalizes its internal conceptual and functional relations. The Markdown source and JSON-LD and Turtle/RDF serializations expose the same relational model for human inspection and machine processing. This mapping makes explicit the relations among diagnostic inputs, domain-governed constraint binding, mutation-specific propositions, evidence states, two-phase Supervisor, commit invariant, assumptions, and prospective evaluation protocol described in production manuscript v55. Its section anchors follow the 4 November 2026 production source; the corresponding paper is publicly available as arXiv v2.</p>
   <p><strong>Diagnostic distinctions → domain-configured constraints → mutation-specific claims → claim-specific evidence eligibility → two-phase authorization → protected commit.</strong></p>
   
 
@@ -153,13 +153,13 @@
 
   <h2>References</h2>
   <ol class="references">
-    <li>Beránek, D. (2026). <em>Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution</em> [Preprint, version 1]. arXiv. DOI <a href="https://doi.org/10.48550/arXiv.2610.37407" target="_blank" rel="noopener noreferrer">10.48550/arXiv.2610.37407</a>. Zenodo. Concept DOI <a href="https://doi.org/10.5281/zenodo.23580732" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23580732</a>.</li>
+    <li>Beránek, D. (2026, 5 November). <em>Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution</em> [Preprint, version 2]. arXiv. <a href="https://arxiv.org/abs/2610.37407v2" target="_blank" rel="noopener noreferrer">arXiv:2610.37407v2</a>. Concept DOI <a href="https://doi.org/10.48550/arXiv.2610.37407" target="_blank" rel="noopener noreferrer">10.48550/arXiv.2610.37407</a>. Earlier Zenodo version 1 record: <a href="https://zenodo.org/records/23580733" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23580733</a>.</li>
     <li>Beránek, D. (2026, October 25). <em>DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization</em> [Application mapping]. DIO/ODI Reference Model. <a href="/mappings/commit-boundary-policy/">https://vocab.danielberanek.cz/mappings/commit-boundary-policy/</a>.</li>
     <li>Beránek, D. (2026). <em>DIO/ODI Reference Model</em> (Version 0.6.0) [Software]. Zenodo. DOI <a href="https://doi.org/10.5281/zenodo.23966487" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23966487</a>.</li>
     <li>Beránek, D. (2026). <em>DIO/ODI Reference Model</em> (Version 0.5.0) [Software]. Zenodo. DOI <a href="https://doi.org/10.5281/zenodo.23643845" target="_blank" rel="noopener noreferrer">10.5281/zenodo.23643845</a>.</li>
     <li>Beránek, D. (2026). <em>DIO/ODI Reference Vocabulary</em> [SKOS ConceptScheme; version 0.2.0 as included in Reference Model v0.6.0]. DIO/ODI Reference Model. <a href="https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary" target="_blank" rel="noopener noreferrer">Canonical ConceptScheme URI</a>.</li>
   </ol>
-  <p class="reference-note">The section-level anchors align with the author’s unpublished working manuscript dated 4 November 2026. The public arXiv citation identifies the current v1 predecessor separately; production manuscript v55 is used only as the section-level source for the pending v2 submission.</p>
+  <p class="reference-note">The section-level anchors align with production manuscript v55 dated 4 November 2026, retained as the mapping’s provenance source. The corresponding paper is publicly available as arXiv v2 (5 November 2026); the production Markdown is not a separate public distribution.</p>
   <p class="meta">Daniel Beránek – ORCID <a href="https://orcid.org/0009-0004-0050-0264">0009-0004-0050-0264</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 </body>
 </html>

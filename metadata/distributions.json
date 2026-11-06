@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.1",
+  "registry_version": "1.3.2",
   "status": "operational",
   "semantics": "External distribution and supplementary representations of canonical DIO/ODI works. Existing relation types observed on Zenodo are evidence of prior metadata choices, not automatically authoritative semantic classifications.",
   "relation_rule": "Treat existing Zenodo Related Works relation types as observed metadata until independently verified. IsIdenticalTo requires the exact same research output in two locations. IsSupplementedBy requires the related resource to be a genuine supplement, not merely another distribution copy. Where exact equivalence is not established, keep the relation under semantic review.",
@@ -106,6 +106,30 @@
           "semantic_status": "verified-by-author",
           "approved_for_zenodo": true,
           "verification_basis": "Author confirmation that the SSRN publication is the same research output as the canonical Zenodo record."
+        }
+      ]
+    },
+    {
+      "work": "commit-boundary-paper",
+      "audit_status": "verified-by-author",
+      "representations": [
+        {
+          "id": "distribution:commit-boundary-paper:arxiv-v2",
+          "platform": "arXiv",
+          "identifier_type": "doi",
+          "identifier": "10.48550/arXiv.2610.37407",
+          "resource_type": "publication-preprint",
+          "version": "v2",
+          "concept_url": "https://arxiv.org/abs/2610.37407",
+          "version_url": "https://arxiv.org/abs/2610.37407v2",
+          "pdf_url": "https://arxiv.org/pdf/2610.37407v2",
+          "html_url": "https://arxiv.org/html/2610.37407v2",
+          "evidence": "The arXiv version history identifies v2 on 5 November 2026. The versioned PDF and HTML are publicly accessible; the PDF contains 32 pages, two figures, and three tables. The arXiv author metadata uses the ASCII spelling Daniel Beranek, while the PDF title page uses Daniel Beránek.",
+          "canonical_relation": "isVersionOf",
+          "applies_to_version_doi": "10.5281/zenodo.23580733",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": false,
+          "verification_basis": "Author-provided public arXiv v2 PDF and the arXiv version history. This is a distinct later version of the same paper, not an assertion of byte-identical distribution."
         }
       ]
     }

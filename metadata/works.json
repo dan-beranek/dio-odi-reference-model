@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.5",
+  "registry_version": "1.8.6",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -118,7 +118,25 @@
       "note": "Defines a commit-time authorization guardrail for persistent identity-changing mutations in Agentic Entity Resolution and explicitly leaves broader control of hypothesis-conditioned evidence acquisition and feedback as a separate research direction.",
       "keyword_profile": "commit-boundary-paper",
       "keyword_profile_status": "canonical-approved",
-      "keyword_grammar_version": "2.0.0"
+      "keyword_grammar_version": "2.0.0",
+      "arxiv": {
+        "id": "2610.37407",
+        "current_version": "v2",
+        "concept_url": "https://arxiv.org/abs/2610.37407",
+        "version_url": "https://arxiv.org/abs/2610.37407v2",
+        "pdf_url": "https://arxiv.org/pdf/2610.37407v2",
+        "html_url": "https://arxiv.org/html/2610.37407v2",
+        "version_date": "2026-11-05",
+        "version_history_timestamp_utc": "2026-11-05T00:52:52Z",
+        "subjects": [
+          "cs.AI",
+          "cs.CR",
+          "cs.DB"
+        ],
+        "metadata_author_name": "Daniel Beranek",
+        "pdf_titlepage_author_name": "Daniel Beránek",
+        "comments": "32 pages, 2 figures, 3 tables. Version 2, its non-normative relational architecture mapping and machine-readable serializations form one coordinated research artefact: the paper specifies the architecture; the mapping formalizes its relations. Mapping: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/ ; Reference Model v0.6.0: https://doi.org/10.5281/zenodo.23966487"
+      }
     },
     {
       "id": "reference-model",
