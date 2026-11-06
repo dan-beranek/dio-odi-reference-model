@@ -11,7 +11,6 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
-from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
@@ -308,16 +307,10 @@ def check_mapping_graphs() -> dict[str, int]:
 
     agentic = jsonld_graphs["agentic-er"]
     agentic_ttl = ttl_graphs["agentic-er"]
-    if not agentic_ttl.isomorphic(agentic):
-        ttl_only = set(agentic_ttl) - set(agentic)
-        jsonld_only = set(agentic) - set(agentic_ttl)
-        print("Agentic ER Turtle/JSON-LD graph difference diagnostic:")
-        print(f"- Turtle-only triples: {len(ttl_only)}")
-        print(f"- JSON-LD-only triples: {len(jsonld_only)}")
-        print(f"- Turtle-only predicates: {Counter(str(p) for _, p, _ in ttl_only).most_common(20)}")
-        print(f"- JSON-LD-only predicates: {Counter(str(p) for _, p, _ in jsonld_only).most_common(20)}")
-        print(f"- Turtle-only sample: {[tuple(map(str, t)) for t in sorted(ttl_only, key=lambda x: tuple(map(str, x)))[:20]]}")
-        print(f"- JSON-LD-only sample: {[tuple(map(str, t)) for t in sorted(jsonld_only, key=lambda x: tuple(map(str, x)))[:20]]}")
+    # The full graphs intentionally retain representation-specific descriptive metadata
+    # (for example, Turtle rdfs:label/rdfs:comment and JSON-LD dataset context).
+    # Parity is therefore enforced over the 206 qualified relation records and 120
+    # local architecture-concept identifiers below, not over every descriptive triple.
     rels = set(agentic.subjects(RDF.type, ARC.RelationAssertion))
     statements = set(agentic.subjects(RDF.type, RDF.Statement))
     ttl_rels = set(agentic_ttl.subjects(RDF.type, ARC.RelationAssertion))
@@ -334,18 +327,20 @@ def check_mapping_graphs() -> dict[str, int]:
     relation_differences = []
     for assertion in sorted(rels, key=str):
         for predicate in relation_fields:
-            ttl_values = {str(value) for value in agentic_ttl.objects(assertion, predicate)}
-            jsonld_values = {str(value) for value in agentic.objects(assertion, predicate)}
+            ttl_values = set(agentic_ttl.objects(assertion, predicate))
+            jsonld_values = set(agentic.objects(assertion, predicate))
             if ttl_values != jsonld_values:
                 relation_differences.append({
                     "assertion": str(assertion).rsplit("/", 1)[-1],
                     "predicate": str(predicate),
-                    "turtle": sorted(ttl_values),
-                    "jsonld": sorted(jsonld_values),
+                    "turtle": sorted(map(str, ttl_values)),
+                    "jsonld": sorted(map(str, jsonld_values)),
                 })
-    print(f"Agentic ER relation-field differences (language/datatype normalized): {len(relation_differences)}")
-    for difference in relation_differences[:30]:
-        print(f"- {difference}")
+    require(
+        not relation_differences,
+        "Agentic ER relation fields differ between Turtle and JSON-LD: "
+        + json.dumps(relation_differences[:10], ensure_ascii=False),
+    )
 
     mapping_root = URIRef(ARC_NS + "Mapping")
     provenance_source = URIRef(ARC_NS + "source/constraining_the_commit_boundary_v55")
@@ -355,7 +350,17 @@ def check_mapping_graphs() -> dict[str, int]:
         if isinstance(subject, URIRef) and str(subject).startswith(ARC_NS)
     }
     concept_nodes = typed_local_nodes - rels - {mapping_root, provenance_source}
+    ttl_typed_local_nodes = {
+        subject
+        for subject in agentic_ttl.subjects(RDF.type, None)
+        if isinstance(subject, URIRef) and str(subject).startswith(ARC_NS)
+    }
+    ttl_concept_nodes = ttl_typed_local_nodes - ttl_rels - {mapping_root, provenance_source}
     require(len(concept_nodes) == 120, f"Agentic ER mapping must contain 120 local architecture concepts, found {len(concept_nodes)}")
+    require(
+        ttl_concept_nodes == concept_nodes,
+        "Agentic ER local concept identifiers differ between Turtle and JSON-LD",
+    )
 
     required_statuses = {
         "specified",
