@@ -1,10 +1,10 @@
 # DIO/ODI-Informed Agentic Entity Resolution: Commit-Boundary Architecture Mapping
 
 **Artifact type:** derived architecture mapping  
-**Version:** 0.3.0  
-**Status:** author-curated, non-normative mapping; version 0.3.0, archived as part of DIO/ODI Reference Model v0.6.0  
+**Version:** 0.3.1  
+**Status:** author-curated, non-normative mapping; live source-tree version 0.3.1 is a provenance-only update; version 0.3.0 remains archived as part of DIO/ODI Reference Model v0.6.0  
 **Canonical namespace:** `https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#`  
-**Source paper:** Daniel Beránek, *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*, [arXiv:2610.37407](https://arxiv.org/abs/2610.37407); current public predecessor [v1 Zenodo record](https://zenodo.org/records/23580733). **Section-level source:** production manuscript `Constraining_the_Commit_Boundary_v55_production.md`, dated 4 November 2026 and prepared for arXiv v2; it is not represented as an already-public version.  
+**Public source paper:** Daniel Beránek, *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*, arXiv [version 2](https://arxiv.org/abs/2610.37407v2) (5 November 2026); stable Concept URL: [arXiv:2610.37407](https://arxiv.org/abs/2610.37407). Earlier Zenodo version 1 record: [10.5281/zenodo.23580733](https://zenodo.org/records/23580733). **Section-level source:** production manuscript `Constraining_the_Commit_Boundary_v55_production.md`, dated 4 November 2026 and retained as the provenance source for the mapping's section anchors.  
 **Reference Model:** v0.6.0 — [Zenodo DOI](https://doi.org/10.5281/zenodo.23966487); Reference Vocabulary v0.2.0  
 **Model size:** 120 local architecture concepts; 206 qualified relation assertions  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
@@ -297,7 +297,7 @@ The JSON-LD graph contains 120 local architecture concepts and 206 qualified rel
 
 ## 10. References
 
-1. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Zenodo. Concept DOI [10.5281/zenodo.23580732](https://doi.org/10.5281/zenodo.23580732).
+1. Beránek, D. (2026, 5 November). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 2]. arXiv. [arXiv:2610.37407v2](https://arxiv.org/abs/2610.37407v2). Concept DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Earlier Zenodo version 1 record: [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
 
 2. Beránek, D. (2026, October 25). *DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization* [Application mapping]. DIO/ODI Reference Model. https://vocab.danielberanek.cz/mappings/commit-boundary-policy/.
 
@@ -306,8 +306,8 @@ The JSON-LD graph contains 120 local architecture concepts and 206 qualified rel
 
 5. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* [SKOS ConceptScheme; version 0.2.0 as included in Reference Model v0.6.0]. DIO/ODI Reference Model. [Canonical ConceptScheme URI](https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary).
 
-Section-level anchors align with production manuscript v55 dated 4 November 2026, used as an unpublished source for the pending arXiv v2 submission. The public arXiv citation identifies the current v1 predecessor separately.
+Section-level anchors align with production manuscript v55 dated 4 November 2026, retained as the mapping's provenance source. The corresponding paper is publicly available as arXiv v2 (5 November 2026); the production Markdown remains distinct from the public arXiv distribution.
 ---
 
 **Author:** Daniel Beránek · ORCID 0009-0004-0050-0264  
-**Status note:** mapping v0.3.0, section-aligned to production manuscript v55 dated 4 November 2026. This is a derived, non-normative architecture representation. It does not modify the DIO/ODI Reference Vocabulary and does not claim an implemented or empirically validated system.
+**Status note:** mapping v0.3.1, updated on 6 November 2026 for public-source provenance. The 120 local architecture concepts and 206 qualified relation assertions are unchanged; version 0.3.0 remains the archived mapping in Reference Model v0.6.0. This is a derived, non-normative architecture representation. It does not modify the DIO/ODI Reference Vocabulary and does not claim an implemented or empirically validated system.
