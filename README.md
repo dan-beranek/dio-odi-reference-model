@@ -1,10 +1,10 @@
 # DIO/ODI Reference Model
 
-**Current archived Reference Model release:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
-**Release source snapshot:** v0.7.0 candidate (prepared; Zenodo archival pending)  
+**Current archived Reference Model release:** v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
+**Previous archived Reference Model release:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
 **Live Reference Vocabulary:** v0.2.1 — metadata-only update; concept model unchanged from v0.2.0  
-**Vocabulary included in archived v0.6.0:** v0.2.0  
-**Previous archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
+**Vocabulary included in archived v0.7.0:** v0.2.1  
+**Earlier archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
 **Earlier archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
 **Earlier archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
@@ -136,14 +136,14 @@ These mappings are not part of the canonical vocabulary. They project vocabulary
 
 Public index: https://vocab.danielberanek.cz/mappings/
 
-- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. The live page includes an iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 and linked to the scope boundary discussed in [Constraining the Commit Boundary, arXiv v2](https://arxiv.org/abs/2610.37407v2); the paper's earlier Zenodo version 1 record remains available at https://zenodo.org/records/23580733 (published 2026-10-22). The base mapping was introduced and archived in v0.2.0 and retained in later v0.3.x releases; the extension was first included in archived v0.4.0 and carried forward in archived v0.5.0 and v0.6.0.
+- [Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline](https://vocab.danielberanek.cz/mappings/rag-pipeline/) — a derived diagnostic mapping from the current DIO failure taxonomy to generic RAG pipeline loci, mechanisms, observable symptoms, and hypothetical incidents. The live page includes an iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 and linked to the scope boundary discussed in [Constraining the Commit Boundary, arXiv v2](https://arxiv.org/abs/2610.37407v2); the paper's earlier Zenodo version 1 record remains available at https://zenodo.org/records/23580733 (published 2026-10-22). The base mapping was introduced and archived in v0.2.0 and retained in later v0.3.x releases; the extension was first included in archived v0.4.0 and carried forward in archived v0.5.0 and v0.6.0; it is also present in archived v0.7.0 (https://doi.org/10.5281/zenodo.24020300).
 - [Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences](https://vocab.danielberanek.cz/mappings/hem-dio/) — uses the Heterogeneous Entity Matching taxonomy as an external analytical axis for examining how heterogeneous input conditions may contribute to DIO reconstruction failures or increase Semantic Vulnerability. HEM source: https://doi.org/10.1016/j.datak.2026.102575
 
-- [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the source tree on 2026-10-25 and first included in archived Reference Model v0.4.0: https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0: https://doi.org/10.5281/zenodo.23643845 and v0.6.0: https://doi.org/10.5281/zenodo.23966487.
+- [Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization](https://vocab.danielberanek.cz/mappings/commit-boundary-policy/) — maps published commit-boundary authorization obligations to Policy-as-Code capabilities and explicit integration gaps, using OPA/Rego and Cedar as reference points. Added to the source tree on 2026-10-25 and first included in archived Reference Model v0.4.0: https://doi.org/10.5281/zenodo.23632619; carried forward in v0.5.0: https://doi.org/10.5281/zenodo.23643845; v0.6.0: https://doi.org/10.5281/zenodo.23966487; and v0.7.0: https://doi.org/10.5281/zenodo.24020300.
 
-- [Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture](https://vocab.danielberanek.cz/mappings/agentic-er-architecture/) — part of one coordinated research artefact with *Constraining the Commit Boundary*, now publicly available as [arXiv v2](https://arxiv.org/abs/2610.37407v2): the paper specifies the architecture; the mapping formalizes its internal conceptual and functional relations, with Markdown, JSON-LD, and Turtle/RDF representations. The live mapping is v0.3.1, a provenance-only synchronization; v0.3.0 remains the version included in archived Reference Model v0.6.0: https://doi.org/10.5281/zenodo.23966487. It is a non-normative derived layer and does not modify the canonical vocabulary.
+- [Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture](https://vocab.danielberanek.cz/mappings/agentic-er-architecture/) — part of one coordinated research artefact with *Constraining the Commit Boundary*, now publicly available as [arXiv v2](https://arxiv.org/abs/2610.37407v2): the paper specifies the architecture; the mapping formalizes its internal conceptual and functional relations, with Markdown, JSON-LD, and Turtle/RDF representations. The live mapping is v0.3.1, a provenance-only synchronization included in archived Reference Model v0.7.0: https://doi.org/10.5281/zenodo.24020300; v0.3.0 remains the version included in archived Reference Model v0.6.0: https://doi.org/10.5281/zenodo.23966487. It is a non-normative derived layer and does not modify the canonical vocabulary.
 
-The HEM × DIO mapping was introduced in **Reference Model v0.3.0**, included in archived v0.3.2, and carried forward in archived v0.4.0, v0.5.0, and v0.6.0. The archived v0.4.0 package contains Reference Vocabulary v0.1.0. The archived v0.5.0 snapshot incorporates live Reference Vocabulary v0.2.0, including the new plural Identity-Preserving Constraints concept and a historical note on the retained singular entry. Earlier uses of the singular URI are not retroactively migrated, and no semantic relation between the two concepts is asserted. The snapshot carries forward the Commit-Boundary × Policy-as-Code mapping and the iterative/hypothesis-conditioned RAG extension.
+The HEM × DIO mapping was introduced in **Reference Model v0.3.0**, included in archived v0.3.2, and carried forward in archived v0.4.0, v0.5.0, v0.6.0, and v0.7.0. The archived v0.4.0 package contains Reference Vocabulary v0.1.0. The archived v0.5.0 snapshot incorporates live Reference Vocabulary v0.2.0, including the new plural Identity-Preserving Constraints concept and a historical note on the retained singular entry. Earlier uses of the singular URI are not retroactively migrated, and no semantic relation between the two concepts is asserted. The snapshot carries forward the Commit-Boundary × Policy-as-Code mapping and the iterative/hypothesis-conditioned RAG extension. Archived v0.7.0 incorporates Reference Vocabulary v0.2.1, a metadata-only update to v0.2.0.
 
 ## Primary sources
 
@@ -167,9 +167,11 @@ In particular:
 
 ## Citation and archival release
 
-**Current archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+**Current archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300
 
-**Previous archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
+**Previous archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+
+**Earlier archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
 **Earlier archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
 

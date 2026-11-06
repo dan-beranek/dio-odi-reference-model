@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.8",
+  "registry_version": "1.8.9",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -149,13 +149,19 @@
       "publication_date": "2026-10-11",
       "license": "CC-BY-4.0",
       "current_release": {
-        "version": "0.6.0",
-        "doi": "10.5281/zenodo.23966487",
-        "publication_date": "2026-11-05",
+        "version": "0.7.0",
+        "doi": "10.5281/zenodo.24020300",
+        "publication_date": "2026-11-06",
         "status": "archived",
-        "reference_vocabulary_version": "0.2.0"
+        "reference_vocabulary_version": "0.2.1"
       },
       "releases": [
+        {
+          "version": "0.7.0",
+          "doi": "10.5281/zenodo.24020300",
+          "publication_date": "2026-11-06",
+          "reference_vocabulary_version": "0.2.1"
+        },
         {
           "version": "0.1.0",
           "doi": "10.5281/zenodo.23272898",
@@ -201,17 +207,10 @@
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",
       "previous_archived_release": {
-        "version": "0.5.0",
-        "doi": "10.5281/zenodo.23643845"
+        "version": "0.6.0",
+        "doi": "10.5281/zenodo.23966487"
       },
-      "release_candidate": {
-        "version": "0.7.0",
-        "status": "prepared-for-github-release",
-        "reference_vocabulary_version": "0.2.1",
-        "agentic_er_mapping_version": "0.3.1",
-        "doi": null,
-        "doi_status": "pending-zenodo-archival"
-      },
+      "release_candidate": null,
       "reference_model_concept_doi": "10.5281/zenodo.23272897",
       "reference_model_concept_doi_url": "https://doi.org/10.5281/zenodo.23272897",
       "reference_vocabulary_uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
