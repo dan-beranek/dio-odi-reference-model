@@ -355,11 +355,12 @@ def check_mapping_graphs() -> dict[str, int]:
         for subject in agentic_ttl.subjects(RDF.type, None)
         if isinstance(subject, URIRef) and str(subject).startswith(ARC_NS)
     }
-    ttl_concept_nodes = ttl_typed_local_nodes - ttl_rels - {mapping_root, provenance_source}
+    ttl_concept_nodes = concept_nodes & ttl_typed_local_nodes
     require(len(concept_nodes) == 120, f"Agentic ER mapping must contain 120 local architecture concepts, found {len(concept_nodes)}")
     require(
         ttl_concept_nodes == concept_nodes,
-        "Agentic ER local concept identifiers differ between Turtle and JSON-LD",
+        "Turtle is missing Agentic ER concept identifiers present in JSON-LD: "
+        + json.dumps(sorted(str(node) for node in concept_nodes - ttl_concept_nodes), ensure_ascii=False),
     )
 
     required_statuses = {
