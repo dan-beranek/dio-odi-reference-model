@@ -69,7 +69,10 @@ const httpServer = createHttpServer((request, response) => {
     return;
   }
 
-  const normalizedRequest = Object.assign(request, { method: request.method ?? 'GET' });
+  const normalizedRequest = Object.assign(request, {
+    method: request.method ?? 'GET',
+    url: request.url ?? '/'
+  });
   mcpHandler(normalizedRequest, response);
 });
 
