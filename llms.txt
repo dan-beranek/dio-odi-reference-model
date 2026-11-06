@@ -5,9 +5,10 @@
 ## Versions
 
 - Current archived Reference Model release: 0.6.0 — https://doi.org/10.5281/zenodo.23966487
-- Current source-tree state: main (post-v0.6.0 live vocabulary metadata update)
+- Release source snapshot: v0.7.0 candidate (prepared; Zenodo archival pending)
 - Live Reference Vocabulary: 0.2.1 — metadata-only update; concept model unchanged from v0.2.0
 - Vocabulary included in archived v0.6.0: 0.2.0
+- Vocabulary prepared for v0.7.0: 0.2.1 (metadata-only update; concept inventory and semantic relations unchanged)
 - Previous archived release: v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 - Earlier archived release: v0.4.0 — https://doi.org/10.5281/zenodo.23632619
 - Earlier archived release: v0.3.2 — https://doi.org/10.5281/zenodo.23300703
@@ -68,7 +69,8 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.ttl
   - Architecture SVG: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/architecture.svg
   - Live version 0.3.1 is a provenance-only synchronization to public arXiv:2610.37407v2 (2026-11-05); its 120 local architecture concepts and 206 qualified relation assertions are unchanged
-  - Version 0.3.0 remains the mapping version archived in Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+  - Version 0.3.0 remains the mapping version archived in Reference Model v0.6.0
+  - Version 0.3.1 is prepared for Reference Model v0.7.0; provenance-only synchronization to arXiv v2 — https://doi.org/10.5281/zenodo.23966487
   - Section-level source: production manuscript v55 (2026-11-04), retained as the provenance source for section anchors in public arXiv v2
 
 ## Corpus metadata registry

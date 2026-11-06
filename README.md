@@ -1,7 +1,7 @@
 # DIO/ODI Reference Model
 
 **Current archived Reference Model release:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
-**Current source-tree state:** `main` (post-v0.6.0 live vocabulary metadata update)  
+**Release source snapshot:** v0.7.0 candidate (prepared; Zenodo archival pending)  
 **Live Reference Vocabulary:** v0.2.1 — metadata-only update; concept model unchanged from v0.2.0  
 **Vocabulary included in archived v0.6.0:** v0.2.0  
 **Previous archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
