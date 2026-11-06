@@ -76,6 +76,5 @@ keywords:
   - "semantic interoperability"
   - "provenance"
   - "stable concept URIs"
-date-released: "2026-11-05"
 repository-code: "https://github.com/dan-beranek/dio-odi-reference-model"
 license: "CC-BY-4.0"
