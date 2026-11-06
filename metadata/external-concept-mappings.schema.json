@@ -69,7 +69,8 @@
         "wikipediaRole",
         "mappingTargetSystems",
         "evidenceSources",
-        "evidenceRecordingRule"
+        "evidenceRecordingRule",
+        "registryPurpose"
       ],
       "properties": {
         "approvedOnlyInMappedTurtle": {
@@ -119,6 +120,30 @@
         },
         "evidenceRecordingRule": {
           "type": "string"
+        },
+        "registryPurpose": {
+          "type": "object",
+          "required": [
+            "practicalInteroperability",
+            "theoreticalCrosswalk",
+            "separationRule",
+            "currentCandidateDisposition"
+          ],
+          "properties": {
+            "practicalInteroperability": {
+              "type": "string"
+            },
+            "theoreticalCrosswalk": {
+              "type": "string"
+            },
+            "separationRule": {
+              "type": "string"
+            },
+            "currentCandidateDisposition": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
