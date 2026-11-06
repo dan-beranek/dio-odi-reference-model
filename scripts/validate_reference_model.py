@@ -18,7 +18,7 @@ from urllib.parse import unquote, urlparse
 import yaml
 from jsonschema import validate as validate_json_schema
 from rdflib import Graph, Namespace, RDF, URIRef
-from rdflib.namespace import DCAT, DCTERMS, SKOS
+from rdflib.namespace import DCAT, DCTERMS, RDFS, SKOS
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -355,12 +355,24 @@ def check_mapping_graphs() -> dict[str, int]:
         for subject in agentic_ttl.subjects(RDF.type, None)
         if isinstance(subject, URIRef) and str(subject).startswith(ARC_NS)
     }
-    ttl_concept_nodes = concept_nodes & ttl_typed_local_nodes
+    # Turtle also declares local RDF classes and properties that are schema terms,
+    # not architecture-concept instances. Exclude those declarations before comparing
+    # the complete concept identifier sets in both serializations.
+    ttl_schema_nodes = (
+        set(agentic_ttl.subjects(RDF.type, RDFS.Class))
+        | set(agentic_ttl.subjects(RDF.type, RDF.Property))
+    )
+    ttl_concept_nodes = ttl_typed_local_nodes - ttl_rels - {mapping_root, provenance_source} - ttl_schema_nodes
     require(len(concept_nodes) == 120, f"Agentic ER mapping must contain 120 local architecture concepts, found {len(concept_nodes)}")
+    missing_in_turtle = concept_nodes - ttl_concept_nodes
+    extra_in_turtle = ttl_concept_nodes - concept_nodes
     require(
-        ttl_concept_nodes == concept_nodes,
-        "Turtle is missing Agentic ER concept identifiers present in JSON-LD: "
-        + json.dumps(sorted(str(node) for node in concept_nodes - ttl_concept_nodes), ensure_ascii=False),
+        not missing_in_turtle and not extra_in_turtle,
+        "Agentic ER concept identifiers differ between Turtle and JSON-LD: "
+        + json.dumps({
+            "missing_in_turtle": sorted(str(node) for node in missing_in_turtle),
+            "extra_in_turtle": sorted(str(node) for node in extra_in_turtle),
+        }, ensure_ascii=False),
     )
 
     required_statuses = {
