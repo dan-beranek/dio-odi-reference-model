@@ -69,7 +69,8 @@ const httpServer = createHttpServer((request, response) => {
     return;
   }
 
-  mcpHandler(request, response);
+  const normalizedRequest = Object.assign(request, { method: request.method ?? 'GET' });
+  mcpHandler(normalizedRequest, response);
 });
 
 httpServer.listen(port, '127.0.0.1', () => {

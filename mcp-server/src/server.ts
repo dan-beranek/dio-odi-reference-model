@@ -145,10 +145,10 @@ export function createDioOdiServer(sourceOptions: DataSourceOptions = {}): McpSe
     'search_concepts',
     {
       description: 'Search the canonical SKOS Reference Vocabulary by concept identifier, preferred label, alternative label, definition or scope note. Returns exact/substring matches only; it does not invent concepts or perform semantic inference.',
-      inputSchema: {
+      inputSchema: z.object({
         query: z.string().min(1).max(200).describe('Search phrase, concept label, acronym, local ID, or canonical URI.'),
         limit: z.number().int().min(1).max(50).default(10).describe('Maximum number of concepts to return.')
-      }
+      })
     },
     async ({ query, limit }) => {
       try {
@@ -174,9 +174,9 @@ export function createDioOdiServer(sourceOptions: DataSourceOptions = {}): McpSe
     'get_concept',
     {
       description: 'Retrieve one canonical SKOS concept by full URI, dio: prefixed ID, local ID, preferred label or alternative label. Ambiguous labels are reported rather than guessed.',
-      inputSchema: {
+      inputSchema: z.object({
         identifier: z.string().min(1).max(500).describe('For example: DIO, dio:K6, or the full canonical concept URI.')
-      }
+      })
     },
     async ({ identifier }) => {
       try {
@@ -219,10 +219,10 @@ export function createDioOdiServer(sourceOptions: DataSourceOptions = {}): McpSe
     'list_concepts',
     {
       description: 'List canonical SKOS concepts in stable identifier order. Use offset and limit for pagination.',
-      inputSchema: {
+      inputSchema: z.object({
         offset: z.number().int().min(0).max(1000).default(0),
         limit: z.number().int().min(1).max(50).default(20)
-      }
+      })
     },
     async ({ offset, limit }) => {
       try {
@@ -254,7 +254,7 @@ export function createDioOdiServer(sourceOptions: DataSourceOptions = {}): McpSe
     'list_application_mappings',
     {
       description: 'List derived DIO/ODI application mappings. They are separate from, and do not modify, the canonical Reference Vocabulary.',
-      inputSchema: z.object({})
+      
     },
     async () => {
       try {
@@ -276,7 +276,7 @@ export function createDioOdiServer(sourceOptions: DataSourceOptions = {}): McpSe
     'get_application_mapping',
     {
       description: 'Retrieve the full Markdown source of one published derived application mapping by ID: rag-pipeline, hem-dio, commit-boundary-policy, or agentic-er-architecture.',
-      inputSchema: { mapping_id: z.enum(['rag-pipeline', 'hem-dio', 'commit-boundary-policy', 'agentic-er-architecture']) }
+      inputSchema: z.object({ mapping_id: z.enum(['rag-pipeline', 'hem-dio', 'commit-boundary-policy', 'agentic-er-architecture']) })
     },
     async ({ mapping_id }) => {
       try {
@@ -303,10 +303,10 @@ export function createDioOdiServer(sourceOptions: DataSourceOptions = {}): McpSe
     'search_corpus_works',
     {
       description: 'Search the operational DIO/ODI publication registry by title, ID, type or DOI. Returns registered source records, not newly inferred publications.',
-      inputSchema: {
+      inputSchema: z.object({
         query: z.string().min(1).max(200),
         limit: z.number().int().min(1).max(30).default(10)
-      }
+      })
     },
     async ({ query, limit }) => {
       try {
@@ -336,7 +336,7 @@ export function createDioOdiServer(sourceOptions: DataSourceOptions = {}): McpSe
     'get_corpus_work',
     {
       description: 'Retrieve one publication record from the DIO/ODI works registry using its stable work ID.',
-      inputSchema: { work_id: z.string().min(1).max(120) }
+      inputSchema: z.object({ work_id: z.string().min(1).max(120) })
     },
     async ({ work_id }) => {
       try {
