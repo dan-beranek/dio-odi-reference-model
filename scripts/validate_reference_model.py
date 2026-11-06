@@ -320,9 +320,9 @@ def check_mapping_graphs() -> dict[str, int]:
         "specified",
         "assumed",
         "illustrative",
-        "proposed-evaluation",
-        "future-research",
-        "canonical-reference",
+        "proposed evaluation",
+        "future research",
+        "canonical reference",
     }
     statuses = {
         str(agentic.value(subject, URIRef("http://schema.org/name")) or agentic.value(subject, URIRef("https://schema.org/name")))
