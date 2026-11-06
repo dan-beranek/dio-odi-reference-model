@@ -430,6 +430,54 @@ def check_metadata() -> dict[str, int | str]:
     require(model is not None, "Reference Model work entry is missing")
     require(model.get("reference_vocabulary_uri") == VOCAB_NS + "ReferenceVocabulary",
             "Reference Vocabulary ConceptScheme URI is not canonical")
+    inclusion_history = model.get("reference_vocabulary_inclusion_history", [])
+    require(
+        not any(key in model for key in (
+            "reference_vocabulary_publication_date",
+            "reference_vocabulary_initial_archived_version_doi",
+            "reference_vocabulary_initial_archived_version_doi_url",
+        )),
+        "Reference Vocabulary archive metadata still uses ambiguous standalone-publication fields",
+    )
+    expected_inclusions = {
+        "0.1.0": ("0.1.0", "10.5281/zenodo.23272898"),
+        "0.2.0": ("0.2.0", "10.5281/zenodo.23282752"),
+    }
+    require(len(inclusion_history) == 2, "Reference Vocabulary inclusion history must contain the first two archived states")
+    model_releases = {item.get("version"): item for item in works["works"]
+                      if item.get("id") == "reference-model"
+                      for item in item.get("releases", [])}
+    for entry in inclusion_history:
+        vocabulary_version = entry.get("vocabulary_version")
+        expected = expected_inclusions.get(vocabulary_version)
+        require(expected is not None, f"Unexpected archived Reference Vocabulary version in inclusion history: {vocabulary_version}")
+        release_version, release_doi = expected
+        require(
+            entry.get("reference_model_release_version") == release_version
+            and entry.get("reference_model_release_doi") == release_doi,
+            f"Reference Vocabulary {vocabulary_version} must point to its enclosing Reference Model {release_version} archive",
+        )
+        release = model_releases.get(release_version)
+        require(release is not None and release.get("doi") == release_doi,
+                f"Reference Vocabulary inclusion DOI does not resolve to Reference Model release {release_version}")
+
+    vocabulary_reference = next(
+        (item for item in references.get("references", [])
+         if item.get("id") == "reference-vocabulary-v0.2.0"),
+        None,
+    )
+    require(vocabulary_reference is not None, "Canonical Reference Vocabulary citation is missing from references.json")
+    require(
+        vocabulary_reference.get("canonical_uri") == VOCAB_NS + "ReferenceVocabulary"
+        and vocabulary_reference.get("version") == "0.2.0"
+        and vocabulary_reference.get("included_in_reference_model_version") == "0.5.0",
+        "Reference Vocabulary citation does not identify the canonical URI and archived parent-model context",
+    )
+    require(
+        "doi" not in vocabulary_reference
+        and "10.5281/zenodo.23272897" not in json.dumps(vocabulary_reference, ensure_ascii=False),
+        "Reference Model Concept DOI must not be assigned to the Reference Vocabulary",
+    )
     require(model.get("reference_model_concept_doi") == "10.5281/zenodo.23272897",
             "Reference Model Concept DOI has changed unexpectedly")
     require(model.get("reference_vocabulary_version") == "0.2.1",
