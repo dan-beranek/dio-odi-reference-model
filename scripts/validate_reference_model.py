@@ -434,6 +434,7 @@ def check_metadata() -> dict[str, int | str]:
     require(
         not any(key in model for key in (
             "reference_vocabulary_publication_date",
+            "reference_vocabulary_initial_archived_version",
             "reference_vocabulary_initial_archived_version_doi",
             "reference_vocabulary_initial_archived_version_doi_url",
         )),
@@ -444,9 +445,11 @@ def check_metadata() -> dict[str, int | str]:
         "0.2.0": ("0.2.0", "10.5281/zenodo.23282752"),
     }
     require(len(inclusion_history) == 2, "Reference Vocabulary inclusion history must contain the first two archived states")
-    model_releases = {item.get("version"): item for item in works["works"]
-                      if item.get("id") == "reference-model"
-                      for item in item.get("releases", [])}
+    model_releases = {
+        release.get("version"): release
+        for work in works["works"] if work.get("id") == "reference-model"
+        for release in work.get("releases", [])
+    }
     for entry in inclusion_history:
         vocabulary_version = entry.get("vocabulary_version")
         expected = expected_inclusions.get(vocabulary_version)
