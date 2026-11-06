@@ -1,0 +1,33 @@
+{
+  "name": "dio-odi-mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Read-only MCP server for the versioned DIO/ODI Reference Model.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "tsx src/stdio.ts",
+    "dev:http": "tsx src/http.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/stdio.js",
+    "start:http": "node dist/http.js",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "dev:worker": "wrangler dev",
+    "deploy:worker": "wrangler deploy"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/node": "2.1.2",
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "@types/node": "22.15.30",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "wrangler": "4.158.0"
+  }
+}
