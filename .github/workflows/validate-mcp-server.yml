@@ -30,7 +30,9 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Typecheck
         run: npm run typecheck
-      - name: Unit and protocol integration tests
+      - name: Live source, unit and protocol integration tests
+        env:
+          DIO_ODI_LIVE_SOURCE_CHECK: "1"
         run: npm test
       - name: Build Node entry points
         run: npm run build
