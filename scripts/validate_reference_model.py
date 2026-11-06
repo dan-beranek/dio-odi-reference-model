@@ -286,10 +286,13 @@ def check_vocabularies() -> dict[str, int]:
 
 def check_mapping_graphs() -> dict[str, int]:
     totals: dict[str, int] = {}
+    ttl_graphs: dict[str, Graph] = {}
+    jsonld_graphs: dict[str, Graph] = {}
     for key, files in MAPPING_BASES.items():
         md = read_text(files["md"])
         json_doc = load_json(files["jsonld"])
         ttl_graph = parse_turtle(files["ttl"])
+        jsonld_graph = parse_jsonld(files["jsonld"])
         require("@context" in json_doc, f"{key} JSON-LD has no @context")
         require("@type" in json_doc or "@graph" in json_doc, f"{key} JSON-LD has no top-level type or graph")
         require(len(ttl_graph) > 0, f"{key} Turtle graph is empty")
@@ -298,9 +301,23 @@ def check_mapping_graphs() -> dict[str, int]:
             or "canonical vocabulary" in md.lower(),
             f"{key} Markdown should retain the boundary from the canonical vocabulary",
         )
+        ttl_graphs[key] = ttl_graph
+        jsonld_graphs[key] = jsonld_graph
         totals[f"{key}_ttl_triples"] = len(ttl_graph)
+        totals[f"{key}_jsonld_triples"] = len(jsonld_graph)
 
-    agentic = parse_jsonld(MAPPING_BASES["agentic-er"]["jsonld"])
+    agentic = jsonld_graphs["agentic-er"]
+    agentic_ttl = ttl_graphs["agentic-er"]
+    if not agentic_ttl.isomorphic(agentic):
+        ttl_only = set(agentic_ttl) - set(agentic)
+        jsonld_only = set(agentic) - set(agentic_ttl)
+        print("Agentic ER Turtle/JSON-LD graph difference diagnostic:")
+        print(f"- Turtle-only triples: {len(ttl_only)}")
+        print(f"- JSON-LD-only triples: {len(jsonld_only)}")
+        print(f"- Turtle-only predicates: {Counter(str(p) for _, p, _ in ttl_only).most_common(20)}")
+        print(f"- JSON-LD-only predicates: {Counter(str(p) for _, p, _ in jsonld_only).most_common(20)}")
+        print(f"- Turtle-only sample: {[tuple(map(str, t)) for t in sorted(ttl_only, key=lambda x: tuple(map(str, x)))[:20]]}")
+        print(f"- JSON-LD-only sample: {[tuple(map(str, t)) for t in sorted(jsonld_only, key=lambda x: tuple(map(str, x)))[:20]]}")
     rels = set(agentic.subjects(RDF.type, ARC.RelationAssertion))
     statements = set(agentic.subjects(RDF.type, RDF.Statement))
     require(len(rels) == 206, f"Agentic ER mapping must contain 206 qualified relation assertions, found {len(rels)}")
