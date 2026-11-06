@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.6",
+  "registry_version": "1.8.8",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -146,7 +146,6 @@
       "canonical_namespace": "https://vocab.danielberanek.cz/dio-odi/#",
       "namespace_document": "https://vocab.danielberanek.cz/dio-odi/",
       "reference_vocabulary_version": "0.2.1",
-      "reference_vocabulary_publication_date": "2026-10-10",
       "publication_date": "2026-10-11",
       "license": "CC-BY-4.0",
       "current_release": {
@@ -205,13 +204,29 @@
         "version": "0.5.0",
         "doi": "10.5281/zenodo.23643845"
       },
-      "reference_vocabulary_initial_archived_version": "0.1.0",
-      "reference_vocabulary_initial_archived_version_doi": "10.5281/zenodo.23272898",
-      "reference_vocabulary_initial_archived_version_doi_url": "https://doi.org/10.5281/zenodo.23272898",
-      "release_candidate": null,
+      "release_candidate": {
+        "version": "0.7.0",
+        "status": "prepared-for-github-release",
+        "reference_vocabulary_version": "0.2.1",
+        "agentic_er_mapping_version": "0.3.1",
+        "doi": null,
+        "doi_status": "pending-zenodo-archival"
+      },
       "reference_model_concept_doi": "10.5281/zenodo.23272897",
       "reference_model_concept_doi_url": "https://doi.org/10.5281/zenodo.23272897",
-      "reference_vocabulary_uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary"
+      "reference_vocabulary_uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+      "reference_vocabulary_inclusion_history": [
+        {
+          "vocabulary_version": "0.1.0",
+          "reference_model_release_version": "0.1.0",
+          "reference_model_release_doi": "10.5281/zenodo.23272898"
+        },
+        {
+          "vocabulary_version": "0.2.0",
+          "reference_model_release_version": "0.2.0",
+          "reference_model_release_doi": "10.5281/zenodo.23282752"
+        }
+      ]
     }
   ]
 }

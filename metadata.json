@@ -152,6 +152,13 @@
     "doi_url": "https://doi.org/10.5281/zenodo.23966487"
   },
   "current_archived_reference_vocabulary_version": "0.2.0",
-  "release_candidate": null,
+  "release_candidate": {
+    "version": "0.7.0",
+    "status": "prepared-for-github-release",
+    "reference_vocabulary_version": "0.2.1",
+    "agentic_er_mapping_version": "0.3.1",
+    "doi": null,
+    "doi_status": "pending-zenodo-archival"
+  },
   "live_reference_vocabulary_version": "0.2.1"
 }

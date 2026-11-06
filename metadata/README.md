@@ -34,7 +34,7 @@ The Zenodo Concept DOI `10.5281/zenodo.23272897` identifies the **DIO/ODI Refere
 - never label the Reference Model Concept DOI as a vocabulary-specific DOI;
 - distinguish the live vocabulary version from the vocabulary state included in a particular archived Reference Model release.
 
-The live vocabulary is v0.2.1; archived Reference Model v0.6.0 contains the earlier vocabulary state v0.2.0. The vocabulary currently has no separate version-specific Zenodo DOI.
+The live vocabulary is v0.2.1; archived Reference Model v0.6.0 contains the earlier vocabulary state v0.2.0. The `reference_vocabulary_inclusion_history` field in `works.json` records the first Reference Model release containing each archived vocabulary version. Its DOI values identify those enclosing Reference Model releases, not separately archived Vocabulary packages. The Vocabulary has no separate version-specific Zenodo DOI; use its canonical ConceptScheme URI. The `reference-vocabulary-v0.2.0` entry in `references.json` provides the corresponding URI-based citation without assigning the parent model's DOI to the Vocabulary.
 
 ## Relation discipline
 

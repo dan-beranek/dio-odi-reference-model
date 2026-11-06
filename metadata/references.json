@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.1",
+  "registry_version": "1.3.2",
   "references": [
     {
       "id": "manifest-v1",
@@ -28,6 +28,14 @@
       "id": "taxonomic-note",
       "scope": "internal",
       "citation": "Beránek, D. (2026). From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO). Zenodo. https://doi.org/10.5281/zenodo.23269323"
+    },
+    {
+      "id": "reference-vocabulary-v0.2.0",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026). DIO/ODI Reference Vocabulary [SKOS ConceptScheme; version 0.2.0 as included in DIO/ODI Reference Model v0.5.0]. DIO/ODI Reference Model. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+      "canonical_uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+      "version": "0.2.0",
+      "included_in_reference_model_version": "0.5.0"
     },
     {
       "id": "hem-2026",

@@ -1,0 +1,32 @@
+name: Reference Model validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "prep/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate source and representations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install validation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install rdflib==7.5.0 PyYAML==6.0.3 jsonschema==4.26.0
+      - name: Run release integrity checks
+        run: python scripts/validate_reference_model.py
+      - name: Verify public endpoints and MIME types
+        run: python scripts/validate_public_endpoints.py
