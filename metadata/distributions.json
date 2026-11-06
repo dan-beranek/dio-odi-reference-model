@@ -124,12 +124,12 @@
           "version_url": "https://arxiv.org/abs/2610.37407v2",
           "pdf_url": "https://arxiv.org/pdf/2610.37407v2",
           "html_url": "https://arxiv.org/html/2610.37407v2",
-          "evidence": "The arXiv version history identifies v2 on 5 November 2026. The versioned PDF and HTML are publicly accessible; the PDF contains 32 pages, two figures, and three tables. The arXiv author metadata uses the ASCII spelling Daniel Beranek, while the PDF title page uses Daniel Beránek.",
-          "canonical_relation": "isVersionOf",
+          "evidence": "The arXiv version history identifies v2 on 5 November 2026. The versioned PDF and HTML are publicly accessible; the PDF contains 32 pages, two figures, and three tables. The arXiv author metadata uses the ASCII spelling Daniel Beranek, while the PDF title page uses Daniel Beránek. This arXiv v2 is a later version of the specific Zenodo v1 record, not an identical copy.",
+          "canonical_relation": "isNewVersionOf",
           "applies_to_version_doi": "10.5281/zenodo.23580733",
           "semantic_status": "verified-by-author",
           "approved_for_zenodo": false,
-          "verification_basis": "Author-provided public arXiv v2 PDF and the arXiv version history. This is a distinct later version of the same paper, not an assertion of byte-identical distribution."
+          "verification_basis": "Author-provided public arXiv v2 PDF and arXiv version history; relation direction records the arXiv v2 representation as a new version of the specific earlier Zenodo v1 record."
         }
       ]
     }
