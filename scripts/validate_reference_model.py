@@ -320,8 +320,32 @@ def check_mapping_graphs() -> dict[str, int]:
         print(f"- JSON-LD-only sample: {[tuple(map(str, t)) for t in sorted(jsonld_only, key=lambda x: tuple(map(str, x)))[:20]]}")
     rels = set(agentic.subjects(RDF.type, ARC.RelationAssertion))
     statements = set(agentic.subjects(RDF.type, RDF.Statement))
+    ttl_rels = set(agentic_ttl.subjects(RDF.type, ARC.RelationAssertion))
+    ttl_statements = set(agentic_ttl.subjects(RDF.type, RDF.Statement))
     require(len(rels) == 206, f"Agentic ER mapping must contain 206 qualified relation assertions, found {len(rels)}")
     require(rels == statements, "Agentic ER relation assertions and RDF Statements are not the same set")
+    require(ttl_rels == rels and ttl_statements == ttl_rels,
+            "Agentic ER Turtle and JSON-LD relation assertion identifiers differ")
+
+    relation_fields = (
+        RDF.subject, RDF.predicate, RDF.object, ARC.epistemicStatus,
+        ARC.sourceSection, ARC.interpretationNote, DCTERMS.source,
+    )
+    relation_differences = []
+    for assertion in sorted(rels, key=str):
+        for predicate in relation_fields:
+            ttl_values = {str(value) for value in agentic_ttl.objects(assertion, predicate)}
+            jsonld_values = {str(value) for value in agentic.objects(assertion, predicate)}
+            if ttl_values != jsonld_values:
+                relation_differences.append({
+                    "assertion": str(assertion).rsplit("/", 1)[-1],
+                    "predicate": str(predicate),
+                    "turtle": sorted(ttl_values),
+                    "jsonld": sorted(jsonld_values),
+                })
+    print(f"Agentic ER relation-field differences (language/datatype normalized): {len(relation_differences)}")
+    for difference in relation_differences[:30]:
+        print(f"- {difference}")
 
     mapping_root = URIRef(ARC_NS + "Mapping")
     provenance_source = URIRef(ARC_NS + "source/constraining_the_commit_boundary_v55")
