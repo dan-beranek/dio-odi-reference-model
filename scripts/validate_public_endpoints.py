@@ -27,9 +27,11 @@ ACCEPTED_MEDIA_TYPES = {
     ".svg": {"image/svg+xml"},
     ".xml": {"application/xml", "text/xml"},
     ".txt": {"text/plain", "text/markdown"},
+    ".sparql": {"application/sparql-query", "text/plain"},
 }
 GENERIC_MEDIA_TYPES = {
     ".ttl": {"text/plain"},
+    ".sparql": {"text/plain"},
 }
 EXTRA_ENDPOINTS = (
     f"{BASE_URL}/llms.txt",
