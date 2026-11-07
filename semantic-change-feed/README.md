@@ -14,10 +14,11 @@ It is not a Git commit log. Repository diffs are not authoritative evidence of c
 
 ## Coverage
 
-Version 0.1.0 contains **36 event records** and covers:
+Version 0.1.0 contains **43 event records** and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
-- Subsequent documented vocabulary, mapping, provenance, and Reference Model archive milestones through **6 November 2026**.
+- Subsequent documented vocabulary, mapping, publication, provenance, and Reference Model archive milestones through **6 November 2026**.
+- Publication of the public **DIO to DIO** portfolio of ten author-led, model-specific reconstruction analyses.
 - Compound Changelog bullets split into separate records where they describe distinct conceptual, publication, distribution, mapping, or archival events.
 
 This is complete coverage of the dated Hub Changelog entries, not a claim that every repository commit or every undated intermediate artifact has its own event.
@@ -39,6 +40,8 @@ This is complete coverage of the dated Hub Changelog entries, not a claim that e
 - **The Hub Changelog** remains the author-maintained public chronology; SCF provides a structured, machine-readable event model and source-linked event granularity.
 
 The SCF does not replace or redefine any of these sources.
+
+The DIO to DIO portfolio is included as a documented research-and-distribution milestone, not as an authority for historical claims. Its model-specific analyses retain different observation boundaries and interpretations; they may guide discovery of potentially relevant evidence, but factual claims entering the SCF must be checked against primary publications, release records, registries, or archives.
 
 ## Record model
 
