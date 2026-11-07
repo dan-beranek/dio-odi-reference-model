@@ -22,8 +22,8 @@
       "id": "SCF-2026-001",
       "date": "2026-03-25",
       "date_basis": "hub_changelog_date",
-      "event_class": "Theoretical",
-      "change_type": "introduced",
+      "event_class": "ResearchProcess",
+      "change_type": "documented",
       "title": "Initial work on the text exposes a latent semantic space",
       "summary": "The Changelog records the start of work on the professional-ethnography text and the emergence of a previously unnamed latent space. This is the project-origin milestone, not yet the formal naming of DIO.",
       "scope": [
@@ -40,12 +40,12 @@
         "This date marks the beginning of the documented writing process, not the formal articulation of DIO."
       ],
       "impact": {
-        "level": "conceptual-model",
+        "level": "cross-layer",
         "compatibility": "not-assessed",
         "affected_components": [
           "Project genesis"
         ],
-        "notes": "Origin milestone; retained as research-process provenance rather than treated as a fully specified theory."
+        "notes": "Project-origin milestone; it records the start of the documented writing process and the emergence of a latent semantic space, not a fully specified theoretical proposition."
       },
       "evidence": {
         "status": "documented",
@@ -817,8 +817,8 @@
       "id": "SCF-2026-016",
       "date": "2026-09-02",
       "date_basis": "hub_changelog_date",
-      "event_class": "Artifact",
-      "change_type": "published",
+      "event_class": "Conceptual",
+      "change_type": "introduced",
       "title": "The Crisis of Entity Resolution paper introduces four initial anomalies",
       "summary": "The Crisis paper analyzes Entity Resolution in heterogeneous AI environments and identifies Identity Collapse, Semantic Fragmentation, Temporal Discontinuity, and Semantic Vulnerability.",
       "scope": [
@@ -835,12 +835,12 @@
         "The four-item Crisis framing is a historical state; later publications refine the classification and separate Semantic Vulnerability from realized failure modes."
       ],
       "impact": {
-        "level": "taxonomy",
+        "level": "conceptual-model",
         "compatibility": "model-level",
         "affected_components": [
           "The Crisis of Entity Resolution"
         ],
-        "notes": "The historical initial classification is retained as a prior state, not treated as the final taxonomy."
+        "notes": "The paper publishes an initial four-part anomaly framing. This is the historical starting classification; later publications refine it and separate Semantic Vulnerability from realized failure modes."
       },
       "evidence": {
         "status": "documented",
@@ -1463,123 +1463,6 @@
     {
       "id": "SCF-2026-027",
       "date": "2026-10-25",
-      "date_basis": "archive_publication_date",
-      "event_class": "Artifact",
-      "change_type": "archived",
-      "title": "Reference Model v0.4.0 preserves the pre-v0.2.0 vocabulary state",
-      "summary": "The versioned DIO/ODI Reference Model package is archived on Zenodo as an immutable research-software snapshot.",
-      "scope": [
-        {
-          "component": "DIO/ODI Reference Model v0.4.0",
-          "component_type": "archived-release",
-          "uri": "https://doi.org/10.5281/zenodo.23632619",
-          "role": "archived-artifact"
-        }
-      ],
-      "before": "The preceding package state is represented by the earlier Reference Model release history.",
-      "after": "An immutable v0.4.0 archive records the repository state identified by the version-specific DOI.",
-      "preserved_invariants": [
-        "The archive identifies a versioned package snapshot; it does not replace the maintained live repository.",
-        "Later releases do not rewrite this immutable snapshot."
-      ],
-      "impact": {
-        "level": "archive",
-        "compatibility": "archive-only",
-        "affected_components": [
-          "Reference Model",
-          "Reference Vocabulary v0.1.0"
-        ],
-        "notes": "The Hub Changelog explicitly notes that archived v0.4.0 preserves the preceding Reference Vocabulary v0.1.0 state."
-      },
-      "evidence": {
-        "status": "documented",
-        "basis": [
-          "registry",
-          "archival-record"
-        ],
-        "temporal_note": "Date is the recorded publication date in the Corpus Metadata Registry.",
-        "sources": [
-          {
-            "label": "Archived Reference Model v0.4.0",
-            "url": "https://doi.org/10.5281/zenodo.23632619",
-            "role": "archival-record"
-          },
-          {
-            "label": "Reference Model work and release registry",
-            "url": "https://vocab.danielberanek.cz/metadata/works.json",
-            "role": "version-provenance"
-          }
-        ]
-      },
-      "lineage": {
-        "related_to": [
-          "SCF-2026-020"
-        ],
-        "supersedes": [],
-        "corrects": []
-      }
-    },
-    {
-      "id": "SCF-2026-028",
-      "date": "2026-10-25",
-      "date_basis": "hub_changelog_date",
-      "event_class": "Artifact",
-      "change_type": "archived",
-      "title": "Reference Model v0.5.0 archives vocabulary v0.2.0 and the expanded mapping set",
-      "summary": "Reference Model v0.5.0 is archived with Reference Vocabulary v0.2.0 and the expanded Application Mappings state. The preceding v0.4.0 archive preserves vocabulary v0.1.0.",
-      "scope": [
-        {
-          "component": "Reference Model v0.5.0",
-          "component_type": "archived-release",
-          "uri": "https://doi.org/10.5281/zenodo.23643845",
-          "role": "affected-resource"
-        }
-      ],
-      "before": "The prior v0.4.0 package preserved the earlier vocabulary v0.1.0 state.",
-      "after": "The v0.5.0 archive captures vocabulary v0.2.0 and the updated derived mapping package.",
-      "preserved_invariants": [
-        "The archived v0.4.0 remains immutable and identifiable as the earlier vocabulary state."
-      ],
-      "impact": {
-        "level": "archive",
-        "compatibility": "archive-only",
-        "affected_components": [
-          "Reference Model v0.5.0"
-        ],
-        "notes": "This is a package archival milestone and must not be confused with the concept introduction itself."
-      },
-      "evidence": {
-        "status": "documented",
-        "basis": [
-          "hub-changelog",
-          "linked-publication-or-artifact"
-        ],
-        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
-        "sources": [
-          {
-            "label": "DIO/ODI Hub — Changelog",
-            "url": "https://danielberanek.cz/manifest-dio/",
-            "role": "author-maintained-changelog"
-          },
-          {
-            "label": "Reference Model v0.5.0",
-            "url": "https://doi.org/10.5281/zenodo.23643845",
-            "role": "archival-record"
-          }
-        ]
-      },
-      "lineage": {
-        "related_to": [
-          "SCF-2026-031",
-          "SCF-2026-029"
-        ],
-        "supersedes": [],
-        "corrects": []
-      }
-    },
-    {
-      "id": "SCF-2026-029",
-      "date": "2026-10-25",
       "date_basis": "hub_changelog_date",
       "event_class": "Mapping",
       "change_type": "introduced",
@@ -1635,7 +1518,7 @@
       }
     },
     {
-      "id": "SCF-2026-030",
+      "id": "SCF-2026-028",
       "date": "2026-10-25",
       "date_basis": "first_archival_inclusion",
       "event_class": "Mapping",
@@ -1699,7 +1582,66 @@
       }
     },
     {
-      "id": "SCF-2026-031",
+      "id": "SCF-2026-029",
+      "date": "2026-10-25",
+      "date_basis": "archive_publication_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.4.0 preserves the pre-v0.2.0 vocabulary state",
+      "summary": "The versioned DIO/ODI Reference Model package is archived on Zenodo as an immutable research-software snapshot.",
+      "scope": [
+        {
+          "component": "DIO/ODI Reference Model v0.4.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23632619",
+          "role": "archived-artifact"
+        }
+      ],
+      "before": "The preceding package state is represented by the earlier Reference Model release history.",
+      "after": "An immutable v0.4.0 archive records the repository state identified by the version-specific DOI.",
+      "preserved_invariants": [
+        "The archive identifies a versioned package snapshot; it does not replace the maintained live repository.",
+        "Later releases do not rewrite this immutable snapshot."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model",
+          "Reference Vocabulary v0.1.0"
+        ],
+        "notes": "The Hub Changelog explicitly notes that archived v0.4.0 preserves the preceding Reference Vocabulary v0.1.0 state."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "archival-record"
+        ],
+        "temporal_note": "Date is the recorded publication date in the Corpus Metadata Registry.",
+        "sources": [
+          {
+            "label": "Archived Reference Model v0.4.0",
+            "url": "https://doi.org/10.5281/zenodo.23632619",
+            "role": "archival-record"
+          },
+          {
+            "label": "Reference Model work and release registry",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-020"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-030",
       "date": "2026-10-25",
       "date_basis": "hub_changelog_date",
       "event_class": "Conceptual",
@@ -1755,6 +1697,64 @@
       "lineage": {
         "related_to": [
           "SCF-2026-020"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-031",
+      "date": "2026-10-25",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.5.0 archives vocabulary v0.2.0 and the expanded mapping set",
+      "summary": "Reference Model v0.5.0 is archived with Reference Vocabulary v0.2.0 and the expanded Application Mappings state. The preceding v0.4.0 archive preserves vocabulary v0.1.0.",
+      "scope": [
+        {
+          "component": "Reference Model v0.5.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23643845",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The prior v0.4.0 package preserved the earlier vocabulary v0.1.0 state.",
+      "after": "The v0.5.0 archive captures vocabulary v0.2.0 and the updated derived mapping package.",
+      "preserved_invariants": [
+        "The archived v0.4.0 remains immutable and identifiable as the earlier vocabulary state."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.5.0"
+        ],
+        "notes": "This is a package archival milestone and must not be confused with the concept introduction itself."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Reference Model v0.5.0",
+            "url": "https://doi.org/10.5281/zenodo.23643845",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-030",
+          "SCF-2026-027"
         ],
         "supersedes": [],
         "corrects": []
@@ -1818,7 +1818,7 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-031"
+          "SCF-2026-030"
         ],
         "supersedes": [],
         "corrects": []
@@ -2004,7 +2004,7 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-028"
+          "SCF-2026-031"
         ],
         "supersedes": [],
         "corrects": []
