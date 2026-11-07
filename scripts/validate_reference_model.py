@@ -525,6 +525,20 @@ def check_metadata() -> dict[str, int | str]:
     }
 
 
+def check_site_homepage() -> int:
+    source = read_text("index.html")
+    require('<link rel="canonical" href="https://vocab.danielberanek.cz/">' in source,
+            "Homepage canonical must identify the site root")
+    require('<meta name="robots" content="index,follow' in source,
+            "Homepage must be indexable")
+    require('http-equiv="refresh"' not in source.lower(),
+            "Homepage must not redirect to the vocabulary page")
+    for link in ('href="/dio-odi/"', 'href="/mappings/"',
+                 'href="/metadata/README.md"', 'href="https://danielberanek.cz/manifest-dio/"'):
+        require(link in source, f"Homepage is missing navigation target: {link}")
+    return 1
+
+
 def check_sitemap() -> int:
     path = ROOT / "sitemap.xml"
     try:
@@ -537,6 +551,7 @@ def check_sitemap() -> int:
         for node in tree.findall(".//sm:url", namespace)
     }
     required = [
+        "https://vocab.danielberanek.cz/",
         "https://vocab.danielberanek.cz/dio-odi/",
         "https://vocab.danielberanek.cz/mappings/",
         "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
@@ -556,6 +571,7 @@ def main() -> int:
         }
         html_count, jsonld_count = check_html_and_jsonld()
         counts["html_pages"] = html_count
+        counts["homepage"] = check_site_homepage()
         counts["embedded_jsonld_scripts"] = jsonld_count
         counts["svg_files"] = check_svg_files()
         counts["sitemap_urls"] = check_sitemap()

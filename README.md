@@ -19,6 +19,12 @@ It does not replace the papers and does not claim to be a completed formal ontol
 
 The repository intentionally begins with **SKOS**. A future OWL layer should add stronger axioms only where the published corpus and subsequent review justify them.
 
+## Site entry point and information architecture
+
+The public site root, [vocab.danielberanek.cz](https://vocab.danielberanek.cz/), is the top-level overview of the Reference Model site. The [Reference Vocabulary page](https://vocab.danielberanek.cz/dio-odi/) is a distinct child resource identifying the canonical SKOS ConceptScheme; it is not the site's homepage. [Application Mappings](https://vocab.danielberanek.cz/mappings/) form a derived, non-normative layer. The [corpus metadata registry](https://vocab.danielberanek.cz/metadata/README.md) documents publication identities, versions, relations, references, distributions, and keyword profiles. The wider Manifest and publication corpus is presented separately on the [DIO/ODI Hub](https://danielberanek.cz/manifest-dio/).
+
+The live Reference Vocabulary is v0.2.1, a metadata-only update to the v0.2.0 concept model. The current archived Reference Model package is v0.7.0 (https://doi.org/10.5281/zenodo.24020300); the previous archive is v0.6.0 (https://doi.org/10.5281/zenodo.23966487).
+
 ## Concept map
 
 The current Reconstruction Failure Mode taxonomy is non-exclusive and multi-level. Dashed relations mark related concepts that are deliberately kept outside, or distinct from, the taxonomic hierarchy.

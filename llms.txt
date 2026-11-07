@@ -2,6 +2,14 @@
 
 > Canonical machine-readable reference layer for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI), maintained by Daniel Beránek.
 
+## Site entry point
+
+- Top-level Reference Model overview: https://vocab.danielberanek.cz/
+- Canonical Reference Vocabulary landing page: https://vocab.danielberanek.cz/dio-odi/
+- Application Mappings index: https://vocab.danielberanek.cz/mappings/
+- Corpus Metadata Registry guide: https://vocab.danielberanek.cz/metadata/README.md
+- Wider DIO/ODI Hub and publication corpus: https://danielberanek.cz/manifest-dio/
+
 ## Versions
 
 - Current archived Reference Model release: 0.7.0 — https://doi.org/10.5281/zenodo.24020300

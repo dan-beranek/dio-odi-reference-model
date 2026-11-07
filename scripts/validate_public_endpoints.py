@@ -34,6 +34,7 @@ GENERIC_MEDIA_TYPES = {
     ".sparql": {"text/plain", "application/octet-stream"},
 }
 EXTRA_ENDPOINTS = (
+    f"{BASE_URL}/",
     f"{BASE_URL}/llms.txt",
     f"{BASE_URL}/metadata.json",
 )
@@ -98,6 +99,9 @@ def main() -> int:
             accepted = expected_types(url)
             if not 200 <= status < 400:
                 failures.append(f"{url}: unexpected HTTP status {status}")
+                continue
+            if url == f"{BASE_URL}/" and final_url != url:
+                failures.append(f"{url}: root portal unexpectedly redirects to {final_url}")
                 continue
             if media_type not in accepted:
                 failures.append(
