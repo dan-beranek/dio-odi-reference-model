@@ -1,5 +1,7 @@
 # Source map
 
+**Crisis version note:** The source references to *The Crisis of Entity Resolution in Heterogeneous AI Environments* identify its original v1.0.0 primary text (https://doi.org/10.5281/zenodo.22257504). The current Zenodo record is v1.1.0 (https://doi.org/10.5281/zenodo.22416026), which adds four supplementary conceptual visualizations; the primary PDF remains unchanged. The v1.0.0 identifier is retained below where it records the historical source used for concept development, not as a claim that v1.0.0 is the current record.
+
 | Concept / cluster | Primary source | Current status |
 |---|---|---|
 | DIO / ODI | Manifest, DOI 10.5281/zenodo.21610934 | Current |
@@ -9,7 +11,7 @@
 | Essential Vector | Manifest → reinterpreted in MVDIO | Revised |
 | Identity-Preserving Constraints | MVDIO, DOI 10.5281/zenodo.23226205; Commit-Boundary paper, DOI 10.5281/zenodo.23580733 | Current collective term; introduced in vocabulary v0.2.0 |
 | Identity-Preserving Constraint | MVDIO, DOI 10.5281/zenodo.23226205 | Retained as historical vocabulary entry; earlier references are not retroactively migrated |
-| Identity Collapse | Crisis, DOI 10.5281/zenodo.22257504 | Retained; not redefined in current taxonomy |
+| Identity Collapse | Crisis v1.0.0 primary text, DOI 10.5281/zenodo.22257504; current record v1.1.0, DOI 10.5281/zenodo.22416026 | Retained; not redefined in current taxonomy |
 | Semantic Fragmentation | Crisis → refined in MVDIO / Taxonomic Note | Current |
 | Temporal Discontinuity | Crisis → refined in MVDIO / Taxonomic Note | Current |
 | Semantic Vulnerability | Crisis → moved outside failure hierarchy in MVDIO / Taxonomic Note | Revised |
