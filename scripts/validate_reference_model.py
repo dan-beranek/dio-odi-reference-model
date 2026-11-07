@@ -534,7 +534,7 @@ def check_site_homepage() -> int:
     require('http-equiv="refresh"' not in source.lower(),
             "Homepage must not redirect to the vocabulary page")
     for link in ('href="/dio-odi/"', 'href="/mappings/"',
-                 'href="/metadata/README.md"', 'href="https://danielberanek.cz/manifest-dio/"'):
+                 'href="/metadata/"', 'href="https://danielberanek.cz/manifest-dio/"'):
         require(link in source, f"Homepage is missing navigation target: {link}")
     return 1
 
@@ -554,6 +554,7 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/",
         "https://vocab.danielberanek.cz/dio-odi/",
         "https://vocab.danielberanek.cz/mappings/",
+        "https://vocab.danielberanek.cz/metadata/",
         "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
         "https://vocab.danielberanek.cz/mappings/hem-dio/",
         "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
