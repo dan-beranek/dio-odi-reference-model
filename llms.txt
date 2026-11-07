@@ -17,6 +17,14 @@
 - Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 - Earlier archived release: v0.1.0 — https://doi.org/10.5281/zenodo.23272898
 
+## Referenced research works
+
+- The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions — current version 1.1.0: https://doi.org/10.5281/zenodo.22416026
+  - Zenodo record: https://zenodo.org/records/22416026
+  - Version 1.1.0 adds four standalone conceptual visualizations: Identity Collapse, Semantic Fragmentation, Temporal Discontinuity, and Semantic Vulnerability.
+  - The primary PDF remains unchanged; the four visualizations are supplementary explanatory models.
+  - The work is registered in `metadata/works.json`, cited in `metadata/references.json`, and linked from the Reference Model in `metadata/relations.json`.
+
 ## Canonical vocabulary
 
 - Namespace document: https://vocab.danielberanek.cz/dio-odi/
