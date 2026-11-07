@@ -101,7 +101,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Technical specification: https://vocab.danielberanek.cz/semantic-change-feed/README.md
 - Purpose: source-backed history of semantic, structural, provenance, mapping, and artifact-state changes; not a Git commit log
 - Boundary: does not replace the Reference Vocabulary, Application Mappings, Corpus Metadata Registry, or immutable Reference Model releases
-- Initial version: 0.1.0; the curated historical event record with explicit date basis, preserved invariants, impact, provenance, and lineage
+- Feed version: 0.1.0; the first structured release of the curated event history, with explicit date basis, preserved invariants, impact, provenance, and lineage
 
 - Current coverage: 43 events; full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, and release milestones through 6 November 2026
 
