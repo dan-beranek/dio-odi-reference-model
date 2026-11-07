@@ -1,20 +1,33 @@
 # DIO/ODI Semantic Change Feed
 
 **Feed version:** 0.1.0  
-**Schema version:** 0.1.0  
-**Status:** Initial curated historical register  
+**Schema version:** 0.2.0  
+**Status:** Full Hub Changelog coverage plus subsequent release history  
 **Maintainer:** Daniel Beránek  
 **License:** CC BY 4.0
 
 ## Purpose
 
-The Semantic Change Feed (SCF) is a versioned, append-only register of changes that materially affect the meaning, structure, provenance, application, or reconstructability of the DIO/ODI reference system. It is not a Git commit log: a file change is not automatically a semantic event, and Git diffs are not authoritative evidence of conceptual intent.
+The Semantic Change Feed (SCF) is a curated, append-only record of documented events that materially affect the DIO/ODI conceptual system, publications, vocabulary, application mappings, provenance, distributions, and versioned reference artifacts.
+
+It is not a Git commit log. Repository diffs are not authoritative evidence of conceptual intent, and dates in the feed must not be read as source-control timestamps unless explicitly stated.
+
+## Coverage
+
+Version 0.1.0 contains **36 event records** and covers:
+
+- Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
+- Subsequent documented vocabulary, mapping, provenance, and Reference Model archive milestones through **6 November 2026**.
+- Compound Changelog bullets split into separate records where they describe distinct conceptual, publication, distribution, mapping, or archival events.
+
+This is complete coverage of the dated Hub Changelog entries, not a claim that every repository commit or every undated intermediate artifact has its own event.
 
 ## Public resources
 
 - Human-readable frontend: https://vocab.danielberanek.cz/semantic-change-feed/
 - Canonical event feed: https://vocab.danielberanek.cz/semantic-change-feed/events.json
 - JSON Schema: https://vocab.danielberanek.cz/semantic-change-feed/schema.json
+- Primary historical source: https://danielberanek.cz/manifest-dio/
 - Source repository: https://github.com/dan-beranek/dio-odi-reference-model/tree/main/semantic-change-feed
 
 ## Architectural boundary
@@ -23,31 +36,38 @@ The Semantic Change Feed (SCF) is a versioned, append-only register of changes t
 - **Application Mappings** remain derived, non-normative analytical projections.
 - **Corpus Metadata Registry** remains authoritative for publication identities, versions, references, distributions, and inter-work relations.
 - **Reference Model releases** remain immutable versioned research-software snapshots.
-- **Changelog and release notes** remain concise release-oriented summaries.
+- **The Hub Changelog** remains the author-maintained public chronology; SCF provides a structured, machine-readable event model and source-linked event granularity.
 
-The SCF links these resources through explicit events and lineage. It does not redefine them.
+The SCF does not replace or redefine any of these sources.
 
 ## Record model
 
-Each event has a stable identifier (SCF-YYYY-NNN) and records its temporal basis, classification, operation, scope, previous and resulting state, preserved invariants, impact, evidence, and lineage.
+Each event has a stable identifier (SCF-YYYY-NNN) and records classification, operation, scope, previous and resulting state, preserved invariants, impact, evidence, and lineage.
 
-Event classes: Conceptual, Relational, Theoretical, Structural, Provenance, Mapping, Artifact, Distribution.
+Event classes: Conceptual, Relational, Theoretical, Structural, Provenance, Mapping, Artifact, Distribution, ResearchProcess.
 
-Operations: introduced, refined, reclassified, extended, synchronized, archived, corrected, deprecated.
+Operations: introduced, refined, reclassified, extended, synchronized, archived, corrected, deprecated, published, documented, distributed.
 
-A record's date is not assumed to be the exact edit timestamp. The `date_basis` field specifies whether it is a publication date, first archival inclusion, version publication date, or archive publication date. The `evidence.status` field distinguishes documented claims from reconstructed or partially documented history.
+### Temporal discipline
+
+The `date_basis` field distinguishes:
+
+- `hub_changelog_date` — date stated in the author-maintained Hub Changelog.
+- `activity_period` — bounded period stated by the Changelog; `date_range_start` and `date_range_end` preserve the interval.
+- `publication_date` — date of a publication.
+- `first_archival_inclusion` — first archived package state containing a component change.
+- `version_publication_date` — publication date of a versioned component.
+- `archive_publication_date` — publication date of an immutable Reference Model archive.
+
+A date from the Hub Changelog is not silently converted into an exact edit or commit timestamp.
 
 ## Append-only and correction policy
 
-Published identifiers are stable. New events are appended; historical events are not silently deleted or rewritten. A correction is a new event linked through `lineage.corrects`; a replacement is linked through `lineage.supersedes`.
-
-## Initial historical coverage
-
-Version 0.1.0 captures seven selected events from 8 October to 6 November 2026. This bootstrap is selective, not exhaustive; earlier events may be added only where dates, scope, and source evidence can be stated without conjecture.
+Published identifiers are stable. New events are appended; historical events are not silently deleted or rewritten. A correction is a new event linked through `lineage.corrects`; a replacement is linked through `lineage.supersedes`. Related events are linked only where their relationship is source-supported.
 
 ## Validation
 
-The repository validator checks the feed against `schema.json`, unique IDs, chronological order, HTML/feed inventory parity, lineage references, shared navigation, and sitemap presence. The public-endpoint workflow checks deployment and MIME types.
+The repository validator checks JSON Schema conformance, event ID uniqueness, chronological order, lineage references, HTML/feed inventory parity, shared navigation, and sitemap presence. The public-endpoint workflow checks deployment and MIME types on `main`.
 
 ## License
 

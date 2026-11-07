@@ -1,10 +1,10 @@
 {
   "feed_version": "0.1.0",
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
   "generated_on": "2026-11-07",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record of documented semantic, structural, provenance, mapping, and artifact-state changes across the DIO/ODI reference system.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, and Reference Model release events through 6 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,70 +16,48 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 7,
+  "event_count": 36,
   "events": [
     {
       "id": "SCF-2026-001",
-      "date": "2026-10-08",
-      "date_basis": "publication_date",
-      "event_class": "Conceptual",
-      "change_type": "refined",
-      "title": "MVDIO refines the analytical model of semantic vulnerability",
-      "summary": "MVDIO separates Semantic Vulnerability from the Reconstruction Failure Mode hierarchy and develops K6 as a finer-grained candidate model.",
+      "date": "2026-03-25",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Theoretical",
+      "change_type": "introduced",
+      "title": "Initial work on the text exposes a latent semantic space",
+      "summary": "The Changelog records the start of work on the professional-ethnography text and the emergence of a previously unnamed latent space. This is the project-origin milestone, not yet the formal naming of DIO.",
       "scope": [
         {
-          "component": "Minimum Viable Digital Identity Optimization (MVDIO)",
-          "component_type": "publication",
-          "uri": "https://doi.org/10.5281/zenodo.23226205",
-          "role": "primary-source"
-        },
-        {
-          "component": "Semantic Vulnerability",
-          "component_type": "concept",
-          "uri": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability",
-          "role": "affected-concept"
-        },
-        {
-          "component": "K6 Semantic Connectome",
-          "component_type": "concept",
-          "uri": "https://vocab.danielberanek.cz/dio-odi/#K6",
-          "role": "related-concept"
+          "component": "Project genesis",
+          "component_type": "research-process",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
         }
       ],
-      "before": "The earlier Crisis-era account discussed Semantic Vulnerability in the broader field of reconstruction failures.",
-      "after": "Semantic Vulnerability is treated as a robustness-related property outside the Reconstruction Failure Mode hierarchy; K6 is presented as a finer-grained candidate model.",
+      "before": "The work had not yet been explicitly articulated as DIO/ODI.",
+      "after": "A latent semantic space is recorded as having emerged during the writing process.",
       "preserved_invariants": [
-        "K6 is a candidate model, not a logical consequence of MVDIO.",
-        "Identity Collapse remains distinct from the current Reconstruction Failure Modes."
+        "This date marks the beginning of the documented writing process, not the formal articulation of DIO."
       ],
       "impact": {
         "level": "conceptual-model",
-        "compatibility": "model-level",
+        "compatibility": "not-assessed",
         "affected_components": [
-          "MVDIO",
-          "Semantic Vulnerability",
-          "K6",
-          "Reconstruction Failure Modes"
+          "Project genesis"
         ],
-        "notes": "Conceptual refinement; no exact source-control commit date is asserted."
+        "notes": "Origin milestone; retained as research-process provenance rather than treated as a fully specified theory."
       },
       "evidence": {
         "status": "documented",
         "basis": [
-          "primary-publication",
-          "source-map"
+          "hub-changelog"
         ],
-        "temporal_note": "Date is the registered publication date of MVDIO.",
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
         "sources": [
           {
-            "label": "MVDIO — published work",
-            "url": "https://doi.org/10.5281/zenodo.23226205",
-            "role": "primary-publication"
-          },
-          {
-            "label": "Reference Model source map",
-            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
-            "role": "concept-provenance"
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           }
         ]
       },
@@ -91,61 +69,44 @@
     },
     {
       "id": "SCF-2026-002",
-      "date": "2026-10-09",
-      "date_basis": "publication_date",
-      "event_class": "Structural",
-      "change_type": "extended",
-      "title": "The Reconstruction Failure Modes taxonomy is formalized",
-      "summary": "The Taxonomic Note develops the transition from entity-resolution anomalies to a hierarchical Reconstruction Failure Modes taxonomy, including Entity Substitution and Entity Omission.",
+      "date": "2026-05-21",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Conceptual",
+      "change_type": "introduced",
+      "title": "Digital Identity Optimization is articulated",
+      "summary": "The Changelog identifies 21 May as the point at which a newly recognized dimension and possibility for optimizing and viewing digital identity was articulated as Digital Identity Optimization.",
       "scope": [
         {
-          "component": "From Entity Resolution Anomalies to Reconstruction Failure Modes",
-          "component_type": "publication",
-          "uri": "https://doi.org/10.5281/zenodo.23269323",
-          "role": "primary-source"
-        },
-        {
-          "component": "Reconstruction Failure Modes",
-          "component_type": "taxonomy",
-          "uri": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionFailureMode",
-          "role": "affected-model"
+          "component": "Digital Identity Optimization",
+          "component_type": "concept",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#DIO",
+          "role": "affected-resource"
         }
       ],
-      "before": "The preceding corpus used an anomaly-oriented account of entity-resolution and reconstruction problems.",
-      "after": "A multi-level Reconstruction Failure Modes taxonomy is documented, including Entity Substitution and Entity Omission; Semantic Robustness is also identified.",
+      "before": "The latent space had been recognized but did not yet have the DIO designation.",
+      "after": "The concept is explicitly articulated as Digital Identity Optimization (DIO).",
       "preserved_invariants": [
-        "Semantic Vulnerability remains outside the Reconstruction Failure Mode hierarchy.",
-        "Identity Collapse is not folded into the taxonomy as a failure-mode superclass or equivalent."
+        "This records the Changelog's stated articulation date; it does not claim that every later DIO construct was already defined."
       ],
       "impact": {
-        "level": "taxonomy",
+        "level": "conceptual-model",
         "compatibility": "model-level",
         "affected_components": [
-          "Reconstruction Failure Modes",
-          "Entity Substitution",
-          "Entity Omission",
-          "Semantic Robustness",
-          "Semantic Vulnerability"
+          "Digital Identity Optimization"
         ],
-        "notes": "Conceptual and taxonomic development; not an implementation or empirical-validation claim."
+        "notes": "Initial articulation of DIO; later publications refine and formalize the framework."
       },
       "evidence": {
         "status": "documented",
         "basis": [
-          "primary-publication",
-          "source-map"
+          "hub-changelog"
         ],
-        "temporal_note": "Date is the registered publication date of the Taxonomic Note.",
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
         "sources": [
           {
-            "label": "Taxonomic Note",
-            "url": "https://doi.org/10.5281/zenodo.23269323",
-            "role": "primary-publication"
-          },
-          {
-            "label": "Reference Model source map",
-            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
-            "role": "concept-provenance"
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           }
         ]
       },
@@ -159,143 +120,100 @@
     },
     {
       "id": "SCF-2026-003",
-      "date": "2026-10-10",
-      "date_basis": "first_archival_inclusion",
-      "event_class": "Conceptual",
-      "change_type": "introduced",
-      "title": "Identity-Preserving Constraints becomes the collective vocabulary term",
-      "summary": "Vocabulary v0.2.0 introduces the plural term Identity-Preserving Constraints as the current collective designation while retaining the singular entry as a historical concept.",
+      "date": "2026-06-22",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "The first Czech Manifest is published",
+      "summary": "The first Czech-language version of the DIO/ODI Manifest is published.",
       "scope": [
         {
-          "component": "Reference Vocabulary v0.2.0",
-          "component_type": "vocabulary-version",
-          "uri": "https://vocab.danielberanek.cz/dio-odi/",
-          "role": "affected-vocabulary"
-        },
-        {
-          "component": "Identity-Preserving Constraints",
-          "component_type": "concept",
-          "uri": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraints",
-          "role": "introduced-term"
-        },
-        {
-          "component": "Identity-Preserving Constraint",
-          "component_type": "concept",
-          "uri": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraint",
-          "role": "historical-entry"
+          "component": "Czech Manifest v1",
+          "component_type": "publication",
+          "uri": "https://danielberanek.cz/manifest-digital-identity-optimization-dio/",
+          "role": "affected-resource"
         }
       ],
-      "before": "The vocabulary contained the singular Identity-Preserving Constraint entry.",
-      "after": "The plural Identity-Preserving Constraints is introduced as the current collective term in vocabulary v0.2.0.",
+      "before": "DIO had been articulated, but the first Manifest version had not yet been published.",
+      "after": "A first Czech Manifest publication provides a documented textual formulation of DIO.",
       "preserved_invariants": [
-        "The singular historical entry remains present.",
-        "Earlier singular URIs are not retroactively migrated.",
-        "No semantic relation between singular and plural entries is asserted."
+        "The first Czech publication is distinct from the later canonical multilingual Zenodo edition."
       ],
       "impact": {
-        "level": "vocabulary",
-        "compatibility": "model-level",
+        "level": "cross-layer",
+        "compatibility": "not-assessed",
         "affected_components": [
-          "Reference Vocabulary",
-          "Identity-Preserving Constraint",
-          "Identity-Preserving Constraints"
+          "Czech Manifest v1"
         ],
-        "notes": "Date identifies the first archived parent Reference Model release containing v0.2.0, not an exact edit timestamp."
+        "notes": "The Changelog date refers to publication of the first Czech version; the multilingual archive follows on 27 July."
       },
       "evidence": {
         "status": "documented",
         "basis": [
-          "source-map",
-          "registry",
-          "archival-record"
+          "hub-changelog",
+          "linked-publication-or-artifact"
         ],
-        "temporal_note": "The date is the publication date of archived Reference Model v0.2.0.",
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
         "sources": [
           {
-            "label": "Reference Model source map",
-            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
-            "role": "concept-provenance"
-          },
-          {
-            "label": "Work and release registry",
-            "url": "https://vocab.danielberanek.cz/metadata/works.json",
-            "role": "version-provenance"
-          },
-          {
-            "label": "Archived Reference Model v0.2.0",
-            "url": "https://doi.org/10.5281/zenodo.23282752",
-            "role": "archival-record"
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           }
         ]
       },
       "lineage": {
-        "related_to": [
-          "SCF-2026-001"
-        ],
+        "related_to": [],
         "supersedes": [],
         "corrects": []
       }
     },
     {
       "id": "SCF-2026-004",
-      "date": "2026-10-25",
-      "date_basis": "first_archival_inclusion",
-      "event_class": "Mapping",
-      "change_type": "extended",
-      "title": "The RAG Application Mapping gains an iterative evidence-acquisition extension",
-      "summary": "An iterative, hypothesis-conditioned evidence-acquisition extension is added to the derived RAG Pipeline mapping and first included in archived Reference Model v0.4.0.",
+      "date": "2026-06-22",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Theoretical",
+      "change_type": "introduced",
+      "title": "Ontology of Digital Identity is articulated as a broader theoretical layer",
+      "summary": "The Changelog records the articulation of a more general theoretical level, distinguished from DIO's applied optimization focus, as Ontology of Digital Identity (ODI).",
       "scope": [
         {
-          "component": "DIO Reconstruction Failure Modes × RAG Pipeline",
-          "component_type": "application-mapping",
-          "uri": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
-          "role": "affected-mapping"
-        },
-        {
-          "component": "Reference Model v0.4.0",
-          "component_type": "archived-release",
-          "uri": "https://doi.org/10.5281/zenodo.23632619",
-          "role": "first-archival-inclusion"
+          "component": "Ontology of Digital Identity",
+          "component_type": "concept",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#ODI",
+          "role": "affected-resource"
         }
       ],
-      "before": "The base mapping projected DIO Reconstruction Failure Modes to RAG pipeline loci, mechanisms, symptoms, and incidents.",
-      "after": "The mapping additionally describes iterative and hypothesis-conditioned evidence acquisition.",
+      "before": "DIO was framed around practical optimization of digital identity.",
+      "after": "ODI is articulated as the broader theoretical layer concerned with digital identity and its conditions of being.",
       "preserved_invariants": [
-        "The RAG mapping remains a derived, non-normative application layer.",
-        "The extension does not add or redefine canonical Reference Vocabulary concepts."
+        "DIO's applied orientation and ODI's broader theoretical scope are distinguished rather than collapsed."
       ],
       "impact": {
-        "level": "mapping",
-        "compatibility": "non-normative-derived-layer",
+        "level": "conceptual-model",
+        "compatibility": "model-level",
         "affected_components": [
-          "Application Mappings",
-          "RAG Pipeline Mapping",
-          "Reconstruction Failure Modes"
+          "Ontology of Digital Identity"
         ],
-        "notes": "An application-mapping extension, not a change to the canonical vocabulary."
+        "notes": "The record captures the Changelog's conceptual distinction; later scoping and methodological notes elaborate it."
       },
       "evidence": {
         "status": "documented",
         "basis": [
-          "public-version-history",
-          "archival-record"
+          "hub-changelog",
+          "linked-publication-or-artifact"
         ],
-        "temporal_note": "Date is the recorded first archival inclusion in Reference Model v0.4.0.",
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
         "sources": [
           {
-            "label": "RAG Pipeline mapping",
-            "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
-            "role": "current-mapping"
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           },
           {
-            "label": "Reference Model orientation",
-            "url": "https://vocab.danielberanek.cz/llms.txt",
-            "role": "version-history"
-          },
-          {
-            "label": "Archived Reference Model v0.4.0",
-            "url": "https://doi.org/10.5281/zenodo.23632619",
-            "role": "archival-record"
+            "label": "Living Manifest v2",
+            "url": "https://danielberanek.cz/manifest-digital-identity-optimization-dio/",
+            "role": "current-theoretical-presentation"
           }
         ]
       },
@@ -309,67 +227,46 @@
     },
     {
       "id": "SCF-2026-005",
-      "date": "2026-11-05",
-      "date_basis": "version_publication_date",
-      "event_class": "Provenance",
-      "change_type": "synchronized",
-      "title": "Reference Vocabulary v0.2.1 synchronizes vocabulary-level metadata",
-      "summary": "Vocabulary v0.2.1 synchronizes creator identity, Dublin Core and namespace metadata, and DCAT/Schema.org descriptions across representations.",
+      "date": "2026-07-15",
+      "date_basis": "activity_period",
+      "date_range_start": "2026-07-15",
+      "date_range_end": "2026-07-26",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "The Manifest is projected into fifteen additional languages",
+      "summary": "Fifteen additional language projections are created between 15 and 26 July, extending the Czech source into a coordinated multilingual set.",
       "scope": [
         {
-          "component": "Reference Vocabulary v0.2.1",
-          "component_type": "vocabulary-version",
-          "uri": "https://vocab.danielberanek.cz/dio-odi/",
-          "role": "updated-resource"
-        },
-        {
-          "component": "SKOS Turtle and JSON-LD",
-          "component_type": "machine-readable-representation",
-          "uri": "https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl",
-          "role": "updated-representation"
+          "component": "Manifest language projections",
+          "component_type": "distribution-set",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
         }
       ],
-      "before": "Vocabulary v0.2.0 carried the preceding metadata graph and representation state.",
-      "after": "Vocabulary v0.2.1 uses the canonical Person URI and synchronizes creator, license, issue/modification, language, namespace, FOAF, DCAT 3, and Schema.org Dataset metadata.",
+      "before": "The Manifest existed as a Czech-language source.",
+      "after": "Fifteen additional language projections are created, producing a sixteen-language corpus.",
       "preserved_invariants": [
-        "All 40 SKOS concepts, URIs, labels, definitions, notes, hierarchy, and provenance statements are preserved.",
-        "The historical status of Entity Resolution Anomaly is unchanged.",
-        "Archived Reference Model v0.6.0 remains an immutable snapshot containing vocabulary v0.2.0."
+        "Language projections are coordinated representations; they do not constitute sixteen independent theories."
       ],
       "impact": {
-        "level": "metadata",
-        "compatibility": "metadata-only",
+        "level": "cross-layer",
+        "compatibility": "distribution-only",
         "affected_components": [
-          "Reference Vocabulary",
-          "Vocabulary Metadata",
-          "SKOS Turtle",
-          "Vocabulary JSON-LD",
-          "DCAT 3"
+          "Manifest language projections"
         ],
-        "notes": "Explicitly described as a metadata-only maintenance update; no concept-level semantic change is claimed."
+        "notes": "The Changelog provides the interval 15–26 July; it does not assign a separate completion date to each language."
       },
       "evidence": {
         "status": "documented",
         "basis": [
-          "release-notes",
-          "source-map"
+          "hub-changelog"
         ],
-        "temporal_note": "Date is the stated release date of vocabulary v0.2.1.",
+        "temporal_note": "The Changelog gives a bounded activity period, not a single publication or edit timestamp.",
         "sources": [
           {
-            "label": "Vocabulary v0.2.1 release notes",
-            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/RELEASE_NOTES_VOCABULARY_v0.2.1.md",
-            "role": "release-note"
-          },
-          {
-            "label": "Canonical Reference Vocabulary",
-            "url": "https://vocab.danielberanek.cz/dio-odi/",
-            "role": "current-representation"
-          },
-          {
-            "label": "Reference Model source map",
-            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
-            "role": "historical-provenance"
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           }
         ]
       },
@@ -383,65 +280,420 @@
     },
     {
       "id": "SCF-2026-006",
-      "date": "2026-11-05",
-      "date_basis": "version_publication_date",
-      "event_class": "Provenance",
-      "change_type": "synchronized",
-      "title": "Agentic ER mapping v0.3.1 synchronizes provenance with arXiv v2",
-      "summary": "The live Agentic ER Architecture Mapping synchronizes provenance to the public arXiv v2 manuscript. The change is provenance-only; its concept and relation inventories remain unchanged.",
+      "date": "2026-07-23",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Distribution",
+      "change_type": "introduced",
+      "title": "Sixteen language versions are consolidated at one hub",
+      "summary": "The sixteen language versions are brought together at a single nodal point for language projections.",
       "scope": [
         {
-          "component": "Agentic ER Architecture Mapping v0.3.1",
-          "component_type": "application-mapping",
-          "uri": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
-          "role": "updated-mapping"
-        },
-        {
-          "component": "Constraining the Commit Boundary, arXiv v2",
-          "component_type": "publication-version",
-          "uri": "https://arxiv.org/abs/2610.37407v2",
-          "role": "provenance-target"
+          "component": "DIO/ODI language-projection hub",
+          "component_type": "web-resource",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
         }
       ],
-      "before": "Mapping v0.3.0 was aligned to production manuscript v55 and included in archived Reference Model v0.6.0.",
-      "after": "Mapping v0.3.1 synchronizes provenance and source anchors with arXiv v2 and is included in archived Reference Model v0.7.0.",
+      "before": "Language versions were distributed across separate representations.",
+      "after": "A single web hub makes the sixteen language projections jointly discoverable.",
       "preserved_invariants": [
-        "The mapping retains 120 local architecture concepts.",
-        "The mapping retains 206 qualified relation assertions.",
-        "The mapping remains derived and non-normative; canonical vocabulary is unchanged."
+        "Consolidation at the hub does not make the language versions identical strings or remove their autonomous linguistic projections."
       ],
       "impact": {
-        "level": "mapping",
-        "compatibility": "provenance-only",
+        "level": "distribution",
+        "compatibility": "distribution-only",
         "affected_components": [
-          "Agentic ER Application Mapping",
-          "arXiv v2",
-          "Reference Model"
+          "DIO/ODI language-projection hub"
         ],
-        "notes": "The registry explicitly characterizes v0.3.1 as a provenance-only synchronization."
+        "notes": "A distribution and discoverability change, not a conceptual revision."
       },
       "evidence": {
         "status": "documented",
         "basis": [
-          "registry",
-          "public-version-history"
+          "hub-changelog"
         ],
-        "temporal_note": "Date is the arXiv v2 version date recorded in the corpus registry.",
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
         "sources": [
           {
-            "label": "Agentic ER mapping",
-            "url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
-            "role": "current-mapping"
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-005"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-007",
+      "date": "2026-07-23",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "introduced",
+      "title": "The DIO product page and its Changelog are created",
+      "summary": "The Changelog records the creation of the product page and the Changelog itself as part of the public web layer.",
+      "scope": [
+        {
+          "component": "DIO product page and Changelog",
+          "component_type": "web-resource",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The project's public web layer did not yet have this consolidated product page and change history.",
+      "after": "A public-facing product page and explicit Changelog are created.",
+      "preserved_invariants": [
+        "The Changelog is a retrospective, author-maintained record and must be distinguished from source-control history."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "not-assessed",
+        "affected_components": [
+          "DIO product page and Changelog"
+        ],
+        "notes": "This is a web-artifact and documentation milestone."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-006"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-008",
+      "date": "2026-07-24",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Provenance",
+      "change_type": "extended",
+      "title": "The Czech Manifest gains a Myšlenkový odkaz chapter",
+      "summary": "Sources informing DIO/ODI are added to the Czech Manifest in a dedicated Myšlenkový odkaz chapter.",
+      "scope": [
+        {
+          "component": "Czech Manifest — Myšlenkový odkaz",
+          "component_type": "publication-section",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The Changelog does not record a dedicated source-genealogy chapter in the Czech Manifest.",
+      "after": "A dedicated chapter makes the intellectual sources and antecedents more explicit.",
+      "preserved_invariants": [
+        "The chapter documents intellectual provenance; it does not by itself establish endorsement or direct derivation from every cited source."
+      ],
+      "impact": {
+        "level": "provenance",
+        "compatibility": "not-assessed",
+        "affected_components": [
+          "Czech Manifest — Myšlenkový odkaz"
+        ],
+        "notes": "The event records the source-tracing addition as stated by the Changelog."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-003"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-009",
+      "date": "2026-07-25",
+      "date_basis": "activity_period",
+      "date_range_start": "2026-07-25",
+      "date_range_end": "2026-07-26",
+      "event_class": "Provenance",
+      "change_type": "synchronized",
+      "title": "The Myšlenkový odkaz chapter is synchronized across all language versions",
+      "summary": "The chapter added to the Czech Manifest is added to all language versions during 25–26 July.",
+      "scope": [
+        {
+          "component": "Manifest — Myšlenkový odkaz across language editions",
+          "component_type": "publication-section-set",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The source-genealogy chapter had been added to the Czech version.",
+      "after": "The chapter is represented across all language versions.",
+      "preserved_invariants": [
+        "The multilingual additions are synchronized representations of the source chapter, not independent provenance claims."
+      ],
+      "impact": {
+        "level": "provenance",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "Manifest — Myšlenkový odkaz across language editions"
+        ],
+        "notes": "The Changelog gives the interval 25–26 July, not a distinct timestamp for each language edition."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog"
+        ],
+        "temporal_note": "The Changelog gives a bounded activity period, not a single publication or edit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-008"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-010",
+      "date": "2026-07-27",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "The canonical multilingual Manifest edition is archived on Zenodo",
+      "summary": "The canonical multilingual edition is archived as the citable record identified by DOI 10.5281/zenodo.21610934.",
+      "scope": [
+        {
+          "component": "Canonical multilingual Manifest edition",
+          "component_type": "archived-publication",
+          "uri": "https://doi.org/10.5281/zenodo.21610934",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The multilingual corpus had been assembled and presented on the web hub.",
+      "after": "A canonical archival and citation instance is created on Zenodo.",
+      "preserved_invariants": [
+        "The archive is a fixed citable edition; the living web hub remains a distinct distribution layer."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Canonical multilingual Manifest edition"
+        ],
+        "notes": "The web, archive, and other distribution layers have distinct roles."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           },
           {
-            "label": "arXiv v2",
-            "url": "https://arxiv.org/abs/2610.37407v2",
-            "role": "publication-version"
+            "label": "Zenodo canonical multilingual edition",
+            "url": "https://doi.org/10.5281/zenodo.21610934",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-009"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-011",
+      "date": "2026-08-07",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "The first standalone DIO conceptual framework paper is published",
+      "summary": "A standalone paper systematizes DIO as a framework for entity representation, recognition, and visibility in AI-mediated search.",
+      "scope": [
+        {
+          "component": "DIO Conceptual Framework",
+          "component_type": "publication",
+          "uri": "https://doi.org/10.5281/zenodo.21839423",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "DIO had been articulated in the Manifest but had not yet been presented in this standalone conceptual paper.",
+      "after": "A separate research paper systematizes DIO for publication and citation.",
+      "preserved_invariants": [
+        "The paper is a distinct publication artifact and does not replace the Manifest."
+      ],
+      "impact": {
+        "level": "conceptual-model",
+        "compatibility": "not-assessed",
+        "affected_components": [
+          "DIO Conceptual Framework"
+        ],
+        "notes": "This event records publication and systematization; it does not assert empirical validation."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           },
           {
-            "label": "Corpus work registry",
-            "url": "https://vocab.danielberanek.cz/metadata/works.json",
-            "role": "version-provenance"
+            "label": "DIO Conceptual Framework — Zenodo v1",
+            "url": "https://doi.org/10.5281/zenodo.21839423",
+            "role": "primary-publication"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-002"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-012",
+      "date": "2026-08-20",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Conceptual",
+      "change_type": "refined",
+      "title": "Manifest v2 introduces the K6 connectome representation and semantic-field analogy",
+      "summary": "The Czech and English Manifest v2 editions add a visualization of the semantic connectome and interpret it through the working analogy of a semantic field. The Changelog also records a shift away from linear or sequential readings toward simultaneous interaction.",
+      "scope": [
+        {
+          "component": "Manifest v2 — semantic connectome and semantic-field analogy",
+          "component_type": "publication-version",
+          "uri": "https://danielberanek.cz/manifest-digital-identity-optimization-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The earlier Manifest representation did not yet include the v2 connectome visualization and its interpretive supplement.",
+      "after": "The K6 connectome is visualized and supplemented by a working analogy of a semantic field; the account rejects a linear or sequential reading of the invariant and methodology.",
+      "preserved_invariants": [
+        "The semantic-field analogy is identified as a working analogy, not a physical field or an asserted mathematical proof."
+      ],
+      "impact": {
+        "level": "conceptual-model",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Manifest v2 — semantic connectome and semantic-field analogy"
+        ],
+        "notes": "The Changelog specifies Czech and English v2 editions; it does not assert that every language edition changed on this date."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Manifest v2 — living edition",
+            "url": "https://danielberanek.cz/manifest-digital-identity-optimization-dio/",
+            "role": "current-presentation"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-004"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-013",
+      "date": "2026-08-24",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Provenance",
+      "change_type": "introduced",
+      "title": "AI Disclosure is added to the Manifest hub",
+      "summary": "An AI Disclosure chapter is added to the Manifest hub.",
+      "scope": [
+        {
+          "component": "Manifest hub — AI Disclosure",
+          "component_type": "web-section",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The Changelog does not record a dedicated AI Disclosure chapter on the hub before this date.",
+      "after": "The hub explicitly documents AI involvement in the multilingual projection workflow.",
+      "preserved_invariants": [
+        "The disclosure describes the stated tool use and authorial responsibility; it does not transfer authorship of the DIO/ODI framework to the tools."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "provenance-only",
+        "affected_components": [
+          "Manifest hub — AI Disclosure"
+        ],
+        "notes": "Transparency and provenance documentation; not a conceptual modification."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
           }
         ]
       },
@@ -452,43 +704,436 @@
       }
     },
     {
-      "id": "SCF-2026-007",
-      "date": "2026-11-06",
+      "id": "SCF-2026-014",
+      "date": "2026-08-25",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Theoretical",
+      "change_type": "documented",
+      "title": "The Geneze DIO a ODI note articulates the framework's ex-post origin",
+      "summary": "A methodological note describes DIO/ODI as ex-post articulation of accumulated practice and operations formed during the creation of a multimodal E-E-A-T object.",
+      "scope": [
+        {
+          "component": "Manifest hub — Geneze DIO a ODI",
+          "component_type": "methodological-note",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The Changelog had not yet explicitly documented the ex-post character of the framework's emergence.",
+      "after": "The methodology note states the reflexive and ex-post origin of DIO/ODI and their openness to independent validation, falsification, and application.",
+      "preserved_invariants": [
+        "This is a methodological articulation of genesis, not retrospective proof of validity."
+      ],
+      "impact": {
+        "level": "conceptual-model",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Manifest hub — Geneze DIO a ODI"
+        ],
+        "notes": "The record concerns explicit methodological framing as dated in the Changelog."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Manifest hub — Geneze DIO a ODI",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "methodological-source"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-015",
+      "date": "2026-08-25",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Conceptual",
+      "change_type": "introduced",
+      "title": "DIO scoping defines its primary domain and exclusions",
+      "summary": "A scoping note defines DIO's primary concern as the semantic, representational, and relational aspects of digital identity, while naming domains outside its primary scope.",
+      "scope": [
+        {
+          "component": "Manifest hub — DIO scoping",
+          "component_type": "scope-definition",
+          "uri": "https://danielberanek.cz/manifest-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The primary subject and exclusions had not yet been explicitly recorded in a dedicated scoping note on the hub.",
+      "after": "The scope note delineates the primary domain and explicitly excludes several adjacent identity domains from the primary object of DIO.",
+      "preserved_invariants": [
+        "The scope note defines primary focus; it does not claim those excluded domains are unrelated to digital identity in general."
+      ],
+      "impact": {
+        "level": "conceptual-model",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Manifest hub — DIO scoping"
+        ],
+        "notes": "A scope-boundary event, distinct from the provenance/methodology note on the same date."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Manifest hub — DIO scoping",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "scope-definition"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-016",
+      "date": "2026-09-02",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "The Crisis of Entity Resolution paper introduces four initial anomalies",
+      "summary": "The Crisis paper analyzes Entity Resolution in heterogeneous AI environments and identifies Identity Collapse, Semantic Fragmentation, Temporal Discontinuity, and Semantic Vulnerability.",
+      "scope": [
+        {
+          "component": "The Crisis of Entity Resolution",
+          "component_type": "publication",
+          "uri": "https://doi.org/10.5281/zenodo.22257504",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The corpus had developed DIO/ODI and its first standalone conceptual paper but had not yet published this focused Entity Resolution analysis.",
+      "after": "The Crisis paper publishes an initial four-part anomaly framing for Entity Resolution.",
+      "preserved_invariants": [
+        "The four-item Crisis framing is a historical state; later publications refine the classification and separate Semantic Vulnerability from realized failure modes."
+      ],
+      "impact": {
+        "level": "taxonomy",
+        "compatibility": "model-level",
+        "affected_components": [
+          "The Crisis of Entity Resolution"
+        ],
+        "notes": "The historical initial classification is retained as a prior state, not treated as the final taxonomy."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "The Crisis of Entity Resolution — Zenodo v1.0.0",
+            "url": "https://doi.org/10.5281/zenodo.22257504",
+            "role": "primary-publication"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-011"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-017",
+      "date": "2026-09-05",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "extended",
+      "title": "The Crisis v1.1.0 record gains four supplementary visualizations",
+      "summary": "The Crisis record is updated with four standalone visualizations corresponding to Identity Collapse, Semantic Fragmentation, Temporal Discontinuity, and Semantic Vulnerability.",
+      "scope": [
+        {
+          "component": "The Crisis of Entity Resolution v1.1.0",
+          "component_type": "supplementary-publication-material",
+          "uri": "https://doi.org/10.5281/zenodo.22416026",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The v1.0.0 primary text was published without these four supplementary visualizations.",
+      "after": "The v1.1.0 record adds four conceptual visualizations as supplementary material.",
+      "preserved_invariants": [
+        "The primary PDF text remains unchanged; the visualizations do not establish Semantic Vulnerability as a realized failure mode."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "The Crisis of Entity Resolution v1.1.0"
+        ],
+        "notes": "This is a supplementary representation update, not a claim that all four items belong to one final failure-mode taxonomy."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "The Crisis of Entity Resolution — current Zenodo record v1.1.0",
+            "url": "https://doi.org/10.5281/zenodo.22416026",
+            "role": "supplementary-visualizations"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-016"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-018",
+      "date": "2026-10-08",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Conceptual",
+      "change_type": "refined",
+      "title": "MVDIO introduces adversarial reduction and refines the K6 relationship",
+      "summary": "MVDIO reduces DIO to a minimum analytical model, refines the reconstruction-failure distinctions, reclassifies Semantic Vulnerability toward robustness/risk, and describes MVDIO and K6 as two analytical levels of the same dynamic object.",
+      "scope": [
+        {
+          "component": "MVDIO",
+          "component_type": "publication",
+          "uri": "https://doi.org/10.5281/zenodo.23226205",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The Crisis-era account used a four-anomaly framing and had not yet made the MVDIO/K6 two-level relationship explicit.",
+      "after": "MVDIO provides an adversarially reduced analytical model and refines the relation between MVDIO and K6, while moving Semantic Vulnerability toward robustness/risk.",
+      "preserved_invariants": [
+        "K6 is not simply discarded; the Changelog describes it as a finer-grained level relative to MVDIO."
+      ],
+      "impact": {
+        "level": "conceptual-model",
+        "compatibility": "model-level",
+        "affected_components": [
+          "MVDIO"
+        ],
+        "notes": "This event captures the compound conceptual development as described in the MVDIO Changelog entry."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "MVDIO — Zenodo",
+            "url": "https://doi.org/10.5281/zenodo.23226205",
+            "role": "primary-publication"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-016"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-019",
+      "date": "2026-10-09",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Structural",
+      "change_type": "reclassified",
+      "title": "The Taxonomic Note reorganizes anomalies into Reconstruction Failure Modes",
+      "summary": "The Taxonomic Note reorganizes the original Entity Resolution Anomalies into a multi-level diagnostic taxonomy with Referential Reconstruction, Semantic Coherence, Temporal Reconstruction, and Contextual Adequacy branches.",
+      "scope": [
+        {
+          "component": "Reconstruction Failure Modes taxonomy",
+          "component_type": "taxonomy",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The initial Crisis paper used a four-anomaly framing.",
+      "after": "A multi-level Reconstruction Failure Modes taxonomy is published; Identity Collapse remains outside it and Semantic Vulnerability is treated as a robustness-related property rather than a realized failure mode.",
+      "preserved_invariants": [
+        "The taxonomy remains distinct from Identity Collapse.",
+        "Semantic Vulnerability is not classified as a realized failure mode."
+      ],
+      "impact": {
+        "level": "taxonomy",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Reconstruction Failure Modes taxonomy"
+        ],
+        "notes": "This is the formal taxonomic revision, not merely a visualization update."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Taxonomic Note — Zenodo",
+            "url": "https://doi.org/10.5281/zenodo.23269323",
+            "role": "primary-publication"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-018"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-020",
+      "date": "2026-10-10",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "Reference Vocabulary v0.1.0 establishes the SKOS-first semantic layer",
+      "summary": "The first Reference Vocabulary release establishes stable concept URIs, explicit definitions, conceptual relations, provenance, Turtle/RDF and JSON-LD representations, and a concept map.",
+      "scope": [
+        {
+          "component": "Reference Vocabulary v0.1.0",
+          "component_type": "vocabulary-version",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The conceptual system was described in publications and prose without the first published SKOS-first reference layer.",
+      "after": "A machine-readable SKOS-first vocabulary is published with stable identifiers and explicit semantic relations.",
+      "preserved_invariants": [
+        "The vocabulary is the canonical semantic layer; later Application Mappings remain derived and separate."
+      ],
+      "impact": {
+        "level": "vocabulary",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Reference Vocabulary v0.1.0"
+        ],
+        "notes": "The Changelog date identifies the publication milestone for vocabulary v0.1.0."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Canonical Reference Vocabulary",
+            "url": "https://vocab.danielberanek.cz/dio-odi/",
+            "role": "current-vocabulary-page"
+          },
+          {
+            "label": "Reference Model repository",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model",
+            "role": "source-repository"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-019"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-021",
+      "date": "2026-10-10",
       "date_basis": "archive_publication_date",
       "event_class": "Artifact",
       "change_type": "archived",
-      "title": "Reference Model v0.7.0 preserves a new versioned corpus snapshot",
-      "summary": "Reference Model v0.7.0 is archived on Zenodo as a versioned research-software package. Its component state includes Reference Vocabulary v0.2.1 and Agentic ER mapping v0.3.1.",
+      "title": "Reference Model v0.1.0 establishes the first archived package baseline",
+      "summary": "The versioned DIO/ODI Reference Model package is archived on Zenodo as an immutable research-software snapshot.",
       "scope": [
         {
-          "component": "Reference Model v0.7.0",
+          "component": "DIO/ODI Reference Model v0.1.0",
           "component_type": "archived-release",
-          "uri": "https://doi.org/10.5281/zenodo.24020300",
+          "uri": "https://doi.org/10.5281/zenodo.23272898",
           "role": "archived-artifact"
-        },
-        {
-          "component": "Reference Model v0.6.0",
-          "component_type": "archived-release",
-          "uri": "https://doi.org/10.5281/zenodo.23966487",
-          "role": "previous-immutable-snapshot"
         }
       ],
-      "before": "The preceding archived package was v0.6.0, containing vocabulary v0.2.0 and Agentic ER mapping v0.3.0.",
-      "after": "A new immutable v0.7.0 package snapshot is published, recording vocabulary v0.2.1 and Agentic ER mapping v0.3.1.",
+      "before": "The preceding package state is represented by the earlier Reference Model release history.",
+      "after": "An immutable v0.1.0 archive records the repository state identified by the version-specific DOI.",
       "preserved_invariants": [
-        "Earlier archived releases remain identifiable and are not silently rewritten.",
-        "An archive is a versioned package snapshot, not itself evidence of a new theoretical claim."
+        "The archive identifies a versioned package snapshot; it does not replace the maintained live repository.",
+        "Later releases do not rewrite this immutable snapshot."
       ],
       "impact": {
         "level": "archive",
         "compatibility": "archive-only",
         "affected_components": [
           "Reference Model",
-          "Reference Vocabulary",
-          "Agentic ER Application Mapping",
-          "Corpus Metadata"
+          "Reference Vocabulary v0.1.0"
         ],
-        "notes": "Artifact and distribution history only; component-level semantic changes are recorded separately."
+        "notes": "The first archived package baseline precedes the v0.2.0 snapshot later identified in the Hub Changelog."
       },
       "evidence": {
         "status": "documented",
@@ -496,15 +1141,15 @@
           "registry",
           "archival-record"
         ],
-        "temporal_note": "Date is the recorded Zenodo publication date for Reference Model v0.7.0.",
+        "temporal_note": "Date is the recorded publication date in the Corpus Metadata Registry.",
         "sources": [
           {
-            "label": "Archived Reference Model v0.7.0",
-            "url": "https://doi.org/10.5281/zenodo.24020300",
+            "label": "Archived Reference Model v0.1.0",
+            "url": "https://doi.org/10.5281/zenodo.23272898",
             "role": "archival-record"
           },
           {
-            "label": "Corpus work and release registry",
+            "label": "Reference Model work and release registry",
             "url": "https://vocab.danielberanek.cz/metadata/works.json",
             "role": "version-provenance"
           }
@@ -512,8 +1157,913 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-005",
-          "SCF-2026-006"
+          "SCF-2026-020"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-022",
+      "date": "2026-10-10",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Mapping",
+      "change_type": "introduced",
+      "title": "The first RAG Pipeline Application Mapping is created",
+      "summary": "The first derived Application Mapping projects Reconstruction Failure Modes into a generic RAG pipeline while explicitly remaining separate from the canonical vocabulary.",
+      "scope": [
+        {
+          "component": "Reconstruction Failure Modes × RAG Pipeline mapping",
+          "component_type": "application-mapping",
+          "uri": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The Reference Vocabulary and taxonomy existed without this published RAG application projection.",
+      "after": "The first RAG mapping projects taxonomy concepts to RAG pipeline locations and diagnostic consequences.",
+      "preserved_invariants": [
+        "The mapping is non-normative and does not redefine DIO as a RAG framework or modify canonical vocabulary concepts."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "non-normative-derived-layer",
+        "affected_components": [
+          "Reconstruction Failure Modes × RAG Pipeline mapping"
+        ],
+        "notes": "This corrects the prior draft's conflation of the initial 10 October mapping with a later iterative evidence-acquisition extension."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "RAG Pipeline Application Mapping",
+            "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+            "role": "current-mapping"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-019",
+          "SCF-2026-020"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-023",
+      "date": "2026-10-10",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.2.0 archives the initial vocabulary and RAG mapping state",
+      "summary": "The extended Reference Model v0.2.0 is archived on Zenodo, preserving the initial SKOS vocabulary and first RAG mapping state.",
+      "scope": [
+        {
+          "component": "Reference Model v0.2.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23282752",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The new vocabulary and RAG mapping had been created as live source artifacts.",
+      "after": "The v0.2.0 package provides an immutable archived snapshot of these components.",
+      "preserved_invariants": [
+        "The archive is a package-level snapshot; it is not a separate conceptual assertion."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.2.0"
+        ],
+        "notes": "The version DOI identifies the archived package."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Reference Model v0.2.0",
+            "url": "https://doi.org/10.5281/zenodo.23282752",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-020",
+          "SCF-2026-022"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-024",
+      "date": "2026-10-11",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Mapping",
+      "change_type": "introduced",
+      "title": "The Application Mappings layer expands with HEM × DIO",
+      "summary": "Reference Model v0.3.0 adds a distinct Application Mappings layer, including the Heterogeneous Entity Matching taxonomy × DIO Reconstruction Consequences mapping and human-readable frontends.",
+      "scope": [
+        {
+          "component": "Application Mappings layer and HEM × DIO mapping",
+          "component_type": "application-mapping-set",
+          "uri": "https://vocab.danielberanek.cz/mappings/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The repository had an initial RAG mapping but not the separately identified HEM × DIO mapping and broader Application Mappings index.",
+      "after": "The derived Application Mappings layer expands to include HEM × DIO and its frontend representations.",
+      "preserved_invariants": [
+        "Application mappings remain derived and non-normative; the HEM and DIO taxonomies are not treated as equivalent."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "non-normative-derived-layer",
+        "affected_components": [
+          "Application Mappings layer and HEM × DIO mapping"
+        ],
+        "notes": "The HEM × DIO relation is analytical and many-to-many, not a claim of taxonomy equivalence."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "HEM × DIO Application Mapping",
+            "url": "https://vocab.danielberanek.cz/mappings/hem-dio/",
+            "role": "current-mapping"
+          },
+          {
+            "label": "External HEM publication",
+            "url": "https://doi.org/10.1016/j.datak.2026.102575",
+            "role": "external-source"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-022"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-025",
+      "date": "2026-10-11",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.3.0 archives the expanded Application Mappings layer",
+      "summary": "Reference Model v0.3.0 is archived on Zenodo with the new Application Mappings layer and HEM × DIO mapping.",
+      "scope": [
+        {
+          "component": "Reference Model v0.3.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23289615",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "Reference Model v0.2.0 preserved the first vocabulary and RAG mapping state.",
+      "after": "The v0.3.0 archive preserves the expanded mapping set and web frontends.",
+      "preserved_invariants": [
+        "The archive captures a package state; component-level semantics are described in their own records."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.3.0"
+        ],
+        "notes": "The version DOI identifies the archived package."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Reference Model v0.3.0",
+            "url": "https://doi.org/10.5281/zenodo.23289615",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-024"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-026",
+      "date": "2026-10-22",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Theoretical",
+      "change_type": "introduced",
+      "title": "Constraining the Commit Boundary introduces a DIO/ODI-informed authorization guardrail",
+      "summary": "The paper develops a conceptual architecture for authorization of persistent identity changes in Agentic Entity Resolution, separating evidence available for agent reasoning from evidence eligible to authorize a specific identity or continuity claim.",
+      "scope": [
+        {
+          "component": "Constraining the Commit Boundary",
+          "component_type": "publication",
+          "uri": "https://arxiv.org/abs/2610.37407",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "DIO/ODI had application mappings for RAG and HEM but had not yet published this commit-boundary authorization architecture.",
+      "after": "A commit-time authorization guardrail is specified with operational scope and current state/policy conditions.",
+      "preserved_invariants": [
+        "The paper is a conceptual architecture; publication does not imply implementation, formal proof, or empirical validation."
+      ],
+      "impact": {
+        "level": "conceptual-model",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Constraining the Commit Boundary"
+        ],
+        "notes": "The wider hypothesis-conditioned agentic cascade is explicitly left as future research."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Constraining the Commit Boundary — arXiv",
+            "url": "https://arxiv.org/abs/2610.37407",
+            "role": "current-publication"
+          },
+          {
+            "label": "Zenodo version 1",
+            "url": "https://doi.org/10.5281/zenodo.23580733",
+            "role": "version-1-archive"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-015"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-027",
+      "date": "2026-10-25",
+      "date_basis": "archive_publication_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.4.0 preserves the pre-v0.2.0 vocabulary state",
+      "summary": "The versioned DIO/ODI Reference Model package is archived on Zenodo as an immutable research-software snapshot.",
+      "scope": [
+        {
+          "component": "DIO/ODI Reference Model v0.4.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23632619",
+          "role": "archived-artifact"
+        }
+      ],
+      "before": "The preceding package state is represented by the earlier Reference Model release history.",
+      "after": "An immutable v0.4.0 archive records the repository state identified by the version-specific DOI.",
+      "preserved_invariants": [
+        "The archive identifies a versioned package snapshot; it does not replace the maintained live repository.",
+        "Later releases do not rewrite this immutable snapshot."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model",
+          "Reference Vocabulary v0.1.0"
+        ],
+        "notes": "The Hub Changelog explicitly notes that archived v0.4.0 preserves the preceding Reference Vocabulary v0.1.0 state."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "archival-record"
+        ],
+        "temporal_note": "Date is the recorded publication date in the Corpus Metadata Registry.",
+        "sources": [
+          {
+            "label": "Archived Reference Model v0.4.0",
+            "url": "https://doi.org/10.5281/zenodo.23632619",
+            "role": "archival-record"
+          },
+          {
+            "label": "Reference Model work and release registry",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-020"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-028",
+      "date": "2026-10-25",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.5.0 archives vocabulary v0.2.0 and the expanded mapping set",
+      "summary": "Reference Model v0.5.0 is archived with Reference Vocabulary v0.2.0 and the expanded Application Mappings state. The preceding v0.4.0 archive preserves vocabulary v0.1.0.",
+      "scope": [
+        {
+          "component": "Reference Model v0.5.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23643845",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The prior v0.4.0 package preserved the earlier vocabulary v0.1.0 state.",
+      "after": "The v0.5.0 archive captures vocabulary v0.2.0 and the updated derived mapping package.",
+      "preserved_invariants": [
+        "The archived v0.4.0 remains immutable and identifiable as the earlier vocabulary state."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.5.0"
+        ],
+        "notes": "This is a package archival milestone and must not be confused with the concept introduction itself."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Reference Model v0.5.0",
+            "url": "https://doi.org/10.5281/zenodo.23643845",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-031",
+          "SCF-2026-029"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-029",
+      "date": "2026-10-25",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Mapping",
+      "change_type": "introduced",
+      "title": "The Commit-Boundary Contract is mapped to Policy-as-Code authorization",
+      "summary": "A new Application Mapping connects authorization commitments in Constraining the Commit Boundary with the capabilities and limits of OPA/Rego and Cedar.",
+      "scope": [
+        {
+          "component": "Commit-Boundary Contract × Policy-as-Code mapping",
+          "component_type": "application-mapping",
+          "uri": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The paper had specified the authorization architecture without this dedicated Policy-as-Code comparison.",
+      "after": "The mapping relates the authorization decision to evidence validation, persistent-write enforcement, policy freshness, state consistency, and auditability.",
+      "preserved_invariants": [
+        "The mapping does not claim that OPA or Cedar independently implements the complete contract; it does not extend the canonical vocabulary."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "non-normative-derived-layer",
+        "affected_components": [
+          "Commit-Boundary Contract × Policy-as-Code mapping"
+        ],
+        "notes": "This is an application mapping, not an implementation report."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Commit-Boundary × Policy-as-Code mapping",
+            "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+            "role": "current-mapping"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-026"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-030",
+      "date": "2026-10-25",
+      "date_basis": "first_archival_inclusion",
+      "event_class": "Mapping",
+      "change_type": "extended",
+      "title": "The RAG Application Mapping gains an iterative evidence-acquisition extension",
+      "summary": "The RAG mapping is extended with iterative, hypothesis-conditioned evidence acquisition; this extension is first included in archived Reference Model v0.4.0.",
+      "scope": [
+        {
+          "component": "Reconstruction Failure Modes × RAG Pipeline mapping",
+          "component_type": "application-mapping",
+          "uri": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+          "role": "affected-mapping"
+        }
+      ],
+      "before": "The initial mapping projected Reconstruction Failure Modes into generic RAG pipeline loci, mechanisms, symptoms, and incidents.",
+      "after": "The mapping additionally describes iterative and hypothesis-conditioned evidence acquisition as an extension to the base diagnostic projection.",
+      "preserved_invariants": [
+        "The RAG mapping remains a derived, non-normative application layer.",
+        "The extension does not add or redefine canonical Reference Vocabulary concepts."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "non-normative-derived-layer",
+        "affected_components": [
+          "RAG Pipeline Mapping",
+          "Application Mappings"
+        ],
+        "notes": "This is a later mapping extension, distinct from the creation of the initial RAG mapping on 10 October."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "archival-record"
+        ],
+        "temporal_note": "Date identifies the first archival inclusion in Reference Model v0.4.0; the exact source-edit timestamp is not asserted.",
+        "sources": [
+          {
+            "label": "RAG Pipeline Application Mapping",
+            "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+            "role": "current-mapping"
+          },
+          {
+            "label": "Reference Model machine-readable orientation",
+            "url": "https://vocab.danielberanek.cz/llms.txt",
+            "role": "version-history"
+          },
+          {
+            "label": "Archived Reference Model v0.4.0",
+            "url": "https://doi.org/10.5281/zenodo.23632619",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-022"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-031",
+      "date": "2026-10-25",
+      "date_basis": "hub_changelog_date",
+      "event_class": "Conceptual",
+      "change_type": "introduced",
+      "title": "Reference Vocabulary v0.2.0 introduces the plural Identity-Preserving Constraints concept",
+      "summary": "Vocabulary v0.2.0 introduces a distinct canonical plural concept Identity-Preserving Constraints and retains the singular Identity-Preserving Constraint as a historical entry.",
+      "scope": [
+        {
+          "component": "Identity-Preserving Constraints",
+          "component_type": "concept",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraints",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The prior vocabulary included the singular Identity-Preserving Constraint entry.",
+      "after": "A distinct plural concept is introduced with its own URI; the singular entry is retained for historical traceability.",
+      "preserved_invariants": [
+        "Earlier singular URIs are not retroactively migrated, and no semantic relation between singular and plural concepts is asserted."
+      ],
+      "impact": {
+        "level": "vocabulary",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Identity-Preserving Constraints"
+        ],
+        "notes": "This is the date stated by the Changelog. The previous draft incorrectly assigned this event to 10 October."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Reference Model source map",
+            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
+            "role": "concept-provenance"
+          },
+          {
+            "label": "Archived Reference Model v0.5.0",
+            "url": "https://doi.org/10.5281/zenodo.23643845",
+            "role": "first-archive-containing-v0.2.0"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-020"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-032",
+      "date": "2026-11-05",
+      "date_basis": "version_publication_date",
+      "event_class": "Provenance",
+      "change_type": "synchronized",
+      "title": "Reference Vocabulary v0.2.1 synchronizes vocabulary-level metadata",
+      "summary": "Vocabulary v0.2.1 synchronizes creator identity, Dublin Core and namespace metadata, and DCAT/Schema.org descriptions across representations.",
+      "scope": [
+        {
+          "component": "Reference Vocabulary v0.2.1",
+          "component_type": "vocabulary-version",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "Vocabulary v0.2.0 carried the preceding metadata graph and representation state.",
+      "after": "Vocabulary v0.2.1 uses the canonical Person URI and synchronized creator, license, issue/modification, language, namespace, FOAF, DCAT 3, and Schema.org Dataset metadata.",
+      "preserved_invariants": [
+        "All 40 SKOS concepts, URIs, labels, definitions, notes, hierarchy, and provenance statements are preserved.",
+        "The historical status of Entity Resolution Anomaly is unchanged.",
+        "Archived Reference Model v0.6.0 remains an immutable snapshot containing vocabulary v0.2.0."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "Reference Vocabulary v0.2.1"
+        ],
+        "notes": "The release notes explicitly identify v0.2.1 as metadata-only; no concept-level semantic change is claimed."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Vocabulary v0.2.1 release notes",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/RELEASE_NOTES_VOCABULARY_v0.2.1.md",
+            "role": "release-note"
+          },
+          {
+            "label": "Canonical Reference Vocabulary",
+            "url": "https://vocab.danielberanek.cz/dio-odi/",
+            "role": "current-representation"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-031"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-033",
+      "date": "2026-11-05",
+      "date_basis": "version_publication_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "Constraining the Commit Boundary v2 is published on arXiv",
+      "summary": "The second version of the commit-boundary paper is made publicly available on arXiv. The Corpus Metadata Registry records v2 as the current arXiv version and retains the Zenodo version-1 record.",
+      "scope": [
+        {
+          "component": "Constraining the Commit Boundary — arXiv v2",
+          "component_type": "publication-version",
+          "uri": "https://arxiv.org/abs/2610.37407v2",
+          "role": "published-version"
+        }
+      ],
+      "before": "The paper's Zenodo version 1 record was available as the first archived publication state.",
+      "after": "arXiv v2 becomes the current public arXiv version; the Zenodo v1 record remains identifiable as an earlier version.",
+      "preserved_invariants": [
+        "The work identity remains the same across the versioned publication records.",
+        "The commit-boundary architecture remains a conceptual authorization guardrail; publication alone does not assert implementation or empirical validation."
+      ],
+      "impact": {
+        "level": "provenance",
+        "compatibility": "provenance-only",
+        "affected_components": [
+          "Constraining the Commit Boundary",
+          "arXiv v2",
+          "Zenodo version 1"
+        ],
+        "notes": "This is a publication-version and distribution milestone. The mapping synchronization is recorded as a separate event."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is the arXiv v2 version date recorded in the Corpus Metadata Registry.",
+        "sources": [
+          {
+            "label": "Constraining the Commit Boundary — arXiv v2",
+            "url": "https://arxiv.org/abs/2610.37407v2",
+            "role": "published-version"
+          },
+          {
+            "label": "Corpus work registry",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          },
+          {
+            "label": "Zenodo version 1",
+            "url": "https://doi.org/10.5281/zenodo.23580733",
+            "role": "earlier-version"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-026"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-034",
+      "date": "2026-11-05",
+      "date_basis": "version_publication_date",
+      "event_class": "Provenance",
+      "change_type": "synchronized",
+      "title": "Agentic ER mapping v0.3.1 synchronizes provenance with arXiv v2",
+      "summary": "The live Agentic ER Architecture Mapping synchronizes provenance and source anchors to public arXiv v2. The mapping's local concept and relation inventories remain unchanged.",
+      "scope": [
+        {
+          "component": "Agentic ER Architecture Mapping v0.3.1",
+          "component_type": "application-mapping",
+          "uri": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "Mapping v0.3.0 was aligned to production manuscript v55 and archived in Reference Model v0.6.0.",
+      "after": "Mapping v0.3.1 synchronizes provenance to public arXiv v2 and is included in Reference Model v0.7.0.",
+      "preserved_invariants": [
+        "120 local architecture concepts are retained.",
+        "206 qualified relation assertions are retained.",
+        "The mapping remains derived and non-normative; canonical vocabulary is unchanged."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "provenance-only",
+        "affected_components": [
+          "Agentic ER Architecture Mapping v0.3.1"
+        ],
+        "notes": "This is a provenance-only synchronization, not a change to the architecture's concept or relation inventory."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Agentic ER mapping",
+            "url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+            "role": "current-mapping"
+          },
+          {
+            "label": "arXiv v2",
+            "url": "https://arxiv.org/abs/2610.37407v2",
+            "role": "publication-version"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-033"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-035",
+      "date": "2026-11-05",
+      "date_basis": "archive_publication_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.6.0 preserves the mapping v0.3.0 archive state",
+      "summary": "Reference Model v0.6.0 is archived as the package snapshot containing Agentic ER mapping v0.3.0 and Reference Vocabulary v0.2.0.",
+      "scope": [
+        {
+          "component": "Reference Model v0.6.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23966487",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The preceding archived package was v0.5.0.",
+      "after": "The v0.6.0 archive captures the coordinated architecture mapping v0.3.0 and vocabulary v0.2.0 state.",
+      "preserved_invariants": [
+        "The later live mapping v0.3.1 and vocabulary v0.2.1 do not rewrite this immutable package snapshot."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.6.0"
+        ],
+        "notes": "The archive is a package snapshot; its component versions are distinct from later live versions."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Reference Model v0.6.0",
+            "url": "https://doi.org/10.5281/zenodo.23966487",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-028"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-036",
+      "date": "2026-11-06",
+      "date_basis": "archive_publication_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.7.0 preserves the updated reference-system snapshot",
+      "summary": "Reference Model v0.7.0 is archived with Reference Vocabulary v0.2.1 and Agentic ER mapping v0.3.1.",
+      "scope": [
+        {
+          "component": "Reference Model v0.7.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.24020300",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The preceding archived package was v0.6.0, containing vocabulary v0.2.0 and Agentic ER mapping v0.3.0.",
+      "after": "A new immutable package snapshot records vocabulary v0.2.1 and Agentic ER mapping v0.3.1.",
+      "preserved_invariants": [
+        "Earlier releases remain immutable and identifiable; the archive alone is not evidence of a new theoretical claim."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.7.0"
+        ],
+        "notes": "The component-level changes are separately recorded in their own events."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "hub-changelog",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI Hub — Changelog",
+            "url": "https://danielberanek.cz/manifest-dio/",
+            "role": "author-maintained-changelog"
+          },
+          {
+            "label": "Reference Model v0.7.0",
+            "url": "https://doi.org/10.5281/zenodo.24020300",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-032",
+          "SCF-2026-034",
+          "SCF-2026-035"
         ],
         "supersedes": [],
         "corrects": []

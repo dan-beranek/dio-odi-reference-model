@@ -36,7 +36,8 @@
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "author": {
       "type": "object",
@@ -170,7 +171,9 @@
             "publication_date",
             "first_archival_inclusion",
             "version_publication_date",
-            "archive_publication_date"
+            "archive_publication_date",
+            "hub_changelog_date",
+            "activity_period"
           ]
         },
         "event_class": {
@@ -182,7 +185,8 @@
             "Provenance",
             "Mapping",
             "Artifact",
-            "Distribution"
+            "Distribution",
+            "ResearchProcess"
           ]
         },
         "change_type": {
@@ -194,7 +198,10 @@
             "synchronized",
             "archived",
             "corrected",
-            "deprecated"
+            "deprecated",
+            "published",
+            "documented",
+            "distributed"
           ]
         },
         "title": {
@@ -239,7 +246,9 @@
                 "mapping",
                 "metadata",
                 "archive",
-                "cross-layer"
+                "cross-layer",
+                "distribution",
+                "provenance"
               ]
             },
             "compatibility": {
@@ -249,7 +258,8 @@
                 "metadata-only",
                 "provenance-only",
                 "archive-only",
-                "not-assessed"
+                "not-assessed",
+                "distribution-only"
               ]
             },
             "affected_components": {
@@ -282,7 +292,17 @@
             "basis": {
               "type": "array",
               "items": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "primary-publication",
+                  "source-map",
+                  "release-notes",
+                  "registry",
+                  "archival-record",
+                  "hub-changelog",
+                  "linked-publication-or-artifact",
+                  "public-version-history"
+                ]
               }
             },
             "temporal_note": {
@@ -324,6 +344,14 @@
               }
             }
           }
+        },
+        "date_range_start": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "date_range_end": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
         }
       }
     }
