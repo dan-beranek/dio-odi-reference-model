@@ -1,7 +1,8 @@
 # Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization
 
-**Status:** derived application mapping first included in archived Reference Model v0.4.0 and carried forward in archived v0.5.0 and v0.6.0; it remains outside the canonical vocabulary  
-**Reference Model:** current archived release v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
+**Status:** derived application mapping first included in archived Reference Model v0.4.0 and carried forward in archived v0.5.0 v0.6.0, and v0.7.0; it remains outside the canonical vocabulary  
+**Reference Model:** current archived release v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
+**Previous archived release containing this mapping:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
 **Live Reference Vocabulary:** v0.2.1; this mapping does not modify its definitions or relations  
 **Frontend:** https://vocab.danielberanek.cz/mappings/commit-boundary-policy/  
 **JSON-LD:** https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.jsonld  
@@ -113,11 +114,13 @@ The mapping is about authorization of a proposed persistent identity mutation. I
 
 ## References
 
-1. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Zenodo. Concept DOI [10.5281/zenodo.23580732](https://doi.org/10.5281/zenodo.23580732).
+1. Beránek, D. (2026, 5 November). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 2]. arXiv. [arXiv:2610.37407v2](https://arxiv.org/abs/2610.37407v2). Concept DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Earlier Zenodo version 1 record [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
 
-2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0) [Software]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
+2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.7.0) [Software]. Zenodo. DOI [10.5281/zenodo.24020300](https://doi.org/10.5281/zenodo.24020300).
 
-3. Beránek, D. (2026). Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.1; version 0.2.0 included in archived Reference Model v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
+3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0) [Software; previous archived release]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
+
+4. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.1; included in archived Reference Model v0.7.0; version 0.2.0 included in archived v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
 
 4. Cedar Policy Language Reference Guide. (n.d.). *Basic policy construction in Cedar* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html.
 
