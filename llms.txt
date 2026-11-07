@@ -7,7 +7,11 @@
 - Top-level Reference Model overview: https://vocab.danielberanek.cz/
 - Canonical Reference Vocabulary landing page: https://vocab.danielberanek.cz/dio-odi/
 - Application Mappings index: https://vocab.danielberanek.cz/mappings/
-- Corpus Metadata Registry guide: https://vocab.danielberanek.cz/metadata/README.md
+- Corpus Metadata Registry frontend: https://vocab.danielberanek.cz/metadata/
+- Semantic Change Feed frontend: https://vocab.danielberanek.cz/semantic-change-feed/
+- Semantic Change Feed events JSON: https://vocab.danielberanek.cz/semantic-change-feed/events.json
+- Semantic Change Feed JSON Schema: https://vocab.danielberanek.cz/semantic-change-feed/schema.json
+- Corpus Metadata Registry technical guide: https://vocab.danielberanek.cz/metadata/README.md
 - Wider DIO/ODI Hub and publication corpus: https://danielberanek.cz/manifest-dio/
 
 ## Versions
@@ -88,6 +92,16 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Version 0.3.0 remains the mapping version archived in Reference Model v0.6.0
   - Version 0.3.1 is included in archived Reference Model v0.7.0; provenance-only synchronization to arXiv v2 — https://doi.org/10.5281/zenodo.24020300
   - Section-level source: production manuscript v55 (2026-11-04), retained as the provenance source for section anchors in public arXiv v2
+
+## Semantic Change Feed
+
+- Human-readable frontend: https://vocab.danielberanek.cz/semantic-change-feed/
+- Canonical append-only event feed: https://vocab.danielberanek.cz/semantic-change-feed/events.json
+- JSON Schema: https://vocab.danielberanek.cz/semantic-change-feed/schema.json
+- Technical specification: https://vocab.danielberanek.cz/semantic-change-feed/README.md
+- Purpose: source-backed history of semantic, structural, provenance, mapping, and artifact-state changes; not a Git commit log
+- Boundary: does not replace the Reference Vocabulary, Application Mappings, Corpus Metadata Registry, or immutable Reference Model releases
+- Initial version: 0.1.0; seven selected historical events with explicit date basis, preserved invariants, impact, provenance, and lineage
 
 ## Corpus metadata registry
 

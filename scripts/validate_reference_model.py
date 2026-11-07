@@ -525,6 +525,35 @@ def check_metadata() -> dict[str, int | str]:
     }
 
 
+def check_semantic_change_feed() -> dict[str, int | str]:
+    feed = load_json("semantic-change-feed/events.json")
+    schema = load_json("semantic-change-feed/schema.json")
+    validate_json_schema(instance=feed, schema=schema)
+    events = feed.get("events", [])
+    ids = [event.get("id") for event in events]
+    require(len(ids) == len(set(ids)), "Semantic Change Feed event IDs must be unique")
+    require(feed.get("event_count") == len(events), "Semantic Change Feed event_count does not match events array")
+    dates = [event.get("date") for event in events]
+    require(dates == sorted(dates), "Semantic Change Feed events must be stored in chronological order")
+    known_ids = set(ids)
+    for event in events:
+        for relation in ("related_to", "supersedes", "corrects"):
+            unknown = set(event.get("lineage", {}).get(relation, [])) - known_ids
+            require(not unknown, f"{event['id']} has unresolved {relation} references: {sorted(unknown)}")
+        require(event.get("evidence", {}).get("sources"), f"{event['id']} has no evidence sources")
+    page = read_text("semantic-change-feed/index.html")
+    page_ids = set(re.findall(r'data-event-id="(SCF-\\d{4}-\\d{3})"', page))
+    require(page_ids == known_ids, "Semantic Change Feed HTML event inventory differs from events.json")
+    for path in sorted(ROOT.rglob("*.html")):
+        source = path.read_text(encoding="utf-8")
+        if '<nav class="site-nav"' in source:
+            require('href="/semantic-change-feed/"' in source,
+                    f"Global navigation is missing Semantic Change Feed link: {path.relative_to(ROOT)}")
+    require('aria-current="page"' in page and 'href="/semantic-change-feed/"' in page,
+            "Semantic Change Feed page must mark its navigation item as current")
+    return {"scf_feed_version": feed["feed_version"], "scf_events": len(events),
+            "scf_event_classes": len({event["event_class"] for event in events})}
+
 def check_site_homepage() -> int:
     source = read_text("index.html")
     require('<link rel="canonical" href="https://vocab.danielberanek.cz/">' in source,
@@ -534,7 +563,7 @@ def check_site_homepage() -> int:
     require('http-equiv="refresh"' not in source.lower(),
             "Homepage must not redirect to the vocabulary page")
     for link in ('href="/dio-odi/"', 'href="/mappings/"',
-                 'href="/metadata/"', 'href="https://danielberanek.cz/manifest-dio/"'):
+                 'href="/metadata/"', 'href="/semantic-change-feed/"', 'href="https://danielberanek.cz/manifest-dio/"'):
         require(link in source, f"Homepage is missing navigation target: {link}")
     return 1
 
@@ -555,6 +584,9 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/dio-odi/",
         "https://vocab.danielberanek.cz/mappings/",
         "https://vocab.danielberanek.cz/metadata/",
+        "https://vocab.danielberanek.cz/semantic-change-feed/",
+        "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
+        "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
         "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
         "https://vocab.danielberanek.cz/mappings/hem-dio/",
         "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
@@ -580,6 +612,7 @@ def main() -> int:
         counts.update(check_vocabularies())
         counts.update(check_mapping_graphs())
         counts.update(check_metadata())
+        counts.update(check_semantic_change_feed())
     except Exception as exc:
         print(f"VALIDATION FAILED: {exc}", file=sys.stderr)
         return 1

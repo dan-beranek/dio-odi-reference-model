@@ -1,0 +1,523 @@
+{
+  "feed_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
+  "generated_on": "2026-11-07",
+  "title": "DIO/ODI Semantic Change Feed",
+  "description": "A curated, append-only record of documented semantic, structural, provenance, mapping, and artifact-state changes across the DIO/ODI reference system.",
+  "author": {
+    "name": "Daniel Beránek",
+    "person_uri": "https://danielberanek.cz/#person",
+    "orcid": "https://orcid.org/0009-0004-0050-0264"
+  },
+  "policy": {
+    "append_only": true,
+    "manual_semantic_curation": true,
+    "git_diffs_are_not_authoritative": true,
+    "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
+  },
+  "event_count": 7,
+  "events": [
+    {
+      "id": "SCF-2026-001",
+      "date": "2026-10-08",
+      "date_basis": "publication_date",
+      "event_class": "Conceptual",
+      "change_type": "refined",
+      "title": "MVDIO refines the analytical model of semantic vulnerability",
+      "summary": "MVDIO separates Semantic Vulnerability from the Reconstruction Failure Mode hierarchy and develops K6 as a finer-grained candidate model.",
+      "scope": [
+        {
+          "component": "Minimum Viable Digital Identity Optimization (MVDIO)",
+          "component_type": "publication",
+          "uri": "https://doi.org/10.5281/zenodo.23226205",
+          "role": "primary-source"
+        },
+        {
+          "component": "Semantic Vulnerability",
+          "component_type": "concept",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#SemanticVulnerability",
+          "role": "affected-concept"
+        },
+        {
+          "component": "K6 Semantic Connectome",
+          "component_type": "concept",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#K6",
+          "role": "related-concept"
+        }
+      ],
+      "before": "The earlier Crisis-era account discussed Semantic Vulnerability in the broader field of reconstruction failures.",
+      "after": "Semantic Vulnerability is treated as a robustness-related property outside the Reconstruction Failure Mode hierarchy; K6 is presented as a finer-grained candidate model.",
+      "preserved_invariants": [
+        "K6 is a candidate model, not a logical consequence of MVDIO.",
+        "Identity Collapse remains distinct from the current Reconstruction Failure Modes."
+      ],
+      "impact": {
+        "level": "conceptual-model",
+        "compatibility": "model-level",
+        "affected_components": [
+          "MVDIO",
+          "Semantic Vulnerability",
+          "K6",
+          "Reconstruction Failure Modes"
+        ],
+        "notes": "Conceptual refinement; no exact source-control commit date is asserted."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "primary-publication",
+          "source-map"
+        ],
+        "temporal_note": "Date is the registered publication date of MVDIO.",
+        "sources": [
+          {
+            "label": "MVDIO — published work",
+            "url": "https://doi.org/10.5281/zenodo.23226205",
+            "role": "primary-publication"
+          },
+          {
+            "label": "Reference Model source map",
+            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
+            "role": "concept-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-002",
+      "date": "2026-10-09",
+      "date_basis": "publication_date",
+      "event_class": "Structural",
+      "change_type": "extended",
+      "title": "The Reconstruction Failure Modes taxonomy is formalized",
+      "summary": "The Taxonomic Note develops the transition from entity-resolution anomalies to a hierarchical Reconstruction Failure Modes taxonomy, including Entity Substitution and Entity Omission.",
+      "scope": [
+        {
+          "component": "From Entity Resolution Anomalies to Reconstruction Failure Modes",
+          "component_type": "publication",
+          "uri": "https://doi.org/10.5281/zenodo.23269323",
+          "role": "primary-source"
+        },
+        {
+          "component": "Reconstruction Failure Modes",
+          "component_type": "taxonomy",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#ReconstructionFailureMode",
+          "role": "affected-model"
+        }
+      ],
+      "before": "The preceding corpus used an anomaly-oriented account of entity-resolution and reconstruction problems.",
+      "after": "A multi-level Reconstruction Failure Modes taxonomy is documented, including Entity Substitution and Entity Omission; Semantic Robustness is also identified.",
+      "preserved_invariants": [
+        "Semantic Vulnerability remains outside the Reconstruction Failure Mode hierarchy.",
+        "Identity Collapse is not folded into the taxonomy as a failure-mode superclass or equivalent."
+      ],
+      "impact": {
+        "level": "taxonomy",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Reconstruction Failure Modes",
+          "Entity Substitution",
+          "Entity Omission",
+          "Semantic Robustness",
+          "Semantic Vulnerability"
+        ],
+        "notes": "Conceptual and taxonomic development; not an implementation or empirical-validation claim."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "primary-publication",
+          "source-map"
+        ],
+        "temporal_note": "Date is the registered publication date of the Taxonomic Note.",
+        "sources": [
+          {
+            "label": "Taxonomic Note",
+            "url": "https://doi.org/10.5281/zenodo.23269323",
+            "role": "primary-publication"
+          },
+          {
+            "label": "Reference Model source map",
+            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
+            "role": "concept-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-001"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-003",
+      "date": "2026-10-10",
+      "date_basis": "first_archival_inclusion",
+      "event_class": "Conceptual",
+      "change_type": "introduced",
+      "title": "Identity-Preserving Constraints becomes the collective vocabulary term",
+      "summary": "Vocabulary v0.2.0 introduces the plural term Identity-Preserving Constraints as the current collective designation while retaining the singular entry as a historical concept.",
+      "scope": [
+        {
+          "component": "Reference Vocabulary v0.2.0",
+          "component_type": "vocabulary-version",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/",
+          "role": "affected-vocabulary"
+        },
+        {
+          "component": "Identity-Preserving Constraints",
+          "component_type": "concept",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraints",
+          "role": "introduced-term"
+        },
+        {
+          "component": "Identity-Preserving Constraint",
+          "component_type": "concept",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#IdentityPreservingConstraint",
+          "role": "historical-entry"
+        }
+      ],
+      "before": "The vocabulary contained the singular Identity-Preserving Constraint entry.",
+      "after": "The plural Identity-Preserving Constraints is introduced as the current collective term in vocabulary v0.2.0.",
+      "preserved_invariants": [
+        "The singular historical entry remains present.",
+        "Earlier singular URIs are not retroactively migrated.",
+        "No semantic relation between singular and plural entries is asserted."
+      ],
+      "impact": {
+        "level": "vocabulary",
+        "compatibility": "model-level",
+        "affected_components": [
+          "Reference Vocabulary",
+          "Identity-Preserving Constraint",
+          "Identity-Preserving Constraints"
+        ],
+        "notes": "Date identifies the first archived parent Reference Model release containing v0.2.0, not an exact edit timestamp."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "source-map",
+          "registry",
+          "archival-record"
+        ],
+        "temporal_note": "The date is the publication date of archived Reference Model v0.2.0.",
+        "sources": [
+          {
+            "label": "Reference Model source map",
+            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
+            "role": "concept-provenance"
+          },
+          {
+            "label": "Work and release registry",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          },
+          {
+            "label": "Archived Reference Model v0.2.0",
+            "url": "https://doi.org/10.5281/zenodo.23282752",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-001"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-004",
+      "date": "2026-10-25",
+      "date_basis": "first_archival_inclusion",
+      "event_class": "Mapping",
+      "change_type": "extended",
+      "title": "The RAG Application Mapping gains an iterative evidence-acquisition extension",
+      "summary": "An iterative, hypothesis-conditioned evidence-acquisition extension is added to the derived RAG Pipeline mapping and first included in archived Reference Model v0.4.0.",
+      "scope": [
+        {
+          "component": "DIO Reconstruction Failure Modes × RAG Pipeline",
+          "component_type": "application-mapping",
+          "uri": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+          "role": "affected-mapping"
+        },
+        {
+          "component": "Reference Model v0.4.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23632619",
+          "role": "first-archival-inclusion"
+        }
+      ],
+      "before": "The base mapping projected DIO Reconstruction Failure Modes to RAG pipeline loci, mechanisms, symptoms, and incidents.",
+      "after": "The mapping additionally describes iterative and hypothesis-conditioned evidence acquisition.",
+      "preserved_invariants": [
+        "The RAG mapping remains a derived, non-normative application layer.",
+        "The extension does not add or redefine canonical Reference Vocabulary concepts."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "non-normative-derived-layer",
+        "affected_components": [
+          "Application Mappings",
+          "RAG Pipeline Mapping",
+          "Reconstruction Failure Modes"
+        ],
+        "notes": "An application-mapping extension, not a change to the canonical vocabulary."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "public-version-history",
+          "archival-record"
+        ],
+        "temporal_note": "Date is the recorded first archival inclusion in Reference Model v0.4.0.",
+        "sources": [
+          {
+            "label": "RAG Pipeline mapping",
+            "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+            "role": "current-mapping"
+          },
+          {
+            "label": "Reference Model orientation",
+            "url": "https://vocab.danielberanek.cz/llms.txt",
+            "role": "version-history"
+          },
+          {
+            "label": "Archived Reference Model v0.4.0",
+            "url": "https://doi.org/10.5281/zenodo.23632619",
+            "role": "archival-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-002"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-005",
+      "date": "2026-11-05",
+      "date_basis": "version_publication_date",
+      "event_class": "Provenance",
+      "change_type": "synchronized",
+      "title": "Reference Vocabulary v0.2.1 synchronizes vocabulary-level metadata",
+      "summary": "Vocabulary v0.2.1 synchronizes creator identity, Dublin Core and namespace metadata, and DCAT/Schema.org descriptions across representations.",
+      "scope": [
+        {
+          "component": "Reference Vocabulary v0.2.1",
+          "component_type": "vocabulary-version",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/",
+          "role": "updated-resource"
+        },
+        {
+          "component": "SKOS Turtle and JSON-LD",
+          "component_type": "machine-readable-representation",
+          "uri": "https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl",
+          "role": "updated-representation"
+        }
+      ],
+      "before": "Vocabulary v0.2.0 carried the preceding metadata graph and representation state.",
+      "after": "Vocabulary v0.2.1 uses the canonical Person URI and synchronizes creator, license, issue/modification, language, namespace, FOAF, DCAT 3, and Schema.org Dataset metadata.",
+      "preserved_invariants": [
+        "All 40 SKOS concepts, URIs, labels, definitions, notes, hierarchy, and provenance statements are preserved.",
+        "The historical status of Entity Resolution Anomaly is unchanged.",
+        "Archived Reference Model v0.6.0 remains an immutable snapshot containing vocabulary v0.2.0."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "Reference Vocabulary",
+          "Vocabulary Metadata",
+          "SKOS Turtle",
+          "Vocabulary JSON-LD",
+          "DCAT 3"
+        ],
+        "notes": "Explicitly described as a metadata-only maintenance update; no concept-level semantic change is claimed."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "release-notes",
+          "source-map"
+        ],
+        "temporal_note": "Date is the stated release date of vocabulary v0.2.1.",
+        "sources": [
+          {
+            "label": "Vocabulary v0.2.1 release notes",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/RELEASE_NOTES_VOCABULARY_v0.2.1.md",
+            "role": "release-note"
+          },
+          {
+            "label": "Canonical Reference Vocabulary",
+            "url": "https://vocab.danielberanek.cz/dio-odi/",
+            "role": "current-representation"
+          },
+          {
+            "label": "Reference Model source map",
+            "url": "https://vocab.danielberanek.cz/docs/source-map.md",
+            "role": "historical-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-003"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-006",
+      "date": "2026-11-05",
+      "date_basis": "version_publication_date",
+      "event_class": "Provenance",
+      "change_type": "synchronized",
+      "title": "Agentic ER mapping v0.3.1 synchronizes provenance with arXiv v2",
+      "summary": "The live Agentic ER Architecture Mapping synchronizes provenance to the public arXiv v2 manuscript. The change is provenance-only; its concept and relation inventories remain unchanged.",
+      "scope": [
+        {
+          "component": "Agentic ER Architecture Mapping v0.3.1",
+          "component_type": "application-mapping",
+          "uri": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+          "role": "updated-mapping"
+        },
+        {
+          "component": "Constraining the Commit Boundary, arXiv v2",
+          "component_type": "publication-version",
+          "uri": "https://arxiv.org/abs/2610.37407v2",
+          "role": "provenance-target"
+        }
+      ],
+      "before": "Mapping v0.3.0 was aligned to production manuscript v55 and included in archived Reference Model v0.6.0.",
+      "after": "Mapping v0.3.1 synchronizes provenance and source anchors with arXiv v2 and is included in archived Reference Model v0.7.0.",
+      "preserved_invariants": [
+        "The mapping retains 120 local architecture concepts.",
+        "The mapping retains 206 qualified relation assertions.",
+        "The mapping remains derived and non-normative; canonical vocabulary is unchanged."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "provenance-only",
+        "affected_components": [
+          "Agentic ER Application Mapping",
+          "arXiv v2",
+          "Reference Model"
+        ],
+        "notes": "The registry explicitly characterizes v0.3.1 as a provenance-only synchronization."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "public-version-history"
+        ],
+        "temporal_note": "Date is the arXiv v2 version date recorded in the corpus registry.",
+        "sources": [
+          {
+            "label": "Agentic ER mapping",
+            "url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+            "role": "current-mapping"
+          },
+          {
+            "label": "arXiv v2",
+            "url": "https://arxiv.org/abs/2610.37407v2",
+            "role": "publication-version"
+          },
+          {
+            "label": "Corpus work registry",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-007",
+      "date": "2026-11-06",
+      "date_basis": "archive_publication_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.7.0 preserves a new versioned corpus snapshot",
+      "summary": "Reference Model v0.7.0 is archived on Zenodo as a versioned research-software package. Its component state includes Reference Vocabulary v0.2.1 and Agentic ER mapping v0.3.1.",
+      "scope": [
+        {
+          "component": "Reference Model v0.7.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.24020300",
+          "role": "archived-artifact"
+        },
+        {
+          "component": "Reference Model v0.6.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23966487",
+          "role": "previous-immutable-snapshot"
+        }
+      ],
+      "before": "The preceding archived package was v0.6.0, containing vocabulary v0.2.0 and Agentic ER mapping v0.3.0.",
+      "after": "A new immutable v0.7.0 package snapshot is published, recording vocabulary v0.2.1 and Agentic ER mapping v0.3.1.",
+      "preserved_invariants": [
+        "Earlier archived releases remain identifiable and are not silently rewritten.",
+        "An archive is a versioned package snapshot, not itself evidence of a new theoretical claim."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model",
+          "Reference Vocabulary",
+          "Agentic ER Application Mapping",
+          "Corpus Metadata"
+        ],
+        "notes": "Artifact and distribution history only; component-level semantic changes are recorded separately."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "archival-record"
+        ],
+        "temporal_note": "Date is the recorded Zenodo publication date for Reference Model v0.7.0.",
+        "sources": [
+          {
+            "label": "Archived Reference Model v0.7.0",
+            "url": "https://doi.org/10.5281/zenodo.24020300",
+            "role": "archival-record"
+          },
+          {
+            "label": "Corpus work and release registry",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-005",
+          "SCF-2026-006"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    }
+  ]
+}
