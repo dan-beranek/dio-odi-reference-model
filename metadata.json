@@ -1,5 +1,7 @@
 {
   "title": "DIO/ODI Reference Model",
+  "site_homepage": "https://vocab.danielberanek.cz/",
+  "vocabulary_landing_page": "https://vocab.danielberanek.cz/dio-odi/",
   "version": "0.7.0",
   "status": "archived",
   "namespace": "https://vocab.danielberanek.cz/dio-odi/#",

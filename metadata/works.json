@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.9",
+  "registry_version": "1.8.10",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -135,7 +135,7 @@
         ],
         "metadata_author_name": "Daniel Beranek",
         "pdf_titlepage_author_name": "Daniel Beránek",
-        "comments": "32 pages, 2 figures, 3 tables. Version 2, its non-normative relational architecture mapping and machine-readable serializations form one coordinated research artefact: the paper specifies the architecture; the mapping formalizes its relations. Mapping: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/ ; Reference Model v0.6.0: https://doi.org/10.5281/zenodo.23966487"
+        "comments": "32 pages, 2 figures, 3 tables. Version 2, its non-normative relational architecture mapping and machine-readable serializations form one coordinated research artefact: the paper specifies the architecture; the mapping formalizes its relations. Mapping v0.3.1: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/ ; archived Reference Model v0.7.0: https://doi.org/10.5281/zenodo.24020300; earlier mapping v0.3.0 is included in archived v0.6.0: https://doi.org/10.5281/zenodo.23966487"
       }
     },
     {
