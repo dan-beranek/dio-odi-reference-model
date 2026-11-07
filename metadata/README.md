@@ -149,3 +149,10 @@ When a metadata error or weaker historical representation is identified:
 5. a metadata correction alone does not justify creating a new research-object version unless the underlying files or substantive object have changed.
 
 This applies the DIO principle of identity-preserving change to the DIO/ODI corpus itself: continuity is maintained through explicit transformation and provenance, not by erasing earlier states.
+
+
+## Commit-Boundary preprint version relationship
+
+The DIO/ODI corpus registry records the arXiv v2 representation of *Constraining the Commit Boundary* as `isNewVersionOf` the specific Zenodo v1 record `10.5281/zenodo.23580733`. The reciprocal relation to add to that older Zenodo record is **Is previous version of** → `10.48550/arXiv.2610.37407` (arXiv concept DOI; current version v2). This relationship is distinct from the record's existing **Cites** relation to `10.48550/arXiv.2607.27435`, which identifies the separate paper *AgenticER: the next frontier in Entity Resolution* by Papadakis et al. The existing citation must be retained; it must not be replaced with the author's own arXiv identifier.
+
+The registry marks the reciprocal relation as approved for the specific Zenodo v1 record, while `zenodo_record_update_status: pending-manual-update` records that the published Zenodo metadata still requires a manual edit. Updating this repository does not change an already-published Zenodo record.

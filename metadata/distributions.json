@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.3",
+  "registry_version": "1.3.4",
   "status": "operational",
   "semantics": "External distribution and supplementary representations of canonical DIO/ODI works. Existing relation types observed on Zenodo are evidence of prior metadata choices, not automatically authoritative semantic classifications.",
   "relation_rule": "Treat existing Zenodo Related Works relation types as observed metadata until independently verified. IsIdenticalTo requires the exact same research output in two locations. IsSupplementedBy requires the related resource to be a genuine supplement, not merely another distribution copy. Where exact equivalence is not established, keep the relation under semantic review.",
@@ -124,12 +124,16 @@
           "version_url": "https://arxiv.org/abs/2610.37407v2",
           "pdf_url": "https://arxiv.org/pdf/2610.37407v2",
           "html_url": "https://arxiv.org/html/2610.37407v2",
-          "evidence": "The arXiv version history identifies v2 on 5 November 2026. The versioned PDF and HTML are publicly accessible; the PDF contains 32 pages, two figures, and three tables. The arXiv author metadata uses the ASCII spelling Daniel Beranek, while the PDF title page uses Daniel Beránek. This arXiv v2 is a later version of the specific Zenodo v1 record, not an identical copy.",
+          "evidence": "The arXiv version history identifies v2 on 5 November 2026. The versioned PDF and HTML are publicly accessible; the PDF contains 32 pages, two figures, and three tables. The arXiv author metadata uses the ASCII spelling Daniel Beranek, while the PDF title page uses Daniel Beránek. This arXiv v2 is a later version of the specific Zenodo v1 record, not an identical copy. The Zenodo v1 record currently lists 10.48550/arXiv.2607.27435 under Cites; that identifier is a separate work by Papadakis et al. and must remain as a citation. The missing reciprocal version relation on Zenodo record 10.5281/zenodo.23580733 is IsPreviousVersionOf 10.48550/arXiv.2610.37407.",
           "canonical_relation": "isNewVersionOf",
           "applies_to_version_doi": "10.5281/zenodo.23580733",
           "semantic_status": "verified-by-author",
-          "approved_for_zenodo": false,
-          "verification_basis": "Author-provided public arXiv v2 PDF and arXiv version history; relation direction records the arXiv v2 representation as a new version of the specific earlier Zenodo v1 record."
+          "approved_for_zenodo": true,
+          "verification_basis": "Author-provided public arXiv v2 PDF and arXiv version history; relation direction records the arXiv v2 representation as a new version of the specific earlier Zenodo v1 record.",
+          "reciprocal_relation_on_zenodo_record": "isPreviousVersionOf",
+          "zenodo_record_update_status": "pending-manual-update",
+          "zenodo_record_doi": "10.5281/zenodo.23580733",
+          "zenodo_related_identifier": "10.48550/arXiv.2610.37407"
         }
       ]
     }
