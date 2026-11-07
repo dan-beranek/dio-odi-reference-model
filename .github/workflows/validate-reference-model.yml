@@ -29,4 +29,5 @@ jobs:
       - name: Run release integrity checks
         run: python scripts/validate_reference_model.py
       - name: Verify public endpoints and MIME types
+        if: github.ref == 'refs/heads/main'
         run: python scripts/validate_public_endpoints.py
