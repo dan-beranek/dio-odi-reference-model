@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIO/ODI Corpus Metadata Registry | Reference Model</title>
+  <meta name="description" content="Human-readable entry point to the operational DIO/ODI Corpus Metadata Registry, including publication records, inter-work relations, references, distributions, and keyword profiles.">
+  <meta name="author" content="Daniel Beránek">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://vocab.danielberanek.cz/metadata/">
+  <link rel="home" href="/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="DIO/ODI Corpus Metadata Registry">
+  <meta property="og:description" content="Operational metadata registry for DIO/ODI works, publication relations, external distributions, references, and keyword profiles.">
+  <meta property="og:url" content="https://vocab.danielberanek.cz/metadata/">
+  <meta property="og:site_name" content="DIO/ODI Reference Model">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DIO/ODI Corpus Metadata Registry">
+  <meta name="twitter:description" content="Human-readable entry point to the operational DIO/ODI metadata registry and its machine-readable files.">
+  <link rel="stylesheet" href="/assets/site.css?v=20261107-2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://vocab.danielberanek.cz/metadata/",
+    "url": "https://vocab.danielberanek.cz/metadata/",
+    "name": "DIO/ODI Corpus Metadata Registry",
+    "description": "Operational metadata source of truth for the DIO/ODI publication corpus and Reference Model, covering work identities, inter-work relations, bibliographic references, external distributions, and ordered keyword profiles.",
+    "inLanguage": "en",
+    "isPartOf": {"@id": "https://vocab.danielberanek.cz/#website"},
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "author": {
+      "@type": "Person",
+      "@id": "https://danielberanek.cz/#person",
+      "name": "Daniel Beránek",
+      "url": "https://danielberanek.cz/",
+      "sameAs": "https://orcid.org/0009-0004-0050-0264"
+    },
+    "hasPart": [
+      {"@type":"Dataset","name":"DIO/ODI works registry","url":"https://vocab.danielberanek.cz/metadata/works.json"},
+      {"@type":"Dataset","name":"DIO/ODI relations registry","url":"https://vocab.danielberanek.cz/metadata/relations.json"},
+      {"@type":"Dataset","name":"DIO/ODI references registry","url":"https://vocab.danielberanek.cz/metadata/references.json"},
+      {"@type":"Dataset","name":"DIO/ODI distributions registry","url":"https://vocab.danielberanek.cz/metadata/distributions.json"},
+      {"@type":"Dataset","name":"DIO/ODI keywords registry","url":"https://vocab.danielberanek.cz/metadata/keywords.json"}
+    ]
+  }
+  </script>
+</head>
+<body class="page page--index">
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href="/">Overview</a>
+    <a href="/dio-odi/">Reference Vocabulary</a>
+    <a href="/mappings/">Application Mappings</a>
+    <a href="/metadata/" aria-current="page">Corpus Metadata</a>
+    <a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">DIO/ODI Hub</a>
+  </nav>
+
+  <h1>DIO/ODI Corpus Metadata Registry</h1>
+  <p>The Corpus Metadata Registry is the operational metadata source of truth for the DIO/ODI publication corpus and the DIO/ODI Reference Model. It records publication identities, versions, relations between works, bibliographic references, external representations, and ordered keyword profiles.</p>
+
+  <section class="status">
+    <p><strong>Registry status:</strong> Operational metadata registry</p>
+    <p><strong>Scope:</strong> DIO/ODI corpus and DIO/ODI Reference Model publication metadata</p>
+    <p><strong>Authority:</strong> The registry governs publication metadata and inter-work relations. It is separate from the canonical Reference Vocabulary: registry updates do not change vocabulary concepts, hierarchy, definitions, or provenance.</p>
+  </section>
+
+  <h2>Registry components</h2>
+  <section class="card">
+    <h2><a href="/metadata/works.json">Works</a></h2>
+    <p>Canonical identities and publication metadata for DIO/ODI works and Reference Model releases, including identifiers, versions, dates, and inclusion history.</p>
+    <p class="format-links"><a href="/metadata/works.json">JSON</a></p>
+  </section>
+
+  <section class="card">
+    <h2><a href="/metadata/relations.json">Relations</a></h2>
+    <p>Directed inter-work relation graph. Relations retain their direction and semantics; only records explicitly marked <code>approved_for_zenodo: true</code> are eligible for automatic projection into Zenodo metadata.</p>
+    <p class="format-links"><a href="/metadata/relations.json">JSON</a></p>
+  </section>
+
+  <section class="card">
+    <h2><a href="/metadata/references.json">References</a></h2>
+    <p>Canonical bibliographic strings and identifiers for internal DIO/ODI works and external references.</p>
+    <p class="format-links"><a href="/metadata/references.json">JSON</a></p>
+  </section>
+
+  <section class="card">
+    <h2><a href="/metadata/distributions.json">Distribution representations</a></h2>
+    <p>External distribution copies, variants, and supplementary representations, with relation types and verification status preserved rather than collapsed into generic equivalence.</p>
+    <p class="format-links"><a href="/metadata/distributions.json">JSON</a></p>
+  </section>
+
+  <section class="card">
+    <h2><a href="/metadata/keywords.json">Keyword profiles</a></h2>
+    <p>Canonical ordered keyword grammar, work-specific profiles, chunk structure, and non-export aliases. The sequence is governed by explicit ordering and completeness rules.</p>
+    <p class="format-links"><a href="/metadata/keywords.json">JSON</a></p>
+  </section>
+
+  <h2>How the registry is used</h2>
+  <ol>
+    <li>Maintain work identities, DOI and version information, relations, distribution representations, keyword profiles, and citations in the registry.</li>
+    <li>Before a new Reference Model release, project only the approved metadata subset into the root <a href="/.zenodo.json"><code>.zenodo.json</code></a> file.</li>
+    <li>After Zenodo assigns a version-specific DOI, synchronize the live registry and citation surfaces without rewriting immutable archived snapshots.</li>
+  </ol>
+
+  <aside class="note">
+    <strong>Semantic boundary:</strong> The registry documents the publication corpus and its metadata. It is not the DIO/ODI Reference Vocabulary and does not itself define or extend the vocabulary's concept scheme.
+  </aside>
+
+  <h2>Documentation and source</h2>
+  <p>For the complete operational workflow, field-level conventions, relation discipline, version-scoped distribution rules, and keyword governance, consult the <a href="/metadata/README.md">technical registry documentation (Markdown)</a>. The machine-readable JSON files linked above are the structured registry records.</p>
+  <p class="meta">Maintained by <a href="https://danielberanek.cz/#person">Daniel Beránek</a> · <a href="https://orcid.org/0009-0004-0050-0264">ORCID 0009-0004-0050-0264</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</body>
+</html>
