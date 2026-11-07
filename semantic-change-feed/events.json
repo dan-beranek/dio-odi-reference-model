@@ -4,7 +4,7 @@
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
   "generated_on": "2026-11-07",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, and Reference Model release events through 6 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, and Reference Model release events through 6 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 36,
+  "event_count": 43,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -547,8 +547,8 @@
       "date_basis": "hub_changelog_date",
       "event_class": "Artifact",
       "change_type": "published",
-      "title": "The first standalone DIO conceptual framework paper is published",
-      "summary": "A standalone paper systematizes DIO as a framework for entity representation, recognition, and visibility in AI-mediated search.",
+      "title": "The first standalone DIO conceptual framework paper is published (v1)",
+      "summary": "The first public version (v1) of the standalone DIO conceptual framework paper is published. The work is subsequently revised as v1.1.0 on 11 October 2026; that later version preserves the original conceptual argument and substantive claims.",
       "scope": [
         {
           "component": "DIO Conceptual Framework",
@@ -591,7 +591,8 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-002"
+          "SCF-2026-002",
+          "SCF-2026-026"
         ],
         "supersedes": [],
         "corrects": []
@@ -1400,6 +1401,329 @@
     },
     {
       "id": "SCF-2026-026",
+      "date": "2026-10-11",
+      "date_basis": "version_publication_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "The DIO Conceptual Framework is revised and republished as v1.1.0",
+      "summary": "Version 1.1.0 provides a revised academic presentation of the paper first published on 7 August 2026. The conceptual argument and substantive claims remain unchanged; the revision adds complete author and affiliation metadata, ORCID, contact and publication details, canonical keywords, a table of contents, pagination, and standardized academic formatting, and replaces a non-verifiable reference with a verifiable source.",
+      "scope": [
+        {
+          "component": "DIO Conceptual Framework v1.1.0",
+          "component_type": "publication-version",
+          "uri": "https://doi.org/10.5281/zenodo.23305929",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The first public version (v1) had been published on 7 August 2026.",
+      "after": "A versioned academic presentation v1.1.0 is published on 11 October 2026, with improved bibliographic and publication metadata while retaining the substantive conceptual argument.",
+      "preserved_invariants": [
+        "The conceptual argument and substantive claims remain unchanged from the original paper.",
+        "The 7 August 2026 date identifies the original work; it is not the publication date of version 1.1.0."
+      ],
+      "impact": {
+        "level": "provenance",
+        "compatibility": "provenance-only",
+        "affected_components": [
+          "DIO Conceptual Framework v1.1.0"
+        ],
+        "notes": "A publication-version and bibliographic-quality update, not a new conceptual formulation of DIO."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "archival-record",
+          "registry",
+          "public-version-history"
+        ],
+        "temporal_note": "Date is the Zenodo publication date of version 1.1.0. The record separately identifies 7 August 2026 as the date of the original conceptual paper.",
+        "sources": [
+          {
+            "label": "DIO Conceptual Framework v1.1.0 — Zenodo",
+            "url": "https://zenodo.org/records/23305929",
+            "role": "versioned-publication"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          },
+          {
+            "label": "Reference Model v0.5.0 — cited v1.1.0 record",
+            "url": "https://zenodo.org/records/23643845",
+            "role": "cross-reference"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-011"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-027",
+      "date": "2026-10-11",
+      "date_basis": "version_publication_date",
+      "event_class": "Mapping",
+      "change_type": "extended",
+      "title": "Reference Model v0.3.1 enriches the machine-readable Application Mappings layer",
+      "summary": "The v0.3.1 release extends the existing RAG × DIO and HEM × DIO mappings with qualified MappingAssertion resources, explicit skos:definition and skos:scopeNote descriptions, and non-deterministic relation types. It adds Turtle/RDF representations for both mappings and a JSON-LD representation for RAG, improving machine-readable interpretation without changing the canonical vocabulary.",
+      "scope": [
+        {
+          "component": "Application Mappings v0.3.1",
+          "component_type": "application-mappings-version",
+          "uri": "https://vocab.danielberanek.cz/mappings/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The v0.3.0 layer had introduced the RAG and HEM mappings and their human-readable representations, but not the full qualified assertion and RDF/JSON-LD representation set recorded in v0.3.1.",
+      "after": "The mapping layer exposes qualified analytical assertions and additional machine-readable serializations, while explicitly avoiding deterministic causal or taxonomic-equivalence claims.",
+      "preserved_invariants": [
+        "The canonical Reference Vocabulary remains at v0.1.0.",
+        "Application Mappings remain derived, non-normative analytical projections.",
+        "Mapping relations do not assert deterministic causality, entailment, or taxonomic equivalence."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "non-normative-derived-layer",
+        "affected_components": [
+          "Application Mappings v0.3.1"
+        ],
+        "notes": "A representational and interoperability extension to existing mappings; it does not add canonical vocabulary concepts."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "public-version-history",
+          "linked-publication-or-artifact",
+          "archival-record"
+        ],
+        "temporal_note": "Date is the public Reference Model v0.3.1 release date. The associated archived package is identified by its version-specific Zenodo DOI.",
+        "sources": [
+          {
+            "label": "Reference Model v0.3.1 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.3.1",
+            "role": "version-release"
+          },
+          {
+            "label": "Application Mappings documentation",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/v0.3.1/mappings/README.md",
+            "role": "release-documentation"
+          },
+          {
+            "label": "Reference Model v0.3.1 — Zenodo",
+            "url": "https://doi.org/10.5281/zenodo.23290683",
+            "role": "archived-version"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-022",
+          "SCF-2026-024"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-028",
+      "date": "2026-10-11",
+      "date_basis": "version_publication_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.3.1 preserves the expanded machine-readable mapping layer",
+      "summary": "Reference Model v0.3.1 is published as a versioned package snapshot containing the enriched Application Mappings representations and qualified mapping assertions.",
+      "scope": [
+        {
+          "component": "Reference Model v0.3.1",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23290683",
+          "role": "archived-artifact"
+        }
+      ],
+      "before": "Reference Model v0.3.0 had established the Application Mappings layer with the first RAG and HEM mappings.",
+      "after": "The v0.3.1 package preserves the subsequent RDF/JSON-LD representation and qualified-assertion state.",
+      "preserved_invariants": [
+        "The package is an immutable versioned snapshot and does not replace the maintained repository.",
+        "The Reference Vocabulary remains v0.1.0 in this release."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.3.1"
+        ],
+        "notes": "The archive fixes a package state; the mapping-layer extension itself is recorded separately."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "public-version-history",
+          "archival-record",
+          "registry"
+        ],
+        "temporal_note": "Date follows the public v0.3.1 release record. The Zenodo DOI identifies the corresponding versioned package; no source-control commit time is inferred.",
+        "sources": [
+          {
+            "label": "Reference Model v0.3.1 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.3.1",
+            "role": "version-release"
+          },
+          {
+            "label": "Reference Model v0.3.1 — Zenodo",
+            "url": "https://doi.org/10.5281/zenodo.23290683",
+            "role": "archival-record"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-027"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-029",
+      "date": "2026-10-11",
+      "date_basis": "version_publication_date",
+      "event_class": "Provenance",
+      "change_type": "introduced",
+      "title": "Reference Model v0.3.2 introduces the Corpus Metadata Registry and ordered keyword grammar",
+      "summary": "Version 0.3.2 introduces a canonical corpus-level metadata registry for works, relations, references, and distribution representations, together with an ordered C0–C6 keyword grammar. It also expands structured Zenodo metadata and normalizes verified distribution relations, making the DIO/ODI corpus and its distribution relationships explicitly reconstructable.",
+      "scope": [
+        {
+          "component": "Corpus Metadata Registry and keyword grammar",
+          "component_type": "metadata-infrastructure",
+          "uri": "https://vocab.danielberanek.cz/metadata/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The Reference Model contained the canonical vocabulary and derived Application Mappings, but did not yet expose the later consolidated registry for work identities, inter-work relations, references, and distribution representations.",
+      "after": "The repository includes a dedicated operational metadata layer and a canonical ordered keyword grammar, separate from the Reference Vocabulary.",
+      "preserved_invariants": [
+        "The canonical Reference Vocabulary remains at v0.1.0; registry metadata does not redefine SKOS concepts.",
+        "Typed distribution and inter-work relations preserve distinctions between versions, concept identifiers, canonical works, and distribution copies.",
+        "The registry is an operational metadata layer, not a replacement for the canonical vocabulary."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "Corpus Metadata Registry and keyword grammar"
+        ],
+        "notes": "This is an infrastructure and provenance milestone; the canonical vocabulary's concepts and semantic relations are not changed by the registry."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "public-version-history",
+          "linked-publication-or-artifact",
+          "registry"
+        ],
+        "temporal_note": "Date is the public Reference Model v0.3.2 release date. The versioned release and registry documentation establish the metadata-infrastructure milestone.",
+        "sources": [
+          {
+            "label": "Reference Model v0.3.2 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.3.2",
+            "role": "version-release"
+          },
+          {
+            "label": "Metadata Registry documentation",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/v0.3.2/metadata/README.md",
+            "role": "release-documentation"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "current-registry"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-028"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-030",
+      "date": "2026-10-11",
+      "date_basis": "version_publication_date",
+      "event_class": "Artifact",
+      "change_type": "archived",
+      "title": "Reference Model v0.3.2 preserves the new corpus metadata infrastructure",
+      "summary": "Reference Model v0.3.2 is published as a versioned package snapshot containing the Corpus Metadata Registry, ordered keyword grammar, and expanded publication and distribution metadata.",
+      "scope": [
+        {
+          "component": "Reference Model v0.3.2",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.23300703",
+          "role": "archived-artifact"
+        }
+      ],
+      "before": "Reference Model v0.3.1 preserved the expanded Application Mappings representation layer.",
+      "after": "The v0.3.2 package preserves the subsequent corpus-metadata and ordered-keyword infrastructure while retaining the Reference Vocabulary at v0.1.0.",
+      "preserved_invariants": [
+        "The archived package is an immutable snapshot.",
+        "The Reference Vocabulary remains v0.1.0; the registry does not silently alter its concept definitions or relations."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "archive-only",
+        "affected_components": [
+          "Reference Model v0.3.2"
+        ],
+        "notes": "The archive preserves the package state in which the metadata registry and keyword grammar were introduced."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "public-version-history",
+          "archival-record",
+          "registry"
+        ],
+        "temporal_note": "Date follows the public v0.3.2 release record; the Zenodo DOI identifies its versioned package snapshot.",
+        "sources": [
+          {
+            "label": "Reference Model v0.3.2 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.3.2",
+            "role": "version-release"
+          },
+          {
+            "label": "Reference Model v0.3.2 — Zenodo",
+            "url": "https://doi.org/10.5281/zenodo.23300703",
+            "role": "archival-record"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-029"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-031",
       "date": "2026-10-22",
       "date_basis": "hub_changelog_date",
       "event_class": "Theoretical",
@@ -1461,7 +1785,7 @@
       }
     },
     {
-      "id": "SCF-2026-027",
+      "id": "SCF-2026-032",
       "date": "2026-10-25",
       "date_basis": "hub_changelog_date",
       "event_class": "Mapping",
@@ -1511,14 +1835,14 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-026"
+          "SCF-2026-031"
         ],
         "supersedes": [],
         "corrects": []
       }
     },
     {
-      "id": "SCF-2026-028",
+      "id": "SCF-2026-033",
       "date": "2026-10-25",
       "date_basis": "first_archival_inclusion",
       "event_class": "Mapping",
@@ -1582,7 +1906,7 @@
       }
     },
     {
-      "id": "SCF-2026-029",
+      "id": "SCF-2026-034",
       "date": "2026-10-25",
       "date_basis": "archive_publication_date",
       "event_class": "Artifact",
@@ -1641,7 +1965,7 @@
       }
     },
     {
-      "id": "SCF-2026-030",
+      "id": "SCF-2026-035",
       "date": "2026-10-25",
       "date_basis": "hub_changelog_date",
       "event_class": "Conceptual",
@@ -1703,7 +2027,7 @@
       }
     },
     {
-      "id": "SCF-2026-031",
+      "id": "SCF-2026-036",
       "date": "2026-10-25",
       "date_basis": "hub_changelog_date",
       "event_class": "Artifact",
@@ -1753,15 +2077,15 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-030",
-          "SCF-2026-027"
+          "SCF-2026-035",
+          "SCF-2026-032"
         ],
         "supersedes": [],
         "corrects": []
       }
     },
     {
-      "id": "SCF-2026-032",
+      "id": "SCF-2026-037",
       "date": "2026-11-05",
       "date_basis": "version_publication_date",
       "event_class": "Provenance",
@@ -1794,20 +2118,20 @@
       "evidence": {
         "status": "documented",
         "basis": [
-          "hub-changelog",
-          "linked-publication-or-artifact"
+          "release-notes",
+          "registry"
         ],
-        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "temporal_note": "Date is the recorded release date of Reference Vocabulary v0.2.1 in its release notes and the Corpus Metadata Registry. It is not a Hub Changelog date.",
         "sources": [
           {
-            "label": "DIO/ODI Hub — Changelog",
-            "url": "https://danielberanek.cz/manifest-dio/",
-            "role": "author-maintained-changelog"
-          },
-          {
-            "label": "Vocabulary v0.2.1 release notes",
+            "label": "Reference Vocabulary v0.2.1 — release notes",
             "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/RELEASE_NOTES_VOCABULARY_v0.2.1.md",
             "role": "release-note"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
           },
           {
             "label": "Canonical Reference Vocabulary",
@@ -1818,14 +2142,14 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-030"
+          "SCF-2026-035"
         ],
         "supersedes": [],
         "corrects": []
       }
     },
     {
-      "id": "SCF-2026-033",
+      "id": "SCF-2026-038",
       "date": "2026-11-05",
       "date_basis": "version_publication_date",
       "event_class": "Artifact",
@@ -1883,78 +2207,85 @@
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-026"
+          "SCF-2026-031"
         ],
         "supersedes": [],
         "corrects": []
       }
     },
     {
-      "id": "SCF-2026-034",
+      "id": "SCF-2026-039",
       "date": "2026-11-05",
-      "date_basis": "version_publication_date",
-      "event_class": "Provenance",
-      "change_type": "synchronized",
-      "title": "Agentic ER mapping v0.3.1 synchronizes provenance with arXiv v2",
-      "summary": "The live Agentic ER Architecture Mapping synchronizes provenance and source anchors to public arXiv v2. The mapping's local concept and relation inventories remain unchanged.",
+      "date_basis": "first_archival_inclusion",
+      "event_class": "Mapping",
+      "change_type": "introduced",
+      "title": "Agentic ER Architecture Mapping v0.3.0 formalizes the Commit-Boundary architecture",
+      "summary": "The first archived version of the DIO/ODI-informed Agentic Entity Resolution Commit-Boundary Architecture Mapping formalizes the architecture's internal conceptual and functional relations in a derived, non-normative layer. The v0.3.0 snapshot contains 120 local architecture concepts and 206 qualified relation assertions and is included in Reference Model v0.6.0.",
       "scope": [
         {
-          "component": "Agentic ER Architecture Mapping v0.3.1",
-          "component_type": "application-mapping",
+          "component": "Agentic ER Architecture Mapping v0.3.0",
+          "component_type": "application-mapping-version",
           "uri": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
           "role": "affected-resource"
         }
       ],
-      "before": "Mapping v0.3.0 was aligned to production manuscript v55 and archived in Reference Model v0.6.0.",
-      "after": "Mapping v0.3.1 synchronizes provenance to public arXiv v2 and is included in Reference Model v0.7.0.",
+      "before": "The Commit-Boundary paper had proposed the authorization guardrail, but the coordinated machine-readable relational mapping had not yet appeared in an archived Reference Model package.",
+      "after": "Mapping v0.3.0 provides the first archived formalization of the paper's internal conceptual and functional relations and is included in Reference Model v0.6.0.",
       "preserved_invariants": [
-        "120 local architecture concepts are retained.",
-        "206 qualified relation assertions are retained.",
-        "The mapping remains derived and non-normative; canonical vocabulary is unchanged."
+        "The mapping is derived and non-normative; it does not modify the canonical Reference Vocabulary.",
+        "Its 120 local concepts and 206 qualified relations describe the paper-specific architecture rather than adding canonical DIO/ODI concepts.",
+        "The existence of the mapping does not establish implementation, formal proof, or empirical validation."
       ],
       "impact": {
         "level": "mapping",
-        "compatibility": "provenance-only",
+        "compatibility": "non-normative-derived-layer",
         "affected_components": [
-          "Agentic ER Architecture Mapping v0.3.1"
+          "Agentic ER Architecture Mapping v0.3.0"
         ],
-        "notes": "This is a provenance-only synchronization, not a change to the architecture's concept or relation inventory."
+        "notes": "This records the first archival inclusion of the mapping. Its metadata declares a creation date of 3 November 2026; the exact source-edit timestamp is not asserted."
       },
       "evidence": {
         "status": "documented",
         "basis": [
-          "hub-changelog",
+          "archival-record",
+          "public-version-history",
+          "registry",
           "linked-publication-or-artifact"
         ],
-        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "temporal_note": "Date marks first public archival inclusion in Reference Model v0.6.0 on 5 November. The archived v0.6.0 mapping JSON-LD separately declares schema:dateCreated as 3 November 2026; the date of first inclusion is not treated as the exact creation timestamp.",
         "sources": [
           {
-            "label": "DIO/ODI Hub — Changelog",
-            "url": "https://danielberanek.cz/manifest-dio/",
-            "role": "author-maintained-changelog"
+            "label": "Reference Model v0.6.0 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.6.0",
+            "role": "version-release"
           },
           {
-            "label": "Agentic ER mapping",
-            "url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
-            "role": "current-mapping"
+            "label": "Archived Agentic ER mapping v0.3.0 — JSON-LD",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/v0.6.0/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld",
+            "role": "versioned-mapping"
           },
           {
-            "label": "arXiv v2",
-            "url": "https://arxiv.org/abs/2610.37407v2",
-            "role": "publication-version"
+            "label": "Reference Model v0.6.0 — Zenodo",
+            "url": "https://doi.org/10.5281/zenodo.23966487",
+            "role": "archival-record"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
           }
         ]
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-033"
+          "SCF-2026-031"
         ],
         "supersedes": [],
         "corrects": []
       }
     },
     {
-      "id": "SCF-2026-035",
+      "id": "SCF-2026-040",
       "date": "2026-11-05",
       "date_basis": "archive_publication_date",
       "event_class": "Artifact",
@@ -1985,33 +2316,180 @@
       "evidence": {
         "status": "documented",
         "basis": [
-          "hub-changelog",
-          "linked-publication-or-artifact"
+          "registry",
+          "archival-record",
+          "public-version-history"
         ],
-        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "temporal_note": "Date is the recorded publication date of Reference Model v0.6.0 in the Corpus Metadata Registry and public release history. This event is not part of the Hub Changelog, which ends on 25 October 2026.",
         "sources": [
           {
-            "label": "DIO/ODI Hub — Changelog",
-            "url": "https://danielberanek.cz/manifest-dio/",
-            "role": "author-maintained-changelog"
+            "label": "Reference Model v0.6.0 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.6.0",
+            "role": "version-release"
           },
           {
-            "label": "Reference Model v0.6.0",
+            "label": "Reference Model v0.6.0 — Zenodo",
             "url": "https://doi.org/10.5281/zenodo.23966487",
             "role": "archival-record"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
           }
         ]
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-031"
+          "SCF-2026-036",
+          "SCF-2026-039"
         ],
         "supersedes": [],
         "corrects": []
       }
     },
     {
-      "id": "SCF-2026-036",
+      "id": "SCF-2026-041",
+      "date": "2026-11-06",
+      "date_basis": "first_archival_inclusion",
+      "event_class": "Provenance",
+      "change_type": "synchronized",
+      "title": "Agentic ER mapping v0.3.1 synchronizes provenance with arXiv v2",
+      "summary": "The live Agentic ER Architecture Mapping synchronizes provenance and source anchors to public arXiv v2. The mapping's local concept and relation inventories remain unchanged.",
+      "scope": [
+        {
+          "component": "Agentic ER Architecture Mapping v0.3.1",
+          "component_type": "application-mapping",
+          "uri": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "Mapping v0.3.0 was aligned to production manuscript v55 and archived in Reference Model v0.6.0.",
+      "after": "Mapping v0.3.1 synchronizes provenance to public arXiv v2 and is included in Reference Model v0.7.0.",
+      "preserved_invariants": [
+        "120 local architecture concepts are retained.",
+        "206 qualified relation assertions are retained.",
+        "The mapping remains derived and non-normative; canonical vocabulary is unchanged."
+      ],
+      "impact": {
+        "level": "mapping",
+        "compatibility": "provenance-only",
+        "affected_components": [
+          "Agentic ER Architecture Mapping v0.3.1"
+        ],
+        "notes": "This is a provenance-only synchronization, not a change to the architecture's concept or relation inventory."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "archival-record",
+          "registry",
+          "public-version-history",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "Date marks first archival inclusion of mapping v0.3.1 in Reference Model v0.7.0 on 6 November 2026. The archived v0.7.0 JSON-LD declares schema:dateModified as 2026-11-06. The arXiv v2 publication date is 5 November and is recorded separately; no exact source-edit time is asserted.",
+        "sources": [
+          {
+            "label": "Archived Agentic ER mapping v0.3.1 — JSON-LD",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/v0.7.0/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld",
+            "role": "versioned-mapping"
+          },
+          {
+            "label": "Reference Model v0.7.0 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.7.0",
+            "role": "version-release"
+          },
+          {
+            "label": "Reference Model v0.7.0 — Zenodo",
+            "url": "https://doi.org/10.5281/zenodo.24020300",
+            "role": "archival-record"
+          },
+          {
+            "label": "Constraining the Commit Boundary — arXiv v2",
+            "url": "https://arxiv.org/abs/2610.37407v2",
+            "role": "provenance-target"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-038",
+          "SCF-2026-039"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-042",
+      "date": "2026-11-06",
+      "date_basis": "publication_date",
+      "event_class": "Distribution",
+      "change_type": "published",
+      "title": "The DIO-to-DIO research portfolio publishes ten model-specific reconstruction analyses",
+      "summary": "The public DIO to DIO portfolio brings together ten author-led analyses of how different LLMs reconstruct and examine the DIO/ODI ecosystem. The reports retain model-specific observation boundaries, interpretations, graph models, and conclusions; the portfolio does not harmonize, rank, or synthesize them. The public site exposes the original Markdown and PDF reports alongside generated HTML representations.",
+      "scope": [
+        {
+          "component": "DIO-to-DIO research portfolio",
+          "component_type": "research-portfolio",
+          "uri": "https://dan-beranek.github.io/dio-to-dio/",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The analyses existed as individually produced model-specific research reports but had not yet been published together through a common public portfolio.",
+      "after": "Ten reports by Brave AI, ChatGPT, DeepSeek, Gemini Deep Research, Gemini Pro Latest, Leo AI, Lumo, Mistral, Qwen, and Grok are available through a common public catalogue.",
+      "preserved_invariants": [
+        "The project is author-led: the author defines and directs the research; the models contribute distinct analytical readings.",
+        "The reports are not harmonized, ranked, or synthesized; their observation boundaries, graph approaches, and conclusions remain report-specific.",
+        "The public deployment date is not treated as the generation or observation date of every report; the catalogue retains each report's own observation snapshot.",
+        "The portfolio does not modify the canonical Reference Vocabulary or validate the historical claims made in an individual report."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO-to-DIO research portfolio"
+        ],
+        "notes": "This is a public research and distribution milestone. Individual model analyses are treated as discovery and interpretation sources; historical claims adopted by the SCF must be verified against primary publications, registries, release records, or archives."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "Date is the successful public GitHub Pages deployment date (6 November 2026). Individual reports have their own observation snapshots, mostly 30 October 2026 and, for Grok, early November; those dates are not replaced by the portfolio publication date.",
+        "sources": [
+          {
+            "label": "DIO to DIO — public portfolio",
+            "url": "https://dan-beranek.github.io/dio-to-dio/",
+            "role": "published-research-portfolio"
+          },
+          {
+            "label": "DIO to DIO — repository README",
+            "url": "https://github.com/dan-beranek/dio-to-dio/blob/main/README.md",
+            "role": "research-design-and-publication-principles"
+          },
+          {
+            "label": "DIO to DIO — analysis catalogue",
+            "url": "https://github.com/dan-beranek/dio-to-dio/blob/main/metadata/analyses.json",
+            "role": "report-inventory-and-observation-snapshots"
+          },
+          {
+            "label": "DIO to DIO — successful Pages deployment",
+            "url": "https://github.com/dan-beranek/dio-to-dio/actions/runs/42155859209",
+            "role": "publication-deployment-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-043",
       "date": "2026-11-06",
       "date_basis": "archive_publication_date",
       "event_class": "Artifact",
@@ -2042,28 +2520,34 @@
       "evidence": {
         "status": "documented",
         "basis": [
-          "hub-changelog",
-          "linked-publication-or-artifact"
+          "registry",
+          "archival-record",
+          "public-version-history"
         ],
-        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "temporal_note": "Date is the recorded publication date of Reference Model v0.7.0 in the Corpus Metadata Registry and public release history. This event is not part of the Hub Changelog, which ends on 25 October 2026.",
         "sources": [
           {
-            "label": "DIO/ODI Hub — Changelog",
-            "url": "https://danielberanek.cz/manifest-dio/",
-            "role": "author-maintained-changelog"
+            "label": "Reference Model v0.7.0 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.7.0",
+            "role": "version-release"
           },
           {
-            "label": "Reference Model v0.7.0",
+            "label": "Reference Model v0.7.0 — Zenodo",
             "url": "https://doi.org/10.5281/zenodo.24020300",
             "role": "archival-record"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-provenance"
           }
         ]
       },
       "lineage": {
         "related_to": [
-          "SCF-2026-032",
-          "SCF-2026-034",
-          "SCF-2026-035"
+          "SCF-2026-037",
+          "SCF-2026-041",
+          "SCF-2026-040"
         ],
         "supersedes": [],
         "corrects": []
