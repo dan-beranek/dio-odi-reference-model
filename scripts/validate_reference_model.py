@@ -542,7 +542,7 @@ def check_semantic_change_feed() -> dict[str, int | str]:
             require(not unknown, f"{event['id']} has unresolved {relation} references: {sorted(unknown)}")
         require(event.get("evidence", {}).get("sources"), f"{event['id']} has no evidence sources")
     page = read_text("semantic-change-feed/index.html")
-    page_ids = set(re.findall(r'data-event-id="(SCF-\\d{4}-\\d{3})"', page))
+    page_ids = set(re.findall(r'data-event-id="(SCF-[^"]+)"', page))
     require(page_ids == known_ids, "Semantic Change Feed HTML event inventory differs from events.json")
     for path in sorted(ROOT.rglob("*.html")):
         source = path.read_text(encoding="utf-8")
