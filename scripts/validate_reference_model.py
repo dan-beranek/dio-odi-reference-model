@@ -541,6 +541,10 @@ def check_semantic_change_feed() -> dict[str, int | str]:
             unknown = set(event.get("lineage", {}).get(relation, [])) - known_ids
             require(not unknown, f"{event['id']} has unresolved {relation} references: {sorted(unknown)}")
         require(event.get("evidence", {}).get("sources"), f"{event['id']} has no evidence sources")
+        temporal_note = event.get("evidence", {}).get("temporal_note", "")
+        if "transcribed from the author-maintained DIO/ODI Hub Changelog" in temporal_note:
+            require(event.get("date_basis") == "hub_changelog_date",
+                    f"{event['id']} attributes a non-Changelog date to the Hub Changelog")
     page = read_text("semantic-change-feed/index.html")
     page_ids = set(re.findall(r'data-event-id="(SCF-[^"]+)"', page))
     require(page_ids == known_ids, "Semantic Change Feed HTML event inventory differs from events.json")
