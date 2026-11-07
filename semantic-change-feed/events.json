@@ -617,7 +617,8 @@
       "before": "The earlier Manifest representation did not yet include the v2 connectome visualization and its interpretive supplement.",
       "after": "The K6 connectome is visualized and supplemented by a working analogy of a semantic field; the account rejects a linear or sequential reading of the invariant and methodology.",
       "preserved_invariants": [
-        "The semantic-field analogy is identified as a working analogy, not a physical field or an asserted mathematical proof."
+        "The semantic-field analogy is identified as a working analogy, not a physical field or an asserted mathematical proof.",
+        "The 20 August 2026 Czech and English Manifest v2 web editions are a living web publication, not a new Zenodo archive; the canonical multilingual Zenodo record dated 27 July 2026 remains the archived v1.0.0 edition."
       ],
       "impact": {
         "level": "conceptual-model",
@@ -633,7 +634,7 @@
           "hub-changelog",
           "linked-publication-or-artifact"
         ],
-        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp. The Corpus Metadata Registry separately identifies the v2 page as a living web edition, not a Zenodo record; the canonical multilingual Zenodo archive remains the v1.0.0 record dated 27 July 2026.",
         "sources": [
           {
             "label": "DIO/ODI Hub — Changelog",
@@ -644,6 +645,11 @@
             "label": "Manifest v2 — living edition",
             "url": "https://danielberanek.cz/manifest-digital-identity-optimization-dio/",
             "role": "current-presentation"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json (Manifest v1 and v2 identity distinction)",
+            "url": "https://vocab.danielberanek.cz/metadata/works.json",
+            "role": "version-and-archive-identity"
           }
         ]
       },
