@@ -4,7 +4,7 @@
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
   "generated_on": "2026-11-07",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, and Reference Model release events through 6 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, and Reference Model release events through 7 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 43,
+  "event_count": 44,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -2559,6 +2559,79 @@
           "SCF-2026-037",
           "SCF-2026-041",
           "SCF-2026-040"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-044",
+      "date": "2026-11-07",
+      "date_basis": "publication_date",
+      "event_class": "Distribution",
+      "change_type": "published",
+      "title": "The DIO-to-DIO portfolio adds its eleventh model-specific analysis by Claude Sonnet",
+      "summary": "The public portfolio expands from ten to eleven author-led analyses with Claude Sonnet 5.5 (Extra Effort). The report examines reconstruction resilience across web, archival, machine-readable, multilingual, and identity-linked representations. Its section on strains and materiality distinguishes structural susceptibilities and documented state differences from demonstrated reconstruction failures; these remain Claude's model-specific analytical findings, not harmonized portfolio conclusions or authoritative historical evidence.",
+      "scope": [
+        {
+          "component": "DIO-to-DIO research portfolio — Claude analysis",
+          "component_type": "research-portfolio-analysis",
+          "uri": "https://dan-beranek.github.io/dio-to-dio/analyses/claude.html",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The public portfolio contained ten author-led, model-specific reconstruction analyses, as recorded at its initial publication milestone in SCF-2026-042.",
+      "after": "Eleven analyses are publicly available. The Claude Sonnet 5.5 report is listed with its Markdown and PDF source files and a generated HTML representation; its observation snapshot is 6–7 November 2026.",
+      "preserved_invariants": [
+        "SCF-2026-042 remains the accurate record of the portfolio's initial publication with ten analyses on 6 November 2026; this event appends the subsequent expansion and does not rewrite that history.",
+        "The portfolio remains author-led: the author defines and directs the research, while each model contributes a distinct analytical reading.",
+        "The reports remain model-specific and are not harmonized, ranked, or synthesized; Claude's materiality judgments and graph results are not promoted to portfolio-wide conclusions.",
+        "The report's observation snapshot (6–7 November 2026) is distinct from the portfolio publication/deployment date (7 November 2026).",
+        "The report's observations are discovery and interpretation material, not primary historical authority; claims adopted as SCF history require verification against primary publications, registries, release records, or archives.",
+        "The portfolio addition does not modify the canonical Reference Vocabulary, Application Mappings, or archived Reference Model releases."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO-to-DIO research portfolio",
+          "Claude Sonnet 5.5 analysis"
+        ],
+        "notes": "This is a portfolio distribution update. The report's section 8 provides a model-specific, task-relative materiality assessment and explicitly reports no established realized reconstruction failure or measured observer outcome within its inspected evidence."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "Date is the successful GitHub Pages deployment on 7 November 2026 (workflow run 42414438200). The Claude report records an observation snapshot of 6–7 November 2026; that snapshot is not used as the portfolio publication date.",
+        "sources": [
+          {
+            "label": "Claude analysis — HTML report, section 8: Strains and their materiality",
+            "url": "https://dan-beranek.github.io/dio-to-dio/analyses/claude.html#strains-and-their-materiality",
+            "role": "published-model-specific-analysis"
+          },
+          {
+            "label": "Claude analysis — portfolio catalogue",
+            "url": "https://github.com/dan-beranek/dio-to-dio/blob/main/metadata/analyses.json",
+            "role": "report-inventory-and-observation-snapshot"
+          },
+          {
+            "label": "Claude analysis — Markdown source",
+            "url": "https://github.com/dan-beranek/dio-to-dio/blob/main/reports/markdown/Claude-DIO-ODI-Reflexive-Analysis-Reconstruction-Resilience.md",
+            "role": "original-report"
+          },
+          {
+            "label": "DIO to DIO — successful Pages deployment, 7 November 2026",
+            "url": "https://github.com/dan-beranek/dio-to-dio/actions/runs/42414438200",
+            "role": "publication-deployment-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-042"
         ],
         "supersedes": [],
         "corrects": []
