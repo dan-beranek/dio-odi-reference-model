@@ -7,8 +7,8 @@
   "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
   "inLanguage": "en",
   "datePublished": "2026-10-10",
-  "dateModified": "2026-11-05",
-  "creativeWorkStatus": "Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0 and retained in archived v0.3.x releases; the iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 was first included in archived v0.4.0 and carried forward in archived v0.5.0 and v0.6.0.",
+  "dateModified": "2026-11-07",
+  "creativeWorkStatus": "Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0 and retained in archived v0.3.x releases; the iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25 was first included in archived v0.4.0 and carried forward in archived v0.5.0 and v0.6.0, and current archived v0.7.0.",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
     "@type": "Person",
@@ -19,9 +19,9 @@
   },
   "isPartOf": {
     "@type": "CreativeWork",
-    "name": "DIO/ODI Reference Model v0.6.0",
-    "url": "https://doi.org/10.5281/zenodo.23966487",
-    "identifier": "https://doi.org/10.5281/zenodo.23966487"
+    "name": "DIO/ODI Reference Model v0.7.0",
+    "url": "https://doi.org/10.5281/zenodo.24020300",
+    "identifier": "https://doi.org/10.5281/zenodo.24020300"
   },
   "isBasedOn": [
     {
@@ -170,7 +170,7 @@
         "url": "https://zenodo.org/records/23580733",
         "datePublished": "2026-10-22"
       },
-      "creativeWorkStatus": "Iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25; first included in archived DIO/ODI Reference Model v0.4.0 and carried forward in archived v0.5.0 and v0.6.0."
+      "creativeWorkStatus": "Iterative/hypothesis-conditioned evidence-acquisition extension added on 2026-10-25; first included in archived DIO/ODI Reference Model v0.4.0 and carried forward in archived v0.5.0, v0.6.0, and v0.7.0."
     }
   ],
   "version": "0.4.0",

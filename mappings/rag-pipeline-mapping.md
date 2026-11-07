@@ -1,8 +1,8 @@
 # Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
 
-**Status:** Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0, retained in archived v0.3.x releases. Iterative/hypothesis-conditioned evidence-acquisition extension added on 25 October 2026, first included in archived v0.4.0, and carried forward in archived v0.5.0 and v0.6.0.  
-**Current archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
-**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
+**Status:** Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0, retained in archived v0.3.x releases. Iterative/hypothesis-conditioned evidence-acquisition extension added on 25 October 2026, first included in archived v0.4.0, and carried forward in archived v0.5.0 v0.6.0, and v0.7.0.  
+**Current archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
+**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external technical domain and does not modify their definitions or relations.  
 **Scope:** Derived mapping; not a normative redefinition of DIO, ODI, RAG, or the Reconstruction Failure Mode taxonomy.  
 **JSON-LD:** https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.jsonld  
@@ -123,7 +123,7 @@ This page now contains the original RAG-to-DIO mapping and a later analytical ex
 - **22 October 2026 — Commit-boundary research.** In [*Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*](https://zenodo.org/records/23580733), the analysis distinguishes evidence available for exploratory reasoning from evidence eligible to authorize a persistent identity-changing mutation. It explicitly leaves broader dependency-aware control of hypothesis-conditioned evidence acquisition and feedback as a separate research direction.
 - **25 October 2026 — Live analytical extension.** The section below extends the earlier RAG mapping to examine that upstream evidentiary process: how a working hypothesis can influence subsequent query selection, evidence exposure, and hypothesis updates. This extension is motivated by the boundary made explicit in the later paper; it is not claimed to be contained in, implemented by, or empirically validated by that paper.
 
-The relationship is developmental, not a claim of deterministic causality: the RAG mapping supplies the earlier process-to-reconstruction diagnostic layer; the commit-boundary paper isolates a downstream authorization boundary and explicitly does not solve the upstream feedback problem; this live extension examines that previously separated question in relation to the existing RAG mapping. The extension was added to the live source tree on 25 October 2026; it was not included in the archived v0.3.2 package, was first included in archived v0.4.0, and is carried forward in archived v0.5.0 and v0.6.0. The live canonical DIO/ODI Reference Vocabulary is now v0.2.1; this mapping remains outside it.
+The relationship is developmental, not a claim of deterministic causality: the RAG mapping supplies the earlier process-to-reconstruction diagnostic layer; the commit-boundary paper isolates a downstream authorization boundary and explicitly does not solve the upstream feedback problem; this live extension examines that previously separated question in relation to the existing RAG mapping. The extension was added to the live source tree on 25 October 2026; it was not included in the archived v0.3.2 package, was first included in archived v0.4.0, and is carried forward in archived v0.5.0 v0.6.0, and v0.7.0. The live canonical DIO/ODI Reference Vocabulary is v0.2.1; this mapping remains outside it.
 
 ## Iterative and Hypothesis-Conditioned Evidence Acquisition
 
@@ -166,11 +166,13 @@ Its narrower claim is that the DIO Reconstruction Failure Mode taxonomy provides
 
 ## References
 
-1. Beránek, D. (2026). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 1]. arXiv. DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Zenodo. Concept DOI [10.5281/zenodo.23580732](https://doi.org/10.5281/zenodo.23580732).
+1. Beránek, D. (2026, 5 November). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 2]. arXiv. [arXiv:2610.37407v2](https://arxiv.org/abs/2610.37407v2). Concept DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Earlier Zenodo version 1 record [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
 
-2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0) [Software]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
+2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.7.0) [Software]. Zenodo. DOI [10.5281/zenodo.24020300](https://doi.org/10.5281/zenodo.24020300).
 
-3. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.1; version 0.2.0 included in archived Reference Model v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
+3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0) [Software; previous archived release]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
+
+4. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.1; included in archived Reference Model v0.7.0; version 0.2.0 included in archived v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
 
 4. Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)*. Zenodo. DOI [10.5281/zenodo.23269323](https://doi.org/10.5281/zenodo.23269323).
 
