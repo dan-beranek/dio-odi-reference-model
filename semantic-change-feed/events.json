@@ -1315,7 +1315,7 @@
           "hub-changelog",
           "linked-publication-or-artifact"
         ],
-        "temporal_note": "Date is transcribed from the author-maintained DIO/ODI Hub Changelog; it is not automatically asserted as a Git commit timestamp.",
+        "temporal_note": "The Hub Changelog prints the date with a stray trailing “j” (“11. 10. 2026j”). The date is interpreted as 11 October 2026; the suffix is treated as a typographical artefact. The date remains a Hub Changelog date, not a Git commit timestamp.",
         "sources": [
           {
             "label": "DIO/ODI Hub — Changelog",
@@ -1331,6 +1331,11 @@
             "label": "External HEM publication",
             "url": "https://doi.org/10.1016/j.datak.2026.102575",
             "role": "external-source"
+          },
+          {
+            "label": "Reference Model v0.3.0 — GitHub Release",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/releases/tag/v0.3.0",
+            "role": "version-release-corroboration"
           }
         ]
       },
