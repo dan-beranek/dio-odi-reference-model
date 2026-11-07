@@ -101,9 +101,16 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Technical specification: https://vocab.danielberanek.cz/semantic-change-feed/README.md
 - Purpose: source-backed history of semantic, structural, provenance, mapping, and artifact-state changes; not a Git commit log
 - Boundary: does not replace the Reference Vocabulary, Application Mappings, Corpus Metadata Registry, or immutable Reference Model releases
-- Initial version: 0.1.0; seven selected historical events with explicit date basis, preserved invariants, impact, provenance, and lineage
+- Initial version: 0.1.0; the curated historical event record with explicit date basis, preserved invariants, impact, provenance, and lineage
 
-- Current coverage: 36 events; full dated Hub Changelog (25 March–25 October 2026) plus subsequent releases through 6 November 2026
+- Current coverage: 43 events; full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, and release milestones through 6 November 2026
+
+## DIO to DIO research portfolio
+
+- Public portfolio: https://dan-beranek.github.io/dio-to-dio/
+- Repository: https://github.com/dan-beranek/dio-to-dio
+- Ten author-led, model-specific analyses of DIO/ODI reconstruction, with different observation snapshots and graph approaches; the reports are not harmonized, ranked, or synthesized.
+- The portfolio is a discovery and interpretive corpus, not an authoritative chronology. Verify historical claims against primary publications, release records, registries, and archives.
 
 ## Corpus metadata registry
 
