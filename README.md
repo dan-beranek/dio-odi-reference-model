@@ -175,7 +175,7 @@ In particular:
 
 - Identity Collapse is not defined as a sum, superclass, consequence, or cause of the current Reconstruction Failure Modes.
 - Semantic Vulnerability is not classified as a Reconstruction Failure Mode.
-- K6 is represented as a finer-grained candidate model, not as a logical consequence of MVDIO.
+- The Semantic Connectome is represented as a finer-grained candidate model, not as a logical consequence of MVDIO.
 
 ## Citation and archival release
 
