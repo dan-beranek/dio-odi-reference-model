@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.11",
+  "registry_version": "1.8.12",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -149,13 +149,25 @@
       "publication_date": "2026-10-11",
       "license": "CC-BY-4.0",
       "current_release": {
-        "version": "0.7.0",
-        "doi": "10.5281/zenodo.24020300",
-        "publication_date": "2026-11-06",
+        "version": "0.8.0",
+        "doi": "10.5281/zenodo.24056601",
+        "publication_date": "2026-11-08",
         "status": "archived",
-        "reference_vocabulary_version": "0.2.1"
+        "reference_vocabulary_version": "0.2.1",
+        "semantic_change_feed_version": "0.1.0",
+        "semantic_change_feed_schema_version": "0.2.0",
+        "semantic_change_feed_event_count": 44
       },
       "releases": [
+        {
+          "version": "0.8.0",
+          "doi": "10.5281/zenodo.24056601",
+          "publication_date": "2026-11-08",
+          "reference_vocabulary_version": "0.2.1",
+          "semantic_change_feed_version": "0.1.0",
+          "semantic_change_feed_schema_version": "0.2.0",
+          "semantic_change_feed_event_count": 44
+        },
         {
           "version": "0.7.0",
           "doi": "10.5281/zenodo.24020300",
@@ -207,20 +219,8 @@
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",
       "previous_archived_release": {
-        "version": "0.6.0",
-        "doi": "10.5281/zenodo.23966487"
-      },
-      "release_candidate": {
-        "version": "0.8.0",
-        "status": "prepared-for-release",
-        "reference_vocabulary_version": "0.2.1",
-        "semantic_change_feed_version": "0.1.0",
-        "semantic_change_feed_schema_version": "0.2.0",
-        "semantic_change_feed_event_count": 44,
-        "previous_archived_release": {
-          "version": "0.7.0",
-          "doi": "10.5281/zenodo.24020300"
-        }
+        "version": "0.7.0",
+        "doi": "10.5281/zenodo.24020300"
       },
       "reference_model_concept_doi": "10.5281/zenodo.23272897",
       "reference_model_concept_doi_url": "https://doi.org/10.5281/zenodo.23272897",
