@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this reference model or its derived application mappings, please cite this release and the underlying DIO/ODI publications."
 title: "DIO/ODI Reference Model"
 type: software
-version: "0.7.0"
-abstract: "Version 0.7.0 of the versioned DIO/ODI reference model centered on a machine-readable SKOS vocabulary for Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI), with stable concept URIs, provenance, Turtle and JSON-LD serializations, concept maps, and explicitly separated derived application mappings. This snapshot incorporates Reference Vocabulary v0.2.1, including a distinct plural Identity-Preserving Constraints concept while retaining the singular URI as a historical entry without asserting a semantic relation between them. It carries forward the HEM × DIO, Commit-Boundary × Policy-as-Code, and iterative/hypothesis-conditioned RAG mappings, and includes the non-normative Agentic ER Commit-Boundary Architecture Mapping v0.3.1, synchronized to public arXiv v2 for provenance; its 120 local concepts and 206 qualified relation assertions are unchanged."
+version: "0.8.0"
+abstract: "Version 0.8.0 of the DIO/ODI Reference Model is a machine-readable SKOS-first reference layer for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI), with stable concept URIs, Turtle/RDF and JSON-LD serializations, provenance metadata, and explicitly separated non-normative application mappings. It carries forward Reference Vocabulary v0.2.1 and the existing RAG, HEM, Commit-Boundary × Policy-as-Code, and Agentic ER mappings without claiming empirical validation. This release adds the Semantic Change Feed (SCF), a curated append-only event registry of 44 documented events, with a human-readable frontend and JSON Schema v0.2.0 (feed v0.1.0). The SCF strengthens temporal and change provenance while remaining separate from the canonical vocabulary and derived mappings; it is not a Git commit log or a separate standalone publication."
 authors:
   - family-names: "Beránek"
     given-names: "Daniel"
@@ -78,5 +78,3 @@ keywords:
   - "stable concept URIs"
 repository-code: "https://github.com/dan-beranek/dio-odi-reference-model"
 license: "CC-BY-4.0"
-doi: "10.5281/zenodo.24020300"
-date-released: "2026-11-06"
