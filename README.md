@@ -23,6 +23,8 @@ The repository intentionally begins with **SKOS**. A future OWL layer should add
 
 The public site root, [vocab.danielberanek.cz](https://vocab.danielberanek.cz/), is the top-level overview of the Reference Model site. The [Reference Vocabulary page](https://vocab.danielberanek.cz/dio-odi/) is a distinct child resource identifying the canonical SKOS ConceptScheme; it is not the site's homepage. [Application Mappings](https://vocab.danielberanek.cz/mappings/) form a derived, non-normative layer. The [Corpus Metadata frontend](https://vocab.danielberanek.cz/metadata/) provides a human-readable entry point to the operational registry and its machine-readable records; the [technical registry documentation](https://vocab.danielberanek.cz/metadata/README.md) describes its workflow and governance rules. The wider Manifest and publication corpus is presented separately on the [DIO/ODI Hub](https://danielberanek.cz/manifest-dio/).
 
+The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities.
+
 The live Reference Vocabulary is v0.2.1, a metadata-only update to the v0.2.0 concept model. The current archived Reference Model package is v0.7.0 (https://doi.org/10.5281/zenodo.24020300); the previous archive is v0.6.0 (https://doi.org/10.5281/zenodo.23966487).
 
 ## Concept map
@@ -135,6 +137,10 @@ The namespace is owned by the author and is intended to remain stable independen
 - `metadata/distributions.json` — external distribution and supplementary representations with typed relations
 - `metadata/keywords.json` — canonical ordered keyword grammar (C0–C6), work profiles, resolved keyword sequences, and non-export aliases
 - `metadata/README.md` — metadata-registry workflow and relation discipline
+- `semantic-change-feed/index.html` — human-readable Semantic Change Feed frontend
+- `semantic-change-feed/events.json` — append-only event registry
+- `semantic-change-feed/schema.json` — JSON Schema for the feed and event records
+- `semantic-change-feed/README.md` — SCF model, temporal discipline, and correction policy
 
 ## Derived application mappings
 
@@ -169,7 +175,7 @@ In particular:
 
 - Identity Collapse is not defined as a sum, superclass, consequence, or cause of the current Reconstruction Failure Modes.
 - Semantic Vulnerability is not classified as a Reconstruction Failure Mode.
-- K6 is represented as a finer-grained candidate model, not as a logical consequence of MVDIO.
+- The Semantic Connectome is represented as a finer-grained candidate model, not as a logical consequence of MVDIO.
 
 ## Citation and archival release
 
