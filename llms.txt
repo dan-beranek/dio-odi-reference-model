@@ -103,13 +103,13 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Boundary: does not replace the Reference Vocabulary, Application Mappings, Corpus Metadata Registry, or immutable Reference Model releases
 - Feed version: 0.1.0; the first structured release of the curated event history, with explicit date basis, preserved invariants, impact, provenance, and lineage
 
-- Current coverage: 43 events; full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, and release milestones through 6 November 2026
+- Current coverage: 44 events; full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, and release milestones through 7 November 2026
 
 ## DIO to DIO research portfolio
 
 - Public portfolio: https://dan-beranek.github.io/dio-to-dio/
 - Repository: https://github.com/dan-beranek/dio-to-dio
-- Ten author-led, model-specific analyses of DIO/ODI reconstruction, with different observation snapshots and graph approaches; the reports are not harmonized, ranked, or synthesized.
+- Eleven author-led, model-specific analyses of DIO/ODI reconstruction, with different observation snapshots and graph approaches; the reports are not harmonized, ranked, or synthesized.
 - The portfolio is a discovery and interpretive corpus, not an authoritative chronology. Verify historical claims against primary publications, release records, registries, and archives.
 
 ## Corpus metadata registry
@@ -124,7 +124,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Grammar version: 2.0.0
   - Status: canonical-approved
   - Work-specific profile: commit-boundary-paper (34 terms; baseline aligned to Zenodo v1 metadata)
-  - Order: C0 Identity → C1 Environments → C2 Work positioning → C3 Mechanics → C4 K6 → C5 Failures/robustness → C6 Machine-readable representation
+  - Order: C0 Identity → C1 Environments → C2 Work positioning → C3 Mechanics → C4 Semantic Connectome → C5 Failures/robustness → C6 Machine-readable representation
 - Zenodo projection for future GitHub releases: repository root `/.zenodo.json`
 
 This registry is an operational metadata layer and does not modify the canonical DIO/ODI Reference Vocabulary.
