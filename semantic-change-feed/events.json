@@ -604,8 +604,8 @@
       "date_basis": "hub_changelog_date",
       "event_class": "Conceptual",
       "change_type": "refined",
-      "title": "Manifest v2 introduces the K6 connectome representation and semantic-field analogy",
-      "summary": "The Czech and English Manifest v2 editions add a visualization of the semantic connectome and interpret it through the working analogy of a semantic field. The Changelog also records a shift away from linear or sequential readings toward simultaneous interaction.",
+      "title": "Manifest v2 introduces the Semantic Connectome visualization and semantic-field analogy",
+      "summary": "The Czech and English Manifest v2 editions add a visualization of the Semantic Connectome as a complete graph K6 and interpret its relational structure through the working analogy of a semantic field. The Changelog also records a shift away from linear or sequential readings toward simultaneous interaction.",
       "scope": [
         {
           "component": "Manifest v2 — semantic connectome and semantic-field analogy",
@@ -615,9 +615,10 @@
         }
       ],
       "before": "The earlier Manifest representation did not yet include the v2 connectome visualization and its interpretive supplement.",
-      "after": "The K6 connectome is visualized and supplemented by a working analogy of a semantic field; the account rejects a linear or sequential reading of the invariant and methodology.",
+      "after": "The Semantic Connectome is visualized as a complete graph K6 and supplemented by a working analogy of a semantic field; the account rejects a linear or sequential reading of the invariant and methodology.",
       "preserved_invariants": [
         "The semantic-field analogy is identified as a working analogy, not a physical field or an asserted mathematical proof.",
+        "K6 names the explicit graph-theoretic representation (the complete graph on six vertices), not the general Semantic Connectome concept.",
         "The 20 August 2026 Czech and English Manifest v2 web editions are a living web publication, not a new Zenodo archive; the canonical multilingual Zenodo record dated 27 July 2026 remains the archived v1.0.0 edition."
       ],
       "impact": {
@@ -940,8 +941,8 @@
       "date_basis": "hub_changelog_date",
       "event_class": "Conceptual",
       "change_type": "refined",
-      "title": "MVDIO introduces adversarial reduction and refines the K6 relationship",
-      "summary": "MVDIO reduces DIO to a minimum analytical model, refines the reconstruction-failure distinctions, reclassifies Semantic Vulnerability toward robustness/risk, and describes MVDIO and K6 as two analytical levels of the same dynamic object.",
+      "title": "MVDIO introduces adversarial reduction and clarifies its relationship to the Semantic Connectome",
+      "summary": "MVDIO reduces DIO to a minimum analytical model, refines reconstruction-failure distinctions, reclassifies Semantic Vulnerability toward robustness/risk, and clarifies the relation between its coarse-grained minimum and the finer-grained Semantic Connectome.",
       "scope": [
         {
           "component": "MVDIO",
@@ -950,10 +951,10 @@
           "role": "affected-resource"
         }
       ],
-      "before": "The Crisis-era account used a four-anomaly framing and had not yet made the MVDIO/K6 two-level relationship explicit.",
-      "after": "MVDIO provides an adversarially reduced analytical model and refines the relation between MVDIO and K6, while moving Semantic Vulnerability toward robustness/risk.",
+      "before": "The Crisis-era account used a four-anomaly framing and had not yet made the relation between MVDIO's minimum analytical model and the Semantic Connectome explicit.",
+      "after": "MVDIO provides an adversarially reduced analytical model and clarifies the relationship between its coarse-grained minimum and the finer-grained Semantic Connectome, while moving Semantic Vulnerability toward robustness/risk.",
       "preserved_invariants": [
-        "K6 is not simply discarded; the Changelog describes it as a finer-grained level relative to MVDIO."
+        "The Semantic Connectome is treated as a finer-grained candidate model, not as a logical consequence of MVDIO."
       ],
       "impact": {
         "level": "conceptual-model",
