@@ -29,4 +29,4 @@ The repository validator checks the feed against its JSON Schema, event ID uniqu
 - Semantic Change Feed schema: **v0.2.0**
 - Previous archived Reference Model release: **v0.7.0** — https://doi.org/10.5281/zenodo.24020300
 
-The version-specific DOI for v0.8.0 is assigned by Zenodo after the GitHub release is published and archived.
+The version-specific DOI for this release is https://doi.org/10.5281/zenodo.24056601.
