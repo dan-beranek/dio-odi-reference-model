@@ -491,7 +491,7 @@ def check_metadata() -> dict[str, int | str]:
     
     profile = keywords["work_profiles"]["reference-model"]["resolved_keywords"]
     paper_profile = keywords["work_profiles"]["commit-boundary-paper"]["resolved_keywords"]
-    require(len(profile) == 66, f"Expected 66 Reference Model keywords, found {len(profile)}")
+    require(len(profile) == 67, f"Expected 67 Reference Model keywords, found {len(profile)}")
     require(len(paper_profile) == 34, f"Expected 34 commit-boundary paper keywords, found {len(paper_profile)}")
     require(zenodo.get("keywords") == profile, ".zenodo.json keywords differ from the canonical Reference Model profile")
     require(citation.get("keywords") == profile, "CITATION.cff keywords differ from the canonical Reference Model profile")
