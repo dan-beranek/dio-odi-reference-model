@@ -1,7 +1,7 @@
 {
-  "registry_version": "2.4.0",
+  "registry_version": "2.5.0",
   "status": "canonical-approved",
-  "approved_on": "2026-11-05",
+  "approved_on": "2026-11-08",
   "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for Zenodo and other metadata surfaces.",
   "principles": [
     "Keywords are an ordered metadata grammar, not an unordered bag of tags.",
@@ -464,7 +464,8 @@
           "staging isolation",
           "policy-as-code",
           "commit-boundary authorization",
-          "authorization guardrail"
+          "authorization guardrail",
+          "Semantic Change Feed"
         ],
         "C3_reconstruction_mechanics": "all",
         "C4_k6": "all",
@@ -495,6 +496,7 @@
         "policy-as-code",
         "commit-boundary authorization",
         "authorization guardrail",
+        "Semantic Change Feed",
         "semantic field",
         "distributed representational state",
         "observation domain",
