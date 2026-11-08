@@ -490,7 +490,7 @@ iframe {
   max-width: none;
 }
 
-.portal-hero,
+.page-hero,
 .portal-main,
 .portal-footer {
   width: 100%;
@@ -498,14 +498,14 @@ iframe {
   margin-inline: 0;
 }
 
-.portal-hero {
+.page-hero {
   padding: clamp(1.1rem, 3vw, 2.2rem);
   border: 1px solid var(--border);
   border-radius: .85rem;
   background: linear-gradient(145deg, var(--surface-raised), var(--surface));
 }
 
-.portal-kicker {
+.page-hero-kicker {
   margin: 0 auto .3rem;
   color: var(--muted);
   font-size: .9rem;
@@ -514,7 +514,7 @@ iframe {
   text-align: center;
 }
 
-.portal-lead {
+.page-hero-lead {
   width: min(100%, 62ch);
   max-width: 62ch;
   margin: 0 auto 1.5rem;
@@ -668,7 +668,127 @@ iframe {
     gap: .25rem;
   }
 
-  .portal-hero {
+  .page-hero {
     padding: 1rem;
   }
 }
+
+/* Unified page hero system: a single structure and visual treatment across the portal. */
+.page-hero {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 2.5rem;
+  padding: clamp(1.2rem, 3vw, 2.2rem);
+  border: 1px solid var(--border);
+  border-radius: .85rem;
+  background: linear-gradient(145deg, var(--surface-raised), var(--surface));
+}
+
+.page-hero-kicker {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto .45rem;
+  color: var(--muted);
+  font-size: .86rem;
+  font-weight: 650;
+  letter-spacing: .085em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  width: min(100%, 68ch);
+  max-width: 68ch;
+  margin: .65rem auto .85rem;
+  color: var(--text);
+  font-size: clamp(1.85rem, 3.5vw, 2.65rem);
+  letter-spacing: -.027em;
+  line-height: 1.18;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.page-hero-lead {
+  width: min(100%, 66ch);
+  max-width: 66ch;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.075rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.page-hero-meta,
+.page-hero > .status {
+  width: min(100%, 68rem);
+  max-width: 68rem;
+  margin: 1.25rem auto 0;
+  text-align: left;
+}
+
+.page-hero-meta {
+  padding: .9rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: var(--surface);
+}
+
+.page-hero-meta p {
+  width: 100%;
+  max-width: none;
+  margin: .35rem 0;
+  text-align: left;
+}
+
+.page-hero > .status {
+  margin-bottom: 0;
+}
+
+.page-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  width: 100%;
+  margin: 1.35rem auto 0;
+}
+
+.page-hero-stat {
+  min-width: 0;
+  padding: .9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: var(--surface);
+  text-align: center;
+}
+
+.page-hero-stat strong {
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.page-hero-stat span {
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+@media (max-width: 760px) {
+  .page-hero {
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+  }
+
+  .page-hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero-meta {
+    padding: .8rem;
+  }
+}
+
