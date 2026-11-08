@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.10",
+  "registry_version": "1.8.11",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -210,7 +210,18 @@
         "version": "0.6.0",
         "doi": "10.5281/zenodo.23966487"
       },
-      "release_candidate": null,
+      "release_candidate": {
+        "version": "0.8.0",
+        "status": "prepared-for-release",
+        "reference_vocabulary_version": "0.2.1",
+        "semantic_change_feed_version": "0.1.0",
+        "semantic_change_feed_schema_version": "0.2.0",
+        "semantic_change_feed_event_count": 44,
+        "previous_archived_release": {
+          "version": "0.7.0",
+          "doi": "10.5281/zenodo.24020300"
+        }
+      },
       "reference_model_concept_doi": "10.5281/zenodo.23272897",
       "reference_model_concept_doi_url": "https://doi.org/10.5281/zenodo.23272897",
       "reference_vocabulary_uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
