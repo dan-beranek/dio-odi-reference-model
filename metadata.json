@@ -160,6 +160,32 @@
     "doi_url": "https://doi.org/10.5281/zenodo.24020300"
   },
   "current_archived_reference_vocabulary_version": "0.2.1",
-  "release_candidate": null,
-  "live_reference_vocabulary_version": "0.2.1"
+  "release_candidate": {
+    "version": "0.8.0",
+    "archive_status": "pending",
+    "status": "prepared-for-GitHub-release",
+    "reference_vocabulary_version": "0.2.1",
+    "semantic_change_feed_version": "0.1.0",
+    "semantic_change_feed_schema_version": "0.2.0",
+    "semantic_change_feed_event_count": 44,
+    "previous_archived_release": {
+      "version": "0.7.0",
+      "doi": "10.5281/zenodo.24020300",
+      "doi_url": "https://doi.org/10.5281/zenodo.24020300"
+    }
+  },
+  "live_reference_vocabulary_version": "0.2.1",
+  "semantic_change_feed": {
+    "title": "DIO/ODI Semantic Change Feed",
+    "frontend": "https://vocab.danielberanek.cz/semantic-change-feed/",
+    "events_json": "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
+    "schema_json": "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
+    "feed_version": "0.1.0",
+    "schema_version": "0.2.0",
+    "event_count": 44,
+    "coverage_through": "2026-11-07",
+    "status": "included-in-release-candidate",
+    "target_reference_model_release": "0.8.0",
+    "license": "CC-BY-4.0"
+  }
 }
