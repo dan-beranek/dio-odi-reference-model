@@ -23,6 +23,8 @@ from rdflib.namespace import DCAT, DCTERMS, RDFS, SKOS
 
 ROOT = Path(__file__).resolve().parents[1]
 VOCAB_NS = "https://vocab.danielberanek.cz/dio-odi/#"
+VOCABULARY_VERSION = "0.2.2"
+VOCABULARY_PREFIX = "dio-odi"
 ARC_NS = "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#"
 SITE_HOST = "vocab.danielberanek.cz"
 ARC = Namespace(ARC_NS)
@@ -251,6 +253,41 @@ def check_vocabularies() -> dict[str, int]:
     dcat = parse_turtle("vocabulary/dio-odi-dcat.ttl")
 
     scheme = URIRef(VOCAB_NS + "ReferenceVocabulary")
+    vocabulary_ttl_source = read_text("vocabulary/dio-odi-skos.ttl")
+    vocabulary_jsonld_document = load_json("vocabulary/dio-odi.jsonld")
+    jsonld_context = vocabulary_jsonld_document.get("@context", {})
+    require(
+        f'vann:preferredNamespacePrefix "{VOCABULARY_PREFIX}"' in vocabulary_ttl_source,
+        "The canonical Turtle vocabulary must declare the preferred namespace prefix dio-odi",
+    )
+    require(
+        isinstance(jsonld_context, dict)
+        and jsonld_context.get(VOCABULARY_PREFIX) == VOCAB_NS
+        and "dio" not in jsonld_context,
+        "The canonical JSON-LD context must map dio-odi to the canonical namespace and must not retain dio",
+    )
+    version_info_uri = URIRef("http://www.w3.org/2002/07/owl#versionInfo")
+    require(
+        str(ttl.value(scheme, version_info_uri)) == VOCABULARY_VERSION,
+        f"Canonical Reference Vocabulary version should be {VOCABULARY_VERSION}",
+    )
+    prefix_sources = (
+        "vocabulary/dio-odi-skos.ttl",
+        "vocabulary/dio-odi.jsonld",
+        "vocabulary/dio-odi-dcat.ttl",
+        "dio-odi/index.html",
+        "mappings/agentic-er-commit-boundary-architecture-mapping.ttl",
+        "mappings/commit-boundary-policy-mapping.ttl",
+        "mappings/hem-dio-mapping.ttl",
+        "mappings/rag-pipeline-mapping.ttl",
+        "examples/queries.sparql",
+    )
+    for relative in prefix_sources:
+        source = read_text(relative)
+        require(
+            "dio:" not in source and "dio-odi" in source,
+            f"Legacy or missing namespace prefix in {relative}; expected dio-odi",
+        )
     concepts = set(ttl.subjects(RDF.type, SKOS.Concept))
     schemes = set(ttl.subjects(RDF.type, SKOS.ConceptScheme))
     require(len(schemes) == 1 and scheme in schemes, "SKOS graph must define exactly the canonical ConceptScheme")
@@ -483,8 +520,8 @@ def check_metadata() -> dict[str, int | str]:
     )
     require(model.get("reference_model_concept_doi") == "10.5281/zenodo.23272897",
             "Reference Model Concept DOI has changed unexpectedly")
-    require(model.get("reference_vocabulary_version") == "0.2.1",
-            "Live Reference Vocabulary version should be 0.2.1")
+    require(model.get("reference_vocabulary_version") == VOCABULARY_VERSION,
+            f"Live Reference Vocabulary version should be {VOCABULARY_VERSION}")
     require(model.get("current_release", {}).get("version") == zenodo.get("version")
             or model.get("release_candidate", {}).get("version") == zenodo.get("version"),
             "Zenodo projection version must match either current archive or explicit release candidate")
