@@ -64,7 +64,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF introduced in: Reference Model v0.3.1
   - Introduced in: Reference Model v0.2.0
   - Base mapping introduced and first archived in: Reference Model v0.2.0
-  - Iterative/hypothesis-conditioned evidence-acquisition extension: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845, v0.6.0 — https://doi.org/10.5281/zenodo.23966487, and archived v0.7.0, previous archived v0.8.0, and current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
+  - Iterative/hypothesis-conditioned evidence-acquisition extension: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845, v0.6.0 — https://doi.org/10.5281/zenodo.23966487, and carried forward in archived v0.7.0 and v0.8.0, and included in current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
   - Development context: Constraining the Commit Boundary, published 2026-10-22: https://zenodo.org/records/23580733
 - Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences: https://vocab.danielberanek.cz/mappings/hem-dio/
   - Source Markdown: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md
@@ -72,7 +72,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Conceptual bridge SVG: https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg
   - External HEM source DOI: https://doi.org/10.1016/j.datak.2026.102575
   - Introduced in: Reference Model v0.3.0
-  - Included in: Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845, v0.6.0 — https://doi.org/10.5281/zenodo.23966487, and archived v0.7.0, previous archived v0.8.0, and current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
+  - Included in: Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845, v0.6.0 — https://doi.org/10.5281/zenodo.23966487, and carried forward in archived v0.7.0 and v0.8.0, and included in current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl
   - Turtle RDF introduced in: Reference Model v0.3.1
 - Application Mapping: DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization: https://vocab.danielberanek.cz/mappings/commit-boundary-policy/
@@ -81,7 +81,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.ttl
   - External technical references: OPA and Cedar
   - Added to live source tree: 2026-10-25
-  - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845, v0.6.0 — https://doi.org/10.5281/zenodo.23966487, and archived v0.7.0, previous archived v0.8.0, and current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
+  - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845, v0.6.0 — https://doi.org/10.5281/zenodo.23966487, and carried forward in archived v0.7.0 and v0.8.0, and included in current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
 
 
 - Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture (live version 0.3.1): https://vocab.danielberanek.cz/mappings/agentic-er-architecture/
