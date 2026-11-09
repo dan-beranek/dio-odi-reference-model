@@ -1,7 +1,7 @@
 @prefix rag: <https://vocab.danielberanek.cz/mappings/rag-pipeline/#> .
 
 @prefix map: <https://vocab.danielberanek.cz/mappings/#> .
-@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
+@prefix dio-odi: <https://vocab.danielberanek.cz/dio-odi/#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -131,7 +131,7 @@ rag:OutputValidationCitation
 rag:QueryInterpretationEntityLinking_EntitySubstitution
     a map:MappingAssertion ;
     map:sourceCondition rag:QueryInterpretationEntityLinking ;
-    map:targetConcept dio:EntitySubstitution ;
+    map:targetConcept dio-odi:EntitySubstitution ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Query interpretation and entity linking may contribute to Entity Substitution when the request or available evidence is anchored to a distinct but confusable referent."@en ;
@@ -140,7 +140,7 @@ rag:QueryInterpretationEntityLinking_EntitySubstitution
 rag:Retrieval_EntitySubstitution
     a map:MappingAssertion ;
     map:sourceCondition rag:Retrieval ;
-    map:targetConcept dio:EntitySubstitution ;
+    map:targetConcept dio-odi:EntitySubstitution ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Retrieval may contribute to Entity Substitution when evidence associated with a distinct but confusable referent is selected and subsequently dominates reconstruction."@en ;
@@ -149,7 +149,7 @@ rag:Retrieval_EntitySubstitution
 rag:GenerationSynthesis_EntitySubstitution
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:EntitySubstitution ;
+    map:targetConcept dio-odi:EntitySubstitution ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Entity Substitution when selected evidence is integrated into a coherent reconstruction of the wrong referent."@en ;
@@ -158,7 +158,7 @@ rag:GenerationSynthesis_EntitySubstitution
 rag:SegmentationIndexing_MergeFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:SegmentationIndexing ;
-    map:targetConcept dio:MergeFailure ;
+    map:targetConcept dio-odi:MergeFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Segmentation and indexing may contribute to Merge Failure when representations of distinct referents are indexed or clustered without preserving identity-separating distinctions."@en ;
@@ -167,7 +167,7 @@ rag:SegmentationIndexing_MergeFailure
 rag:QueryInterpretationEntityLinking_MergeFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:QueryInterpretationEntityLinking ;
-    map:targetConcept dio:MergeFailure ;
+    map:targetConcept dio-odi:MergeFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Query interpretation and entity linking may contribute to Merge Failure when distinct referents are resolved to one working entity representation."@en ;
@@ -176,7 +176,7 @@ rag:QueryInterpretationEntityLinking_MergeFailure
 rag:Retrieval_MergeFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:Retrieval ;
-    map:targetConcept dio:MergeFailure ;
+    map:targetConcept dio-odi:MergeFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Retrieval may contribute to Merge Failure when evidence belonging to distinct referents is selected into the same candidate set without adequate separation."@en ;
@@ -185,7 +185,7 @@ rag:Retrieval_MergeFailure
 rag:RerankingContextAssembly_MergeFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:RerankingContextAssembly ;
-    map:targetConcept dio:MergeFailure ;
+    map:targetConcept dio-odi:MergeFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Reranking and context assembly may contribute to Merge Failure when evidence for distinct referents is combined into one effective reconstruction context."@en ;
@@ -194,7 +194,7 @@ rag:RerankingContextAssembly_MergeFailure
 rag:GenerationSynthesis_MergeFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:MergeFailure ;
+    map:targetConcept dio-odi:MergeFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Merge Failure when mixed evidence for distinct referents is integrated into one apparent identity."@en ;
@@ -203,7 +203,7 @@ rag:GenerationSynthesis_MergeFailure
 rag:SegmentationIndexing_SplitFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:SegmentationIndexing ;
-    map:targetConcept dio:SplitFailure ;
+    map:targetConcept dio-odi:SplitFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Segmentation and indexing may contribute to Split Failure when aliases, identifiers, historical states, or other representations of one referent are indexed as disconnected identity clusters."@en ;
@@ -212,7 +212,7 @@ rag:SegmentationIndexing_SplitFailure
 rag:QueryInterpretationEntityLinking_SplitFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:QueryInterpretationEntityLinking ;
-    map:targetConcept dio:SplitFailure ;
+    map:targetConcept dio-odi:SplitFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Query interpretation and entity linking may contribute to Split Failure when multiple representations of one referent are resolved as separate entities."@en ;
@@ -221,7 +221,7 @@ rag:QueryInterpretationEntityLinking_SplitFailure
 rag:Retrieval_SplitFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:Retrieval ;
-    map:targetConcept dio:SplitFailure ;
+    map:targetConcept dio-odi:SplitFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Retrieval may contribute to Split Failure when only one disconnected representation cluster is retrieved and evidence preserving referential unity is omitted from the effective evidence set."@en ;
@@ -230,7 +230,7 @@ rag:Retrieval_SplitFailure
 rag:GenerationSynthesis_SplitFailure
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:SplitFailure ;
+    map:targetConcept dio-odi:SplitFailure ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Split Failure when evidence for one referent is presented as two or more independent identities."@en ;
@@ -239,7 +239,7 @@ rag:GenerationSynthesis_SplitFailure
 rag:RerankingContextAssembly_EntityOmission
     a map:MappingAssertion ;
     map:sourceCondition rag:RerankingContextAssembly ;
-    map:targetConcept dio:EntityOmission ;
+    map:targetConcept dio-odi:EntityOmission ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Reranking and context assembly may contribute to Entity Omission when sufficient evidence for an entity is present in the effective observation domain but is suppressed or underweighted in the context used for generation."@en ;
@@ -248,7 +248,7 @@ rag:RerankingContextAssembly_EntityOmission
 rag:GenerationSynthesis_EntityOmission
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:EntityOmission ;
+    map:targetConcept dio-odi:EntityOmission ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Entity Omission when sufficient representational grounds are available in the effective context but no relevant entity reconstruction is produced."@en ;
@@ -257,7 +257,7 @@ rag:GenerationSynthesis_EntityOmission
 rag:RerankingContextAssembly_SemanticFragmentation
     a map:MappingAssertion ;
     map:sourceCondition rag:RerankingContextAssembly ;
-    map:targetConcept dio:SemanticFragmentation ;
+    map:targetConcept dio-odi:SemanticFragmentation ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Reranking and context assembly may contribute to Semantic Fragmentation when compatible representations of one referent are separated, imbalanced, or juxtaposed without preserving their semantic coherence."@en ;
@@ -266,7 +266,7 @@ rag:RerankingContextAssembly_SemanticFragmentation
 rag:GenerationSynthesis_SemanticFragmentation
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:SemanticFragmentation ;
+    map:targetConcept dio-odi:SemanticFragmentation ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Semantic Fragmentation when evidence recognized as belonging to one referent is not integrated into a coherent identity reconstruction."@en ;
@@ -275,7 +275,7 @@ rag:GenerationSynthesis_SemanticFragmentation
 rag:SegmentationIndexing_TemporalDiscontinuity
     a map:MappingAssertion ;
     map:sourceCondition rag:SegmentationIndexing ;
-    map:targetConcept dio:TemporalDiscontinuity ;
+    map:targetConcept dio-odi:TemporalDiscontinuity ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Segmentation and indexing may contribute to Temporal Discontinuity when successive legitimate states of one referent are indexed without links preserving identity continuity across transformation."@en ;
@@ -284,7 +284,7 @@ rag:SegmentationIndexing_TemporalDiscontinuity
 rag:Retrieval_TemporalDiscontinuity
     a map:MappingAssertion ;
     map:sourceCondition rag:Retrieval ;
-    map:targetConcept dio:TemporalDiscontinuity ;
+    map:targetConcept dio-odi:TemporalDiscontinuity ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Retrieval may contribute to Temporal Discontinuity when evidence connecting legitimate successive states of one referent is not selected into the effective evidence set."@en ;
@@ -293,7 +293,7 @@ rag:Retrieval_TemporalDiscontinuity
 rag:RerankingContextAssembly_TemporalDiscontinuity
     a map:MappingAssertion ;
     map:sourceCondition rag:RerankingContextAssembly ;
-    map:targetConcept dio:TemporalDiscontinuity ;
+    map:targetConcept dio-odi:TemporalDiscontinuity ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Reranking and context assembly may contribute to Temporal Discontinuity when temporally successive states are separated or presented without continuity-preserving context."@en ;
@@ -302,7 +302,7 @@ rag:RerankingContextAssembly_TemporalDiscontinuity
 rag:GenerationSynthesis_TemporalDiscontinuity
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:TemporalDiscontinuity ;
+    map:targetConcept dio-odi:TemporalDiscontinuity ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Temporal Discontinuity when legitimate transformations of one referent are reconstructed as unrelated identities."@en ;
@@ -311,7 +311,7 @@ rag:GenerationSynthesis_TemporalDiscontinuity
 rag:Retrieval_TemporalMisalignment
     a map:MappingAssertion ;
     map:sourceCondition rag:Retrieval ;
-    map:targetConcept dio:TemporalMisalignment ;
+    map:targetConcept dio-odi:TemporalMisalignment ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Retrieval may contribute to Temporal Misalignment when temporally inappropriate but otherwise valid representations are selected for a query requiring another temporal state."@en ;
@@ -320,7 +320,7 @@ rag:Retrieval_TemporalMisalignment
 rag:RerankingContextAssembly_TemporalMisalignment
     a map:MappingAssertion ;
     map:sourceCondition rag:RerankingContextAssembly ;
-    map:targetConcept dio:TemporalMisalignment ;
+    map:targetConcept dio-odi:TemporalMisalignment ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Reranking and context assembly may contribute to Temporal Misalignment when older or otherwise temporally inappropriate representations dominate the effective context."@en ;
@@ -329,7 +329,7 @@ rag:RerankingContextAssembly_TemporalMisalignment
 rag:GenerationSynthesis_TemporalMisalignment
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:TemporalMisalignment ;
+    map:targetConcept dio-odi:TemporalMisalignment ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Temporal Misalignment when the correct referent is reconstructed using a temporal state inappropriate to the observation situation."@en ;
@@ -338,7 +338,7 @@ rag:GenerationSynthesis_TemporalMisalignment
 rag:QueryInterpretationEntityLinking_ContextualDisplacement
     a map:MappingAssertion ;
     map:sourceCondition rag:QueryInterpretationEntityLinking ;
-    map:targetConcept dio:ContextualDisplacement ;
+    map:targetConcept dio-odi:ContextualDisplacement ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Query interpretation and entity linking may contribute to Contextual Displacement when the request is anchored to a legitimate but contextually secondary identity aspect."@en ;
@@ -347,7 +347,7 @@ rag:QueryInterpretationEntityLinking_ContextualDisplacement
 rag:RerankingContextAssembly_ContextualDisplacement
     a map:MappingAssertion ;
     map:sourceCondition rag:RerankingContextAssembly ;
-    map:targetConcept dio:ContextualDisplacement ;
+    map:targetConcept dio-odi:ContextualDisplacement ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Reranking and context assembly may contribute to Contextual Displacement when evidence for a legitimate but secondary identity aspect outweighs evidence relevant to the current observation context."@en ;
@@ -356,7 +356,7 @@ rag:RerankingContextAssembly_ContextualDisplacement
 rag:GenerationSynthesis_ContextualDisplacement
     a map:MappingAssertion ;
     map:sourceCondition rag:GenerationSynthesis ;
-    map:targetConcept dio:ContextualDisplacement ;
+    map:targetConcept dio-odi:ContextualDisplacement ;
     map:relationType map:MayContributeTo ;
     dcterms:isPartOf rag:Mapping ;
     skos:definition "Generation and synthesis may contribute to Contextual Displacement when a true but contextually secondary identity aspect becomes the dominant reconstruction."@en ;
