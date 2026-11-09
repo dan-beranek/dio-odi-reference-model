@@ -681,9 +681,11 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/mappings/hem-dio/",
         "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
         "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+        "https://vocab.danielberanek.cz/examples/queries.rq",
     ]
     missing = [url for url in required if url not in urls]
     require(not missing, f"Sitemap is missing required pages: {missing}")
+    require("https://vocab.danielberanek.cz/examples/queries.sparql" not in urls, "Legacy .sparql endpoint must not be listed in the sitemap; use the canonical .rq endpoint")
 
     for url, lastmod in urls.items():
         parsed = urlparse(url)
