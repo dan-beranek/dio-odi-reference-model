@@ -1,6 +1,6 @@
 # DIO/ODI Semantic Change Feed
 
-**Feed version:** 0.1.0  
+**Feed version:** 0.1.1  
 **Schema version:** 0.2.0  
 **Status:** Full Hub Changelog coverage plus subsequent release history  
 **Maintainer:** Daniel Beránek  
@@ -14,12 +14,13 @@ It is not a Git commit log. Repository diffs are not authoritative evidence of c
 
 ## Coverage
 
-Version 0.1.0 contains **44 event records** and covers:
+Version 0.1.1 contains **45 event records** and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
-- Subsequent documented vocabulary, mapping, publication, provenance, and Reference Model archive milestones through **7 November 2026**.
+- Subsequent documented vocabulary, mapping, publication, provenance, and Reference Model archive milestones through **9 November 2026**.
 - Initial publication of the public **DIO to DIO** portfolio with ten author-led, model-specific reconstruction analyses, followed by a separate event recording the addition of the eleventh report (Claude Sonnet 5.5) on 7 November 2026.
 - Compound Changelog bullets split into separate records where they describe distinct conceptual, publication, distribution, mapping, or archival events.
+- The live Reference Vocabulary v0.2.2 metadata-only prefix-alignment update on 9 November 2026.
 
 This is complete coverage of the dated Hub Changelog entries, not a claim that every repository commit or every undated intermediate artifact has its own event.
 
