@@ -37,6 +37,7 @@ EXTRA_ENDPOINTS = (
     f"{BASE_URL}/",
     f"{BASE_URL}/llms.txt",
     f"{BASE_URL}/metadata.json",
+    f"{BASE_URL}/sitemap.xml",
 )
 
 

@@ -9,8 +9,10 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
+from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
@@ -595,6 +597,49 @@ def check_semantic_change_feed() -> dict[str, int | str]:
     return {"scf_feed_version": feed["feed_version"], "scf_events": len(events),
             "scf_event_classes": len({event["event_class"] for event in events})}
 
+def check_llms_txt() -> int:
+    source = read_text("llms.txt")
+    metadata = load_json("metadata.json")
+    keywords = load_json("metadata/keywords.json")
+    feed = load_json("semantic-change-feed/events.json")
+    registry = metadata["corpus_metadata_registry"]
+    current_release = metadata["current_archived_release"]
+    previous_release = metadata["previous_archived_release"]
+
+    required_lines = (
+        f"- Current archived Reference Model release: {current_release['version']} — {current_release['doi_url']}",
+        f"- Previous archived Reference Model release: {previous_release['version']} — {previous_release['doi_url']}",
+        f"- Live Reference Vocabulary: {metadata['live_reference_vocabulary_version']} —",
+        f"- Vocabulary included in archived v{current_release['version']}: {metadata['current_archived_reference_vocabulary_version']}",
+        f"- Feed version: {feed['feed_version']};",
+        f"- Current coverage: {feed['event_count']} events;",
+        f"  - Keyword registry version: {keywords['registry_version']}",
+        f"  - Grammar version: {registry['keyword_grammar_version']}",
+    )
+    for expected in required_lines:
+        require(expected in source, f"llms.txt is out of sync with canonical metadata: missing {expected!r}")
+
+    coverage_date = date.fromisoformat(feed["events"][-1]["date"])
+    coverage_label = f"{coverage_date.day} {coverage_date.strftime('%B %Y')}"
+    coverage_line = next(
+        (line for line in source.splitlines() if line.startswith("- Current coverage:")),
+        "",
+    )
+    require(
+        f"through {coverage_label}" in coverage_line,
+        f"llms.txt coverage date is stale; expected the latest event date {coverage_label}",
+    )
+
+    scf_metadata = metadata["semantic_change_feed"]
+    require(
+        scf_metadata["feed_version"] == feed["feed_version"]
+        and scf_metadata["event_count"] == feed["event_count"]
+        and scf_metadata["coverage_through"] == feed["events"][-1]["date"],
+        "metadata.json and Semantic Change Feed events.json are inconsistent",
+    )
+    return len(required_lines) + 2
+
+
 def check_site_homepage() -> int:
     source = read_text("index.html")
     require('<link rel="canonical" href="https://vocab.danielberanek.cz/">' in source,
@@ -616,9 +661,13 @@ def check_sitemap() -> int:
     except ET.ParseError as exc:
         raise AssertionError(f"Invalid sitemap.xml: {exc}") from exc
     namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    nodes = tree.findall(".//sm:url", namespace)
+    locations = [node.findtext("sm:loc", namespaces=namespace) for node in nodes]
+    require(all(locations), "Every sitemap URL entry must contain a loc value")
+    require(len(locations) == len(set(locations)), "Sitemap contains duplicate URL entries")
     urls = {
         node.findtext("sm:loc", namespaces=namespace): node.findtext("sm:lastmod", namespaces=namespace)
-        for node in tree.findall(".//sm:url", namespace)
+        for node in nodes
     }
     required = [
         "https://vocab.danielberanek.cz/",
@@ -635,6 +684,51 @@ def check_sitemap() -> int:
     ]
     missing = [url for url in required if url not in urls]
     require(not missing, f"Sitemap is missing required pages: {missing}")
+
+    for url, lastmod in urls.items():
+        parsed = urlparse(url)
+        require(
+            parsed.scheme == "https" and parsed.netloc.lower() == SITE_HOST,
+            f"Sitemap URL must use the canonical HTTPS host: {url}",
+        )
+        require(bool(lastmod), f"Sitemap entry is missing lastmod: {url}")
+        try:
+            sitemap_date = date.fromisoformat(lastmod)
+        except ValueError as exc:
+            raise AssertionError(f"Sitemap lastmod must be ISO 8601 date: {url} -> {lastmod!r}") from exc
+
+        relative_path = unquote(parsed.path).lstrip("/")
+        if not relative_path:
+            relative_path = "index.html"
+        elif relative_path.endswith("/"):
+            relative_path += "index.html"
+
+        target = (ROOT / relative_path).resolve()
+        try:
+            target.relative_to(ROOT.resolve())
+        except ValueError as exc:
+            raise AssertionError(f"Sitemap URL escapes the repository root: {url}") from exc
+        require(target.is_file(), f"Sitemap URL has no corresponding repository file: {url} -> {relative_path}")
+
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cI", "--", relative_path],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        require(
+            result.returncode == 0 and bool(result.stdout.strip()),
+            f"Could not determine the latest Git modification date for sitemap URL: {url}",
+        )
+        latest_commit_timestamp = datetime.fromisoformat(result.stdout.strip())
+        latest_commit_date = latest_commit_timestamp.astimezone(timezone.utc).date()
+        require(
+            sitemap_date >= latest_commit_date,
+            f"Sitemap lastmod is stale for {url}: {lastmod} is earlier than "
+            f"the latest source change {latest_commit_date.isoformat()}",
+        )
+
     return len(urls)
 
 
@@ -654,6 +748,7 @@ def main() -> int:
         counts.update(check_mapping_graphs())
         counts.update(check_metadata())
         counts.update(check_semantic_change_feed())
+        counts["llms_metadata_checks"] = check_llms_txt()
     except Exception as exc:
         print(f"VALIDATION FAILED: {exc}", file=sys.stderr)
         return 1
