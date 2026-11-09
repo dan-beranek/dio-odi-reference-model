@@ -10,15 +10,15 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi-dcat.ttl</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/docs/concept-map.svg</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.jsonld</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/hem-dio-mapping.jsonld</loc>
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.md</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.jsonld</loc>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.md</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld</loc>
@@ -110,11 +110,11 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/examples/queries.sparql</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/README.md</loc>
@@ -126,7 +126,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/relations.json</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/references.json</loc>
@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/keywords.json</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata.json</loc>
