@@ -145,7 +145,7 @@
       "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
       "canonical_namespace": "https://vocab.danielberanek.cz/dio-odi/#",
       "namespace_document": "https://vocab.danielberanek.cz/dio-odi/",
-      "reference_vocabulary_version": "0.2.1",
+      "reference_vocabulary_version": "0.2.2",
       "publication_date": "2026-10-11",
       "license": "CC-BY-4.0",
       "current_release": {
