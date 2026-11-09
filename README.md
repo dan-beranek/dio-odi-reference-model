@@ -3,7 +3,7 @@
 **Current archived Reference Model release:** v0.8.0 — https://doi.org/10.5281/zenodo.24056601  
 **Previous archived Reference Model release:** v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
 **Earlier archived Reference Model release:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
-**Live Reference Vocabulary:** v0.2.1 — metadata-only update; concept model unchanged from v0.2.0  
+**Live Reference Vocabulary:** v0.2.2 — metadata-only prefix alignment; concept model unchanged  
 **Vocabulary included in archived v0.8.0:** v0.2.1  
 **Earlier archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
 **Earlier archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
@@ -26,7 +26,7 @@ The public site root, [vocab.danielberanek.cz](https://vocab.danielberanek.cz/),
 
 The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities. The archived Reference Model v0.8.0 integrates feed v0.1.0 (44 documented events through 7 November 2026) and JSON Schema v0.2.0; SCF is a Reference Model component, not a separately DOI-identified work.
 
-The live Reference Vocabulary is v0.2.1, a metadata-only update to the v0.2.0 concept model. The current archived Reference Model package is v0.8.0 (https://doi.org/10.5281/zenodo.24056601); its predecessor is v0.7.0 (https://doi.org/10.5281/zenodo.24020300).
+The live Reference Vocabulary is v0.2.2, a metadata-only prefix-alignment update to v0.2.1; the concept model remains unchanged. The current archived Reference Model package is v0.8.0 (https://doi.org/10.5281/zenodo.24056601); its predecessor is v0.7.0 (https://doi.org/10.5281/zenodo.24020300).
 
 ## Concept map
 
