@@ -111,7 +111,8 @@ The namespace is owned by the author and is intended to remain stable independen
 - `docs/terminology.md` — human-readable vocabulary
 - `docs/source-map.md` — concept-to-source provenance
 - `docs/concept-map.mmd` — Mermaid overview
-- `examples/queries.sparql` — example machine queries
+- `examples/queries.rq` — canonical SPARQL query examples (W3C-recommended `.rq` extension; `application/sparql-query`).
+- `examples/queries.sparql` — legacy compatibility copy; use the `.rq` endpoint for canonical access.
 - `mappings/index.html` — public index of derived Application Mappings
 - `mappings/rag-pipeline-mapping.md` — source for Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
 - `mappings/rag-pipeline-mapping.jsonld` — machine-readable RAG mapping representation (introduced in Reference Model v0.3.1)
