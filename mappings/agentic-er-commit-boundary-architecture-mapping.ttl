@@ -1,5 +1,5 @@
 @prefix arc: <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#> .
-@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
+@prefix dio-odi: <https://vocab.danielberanek.cz/dio-odi/#> .
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -897,7 +897,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R001> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:Architecture ;
   rdf:predicate arc:informedBy ;
-  rdf:object dio:DIO ;
+  rdf:object dio-odi:DIO ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§1; §3; §5.2" ;
   arc:interpretationNote "The architecture explicitly draws on the DIO framework as its applied diagnostic basis." ;
@@ -906,7 +906,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R002> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:Architecture ;
   rdf:predicate arc:informedBy ;
-  rdf:object dio:ODI ;
+  rdf:object dio-odi:ODI ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§1; §3; §5.2" ;
   arc:interpretationNote "ODI supplies the conceptual layer for the identity and reconstruction distinctions used by the paper." ;
@@ -915,7 +915,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R003> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:Architecture ;
   rdf:predicate arc:referencesAnalyticalLayer ;
-  rdf:object dio:MVDIO ;
+  rdf:object dio-odi:MVDIO ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§6.1" ;
   arc:interpretationNote "The proposed Supervisor is named as an MVDIO Supervisor Layer; this relation does not imply that the architecture is a complete MVDIO implementation." ;
@@ -951,7 +951,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R007> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:ConstraintBindingFunction ;
   rdf:predicate arc:mapsSelectedDistinctionsFrom ;
-  rdf:object dio:ReconstructionFailureMode ;
+  rdf:object dio-odi:ReconstructionFailureMode ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§3; §5.2" ;
   arc:interpretationNote "The mapping is partial and restricted to selected diagnostic distinctions; it does not cover or redefine the full vocabulary." ;
@@ -960,7 +960,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R008> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:ConstraintBindingFunction ;
   rdf:predicate arc:usesDiagnosticBranch ;
-  rdf:object dio:ReferentialReconstructionFailure ;
+  rdf:object dio-odi:ReferentialReconstructionFailure ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§3; §5.2" ;
   arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
@@ -969,7 +969,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R009> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:ConstraintBindingFunction ;
   rdf:predicate arc:usesDiagnosticBranch ;
-  rdf:object dio:SemanticCoherenceFailure ;
+  rdf:object dio-odi:SemanticCoherenceFailure ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§3; §5.2" ;
   arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
@@ -978,7 +978,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R010> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:ConstraintBindingFunction ;
   rdf:predicate arc:usesDiagnosticBranch ;
-  rdf:object dio:TemporalReconstructionFailure ;
+  rdf:object dio-odi:TemporalReconstructionFailure ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§3; §5.2" ;
   arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
@@ -987,7 +987,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R011> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:ConstraintBindingFunction ;
   rdf:predicate arc:usesDiagnosticBranch ;
-  rdf:object dio:ContextualAdequacyFailure ;
+  rdf:object dio-odi:ContextualAdequacyFailure ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§3; §5.2" ;
   arc:interpretationNote "This diagnostic branch is among the selected input distinctions for domain-governed constraint binding." ;
@@ -1014,7 +1014,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R014> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:DomainPolicy ;
   rdf:predicate arc:scopedTo ;
-  rdf:object dio:ObservationDomain ;
+  rdf:object dio-odi:ObservationDomain ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§3; §5.1; §5.2" ;
   arc:interpretationNote "The applicable policy represents the observation context and relevant temporal conditions." ;
@@ -1023,7 +1023,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R015> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:DomainConfiguredConstraints ;
   rdf:predicate arc:usesConcept ;
-  rdf:object dio:IdentityPreservingConstraints ;
+  rdf:object dio-odi:IdentityPreservingConstraints ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/canonical-reference> ;
   arc:sourceSection "§3; §5.2" ;
   arc:interpretationNote "The mapping reuses the canonical identity-preserving constraints concept without adding a new canonical definition." ;
@@ -1032,14 +1032,14 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R016> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:DomainConfiguredConstraints ;
   rdf:predicate arc:mayOperationalize ;
-  rdf:object dio:ReferentialContinuity ;
+  rdf:object dio-odi:ReferentialContinuity ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§5.2; §7.4" ;
   arc:interpretationNote "Referential continuity is one identity property that domain-configured constraints may need to preserve." ;
   dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R081> a rdf:Statement, arc:RelationAssertion ;
-  rdf:subject dio:EntitySubstitution ;
+  rdf:subject dio-odi:EntitySubstitution ;
   rdf:predicate arc:mapsIllustrativelyTo ;
   rdf:object arc:ExampleReferentCoreferenceConstraint ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
@@ -1048,7 +1048,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
   dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R082> a rdf:Statement, arc:RelationAssertion ;
-  rdf:subject dio:MergeFailure ;
+  rdf:subject dio-odi:MergeFailure ;
   rdf:predicate arc:mapsIllustrativelyTo ;
   rdf:object arc:ExampleReferentCoreferenceConstraint ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
@@ -1057,7 +1057,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
   dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R083> a rdf:Statement, arc:RelationAssertion ;
-  rdf:subject dio:TemporalDiscontinuity ;
+  rdf:subject dio-odi:TemporalDiscontinuity ;
   rdf:predicate arc:mapsIllustrativelyTo ;
   rdf:object arc:ExampleTemporalApplicabilityConstraint ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
@@ -1066,7 +1066,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
   dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R084> a rdf:Statement, arc:RelationAssertion ;
-  rdf:subject dio:TemporalMisalignment ;
+  rdf:subject dio-odi:TemporalMisalignment ;
   rdf:predicate arc:mapsIllustrativelyTo ;
   rdf:object arc:ExampleTemporalApplicabilityConstraint ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
@@ -1075,7 +1075,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
   dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R085> a rdf:Statement, arc:RelationAssertion ;
-  rdf:subject dio:SemanticFragmentation ;
+  rdf:subject dio-odi:SemanticFragmentation ;
   rdf:predicate arc:mapsIllustrativelyTo ;
   rdf:object arc:ExampleMaterialConflictRetentionConstraint ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
@@ -1084,7 +1084,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
   dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R086> a rdf:Statement, arc:RelationAssertion ;
-  rdf:subject dio:ContextualDisplacement ;
+  rdf:subject dio-odi:ContextualDisplacement ;
   rdf:predicate arc:mapsIllustrativelyTo ;
   rdf:object arc:ExampleContextualRelationAdequacyConstraint ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
@@ -1093,7 +1093,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
   dcterms:source <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> .
 
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R087> a rdf:Statement, arc:RelationAssertion ;
-  rdf:subject dio:SplitFailure ;
+  rdf:subject dio-odi:SplitFailure ;
   rdf:predicate arc:mapsIllustrativelyTo ;
   rdf:object arc:ExampleContinuitySupportConstraint ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/illustrative> ;
@@ -1239,7 +1239,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R032> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:ClaimSpecificPromotion ;
   rdf:predicate arc:isScopedBy ;
-  rdf:object dio:ObservationDomain ;
+  rdf:object dio-odi:ObservationDomain ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§5.3" ;
   arc:interpretationNote "Evidence eligibility is bound to observation context and relevant temporal applicability." ;
@@ -2148,7 +2148,7 @@ arc:QuarantineDispositionDecision a arc:Process ;
 <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#assertion/R140> a rdf:Statement, arc:RelationAssertion ;
   rdf:subject arc:DomainConfiguredConstraints ;
   rdf:predicate arc:locallyConfigures ;
-  rdf:object dio:IdentityPreservingConstraints ;
+  rdf:object dio-odi:IdentityPreservingConstraints ;
   arc:epistemicStatus <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#status/specified> ;
   arc:sourceSection "§3; §5.2" ;
   arc:interpretationNote "V_E is a local, domain-supplied configuration of the canonical collective concept; this is not a subclass assertion or a canonical vocabulary extension." ;
