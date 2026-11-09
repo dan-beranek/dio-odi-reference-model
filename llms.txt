@@ -102,9 +102,9 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Technical specification: https://vocab.danielberanek.cz/semantic-change-feed/README.md
 - Purpose: source-backed history of semantic, structural, provenance, mapping, and artifact-state changes; not a Git commit log
 - Boundary: does not replace the Reference Vocabulary, Application Mappings, Corpus Metadata Registry, or immutable Reference Model releases
-- Feed version: 0.1.0; the first structured release of the curated event history, with explicit date basis, preserved invariants, impact, provenance, and lineage
+- Feed version: 0.1.1; current append-only structured history, first published as v0.1.0, with explicit date basis, preserved invariants, impact, provenance, and lineage
 
-- Current coverage: 44 events; full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, and release milestones through 7 November 2026
+- Current coverage: 45 events; full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, and release milestones through 9 November 2026
 
 ## DIO to DIO research portfolio
 
@@ -121,7 +121,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Canonical references: https://vocab.danielberanek.cz/metadata/references.json
 - Distribution representations: https://vocab.danielberanek.cz/metadata/distributions.json
 - Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json
-  - Keyword registry version: 2.4.0
+  - Keyword registry version: 2.5.0
   - Grammar version: 2.0.0
   - Status: canonical-approved
   - Work-specific profile: commit-boundary-paper (34 terms; baseline aligned to Zenodo v1 metadata)
