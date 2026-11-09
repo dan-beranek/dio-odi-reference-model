@@ -1,10 +1,11 @@
 # DIO/ODI Reference Model
 
-**Current archived Reference Model release:** v0.8.0 — https://doi.org/10.5281/zenodo.24056601  
-**Previous archived Reference Model release:** v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
+**Current archived Reference Model release:** v0.9.0 — https://doi.org/10.5281/zenodo.24085589  
+**Previous archived Reference Model release:** v0.8.0 — https://doi.org/10.5281/zenodo.24056601  
+**Earlier archived Reference Model release:** v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
 **Earlier archived Reference Model release:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
 **Live Reference Vocabulary:** v0.2.2 — metadata-only prefix alignment; concept model unchanged  
-**Vocabulary included in archived v0.8.0:** v0.2.1  
+**Vocabulary included in archived v0.9.0:** v0.2.2  
 **Earlier archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
 **Earlier archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
 **Earlier archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
@@ -24,9 +25,9 @@ The repository intentionally begins with **SKOS**. A future OWL layer should add
 
 The public site root, [vocab.danielberanek.cz](https://vocab.danielberanek.cz/), is the top-level overview of the Reference Model site. The [Reference Vocabulary page](https://vocab.danielberanek.cz/dio-odi/) is a distinct child resource identifying the canonical SKOS ConceptScheme; it is not the site's homepage. [Application Mappings](https://vocab.danielberanek.cz/mappings/) form a derived, non-normative layer. The [Corpus Metadata frontend](https://vocab.danielberanek.cz/metadata/) provides a human-readable entry point to the operational registry and its machine-readable records; the [technical registry documentation](https://vocab.danielberanek.cz/metadata/README.md) describes its workflow and governance rules. The wider Manifest and publication corpus is presented separately on the [DIO/ODI Hub](https://danielberanek.cz/manifest-dio/).
 
-The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities. The archived Reference Model v0.8.0 integrates feed v0.1.0 (44 documented events through 7 November 2026) and JSON Schema v0.2.0; SCF is a Reference Model component, not a separately DOI-identified work.
+The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities. The archived Reference Model v0.9.0 integrates feed v0.1.1 (45 documented events through 9 November 2026) and JSON Schema v0.2.0; SCF is a Reference Model component, not a separately DOI-identified work.
 
-The live Reference Vocabulary is v0.2.2, a metadata-only prefix-alignment update to v0.2.1; the concept model remains unchanged. The current archived Reference Model package is v0.8.0 (https://doi.org/10.5281/zenodo.24056601); its predecessor is v0.7.0 (https://doi.org/10.5281/zenodo.24020300).
+The live Reference Vocabulary is v0.2.2, a metadata-only prefix-alignment update to v0.2.1; the concept model remains unchanged. The current archived Reference Model package is v0.9.0 (https://doi.org/10.5281/zenodo.24085589); its predecessor is v0.8.0 (https://doi.org/10.5281/zenodo.24056601).
 
 ## Concept map
 
@@ -180,9 +181,13 @@ In particular:
 
 ## Citation and archival release
 
-**Current archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300
+**Current archived release:** DIO/ODI Reference Model v0.9.0 — https://doi.org/10.5281/zenodo.24085589
 
-**Previous archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+**Previous archived release:** DIO/ODI Reference Model v0.8.0 — https://doi.org/10.5281/zenodo.24056601
+
+**Earlier archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300
+
+**Earlier archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
 
 **Earlier archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
