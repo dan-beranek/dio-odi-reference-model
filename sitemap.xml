@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://vocab.danielberanek.cz/</loc><lastmod>2026-11-07</lastmod></url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
   <url>
     <loc>https://vocab.danielberanek.cz/dio-odi/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl</loc>
@@ -23,7 +26,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/docs/terminology.md</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/docs/source-map.md</loc>
@@ -31,11 +34,11 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/rag-pipeline/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md</loc>
@@ -43,15 +46,15 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.jsonld</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.ttl</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/hem-dio/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md</loc>
@@ -59,11 +62,11 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/hem-dio-mapping.jsonld</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/hem-dio-mapping.ttl</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/hem-dio/bridge.svg</loc>
@@ -71,7 +74,7 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.md</loc>
@@ -79,15 +82,15 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.jsonld</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.ttl</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/agentic-er-architecture/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/agentic-er-architecture/architecture.svg</loc>
@@ -99,11 +102,11 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.jsonld</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/mappings/agentic-er-commit-boundary-architecture-mapping.ttl</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/examples/queries.sparql</loc>
@@ -111,12 +114,15 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/</loc>
-    <loc>https://vocab.danielberanek.cz/metadata/README.md</loc>
     <lastmod>2026-11-07</lastmod>
   </url>
   <url>
+    <loc>https://vocab.danielberanek.cz/metadata/README.md</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
     <loc>https://vocab.danielberanek.cz/metadata/works.json</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/relations.json</loc>
@@ -136,9 +142,18 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata.json</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/semantic-change-feed/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/semantic-change-feed/events.json</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/semantic-change-feed/schema.json</loc>
     <lastmod>2026-11-07</lastmod>
   </url>
-  <url><loc>https://vocab.danielberanek.cz/semantic-change-feed/</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://vocab.danielberanek.cz/semantic-change-feed/events.json</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://vocab.danielberanek.cz/semantic-change-feed/schema.json</loc><lastmod>2026-11-07</lastmod></url>
 </urlset>
