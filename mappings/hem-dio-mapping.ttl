@@ -62,7 +62,7 @@ hem:Mapping
     schema:url <https://vocab.danielberanek.cz/mappings/hem-dio/> ;
     schema:author <https://danielberanek.cz/#person> ;
     schema:dateModified "2026-11-09"^^xsd:date ;
-    schema:creativeWorkStatus "Introduced in DIO/ODI Reference Model v0.3.0 and included in archived v0.3.2; carried forward in archived v0.4.0, v0.5.0, and current archived v0.7.0"@en ;
+    schema:creativeWorkStatus "Introduced in DIO/ODI Reference Model v0.3.0 and included in archived v0.3.2; carried forward in archived v0.4.0, v0.5.0, v0.6.0, v0.7.0, and v0.8.0; current archived v0.9.0"@en ;
     schema:isPartOf [
         a schema:CreativeWork ;
         schema:name "DIO/ODI Reference Model v0.9.0"@en ;
