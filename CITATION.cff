@@ -2,9 +2,8 @@ cff-version: 1.2.0
 message: "If you use this reference model or its derived application mappings, please cite this release and the underlying DIO/ODI publications."
 title: "DIO/ODI Reference Model"
 type: software
-version: "0.8.0"
-doi: "10.5281/zenodo.24056601"
-abstract: "Version 0.8.0 of the DIO/ODI Reference Model is a machine-readable SKOS-first reference layer for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI), with stable concept URIs, Turtle/RDF and JSON-LD serializations, provenance metadata, and explicitly separated non-normative application mappings. It carries forward Reference Vocabulary v0.2.1 and the existing RAG, HEM, Commit-Boundary × Policy-as-Code, and Agentic ER mappings without claiming empirical validation. This release adds the Semantic Change Feed (SCF), a curated append-only event registry of 44 documented events, with a human-readable frontend and JSON Schema v0.2.0 (feed v0.1.0). The SCF strengthens temporal and change provenance while remaining separate from the canonical vocabulary and derived mappings; it is not a Git commit log or a separate standalone publication."
+version: "0.9.0"
+abstract: "Version 0.9.0 of the DIO/ODI Reference Model is a machine-readable SKOS-first reference layer for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI), with stable concept URIs, Turtle/RDF and JSON-LD serializations, provenance metadata, and explicitly separated non-normative application mappings. It carries forward Reference Vocabulary v0.2.2 with the disambiguated preferred compact prefix dio-odi, preserving the canonical namespace URI and all 40 concept URIs, together with the RAG, HEM, Commit-Boundary × Policy-as-Code, and Agentic ER mappings. This release updates the integrated Semantic Change Feed (SCF) to v0.1.1 with 45 documented events, a human-readable frontend, and JSON Schema v0.2.0. The SCF strengthens temporal and change provenance while remaining separate from the canonical vocabulary and derived mappings; it is not a Git commit log or a separate standalone publication. The Reference Model remains SKOS-first and makes no claim of implementation or empirical validation for its analytical mappings."
 authors:
   - family-names: "Beránek"
     given-names: "Daniel"
