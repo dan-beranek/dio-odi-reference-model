@@ -2,10 +2,10 @@
 
 **Artifact type:** derived architecture mapping  
 **Version:** 0.3.1  
-**Status:** author-curated, non-normative mapping; live version 0.3.1 is a provenance-only update and is included in archived Reference Model v0.7.0; earlier version 0.3.0 remains archived in Reference Model v0.6.0  
+**Status:** author-curated, non-normative mapping; live version 0.3.1 is a provenance-only update, first included in archived Reference Model v0.7.0 and carried forward in v0.8.0 and v0.9.0; earlier version 0.3.0 remains archived in Reference Model v0.6.0  
 **Canonical namespace:** `https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#`  
 **Public source paper:** Daniel Beránek, *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution*, arXiv [version 2](https://arxiv.org/abs/2610.37407v2) (5 November 2026); stable Concept URL: [arXiv:2610.37407](https://arxiv.org/abs/2610.37407). Earlier Zenodo version 1 record: [10.5281/zenodo.23580733](https://zenodo.org/records/23580733). **Section-level source:** production manuscript `Constraining_the_Commit_Boundary_v55_production.md`, dated 4 November 2026 and retained as the provenance source for the mapping's section anchors.  
-**Reference Model:** current archive v0.7.0 — [Zenodo DOI](https://doi.org/10.5281/zenodo.24020300); Reference Vocabulary v0.2.1 (metadata-only update to the v0.2.0 concept model). Earlier mapping v0.3.0 and Vocabulary v0.2.0 remain in archived Reference Model v0.6.0 — [Zenodo DOI](https://doi.org/10.5281/zenodo.23966487)  
+**Reference Model:** current archive v0.9.0 — [Zenodo DOI](https://doi.org/10.5281/zenodo.24085589); Reference Vocabulary v0.2.2 (metadata-only prefix alignment to v0.2.1; concept model unchanged). Previous archive v0.8.0 contains Vocabulary v0.2.1. Earlier mapping v0.3.0 and Vocabulary v0.2.0 remain in archived Reference Model v0.6.0 — [Zenodo DOI](https://doi.org/10.5281/zenodo.23966487)  
 **Model size:** 120 local architecture concepts; 206 qualified relation assertions  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
@@ -301,7 +301,7 @@ The JSON-LD graph contains 120 local architecture concepts and 206 qualified rel
 
 2. Beránek, D. (2026, October 25). *DIO/ODI Commit-Boundary Contract × Policy-as-Code Authorization* [Application mapping]. DIO/ODI Reference Model. https://vocab.danielberanek.cz/mappings/commit-boundary-policy/.
 
-3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.7.0; includes mapping v0.3.1 and Vocabulary v0.2.1) [Software]. Zenodo. DOI [10.5281/zenodo.24020300](https://doi.org/10.5281/zenodo.24020300).
+3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.9.0; includes mapping v0.3.1 and Vocabulary v0.2.2) [Software]. Zenodo. DOI [10.5281/zenodo.24085589](https://doi.org/10.5281/zenodo.24085589).
 4. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0; includes earlier mapping v0.3.0 and Vocabulary v0.2.0) [Software; previous archived release]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
 5. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.5.0) [Software]. Zenodo. DOI [10.5281/zenodo.23643845](https://doi.org/10.5281/zenodo.23643845).
 
@@ -311,4 +311,4 @@ Section-level anchors align with production manuscript v55 dated 4 November 2026
 ---
 
 **Author:** Daniel Beránek · ORCID 0009-0004-0050-0264  
-**Status note:** mapping v0.3.1, updated on 6 November 2026 for public-source provenance. The 120 local architecture concepts and 206 qualified relation assertions are unchanged; mapping v0.3.1 is included in archived Reference Model v0.7.0, while version 0.3.0 remains archived in Reference Model v0.6.0. This is a derived, non-normative architecture representation. It does not modify the DIO/ODI Reference Vocabulary and does not claim an implemented or empirically validated system.
+**Status note:** mapping v0.3.1, updated on 6 November 2026 for public-source provenance. The 120 local architecture concepts and 206 qualified relation assertions are unchanged; mapping v0.3.1 was first included in archived Reference Model v0.7.0 and carried forward in v0.8.0 and v0.9.0, while version 0.3.0 remains archived in Reference Model v0.6.0. This is a derived, non-normative architecture representation. It does not modify the DIO/ODI Reference Vocabulary and does not claim an implemented or empirically validated system.
