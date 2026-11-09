@@ -25,7 +25,7 @@ arc:Mapping a schema:TechArticle ;
   arc:empiricalValidationStatus "not-empirically-validated" ;
   arc:sourceManuscriptVersion "constraining_the_commit_boundary_v55 (production manuscript, 2026-11-04)" ;
   arc:publicSourceVersion "arXiv:2610.37407v2 (version date 2026-11-05); production manuscript v55 remains the section-level provenance source for mapping anchors" ;
-  arc:canonicalReferenceLayer "DIO/ODI Reference Vocabulary v0.2.1 (metadata-only update to v0.2.0); Reference Model v0.7.0" ;
+  arc:canonicalReferenceLayer "DIO/ODI Reference Vocabulary v0.2.2 (metadata-only prefix alignment to v0.2.1; concept model unchanged); Reference Model v0.9.0" ;
   arc:archivedIn <https://doi.org/10.5281/zenodo.24020300> ;
   arc:formsCoordinatedResearchArtifactWith <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> ;
   arc:formalizesArchitectureSpecifiedIn <https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55> ;
