@@ -1,8 +1,8 @@
 # Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline
 
-**Status:** Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0, retained in archived v0.3.x releases. Iterative/hypothesis-conditioned evidence-acquisition extension added on 25 October 2026, first included in archived v0.4.0, and carried forward in archived v0.5.0 v0.6.0, and v0.7.0.  
-**Current archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
-**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
+**Status:** Base mapping introduced and archived in DIO/ODI Reference Model v0.2.0, retained in archived v0.3.x releases. Iterative/hypothesis-conditioned evidence-acquisition extension added on 25 October 2026, first included in archived v0.4.0, and carried forward in archived v0.5.0, v0.6.0, v0.7.0, and v0.8.0; included in current archived v0.9.0.  
+**Current archived release:** DIO/ODI Reference Model v0.9.0 — https://doi.org/10.5281/zenodo.24085589  
+**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.8.0 — https://doi.org/10.5281/zenodo.24056601  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external technical domain and does not modify their definitions or relations.  
 **Scope:** Derived mapping; not a normative redefinition of DIO, ODI, RAG, or the Reconstruction Failure Mode taxonomy.  
 **JSON-LD:** https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.jsonld  
@@ -168,11 +168,11 @@ Its narrower claim is that the DIO Reconstruction Failure Mode taxonomy provides
 
 1. Beránek, D. (2026, 5 November). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 2]. arXiv. [arXiv:2610.37407v2](https://arxiv.org/abs/2610.37407v2). Concept DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Earlier Zenodo version 1 record [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
 
-2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.7.0) [Software]. Zenodo. DOI [10.5281/zenodo.24020300](https://doi.org/10.5281/zenodo.24020300).
+2. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.9.0) [Software]. Zenodo. DOI [10.5281/zenodo.24085589](https://doi.org/10.5281/zenodo.24085589).
 
 3. Beránek, D. (2026). *DIO/ODI Reference Model* (Version 0.6.0) [Software; previous archived release]. Zenodo. DOI [10.5281/zenodo.23966487](https://doi.org/10.5281/zenodo.23966487).
 
-4. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.1; included in archived Reference Model v0.7.0; version 0.2.0 included in archived v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
+4. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.2; included in archived Reference Model v0.9.0; previous archived v0.8.0 includes v0.2.1; version 0.2.0 included in archived v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
 
 4. Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)*. Zenodo. DOI [10.5281/zenodo.23269323](https://doi.org/10.5281/zenodo.23269323).
 

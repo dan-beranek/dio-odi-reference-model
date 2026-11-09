@@ -1,8 +1,8 @@
-# DIO/ODI terminology — v0.2.1
+# DIO/ODI terminology — v0.2.2
 
 This file is the human-readable companion to `dio-odi-skos.ttl`.
 
-Version 0.2.1 is a metadata-only update. It preserves the concept inventory and semantic relations of v0.2.0.
+Version 0.2.2 is a metadata-only namespace-prefix alignment to v0.2.1. It preserves the concept inventory and semantic relations of v0.2.0.
 
 ## Discipline and models
 

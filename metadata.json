@@ -2,7 +2,7 @@
   "title": "DIO/ODI Reference Model",
   "site_homepage": "https://vocab.danielberanek.cz/",
   "vocabulary_landing_page": "https://vocab.danielberanek.cz/dio-odi/",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "status": "archived",
   "namespace": "https://vocab.danielberanek.cz/dio-odi/#",
   "repository": "https://github.com/dan-beranek/dio-odi-reference-model",
@@ -14,8 +14,8 @@
     "affiliation": "Independent Researcher, Brno, Czech Republic",
     "email": "dan@danielberanek.cz"
   },
-  "reference_model_version": "0.8.0",
-  "reference_vocabulary_version": "0.2.1",
+  "reference_model_version": "0.9.0",
+  "reference_vocabulary_version": "0.2.2",
   "derived_application_mappings": [
     {
       "title": "Application Mapping: DIO Reconstruction Failure Modes × RAG Pipeline",
@@ -23,14 +23,14 @@
       "frontend": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
       "relation": "derived-application-layer",
       "introduced_in": "0.2.0",
-      "release_status": "included-in-0.8.0",
-      "previous_archived_release_doi": "10.5281/zenodo.24020300",
+      "release_status": "included-in-0.9.0",
+      "previous_archived_release_doi": "10.5281/zenodo.24056601",
       "machine_readable_metadata": "mappings/rag-pipeline-mapping.jsonld",
       "machine_readable_metadata_introduced_in": "0.3.1",
       "turtle_rdf": "mappings/rag-pipeline-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
       "introduced_archived_release_doi": "10.5281/zenodo.23282752",
-      "archived_release_doi": "10.5281/zenodo.24056601",
+      "archived_release_doi": "10.5281/zenodo.24085589",
       "base_mapping_first_included_in": "0.2.0",
       "live_extension_included_in": "0.4.0",
       "earlier_archived_release_doi": "10.5281/zenodo.23300703",
@@ -45,12 +45,12 @@
       "external_source_doi": "10.1016/j.datak.2026.102575",
       "relation": "derived-application-layer",
       "introduced_in": "0.3.0",
-      "release_status": "included-in-0.8.0",
+      "release_status": "included-in-0.9.0",
       "machine_readable_metadata_introduced_in": "0.3.0",
       "turtle_rdf": "mappings/hem-dio-mapping.ttl",
       "turtle_rdf_introduced_in": "0.3.1",
-      "previous_archived_release_doi": "10.5281/zenodo.24020300",
-      "archived_release_doi": "10.5281/zenodo.24056601",
+      "previous_archived_release_doi": "10.5281/zenodo.24056601",
+      "archived_release_doi": "10.5281/zenodo.24085589",
       "earlier_archived_release_doi": "10.5281/zenodo.23300703",
       "first_archived_release_doi": "10.5281/zenodo.23289615"
     },
@@ -60,12 +60,12 @@
       "frontend": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
       "relation": "derived-application-layer",
       "introduced_in": "0.4.0",
-      "release_status": "included-in-0.8.0",
-      "archived_release_doi": "10.5281/zenodo.24056601",
+      "release_status": "included-in-0.9.0",
+      "archived_release_doi": "10.5281/zenodo.24085589",
       "machine_readable_metadata": "mappings/commit-boundary-policy-mapping.jsonld",
       "turtle_rdf": "mappings/commit-boundary-policy-mapping.ttl",
       "first_archived_release_doi": "10.5281/zenodo.23632619",
-      "previous_archived_release_doi": "10.5281/zenodo.24020300"
+      "previous_archived_release_doi": "10.5281/zenodo.24056601"
     },
     {
       "title": "Application Mapping: DIO/ODI-Informed Agentic ER Commit-Boundary Architecture",
@@ -73,27 +73,32 @@
       "frontend": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
       "relation": "derived-architecture-layer",
       "mapping_version": "0.3.1",
-      "release_status": "included-in-0.8.0",
+      "release_status": "included-in-0.9.0",
       "machine_readable_metadata": "mappings/agentic-er-commit-boundary-architecture-mapping.jsonld",
       "turtle_rdf": "mappings/agentic-er-commit-boundary-architecture-mapping.ttl",
       "architecture_svg": "mappings/agentic-er-architecture/architecture.svg",
       "local_architecture_concepts": 120,
       "qualified_relation_assertions": 206,
       "source_alignment": "public arXiv v2 (2026-11-05); production manuscript v55 (2026-11-04) retained as the section-level provenance source",
-      "canonical_reference_vocabulary_version": "0.2.1",
+      "canonical_reference_vocabulary_version": "0.2.2",
       "canonical_vocabulary_modified": false,
-      "archived_release_doi": "10.5281/zenodo.24056601",
-      "previous_archived_release_doi": "10.5281/zenodo.24020300"
+      "archived_release_doi": "10.5281/zenodo.24085589",
+      "previous_archived_release_doi": "10.5281/zenodo.24056601"
     }
   ],
   "application_mappings_index": "https://vocab.danielberanek.cz/mappings/",
   "archive_status": "archived",
   "previous_archived_release": {
-    "version": "0.7.0",
-    "doi": "10.5281/zenodo.24020300",
-    "doi_url": "https://doi.org/10.5281/zenodo.24020300"
+    "version": "0.8.0",
+    "doi": "10.5281/zenodo.24056601",
+    "doi_url": "https://doi.org/10.5281/zenodo.24056601"
   },
   "archived_release_history": [
+    {
+      "version": "0.9.0",
+      "doi": "10.5281/zenodo.24085589",
+      "doi_url": "https://doi.org/10.5281/zenodo.24085589"
+    },
     {
       "version": "0.8.0",
       "doi": "10.5281/zenodo.24056601",
@@ -152,31 +157,33 @@
     "keyword_grammar_status": "canonical-approved"
   },
   "current_release": {
-    "version": "0.8.0",
+    "version": "0.9.0",
     "archive_status": "archived",
-    "doi": "10.5281/zenodo.24056601",
-    "doi_url": "https://doi.org/10.5281/zenodo.24056601"
+    "doi": "10.5281/zenodo.24085589",
+    "doi_url": "https://doi.org/10.5281/zenodo.24085589",
+    "publication_date": "2026-11-09"
   },
-  "release_doi": "10.5281/zenodo.24056601",
-  "release_doi_url": "https://doi.org/10.5281/zenodo.24056601",
+  "release_doi": "10.5281/zenodo.24085589",
+  "release_doi_url": "https://doi.org/10.5281/zenodo.24085589",
   "current_archived_release": {
-    "version": "0.8.0",
-    "doi": "10.5281/zenodo.24056601",
-    "doi_url": "https://doi.org/10.5281/zenodo.24056601"
+    "version": "0.9.0",
+    "doi": "10.5281/zenodo.24085589",
+    "doi_url": "https://doi.org/10.5281/zenodo.24085589",
+    "publication_date": "2026-11-09"
   },
-  "current_archived_reference_vocabulary_version": "0.2.1",
-  "live_reference_vocabulary_version": "0.2.1",
+  "current_archived_reference_vocabulary_version": "0.2.2",
+  "live_reference_vocabulary_version": "0.2.2",
   "semantic_change_feed": {
     "title": "DIO/ODI Semantic Change Feed",
     "frontend": "https://vocab.danielberanek.cz/semantic-change-feed/",
     "events_json": "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
     "schema_json": "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
-    "feed_version": "0.1.0",
+    "feed_version": "0.1.1",
     "schema_version": "0.2.0",
-    "event_count": 44,
-    "coverage_through": "2026-11-07",
-    "status": "included-in-0.8.0",
-    "target_reference_model_release": "0.8.0",
+    "event_count": 45,
+    "coverage_through": "2026-11-09",
+    "status": "included-in-0.9.0",
+    "target_reference_model_release": "0.9.0",
     "license": "CC-BY-4.0"
   }
 }

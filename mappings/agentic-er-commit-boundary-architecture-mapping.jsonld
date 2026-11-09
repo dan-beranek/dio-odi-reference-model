@@ -51,7 +51,7 @@
       "schema:url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
       "schema:version": "0.3.1",
       "schema:dateCreated": "2026-11-03",
-      "schema:dateModified": "2026-11-07",
+      "schema:dateModified": "2026-11-09",
       "schema:inLanguage": "en",
       "schema:license": "https://creativecommons.org/licenses/by/4.0/",
       "schema:author": {
@@ -63,8 +63,8 @@
       "schema:isPartOf": {
         "@type": "schema:CreativeWork",
         "schema:name": "DIO/ODI Reference Model",
-        "schema:version": "0.7.0",
-        "schema:url": "https://doi.org/10.5281/zenodo.24020300",
+        "schema:version": "0.9.0",
+        "schema:url": "https://doi.org/10.5281/zenodo.24085589",
         "schema:sameAs": "https://github.com/dan-beranek/dio-odi-reference-model"
       },
       "schema:isBasedOn": [
@@ -75,7 +75,7 @@
         },
         {
           "@type": "schema:CreativeWork",
-          "schema:name": "DIO/ODI Reference Vocabulary v0.2.1",
+          "schema:name": "DIO/ODI Reference Vocabulary v0.2.2",
           "schema:url": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary"
         }
       ],
@@ -85,7 +85,7 @@
       },
       "arc:sourceManuscriptVersion": "Constraining_the_Commit_Boundary_v55_production.md (production manuscript, 2026-11-04; prepared for arXiv v2)",
       "arc:publicSourceVersion": "arXiv:2610.37407v2 (version date 2026-11-05); production manuscript v55 remains the section-level provenance source for mapping anchors",
-      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.1 (metadata-only update to v0.2.0); DIO/ODI Reference Model v0.7.0",
+      "arc:canonicalReferenceLayer": "DIO/ODI Reference Vocabulary v0.2.2 (metadata-only prefix alignment to v0.2.1; concept model unchanged); DIO/ODI Reference Model v0.9.0",
       "archivedIn": "https://doi.org/10.5281/zenodo.24020300",
       "formsCoordinatedResearchArtifactWith": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",
       "formalizesArchitectureSpecifiedIn": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#source/constraining_the_commit_boundary_v55",

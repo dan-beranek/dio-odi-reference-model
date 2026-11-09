@@ -25,4 +25,4 @@ This is a metadata- and serialization-only update. The canonical namespace URI r
 
 The canonical ConceptScheme URI and all 40 concept URIs remain unchanged. Labels, definitions, notes, hierarchy, provenance, and the semantics of all derived Application Mappings are preserved. Only the compact prefix used to abbreviate the existing IRIs changes.
 
-The archived Reference Model v0.8.0 remains an immutable snapshot containing Reference Vocabulary v0.2.1. This live vocabulary update does not rewrite that archive; v0.2.2 can be included in a subsequent Reference Model archive.
+The archived Reference Model v0.9.0 includes Reference Vocabulary v0.2.2. The previous archived Reference Model v0.8.0 remains an immutable snapshot containing v0.2.1; this vocabulary update does not rewrite that archive.

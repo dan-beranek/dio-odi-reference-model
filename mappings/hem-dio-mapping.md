@@ -1,8 +1,8 @@
 # Application Mapping: HEM Heterogeneity Taxonomy × DIO Reconstruction Consequences
 
-**Status:** Derived application layer introduced in DIO/ODI Reference Model v0.3.0, included in v0.3.2, and carried forward in archived v0.4.0, v0.5.0, v0.6.0, and v0.7.0  
-**Current archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
-**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
+**Status:** Derived application layer introduced in DIO/ODI Reference Model v0.3.0, included in v0.3.2, and carried forward in archived v0.4.0, v0.5.0, v0.6.0, v0.7.0, and v0.8.0; included in current archived v0.9.0  
+**Current archived release:** DIO/ODI Reference Model v0.9.0 — https://doi.org/10.5281/zenodo.24085589  
+**Previous archived release containing this mapping:** DIO/ODI Reference Model v0.8.0 — https://doi.org/10.5281/zenodo.24056601  
 **Relation to the reference vocabulary:** This mapping is not part of the canonical DIO/ODI Reference Vocabulary. It applies vocabulary concepts to an external analytical framework and does not modify their definitions, hierarchy, or relations.  
 **Scope:** Diagnostic mapping between heterogeneity conditions identified in Heterogeneous Entity Matching (HEM) and possible DIO reconstruction consequences. It is not a claim of taxonomic equivalence or deterministic causality.  
 **JSON-LD:** https://vocab.danielberanek.cz/mappings/hem-dio-mapping.jsonld  
@@ -90,7 +90,7 @@ The mapping is an analytical projection: it uses HEM as an externally developed 
 
 ## References
 
-1. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* (Reference Model v0.1.0; includes Reference Vocabulary v0.1.0). Zenodo. Version DOI [10.5281/zenodo.23272898](https://doi.org/10.5281/zenodo.23272898); Reference Model Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). Current live vocabulary: [version 0.2.1](https://vocab.danielberanek.cz/dio-odi/); archived Reference Model v0.7.0 includes vocabulary v0.2.1, while the previous v0.6.0 archive includes v0.2.0.
+1. Beránek, D. (2026). *DIO/ODI Reference Model: Canonical SKOS Vocabulary and Serialization* (Reference Model v0.1.0; includes Reference Vocabulary v0.1.0). Zenodo. Version DOI [10.5281/zenodo.23272898](https://doi.org/10.5281/zenodo.23272898); Reference Model Concept DOI [10.5281/zenodo.23272897](https://doi.org/10.5281/zenodo.23272897). Current live vocabulary: [version 0.2.2](https://vocab.danielberanek.cz/dio-odi/); archived Reference Model v0.9.0 includes vocabulary v0.2.2, the previous v0.8.0 archive includes v0.2.1, and v0.6.0 includes v0.2.0.
 
 2. Beránek, D. (2026). *From Entity Resolution Anomalies to Reconstruction Failure Modes: A Taxonomic Note Following Minimum Viable Digital Identity Optimization (DIO)*. Zenodo. DOI [10.5281/zenodo.23269323](https://doi.org/10.5281/zenodo.23269323).
 
