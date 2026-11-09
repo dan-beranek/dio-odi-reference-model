@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.12",
+  "registry_version": "1.8.13",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -149,16 +149,25 @@
       "publication_date": "2026-10-11",
       "license": "CC-BY-4.0",
       "current_release": {
-        "version": "0.8.0",
-        "doi": "10.5281/zenodo.24056601",
-        "publication_date": "2026-11-08",
-        "status": "archived",
-        "reference_vocabulary_version": "0.2.1",
-        "semantic_change_feed_version": "0.1.0",
+        "version": "0.9.0",
+        "doi": "10.5281/zenodo.24085589",
+        "publication_date": "2026-11-09",
+        "reference_vocabulary_version": "0.2.2",
+        "semantic_change_feed_version": "0.1.1",
         "semantic_change_feed_schema_version": "0.2.0",
-        "semantic_change_feed_event_count": 44
+        "semantic_change_feed_event_count": 45,
+        "status": "archived"
       },
       "releases": [
+        {
+          "version": "0.9.0",
+          "doi": "10.5281/zenodo.24085589",
+          "publication_date": "2026-11-09",
+          "reference_vocabulary_version": "0.2.2",
+          "semantic_change_feed_version": "0.1.1",
+          "semantic_change_feed_schema_version": "0.2.0",
+          "semantic_change_feed_event_count": 45
+        },
         {
           "version": "0.8.0",
           "doi": "10.5281/zenodo.24056601",
@@ -236,15 +245,7 @@
           "reference_model_release_version": "0.2.0",
           "reference_model_release_doi": "10.5281/zenodo.23282752"
         }
-      ],
-      "release_candidate": {
-        "version": "0.9.0",
-        "status": "prepared",
-        "reference_vocabulary_version": "0.2.2",
-        "semantic_change_feed_version": "0.1.1",
-        "semantic_change_feed_schema_version": "0.2.0",
-        "semantic_change_feed_event_count": 45
-      }
+      ]
     }
   ]
 }
