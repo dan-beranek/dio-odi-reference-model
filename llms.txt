@@ -49,6 +49,7 @@
 - Schema.org Dataset structured data: embedded in the vocabulary landing page for Google Dataset Search
 - Human-readable terminology: https://vocab.danielberanek.cz/docs/terminology.md
 - Concept-to-source map: https://vocab.danielberanek.cz/docs/source-map.md
+- Example SPARQL queries (`.rq`, `application/sparql-query`): https://vocab.danielberanek.cz/examples/queries.rq
 - Concept map: https://vocab.danielberanek.cz/docs/concept-map.svg
 
 ## Derived application mappings
