@@ -1,10 +1,10 @@
 {
-  "feed_version": "0.1.0",
+  "feed_version": "0.1.1",
   "schema_version": "0.2.0",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-07",
+  "generated_on": "2026-11-09",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, and Reference Model release events through 7 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, and Reference Model release events through 9 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 44,
+  "event_count": 45,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -2633,6 +2633,74 @@
       "lineage": {
         "related_to": [
           "SCF-2026-042"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-045",
+      "date": "2026-11-09",
+      "date_basis": "version_publication_date",
+      "event_class": "Provenance",
+      "change_type": "synchronized",
+      "title": "Reference Vocabulary v0.2.2 adopts the unambiguous dio-odi namespace prefix",
+      "summary": "The preferred compact namespace prefix changes from dio to dio-odi and is synchronized across the canonical Turtle, JSON-LD, embedded HTML graph, derived Application Mapping Turtle serializations, and SPARQL examples. The namespace URI and all 40 concept URIs remain unchanged.",
+      "scope": [
+        {
+          "component": "Reference Vocabulary v0.2.2",
+          "component_type": "controlled-vocabulary-version",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "Reference Vocabulary v0.2.1 declared dio as its preferred namespace prefix and used dio: as the compact alias in Turtle, JSON-LD, the embedded HTML graph, derived mapping Turtle files, and SPARQL examples.",
+      "after": "Reference Vocabulary v0.2.2 declares dio-odi as its preferred namespace prefix and uses dio-odi: consistently across those representations. The canonical namespace URI and all local concept identifiers remain unchanged.",
+      "preserved_invariants": [
+        "The canonical namespace URI https://vocab.danielberanek.cz/dio-odi/# is unchanged.",
+        "The canonical ConceptScheme URI and all 40 SKOS concept URIs are unchanged.",
+        "Concept labels, definitions, notes, hierarchy, provenance, and the semantics of derived Application Mappings are unchanged.",
+        "The archived Reference Model v0.8.0 remains an immutable snapshot containing Reference Vocabulary v0.2.1."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "Reference Vocabulary",
+          "Application Mapping Turtle serializations",
+          "SPARQL examples"
+        ],
+        "notes": "This is a namespace-prefix metadata and serialization update only. It does not change concept identity, concept semantics, graph relations, or the meaning of any derived mapping. The current archived Reference Model v0.8.0 remains unchanged."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "release-notes",
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "The date is the recorded publication date of Reference Vocabulary v0.2.2 in its release notes. It is not a Hub Changelog date and does not imply a concept-model change.",
+        "sources": [
+          {
+            "label": "Reference Vocabulary v0.2.2 — release notes",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/RELEASE_NOTES_VOCABULARY_v0.2.2.md",
+            "role": "release-note"
+          },
+          {
+            "label": "Canonical Reference Vocabulary — Turtle/SKOS",
+            "url": "https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl",
+            "role": "current-machine-readable-representation"
+          },
+          {
+            "label": "Canonical Reference Vocabulary — public page",
+            "url": "https://vocab.danielberanek.cz/dio-odi/",
+            "role": "current-human-and-machine-readable-representation"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-037"
         ],
         "supersedes": [],
         "corrects": []

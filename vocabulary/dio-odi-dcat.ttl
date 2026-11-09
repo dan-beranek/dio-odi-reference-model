@@ -1,33 +1,33 @@
-@prefix dio: <https://vocab.danielberanek.cz/dio-odi/#> .
+@prefix dio-odi: <https://vocab.danielberanek.cz/dio-odi/#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix schema: <https://schema.org/> .
 
 <https://vocab.danielberanek.cz/dio-odi/#dataset> a dcat:Dataset ;
-  dcterms:title "DIO/ODI Reference Vocabulary v0.2.1"@en ;
-  dcterms:description "Version 0.2.1 of the canonical DIO/ODI SKOS reference vocabulary: 40 concepts with stable concept URIs, labels, definitions, semantic relations, provenance, and historical notes. This metadata-only update preserves the v0.2.0 concept inventory and semantic relations."@en ;
+  dcterms:title "DIO/ODI Reference Vocabulary v0.2.2"@en ;
+  dcterms:description "Version 0.2.2 of the canonical DIO/ODI SKOS reference vocabulary: 40 concepts with stable concept URIs, labels, definitions, semantic relations, provenance, and historical notes. This metadata-only update preserves the v0.2.0 concept inventory and semantic relations."@en ;
   dcterms:identifier <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary> ;
   dcterms:isPartOf <https://doi.org/10.5281/zenodo.23272897> ;
   dcterms:creator <https://danielberanek.cz/#person> ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
   dcterms:issued "2026-11-05"^^xsd:date ;
-  dcterms:modified "2026-11-05"^^xsd:date ;
+  dcterms:modified "2026-11-09"^^xsd:date ;
   dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
-  dcat:version "0.2.1" ;
+  dcat:version "0.2.2" ;
   dcat:landingPage <https://vocab.danielberanek.cz/dio-odi/> ;
   dcterms:conformsTo <https://www.w3.org/TR/skos-reference/> ;
   dcat:distribution <https://vocab.danielberanek.cz/dio-odi/#turtle-distribution>,
                     <https://vocab.danielberanek.cz/dio-odi/#jsonld-distribution> .
 
 <https://vocab.danielberanek.cz/dio-odi/#turtle-distribution> a dcat:Distribution ;
-  dcterms:title "DIO/ODI Reference Vocabulary v0.2.1 — Turtle / SKOS"@en ;
+  dcterms:title "DIO/ODI Reference Vocabulary v0.2.2 — Turtle / SKOS"@en ;
   dcat:downloadURL <https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://vocab.danielberanek.cz/dio-odi/#jsonld-distribution> a dcat:Distribution ;
-  dcterms:title "DIO/ODI Reference Vocabulary v0.2.1 — JSON-LD"@en ;
+  dcterms:title "DIO/ODI Reference Vocabulary v0.2.2 — JSON-LD"@en ;
   dcat:downloadURL <https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/> .

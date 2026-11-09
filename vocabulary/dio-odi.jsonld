@@ -1,6 +1,6 @@
 {
   "@context": {
-    "dio": "https://vocab.danielberanek.cz/dio-odi/#",
+    "dio-odi": "https://vocab.danielberanek.cz/dio-odi/#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "dcterms": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -11,7 +11,7 @@
   },
   "@graph": [
     {
-      "@id": "dio:ReferenceVocabulary",
+      "@id": "dio-odi:ReferenceVocabulary",
       "@type": "skos:ConceptScheme",
       "skos:prefLabel": {
         "@value": "DIO/ODI Reference Vocabulary",
@@ -25,13 +25,13 @@
         "@language": "en"
       },
       "dcterms:modified": {
-        "@value": "2026-11-05",
+        "@value": "2026-11-09",
         "@type": "xsd:date"
       },
       "skos:hasTopConcept": {
-        "@id": "dio:ReconstructionFailureMode"
+        "@id": "dio-odi:ReconstructionFailureMode"
       },
-      "owl:versionInfo": "0.2.1",
+      "owl:versionInfo": "0.2.2",
       "dcterms:title": {
         "@value": "DIO/ODI Reference Vocabulary",
         "@language": "en"
@@ -46,7 +46,7 @@
       "dcterms:language": {
         "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
       },
-      "vann:preferredNamespacePrefix": "dio",
+      "vann:preferredNamespacePrefix": "dio-odi",
       "vann:preferredNamespaceUri": "https://vocab.danielberanek.cz/dio-odi/#",
       "foaf:page": {
         "@id": "https://vocab.danielberanek.cz/dio-odi/"
@@ -70,10 +70,10 @@
       }
     },
     {
-      "@id": "dio:DIO",
+      "@id": "dio-odi:DIO",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Digital Identity Optimization",
@@ -89,10 +89,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:ODI"
+          "@id": "dio-odi:ODI"
         },
         {
-          "@id": "dio:MVDIO"
+          "@id": "dio-odi:MVDIO"
         }
       ],
       "dcterms:source": [
@@ -105,10 +105,10 @@
       ]
     },
     {
-      "@id": "dio:ODI",
+      "@id": "dio-odi:ODI",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Ontology of Digital Identity",
@@ -124,13 +124,13 @@
       },
       "skos:related": [
         {
-          "@id": "dio:DIO"
+          "@id": "dio-odi:DIO"
         },
         {
-          "@id": "dio:SemanticField"
+          "@id": "dio-odi:SemanticField"
         },
         {
-          "@id": "dio:K6"
+          "@id": "dio-odi:K6"
         }
       ],
       "dcterms:source": [
@@ -140,10 +140,10 @@
       ]
     },
     {
-      "@id": "dio:MVDIO",
+      "@id": "dio-odi:MVDIO",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Minimum Viable Digital Identity Optimization",
@@ -159,19 +159,19 @@
       },
       "skos:related": [
         {
-          "@id": "dio:DIO"
+          "@id": "dio-odi:DIO"
         },
         {
-          "@id": "dio:K6"
+          "@id": "dio-odi:K6"
         },
         {
-          "@id": "dio:ReconstructionMechanism"
+          "@id": "dio-odi:ReconstructionMechanism"
         },
         {
-          "@id": "dio:DIOProblem"
+          "@id": "dio-odi:DIOProblem"
         },
         {
-          "@id": "dio:DIOIntervention"
+          "@id": "dio-odi:DIOIntervention"
         }
       ],
       "dcterms:source": [
@@ -181,10 +181,10 @@
       ]
     },
     {
-      "@id": "dio:SemanticField",
+      "@id": "dio-odi:SemanticField",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Semantic Field",
@@ -196,10 +196,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:K6"
+          "@id": "dio-odi:K6"
         },
         {
-          "@id": "dio:ODI"
+          "@id": "dio-odi:ODI"
         }
       ],
       "dcterms:source": [
@@ -212,10 +212,10 @@
       ]
     },
     {
-      "@id": "dio:K6",
+      "@id": "dio-odi:K6",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "K6 Semantic Connectome",
@@ -231,10 +231,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:SemanticField"
+          "@id": "dio-odi:SemanticField"
         },
         {
-          "@id": "dio:MVDIO"
+          "@id": "dio-odi:MVDIO"
         }
       ],
       "dcterms:source": [
@@ -247,37 +247,37 @@
       ],
       "dcterms:hasPart": [
         {
-          "@id": "dio:EntityDimension"
+          "@id": "dio-odi:EntityDimension"
         },
         {
-          "@id": "dio:RepresentationDimension"
+          "@id": "dio-odi:RepresentationDimension"
         },
         {
-          "@id": "dio:InterpretationDimension"
+          "@id": "dio-odi:InterpretationDimension"
         },
         {
-          "@id": "dio:TrustDimension"
+          "@id": "dio-odi:TrustDimension"
         },
         {
-          "@id": "dio:RelationshipDimension"
+          "@id": "dio-odi:RelationshipDimension"
         },
         {
-          "@id": "dio:ReconstructionDimension"
+          "@id": "dio-odi:ReconstructionDimension"
         }
       ]
     },
     {
-      "@id": "dio:EntityDimension",
+      "@id": "dio-odi:EntityDimension",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Entity",
         "@language": "en"
       },
       "dcterms:isPartOf": {
-        "@id": "dio:K6"
+        "@id": "dio-odi:K6"
       },
       "dcterms:source": [
         {
@@ -286,17 +286,17 @@
       ]
     },
     {
-      "@id": "dio:RepresentationDimension",
+      "@id": "dio-odi:RepresentationDimension",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Representation",
         "@language": "en"
       },
       "dcterms:isPartOf": {
-        "@id": "dio:K6"
+        "@id": "dio-odi:K6"
       },
       "dcterms:source": [
         {
@@ -305,17 +305,17 @@
       ]
     },
     {
-      "@id": "dio:InterpretationDimension",
+      "@id": "dio-odi:InterpretationDimension",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Interpretation",
         "@language": "en"
       },
       "dcterms:isPartOf": {
-        "@id": "dio:K6"
+        "@id": "dio-odi:K6"
       },
       "dcterms:source": [
         {
@@ -324,10 +324,10 @@
       ]
     },
     {
-      "@id": "dio:TrustDimension",
+      "@id": "dio-odi:TrustDimension",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Trust",
@@ -338,7 +338,7 @@
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:RelationshipDimension"
+        "@id": "dio-odi:RelationshipDimension"
       },
       "dcterms:source": [
         {
@@ -349,14 +349,14 @@
         }
       ],
       "dcterms:isPartOf": {
-        "@id": "dio:K6"
+        "@id": "dio-odi:K6"
       }
     },
     {
-      "@id": "dio:RelationshipDimension",
+      "@id": "dio-odi:RelationshipDimension",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Relationship",
@@ -367,7 +367,7 @@
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:TrustDimension"
+        "@id": "dio-odi:TrustDimension"
       },
       "dcterms:source": [
         {
@@ -378,24 +378,24 @@
         }
       ],
       "dcterms:isPartOf": {
-        "@id": "dio:K6"
+        "@id": "dio-odi:K6"
       }
     },
     {
-      "@id": "dio:ReconstructionDimension",
+      "@id": "dio-odi:ReconstructionDimension",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Reconstruction",
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:ReconstructionMechanism"
+        "@id": "dio-odi:ReconstructionMechanism"
       },
       "dcterms:isPartOf": {
-        "@id": "dio:K6"
+        "@id": "dio-odi:K6"
       },
       "dcterms:source": [
         {
@@ -407,10 +407,10 @@
       ]
     },
     {
-      "@id": "dio:ReferentialContinuity",
+      "@id": "dio-odi:ReferentialContinuity",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Referential Continuity",
@@ -422,10 +422,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:IdentityPreservingConstraint"
+          "@id": "dio-odi:IdentityPreservingConstraint"
         },
         {
-          "@id": "dio:TemporalDiscontinuity"
+          "@id": "dio-odi:TemporalDiscontinuity"
         }
       ],
       "dcterms:source": [
@@ -435,10 +435,10 @@
       ]
     },
     {
-      "@id": "dio:DistributedRepresentationalState",
+      "@id": "dio-odi:DistributedRepresentationalState",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Distributed Digital Representational State",
@@ -449,7 +449,7 @@
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:ReconstructionMechanism"
+        "@id": "dio-odi:ReconstructionMechanism"
       },
       "dcterms:source": [
         {
@@ -458,10 +458,10 @@
       ]
     },
     {
-      "@id": "dio:Observer",
+      "@id": "dio-odi:Observer",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Observer",
@@ -473,10 +473,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:ObservationDomain"
+          "@id": "dio-odi:ObservationDomain"
         },
         {
-          "@id": "dio:ReconstructionMechanism"
+          "@id": "dio-odi:ReconstructionMechanism"
         }
       ],
       "dcterms:source": [
@@ -486,10 +486,10 @@
       ]
     },
     {
-      "@id": "dio:ObservationDomain",
+      "@id": "dio-odi:ObservationDomain",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Observation Domain",
@@ -500,7 +500,7 @@
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:Observer"
+        "@id": "dio-odi:Observer"
       },
       "dcterms:source": [
         {
@@ -509,10 +509,10 @@
       ]
     },
     {
-      "@id": "dio:ReconstructionMechanism",
+      "@id": "dio-odi:ReconstructionMechanism",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Reconstruction Mechanism",
@@ -524,16 +524,16 @@
       },
       "skos:related": [
         {
-          "@id": "dio:DIOProblem"
+          "@id": "dio-odi:DIOProblem"
         },
         {
-          "@id": "dio:DIOIntervention"
+          "@id": "dio-odi:DIOIntervention"
         },
         {
-          "@id": "dio:DistributedRepresentationalState"
+          "@id": "dio-odi:DistributedRepresentationalState"
         },
         {
-          "@id": "dio:Observer"
+          "@id": "dio-odi:Observer"
         }
       ],
       "dcterms:source": [
@@ -543,10 +543,10 @@
       ]
     },
     {
-      "@id": "dio:DIOProblem",
+      "@id": "dio-odi:DIOProblem",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "DIO Problem",
@@ -558,10 +558,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:ReconstructionMechanism"
+          "@id": "dio-odi:ReconstructionMechanism"
         },
         {
-          "@id": "dio:DIOIntervention"
+          "@id": "dio-odi:DIOIntervention"
         }
       ],
       "dcterms:source": [
@@ -571,10 +571,10 @@
       ]
     },
     {
-      "@id": "dio:DIOIntervention",
+      "@id": "dio-odi:DIOIntervention",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "DIO Intervention",
@@ -586,10 +586,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:DIOProblem"
+          "@id": "dio-odi:DIOProblem"
         },
         {
-          "@id": "dio:ReconstructionMechanism"
+          "@id": "dio-odi:ReconstructionMechanism"
         }
       ],
       "dcterms:source": [
@@ -599,10 +599,10 @@
       ]
     },
     {
-      "@id": "dio:IdentityPreservingConstraint",
+      "@id": "dio-odi:IdentityPreservingConstraint",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Identity-Preserving Constraint",
@@ -614,10 +614,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:ReferentialContinuity"
+          "@id": "dio-odi:ReferentialContinuity"
         },
         {
-          "@id": "dio:EssentialVector"
+          "@id": "dio-odi:EssentialVector"
         }
       ],
       "dcterms:source": [
@@ -631,10 +631,10 @@
       }
     },
     {
-      "@id": "dio:EssentialVector",
+      "@id": "dio-odi:EssentialVector",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Essential Vector",
@@ -645,7 +645,7 @@
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:IdentityPreservingConstraint"
+        "@id": "dio-odi:IdentityPreservingConstraint"
       },
       "dcterms:source": [
         {
@@ -657,10 +657,10 @@
       ]
     },
     {
-      "@id": "dio:IdentityPreservingConstraints",
+      "@id": "dio-odi:IdentityPreservingConstraints",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Identity-Preserving Constraints",
@@ -676,10 +676,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:ReferentialContinuity"
+          "@id": "dio-odi:ReferentialContinuity"
         },
         {
-          "@id": "dio:EssentialVector"
+          "@id": "dio-odi:EssentialVector"
         }
       ],
       "dcterms:source": [
@@ -692,10 +692,10 @@
       ]
     },
     {
-      "@id": "dio:IdentityPreservingVariation",
+      "@id": "dio-odi:IdentityPreservingVariation",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Identity-Preserving Variation",
@@ -707,10 +707,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:ReferentialContinuity"
+          "@id": "dio-odi:ReferentialContinuity"
         },
         {
-          "@id": "dio:SemanticFragmentation"
+          "@id": "dio-odi:SemanticFragmentation"
         }
       ],
       "dcterms:source": [
@@ -720,10 +720,10 @@
       ]
     },
     {
-      "@id": "dio:ReconstructionFailureMode",
+      "@id": "dio-odi:ReconstructionFailureMode",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Reconstruction Failure Mode",
@@ -735,16 +735,16 @@
       },
       "skos:narrower": [
         {
-          "@id": "dio:ReferentialReconstructionFailure"
+          "@id": "dio-odi:ReferentialReconstructionFailure"
         },
         {
-          "@id": "dio:SemanticCoherenceFailure"
+          "@id": "dio-odi:SemanticCoherenceFailure"
         },
         {
-          "@id": "dio:TemporalReconstructionFailure"
+          "@id": "dio-odi:TemporalReconstructionFailure"
         },
         {
-          "@id": "dio:ContextualAdequacyFailure"
+          "@id": "dio-odi:ContextualAdequacyFailure"
         }
       ],
       "skos:scopeNote": {
@@ -760,14 +760,14 @@
         }
       ],
       "skos:topConceptOf": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       }
     },
     {
-      "@id": "dio:ReferentialReconstructionFailure",
+      "@id": "dio-odi:ReferentialReconstructionFailure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Referential Reconstruction Failure",
@@ -778,20 +778,20 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReconstructionFailureMode"
+        "@id": "dio-odi:ReconstructionFailureMode"
       },
       "skos:narrower": [
         {
-          "@id": "dio:EntitySubstitution"
+          "@id": "dio-odi:EntitySubstitution"
         },
         {
-          "@id": "dio:MergeFailure"
+          "@id": "dio-odi:MergeFailure"
         },
         {
-          "@id": "dio:SplitFailure"
+          "@id": "dio-odi:SplitFailure"
         },
         {
-          "@id": "dio:EntityOmission"
+          "@id": "dio-odi:EntityOmission"
         }
       ],
       "dcterms:source": [
@@ -801,10 +801,10 @@
       ]
     },
     {
-      "@id": "dio:EntitySubstitution",
+      "@id": "dio-odi:EntitySubstitution",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Entity Substitution",
@@ -815,14 +815,14 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReferentialReconstructionFailure"
+        "@id": "dio-odi:ReferentialReconstructionFailure"
       },
       "skos:scopeNote": {
         "@value": "This concept does not redefine Identity Collapse and is not asserted to be its canonical form.",
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:IdentityCollapse"
+        "@id": "dio-odi:IdentityCollapse"
       },
       "dcterms:source": [
         {
@@ -831,10 +831,10 @@
       ]
     },
     {
-      "@id": "dio:MergeFailure",
+      "@id": "dio-odi:MergeFailure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Merge Failure",
@@ -845,7 +845,7 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReferentialReconstructionFailure"
+        "@id": "dio-odi:ReferentialReconstructionFailure"
       },
       "dcterms:source": [
         {
@@ -854,10 +854,10 @@
       ]
     },
     {
-      "@id": "dio:SplitFailure",
+      "@id": "dio-odi:SplitFailure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Split Failure",
@@ -868,10 +868,10 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReferentialReconstructionFailure"
+        "@id": "dio-odi:ReferentialReconstructionFailure"
       },
       "skos:related": {
-        "@id": "dio:SemanticFragmentation"
+        "@id": "dio-odi:SemanticFragmentation"
       },
       "dcterms:source": [
         {
@@ -880,10 +880,10 @@
       ]
     },
     {
-      "@id": "dio:EntityOmission",
+      "@id": "dio-odi:EntityOmission",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Entity Omission",
@@ -894,7 +894,7 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReferentialReconstructionFailure"
+        "@id": "dio-odi:ReferentialReconstructionFailure"
       },
       "skos:scopeNote": {
         "@value": "Does not include cases where relevant representations were unavailable, unacquired, uncrawled, unindexed, or unretrieved.",
@@ -907,20 +907,20 @@
       ]
     },
     {
-      "@id": "dio:SemanticCoherenceFailure",
+      "@id": "dio-odi:SemanticCoherenceFailure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Semantic Coherence Failure",
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReconstructionFailureMode"
+        "@id": "dio-odi:ReconstructionFailureMode"
       },
       "skos:narrower": {
-        "@id": "dio:SemanticFragmentation"
+        "@id": "dio-odi:SemanticFragmentation"
       },
       "dcterms:source": [
         {
@@ -929,10 +929,10 @@
       ]
     },
     {
-      "@id": "dio:SemanticFragmentation",
+      "@id": "dio-odi:SemanticFragmentation",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Semantic Fragmentation",
@@ -943,14 +943,14 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:SemanticCoherenceFailure"
+        "@id": "dio-odi:SemanticCoherenceFailure"
       },
       "skos:related": [
         {
-          "@id": "dio:SplitFailure"
+          "@id": "dio-odi:SplitFailure"
         },
         {
-          "@id": "dio:IdentityPreservingVariation"
+          "@id": "dio-odi:IdentityPreservingVariation"
         }
       ],
       "dcterms:source": [
@@ -966,24 +966,24 @@
       ]
     },
     {
-      "@id": "dio:TemporalReconstructionFailure",
+      "@id": "dio-odi:TemporalReconstructionFailure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Temporal Reconstruction Failure",
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReconstructionFailureMode"
+        "@id": "dio-odi:ReconstructionFailureMode"
       },
       "skos:narrower": [
         {
-          "@id": "dio:TemporalDiscontinuity"
+          "@id": "dio-odi:TemporalDiscontinuity"
         },
         {
-          "@id": "dio:TemporalMisalignment"
+          "@id": "dio-odi:TemporalMisalignment"
         }
       ],
       "dcterms:source": [
@@ -993,10 +993,10 @@
       ]
     },
     {
-      "@id": "dio:TemporalDiscontinuity",
+      "@id": "dio-odi:TemporalDiscontinuity",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Temporal Discontinuity",
@@ -1007,14 +1007,14 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:TemporalReconstructionFailure"
+        "@id": "dio-odi:TemporalReconstructionFailure"
       },
       "skos:related": [
         {
-          "@id": "dio:ReferentialContinuity"
+          "@id": "dio-odi:ReferentialContinuity"
         },
         {
-          "@id": "dio:TemporalMisalignment"
+          "@id": "dio-odi:TemporalMisalignment"
         }
       ],
       "dcterms:source": [
@@ -1030,10 +1030,10 @@
       ]
     },
     {
-      "@id": "dio:TemporalMisalignment",
+      "@id": "dio-odi:TemporalMisalignment",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Temporal Misalignment",
@@ -1044,10 +1044,10 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:TemporalReconstructionFailure"
+        "@id": "dio-odi:TemporalReconstructionFailure"
       },
       "skos:related": {
-        "@id": "dio:TemporalDiscontinuity"
+        "@id": "dio-odi:TemporalDiscontinuity"
       },
       "dcterms:source": [
         {
@@ -1059,20 +1059,20 @@
       ]
     },
     {
-      "@id": "dio:ContextualAdequacyFailure",
+      "@id": "dio-odi:ContextualAdequacyFailure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Contextual Adequacy Failure",
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ReconstructionFailureMode"
+        "@id": "dio-odi:ReconstructionFailureMode"
       },
       "skos:narrower": {
-        "@id": "dio:ContextualDisplacement"
+        "@id": "dio-odi:ContextualDisplacement"
       },
       "dcterms:source": [
         {
@@ -1081,10 +1081,10 @@
       ]
     },
     {
-      "@id": "dio:ContextualDisplacement",
+      "@id": "dio-odi:ContextualDisplacement",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Contextual Displacement",
@@ -1095,7 +1095,7 @@
         "@language": "en"
       },
       "skos:broader": {
-        "@id": "dio:ContextualAdequacyFailure"
+        "@id": "dio-odi:ContextualAdequacyFailure"
       },
       "dcterms:source": [
         {
@@ -1107,10 +1107,10 @@
       ]
     },
     {
-      "@id": "dio:IdentityCollapse",
+      "@id": "dio-odi:IdentityCollapse",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Identity Collapse",
@@ -1134,10 +1134,10 @@
       ]
     },
     {
-      "@id": "dio:SemanticVulnerability",
+      "@id": "dio-odi:SemanticVulnerability",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Semantic Vulnerability",
@@ -1153,10 +1153,10 @@
       },
       "skos:related": [
         {
-          "@id": "dio:SemanticRobustness"
+          "@id": "dio-odi:SemanticRobustness"
         },
         {
-          "@id": "dio:ReconstructionCapture"
+          "@id": "dio-odi:ReconstructionCapture"
         }
       ],
       "dcterms:source": [
@@ -1172,10 +1172,10 @@
       ]
     },
     {
-      "@id": "dio:SemanticRobustness",
+      "@id": "dio-odi:SemanticRobustness",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Semantic Robustness",
@@ -1186,7 +1186,7 @@
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:SemanticVulnerability"
+        "@id": "dio-odi:SemanticVulnerability"
       },
       "dcterms:source": [
         {
@@ -1195,10 +1195,10 @@
       ]
     },
     {
-      "@id": "dio:ReconstructionCapture",
+      "@id": "dio-odi:ReconstructionCapture",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Reconstruction Capture",
@@ -1209,7 +1209,7 @@
         "@language": "en"
       },
       "skos:related": {
-        "@id": "dio:SemanticVulnerability"
+        "@id": "dio-odi:SemanticVulnerability"
       },
       "skos:scopeNote": {
         "@value": "Included because it is present in MVDIO; v0.1 does not further formalize its relationship to Semantic Vulnerability.",
@@ -1222,10 +1222,10 @@
       ]
     },
     {
-      "@id": "dio:EntityResolutionAnomaly",
+      "@id": "dio-odi:EntityResolutionAnomaly",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "dio:ReferenceVocabulary"
+        "@id": "dio-odi:ReferenceVocabulary"
       },
       "skos:prefLabel": {
         "@value": "Entity Resolution Anomaly",
