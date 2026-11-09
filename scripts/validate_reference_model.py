@@ -12,7 +12,7 @@ import re
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
-from datetime import date
+from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
@@ -711,7 +711,7 @@ def check_sitemap() -> int:
         require(target.is_file(), f"Sitemap URL has no corresponding repository file: {url} -> {relative_path}")
 
         result = subprocess.run(
-            ["git", "log", "-1", "--format=%cs", "--", relative_path],
+            ["git", "log", "-1", "--format=%cI", "--", relative_path],
             cwd=ROOT,
             capture_output=True,
             text=True,
@@ -721,7 +721,8 @@ def check_sitemap() -> int:
             result.returncode == 0 and bool(result.stdout.strip()),
             f"Could not determine the latest Git modification date for sitemap URL: {url}",
         )
-        latest_commit_date = date.fromisoformat(result.stdout.strip())
+        latest_commit_timestamp = datetime.fromisoformat(result.stdout.strip())
+        latest_commit_date = latest_commit_timestamp.astimezone(timezone.utc).date()
         require(
             sitemap_date >= latest_commit_date,
             f"Sitemap lastmod is stale for {url}: {lastmod} is earlier than "
