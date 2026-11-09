@@ -49,7 +49,7 @@ Uses the Heterogeneous Entity Matching taxonomy of Moslemi et al. as an external
 - DIO/ODI source: https://zenodo.org/records/23580733
 - External technical references: OPA documentation (https://www.openpolicyagent.org/docs); Cedar authorization guide (https://docs.cedarpolicy.com/auth/authorization.html)
 - Added to live source tree: 2026-10-25
-- Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 and v0.6.0 — https://doi.org/10.5281/zenodo.23966487; included in current archived v0.7.0 — https://doi.org/10.5281/zenodo.24020300
+- Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0, v0.6.0, v0.7.0, and v0.8.0; included in current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
 
 Maps commit-boundary authorization obligations to relevant Policy-as-Code capabilities and the additional policy-modeling, trusted-evidence, enforcement, freshness, and transactional mechanisms needed for an integration. OPA/Rego and Cedar are reference points only; the mapping does not claim either engine natively implements the commit-boundary contract.
 
