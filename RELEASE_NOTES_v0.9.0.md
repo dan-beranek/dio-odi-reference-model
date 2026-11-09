@@ -40,4 +40,4 @@ The repository validator checks the canonical Turtle and JSON-LD graph isomorphi
 - Semantic Change Feed schema: **v0.2.0**
 - Previous archived Reference Model release: **v0.8.0** — https://doi.org/10.5281/zenodo.24056601
 
-The version-specific DOI for v0.9.0 is assigned by Zenodo after the GitHub release is published and archived.
+Version-specific DOI: https://doi.org/10.5281/zenodo.24085589. Published on 9 November 2026.
