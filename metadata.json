@@ -178,12 +178,19 @@
     "frontend": "https://vocab.danielberanek.cz/semantic-change-feed/",
     "events_json": "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
     "schema_json": "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
-    "feed_version": "0.1.1",
-    "schema_version": "0.2.0",
-    "event_count": 45,
-    "coverage_through": "2026-11-09",
-    "status": "included-in-0.9.0",
-    "target_reference_model_release": "0.9.0",
-    "license": "CC-BY-4.0"
+    "feed_version": "0.1.2",
+    "schema_version": "0.2.1",
+    "event_count": 48,
+    "coverage_through": "2026-11-10",
+    "status": "live-maintenance-after-archive",
+    "license": "CC-BY-4.0",
+    "archived_snapshot": {
+      "reference_model_version": "0.9.0",
+      "reference_model_doi": "10.5281/zenodo.24085589",
+      "feed_version": "0.1.1",
+      "schema_version": "0.2.0",
+      "event_count": 45,
+      "coverage_through": "2026-11-09"
+    }
   }
 }

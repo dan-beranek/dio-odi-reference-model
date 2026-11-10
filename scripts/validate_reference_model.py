@@ -575,6 +575,32 @@ def check_semantic_change_feed() -> dict[str, int | str]:
     dates = [event.get("date") for event in events]
     require(dates == sorted(dates), "Semantic Change Feed events must be stored in chronological order")
     known_ids = set(ids)
+    require(feed.get("feed_version") == "0.1.2" and feed.get("schema_version") == "0.2.1",
+            "Live SCF feed/schema versions must be 0.1.2/0.2.1")
+    required_reconciliations = {
+        "SCF-2026-046": ("deployment_date", "2026-11-09"),
+        "SCF-2026-047": ("documentation_date", "2026-11-10"),
+        "SCF-2026-048": ("documentation_date", "2026-11-10"),
+    }
+    events_by_id = {event["id"]: event for event in events}
+    for event_id, expected in required_reconciliations.items():
+        require(event_id in events_by_id, f"Semantic Change Feed is missing required maintenance event {event_id}")
+        require((events_by_id[event_id]["date_basis"], events_by_id[event_id]["date"]) == expected,
+                f"{event_id} has an incorrect temporal basis or date")
+    archive_events = {"0.8.0": "SCF-2026-047", "0.9.0": "SCF-2026-048"}
+    works = load_json("metadata/works.json")
+    model = next((item for item in works["works"] if item.get("id") == "reference-model"), None)
+    require(model is not None, "Reference Model work entry is missing while reconciling SCF archive milestones")
+    release_by_version = {item["version"]: item for item in model.get("releases", [])}
+    for version, event_id in archive_events.items():
+        release = release_by_version.get(version)
+        event = events_by_id[event_id]
+        require(release is not None, f"Reference Model release {version} is missing from works.json")
+        expected_doi = release["doi"]
+        require(any(scope.get("uri") == f"https://doi.org/{expected_doi}" for scope in event.get("scope", [])),
+                f"{event_id} does not identify archived Reference Model {version}")
+        require(any(source.get("url") == f"https://doi.org/{expected_doi}" for source in event.get("evidence", {}).get("sources", [])),
+                f"{event_id} does not cite its corresponding archival record")
     for event in events:
         for relation in ("related_to", "supersedes", "corrects"):
             unknown = set(event.get("lineage", {}).get(relation, [])) - known_ids
@@ -633,10 +659,27 @@ def check_llms_txt() -> int:
     scf_metadata = metadata["semantic_change_feed"]
     require(
         scf_metadata["feed_version"] == feed["feed_version"]
+        and scf_metadata["schema_version"] == feed["schema_version"]
         and scf_metadata["event_count"] == feed["event_count"]
         and scf_metadata["coverage_through"] == feed["events"][-1]["date"],
         "metadata.json and Semantic Change Feed events.json are inconsistent",
     )
+    works = load_json("metadata/works.json")
+    model = next((item for item in works["works"] if item.get("id") == "reference-model"), None)
+    archived = scf_metadata.get("archived_snapshot", {})
+    release = model.get("current_release", {}) if model else {}
+    require(
+        archived.get("reference_model_version") == release.get("version")
+        and archived.get("reference_model_doi") == release.get("doi")
+        and archived.get("feed_version") == release.get("semantic_change_feed_version")
+        and archived.get("schema_version") == release.get("semantic_change_feed_schema_version")
+        and archived.get("event_count") == release.get("semantic_change_feed_event_count"),
+        "Live SCF metadata does not preserve the exact archived snapshot recorded in works.json",
+    )
+    archive_label = (f"- Archived snapshot in Reference Model v{archived.get('reference_model_version')}: "
+                     f"feed v{archived.get('feed_version')}, schema v{archived.get('schema_version')}, "
+                     f"{archived.get('event_count')} events through 9 November 2026")
+    require(archive_label in source, "llms.txt is missing the archived SCF snapshot boundary")
     return len(required_lines) + 2
 
 
