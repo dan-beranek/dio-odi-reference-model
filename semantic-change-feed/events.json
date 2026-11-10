@@ -1,8 +1,8 @@
 {
-  "feed_version": "0.1.1",
-  "schema_version": "0.2.0",
+  "feed_version": "0.1.2",
+  "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-09",
+  "generated_on": "2026-11-10",
   "title": "DIO/ODI Semantic Change Feed",
   "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, and Reference Model release events through 9 November 2026.",
   "author": {
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 45,
+  "event_count": 48,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -2701,6 +2701,203 @@
       "lineage": {
         "related_to": [
           "SCF-2026-037"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-046",
+      "date": "2026-11-09",
+      "date_basis": "deployment_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "SPARQL query examples gain a canonical .rq endpoint and standard media type",
+      "summary": "The live Reference Model site now publishes the SPARQL examples at examples/queries.rq as the canonical endpoint. GitHub Pages serves this path with application/sparql-query. The previous .sparql path remains available as a legacy compatibility copy and is no longer the canonical linked or indexed endpoint.",
+      "scope": [
+        {
+          "component": "Canonical SPARQL query examples (.rq)",
+          "component_type": "machine-readable-artifact",
+          "uri": "https://vocab.danielberanek.cz/examples/queries.rq",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The homepage and machine-discovery surfaces pointed to examples/queries.sparql, which GitHub Pages served as application/octet-stream.",
+      "after": "The homepage, README, llms.txt, and sitemap identify examples/queries.rq as the canonical query endpoint. The public endpoint returns HTTP 200 with Content-Type application/sparql-query. examples/queries.sparql is retained as a legacy compatibility copy and removed from canonical indexing.",
+      "preserved_invariants": [
+        "The SPARQL query content and query semantics are unchanged; the .rq file is an exact content copy of the former .sparql file.",
+        "The legacy .sparql path remains available for compatibility and is not presented as the canonical endpoint.",
+        "The canonical DIO/ODI namespace, ConceptScheme URI, all 40 concept URIs, and vocabulary semantics are unchanged.",
+        "No archived Reference Model package is modified or republished."
+      ],
+      "impact": {
+        "level": "metadata",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "SPARQL query examples",
+          "Reference Model homepage",
+          "llms.txt",
+          "sitemap"
+        ],
+        "notes": "This is a public endpoint and media-type alignment. It changes the canonical path and discovery metadata, not the query itself or the semantic model."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "Date is the successful GitHub Pages deployment date on 9 November 2026. The subsequent public endpoint validation confirmed HTTP 200 and application/sparql-query for the .rq path; the event is not dated by the merge commit alone.",
+        "sources": [
+          {
+            "label": "SPARQL endpoint change — merge commit",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/commit/f07d7b0bec5c8725d31c524444d75f7032c2a717",
+            "role": "source-change"
+          },
+          {
+            "label": "GitHub Pages deployment after merge",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/actions/runs/42692642281",
+            "role": "successful-public-deployment"
+          },
+          {
+            "label": "Production endpoint and MIME validation",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/actions/runs/42692642992",
+            "role": "public-endpoint-validation"
+          },
+          {
+            "label": "Canonical SPARQL query endpoint",
+            "url": "https://vocab.danielberanek.cz/examples/queries.rq",
+            "role": "deployed-machine-readable-artifact"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-045"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-047",
+      "date": "2026-11-10",
+      "date_basis": "documentation_date",
+      "event_class": "Artifact",
+      "change_type": "documented",
+      "title": "The v0.8.0 archive milestone is reconciled into the live chronology",
+      "summary": "The live Semantic Change Feed now explicitly records the already published Reference Model v0.8.0 archive. The event was missing from the earlier chronology; this entry documents the historical archive state without changing or republishing the package.",
+      "scope": [
+        {
+          "component": "DIO/ODI Reference Model v0.8.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.24056601",
+          "role": "historical-archive"
+        }
+      ],
+      "before": "Reference Model v0.8.0 was already archived on 8 November 2026 and recorded in the Corpus Metadata Registry, but the SCF chronology had no dedicated archive event for it.",
+      "after": "The live SCF records the v0.8.0 archive milestone and its immutable package state: Reference Vocabulary v0.2.1, Semantic Change Feed v0.1.0 with 44 events, and JSON Schema v0.2.0.",
+      "preserved_invariants": [
+        "The historical archive publication date remains 8 November 2026; 10 November is the date this previously omitted milestone was entered into the live SCF.",
+        "Zenodo DOI 10.5281/zenodo.24056601 and the archived v0.8.0 package remain unchanged.",
+        "The archived package retains its own SCF snapshot v0.1.0 with 44 events and schema v0.2.0; later live-feed events are not retroactively inserted.",
+        "Reference Vocabulary v0.2.1 remains the vocabulary state included in the v0.8.0 package."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "Reference Model v0.8.0 archive history",
+          "Semantic Change Feed chronology"
+        ],
+        "notes": "This is a late-recorded archive-provenance entry in the live feed. It does not alter the archived package, its DOI, or its internal SCF snapshot."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "archival-record"
+        ],
+        "temporal_note": "The date field is the SCF documentation date (10 November 2026), not the archive publication date. The v0.8.0 archive was published on 8 November 2026; the Corpus Metadata Registry records vocabulary v0.2.1, feed v0.1.0, schema v0.2.0, and 44 events for that immutable snapshot.",
+        "sources": [
+          {
+            "label": "Reference Model v0.8.0 — Zenodo archive",
+            "url": "https://doi.org/10.5281/zenodo.24056601",
+            "role": "archival-record"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/metadata/works.json",
+            "role": "version-and-component-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-043",
+          "SCF-2026-044"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-048",
+      "date": "2026-11-10",
+      "date_basis": "documentation_date",
+      "event_class": "Artifact",
+      "change_type": "documented",
+      "title": "The v0.9.0 archive milestone is reconciled into the live chronology",
+      "summary": "The live Semantic Change Feed now explicitly records the Reference Model v0.9.0 archive published on 9 November 2026. Its archived snapshot contains Reference Vocabulary v0.2.2 and SCF v0.1.1 with 45 events. This reconciliation updates only the live chronology; the archived v0.9.0 package remains immutable.",
+      "scope": [
+        {
+          "component": "DIO/ODI Reference Model v0.9.0",
+          "component_type": "archived-release",
+          "uri": "https://doi.org/10.5281/zenodo.24085589",
+          "role": "historical-archive"
+        }
+      ],
+      "before": "The v0.9.0 archive was already published and registered, but the SCF chronology stopped at the vocabulary-prefix synchronization event and did not separately record publication of the enclosing Reference Model package.",
+      "after": "The live SCF records the v0.9.0 archive milestone: Reference Vocabulary v0.2.2, Semantic Change Feed v0.1.1 with 45 events, and JSON Schema v0.2.0, as documented by the archived Zenodo record.",
+      "preserved_invariants": [
+        "The historical archive publication date remains 9 November 2026; 10 November is the date this archive milestone was entered into the live SCF.",
+        "Zenodo DOI 10.5281/zenodo.24085589 and the archived v0.9.0 package remain unchanged.",
+        "The archived package contains SCF v0.1.1 with 45 events and schema v0.2.0; live SCF v0.1.2 is a later operational state and is not attributed to the archive.",
+        "Reference Vocabulary v0.2.2 and its stable namespace and concept URIs remain unchanged."
+      ],
+      "impact": {
+        "level": "archive",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "Reference Model v0.9.0 archive history",
+          "Semantic Change Feed chronology"
+        ],
+        "notes": "This is a live chronology reconciliation for an existing immutable archive, not a new Reference Model release or a new DOI."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "archival-record"
+        ],
+        "temporal_note": "The date field is the SCF documentation date (10 November 2026), not the archive publication date. Zenodo records Reference Model v0.9.0 as published on 9 November 2026; the archive description identifies Reference Vocabulary v0.2.2 and SCF v0.1.1 with 45 records and schema v0.2.0.",
+        "sources": [
+          {
+            "label": "Reference Model v0.9.0 — Zenodo archive",
+            "url": "https://doi.org/10.5281/zenodo.24085589",
+            "role": "archival-record"
+          },
+          {
+            "label": "Corpus Metadata Registry — works.json",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/metadata/works.json",
+            "role": "version-and-component-provenance"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-045",
+          "SCF-2026-047"
         ],
         "supersedes": [],
         "corrects": []
