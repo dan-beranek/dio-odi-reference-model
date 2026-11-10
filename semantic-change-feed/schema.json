@@ -173,7 +173,9 @@
             "version_publication_date",
             "archive_publication_date",
             "hub_changelog_date",
-            "activity_period"
+            "activity_period",
+            "deployment_date",
+            "documentation_date"
           ]
         },
         "event_class": {
