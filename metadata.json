@@ -192,5 +192,20 @@
       "event_count": 45,
       "coverage_through": "2026-11-09"
     }
+  },
+  "mcp_server": {
+    "title": "DIO/ODI MCP: A Read-only Model Context Protocol Server for the DIO/ODI Reference Model and Agentic Entity Resolution Guardrail Mappings",
+    "version": "0.1.1",
+    "version_doi": "10.5281/zenodo.24123229",
+    "version_doi_url": "https://doi.org/10.5281/zenodo.24123229",
+    "concept_doi": "10.5281/zenodo.24123228",
+    "concept_doi_url": "https://doi.org/10.5281/zenodo.24123228",
+    "repository": "https://github.com/dan-beranek/dio-odi-mcp",
+    "endpoint": "https://mcp.danielberanek.cz/mcp",
+    "health_endpoint": "https://mcp.danielberanek.cz/healthz",
+    "access": "public-read-only",
+    "license": "MIT",
+    "embedded_content_license": "CC-BY-4.0",
+    "relation": "derived-read-only-distribution"
   }
 }
