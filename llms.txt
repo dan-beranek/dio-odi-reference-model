@@ -125,7 +125,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Canonical references: https://vocab.danielberanek.cz/metadata/references.json
 - Distribution representations: https://vocab.danielberanek.cz/metadata/distributions.json
 - Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json
-  - Keyword registry version: 2.5.0
+  - Keyword registry version: 2.6.0
   - Grammar version: 2.0.0
   - Status: canonical-approved
   - Work-specific profile: commit-boundary-paper (34 terms; baseline aligned to Zenodo v1 metadata)
