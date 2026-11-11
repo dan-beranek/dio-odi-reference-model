@@ -1,6 +1,6 @@
 # DIO/ODI Semantic Change Feed
 
-**Feed version:** 0.1.2  
+**Feed version:** 0.1.3  
 **Schema version:** 0.2.1  
 **Status:** Live append-only maintenance after archived Reference Model v0.9.0; no new Reference Model release  
 **Maintainer:** Daniel Beránek  
@@ -14,7 +14,7 @@ It is not a Git commit log. Repository diffs are not authoritative evidence of c
 
 ## Coverage
 
-Version 0.1.2 contains **48 event records** and covers:
+Version 0.1.3 contains **49 event records** and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
 - Subsequent documented vocabulary, mapping, publication, provenance, and deployment milestones through **9 November 2026**, plus two previously omitted archive milestones reconciled into the live chronology on **10 November 2026**.
@@ -44,7 +44,7 @@ This is complete coverage of the dated Hub Changelog entries, not a claim that e
 
 The SCF does not replace or redefine any of these sources.
 
-The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0. The live feed now advances independently to v0.1.2 with 48 events and schema v0.2.1. The two archive-reconciliation records and the SPARQL endpoint record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
+The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0. The live feed now advances independently to v0.1.3 with 49 events and schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, and MCP integration-service deployment record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
 
 The DIO to DIO portfolio is included as a documented research-and-distribution milestone, not as an authority for historical claims. Its model-specific analyses retain different observation boundaries and interpretations; they may guide discovery of potentially relevant evidence, but factual claims entering the SCF must be checked against primary publications, release records, registries, or archives.
 
