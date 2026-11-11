@@ -1,10 +1,10 @@
 {
-  "feed_version": "0.1.2",
+  "feed_version": "0.1.3",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-10",
+  "generated_on": "2026-11-11",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, and Reference Model release events through 9 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, and public integration-service deployment events through 11 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 48,
+  "event_count": 49,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -2899,6 +2899,78 @@
           "SCF-2026-045",
           "SCF-2026-047"
         ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-049",
+      "date": "2026-11-11",
+      "date_basis": "deployment_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "The public read-only DIO/ODI MCP endpoint is deployed and production-validated",
+      "summary": "A public, stateless, read-only Model Context Protocol service is deployed at mcp.danielberanek.cz. It exposes the bundled DIO/ODI reference snapshot and derived Agentic ER and Policy-as-Code integration contracts through ten tools, seven resources, and one integration-planning prompt. The production smoke suite completed 31 of 31 checks successfully, including discovery, tool and resource calls, protocol handling, and browser CORS behavior.",
+      "scope": [
+        {
+          "component": "DIO/ODI MCP service v0.1.0",
+          "component_type": "read-only-integration-service",
+          "uri": "https://mcp.danielberanek.cz/mcp",
+          "role": "affected-resource"
+        }
+      ],
+      "before": "The DIO/ODI Reference Model and its derived application mappings were available through the public website and machine-readable repository artifacts, but no dedicated public MCP endpoint exposed the bounded reference snapshot through a standard agent-facing protocol.",
+      "after": "The public endpoint https://mcp.danielberanek.cz/mcp serves a stateless, read-only MCP interface. It exposes ten tools, seven resources, and the plan_mutation_guardrail_integration prompt. Deployment and the subsequent production smoke suite succeeded on 11 November 2026; the suite reported 31/31 checks passed and zero failures.",
+      "preserved_invariants": [
+        "The MCP service is read-only; it does not mutate application state, authorize or commit writes, or act as an MVDIO Supervisor.",
+        "The canonical Reference Vocabulary, its 40 concept URIs, definitions, hierarchy, and semantic relations are unchanged.",
+        "Agentic ER and Policy-as-Code content remains a derived, non-normative application layer; illustrative mappings are not universal domain policies.",
+        "The archived Reference Model v0.9.0 and its bundled SCF v0.1.1 snapshot remain immutable; the live SCF is maintained independently.",
+        "The service uses a bounded bundled snapshot and does not introduce a runtime dependency on the Reference Model website or an external LLM provider."
+      ],
+      "impact": {
+        "level": "cross-layer",
+        "compatibility": "not-assessed",
+        "affected_components": [
+          "DIO/ODI Reference Model distribution",
+          "Agentic ER integration interface",
+          "Policy-as-Code integration mapping",
+          "public MCP endpoint"
+        ],
+        "notes": "This is an implementation and distribution milestone. It exposes existing reference and derived integration content through MCP; it does not modify the canonical vocabulary, strengthen the theory, or claim implementation of the application-side authorization guardrail."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "The deployment workflow completed successfully on 11 November 2026 (GitHub Actions run 42933087944). The public production smoke workflow then completed successfully on the same date (run 42933198631); its machine-readable report records 31 checks passed, zero failed, using MCP protocol revision 2026-07-28. The event is dated by the successful deployment, not by the merge timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI MCP — source repository",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp",
+            "role": "implementation-source"
+          },
+          {
+            "label": "MCP service — merge commit",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp/commit/85ce1d7325c573582a027249e497efb1b4e3a188",
+            "role": "reviewed-source-state"
+          },
+          {
+            "label": "Cloudflare Worker — successful production deployment",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp/actions/runs/42933087944",
+            "role": "successful-public-deployment"
+          },
+          {
+            "label": "MCP production smoke suite — 31/31 PASS",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp/actions/runs/42933198631",
+            "role": "production-validation"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [],
         "supersedes": [],
         "corrects": []
       }
