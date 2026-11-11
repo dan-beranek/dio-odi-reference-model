@@ -6,7 +6,7 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 
 ## Files
 
-- `works.json` — identities and publication metadata of DIO/ODI works and Reference Model releases.
+- `works.json` — identities and publication metadata of DIO/ODI works, Reference Model releases, and the separate DIO/ODI MCP software distribution.
 - `relations.json` — directed inter-work relation graph. Only relations with `approved_for_zenodo: true` should be projected automatically into Zenodo metadata.
 - `references.json` — canonical bibliographic strings for internal and external references.
 - `distributions.json` — external distribution, identical, variant, and supplementary representations of each canonical work, preserving the exact relation type.
@@ -20,6 +20,10 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 3. Zenodo GitHub archiving reads `.zenodo.json` for new releases.
 4. Existing historical Zenodo records are not retroactively changed by these files; they require metadata synchronization through Zenodo's editor, API, or browser automation.
 5. Zenodo assigns the version-specific DOI only after the GitHub Release is archived. Do not guess or prepopulate that DOI in the tagged snapshot. After publication, synchronize `metadata/works.json`, `README.md`, and `CITATION.cff` in the live `main` branch with the minted DOI; do not rewrite the immutable archived snapshot.
+
+## DIO/ODI MCP software distribution
+
+The read-only MCP server is registered as the separate work `mcp-server` in `works.json`. Its v0.1.1 version DOI is `10.5281/zenodo.24123229`; its Concept DOI is `10.5281/zenodo.24123228`. The server is a derived, agent-facing distribution of the Reference Model, not a new vocabulary layer or an implementation of the application-side authorization guardrail. The typed relation graph records both the derivation from the Reference Model and the reciprocal `isSupplementedBy` relation. Its implementation is MIT-licensed; embedded DIO/ODI reference content remains CC BY 4.0.
 
 ## Reference Vocabulary identity and parent Reference Model DOI
 
