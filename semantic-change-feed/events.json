@@ -19,85 +19,6 @@
   "event_count": 50,
   "events": [
     {
-      "id": "SCF-2026-050",
-      "date": "2026-11-11",
-      "date_basis": "documentation_date",
-      "event_class": "Artifact",
-      "change_type": "published",
-      "title": "DIO/ODI MCP v0.1.1 receives its Zenodo version DOI and Concept DOI",
-      "summary": "The DIO/ODI MCP v0.1.1 read-only software release is archived in Zenodo. The version-specific DOI identifies this release, while the Concept DOI identifies the software across versions. The publication makes the MCP distribution independently citable and links it to the DIO/ODI Reference Model corpus.",
-      "scope": [
-        {
-          "component": "DIO/ODI MCP v0.1.1",
-          "component_type": "software-release",
-          "uri": "https://doi.org/10.5281/zenodo.24123229",
-          "role": "versioned-archival-record"
-        },
-        {
-          "component": "DIO/ODI MCP software",
-          "component_type": "software-concept-record",
-          "uri": "https://doi.org/10.5281/zenodo.24123228",
-          "role": "cross-version-identifier"
-        }
-      ],
-      "before": "The public read-only MCP service was deployed and production-validated, and GitHub release v0.1.1 carried the corrected archival metadata, but the Zenodo version and Concept DOIs were not yet recorded in the live Reference Model metadata surfaces.",
-      "after": "Zenodo has assigned version DOI 10.5281/zenodo.24123229 to MCP v0.1.1 and Concept DOI 10.5281/zenodo.24123228 to the software across versions. The live corpus registry, bibliographic references, typed relations, README, machine-discovery file, and future Zenodo metadata projection now identify the MCP distribution.",
-      "preserved_invariants": [
-        "The MCP service remains stateless and read-only; it does not execute application authorization, commit or revert writes, or act as an MVDIO Supervisor.",
-        "The archived Reference Model v0.9.0 and its embedded vocabulary and SCF snapshots remain immutable.",
-        "The MCP server remains a separate derived software distribution and does not modify canonical DIO/ODI concept definitions, hierarchy, or relations.",
-        "The implementation remains MIT-licensed; embedded/adapted DIO/ODI reference content remains CC BY 4.0."
-      ],
-      "impact": {
-        "level": "cross-layer",
-        "compatibility": "metadata-only",
-        "affected_components": [
-          "DIO/ODI MCP software identity",
-          "Corpus Metadata Registry",
-          "Reference Model discovery surfaces",
-          "Zenodo related-work metadata"
-        ],
-        "notes": "This is a DOI and provenance synchronization following archival publication. It does not change MCP behavior or the canonical Reference Vocabulary."
-      },
-      "evidence": {
-        "status": "documented",
-        "basis": [
-          "archival-record",
-          "linked-publication-or-artifact"
-        ],
-        "temporal_note": "The date is the documentation date on which the author-supplied Zenodo identifiers were incorporated into the live metadata graph; it is not asserted as an independently verified Zenodo publication timestamp.",
-        "sources": [
-          {
-            "label": "DIO/ODI MCP v0.1.1 — Zenodo version record",
-            "url": "https://doi.org/10.5281/zenodo.24123229",
-            "role": "versioned-archival-record"
-          },
-          {
-            "label": "DIO/ODI MCP — Zenodo Concept DOI",
-            "url": "https://doi.org/10.5281/zenodo.24123228",
-            "role": "cross-version-concept-record"
-          },
-          {
-            "label": "DIO/ODI MCP source repository",
-            "url": "https://github.com/dan-beranek/dio-odi-mcp",
-            "role": "implementation-source"
-          },
-          {
-            "label": "DIO/ODI MCP v0.1.1 release",
-            "url": "https://github.com/dan-beranek/dio-odi-mcp/releases/tag/v0.1.1",
-            "role": "versioned-source-release"
-          }
-        ]
-      },
-      "lineage": {
-        "related_to": [
-          "SCF-2026-049"
-        ],
-        "supersedes": [],
-        "corrects": []
-      }
-    },
-    {
       "id": "SCF-2026-001",
       "date": "2026-03-25",
       "date_basis": "hub_changelog_date",
@@ -3050,6 +2971,85 @@
       },
       "lineage": {
         "related_to": [],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-050",
+      "date": "2026-11-11",
+      "date_basis": "documentation_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "DIO/ODI MCP v0.1.1 receives its Zenodo version DOI and Concept DOI",
+      "summary": "The DIO/ODI MCP v0.1.1 read-only software release is archived in Zenodo. The version-specific DOI identifies this release, while the Concept DOI identifies the software across versions. The publication makes the MCP distribution independently citable and links it to the DIO/ODI Reference Model corpus.",
+      "scope": [
+        {
+          "component": "DIO/ODI MCP v0.1.1",
+          "component_type": "software-release",
+          "uri": "https://doi.org/10.5281/zenodo.24123229",
+          "role": "versioned-archival-record"
+        },
+        {
+          "component": "DIO/ODI MCP software",
+          "component_type": "software-concept-record",
+          "uri": "https://doi.org/10.5281/zenodo.24123228",
+          "role": "cross-version-identifier"
+        }
+      ],
+      "before": "The public read-only MCP service was deployed and production-validated, and GitHub release v0.1.1 carried the corrected archival metadata, but the Zenodo version and Concept DOIs were not yet recorded in the live Reference Model metadata surfaces.",
+      "after": "Zenodo has assigned version DOI 10.5281/zenodo.24123229 to MCP v0.1.1 and Concept DOI 10.5281/zenodo.24123228 to the software across versions. The live corpus registry, bibliographic references, typed relations, README, machine-discovery file, and future Zenodo metadata projection now identify the MCP distribution.",
+      "preserved_invariants": [
+        "The MCP service remains stateless and read-only; it does not execute application authorization, commit or revert writes, or act as an MVDIO Supervisor.",
+        "The archived Reference Model v0.9.0 and its embedded vocabulary and SCF snapshots remain immutable.",
+        "The MCP server remains a separate derived software distribution and does not modify canonical DIO/ODI concept definitions, hierarchy, or relations.",
+        "The implementation remains MIT-licensed; embedded/adapted DIO/ODI reference content remains CC BY 4.0."
+      ],
+      "impact": {
+        "level": "cross-layer",
+        "compatibility": "metadata-only",
+        "affected_components": [
+          "DIO/ODI MCP software identity",
+          "Corpus Metadata Registry",
+          "Reference Model discovery surfaces",
+          "Zenodo related-work metadata"
+        ],
+        "notes": "This is a DOI and provenance synchronization following archival publication. It does not change MCP behavior or the canonical Reference Vocabulary."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "archival-record",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "The date is the documentation date on which the author-supplied Zenodo identifiers were incorporated into the live metadata graph; it is not asserted as an independently verified Zenodo publication timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI MCP v0.1.1 — Zenodo version record",
+            "url": "https://doi.org/10.5281/zenodo.24123229",
+            "role": "versioned-archival-record"
+          },
+          {
+            "label": "DIO/ODI MCP — Zenodo Concept DOI",
+            "url": "https://doi.org/10.5281/zenodo.24123228",
+            "role": "cross-version-concept-record"
+          },
+          {
+            "label": "DIO/ODI MCP source repository",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp",
+            "role": "implementation-source"
+          },
+          {
+            "label": "DIO/ODI MCP v0.1.1 release",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp/releases/tag/v0.1.1",
+            "role": "versioned-source-release"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-049"
+        ],
         "supersedes": [],
         "corrects": []
       }
