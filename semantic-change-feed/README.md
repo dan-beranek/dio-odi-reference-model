@@ -22,6 +22,7 @@ Version 0.1.3 contains **49 event records** and covers:
 - Compound Changelog bullets split into separate records where they describe distinct conceptual, publication, distribution, mapping, or archival events.
 - The live Reference Vocabulary v0.2.2 metadata-only prefix-alignment update on 9 November 2026.
 - The canonical SPARQL query endpoint at `examples/queries.rq`, publicly deployed on 9 November 2026 with `application/sparql-query`; the former `.sparql` path remains a legacy compatibility copy.
+- The public read-only DIO/ODI MCP service deployment and 31/31 production smoke validation on 11 November 2026, recorded as SCF-2026-049.
 - Explicit chronology entries for archived Reference Model v0.8.0 and v0.9.0. These entries were added to the live feed on 10 November 2026 while preserving the releases' actual publication dates and immutable component snapshots.
 
 This is complete coverage of the dated Hub Changelog entries, not a claim that every repository commit or every undated intermediate artifact has its own event.
