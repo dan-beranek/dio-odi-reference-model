@@ -25,9 +25,21 @@ The repository intentionally begins with **SKOS**. A future OWL layer should add
 
 The public site root, [vocab.danielberanek.cz](https://vocab.danielberanek.cz/), is the top-level overview of the Reference Model site. The [Reference Vocabulary page](https://vocab.danielberanek.cz/dio-odi/) is a distinct child resource identifying the canonical SKOS ConceptScheme; it is not the site's homepage. [Application Mappings](https://vocab.danielberanek.cz/mappings/) form a derived, non-normative layer. The [Corpus Metadata frontend](https://vocab.danielberanek.cz/metadata/) provides a human-readable entry point to the operational registry and its machine-readable records; the [technical registry documentation](https://vocab.danielberanek.cz/metadata/README.md) describes its workflow and governance rules. The wider Manifest and publication corpus is presented separately on the [DIO/ODI Hub](https://danielberanek.cz/manifest-dio/).
 
-The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, deployment, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities. The archived Reference Model v0.9.0 integrates feed v0.1.1 (45 documented events through 9 November 2026) and JSON Schema v0.2.0. The live feed is now v0.1.3 (49 events) with JSON Schema v0.2.1; it records the subsequent SPARQL `.rq` deployment, reconciles the v0.8.0/v0.9.0 archive chronology, and documents the public read-only MCP service deployment and production validation on 11 November 2026. These are live maintenance updates only: the archived packages remain immutable and no new Reference Model release is created. SCF is a Reference Model component, not a separately DOI-identified work.
+The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, deployment, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities. The archived Reference Model v0.9.0 integrates feed v0.1.1 (45 documented events through 9 November 2026) and JSON Schema v0.2.0. The live feed is now v0.1.4 (50 events) with JSON Schema v0.2.1; it records the subsequent SPARQL `.rq` deployment, reconciles the v0.8.0/v0.9.0 archive chronology, and documents the public read-only MCP service deployment and production validation on 11 November 2026. These are live maintenance updates only: the archived packages remain immutable and no new Reference Model release is created. SCF is a Reference Model component, not a separately DOI-identified work.
 
 The live Reference Vocabulary is v0.2.2, a metadata-only prefix-alignment update to v0.2.1; the concept model remains unchanged. The current archived Reference Model package is v0.9.0 (https://doi.org/10.5281/zenodo.24085589); its predecessor is v0.8.0 (https://doi.org/10.5281/zenodo.24056601).
+
+## Agent-facing MCP distribution
+
+The Reference Model is also exposed through a separate public, stateless, read-only Model Context Protocol server. **DIO/ODI MCP v0.1.1** provides a bounded snapshot of the Reference Model and selected derived Agentic ER and Policy-as-Code mappings; it is an integration and diagnostic interface, not an MVDIO Supervisor or authorization service.
+
+- MCP endpoint: https://mcp.danielberanek.cz/mcp
+- Health endpoint: https://mcp.danielberanek.cz/healthz
+- Source repository: https://github.com/dan-beranek/dio-odi-mcp
+- Version DOI (v0.1.1): https://doi.org/10.5281/zenodo.24123229
+- Concept DOI (all versions): https://doi.org/10.5281/zenodo.24123228
+
+The MCP server is a separate derived software distribution. It does not alter the canonical vocabulary or the immutable Reference Model v0.9.0 archive.
 
 ## Concept map
 
