@@ -575,13 +575,14 @@ def check_semantic_change_feed() -> dict[str, int | str]:
     dates = [event.get("date") for event in events]
     require(dates == sorted(dates), "Semantic Change Feed events must be stored in chronological order")
     known_ids = set(ids)
-    require(feed.get("feed_version") == "0.1.3" and feed.get("schema_version") == "0.2.1",
-            "Live SCF feed/schema versions must be 0.1.3/0.2.1")
+    require(feed.get("feed_version") == "0.1.4" and feed.get("schema_version") == "0.2.1",
+            "Live SCF feed/schema versions must be 0.1.4/0.2.1")
     required_reconciliations = {
         "SCF-2026-046": ("deployment_date", "2026-11-09"),
         "SCF-2026-047": ("documentation_date", "2026-11-10"),
         "SCF-2026-048": ("documentation_date", "2026-11-10"),
         "SCF-2026-049": ("deployment_date", "2026-11-11"),
+        "SCF-2026-050": ("documentation_date", "2026-11-11"),
     }
     events_by_id = {event["id"]: event for event in events}
     for event_id, expected in required_reconciliations.items():

@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.13",
+  "registry_version": "1.8.14",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -246,6 +246,24 @@
           "reference_model_release_doi": "10.5281/zenodo.23282752"
         }
       ]
+    },
+    {
+      "id": "mcp-server",
+      "title": "DIO/ODI MCP: A Read-only Model Context Protocol Server for the DIO/ODI Reference Model and Agentic Entity Resolution Guardrail Mappings",
+      "type": "software",
+      "version": "0.1.1",
+      "version_doi": "10.5281/zenodo.24123229",
+      "concept_doi": "10.5281/zenodo.24123228",
+      "preferred_relation_identifier": "10.5281/zenodo.24123229",
+      "repository": "https://github.com/dan-beranek/dio-odi-mcp",
+      "endpoint": "https://mcp.danielberanek.cz/mcp",
+      "health_endpoint": "https://mcp.danielberanek.cz/healthz",
+      "license": "MIT",
+      "embedded_content_license": "CC-BY-4.0",
+      "note": "Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state.",
+      "keyword_profile": "mcp-server",
+      "keyword_profile_status": "canonical-approved",
+      "keyword_grammar_version": "2.0.0"
     }
   ]
 }

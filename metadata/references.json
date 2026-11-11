@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.2",
+  "registry_version": "1.3.3",
   "references": [
     {
       "id": "manifest-v1",
@@ -87,6 +87,15 @@
       "scope": "external",
       "citation": "Basic policy construction in Cedar. (n.d.). Cedar Policy Language Reference Guide. Retrieved 25 October 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html",
       "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html"
+    },
+    {
+      "id": "mcp-server",
+      "scope": "internal",
+      "citation": "Beránek, D. (2026). DIO/ODI MCP: A Read-only Model Context Protocol Server for the DIO/ODI Reference Model and Agentic Entity Resolution Guardrail Mappings (Version 0.1.1) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24123229. Concept DOI: https://doi.org/10.5281/zenodo.24123228",
+      "doi": "10.5281/zenodo.24123229",
+      "concept_doi": "10.5281/zenodo.24123228",
+      "version": "0.1.1",
+      "repository": "https://github.com/dan-beranek/dio-odi-mcp"
     }
   ]
 }
