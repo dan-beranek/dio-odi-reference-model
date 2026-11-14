@@ -112,6 +112,22 @@ This is a **derived, non-normative application mapping**. It does not redefine t
 
 The mapping is about authorization of a proposed persistent identity mutation. It does not model the full hypothesis-conditioned evidence-acquisition loop, downstream mutation propagation, dependency-aware cascade mitigation, or post-commit identity recovery. Those are separate problems and are not implied to be solved by adding a policy engine.
 
+## Cross-domain adaptation discussed externally: coding agents
+
+Jeremy Pickett's essay, [*The Missing Ring-0 Protections for AI Agents*](https://hwtn.io/essays/t0013-missing-ring-0-protections-ai) (30 October 2026), proposes adapting the commit-boundary idea to coding-agent execution. It identifies a limit in transferring the Agentic ER sequence unchanged: post-execution validation and rollback presume effects that remain reversible or staged, while a published Git push or an outbound API write may already have changed an external system.
+
+Pickett therefore treats staging as a prerequisite to releasing effects. His proposal includes:
+
+- **Files:** the agent works in a copy-on-write overlay; the executor applies an approved diff to the real worktree.
+- **Git:** pushes are held at a shadow remote or holding branch; the executor performs the release after approval.
+- **Network writes:** an outbound proxy holds write requests for approval and then releases or discards them.
+- **Credentials:** the executor retains credentials capable of releasing protected effects, so the agent cannot bypass the gate by calling the same service directly.
+- **Effects that cannot be staged:** they require explicit approval bound to the exact invocation.
+
+In this proposed architecture, a deterministic policy engine such as OPA or Cedar evaluates authorization; the model may propose an action but does not approve it. This connects to the Policy-as-Code mechanisms discussed above, while adding a distinct enforcement prerequisite: policy evaluation alone cannot stage effects, withhold credentials, or guarantee that every effect path crosses the gate.
+
+**Status and boundary:** This is an independently authored proposal, not an implementation or validation of the DIO/ODI paper or this mapping. Pickett states that nothing has been built and that the proposed study has not been run. The current mapping remains focused on Agentic Entity Resolution; it does not claim a completed or tested coding-agent integration.
+
 ## References
 
 1. Beránek, D. (2026, 5 November). *Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution* [Preprint, version 2]. arXiv. [arXiv:2610.37407v2](https://arxiv.org/abs/2610.37407v2). Concept DOI [10.48550/arXiv.2610.37407](https://doi.org/10.48550/arXiv.2610.37407). Earlier Zenodo version 1 record [10.5281/zenodo.23580733](https://doi.org/10.5281/zenodo.23580733).
@@ -122,15 +138,17 @@ The mapping is about authorization of a proposed persistent identity mutation. I
 
 4. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.2; included in archived Reference Model v0.9.0; previous archived v0.8.0 includes v0.2.1; version 0.2.0 included in archived v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
 
-4. Cedar Policy Language Reference Guide. (n.d.). *Basic policy construction in Cedar* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html.
+6. Cedar Policy Language Reference Guide. (n.d.). *Basic policy construction in Cedar* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html.
 
-5. Cedar Policy Language Reference Guide. (n.d.). *How Cedar authorization works* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/auth/authorization.html.
+6. Cedar Policy Language Reference Guide. (n.d.). *How Cedar authorization works* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/auth/authorization.html.
 
-6. Open Policy Agent. (n.d.). *Bundles* [Documentation]. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs/management-bundles.
+7. Open Policy Agent. (n.d.). *Bundles* [Documentation]. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs/management-bundles.
 
-7. Open Policy Agent. (n.d.). *Decision logs* [Documentation]. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs/management-decision-logs.
+8. Open Policy Agent. (n.d.). *Decision logs* [Documentation]. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs/management-decision-logs.
 
-8. Open Policy Agent. (n.d.). *Open Policy Agent documentation*. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs.
+9. Open Policy Agent. (n.d.). *Open Policy Agent documentation*. Retrieved 4 November 2026, from https://www.openpolicyagent.org/docs.
+
+10. Pickett, J. (2026, 30 October). *The Missing Ring-0 Protections for AI Agents*. Hawthorne No. 07. https://hwtn.io/essays/t0013-missing-ring-0-protections-ai. External proposal; not an implemented or empirically evaluated coding-agent integration.
 
 The cited platform documentation describes OPA and Cedar capabilities. The obligation-to-mechanism relations and residual integration requirements are the author’s analytical interpretation, not claims made by the cited documentation.
 
