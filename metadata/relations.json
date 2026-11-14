@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.5.1",
+  "registry_version": "1.5.2",
   "relation_semantics": "Directed edges are expressed from subject to object using Zenodo/DataCite-style relation names where possible. Only edges with approved_for_zenodo=true should be projected automatically into .zenodo.json or historical Zenodo records.",
   "relations": [
     {
@@ -99,7 +99,8 @@
       "observed_relation_on_zenodo": "isSupplementedBy",
       "canonical_relation": "isIdenticalTo",
       "status": "verified-by-author",
-      "note": "Verified by the author as an identical distribution copy of the same research output. Any existing Zenodo IsSupplementedBy relation for this copy should be corrected to IsIdenticalTo."
+      "note": "Verified by the author as an identical distribution copy of the same research output. The Zenodo v1 record still displays IsSupplementedBy for this DOI as checked on 2026-11-14; the canonical relation is isIdenticalTo and the displayed Zenodo relation remains a pending metadata correction.",
+      "zenodo_record_checked_on": "2026-11-14"
     },
     {
       "subject": "mvdio",
@@ -110,7 +111,8 @@
       "observed_relation_on_zenodo": "isSupplementedBy",
       "canonical_relation": "isIdenticalTo",
       "status": "verified-by-author",
-      "note": "Verified by the author as an identical distribution copy of the same research output. Any existing Zenodo IsSupplementedBy relation for this copy should be corrected to IsIdenticalTo."
+      "note": "Verified by the author as an identical distribution copy of the same research output. The Zenodo v1 record still displays IsSupplementedBy for this DOI as checked on 2026-11-14; the canonical relation is isIdenticalTo and the displayed Zenodo relation remains a pending metadata correction.",
+      "zenodo_record_checked_on": "2026-11-14"
     },
     {
       "subject": "mvdio",
@@ -118,10 +120,11 @@
       "object": "distribution:mvdio:ssrn",
       "approved_for_zenodo": true,
       "relation_class": "distribution-representation",
-      "observed_relation_on_zenodo": "isSupplementedBy",
       "canonical_relation": "isIdenticalTo",
       "status": "verified-by-author",
-      "note": "Author confirmed that SSRN DOI 10.2139/ssrn.7582778 is an identical distribution copy of the same research output. The existing Zenodo IsSupplementedBy relation should be corrected to IsIdenticalTo."
+      "note": "Author-confirmed identical distribution copy of the same research output. The Zenodo v1 record does not list this SSRN DOI under Related works as checked on 2026-11-14; no Zenodo-observed relation is recorded. The canonical relation is isIdenticalTo.",
+      "zenodo_record_checked_on": "2026-11-14",
+      "zenodo_relation_status": "not-listed-as-related-work"
     },
     {
       "subject": "dio-conceptual-framework",
