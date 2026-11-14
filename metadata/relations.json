@@ -96,11 +96,13 @@
       "object": "distribution:mvdio:researchgate",
       "approved_for_zenodo": true,
       "relation_class": "distribution-representation",
-      "observed_relation_on_zenodo": "isSupplementedBy",
+      "observed_relation_on_zenodo": "isIdenticalTo",
       "canonical_relation": "isIdenticalTo",
       "status": "verified-by-author",
-      "note": "Verified by the author as an identical distribution copy of the same research output. The Zenodo v1 record still displays IsSupplementedBy for this DOI as checked on 2026-11-14; the canonical relation is isIdenticalTo and the displayed Zenodo relation remains a pending metadata correction.",
-      "zenodo_record_checked_on": "2026-11-14"
+      "note": "The author confirmed this distribution as the same research output, and the live Zenodo v1 record currently displays IsIdenticalTo for this DOI as checked on 2026-11-14 (record last modified 2026-11-08). The observed and canonical relations agree.",
+      "zenodo_record_checked_on": "2026-11-14",
+      "zenodo_record_last_modified": "2026-11-08",
+      "zenodo_relation_status": "listed-as-identical"
     },
     {
       "subject": "mvdio",
@@ -108,11 +110,13 @@
       "object": "distribution:mvdio:figshare",
       "approved_for_zenodo": true,
       "relation_class": "distribution-representation",
-      "observed_relation_on_zenodo": "isSupplementedBy",
+      "observed_relation_on_zenodo": "isIdenticalTo",
       "canonical_relation": "isIdenticalTo",
       "status": "verified-by-author",
-      "note": "Verified by the author as an identical distribution copy of the same research output. The Zenodo v1 record still displays IsSupplementedBy for this DOI as checked on 2026-11-14; the canonical relation is isIdenticalTo and the displayed Zenodo relation remains a pending metadata correction.",
-      "zenodo_record_checked_on": "2026-11-14"
+      "note": "The author confirmed this distribution as the same research output, and the live Zenodo v1 record currently displays IsIdenticalTo for this DOI as checked on 2026-11-14 (record last modified 2026-11-08). The observed and canonical relations agree.",
+      "zenodo_record_checked_on": "2026-11-14",
+      "zenodo_record_last_modified": "2026-11-08",
+      "zenodo_relation_status": "listed-as-identical"
     },
     {
       "subject": "mvdio",
@@ -122,9 +126,11 @@
       "relation_class": "distribution-representation",
       "canonical_relation": "isIdenticalTo",
       "status": "verified-by-author",
-      "note": "Author-confirmed identical distribution copy of the same research output. The Zenodo v1 record does not list this SSRN DOI under Related works as checked on 2026-11-14; no Zenodo-observed relation is recorded. The canonical relation is isIdenticalTo.",
+      "note": "The author confirmed this distribution as the same research output, and the live Zenodo v1 record currently displays IsIdenticalTo for this DOI as checked on 2026-11-14 (record last modified 2026-11-08). The observed and canonical relations agree.",
       "zenodo_record_checked_on": "2026-11-14",
-      "zenodo_relation_status": "not-listed-as-related-work"
+      "zenodo_relation_status": "listed-as-identical",
+      "observed_relation_on_zenodo": "isIdenticalTo",
+      "zenodo_record_last_modified": "2026-11-08"
     },
     {
       "subject": "dio-conceptual-framework",
