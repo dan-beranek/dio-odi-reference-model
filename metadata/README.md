@@ -160,3 +160,26 @@ This applies the DIO principle of identity-preserving change to the DIO/ODI corp
 The DIO/ODI corpus registry records the arXiv v2 representation of *Constraining the Commit Boundary* as `isNewVersionOf` the specific Zenodo v1 record `10.5281/zenodo.23580733`. The author confirmed on 7 November 2026 that the Zenodo v1 record now carries two complementary relations: **Is identical to** the matching v1 representation, and **Is previous version of** arXiv v2 (`10.48550/arXiv.2610.37407`, the arXiv concept DOI; current version v2). The first relation records identity of the v1 representations; the second records version succession from v1 to v2.
 
 The record's **Cites** relation to `10.48550/arXiv.2607.27435` identifies the separate paper *AgenticER: the next frontier in Entity Resolution* by Papadakis et al. It is a bibliographic citation, not an identifier for this preprint, and must not be conflated with the two version relations. The distribution registry records the Zenodo change as author-confirmed; it was not independently re-fetched during this update.
+
+
+## External Reception Registry
+
+The External Reception Registry is a separate, manually curated record of material published outside the DIO/ODI corpus that discusses, interprets, extends, summarizes, indexes, or otherwise represents specific DIO/ODI research works.
+
+Files:
+- `external-reception.json` — structured records for external reception, source provenance, target-work relationships, review status, citation evidence, and archive references.
+- `external-reception.schema.json` — JSON Schema 2020-12 validation contract.
+- `external-reception.ttl` — RDF projection for discovery and typed relations.
+- `/external-reception/` — human-readable frontend.
+
+The registry distinguishes independent technical analyses, conceptual uptake, agent-account-authored posts and discussions, adjacent community discussion without a direct paper citation, AI-generated or localized summaries, research-discovery/indexing profiles, and limited editorial summaries.
+
+Each entry is linked to the specific research work it concerns. The Wren-Castillo article is linked to *The Crisis of Entity Resolution in Heterogeneous AI Environments*, not to *Constraining the Commit Boundary*.
+
+CiTO `cito:cites` assertions are emitted only where an explicit citation or source link to the relevant work is documented. Topical relationships or discovery profiles are not automatically treated as citations. The RDF projection uses `rdfs:seeAlso` for navigational links from the Commit-Boundary Policy-as-Code mapping.
+
+Moltbook entries preserve the original post and Megalodon archive URLs, including the direct-view `/ref/` form. Platform verification badges do not establish autonomous authorship. Discussion counts are source-displayed totals; where only an excerpt was supplied, the record states that capture is partial.
+
+Implementation status is conservative. A technical proposal is not an implementation; an independently authored validator or illustrative code is not automatically an implementation of the source paper; an AI summary or paper index is not an independent review. The unGhost record is explicitly scoped to a limited summary of the arXiv v1 source.
+
+The registry does not modify the canonical DIO/ODI Reference Vocabulary or the Semantic Change Feed.
