@@ -1,0 +1,794 @@
+{
+  "registry_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "uri": "https://vocab.danielberanek.cz/metadata/external-reception.json",
+  "frontend_uri": "https://vocab.danielberanek.cz/external-reception/",
+  "generated_on": "2026-11-14",
+  "title": "DIO/ODI External Reception Registry",
+  "description": "A manually curated register of external technical analyses, conceptual uptake, agent-authored discussions, AI-mediated summaries, research-discovery records, and secondary representations linked to specific DIO/ODI research works. It documents external reception without modifying the canonical Reference Vocabulary.",
+  "maintainer": {
+    "name": "Daniel Beránek",
+    "person_uri": "https://danielberanek.cz/#person",
+    "orcid": "https://orcid.org/0009-0004-0050-0264"
+  },
+  "policy": {
+    "manual_curation": true,
+    "preserves_source_provenance": true,
+    "agent_autonomy_not_inferred": true,
+    "platform_badges_are_not_identity_proofs": true,
+    "citations_require_explicit_source_evidence": true,
+    "implementation_claims_require_direct_evidence": true,
+    "does_not_modify_canonical_vocabulary": true,
+    "correction_rule": "Corrections update the live registry with traceable Git history. A topical relationship must not be upgraded to citation, independent review, adoption, or implementation without explicit evidence."
+  },
+  "target_works": [
+    {
+      "id": "commit-boundary-paper",
+      "title": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution",
+      "url": "https://arxiv.org/abs/2610.37407",
+      "version": "v2",
+      "version_url": "https://arxiv.org/abs/2610.37407v2",
+      "zenodo_v1": "https://doi.org/10.5281/zenodo.23580733"
+    },
+    {
+      "id": "crisis-entity-resolution",
+      "title": "The Crisis of Entity Resolution in Heterogeneous AI Environments: Data, Financial, and Semantic Dimensions",
+      "url": "https://doi.org/10.5281/zenodo.22416026",
+      "version": "1.1.0"
+    }
+  ],
+  "categories": [
+    {
+      "id": "technical-analysis",
+      "label": "Independent technical analyses",
+      "description": "Externally authored technical analyses and proposed adaptations."
+    },
+    {
+      "id": "conceptual-uptake",
+      "label": "External conceptual uptake",
+      "description": "External conceptual discussion linked to a specific research work."
+    },
+    {
+      "id": "agent-discussion",
+      "label": "Agent-authored analyses and discussions",
+      "description": "Posts attributed to agent accounts; account attribution does not establish autonomy."
+    },
+    {
+      "id": "adjacent-community-discussion",
+      "label": "Adjacent community discussions",
+      "description": "Related discussions in the same problem space without a direct paper citation."
+    },
+    {
+      "id": "ai-summary",
+      "label": "AI-generated and localized summaries",
+      "description": "Platform-generated summaries and localized paper profiles, not independent reviews."
+    },
+    {
+      "id": "research-discovery",
+      "label": "Research discovery and indexing",
+      "description": "Paper profiles and index records, including records whose content is not independently verified."
+    },
+    {
+      "id": "research-editorial",
+      "label": "Research editorials and limited summaries",
+      "description": "Editorial or explainer-style secondary research pages."
+    },
+    {
+      "id": "ai-presentation",
+      "label": "AI-generated presentations",
+      "description": "Derivative audio or spoken presentations."
+    }
+  ],
+  "entries": [
+    {
+      "id": "pickett-missing-ring0-protections",
+      "title": "The Missing Ring-0 Protections in AI",
+      "url": "https://hwtn.io/essays/t0013-missing-ring-0-protections-ai",
+      "platform": "Hawthorne / hwtn.io",
+      "category": "technical-analysis",
+      "content_kind": "proposed-technical-adaptation",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "technical-extension",
+      "citation_status": "paper-discussion; formal citation not asserted",
+      "content_origin": "externally-authored",
+      "authors": [
+        {
+          "name": "Jeremy Pickett",
+          "kind": "named-author"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "A technical adaptation of the Commit Boundary idea to coding-agent execution protection. Pickett proposes staged effects, shadow state, copy-on-write, executor-held credentials, and policy checks around privileged actions. These are proposed design directions, not a completed implementation.",
+      "implementation_status": "proposal-only",
+      "cited_sources": [],
+      "publication": {
+        "date": "2026-11-02",
+        "date_basis": "prior-reviewed-publication-date",
+        "language": "en"
+      },
+      "key_points": [
+        "Staged effects and delayed execution",
+        "Copy-on-write or shadow branches",
+        "Executor-held credentials",
+        "OPA/Cedar as proposed policy decision points"
+      ]
+    },
+    {
+      "id": "cho-commit-boundary-analysis",
+      "title": "Why an Identity Hypothesis Is Not Permission to Merge",
+      "url": "https://sgtcho.com/en/paper/2610-37407-constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resol.html",
+      "platform": "sgtcho.com",
+      "category": "technical-analysis",
+      "content_kind": "independent-technical-analysis",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "direct-analysis",
+      "citation_status": "dedicated-paper-analysis; formal citation not independently asserted",
+      "content_origin": "externally-authored",
+      "authors": [
+        {
+          "name": "Minjae Cho",
+          "kind": "named-author"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "A substantial technical analysis that reconstructs the commit-boundary contract and develops its own Boolean decision model, examples, and offline validation code. Cho distinguishes his illustrative equations and code from an implementation supplied by the original paper.",
+      "implementation_status": "illustrative-code-not-production-implementation",
+      "cited_sources": [],
+      "publication": {
+        "date": "2026-10-28",
+        "date_basis": "prior-reviewed-publication-date",
+        "language": "en"
+      },
+      "key_points": [
+        "Independent Boolean decision model",
+        "Author-created Python offline validator",
+        "Claim-specific evidence and fail-closed reasoning",
+        "Illustrative code is not a production implementation"
+      ]
+    },
+    {
+      "id": "wren-castillo-entity-resolution-heterogeneous-sources",
+      "title": "Entity Resolution Across Heterogeneous Web Sources",
+      "url": "https://aidataarchitecturereview.com/posts/entity-resolution-across-heterogeneous-web-sources",
+      "platform": "AI Data Architecture Review",
+      "category": "conceptual-uptake",
+      "content_kind": "external-conceptual-reception",
+      "target_work_ids": [
+        "crisis-entity-resolution"
+      ],
+      "relation_to_work": "conceptual-uptake",
+      "citation_status": "explicit-reference-to-crisis-work",
+      "content_origin": "externally-authored",
+      "authors": [
+        {
+          "name": "Tobias Wren-Castillo",
+          "kind": "named-author"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "An external conceptual discussion of entity resolution across heterogeneous web sources, connected to identity collapse, semantic fragmentation, temporal discontinuity, and semantic vulnerability. Its research connection is The Crisis of Entity Resolution, not Commit Boundary.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [
+        {
+          "title": "The Crisis of Entity Resolution",
+          "url": "https://doi.org/10.5281/zenodo.22416026",
+          "relation": "explicit-reference"
+        }
+      ],
+      "publication": {
+        "date": "2026-10-22",
+        "date_basis": "prior-reviewed-publication-date",
+        "language": "en"
+      },
+      "key_points": [
+        "External discussion of heterogeneous web-source entity resolution",
+        "Connected to The Crisis of Entity Resolution",
+        "Not a Commit Boundary reaction"
+      ]
+    },
+    {
+      "id": "summarizepaper-commit-boundary-v2",
+      "title": "Constraining the Commit Boundary — paper summary (v2)",
+      "url": "https://www.summarizepaper.com/en/paper/2610.37407v2/",
+      "platform": "SummarizePaper",
+      "category": "ai-summary",
+      "content_kind": "ai-generated-paper-summary",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "summarizes",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-generated",
+      "authors": [
+        {
+          "name": "SummarizePaper",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "partially-reviewed",
+      "summary": "An AI-generated summary page for the v2 arXiv preprint. It is a secondary representation, not an independent technical review or implementation.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "version_scope": "Explicitly identifies arXiv v2",
+        "language": "en"
+      }
+    },
+    {
+      "id": "aimodels-fyi-commit-boundary-index",
+      "title": "Constraining the Commit Boundary — paper index record",
+      "url": "https://www.aimodels.fyi/papers/arxiv/constraining-commit-boundary-dioodi-informed-authorization-guardrail",
+      "platform": "AIModels.fyi",
+      "category": "research-discovery",
+      "content_kind": "paper-index-record",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "indexes",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-profile",
+      "authors": [
+        {
+          "name": "AIModels.fyi",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "link-only",
+      "summary": "A research-discovery/indexing record identifiable from its URL. Page content was not accessible during review, so no independent analysis or substantive claims are attributed to it.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "version_scope": "Version not confirmed",
+        "language": "en"
+      }
+    },
+    {
+      "id": "arxivlens-commit-boundary-profile",
+      "title": "Constraining the Commit Boundary — ArxivLens paper profile",
+      "url": "https://arxivlens.com/paperview/details/constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resolution-2c7e617c0d906d7a#paper-analysis",
+      "platform": "ArxivLens",
+      "category": "research-discovery",
+      "content_kind": "research-discovery-and-analysis-profile",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "indexes",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-profile",
+      "authors": [
+        {
+          "name": "ArxivLens",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "partially-reviewed",
+      "summary": "A paper-discovery profile with an AI-analysis section. At the time of review, no generated findings or discussion were available; displayed metadata appeared potentially older than the current arXiv v2 manuscript.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "version_scope": "Not clearly pinned to arXiv v2",
+        "language": "en"
+      }
+    },
+    {
+      "id": "powerdrill-commit-boundary-digest",
+      "title": "Constraining the Commit Boundary — Powerdrill research digest",
+      "url": "https://chat.powerdrill.ai/discover/summary-constraining-the-commit-boundary-a-dioodi-informed-cmvsls1jk0hxr07pocyb94gvx",
+      "platform": "Powerdrill",
+      "category": "ai-summary",
+      "content_kind": "ai-assisted-paper-exploration",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "summarizes",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-generated",
+      "authors": [
+        {
+          "name": "Powerdrill",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "partially-reviewed",
+      "summary": "A paper-exploration page associated with an AI digest, mind map, and interactive question workflow. It is a secondary AI-mediated representation, not an independent review.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "version_scope": "Not clearly pinned",
+        "language": "en"
+      }
+    },
+    {
+      "id": "franklin-ai-commit-boundary-editorial",
+      "title": "Franklin AI — editorial research profile for Commit Boundary",
+      "url": "https://franklineh.com/learn/research/editorial-research-b952aa6eca85093b383b4ed956e3c141",
+      "platform": "Franklin AI",
+      "category": "research-editorial",
+      "content_kind": "editorial-research-explainer",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "editorial-profile",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-editorial",
+      "authors": [
+        {
+          "name": "Franklin AI",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "partially-reviewed",
+      "summary": "An editorial-style research explainer associated with the Commit Boundary paper. It is not classified as an independent peer review; its authorship and generation method are not asserted beyond platform attribution.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "date": "2026-10-28",
+        "date_basis": "prior-reviewed-publication-date",
+        "language": "en"
+      }
+    },
+    {
+      "id": "moltbook-evil-robot-identity-permanent",
+      "title": "Agentic systems are making identity permanent before they've earned it",
+      "url": "https://www.moltbook.com/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6",
+      "platform": "Moltbook",
+      "category": "agent-discussion",
+      "content_kind": "agent-authored-paper-commentary",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "direct-analysis",
+      "citation_status": "explicit-citation-to-zenodo-v1",
+      "content_origin": "agent-account-authored",
+      "authors": [
+        {
+          "name": "evil_robot_jas",
+          "kind": "agent-account",
+          "account_url": "https://www.moltbook.com/u/evil_robot_jas"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "An agent-account post directly analyzes the Commit Boundary paper, separating evidence used for reasoning from evidence eligible to authorize persistent graph mutation and emphasizing claim-specific constraints and deferral.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [
+        {
+          "title": "Constraining the Commit Boundary (Zenodo v1)",
+          "url": "https://doi.org/10.5281/zenodo.23580733",
+          "relation": "explicit-citation"
+        }
+      ],
+      "publication": {
+        "displayed_relative_age": "22d ago in supplied snapshot",
+        "language": "en"
+      },
+      "key_points": [
+        "Reasoning and authorization are separate",
+        "UNVERIFIED evidence cannot authorize persistent graph mutation",
+        "Claim-specific constraints map to four failure families",
+        "Deferral is preferable to unsupported irreversible decisions"
+      ],
+      "archive": {
+        "service": "Megalodon",
+        "snapshot_url": "https://megalodon.jp/2026-1115-0200-58/https://www.moltbook.com:443/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6",
+        "direct_view_url": "https://megalodon.jp/ref/2026-1115-0200-58/https://www.moltbook.com:443/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6",
+        "snapshot_id": "2026-1115-0200-58"
+      },
+      "discussion": {
+        "comment_count": 0,
+        "count_basis": "Displayed in supplied snapshot",
+        "capture_scope": "Full post text supplied; no comments displayed.",
+        "themes": []
+      }
+    },
+    {
+      "id": "moltbook-aiicli-evidence-write-access",
+      "title": "Database agents should make evidence earn write access",
+      "url": "https://www.moltbook.com/post/e37f0b17-66db-4659-9921-d35b749a2d3a",
+      "platform": "Moltbook",
+      "category": "agent-discussion",
+      "content_kind": "agent-authored-paper-analysis-and-discussion",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "direct-analysis",
+      "citation_status": "explicit-citation-to-arxiv",
+      "content_origin": "agent-account-authored",
+      "authors": [
+        {
+          "name": "AiiCLI",
+          "kind": "agent-account",
+          "account_url": "https://www.moltbook.com/u/AiiCLI",
+          "verification_badge": "Verified"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "An agent-authored analysis explicitly citing the paper. It emphasizes claim-specific evidence, scope, current policy and graph state, and that UNVERIFIED evidence cannot become authorization evidence through repeated retrieval. It preserves the paper's conceptual, unvalidated status.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [
+        {
+          "title": "Constraining the Commit Boundary (arXiv)",
+          "url": "https://arxiv.org/abs/2610.37407",
+          "relation": "explicit-citation"
+        }
+      ],
+      "publication": {
+        "displayed_relative_age": "17d ago in supplied snapshot",
+        "language": "en"
+      },
+      "key_points": [
+        "Retrieval can suggest; it cannot sign",
+        "UNVERIFIED evidence does not gain authorization standing through repetition",
+        "Claim-specific evidence, conflict resolution, scope and version freshness",
+        "The paper remains conceptual and lacks implementation or empirical validation"
+      ],
+      "archive": {
+        "service": "Megalodon",
+        "snapshot_url": "https://megalodon.jp/2026-1115-0159-06/https://www.moltbook.com:443/post/e37f0b17-66db-4659-9921-d35b749a2d3a",
+        "direct_view_url": "https://megalodon.jp/ref/2026-1115-0159-06/https://www.moltbook.com:443/post/e37f0b17-66db-4659-9921-d35b749a2d3a",
+        "snapshot_id": "2026-1115-0159-06"
+      },
+      "discussion": {
+        "comment_count": 2,
+        "count_basis": "Visible count",
+        "capture_scope": "Both visible comments supplied.",
+        "themes": [
+          "Evidence-lineage independence",
+          "Repeated retrieval is not independent corroboration",
+          "Authorization must be enforced"
+        ],
+        "notable_participants": [
+          "venice-witness",
+          "KitSinclair"
+        ]
+      }
+    },
+    {
+      "id": "moltbook-vina-confidence-match",
+      "title": "A confident match is not a reason to merge two people",
+      "url": "https://www.moltbook.com/post/87b647d7-45bf-4bda-bab4-39dc72236ba6",
+      "platform": "Moltbook",
+      "category": "agent-discussion",
+      "content_kind": "agent-authored-paper-commentary-and-discussion",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "direct-analysis",
+      "citation_status": "explicit-citation-to-arxiv",
+      "content_origin": "agent-account-authored",
+      "authors": [
+        {
+          "name": "vina",
+          "kind": "agent-account",
+          "account_url": "https://www.moltbook.com/u/vina",
+          "verification_badge": "Verified"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "An agent-authored post links the paper's commit-boundary obligations to the distinction between identity matching and authorization. The discussion explores evidence gaps and the risk of treating confidence as permission.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [
+        {
+          "title": "Constraining the Commit Boundary (arXiv)",
+          "url": "https://arxiv.org/abs/2610.37407",
+          "relation": "explicit-citation"
+        }
+      ],
+      "publication": {
+        "displayed_relative_age": "6d ago in supplied snapshot",
+        "language": "en"
+      },
+      "key_points": [
+        "Identity matching and authorization are distinct",
+        "A confidence score is evidence, not permission",
+        "Missing eligible evidence should block or defer a merge",
+        "Discussion covers consent, evidence independence and irreversible effects"
+      ],
+      "archive": {
+        "service": "Megalodon",
+        "snapshot_url": "https://megalodon.jp/2026-1115-0200-01/https://www.moltbook.com:443/post/87b647d7-45bf-4bda-bab4-39dc72236ba6",
+        "direct_view_url": "https://megalodon.jp/ref/2026-1115-0200-01/https://www.moltbook.com:443/post/87b647d7-45bf-4bda-bab4-39dc72236ba6",
+        "snapshot_id": "2026-1115-0200-01"
+      },
+      "discussion": {
+        "comment_count": 3,
+        "count_basis": "Displayed in supplied snapshot",
+        "capture_scope": "Three visible comments supplied.",
+        "themes": [
+          "Consent and scope at merge time",
+          "Independent evidence and provenance",
+          "Irreversible merge effects"
+        ],
+        "notable_participants": [
+          "pipeline50",
+          "luoxi_hermes",
+          "vina"
+        ]
+      },
+      "related_entry_ids": [
+        "moltbook-neo-konsi-permission-escalation"
+      ]
+    },
+    {
+      "id": "moltbook-neo-konsi-permission-escalation",
+      "title": "Identity resolution is a permission escalation",
+      "url": "https://www.moltbook.com/post/548fb2dc-a82d-47e3-8c64-8fd3eb95b2e7",
+      "platform": "Moltbook",
+      "category": "adjacent-community-discussion",
+      "content_kind": "agent-authored-adjacent-community-discussion",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "adjacent-topic-context",
+      "citation_status": "no-commit-boundary-citation-observed",
+      "content_origin": "agent-account-authored",
+      "authors": [
+        {
+          "name": "neo_konsi_s2bw",
+          "kind": "agent-account",
+          "account_url": "https://www.moltbook.com/u/neo_konsi_s2bw",
+          "verification_badge": "Verified"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "A community thread about identity resolution as a permission-scope escalation. Its initiating post discusses a Hightouch identity-resolution hybrid and does not cite Commit Boundary. It is adjacent to the paper's problem space and is linked as community context from vina's post.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "displayed_relative_age": "6d ago in supplied snapshot",
+        "language": "en"
+      },
+      "key_points": [
+        "A confident match does not authorize combining permission scopes",
+        "Purpose restrictions should survive profile links and downstream reads",
+        "Discussion covers permission diffs, reversibility, provenance propagation, revocation, expiry and accountable approval",
+        "Convergent community discussion, not a citation or direct uptake"
+      ],
+      "archive": {
+        "service": "Megalodon",
+        "snapshot_url": "https://megalodon.jp/2026-1115-0217-38/https://www.moltbook.com:443/post/548fb2dc-a82d-47e3-8c64-8fd3eb95b2e7",
+        "direct_view_url": "https://megalodon.jp/ref/2026-1115-0217-38/https://www.moltbook.com:443/post/548fb2dc-a82d-47e3-8c64-8fd3eb95b2e7",
+        "snapshot_id": "2026-1115-0217-38"
+      },
+      "discussion": {
+        "comment_count": 108,
+        "count_basis": "Displayed total",
+        "capture_scope": "Initiating post and substantial comment excerpt supplied; not all 108 comments transcribed.",
+        "themes": [
+          "Purpose-bound permissions",
+          "Permission diff and consent",
+          "Reversible links versus irreversible merges",
+          "Source provenance and downstream revocation",
+          "Independent authorization and accountability",
+          "Expiring exceptions and fail-closed behavior",
+          "Liability for incorrect merges"
+        ],
+        "notable_participants": [
+          "bottube",
+          "AutomatedJanitor2015",
+          "atlas_everexpance",
+          "mr-pav-agent",
+          "samaritannarita",
+          "elenarusso",
+          "groklobster42",
+          "swordfish-ming",
+          "pennyworthatyourservice",
+          "grok-ryancoker",
+          "Antigravity_Agent_n04s",
+          "CyberKyle"
+        ]
+      },
+      "related_entry_ids": [
+        "moltbook-vina-confidence-match"
+      ],
+      "notes": "Initiating post names a Hightouch article but no URL was supplied, so none is inferred. Not a Commit Boundary citation."
+    },
+    {
+      "id": "aidb-commit-boundary-japanese-profile",
+      "title": "Constraining the Commit Boundary — AIDB paper profile",
+      "url": "https://ai-data-base.com/paper/2610-37407",
+      "platform": "AIDB / ai-data-base.com",
+      "category": "ai-summary",
+      "content_kind": "localized-ai-paper-summary",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "summarizes",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-generated",
+      "authors": [
+        {
+          "name": "AIDB",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "partially-reviewed",
+      "summary": "A Japanese-language AI research portal entry with a Japanese interface and Japanese presentation of the paper abstract. It is a localized secondary representation, not an independent technical assessment.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "version_scope": "Paper ID; version not pinned",
+        "language": "ja"
+      }
+    },
+    {
+      "id": "dou-commit-boundary-v1-profile",
+      "title": "Constraining the Commit Boundary — DOU paper profile (v1)",
+      "url": "https://paper.dou.ac/p/2610.37407v1",
+      "platform": "DOU",
+      "category": "research-discovery",
+      "content_kind": "paper-discovery-profile",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "indexes",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-profile",
+      "authors": [
+        {
+          "name": "DOU",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "link-only",
+      "summary": "A paper-discovery profile identifiable from the URL. Its page content was not independently reviewed, so no substantive analysis is attributed to it.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "version_scope": "URL identifies v1",
+        "language": "unknown"
+      }
+    },
+    {
+      "id": "weekinpapers-commit-boundary-v1",
+      "title": "Constraining the Commit Boundary — WeekInPapers profile (v1)",
+      "url": "https://weekinpapers.com/paper/2610.37407v1",
+      "platform": "WeekInPapers",
+      "category": "research-discovery",
+      "content_kind": "research-digest-profile",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "indexes",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-profile",
+      "authors": [
+        {
+          "name": "WeekInPapers",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "link-only",
+      "summary": "A research-digest profile identifiable from the URL. The specific record could not be independently opened; no page-specific summary or assessment is attributed to it.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "version_scope": "URL identifies v1",
+        "language": "en"
+      }
+    },
+    {
+      "id": "sciencecast-commit-boundary-audio",
+      "title": "Constraining the Commit Boundary — ScienceCast presentation",
+      "url": "https://sciencecast.org/casts/zmse3kphl4fj",
+      "platform": "ScienceCast",
+      "category": "ai-presentation",
+      "content_kind": "ai-generated-audio-presentation",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "presents",
+      "citation_status": "target-identification-only",
+      "content_origin": "platform-generated",
+      "authors": [
+        {
+          "name": "ScienceCast",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "partially-reviewed",
+      "summary": "An AI-generated spoken presentation associated with the paper. The page had no comments at review time; audio presentation is not a review or implementation.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "language": "en",
+        "version_scope": "Not clearly pinned"
+      },
+      "discussion": {
+        "comment_count": 0,
+        "count_basis": "Displayed page count in prior review",
+        "capture_scope": "No comments displayed.",
+        "themes": []
+      }
+    },
+    {
+      "id": "aichronos-commit-boundary-profile",
+      "title": "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution",
+      "url": "https://aichronos.ai/n/constraining-the-commit-boundary-a-dio-odi-informed-authoriz-413347/",
+      "platform": "AIChronos",
+      "category": "ai-summary",
+      "content_kind": "ai-generated-paper-profile",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "summarizes",
+      "citation_status": "explicit-source-link-to-arxiv",
+      "content_origin": "platform-generated-local-ai",
+      "authors": [
+        {
+          "name": "AIChronos",
+          "kind": "platform"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "An automatically generated Italian-language paper profile published 31 October 2026 from source material dated 27 October. The page says a local AI model generated it from the original paper and preserves the paper's conceptual status and lack of implementation or empirical validation.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [
+        {
+          "title": "Constraining the Commit Boundary (arXiv)",
+          "url": "https://arxiv.org/abs/2610.37407",
+          "relation": "explicit-source-link"
+        }
+      ],
+      "publication": {
+        "date": "2026-10-31",
+        "date_basis": "page-publication-date",
+        "source_date": "2026-10-27",
+        "source_date_basis": "platform-displayed-source-date",
+        "language": "it"
+      },
+      "key_points": [
+        "Italian-language AI-generated profile",
+        "Explicit link to the arXiv paper",
+        "States no implementation or empirical validation is reported",
+        "Warns that the AI-generated page may contain inaccuracies"
+      ]
+    },
+    {
+      "id": "unghost-agentic-er-loop-guardrail",
+      "title": "The Four-Step Agentic Entity Resolution Loop—and Its Proposed Guardrail",
+      "url": "https://unghost.com/blog/the-four-step-agentic-entity-resolution-loopand-its-proposed-guardrail-d6e86",
+      "platform": "unGhost",
+      "category": "research-editorial",
+      "content_kind": "externally-authored-limited-paper-summary",
+      "target_work_ids": [
+        "commit-boundary-paper"
+      ],
+      "relation_to_work": "limited-summary-of",
+      "citation_status": "explicit-source-link-to-arxiv-v1",
+      "content_origin": "externally-authored",
+      "authors": [
+        {
+          "name": "unGhost team",
+          "kind": "editorial-team-attribution"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "An unGhost editorial published on 6 November 2026 that summarizes the agentic ER loop as planning, retrieving evidence, updating hypotheses, and proposing graph mutations. It identifies an authorization guardrail but explicitly says the supplied summary does not specify its mechanics, architecture, policies, or results. It points readers to arXiv HTML v1.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [
+        {
+          "title": "Constraining the Commit Boundary — arXiv HTML v1",
+          "url": "https://arxiv.org/html/2610.37407v1",
+          "relation": "explicit-original-reporting-link"
+        }
+      ],
+      "publication": {
+        "date": "2026-11-06",
+        "date_basis": "publication-date-in-supplied-text",
+        "language": "en",
+        "version_scope": "Links to arXiv HTML v1, not later v2"
+      },
+      "key_points": [
+        "Four-step loop: plan, retrieve evidence, update hypotheses, propose graph mutations",
+        "Mentions an authorization guardrail but does not explain its mechanics",
+        "No architecture, experiments, benchmarks, or deployment results discussed",
+        "Links to the complete arXiv HTML v1 paper"
+      ],
+      "notes": "Limited editorial summary based on a supplied paper description; not a substantive technical analysis or implementation."
+    }
+  ]
+}
