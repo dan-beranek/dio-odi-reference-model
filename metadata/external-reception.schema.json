@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vocab.danielberanek.cz/metadata/external-reception.schema.json",
+  "title": "DIO/ODI External Reception Registry",
+  "type": "object",
+  "required": [
+    "registry_version",
+    "schema_version",
+    "uri",
+    "frontend_uri",
+    "generated_on",
+    "title",
+    "description",
+    "maintainer",
+    "policy",
+    "target_works",
+    "categories",
+    "entries"
+  ],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "frontend_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "generated_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "maintainer": {
+      "type": "object",
+      "required": [
+        "name",
+        "person_uri",
+        "orcid"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "person_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "orcid": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "manual_curation",
+        "preserves_source_provenance",
+        "agent_autonomy_not_inferred",
+        "platform_badges_are_not_identity_proofs",
+        "citations_require_explicit_source_evidence",
+        "implementation_claims_require_direct_evidence",
+        "does_not_modify_canonical_vocabulary",
+        "correction_rule"
+      ],
+      "properties": {
+        "manual_curation": {
+          "const": true
+        },
+        "preserves_source_provenance": {
+          "const": true
+        },
+        "agent_autonomy_not_inferred": {
+          "const": true
+        },
+        "platform_badges_are_not_identity_proofs": {
+          "const": true
+        },
+        "citations_require_explicit_source_evidence": {
+          "const": true
+        },
+        "implementation_claims_require_direct_evidence": {
+          "const": true
+        },
+        "does_not_modify_canonical_vocabulary": {
+          "const": true
+        },
+        "correction_rule": {
+          "type": "string"
+        }
+      }
+    },
+    "target_works": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url",
+          "platform",
+          "category",
+          "content_kind",
+          "target_work_ids",
+          "relation_to_work",
+          "citation_status",
+          "content_origin",
+          "authors",
+          "review_status",
+          "summary",
+          "implementation_status",
+          "cited_sources",
+          "provenance"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "content_kind": {
+            "type": "string"
+          },
+          "target_work_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "relation_to_work": {
+            "type": "string"
+          },
+          "citation_status": {
+            "type": "string"
+          },
+          "content_origin": {
+            "type": "string"
+          },
+          "authors": {
+            "type": "array"
+          },
+          "review_status": {
+            "enum": [
+              "reviewed",
+              "partially-reviewed",
+              "link-only",
+              "pending-verification"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "implementation_status": {
+            "type": "string"
+          },
+          "cited_sources": {
+            "type": "array"
+          },
+          "provenance": {
+            "type": "object"
+          },
+          "publication": {
+            "type": "object"
+          },
+          "key_points": {
+            "type": "array"
+          },
+          "archive": {
+            "type": "object"
+          },
+          "discussion": {
+            "type": "object"
+          },
+          "related_entry_ids": {
+            "type": "array"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
