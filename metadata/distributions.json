@@ -74,13 +74,14 @@
           "identifier_type": "doi",
           "identifier": "10.13140/RG.2.2.10967.43682",
           "resource_type": "publication-preprint",
-          "evidence": "Zenodo record 10.5281/zenodo.23226205 was checked on 2026-11-14 and still lists this DOI under Related works as Is supplemented by. The author has verified that the external representation contains the same research output; the canonical relation is therefore isIdenticalTo, while the displayed Zenodo relation remains a pending metadata correction.",
-          "observed_relation_on_zenodo": "isSupplementedBy",
+          "evidence": "Zenodo record 10.5281/zenodo.23226205 was checked on 2026-11-14 and currently lists this ResearchGate DOI under Related works as Is identical to. The Zenodo page reports that the record was modified on 2026-11-08. This observed relation matches the author-confirmed identity of the external distribution and the canonical relation isIdenticalTo.",
+          "observed_relation_on_zenodo": "isIdenticalTo",
           "canonical_relation": "isIdenticalTo",
           "semantic_status": "verified-by-author",
           "approved_for_zenodo": true,
           "verification_basis": "Author confirmation that the external distribution contains the same research output as the canonical Zenodo record.",
-          "zenodo_record_checked_on": "2026-11-14"
+          "zenodo_record_checked_on": "2026-11-14",
+          "zenodo_record_last_modified": "2026-11-08"
         },
         {
           "id": "distribution:mvdio:figshare",
@@ -88,13 +89,14 @@
           "identifier_type": "doi",
           "identifier": "10.6084/m9.figshare.34231965",
           "resource_type": "publication-preprint",
-          "evidence": "Zenodo record 10.5281/zenodo.23226205 was checked on 2026-11-14 and still lists this DOI under Related works as Is supplemented by. The author has verified that the external representation contains the same research output; the canonical relation is therefore isIdenticalTo, while the displayed Zenodo relation remains a pending metadata correction.",
-          "observed_relation_on_zenodo": "isSupplementedBy",
+          "evidence": "Zenodo record 10.5281/zenodo.23226205 was checked on 2026-11-14 and currently lists this Figshare DOI under Related works as Is identical to. The Zenodo page reports that the record was modified on 2026-11-08. This observed relation matches the author-confirmed identity of the external distribution and the canonical relation isIdenticalTo.",
+          "observed_relation_on_zenodo": "isIdenticalTo",
           "canonical_relation": "isIdenticalTo",
           "semantic_status": "verified-by-author",
           "approved_for_zenodo": true,
           "verification_basis": "Author confirmation that the external distribution contains the same research output as the canonical Zenodo record.",
-          "zenodo_record_checked_on": "2026-11-14"
+          "zenodo_record_checked_on": "2026-11-14",
+          "zenodo_record_last_modified": "2026-11-08"
         },
         {
           "id": "distribution:mvdio:ssrn",
@@ -102,13 +104,14 @@
           "identifier_type": "doi",
           "identifier": "10.2139/ssrn.7582778",
           "resource_type": "publication-preprint",
-          "evidence": "The author confirmed on 2026-10-15 that SSRN DOI 10.2139/ssrn.7582778 is an identical distribution of the canonical MVDIO Zenodo record. The Zenodo record was checked on 2026-11-14 and does not list this SSRN DOI under Related works; no Zenodo-observed relation is therefore recorded. The canonical relation is isIdenticalTo.",
+          "evidence": "Zenodo record 10.5281/zenodo.23226205 was checked on 2026-11-14 and currently lists this SSRN DOI under Related works as Is identical to. The Zenodo page reports that the record was modified on 2026-11-08. This observed relation matches the author-confirmed identity of the external distribution and the canonical relation isIdenticalTo.",
           "canonical_relation": "isIdenticalTo",
           "semantic_status": "verified-by-author",
           "approved_for_zenodo": true,
           "verification_basis": "Author confirmation that the SSRN publication is the same research output as the canonical Zenodo record.",
-          "zenodo_relation_status": "not-listed-as-related-work",
-          "zenodo_record_checked_on": "2026-11-14"
+          "zenodo_record_checked_on": "2026-11-14",
+          "observed_relation_on_zenodo": "isIdenticalTo",
+          "zenodo_record_last_modified": "2026-11-08"
         }
       ]
     },
