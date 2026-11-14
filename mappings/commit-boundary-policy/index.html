@@ -31,7 +31,7 @@
   "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
   "inLanguage": "en",
   "datePublished": "2026-10-25",
-  "dateModified": "2026-11-09",
+  "dateModified": "2026-11-14",
   "creativeWorkStatus": "First included in archived DIO/ODI Reference Model v0.4.0 and carried forward in archived v0.5.0, v0.6.0, v0.7.0, and v0.8.0; included in current archived Reference Model v0.9.0; derived application mapping outside the canonical vocabulary",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
@@ -76,6 +76,19 @@
       "@type": "TechArticle",
       "name": "Basic policy construction in Cedar",
       "url": "https://docs.cedarpolicy.com/policies/syntax-policy.html"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://hwtn.io/essays/t0013-missing-ring-0-protections-ai",
+      "name": "The Missing Ring-0 Protections for AI Agents",
+      "author": {
+        "@type": "Person",
+        "name": "Jeremy Pickett"
+      },
+      "datePublished": "2026-10-30",
+      "description": "An independently authored proposal to adapt commit-boundary authorization to coding-agent execution by staging side effects and keeping execution credentials with an external executor. The essay states that no implementation has been built and its proposed study has not been run."
     }
   ],
   "about": [
@@ -319,10 +332,23 @@
   <p>This is a <strong>derived, non-normative application mapping</strong>. OPA and Cedar are distinct systems with different request and decision models. The mapping identifies capabilities and gaps; it does not treat their constructs as interchangeable.</p>
   <p>The scope is authorization of a proposed persistent identity mutation. The mapping does not model the full hypothesis-conditioned evidence-acquisition loop, downstream mutation propagation, dependency-aware cascade mitigation, or post-commit identity recovery. It does not claim these problems are solved by adding a policy engine.</p>
 
+  <h2>Cross-domain adaptation: coding-agent side effects</h2>
+  <p>Jeremy Pickett's essay, <a href="https://hwtn.io/essays/t0013-missing-ring-0-protections-ai" target="_blank" rel="noopener noreferrer"><em>The Missing Ring-0 Protections for AI Agents</em></a> (30 October 2026), proposes adapting the commit-boundary idea to coding-agent execution. It identifies a limit in transferring the Agentic ER sequence unchanged: post-execution validation and rollback presume effects that remain reversible or staged, while a published Git push or an outbound API write may already have changed an external system.</p>
+  <p>Pickett therefore treats staging as a prerequisite to releasing effects. His proposal includes:</p>
+  <ul>
+    <li><strong>Files:</strong> the agent works in a copy-on-write overlay; the executor applies an approved diff to the real worktree.</li>
+    <li><strong>Git:</strong> pushes are held at a shadow remote or holding branch; the executor performs the release after approval.</li>
+    <li><strong>Network writes:</strong> an outbound proxy holds write requests for approval and then releases or discards them.</li>
+    <li><strong>Credentials:</strong> the executor retains the credentials capable of releasing protected effects, so the agent cannot bypass the gate by calling the same service directly.</li>
+    <li><strong>Effects that cannot be staged:</strong> they require explicit approval bound to the exact invocation.</li>
+  </ul>
+  <p>In this proposed architecture, a deterministic policy engine such as OPA or Cedar evaluates authorization; the model may propose an action but does not approve it. This connects to the Policy-as-Code mechanisms discussed above, while adding a distinct enforcement prerequisite: policy evaluation alone cannot stage effects, withhold credentials, or guarantee that every effect path crosses the gate.</p>
+  <div class="note"><strong>Status and boundary:</strong> This is an independently authored proposal, not an implementation or validation of the DIO/ODI paper or this mapping. Pickett states that nothing has been built and that the proposed study has not been run. The current mapping remains focused on Agentic Entity Resolution; it does not claim a completed or tested coding-agent integration.</div>
+
   <h2>External reception and technical discussion</h2>
   <p>The following external materials discuss or extend aspects of the Commit-Boundary proposal. They are not evidence that the guardrail has been implemented or empirically validated.</p>
   <div class="reception-grid">
-    <article class="reception-card"><span class="tag">Technical proposal</span><h3><a href="https://hwtn.io/essays/t0013-missing-ring-0-protections-ai" target="_blank" rel="noopener noreferrer">The Missing Ring-0 Protections in AI</a></h3><p>Jeremy Pickett proposes an adaptation to coding-agent execution: staged effects, shadow state, copy-on-write, executor-held credentials, and policy checks. These remain proposed mechanisms, not a deployed implementation.</p></article>
+    <article class="reception-card"><span class="tag">External cross-domain proposal</span><h3><a href="https://hwtn.io/essays/t0013-missing-ring-0-protections-ai" target="_blank" rel="noopener noreferrer">The Missing Ring-0 Protections for AI Agents</a></h3><p>Published 30 October 2026. Pickett proposes staged side effects, executor-held credentials, and deterministic policy checks for coding agents. The essay explicitly states that nothing has been built and its proposed study has not been run.</p></article>
     <article class="reception-card"><span class="tag">Independent technical analysis</span><h3><a href="https://sgtcho.com/en/paper/2610-37407-constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resol.html" target="_blank" rel="noopener noreferrer">Why an Identity Hypothesis Is Not Permission to Merge</a></h3><p>Minjae Cho develops an independent decision model and offline validation example. The illustrative code is Cho's own work, not an implementation of the original paper.</p></article>
     <article class="reception-card"><span class="tag">Agent-authored paper commentary</span><h3><a href="https://www.moltbook.com/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6" target="_blank" rel="noopener noreferrer">Agentic systems are making identity permanent before they've earned it</a></h3><p>evil_robot_jas directly interprets the paper's distinction between evidence for reasoning and evidence eligible to authorize persistent graph mutation.</p><p><a href="https://megalodon.jp/ref/2026-1115-0200-58/https://www.moltbook.com:443/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6" target="_blank" rel="noopener noreferrer">Megalodon direct view</a></p></article>
     <article class="reception-card"><span class="tag">Agent-authored analysis + discussion</span><h3><a href="https://www.moltbook.com/post/e37f0b17-66db-4659-9921-d35b749a2d3a" target="_blank" rel="noopener noreferrer">Database agents should make evidence earn write access</a></h3><p>AiiCLI explicitly cites the paper and discusses evidence-lineage independence and why repeated retrieval does not create independent corroboration.</p><p><a href="https://megalodon.jp/ref/2026-1115-0159-06/https://www.moltbook.com:443/post/e37f0b17-66db-4659-9921-d35b749a2d3a" target="_blank" rel="noopener noreferrer">Megalodon direct view</a></p></article>
@@ -344,6 +370,7 @@
     <li>Open Policy Agent. (n.d.). <em>Bundles</em> [Documentation]. Retrieved 4 November 2026, from <a href="https://www.openpolicyagent.org/docs/management-bundles" target="_blank" rel="noopener noreferrer">https://www.openpolicyagent.org/docs/management-bundles</a>.</li>
     <li>Open Policy Agent. (n.d.). <em>Decision logs</em> [Documentation]. Retrieved 4 November 2026, from <a href="https://www.openpolicyagent.org/docs/management-decision-logs" target="_blank" rel="noopener noreferrer">https://www.openpolicyagent.org/docs/management-decision-logs</a>.</li>
     <li>Open Policy Agent. (n.d.). <em>Open Policy Agent documentation</em>. Retrieved 4 November 2026, from <a href="https://www.openpolicyagent.org/docs" target="_blank" rel="noopener noreferrer">https://www.openpolicyagent.org/docs</a>.</li>
+    <li>Pickett, J. (2026, 30 October). <em>The Missing Ring-0 Protections for AI Agents</em>. Hawthorne No. 07. <a href="https://hwtn.io/essays/t0013-missing-ring-0-protections-ai" target="_blank" rel="noopener noreferrer">https://hwtn.io/essays/t0013-missing-ring-0-protections-ai</a>. External proposal; not an implemented or empirically evaluated coding-agent integration.</li>
   </ol>
   <p class="reference-note">The cited platform documentation describes OPA and Cedar capabilities. The obligation-to-mechanism relations and residual integration requirements are the author’s analytical interpretation, not claims made by the cited documentation.</p>
 
