@@ -145,6 +145,22 @@
     <lastmod>2026-11-11</lastmod>
   </url>
   <url>
+    <loc>https://vocab.danielberanek.cz/external-reception/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/metadata/external-reception.json</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/metadata/external-reception.schema.json</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://vocab.danielberanek.cz/metadata/external-reception.ttl</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
     <loc>https://vocab.danielberanek.cz/semantic-change-feed/</loc>
     <lastmod>2026-11-11</lastmod>
   </url>
