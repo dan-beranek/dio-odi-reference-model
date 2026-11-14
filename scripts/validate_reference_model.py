@@ -685,6 +685,51 @@ def check_llms_txt() -> int:
     return len(required_lines) + 2
 
 
+
+def check_external_reception() -> dict[str, int]:
+    registry = load_json("metadata/external-reception.json")
+    schema = load_json("metadata/external-reception.schema.json")
+    validate_json_schema(instance=registry, schema=schema)
+    entries = registry.get("entries", [])
+    ids = [entry.get("id") for entry in entries]
+    require(len(ids) == len(set(ids)), "External Reception entry IDs must be unique")
+    known_works = {item.get("id") for item in registry.get("target_works", [])}
+    known_entries = set(ids)
+    for entry in entries:
+        require(set(entry.get("target_work_ids", [])) <= known_works,
+                f"External Reception entry has an unknown target work: {entry.get('id')}")
+        require(set(entry.get("related_entry_ids", [])) <= known_entries,
+                f"External Reception entry has an unresolved related entry: {entry.get('id')}")
+        require(bool(entry.get("provenance", {}).get("basis")),
+                f"External Reception entry is missing provenance: {entry.get('id')}")
+        if entry.get("implementation_status") == "proposal-only":
+            require("propos" in entry.get("summary", "").lower(),
+                    f"Proposal-only entry must state proposal status: {entry.get('id')}")
+    wren = next((e for e in entries if e.get("id") == "wren-castillo-entity-resolution-heterogeneous-sources"), None)
+    require(wren is not None and wren.get("target_work_ids") == ["crisis-entity-resolution"],
+            "Wren-Castillo must remain linked to Crisis of Entity Resolution")
+    neo = next((e for e in entries if e.get("id") == "moltbook-neo-konsi-permission-escalation"), None)
+    require(neo is not None and neo.get("citation_status") == "no-commit-boundary-citation-observed",
+            "Adjacent neo_konsi thread must not be represented as a Commit Boundary citation")
+    unghost = next((e for e in entries if e.get("id") == "unghost-agentic-er-loop-guardrail"), None)
+    require(unghost is not None and "v1" in unghost.get("publication", {}).get("version_scope", ""),
+            "unGhost entry must retain the arXiv v1 source boundary")
+    page = read_text("external-reception/index.html")
+    page_ids = set(re.findall(r'data-reception-id="([^"]+)"', page))
+    require(page_ids == set(ids), "External Reception frontend inventory differs from registry JSON")
+    ttl = read_text("metadata/external-reception.ttl")
+    require("cito:cites" in ttl and "moltbook-neo-konsi-permission-escalation" in ttl,
+            "External Reception RDF projection is missing citation and adjacent-discussion distinctions")
+    require("rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/>" in ttl,
+            "Commit-Boundary mapping must link to External Reception")
+    for path in sorted(ROOT.rglob("*.html")):
+        source = path.read_text(encoding="utf-8")
+        if '<nav class="site-nav"' in source:
+            require('href="/external-reception/"' in source,
+                    f"Global navigation is missing External Reception link: {path.relative_to(ROOT)}")
+    return {"external_reception_entries": len(entries), "external_reception_categories": len(registry.get("categories", []))}
+
+
 def check_site_homepage() -> int:
     source = read_text("index.html")
     require('<link rel="canonical" href="https://vocab.danielberanek.cz/">' in source,
@@ -694,7 +739,7 @@ def check_site_homepage() -> int:
     require('http-equiv="refresh"' not in source.lower(),
             "Homepage must not redirect to the vocabulary page")
     for link in ('href="/dio-odi/"', 'href="/mappings/"',
-                 'href="/metadata/"', 'href="/semantic-change-feed/"', 'href="https://danielberanek.cz/manifest-dio/"'):
+                 'href="/metadata/"', 'href="/external-reception/"', 'href="/semantic-change-feed/"', 'href="https://danielberanek.cz/manifest-dio/"'):
         require(link in source, f"Homepage is missing navigation target: {link}")
     return 1
 
@@ -719,6 +764,10 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/dio-odi/",
         "https://vocab.danielberanek.cz/mappings/",
         "https://vocab.danielberanek.cz/metadata/",
+        "https://vocab.danielberanek.cz/external-reception/",
+        "https://vocab.danielberanek.cz/metadata/external-reception.json",
+        "https://vocab.danielberanek.cz/metadata/external-reception.schema.json",
+        "https://vocab.danielberanek.cz/metadata/external-reception.ttl",
         "https://vocab.danielberanek.cz/semantic-change-feed/",
         "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
         "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
@@ -794,6 +843,7 @@ def main() -> int:
         counts.update(check_vocabularies())
         counts.update(check_mapping_graphs())
         counts.update(check_metadata())
+        counts.update(check_external_reception())
         counts.update(check_semantic_change_feed())
         counts["llms_metadata_checks"] = check_llms_txt()
     except Exception as exc:
