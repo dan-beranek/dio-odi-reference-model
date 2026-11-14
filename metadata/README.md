@@ -75,6 +75,20 @@ Before approving a distribution relation:
 A prior relation already present on Zenodo may therefore be corrected during metadata normalization.
 
 
+### MVDIO distribution check (2026-11-14)
+
+The canonical MVDIO record (Zenodo DOI `10.5281/zenodo.23226205`) was checked against its live Related Works display on 14 November 2026. It currently lists all three author-confirmed identical distribution copies as **Is identical to**:
+
+- ResearchGate: `10.13140/RG.2.2.10967.43682`
+- Figshare: `10.6084/m9.figshare.34231965`
+- SSRN: `10.2139/ssrn.7582778`
+
+The Zenodo record page reports that it was last modified on 8 November 2026. The current observed relation and the author-confirmed canonical relation therefore agree for all three representations: `isIdenticalTo`.
+
+The registry previously carried an outdated observation for this record (ResearchGate and Figshare as `isSupplementedBy`, and SSRN not listed). That observation is superseded by the current Zenodo record and must not be treated as the present state.
+
+
+
 ### Version-scoped distribution relations
 
 Distribution relations may legitimately change between versions of the same canonical work.
