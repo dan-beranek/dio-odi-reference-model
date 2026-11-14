@@ -138,7 +138,7 @@ In this proposed architecture, a deterministic policy engine such as OPA or Ceda
 
 4. Beránek, D. (2026). *DIO/ODI Reference Vocabulary* (live version 0.2.2; included in archived Reference Model v0.9.0; previous archived v0.8.0 includes v0.2.1; version 0.2.0 included in archived v0.6.0). SKOS ConceptScheme. https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary.
 
-6. Cedar Policy Language Reference Guide. (n.d.). *Basic policy construction in Cedar* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html.
+5. Cedar Policy Language Reference Guide. (n.d.). *Basic policy construction in Cedar* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/policies/syntax-policy.html.
 
 6. Cedar Policy Language Reference Guide. (n.d.). *How Cedar authorization works* [Documentation]. Retrieved 4 November 2026, from https://docs.cedarpolicy.com/auth/authorization.html.
 
