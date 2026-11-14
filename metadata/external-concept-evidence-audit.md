@@ -74,3 +74,18 @@ The review is based on the recorded source notes and the high-level page checks.
 2. Review the remaining distant evidence selectively; preserve it when it contributes a clearly articulated contrast or analogy, rather than deleting it merely for being indirect.
 3. Review each existing Wikidata/DBpedia mapping candidate against the actual target definition and the intended SKOS relation.
 4. Only then consider generating a derived mapped Turtle file from the canonical vocabulary plus approved mappings.
+
+
+## Current registry scope note (2026-11-14)
+
+The scope stated at the top of this document is the historical snapshot reviewed on 16 October 2026: 90 concept–evidence associations across 39 DIO/ODI concepts and 17 distinct Wikipedia pages. It must not be silently reinterpreted as a review of the current registry.
+
+As checked on 14 November 2026, `metadata/external-concept-mappings.json` contains:
+
+- **148 concept–evidence associations** across the same 39 concepts;
+- **60 distinct source URIs** in total;
+- **28 distinct Wikipedia page URLs**.
+
+Association counts include repeated source URIs attached to different concepts. Thus 148 is not a count of unique external sources. The numerical difference from the historical audit scope is 58 associations; it does not mean 58 new unique sources.
+
+This note updates the scope description only. It does **not** claim that all 148 current associations have received a fresh semantic review, and it does not promote any mapping candidate. The detailed assessments above remain historical decisions from the reviewed evidence snapshot. Evidence added or materially changed after that snapshot should receive targeted review before being described as audited.
