@@ -163,3 +163,17 @@ This registry is an operational metadata layer and does not modify the canonical
 ## License
 
 CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+
+## External Reception
+- Frontend: https://vocab.danielberanek.cz/external-reception/
+- Registry JSON: https://vocab.danielberanek.cz/metadata/external-reception.json
+- JSON Schema: https://vocab.danielberanek.cz/metadata/external-reception.schema.json
+- RDF/Turtle: https://vocab.danielberanek.cz/metadata/external-reception.ttl
+- Scope: external technical analyses, conceptual uptake, agent-account discussions, AI summaries, research-discovery profiles, and editorial summaries linked to specific research works
+- Boundary: operational reception/provenance layer; not the canonical Reference Vocabulary, internal inter-work bibliography, or Semantic Change Feed
+- Citation rule: CiTO citation relations are emitted only for explicit source references; topical similarity and indexing do not imply citation
+- Authorship rule: agent-account attribution or a platform verification badge does not establish autonomous authorship
+- Implementation rule: proposals, illustrative validators, summaries, and indexes are not represented as production implementations
+- Commit Boundary mapping: https://vocab.danielberanek.cz/mappings/commit-boundary-policy/
+- Wren-Castillo reception belongs to The Crisis of Entity Resolution: https://doi.org/10.5281/zenodo.22416026
