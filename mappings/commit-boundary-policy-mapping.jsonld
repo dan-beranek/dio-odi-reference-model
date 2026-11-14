@@ -7,7 +7,7 @@
   "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
   "inLanguage": "en",
   "datePublished": "2026-10-25",
-  "dateModified": "2026-11-09",
+  "dateModified": "2026-11-14",
   "creativeWorkStatus": "First included in archived DIO/ODI Reference Model v0.4.0 and carried forward in archived v0.5.0, v0.6.0, v0.7.0, and v0.8.0, and current archived v0.9.0; the live artifact remains a derived application mapping outside the canonical vocabulary.",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "author": {
@@ -224,5 +224,18 @@
       }
     ]
   },
-  "isAccessibleForFree": true
+  "isAccessibleForFree": true,
+  "mentions": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://hwtn.io/essays/t0013-missing-ring-0-protections-ai",
+      "name": "The Missing Ring-0 Protections for AI Agents",
+      "author": {
+        "@type": "Person",
+        "name": "Jeremy Pickett"
+      },
+      "datePublished": "2026-10-30",
+      "description": "An independently authored proposal to adapt commit-boundary authorization to coding-agent execution by staging side effects and keeping execution credentials with an external executor. The essay states that no implementation has been built and its proposed study has not been run."
+    }
+  ]
 }
