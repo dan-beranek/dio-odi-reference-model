@@ -81,6 +81,8 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
   - JSON-LD: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.jsonld
   - Turtle RDF: https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.ttl
   - External technical references: OPA and Cedar
+  - External cross-domain proposal: Jeremy Pickett, The Missing Ring-0 Protections for AI Agents (2026-10-30): https://hwtn.io/essays/t0013-missing-ring-0-protections-ai
+  - The proposal discusses staged effects, executor-held credentials, and deterministic OPA/Cedar policy decisions for coding agents. It states that no implementation has been built and its proposed study has not been run; it is not a validated extension or implementation of the Agentic ER mapping.
   - Added to live source tree: 2026-10-25
   - Archival status: first included in archived Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619; carried forward in archived v0.5.0 — https://doi.org/10.5281/zenodo.23643845, v0.6.0 — https://doi.org/10.5281/zenodo.23966487, and carried forward in archived v0.7.0 and v0.8.0, and included in current archived v0.9.0 — https://doi.org/10.5281/zenodo.24085589
 
