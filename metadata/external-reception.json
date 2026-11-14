@@ -113,7 +113,12 @@
         "Copy-on-write or shadow branches",
         "Executor-held credentials",
         "OPA/Cedar as proposed policy decision points"
-      ]
+      ],
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
+      }
     },
     {
       "id": "cho-commit-boundary-analysis",
@@ -148,7 +153,12 @@
         "Author-created Python offline validator",
         "Claim-specific evidence and fail-closed reasoning",
         "Illustrative code is not a production implementation"
-      ]
+      ],
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
+      }
     },
     {
       "id": "wren-castillo-entity-resolution-heterogeneous-sources",
@@ -188,7 +198,12 @@
         "External discussion of heterogeneous web-source entity resolution",
         "Connected to The Crisis of Entity Resolution",
         "Not a Commit Boundary reaction"
-      ]
+      ],
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
+      }
     },
     {
       "id": "summarizepaper-commit-boundary-v2",
@@ -216,6 +231,11 @@
       "publication": {
         "version_scope": "Explicitly identifies arXiv v2",
         "language": "en"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -244,6 +264,11 @@
       "publication": {
         "version_scope": "Version not confirmed",
         "language": "en"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -272,6 +297,11 @@
       "publication": {
         "version_scope": "Not clearly pinned to arXiv v2",
         "language": "en"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -300,6 +330,11 @@
       "publication": {
         "version_scope": "Not clearly pinned",
         "language": "en"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -329,6 +364,11 @@
         "date": "2026-10-28",
         "date_basis": "prior-reviewed-publication-date",
         "language": "en"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -382,6 +422,11 @@
         "count_basis": "Displayed in supplied snapshot",
         "capture_scope": "Full post text supplied; no comments displayed.",
         "themes": []
+      },
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -444,6 +489,11 @@
           "venice-witness",
           "KitSinclair"
         ]
+      },
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -510,7 +560,12 @@
       },
       "related_entry_ids": [
         "moltbook-neo-konsi-permission-escalation"
-      ]
+      ],
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
+      }
     },
     {
       "id": "moltbook-neo-konsi-permission-escalation",
@@ -584,7 +639,12 @@
       "related_entry_ids": [
         "moltbook-vina-confidence-match"
       ],
-      "notes": "Initiating post names a Hightouch article but no URL was supplied, so none is inferred. Not a Commit Boundary citation."
+      "notes": "Initiating post names a Hightouch article but no URL was supplied, so none is inferred. Not a Commit Boundary citation.",
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
+      }
     },
     {
       "id": "aidb-commit-boundary-japanese-profile",
@@ -612,6 +672,11 @@
       "publication": {
         "version_scope": "Paper ID; version not pinned",
         "language": "ja"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -640,6 +705,11 @@
       "publication": {
         "version_scope": "URL identifies v1",
         "language": "unknown"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -668,6 +738,11 @@
       "publication": {
         "version_scope": "URL identifies v1",
         "language": "en"
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -702,6 +777,11 @@
         "count_basis": "Displayed page count in prior review",
         "capture_scope": "No comments displayed.",
         "themes": []
+      },
+      "provenance": {
+        "basis": "User-supplied source URL and available metadata were reviewed; page-specific content may be incomplete.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
       }
     },
     {
@@ -745,7 +825,12 @@
         "Explicit link to the arXiv paper",
         "States no implementation or empirical validation is reported",
         "Warns that the AI-generated page may contain inaccuracies"
-      ]
+      ],
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
+      }
     },
     {
       "id": "unghost-agentic-er-loop-guardrail",
@@ -788,7 +873,12 @@
         "No architecture, experiments, benchmarks, or deployment results discussed",
         "Links to the complete arXiv HTML v1 paper"
       ],
-      "notes": "Limited editorial summary based on a supplied paper description; not a substantive technical analysis or implementation."
+      "notes": "Limited editorial summary based on a supplied paper description; not a substantive technical analysis or implementation.",
+      "provenance": {
+        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
+        "review_date": "2026-11-14",
+        "reviewed_by": "author-assisted-curation"
+      }
     }
   ]
 }
