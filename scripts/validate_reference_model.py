@@ -614,7 +614,7 @@ def check_semantic_change_feed() -> dict[str, int | str]:
     page = read_text("semantic-change-feed/index.html")
     require('id="scf-count" class="count" role="status" aria-live="polite">All records</span>' in page,
             "Semantic Change Feed frontend must use a neutral initial counter and calculate filtered counts dynamically")
-    require(not re.search(r'<div class="page-hero-stat"><strong>\\d+</strong><span>live documented records', page),
+    require(not re.search(r'<div class="page-hero-stat"><strong>\d+</strong><span>live documented records', page),
             "Semantic Change Feed frontend must not contain a manually maintained live record count")
     page_ids = set(re.findall(r'data-event-id="(SCF-[^"]+)"', page))
     require(page_ids == known_ids, "Semantic Change Feed HTML event inventory differs from events.json")
@@ -656,7 +656,7 @@ def check_llms_txt() -> int:
         "",
     )
     require(bool(coverage_line), "llms.txt is missing its current coverage description")
-    require(not re.search(r"\\b\\d+\\s+events?\\b", coverage_line, re.IGNORECASE),
+    require(not re.search(r"\b\d+\s+events?\b", coverage_line, re.IGNORECASE),
             "llms.txt must not duplicate the live SCF event count")
     require(
         f"through {coverage_label}" in coverage_line,
