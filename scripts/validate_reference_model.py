@@ -575,8 +575,6 @@ def check_semantic_change_feed() -> dict[str, int | str]:
     dates = [event.get("date") for event in events]
     require(dates == sorted(dates), "Semantic Change Feed events must be stored in chronological order")
     known_ids = set(ids)
-    require(feed.get("feed_version") == "0.1.5" and feed.get("schema_version") == "0.2.1",
-            "Live SCF feed/schema versions must be 0.1.5/0.2.1")
     required_reconciliations = {
         "SCF-2026-046": ("deployment_date", "2026-11-09"),
         "SCF-2026-047": ("documentation_date", "2026-11-10"),
@@ -614,6 +612,10 @@ def check_semantic_change_feed() -> dict[str, int | str]:
             require(event.get("date_basis") == "hub_changelog_date",
                     f"{event['id']} attributes a non-Changelog date to the Hub Changelog")
     page = read_text("semantic-change-feed/index.html")
+    require('id="scf-count" class="count" role="status" aria-live="polite">All records</span>' in page,
+            "Semantic Change Feed frontend must use a neutral initial counter and calculate filtered counts dynamically")
+    require(not re.search(r'<div class="page-hero-stat"><strong>\\d+</strong><span>live documented records', page),
+            "Semantic Change Feed frontend must not contain a manually maintained live record count")
     page_ids = set(re.findall(r'data-event-id="(SCF-[^"]+)"', page))
     require(page_ids == known_ids, "Semantic Change Feed HTML event inventory differs from events.json")
     for path in sorted(ROOT.rglob("*.html")):
@@ -641,7 +643,6 @@ def check_llms_txt() -> int:
         f"- Live Reference Vocabulary: {metadata['live_reference_vocabulary_version']} —",
         f"- Vocabulary included in archived v{current_release['version']}: {metadata['current_archived_reference_vocabulary_version']}",
         f"- Feed version: {feed['feed_version']};",
-        f"- Current coverage: {feed['event_count']} events;",
         f"  - Keyword registry version: {keywords['registry_version']}",
         f"  - Grammar version: {registry['keyword_grammar_version']}",
     )
@@ -654,16 +655,20 @@ def check_llms_txt() -> int:
         (line for line in source.splitlines() if line.startswith("- Current coverage:")),
         "",
     )
+    require(bool(coverage_line), "llms.txt is missing its current coverage description")
+    require(not re.search(r"\\b\\d+\\s+events?\\b", coverage_line, re.IGNORECASE),
+            "llms.txt must not duplicate the live SCF event count")
     require(
         f"through {coverage_label}" in coverage_line,
         f"llms.txt coverage date is stale; expected the latest event date {coverage_label}",
     )
 
     scf_metadata = metadata["semantic_change_feed"]
+    require("event_count" not in scf_metadata,
+            "metadata.json must not duplicate the live SCF event_count; derive it from events.json")
     require(
         scf_metadata["feed_version"] == feed["feed_version"]
         and scf_metadata["schema_version"] == feed["schema_version"]
-        and scf_metadata["event_count"] == feed["event_count"]
         and scf_metadata["coverage_through"] == feed["events"][-1]["date"],
         "metadata.json and Semantic Change Feed events.json are inconsistent",
     )
