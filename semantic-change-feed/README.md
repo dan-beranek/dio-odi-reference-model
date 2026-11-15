@@ -14,7 +14,7 @@ It is not a Git commit log. Repository diffs are not authoritative evidence of c
 
 ## Coverage
 
-Version 0.1.5 contains **51 event records** and covers:
+Version 0.1.5 is the current live feed and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
 - Subsequent documented vocabulary, mapping, publication, provenance, and deployment milestones through **11 November 2026**, plus the BioRegistry `dio-odi` prefix integration dated **14 November 2026** and two previously omitted archive milestones reconciled into the live chronology on **10 November 2026**.
@@ -45,7 +45,7 @@ This is complete coverage of the dated Hub Changelog entries, not a claim that e
 
 The SCF does not replace or redefine any of these sources.
 
-The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0. The live feed now advances independently to v0.1.5 with 51 events and schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
+The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0. The live feed now advances independently to v0.1.5 with schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
 
 The DIO to DIO portfolio is included as a documented research-and-distribution milestone, not as an authority for historical claims. Its model-specific analyses retain different observation boundaries and interpretations; they may guide discovery of potentially relevant evidence, but factual claims entering the SCF must be checked against primary publications, release records, registries, or archives.
 
