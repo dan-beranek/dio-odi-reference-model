@@ -31,7 +31,8 @@
         <https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1>,
         <https://vocab.danielberanek.cz/external-reception/#sciencecast-commit-boundary-audio>,
         <https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile>,
-        <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> .
+        <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail>,
+        <https://vocab.danielberanek.cz/external-reception/#bioregistry-dio-odi-prefix> .
 
 
 
@@ -176,3 +177,13 @@
     schema:about <https://arxiv.org/abs/2610.37407> ;
     schema:genre "research-editorial" .
 <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> cito:cites <https://arxiv.org/html/2610.37407v1> .
+
+
+<https://vocab.danielberanek.cz/external-reception/#bioregistry-dio-odi-prefix> a schema:CreativeWork ;
+    schema:name "DIO/ODI Reference Vocabulary — BioRegistry prefix record"@en ;
+    schema:url <https://bioregistry.io/registry/dio-odi> ;
+    schema:about <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary> ;
+    schema:genre "registry-interoperability" ;
+    schema:identifier "dio-odi" ;
+    schema:datePublished "2026-11-14" ;
+    schema:description "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies a domain-independent SKOS ConceptScheme, links its canonical homepage and source repository, states the CC-BY-4.0 licence, and describes 40 concepts distributed in Turtle/SKOS and JSON-LD. This is an external registry and interoperability integration, not an independent scholarly review, citation, or endorsement."@en .

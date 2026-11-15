@@ -1,10 +1,10 @@
 {
-  "feed_version": "0.1.4",
+  "feed_version": "0.1.5",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-11",
+  "generated_on": "2026-11-15",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, and public integration-service deployment events through 11 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, public integration-service deployment, and external registry integration events through 14 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 50,
+  "event_count": 51,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -3049,6 +3049,79 @@
       "lineage": {
         "related_to": [
           "SCF-2026-049"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-051",
+      "date": "2026-11-14",
+      "date_basis": "documentation_date",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "BioRegistry registers the DIO/ODI Reference Vocabulary under the dio-odi prefix",
+      "summary": "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies the canonical SKOS ConceptScheme, links its homepage and source repository, and makes the vocabulary discoverable through an external registry prefix. This improves distribution and interoperability without changing the vocabulary itself.",
+      "scope": [
+        {
+          "component": "BioRegistry prefix record — dio-odi",
+          "component_type": "external-registry-prefix-entry",
+          "uri": "https://bioregistry.io/registry/dio-odi",
+          "role": "external-registry-entry"
+        },
+        {
+          "component": "DIO/ODI Reference Vocabulary v0.2.2",
+          "component_type": "reference-vocabulary",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+          "role": "registered-resource"
+        }
+      ],
+      "before": "The DIO/ODI Reference Vocabulary v0.2.2 already had a canonical SKOS ConceptScheme URI, a stable namespace, and 40 concept URIs, but it did not yet have a BioRegistry prefix record under dio-odi.",
+      "after": "BioRegistry lists the dio-odi prefix and links it to the canonical DIO/ODI Reference Vocabulary and its source repository. External systems can now discover the vocabulary through the registry's prefix infrastructure.",
+      "preserved_invariants": [
+        "The canonical namespace and all 40 concept URIs remain unchanged.",
+        "The Reference Vocabulary remains a component of the DIO/ODI Reference Model and is not represented as a separately archived work with its own version-specific DOI.",
+        "The registration changes external discovery and interoperability metadata only; it does not alter concept definitions, hierarchy, or semantic relations.",
+        "BioRegistry registration is not treated as independent scholarly review, endorsement, or empirical validation."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO/ODI Reference Vocabulary v0.2.2",
+          "BioRegistry prefix registry",
+          "External vocabulary discovery and interoperability"
+        ],
+        "notes": "An external prefix-registration milestone. The canonical vocabulary and its semantic content are unchanged."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "public-version-history"
+        ],
+        "temporal_note": "The event is dated 14 November 2026 as the requested public-observation date for the BioRegistry record. The prefix-submission issue was created and closed on 9 November 2026, and the registry maintainer said the entry would appear with the next weekend data refresh. The public record does not expose the exact refresh timestamp, so 14 November is treated as the observed registry date, not as a Git commit timestamp.",
+        "sources": [
+          {
+            "label": "BioRegistry — dio-odi prefix record",
+            "url": "https://bioregistry.io/registry/dio-odi",
+            "role": "external-registry-entry"
+          },
+          {
+            "label": "BioRegistry — prefix submission and maintainer correspondence (#2182)",
+            "url": "https://github.com/biopragmatics/bioregistry/issues/2182",
+            "role": "registry-submission-and-review-history"
+          },
+          {
+            "label": "BioRegistry — merged prefix data update",
+            "url": "https://github.com/biopragmatics/bioregistry/commit/827f8c5c3c85615b8a4328d5f617a33bdc20fb9d",
+            "role": "registry-data-merge"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-045"
         ],
         "supersedes": [],
         "corrects": []

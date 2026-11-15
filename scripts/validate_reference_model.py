@@ -575,14 +575,15 @@ def check_semantic_change_feed() -> dict[str, int | str]:
     dates = [event.get("date") for event in events]
     require(dates == sorted(dates), "Semantic Change Feed events must be stored in chronological order")
     known_ids = set(ids)
-    require(feed.get("feed_version") == "0.1.4" and feed.get("schema_version") == "0.2.1",
-            "Live SCF feed/schema versions must be 0.1.4/0.2.1")
+    require(feed.get("feed_version") == "0.1.5" and feed.get("schema_version") == "0.2.1",
+            "Live SCF feed/schema versions must be 0.1.5/0.2.1")
     required_reconciliations = {
         "SCF-2026-046": ("deployment_date", "2026-11-09"),
         "SCF-2026-047": ("documentation_date", "2026-11-10"),
         "SCF-2026-048": ("documentation_date", "2026-11-10"),
         "SCF-2026-049": ("deployment_date", "2026-11-11"),
         "SCF-2026-050": ("documentation_date", "2026-11-11"),
+        "SCF-2026-051": ("documentation_date", "2026-11-14"),
     }
     events_by_id = {event["id"]: event for event in events}
     for event_id, expected in required_reconciliations.items():
@@ -705,6 +706,10 @@ def check_external_reception() -> dict[str, int]:
         if entry.get("implementation_status") == "proposal-only":
             require("propos" in entry.get("summary", "").lower(),
                     f"Proposal-only entry must state proposal status: {entry.get('id')}")
+    bioregistry = next((e for e in entries if e.get("id") == "bioregistry-dio-odi-prefix"), None)
+    require(bioregistry is not None and bioregistry.get("category") == "registry-interoperability"
+            and bioregistry.get("target_work_ids") == ["reference-vocabulary"],
+            "BioRegistry prefix record must remain in the registry/interoperability category and target the Reference Vocabulary")
     wren = next((e for e in entries if e.get("id") == "wren-castillo-entity-resolution-heterogeneous-sources"), None)
     require(wren is not None and wren.get("target_work_ids") == ["crisis-entity-resolution"],
             "Wren-Castillo must remain linked to Crisis of Entity Resolution")
@@ -718,7 +723,8 @@ def check_external_reception() -> dict[str, int]:
     page_ids = set(re.findall(r'data-reception-id="([^"]+)"', page))
     require(page_ids == set(ids), "External Reception frontend inventory differs from registry JSON")
     ttl = read_text("metadata/external-reception.ttl")
-    require("cito:cites" in ttl and "moltbook-neo-konsi-permission-escalation" in ttl,
+    require("cito:cites" in ttl and "moltbook-neo-konsi-permission-escalation" in ttl
+            and "bioregistry-dio-odi-prefix" in ttl,
             "External Reception RDF projection is missing citation and adjacent-discussion distinctions")
     require("rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/>" in ttl,
             "Commit-Boundary mapping must link to External Reception")
