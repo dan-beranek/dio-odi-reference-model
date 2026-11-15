@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vocab.danielberanek.cz/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/dio-odi/</loc>
@@ -142,15 +142,15 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata.json</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/external-reception/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/external-reception.json</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/external-reception.schema.json</loc>
@@ -158,15 +158,15 @@
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/metadata/external-reception.ttl</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/semantic-change-feed/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/semantic-change-feed/events.json</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://vocab.danielberanek.cz/semantic-change-feed/schema.json</loc>
