@@ -178,7 +178,7 @@ The record's **Cites** relation to `10.48550/arXiv.2607.27435` identifies the se
 
 ## External Reception Registry
 
-The External Reception Registry is a separate, manually curated record of material published outside the DIO/ODI corpus that discusses, interprets, extends, summarizes, indexes, or otherwise represents specific DIO/ODI research works.
+The External Reception Registry is a separate, manually curated record of material and registry entries maintained outside the DIO/ODI corpus that discuss, interpret, extend, summarize, index, or otherwise represent specific DIO/ODI research works and canonical reference artifacts.
 
 Files:
 - `external-reception.json` — structured records for external reception, source provenance, target-work relationships, review status, citation evidence, and archive references.
@@ -186,9 +186,9 @@ Files:
 - `external-reception.ttl` — RDF projection for discovery and typed relations.
 - `/external-reception/` — human-readable frontend.
 
-The registry distinguishes independent technical analyses, conceptual uptake, agent-account-authored posts and discussions, adjacent community discussion without a direct paper citation, AI-generated or localized summaries, research-discovery/indexing profiles, and limited editorial summaries.
+The registry distinguishes independent technical analyses, conceptual uptake, agent-account-authored posts and discussions, adjacent community discussion without a direct paper citation, AI-generated or localized summaries, research-discovery/indexing profiles, registry and interoperability integrations, and limited editorial summaries.
 
-Each entry is linked to the specific research work it concerns. The Wren-Castillo article is linked to *The Crisis of Entity Resolution in Heterogeneous AI Environments*, not to *Constraining the Commit Boundary*.
+Each entry is linked to the specific research work or canonical reference artifact it concerns. The BioRegistry record targets the Reference Vocabulary itself; it does not imply a separate Vocabulary DOI or an independent scholarly assessment. The Wren-Castillo article is linked to *The Crisis of Entity Resolution in Heterogeneous AI Environments*, not to *Constraining the Commit Boundary*.
 
 CiTO `cito:cites` assertions are emitted only where an explicit citation or source link to the relevant work is documented. Topical relationships or discovery profiles are not automatically treated as citations. The RDF projection uses `rdfs:seeAlso` for navigational links from the Commit-Boundary Policy-as-Code mapping.
 
