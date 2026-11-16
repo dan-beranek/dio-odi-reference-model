@@ -616,17 +616,24 @@ def check_metadata() -> dict[str, int | str]:
         require(cff_doi == current_doi, "CITATION.cff DOI differs from the current archived release DOI")
 
     arxiv = next((item for item in works["works"] if item.get("id") == "commit-boundary-paper"), None)
-    require(arxiv is not None and arxiv.get("arxiv", {}).get("current_version") == "v2",
-            "Commit-Boundary paper registry must identify arXiv v2 as current")
+    require(arxiv is not None and arxiv.get("arxiv", {}).get("current_version"),
+            "Commit-Boundary paper registry must identify its current arXiv version")
     distribution = next(
         (item for work in distributions["works"] if work.get("work") == "commit-boundary-paper"
          for item in work.get("representations", []) if item.get("platform") == "arXiv"),
         None,
     )
-    require(distribution is not None and distribution.get("canonical_relation") == "isNewVersionOf",
-            "arXiv v2 distribution relation must remain isNewVersionOf")
-    require(distribution.get("applies_to_version_doi") == "10.5281/zenodo.23580733",
-            "arXiv v2 relation must remain scoped to Zenodo version 1")
+    require(
+        distribution is not None
+        and distribution.get("version") == arxiv["arxiv"]["current_version"]
+        and distribution.get("version_url") == arxiv["arxiv"]["version_url"],
+        "arXiv distribution must match the current version recorded in works.json",
+    )
+    require(
+        distribution.get("canonical_relation") == "isNewVersionOf"
+        and distribution.get("applies_to_version_doi") == arxiv.get("version_doi"),
+        "arXiv version relation must remain scoped to the canonical Zenodo source version",
+    )
 
     return {
         "keyword_registry": keywords["registry_version"],
