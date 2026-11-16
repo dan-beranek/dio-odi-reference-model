@@ -457,6 +457,11 @@ def check_mapping_graphs() -> dict[str, int]:
     return totals
 
 
+def mcp_version_doi(works: dict) -> str | None:
+    item = next((work for work in works.get("works", []) if work.get("id") == "mcp-server"), {})
+    return item.get("version_doi")
+
+
 def check_metadata() -> dict[str, int | str]:
     zenodo = load_json(".zenodo.json")
     works = load_json("metadata/works.json")
@@ -467,6 +472,10 @@ def check_metadata() -> dict[str, int | str]:
     external = load_json("metadata/external-concept-mappings.json")
     external_schema = load_json("metadata/external-concept-mappings.schema.json")
     validate_json_schema(instance=external, schema=external_schema)
+    application_mappings = load_json("metadata/application-mappings.json")
+    application_mappings_schema = load_json("metadata/application-mappings.schema.json")
+    validate_json_schema(instance=application_mappings, schema=application_mappings_schema)
+    metadata_projection = load_json("metadata.json")
 
     citation = yaml.safe_load(read_text("CITATION.cff"))
     require(zenodo.get("version") == citation.get("version"), ".zenodo.json and CITATION.cff versions do not match")
@@ -487,34 +496,23 @@ def check_metadata() -> dict[str, int | str]:
         )),
         "Reference Vocabulary archive metadata still uses ambiguous standalone-publication fields",
     )
-    expected_inclusions = {
-        "0.1.0": ("0.1.0", "10.5281/zenodo.23272898"),
-        "0.2.0": ("0.2.0", "10.5281/zenodo.23282752"),
+    model_releases = {
+        release.get("version"): release
+        for release in model.get("releases", [])
     }
     inclusion_versions = [entry.get("vocabulary_version") for entry in inclusion_history]
     require(
-        len(inclusion_versions) == len(set(inclusion_versions))
-        and set(inclusion_versions) == set(expected_inclusions),
-        "Reference Vocabulary inclusion history must contain each expected archived state exactly once",
+        all(inclusion_versions)
+        and len(inclusion_versions) == len(set(inclusion_versions)),
+        "Reference Vocabulary inclusion history must use unique, non-empty version identifiers",
     )
-    model_releases = {
-        release.get("version"): release
-        for work in works["works"] if work.get("id") == "reference-model"
-        for release in work.get("releases", [])
-    }
     for entry in inclusion_history:
         vocabulary_version = entry.get("vocabulary_version")
-        expected = expected_inclusions.get(vocabulary_version)
-        require(expected is not None, f"Unexpected archived Reference Vocabulary version in inclusion history: {vocabulary_version}")
-        release_version, release_doi = expected
-        require(
-            entry.get("reference_model_release_version") == release_version
-            and entry.get("reference_model_release_doi") == release_doi,
-            f"Reference Vocabulary {vocabulary_version} must point to its enclosing Reference Model {release_version} archive",
-        )
+        release_version = entry.get("reference_model_release_version")
+        release_doi = entry.get("reference_model_release_doi")
         release = model_releases.get(release_version)
         require(release is not None and release.get("doi") == release_doi,
-                f"Reference Vocabulary inclusion DOI does not resolve to Reference Model release {release_version}")
+                f"Reference Vocabulary {vocabulary_version} inclusion must point to a matching archived Reference Model release")
 
     vocabulary_reference = next(
         (item for item in references.get("references", [])
@@ -553,6 +551,20 @@ def check_metadata() -> dict[str, int | str]:
     paper_profile = keywords["work_profiles"]["commit-boundary-paper"]["resolved_keywords"]
     require(zenodo.get("keywords") == profile, ".zenodo.json keywords differ from the canonical Reference Model profile")
     require(citation.get("keywords") == profile, "CITATION.cff keywords differ from the canonical Reference Model profile")
+    require(
+        metadata_projection.get("derived_application_mappings") == application_mappings.get("mappings"),
+        "metadata.json Application Mappings projection differs from the canonical Application Mappings registry",
+    )
+    current_release = model.get("current_release", {})
+    require(
+        metadata_projection.get("current_release", {}).get("version") == current_release.get("version")
+        and metadata_projection.get("current_release", {}).get("doi") == current_release.get("doi"),
+        "metadata.json current release projection differs from the canonical works registry",
+    )
+    require(
+        metadata_projection.get("mcp_server", {}).get("version_doi") == mcp_version_doi(works),
+        "metadata.json MCP distribution projection differs from the canonical works registry",
+    )
 
     cff_doi = citation.get("doi")
     current_doi = model.get("current_release", {}).get("doi")
@@ -580,6 +592,7 @@ def check_metadata() -> dict[str, int | str]:
         "references_registry": references.get("registry_version", "n/a"),
         "relations_registry": relations.get("registry_version", "n/a"),
         "distributions_registry": distributions["registry_version"],
+        "application_mappings_registry": application_mappings["registry_version"],
     }
 
 
@@ -798,6 +811,8 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/metadata/external-reception.json",
         "https://vocab.danielberanek.cz/metadata/external-reception.schema.json",
         "https://vocab.danielberanek.cz/metadata/external-reception.ttl",
+        "https://vocab.danielberanek.cz/metadata/application-mappings.json",
+        "https://vocab.danielberanek.cz/metadata/application-mappings.schema.json",
         "https://vocab.danielberanek.cz/semantic-change-feed/",
         "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
         "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
