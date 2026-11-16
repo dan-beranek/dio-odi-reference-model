@@ -132,6 +132,20 @@ def replace_once(source: str, pattern: str, replacement: str, label: str) -> str
     return updated
 
 
+def replace_line_with_prefix(
+    source: str, prefix: str, replacement: str, label: str
+) -> str:
+    """Replace exactly one complete line without touching later sections."""
+    lines = source.splitlines()
+    matches = [index for index, line in enumerate(lines) if line.startswith(prefix)]
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected one line starting with {prefix!r} for {label}; found {len(matches)}"
+        )
+    lines[matches[0]] = replacement
+    return "\n".join(lines) + "\n"
+
+
 def replace_markdown_section(
     source: str, start_heading: str, end_heading: str, replacement: str, label: str
 ) -> str:
@@ -950,9 +964,9 @@ def update_discovery_metadata(
             f"- {crisis['title']} — current version {current_version['version']}: "
             f"https://doi.org/{current_version['doi']}"
         )
-        llms_text = replace_once(
+        llms_text = replace_line_with_prefix(
             llms_text,
-            r"- The Crisis of Entity Resolution in Heterogeneous AI Environments:.*",
+            "- The Crisis of Entity Resolution in Heterogeneous AI Environments:",
             crisis_line,
             "llms.txt current Crisis of Entity Resolution version",
         )
