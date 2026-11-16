@@ -515,6 +515,38 @@ def check_metadata() -> dict[str, int | str]:
     }], "CITATION.cff authors differ from the canonical works author")
 
     require(model is not None, "Reference Model work entry is missing")
+    release_records = model.get("releases", [])
+    release_versions = [item.get("version") for item in release_records]
+    release_dois = [item.get("doi") for item in release_records if item.get("doi")]
+    require(
+        all(release_versions)
+        and len(release_versions) == len(set(release_versions))
+        and len(release_dois) == len(set(release_dois)),
+        "Reference Model release history must have unique, non-empty version identifiers and DOIs",
+    )
+    releases_by_version = {item["version"]: item for item in release_records}
+    current_release = model.get("current_release", {})
+    previous_release = model.get("previous_archived_release", {})
+    require(
+        releases_by_version.get(current_release.get("version"), {}).get("doi") == current_release.get("doi")
+        and releases_by_version.get(previous_release.get("version"), {}).get("doi") == previous_release.get("doi"),
+        "Current and previous archived releases must resolve to the matching canonical release records",
+    )
+    projected_history = metadata_projection.get("archived_release_history", [])
+    projected_versions = [item.get("version") for item in projected_history]
+    expected_versions = sorted(
+        (version for version, release in releases_by_version.items() if release.get("doi")),
+        key=lambda value: tuple(int(part) for part in re.findall(r"\d+", value)),
+        reverse=True,
+    )
+    require(
+        projected_versions == expected_versions
+        and all(
+            entry.get("doi") == releases_by_version[entry["version"]].get("doi")
+            for entry in projected_history
+        ),
+        "metadata.json archived release history must be derived and sorted from the canonical works registry",
+    )
     require(model.get("reference_vocabulary_uri") == VOCAB_NS + "ReferenceVocabulary",
             "Reference Vocabulary ConceptScheme URI is not canonical")
     inclusion_history = model.get("reference_vocabulary_inclusion_history", [])
