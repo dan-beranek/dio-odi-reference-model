@@ -836,77 +836,66 @@ def update_discovery_metadata(
     feed: dict,
     works: dict,
     keywords: dict,
+    mappings: dict,
     llms_text: str,
+    live_vocabulary_version: str,
 ) -> tuple[dict, str]:
-    feed_meta = metadata.setdefault("semantic_change_feed", {})
-    feed_meta["feed_version"] = feed["feed_version"]
-    feed_meta["schema_version"] = feed["schema_version"]
-    feed_meta["coverage_through"] = feed["events"][-1]["date"]
-    feed_meta.pop("event_count", None)
-
     model = next(item for item in works["works"] if item.get("id") == "reference-model")
-    archived = model["current_release"]
-    archive_date = format_date(archived.get("publication_date"))
-
-    llms_text = re.sub(
-        r"(?m)^- Feed version: .*?$",
-        "- Feed version: " + feed["feed_version"]
-        + "; current live append-only structured history, first published as v0.1.0, "
-          "with explicit date basis, preserved invariants, impact, provenance, and lineage",
-        llms_text,
-        count=1,
-    )
-    llms_text = re.sub(
-        r"(?m)^- Live JSON Schema version: .*?$",
-        "- Live JSON Schema version: " + feed["schema_version"],
-        llms_text,
-        count=1,
-    )
-    archived_line = (
-        f"- Archived snapshot in Reference Model v{archived['version']}: "
-        f"feed v{archived['semantic_change_feed_version']}, "
-        f"schema v{archived['semantic_change_feed_schema_version']}, "
-        f"{archived['semantic_change_feed_event_count']} events through {archive_date}"
-    )
-    llms_text = re.sub(
-        r"(?m)^- Archived snapshot in Reference Model .*?$",
-        lambda _match: archived_line,
-        llms_text,
-        count=1,
-    )
-    coverage_line = re.search(r"(?m)^- Current coverage: (.*?)$", llms_text)
-    if not coverage_line:
-        raise ValueError("llms.txt is missing its current coverage line")
-    current_coverage = coverage_line.group(1)
-    current_coverage = re.sub(
-        r"through \d{1,2} [A-Za-z]+ \d{4}$",
-        f"through {format_date(feed['events'][-1]['date'])}",
-        current_coverage,
-    )
-    if re.search(r"\b\d+\s+events?\b", current_coverage, re.IGNORECASE):
-        raise ValueError("llms.txt current coverage must not repeat the live event count")
-    llms_text = (
-        llms_text[:coverage_line.start(1)]
-        + current_coverage
-        + llms_text[coverage_line.end(1):]
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
+    metadata = render_metadata_projection(
+        metadata, feed, works, keywords, mappings, live_vocabulary_version
     )
 
-    # Keep the keyword registry projection current without maintaining its versions by hand.
-    corpus = metadata.get("corpus_metadata_registry", {})
-    corpus["keyword_grammar_version"] = keywords.get("grammar_version", corpus.get("keyword_grammar_version", ""))
-    mcp_profile = keywords.get("work_profiles", {}).get("mcp-server", {}).get("resolved_keywords", [])
-    llms_text = re.sub(
-        r"(?m)^  - Keyword registry version: .*?$",
-        "  - Keyword registry version: " + keywords["registry_version"],
+    llms_text = replace_once(
         llms_text,
-        count=1,
+        r"## Versions\n.*?(?=\n## Referenced research works)",
+        render_llms_versions(model, live_vocabulary_version).rstrip(),
+        "llms.txt archived release and vocabulary versions",
     )
-    llms_text = re.sub(
-        r"(?m)^  - Grammar version: .*?$",
-        "  - Grammar version: " + str(corpus.get("keyword_grammar_version", "")),
+    llms_text = replace_once(
         llms_text,
-        count=1,
+        r"## Agent-facing MCP distribution\n.*?(?=\n## Semantic Change Feed)",
+        render_llms_mcp(mcp).rstrip(),
+        "llms.txt MCP distribution metadata",
     )
+
+    releases_heading = re.search(r"(?m)^## Releases\s*$", llms_text)
+    if releases_heading:
+        next_heading = re.search(r"(?m)^## Source repository\s*$", llms_text[releases_heading.end():])
+        if not next_heading:
+            raise ValueError("Could not locate Source repository section after duplicate Releases block")
+        remove_end = releases_heading.end() + next_heading.start()
+        llms_text = llms_text[:releases_heading.start()] + llms_text[remove_end:]
+
+    crisis = next(item for item in works["works"] if item.get("id") == "crisis-entity-resolution")
+    current_version = next(
+        (item for item in crisis.get("versions", [])
+         if item.get("doi") == crisis.get("current_version_doi")),
+        None,
+    )
+    if current_version:
+        crisis_line = (
+            f"- {crisis['title']} — current version {current_version['version']}: "
+            f"https://doi.org/{current_version['doi']}"
+        )
+        llms_text = replace_once(
+            llms_text,
+            r"- The Crisis of Entity Resolution in Heterogeneous AI Environments:.*",
+            crisis_line,
+            "llms.txt current Crisis of Entity Resolution version",
+        )
+
+    corpus = metadata["corpus_metadata_registry"]
+    profiles = keywords.get("work_profiles", {})
+    commit_profile = profiles.get("commit-boundary-paper", {}).get("resolved_keywords", [])
+    mcp_profile = profiles.get("mcp-server", {}).get("resolved_keywords", [])
+    if commit_profile:
+        llms_text = re.sub(
+            r"(?m)^  - Work-specific profile: commit-boundary-paper \(.*?\)$",
+            f"  - Work-specific profile: commit-boundary-paper ({len(commit_profile)} terms; baseline aligned to Zenodo v1 metadata)",
+            llms_text,
+            count=1,
+        )
     if mcp_profile:
         llms_text = re.sub(
             r"(?m)^  - Work-specific profile: mcp-server \(.*?\)$",
@@ -915,6 +904,93 @@ def update_discovery_metadata(
             count=1,
         )
     return metadata, llms_text
+
+
+def render_root_readme(
+    source: str,
+    model: dict,
+    mcp: dict,
+    live_vocabulary_version: str,
+) -> str:
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+    top_lines = [
+        f"**Current archived Reference Model release:** v{current['version']} — {release_doi_url(current)}",
+    ]
+    if previous.get("version") and previous.get("doi"):
+        top_lines.append(
+            f"**Previous archived Reference Model release:** v{previous['version']} — {release_doi_url(previous)}"
+        )
+    top_lines.append(f"**Live Reference Vocabulary:** v{live_vocabulary_version}")
+    if current.get("reference_vocabulary_version"):
+        top_lines.append(
+            f"**Vocabulary included in archived v{current['version']}:** "
+            f"{current['reference_vocabulary_version']}"
+        )
+    top_block = "\n".join(top_lines) + "\n"
+    source = replace_once(
+        source,
+        r"(^# DIO/ODI Reference Model\n\n).*?(?=^\*\*Author:\*\*)",
+        lambda match: match.group(1) + top_block,
+        "Root README release metadata header",
+    )
+
+    release_lines = []
+    for index, release in enumerate(model.get("releases", [])):
+        if not release.get("doi"):
+            continue
+        label = "Current archived release" if index == 0 else (
+            "Previous archived release" if release.get("version") == previous.get("version")
+            else "Earlier archived release"
+        )
+        release_lines.append(
+            f"**{label}:** DIO/ODI Reference Model v{release['version']} — {release_doi_url(release)}"
+        )
+    release_block = "\n\n".join(release_lines) + "\n\n"
+    source = replace_once(
+        source,
+        r"(## Citation and archival release\n\n).*?(?=^A Reference Model release DOI identifies)",
+        lambda match: match.group(1) + release_block,
+        "Root README archival release history",
+    )
+
+    current_vocab = (
+        f"The live Reference Vocabulary is v{live_vocabulary_version}. "
+        f"The current archived Reference Model package is v{current['version']} "
+        f"({release_doi_url(current)}); its predecessor is v{previous.get('version', '')} "
+        f"({release_doi_url(previous)})."
+    )
+    source = replace_once(
+        source,
+        r"The live Reference Vocabulary is v.*?its predecessor is v[^ ]+ \(https://doi\.org/[^)]+\)\.",
+        current_vocab,
+        "Root README current vocabulary/release status",
+    )
+
+    mcp_section = (
+        "## Agent-facing MCP distribution\n\n"
+        f"The Reference Model is also exposed through a separate public, stateless, "
+        f"read-only Model Context Protocol server. **DIO/ODI MCP v{mcp['version']}** "
+        f"provides a bounded snapshot of the Reference Model and selected derived "
+        f"Agentic ER and Policy-as-Code mappings; it is an integration and diagnostic "
+        f"interface, not an MVDIO Supervisor or authorization service.\n\n"
+        f"- MCP endpoint: {mcp['endpoint']}\n"
+        f"- Health endpoint: {mcp['health_endpoint']}\n"
+        f"- Source repository: {mcp['repository']}\n"
+        f"- Version DOI (v{mcp['version']}): {release_doi_url({'doi': mcp['version_doi']})}\n"
+        f"- Concept DOI (all versions): {release_doi_url({'doi': mcp['concept_doi']})}\n\n"
+        f"The MCP server is a separate derived software distribution. It does not alter "
+        f"the canonical vocabulary or the immutable Reference Model v{current['version']} archive."
+    )
+    source = replace_once(
+        source,
+        r"## Agent-facing MCP distribution\n.*?(?=\n## Concept map)",
+        mcp_section,
+        "Root README MCP distribution metadata",
+    )
+    return source
+
+
 
 
 def update_sitemap(sitemap_text: str, changed_paths: set[str], generated_date: str) -> str:
