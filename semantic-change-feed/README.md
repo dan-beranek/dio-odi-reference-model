@@ -45,6 +45,8 @@ This is complete coverage of the dated Hub Changelog entries, not a claim that e
 
 The SCF does not replace or redefine any of these sources.
 
+The human-readable SCF frontend is generated from `events.json` by `scripts/generate_projections.py`. Event cards, class/component filter options, and chronology dates are projections of the canonical event records; do not maintain a second manual event inventory in HTML.
+
 The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0. The live feed now advances independently to v0.1.5 with schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
 
 The DIO to DIO portfolio is included as a documented research-and-distribution milestone, not as an authority for historical claims. Its model-specific analyses retain different observation boundaries and interpretations; they may guide discovery of potentially relevant evidence, but factual claims entering the SCF must be checked against primary publications, release records, registries, or archives.
