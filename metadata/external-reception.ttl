@@ -33,6 +33,16 @@
     schema:name "DIO/ODI Reference Vocabulary — BioRegistry prefix record"@en ;
     schema:url <https://bioregistry.io/registry/dio-odi> .
 
+<https://vocab.danielberanek.cz/external-reception/#semantic-farm-dio-odi-prefix> a schema:CreativeWork ;
+    dcterms:source <https://semantic.farm/registry/dio-odi>,
+        <https://semantic.farm/summary> ;
+    schema:about <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary> ;
+    schema:datePublished "2026-11-16"^^xsd:date ;
+    schema:description "Semantic Farm registers the DIO/ODI Reference Vocabulary under the compact prefix dio-odi within a domain-agnostic semantic space registry, metaregistry, and compact identifier resolver. It places the vocabulary among resources spanning ontologies, controlled vocabularies, and other semantic spaces, and associates it with digital identity, knowledge organization, and semantic technologies. The record exposes identifier patterns and a resolvable CURIE example, links the canonical SKOS ConceptScheme and source repository, and makes registry data available in JSON, YAML, and RDF serializations including Turtle, JSON-LD, and N3. This is a substantive registry and interoperability integration, not a claim of scholarly peer review or endorsement."@en ;
+    schema:genre "registry-interoperability" ;
+    schema:name "DIO/ODI Reference Vocabulary — Semantic Farm registry record"@en ;
+    schema:url <https://semantic.farm/registry/dio-odi> .
+
 <https://vocab.danielberanek.cz/external-reception/#wren-castillo-entity-resolution-heterogeneous-sources> a schema:CreativeWork ;
     cito:cites <https://doi.org/10.5281/zenodo.22416026> ;
     schema:about <https://doi.org/10.5281/zenodo.22416026> ;
@@ -58,6 +68,7 @@
         <https://vocab.danielberanek.cz/external-reception/#pickett-missing-ring0-protections>,
         <https://vocab.danielberanek.cz/external-reception/#powerdrill-commit-boundary-digest>,
         <https://vocab.danielberanek.cz/external-reception/#sciencecast-commit-boundary-audio>,
+        <https://vocab.danielberanek.cz/external-reception/#semantic-farm-dio-odi-prefix>,
         <https://vocab.danielberanek.cz/external-reception/#summarizepaper-commit-boundary-v2>,
         <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail>,
         <https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1>,
