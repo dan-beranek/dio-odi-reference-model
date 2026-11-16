@@ -812,25 +812,77 @@ def render_keyword_exports(
     citation_text: str,
     keywords: dict,
     model: dict,
+    author: dict,
 ) -> tuple[dict, str]:
     profile_name = model["keyword_profile"]
     profile = keywords["work_profiles"][profile_name]["resolved_keywords"]
     if not keywords.get("export_policy", {}).get("complete_sequence_for_exportable_surfaces"):
         raise ValueError("Keyword registry does not authorize complete-sequence export")
+
+    # A release candidate is the next export target; otherwise use the current archive.
+    target = model.get("release_candidate") or model["current_release"]
+    version = target["version"]
+    doi = target.get("doi")
+    family = author["family_names"]
+    given = author["given_names"]
+    person_orcid = "https://orcid.org/" + author["orcid"]
+
+    zenodo["title"] = model["title"]
+    zenodo["version"] = version
+    zenodo["upload_type"] = "software" if model.get("type") == "software" else model.get("type")
+    zenodo["license"] = model.get("license", "CC-BY-4.0").lower()
+    zenodo["creators"] = [{
+        "name": f"{family}, {given}",
+        "orcid": author["orcid"],
+        "affiliation": author.get("affiliation", ""),
+    }]
     zenodo["keywords"] = profile
+
+    def replace_cff_scalar(key: str, value: str | None, *, required: bool = True) -> None:
+        nonlocal citation_text
+        pattern = rf"(?m)^{re.escape(key)}:.*(?:\n|$)"
+        if value is None:
+            citation_text, count = re.subn(pattern, "", citation_text, count=1)
+        else:
+            rendered = f"{key}: " + json.dumps(value, ensure_ascii=False) + "\n"
+            citation_text, count = re.subn(pattern, lambda _match: rendered, citation_text, count=1)
+        if required and count != 1:
+            raise ValueError(f"CITATION.cff field could not be updated: {key}")
+
+    replace_cff_scalar("title", model["title"])
+    replace_cff_scalar("type", model.get("type", "software"))
+    replace_cff_scalar("version", version)
+    replace_cff_scalar("doi", doi, required=False)
+    replace_cff_scalar("abstract", model["citation_abstract"])
+    replace_cff_scalar("repository-code", model["repository"])
+    replace_cff_scalar("license", model["license"])
+
+    authors_block = (
+        "authors:\n"
+        f'  - family-names: {json.dumps(family, ensure_ascii=False)}\n'
+        f'    given-names: {json.dumps(given, ensure_ascii=False)}\n'
+        f'    orcid: {json.dumps(person_orcid, ensure_ascii=False)}\n'
+        f'    affiliation: {json.dumps(author.get("affiliation", ""), ensure_ascii=False)}\n'
+    )
+    citation_text = replace_once(
+        citation_text,
+        r"(?m)^authors:\n.*?(?=^[A-Za-z][A-Za-z0-9_-]*:)",
+        authors_block,
+        "CITATION.cff authors",
+    )
 
     keyword_lines = "keywords:\n" + "".join(
         "  - " + json.dumps(term, ensure_ascii=False) + "\n" for term in profile
     )
-    citation_text, count = re.subn(
-        r"(?m)^keywords:\n(?:  - .*?(?:\n|$))+",
-        lambda _match: keyword_lines,
+    citation_text = replace_once(
         citation_text,
-        count=1,
+        r"(?m)^keywords:\n(?:  - .*?(?:\n|$))+",
+        keyword_lines.rstrip("\n"),
+        "CITATION.cff keyword sequence",
     )
-    if count != 1:
-        raise ValueError("CITATION.cff keyword projection could not be located")
     return zenodo, citation_text
+
+
 
 
 def update_discovery_metadata(
@@ -1079,7 +1131,7 @@ def build_outputs() -> dict[str, str]:
     zenodo = load_json(".zenodo.json")
     citation_text = read_text("CITATION.cff")
     zenodo, citation_text = render_keyword_exports(
-        zenodo, citation_text, keywords, model
+        zenodo, citation_text, keywords, model, works["author"]
     )
     outputs[".zenodo.json"] = dump_json(zenodo)
     outputs["CITATION.cff"] = citation_text
