@@ -35,6 +35,8 @@ LLMS_TXT = "llms.txt"
 ROOT_README = "README.md"
 SCF_README = "semantic-change-feed/README.md"
 SITEMAP = "sitemap.xml"
+AGENSI_PLANNER_URL = "https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner"
+PLANNER_SOURCE_REPOSITORY = "https://github.com/dan-beranek/agentic-entity-resolution-guardrail-planner"
 
 SCHEMA = Namespace("https://schema.org/")
 CITO = Namespace("http://purl.org/spar/cito/")
@@ -738,6 +740,12 @@ def render_llms_mcp(mcp: dict) -> str:
         f"- Health endpoint: {mcp['health_endpoint']}",
         f"- Source repository: {mcp['repository']}",
         f"- Scope: {mcp['note']}",
+        "",
+        "## Related Agentic ER planning product",
+        "",
+        "Agentic Entity Resolution Guardrail Planner is a separate published design-time Agent Skill. It prepares reviewable engineering plans for identity-changing operations; it does not execute mutations, authorize production writes, or deploy a runtime guard.",
+        f"- Agensi listing: {AGENSI_PLANNER_URL}",
+        f"- Product source repository: {PLANNER_SOURCE_REPOSITORY}",
     ]
     return "\n".join(lines) + "\n"
 
@@ -1095,7 +1103,11 @@ def render_root_readme(
         f"- Version DOI (v{mcp['version']}): {release_doi_url({'doi': mcp['version_doi']})}\n"
         f"- Concept DOI (all versions): {release_doi_url({'doi': mcp['concept_doi']})}\n\n"
         f"The MCP server is a separate derived software distribution. It does not alter "
-        f"the canonical vocabulary or the immutable Reference Model v{current['version']} archive."
+        f"the canonical vocabulary or the immutable Reference Model v{current['version']} archive.\n\n"
+        "## Related Agentic ER planning product\n\n"
+        "Agentic Entity Resolution Guardrail Planner is a separate published design-time Agent Skill. It prepares reviewable engineering plans for identity-changing operations; it does not execute mutations, authorize production writes, or deploy a runtime guard.\n\n"
+        f"- Agensi listing: {AGENSI_PLANNER_URL}\n"
+        f"- Product source repository: {PLANNER_SOURCE_REPOSITORY}"
     )
     source = replace_once(
         source,
@@ -1289,7 +1301,7 @@ def build_outputs() -> dict[str, str]:
         "append-only and separate from the current component authorities. Archived "
         "Reference Model releases retain the feed and schema versions included in each "
         "immutable package. The live feed advances independently, recording later "
-        "SPARQL, archive-reconciliation, MCP, and external registry milestones. These "
+        "SPARQL, archive-reconciliation, MCP, external registry, and Agentic ER product-publication milestones. These "
         "are live maintenance updates only: archived packages remain immutable and no "
         "new Reference Model release is created. SCF is a Reference Model component, "
         "not a separately DOI-identified work."

@@ -2,9 +2,9 @@
   "feed_version": "0.1.5",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-15",
+  "generated_on": "2026-11-16",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, public integration-service deployment, and external registry integration events through 14 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, public integration-service deployment, external registry integration, and Agentic ER product-publication events through 16 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -3122,6 +3122,68 @@
       "lineage": {
         "related_to": [
           "SCF-2026-045"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-052",
+      "date": "2026-11-16",
+      "date_basis": "publication_date",
+      "event_class": "Distribution",
+      "change_type": "published",
+      "title": "Agentic Entity Resolution Guardrail Planner is published on Agensi",
+      "summary": "Agentic Entity Resolution Guardrail Planner is publicly listed on Agensi as a design-time Agent Skill. It turns a proposed identity-changing operation into a reviewable engineering plan covering scope, evidence requirements, commit-boundary controls, implementation guidance, and validation scenarios. The product broadens access to a DIO/ODI-informed Agentic ER application without providing runtime authorization or production mutation execution.",
+      "scope": [
+        {
+          "component": "Agentic Entity Resolution Guardrail Planner",
+          "component_type": "agent-skill-product",
+          "uri": "https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner",
+          "role": "published-product-listing"
+        }
+      ],
+      "before": "The DIO/ODI-informed Commit-Boundary paper, architecture mapping, and public read-only Reference MCP were available, but no separately packaged design-time planning Skill had yet been publicly listed as a product.",
+      "after": "Agentic Entity Resolution Guardrail Planner is publicly listed on Agensi as a design-time Agent Skill. It produces reviewable engineering plans and does not execute identity mutations, authorize live writes, or deploy a runtime guard.",
+      "preserved_invariants": [
+        "The planner is a design-time tool; its publication does not make it a runtime guard, authorization service, or production mutation executor.",
+        "The public DIO/ODI MCP remains a separate read-only reference service; reference-backed use does not transfer customer records or authorize customer writes.",
+        "The canonical Reference Vocabulary, its concept definitions, hierarchy, relations, and stable identifiers remain unchanged.",
+        "The paper and derived Agentic ER architecture mapping retain their stated epistemic status; the product listing alone does not establish runtime implementation or empirical effectiveness."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "Agentic Entity Resolution Guardrail Planner",
+          "Agensi product distribution",
+          "DIO/ODI Agentic ER application ecosystem"
+        ],
+        "notes": "This is a product-publication and distribution milestone. It records a design-time planning Skill, not an implemented runtime authorization boundary or production execution service."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "The event is dated 16 November 2026 based on the author's publication information for the Agensi listing. This is the reported product-publication date, not a source-repository commit timestamp.",
+        "sources": [
+          {
+            "label": "Agensi — Agentic Entity Resolution Guardrail Planner listing",
+            "url": "https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner",
+            "role": "published-marketplace-listing"
+          },
+          {
+            "label": "Agentic Entity Resolution Guardrail Planner — product source repository",
+            "url": "https://github.com/dan-beranek/agentic-entity-resolution-guardrail-planner",
+            "role": "product-scope-and-limitations"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-049",
+          "SCF-2026-050"
         ],
         "supersedes": [],
         "corrects": []

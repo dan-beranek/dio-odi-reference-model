@@ -32,6 +32,8 @@ It complements, rather than duplicates, the existing [DIO/ODI Commit-Boundary Co
 
 The first is an architecture-level reconstruction; the second is an external technology mapping. Neither claims implementation or empirical validation.
 
+A separate related product is now available: [Agentic Entity Resolution Guardrail Planner on Agensi](https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner). It complements the architecture mapping by turning a proposed identity-changing operation into a reviewable engineering plan. It is a design-time planning tool, not an implementation of this mapping, runtime authorization service, or mutation executor.
+
 ## 3. Scope and interpretation boundary
 
 ### Included
