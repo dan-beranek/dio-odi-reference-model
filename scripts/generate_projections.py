@@ -1248,6 +1248,7 @@ def update_sitemap(sitemap_text: str, changed_paths: set[str], generated_date: s
 def build_outputs() -> dict[str, str]:
     registry = load_json(RECEPTION_JSON)
     feed = load_json(SCF_JSON)
+    feed["event_count"] = len(feed.get("events", []))
     works = load_json(WORKS_JSON)
     keywords = load_json(KEYWORDS_JSON)
     mappings = load_json("metadata/application-mappings.json")
@@ -1260,6 +1261,7 @@ def build_outputs() -> dict[str, str]:
     outputs = {
         RECEPTION_HTML: render_reception_html(registry),
         RECEPTION_TTL: render_reception_turtle(registry),
+        SCF_JSON: dump_json(feed),
         SCF_HTML: render_scf_html(feed),
     }
 
