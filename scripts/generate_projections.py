@@ -1043,8 +1043,12 @@ def build_outputs() -> dict[str, str]:
     feed = load_json(SCF_JSON)
     works = load_json(WORKS_JSON)
     keywords = load_json(KEYWORDS_JSON)
+    mappings = load_json("metadata/application-mappings.json")
     metadata = load_json(METADATA_JSON)
     llms_text = read_text(LLMS_TXT)
+    live_vocab_version = vocabulary_version()
+    model = next(item for item in works["works"] if item.get("id") == "reference-model")
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
 
     outputs = {
         RECEPTION_HTML: render_reception_html(registry),
@@ -1052,13 +1056,23 @@ def build_outputs() -> dict[str, str]:
         SCF_HTML: render_scf_html(feed),
     }
 
-    metadata, llms_text = update_discovery_metadata(metadata, feed, works, keywords, llms_text)
+    metadata, llms_text = update_discovery_metadata(
+        metadata, feed, works, keywords, mappings, llms_text, live_vocab_version
+    )
     outputs[METADATA_JSON] = dump_json(metadata)
     outputs[LLMS_TXT] = llms_text
 
-    # Version and schema values are authoritative in events.json; documentation
-    # should not need a separate hand edit after a normal feed update.
-    root_readme = read_text(ROOT_README)
+    zenodo = load_json(".zenodo.json")
+    citation_text = read_text("CITATION.cff")
+    zenodo, citation_text = render_keyword_exports(
+        zenodo, citation_text, keywords, model
+    )
+    outputs[".zenodo.json"] = dump_json(zenodo)
+    outputs["CITATION.cff"] = citation_text
+
+    root_readme = render_root_readme(
+        read_text(ROOT_README), model, mcp, live_vocab_version
+    )
     generic_scf_summary = (
         "The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) "
         "records documented semantic, structural, provenance, mapping, deployment, and "
