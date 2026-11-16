@@ -45,7 +45,7 @@ This is complete coverage of the dated Hub Changelog entries, not a claim that e
 
 The SCF does not replace or redefine any of these sources.
 
-The human-readable SCF frontend is generated from `events.json` by `scripts/generate_projections.py`. Event cards, class/component filter options, and chronology dates are projections of the canonical event records; do not maintain a second manual event inventory in HTML.
+The human-readable SCF frontend is generated from `events.json` by `scripts/generate_projections.py`. Event cards, class/component filter options, and chronology dates are projections of the canonical event records; do not maintain a second manual event inventory in HTML. The `event_count` field in `events.json` is recalculated from the length of `events` during generation. When adding records, edit the event array only; do not maintain the count manually.
 
 The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0 through 9 November 2026. The live feed now advances independently to v0.1.5 with schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
 
