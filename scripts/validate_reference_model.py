@@ -483,6 +483,36 @@ def check_metadata() -> dict[str, int | str]:
     require(citation.get("license") == "CC-BY-4.0", "CITATION.cff must preserve CC BY 4.0")
 
     model = next((item for item in works["works"] if item.get("id") == "reference-model"), None)
+    release_target = model.get("release_candidate") or model.get("current_release") if model else {}
+    author = works.get("author", {})
+    expected_creator = {
+        "name": f"{author.get('family_names')}, {author.get('given_names')}",
+        "orcid": author.get("orcid"),
+        "affiliation": author.get("affiliation"),
+    }
+    require(zenodo.get("title") == model.get("title"), "Zenodo title differs from canonical Reference Model title")
+    require(zenodo.get("version") == release_target.get("version"),
+            "Zenodo version differs from the canonical release target")
+    require(zenodo.get("upload_type") == model.get("type") == "software",
+            "Zenodo upload type must match the canonical Reference Model type")
+    require(zenodo.get("creators") == [expected_creator],
+            "Zenodo creators differ from the canonical works author")
+    require(citation.get("title") == model.get("title")
+            and citation.get("type") == model.get("type")
+            and citation.get("version") == release_target.get("version")
+            and citation.get("abstract") == model.get("citation_abstract")
+            and citation.get("repository-code") == model.get("repository"),
+            "CITATION.cff identity fields differ from canonical works metadata")
+    expected_doi = release_target.get("doi")
+    require(citation.get("doi") == expected_doi,
+            "CITATION.cff DOI differs from the canonical release target")
+    require(citation.get("authors") == [{
+        "family-names": author.get("family_names"),
+        "given-names": author.get("given_names"),
+        "orcid": f"https://orcid.org/{author.get('orcid')}",
+        "affiliation": author.get("affiliation"),
+    }], "CITATION.cff authors differ from the canonical works author")
+
     require(model is not None, "Reference Model work entry is missing")
     require(model.get("reference_vocabulary_uri") == VOCAB_NS + "ReferenceVocabulary",
             "Reference Vocabulary ConceptScheme URI is not canonical")
