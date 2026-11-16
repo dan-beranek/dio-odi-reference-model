@@ -88,6 +88,32 @@ def request_headers(url: str) -> tuple[int, str, str]:
     return status, media_type, final_url
 
 
+def request_headers_with_retry(
+    url: str, attempts: int = 8, delay_seconds: float = 3.0
+) -> tuple[int, str, str]:
+    """Allow the static Pages deployment a short window to publish a new endpoint."""
+    retryable_statuses = {404, 429, 500, 502, 503, 504}
+    for attempt in range(1, attempts + 1):
+        try:
+            return request_headers(url)
+        except urllib.error.HTTPError as exc:
+            if exc.code not in retryable_statuses or attempt == attempts:
+                raise
+            print(
+                f"RETRY {exc.code} {url} "
+                f"(attempt {attempt}/{attempts}; waiting for Pages publication)"
+            )
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == attempts:
+                raise
+            print(
+                f"RETRY network response {url} "
+                f"(attempt {attempt}/{attempts}; waiting for Pages publication)"
+            )
+        time.sleep(delay_seconds)
+    raise RuntimeError(f"Endpoint did not become available after {attempts} attempts: {url}")
+
+
 def main() -> int:
     failures: list[str] = []
     warnings: list[str] = []
@@ -95,7 +121,7 @@ def main() -> int:
 
     for url in urls:
         try:
-            status, media_type, final_url = request_headers(url)
+            status, media_type, final_url = request_headers_with_retry(url)
             accepted = expected_types(url)
             if not 200 <= status < 400:
                 failures.append(f"{url}: unexpected HTTP status {status}")
