@@ -1104,10 +1104,11 @@ def render_metadata_readme(source: str, works: dict) -> str:
         f"Its implementation is licensed under {mcp['license']}; embedded DIO/ODI reference content "
         f"remains {mcp['embedded_content_license']}."
     )
-    source = replace_once(
+    source = replace_markdown_section(
         source,
-        r"The read-only MCP server is registered.*?embedded DIO/ODI reference content remains CC BY 4\.0\.",
-        mcp_paragraph,
+        "## DIO/ODI MCP software distribution",
+        "## Reference Vocabulary identity and parent Reference Model DOI",
+        "## DIO/ODI MCP software distribution\n\n" + mcp_paragraph,
         "Metadata README MCP work identity",
     )
 
