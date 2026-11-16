@@ -565,6 +565,19 @@ def check_metadata() -> dict[str, int | str]:
         metadata_projection.get("mcp_server", {}).get("version_doi") == mcp_version_doi(works),
         "metadata.json MCP distribution projection differs from the canonical works registry",
     )
+    require(
+        metadata_projection.get("author", {}).get("email") == works["author"].get("email")
+        and metadata_projection.get("taxonomic_note_doi")
+        == next(item for item in works["works"] if item.get("id") == "taxonomic-note").get("version_doi")
+        and metadata_projection.get("reference_vocabulary_version") == model.get("reference_vocabulary_version")
+        and metadata_projection.get("live_reference_vocabulary_version") == vocabulary_version,
+        "metadata.json identity and author projections differ from canonical registries",
+    )
+    require(
+        metadata_projection.get("corpus_metadata_registry", {}).get("application_mappings")
+        == "metadata/application-mappings.json",
+        "metadata.json does not identify the canonical Application Mappings registry",
+    )
 
     cff_doi = citation.get("doi")
     current_doi = model.get("current_release", {}).get("doi")
