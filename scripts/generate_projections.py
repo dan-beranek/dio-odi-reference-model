@@ -13,9 +13,11 @@ import json
 import re
 import sys
 import unicodedata
+import subprocess
+import xml.etree.ElementTree as ET
 from datetime import date, datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import DCTERMS, RDF, RDFS, XSD
@@ -704,29 +706,48 @@ def update_discovery_metadata(
 
 
 def update_sitemap(sitemap_text: str, changed_paths: set[str], generated_date: str) -> str:
-    url_by_path = {
-        RECEPTION_HTML: "https://vocab.danielberanek.cz/external-reception/",
-        RECEPTION_TTL: "https://vocab.danielberanek.cz/metadata/external-reception.ttl",
-        SCF_HTML: "https://vocab.danielberanek.cz/semantic-change-feed/",
-        METADATA_JSON: "https://vocab.danielberanek.cz/metadata.json",
-    }
-    for path in changed_paths:
-        url = url_by_path.get(path)
-        if not url:
+    """Advance sitemap lastmod only where Git history or generated content changed."""
+    namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    try:
+        tree = ET.fromstring(sitemap_text)
+    except ET.ParseError as exc:
+        raise ValueError(f"Invalid sitemap XML: {exc}") from exc
+
+    for url_node in tree.findall(".//sm:url", namespace):
+        location = url_node.findtext("sm:loc", namespaces=namespace)
+        lastmod_node = url_node.find("sm:lastmod", namespace)
+        if not location or lastmod_node is None or not lastmod_node.text:
             continue
-        escaped_url = re.escape(url)
-        pattern = (
-            r"(<loc>" + escaped_url + r"</loc>\s*<lastmod>)[^<]+(</lastmod>)"
-        )
-        sitemap_text, count = re.subn(
-            pattern,
-            lambda match: match.group(1) + generated_date + match.group(2),
-            sitemap_text,
-            count=1,
-        )
-        if count != 1:
-            raise ValueError(f"Sitemap is missing the changed generated resource: {url}")
-    return sitemap_text
+
+        parsed = urlparse(location)
+        relative_path = unquote(parsed.path).lstrip("/")
+        if not relative_path:
+            relative_path = "index.html"
+        elif relative_path.endswith("/"):
+            relative_path += "index.html"
+
+        source_path = ROOT / relative_path
+        if not source_path.is_file():
+            continue
+
+        candidate_date = date.fromisoformat(lastmod_node.text)
+        if relative_path in changed_paths:
+            candidate_date = max(candidate_date, date.fromisoformat(generated_date))
+        else:
+            result = subprocess.run(
+                ["git", "log", "-1", "--format=%cI", "--", relative_path],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if result.returncode == 0 and result.stdout.strip():
+                commit_date = datetime.fromisoformat(result.stdout.strip()).astimezone(timezone.utc).date()
+                candidate_date = max(candidate_date, commit_date)
+
+        lastmod_node.text = candidate_date.isoformat()
+
+    return ET.tostring(tree, encoding="unicode", xml_declaration=True) + "\n"
 
 
 def build_outputs() -> dict[str, str]:
@@ -809,11 +830,10 @@ def build_outputs() -> dict[str, str]:
         path for path, content in outputs.items()
         if read_text(path) != content
     }
-    if changed_paths:
-        today = datetime.now(timezone.utc).date().isoformat()
-        sitemap_text = update_sitemap(read_text(SITEMAP), changed_paths, today)
-        if read_text(SITEMAP) != sitemap_text:
-            outputs[SITEMAP] = sitemap_text
+    today = datetime.now(timezone.utc).date().isoformat()
+    sitemap_text = update_sitemap(read_text(SITEMAP), changed_paths, today)
+    if read_text(SITEMAP) != sitemap_text:
+        outputs[SITEMAP] = sitemap_text
     return outputs
 
 
