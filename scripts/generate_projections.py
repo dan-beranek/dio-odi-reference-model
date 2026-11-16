@@ -123,7 +123,8 @@ def anchor(label: str, url: str) -> str:
 
 
 def replace_once(source: str, pattern: str, replacement: str, label: str) -> str:
-    updated, count = re.subn(pattern, lambda _match: replacement, source, count=1, flags=re.S)
+    callback = replacement if callable(replacement) else lambda _match: replacement
+    updated, count = re.subn(pattern, callback, source, count=1, flags=re.S)
     if count != 1:
         raise ValueError(f"Could not locate exactly one generated region: {label}")
     return updated
