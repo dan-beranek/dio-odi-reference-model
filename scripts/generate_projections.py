@@ -787,6 +787,7 @@ def render_metadata_projection(
         "license": mcp["license"],
         "embedded_content_license": mcp["embedded_content_license"],
         "relation": mcp["relation"],
+        "note": mcp.get("note", ""),
     }
 
     feed_metadata = metadata.setdefault("semantic_change_feed", {})
@@ -930,7 +931,7 @@ def render_root_readme(
     top_block = "\n".join(top_lines) + "\n"
     source = replace_once(
         source,
-        r"(^# DIO/ODI Reference Model\n\n).*?(?=^\*\*Author:\*\*)",
+        r"(?m)(^# DIO/ODI Reference Model\n\n).*?(?=^\*\*Author:\*\*)",
         lambda match: match.group(1) + top_block,
         "Root README release metadata header",
     )
@@ -949,7 +950,7 @@ def render_root_readme(
     release_block = "\n\n".join(release_lines) + "\n\n"
     source = replace_once(
         source,
-        r"(## Citation and archival release\n\n).*?(?=^A Reference Model release DOI identifies)",
+        r"(?m)(## Citation and archival release\n\n).*?(?=^A Reference Model release DOI identifies)",
         lambda match: match.group(1) + release_block,
         "Root README archival release history",
     )
@@ -971,9 +972,7 @@ def render_root_readme(
         "## Agent-facing MCP distribution\n\n"
         f"The Reference Model is also exposed through a separate public, stateless, "
         f"read-only Model Context Protocol server. **DIO/ODI MCP v{mcp['version']}** "
-        f"provides a bounded snapshot of the Reference Model and selected derived "
-        f"Agentic ER and Policy-as-Code mappings; it is an integration and diagnostic "
-        f"interface, not an MVDIO Supervisor or authorization service.\n\n"
+        f"{mcp['note']}\n\n"
         f"- MCP endpoint: {mcp['endpoint']}\n"
         f"- Health endpoint: {mcp['health_endpoint']}\n"
         f"- Source repository: {mcp['repository']}\n"
