@@ -197,3 +197,18 @@ Moltbook entries preserve the original post and Megalodon archive URLs, includin
 Implementation status is conservative. A technical proposal is not an implementation; an independently authored validator or illustrative code is not automatically an implementation of the source paper; an AI summary or paper index is not an independent review. The unGhost record is explicitly scoped to a limited summary of the arXiv v1 source.
 
 The registry does not modify the canonical DIO/ODI Reference Vocabulary or the Semantic Change Feed.
+
+## Generated projections and maintenance
+
+The JSON registry is the editable source for External Reception. The HTML frontend, its embedded JSON-LD, and the RDF/Turtle projection are generated from `metadata/external-reception.json` by `scripts/generate_projections.py`. Do not edit those generated representations independently. Add or correct the underlying JSON record, then let the generator rebuild every projection.
+
+The same generator builds the Semantic Change Feed frontend from `semantic-change-feed/events.json`, including its event cards and filter options. It also synchronizes selected live-feed metadata in `metadata.json`, `llms.txt`, the root README, the SCF technical README, and the affected sitemap dates.
+
+GitHub Actions runs the generator during validation. After changes reach `main`, it commits regenerated projections automatically. A local rebuild, when needed, is:
+
+```bash
+python scripts/generate_projections.py --write
+python scripts/generate_projections.py --check
+```
+
+The `--check` mode is read-only and exits with an error if any generated projection is stale. Generated files remain committed to the repository so the public static site and machine-readable endpoints do not depend on a runtime rendering service.
