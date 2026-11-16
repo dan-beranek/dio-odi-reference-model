@@ -672,9 +672,11 @@ def check_llms_txt() -> int:
     required_lines = (
         f"- Current archived Reference Model release: {current_release['version']} — {current_release['doi_url']}",
         f"- Previous archived Reference Model release: {previous_release['version']} — {previous_release['doi_url']}",
-        f"- Live Reference Vocabulary: {metadata['live_reference_vocabulary_version']} —",
+        f"- Live Reference Vocabulary: {metadata['live_reference_vocabulary_version']}",
         f"- Vocabulary included in archived v{current_release['version']}: {metadata['current_archived_reference_vocabulary_version']}",
         f"- Feed version: {feed['feed_version']};",
+        "- Application Mappings metadata registry: https://vocab.danielberanek.cz/metadata/application-mappings.json",
+        "- Application Mappings metadata schema: https://vocab.danielberanek.cz/metadata/application-mappings.schema.json",
         f"  - Keyword registry version: {keywords['registry_version']}",
         f"  - Grammar version: {registry['keyword_grammar_version']}",
     )
@@ -716,9 +718,11 @@ def check_llms_txt() -> int:
         and archived.get("event_count") == release.get("semantic_change_feed_event_count"),
         "Live SCF metadata does not preserve the exact archived snapshot recorded in works.json",
     )
+    archive_coverage = date.fromisoformat(archived.get("coverage_through"))
+    archive_coverage_label = f"{archive_coverage.day} {archive_coverage.strftime('%B %Y')}"
     archive_label = (f"- Archived snapshot in Reference Model v{archived.get('reference_model_version')}: "
                      f"feed v{archived.get('feed_version')}, schema v{archived.get('schema_version')}, "
-                     f"{archived.get('event_count')} events through 9 November 2026")
+                     f"{archived.get('event_count')} events through {archive_coverage_label}")
     require(archive_label in source, "llms.txt is missing the archived SCF snapshot boundary")
     return len(required_lines) + 2
 
