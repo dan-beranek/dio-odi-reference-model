@@ -877,7 +877,7 @@ def render_keyword_exports(
     citation_text = replace_once(
         citation_text,
         r"(?m)^keywords:\n(?:  - .*?(?:\n|$))+",
-        keyword_lines.rstrip("\n"),
+        keyword_lines,
         "CITATION.cff keyword sequence",
     )
     return zenodo, citation_text
