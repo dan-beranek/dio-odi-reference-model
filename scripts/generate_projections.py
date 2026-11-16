@@ -1039,7 +1039,7 @@ def render_root_readme(
             f"**Vocabulary included in archived v{current['version']}:** "
             f"{current['reference_vocabulary_version']}"
         )
-    top_block = "\n".join(top_lines) + "\n"
+    top_block = "\n".join(top_lines) + "\n\n"
     source = replace_once(
         source,
         r"(?m)(^# DIO/ODI Reference Model\n\n).*?(?=^\*\*Author:\*\*)",
@@ -1117,7 +1117,8 @@ def render_metadata_readme(source: str, works: dict) -> str:
     mcp_paragraph = (
         f"The read-only MCP server is registered as the separate work `mcp-server` in `works.json`. "
         f"Its v{mcp['version']} version DOI is `{mcp['version_doi']}`; its Concept DOI is "
-        f"`{mcp['concept_doi']}`. {mcp['note']} Its registered relation is `{mcp['relation']}`. "
+        f"`{mcp['concept_doi']}`. The server's recorded scope is: {mcp['note']} "
+        f"Its registered relation is `{mcp['relation']}`. "
         f"Its implementation is licensed under {mcp['license']}; embedded DIO/ODI reference content "
         f"remains {mcp['embedded_content_license']}."
     )
@@ -1141,7 +1142,9 @@ def render_metadata_readme(source: str, works: dict) -> str:
             details.append(f"through {format_date(release['semantic_change_feed_coverage_through'])}")
         return ", ".join(details)
 
-    status_note = model.get("reference_vocabulary_status_note", "").strip()
+    status_note = model.get("reference_vocabulary_status_note", "").strip().rstrip(".")
+    if status_note:
+        status_note = status_note[0].lower() + status_note[1:]
     live_line = f"The live Reference Vocabulary is v{model['reference_vocabulary_version']}"
     if status_note:
         live_line += f" ({status_note})"
