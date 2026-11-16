@@ -483,7 +483,8 @@ def check_metadata() -> dict[str, int | str]:
     require(citation.get("license") == "CC-BY-4.0", "CITATION.cff must preserve CC BY 4.0")
 
     model = next((item for item in works["works"] if item.get("id") == "reference-model"), None)
-    release_target = model.get("release_candidate") or model.get("current_release") if model else {}
+    require(model is not None, "Reference Model work entry is missing")
+    release_target = model.get("release_candidate") or model.get("current_release")
     author = works.get("author", {})
     expected_creator = {
         "name": f"{author.get('family_names')}, {author.get('given_names')}",
