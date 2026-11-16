@@ -36,6 +36,13 @@ The Reference Model is also exposed through a separate public, stateless, read-o
 - Concept DOI (all versions): https://doi.org/10.5281/zenodo.24123228
 
 The MCP server is a separate derived software distribution. It does not alter the canonical vocabulary or the immutable Reference Model v0.9.0 archive.
+
+## Related Agentic ER planning product
+
+Agentic Entity Resolution Guardrail Planner is a separate published design-time Agent Skill. It prepares reviewable engineering plans for identity-changing operations; it does not execute mutations, authorize production writes, or deploy a runtime guard.
+
+- Agensi listing: https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner
+- Product source repository: https://github.com/dan-beranek/agentic-entity-resolution-guardrail-planner
 ## Concept map
 
 The current Reconstruction Failure Mode taxonomy is non-exclusive and multi-level. Dashed relations mark related concepts that are deliberately kept outside, or distinct from, the taxonomic hierarchy.
