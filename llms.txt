@@ -109,6 +109,12 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Source repository: https://github.com/dan-beranek/dio-odi-mcp
 - Scope: Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state.
 
+## Related Agentic ER planning product
+
+Agentic Entity Resolution Guardrail Planner is a separate published design-time Agent Skill. It prepares reviewable engineering plans for identity-changing operations; it does not execute mutations, authorize production writes, or deploy a runtime guard.
+- Agensi listing: https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner
+- Product source repository: https://github.com/dan-beranek/agentic-entity-resolution-guardrail-planner
+
 ## Semantic Change Feed
 
 - Human-readable frontend: https://vocab.danielberanek.cz/semantic-change-feed/
