@@ -11,6 +11,8 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 - `references.json` — canonical bibliographic strings for internal and external references.
 - `distributions.json` — external distribution, identical, variant, and supplementary representations of each canonical work, preserving the exact relation type.
 - `keywords.json` — canonical invariant keyword core, work-specific keyword profiles, and non-export aliases.
+- `application-mappings.json` — canonical descriptive metadata, source paths, and release provenance for derived Application Mappings.
+- `application-mappings.schema.json` — JSON Schema 2020-12 validation contract for Application Mappings metadata.
 - root `.zenodo.json` — Zenodo-specific projection for future GitHub → Zenodo Reference Model releases.
 
 ## Workflow
