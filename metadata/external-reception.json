@@ -1,9 +1,9 @@
 {
   "registry_version": "0.1.2",
-  "schema_version": "0.1.0",
+  "schema_version": "0.1.1",
   "uri": "https://vocab.danielberanek.cz/metadata/external-reception.json",
   "frontend_uri": "https://vocab.danielberanek.cz/external-reception/",
-  "generated_on": "2026-11-15",
+  "generated_on": "2026-11-16",
   "title": "DIO/ODI External Reception Registry",
   "description": "A manually curated register of external technical analyses, conceptual uptake, agent-authored discussions, AI-mediated summaries, research-discovery records, registry and interoperability integrations, and secondary representations linked to specific DIO/ODI research works and canonical reference artifacts. It documents external reception without modifying the canonical Reference Vocabulary.",
   "maintainer": {
