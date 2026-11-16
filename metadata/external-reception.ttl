@@ -1,189 +1,196 @@
 @prefix cito: <http://purl.org/spar/cito/> .
-
 @prefix dcterms: <http://purl.org/dc/terms/> .
-
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
 @prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
-
-<https://vocab.danielberanek.cz/external-reception/> a schema:CollectionPage ;
-
-    schema:name "DIO/ODI External Reception"@en ;
-
-    schema:url <https://vocab.danielberanek.cz/external-reception/> ;
-
-    schema:hasPart <https://vocab.danielberanek.cz/external-reception/#pickett-missing-ring0-protections>,
-        <https://vocab.danielberanek.cz/external-reception/#cho-commit-boundary-analysis>,
-        <https://vocab.danielberanek.cz/external-reception/#wren-castillo-entity-resolution-heterogeneous-sources>,
-        <https://vocab.danielberanek.cz/external-reception/#summarizepaper-commit-boundary-v2>,
+<https://vocab.danielberanek.cz/mappings/commit-boundary-policy/> rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/>,
+        <https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile>,
+        <https://vocab.danielberanek.cz/external-reception/#aidb-commit-boundary-japanese-profile>,
         <https://vocab.danielberanek.cz/external-reception/#aimodels-fyi-commit-boundary-index>,
         <https://vocab.danielberanek.cz/external-reception/#arxivlens-commit-boundary-profile>,
-        <https://vocab.danielberanek.cz/external-reception/#powerdrill-commit-boundary-digest>,
-        <https://vocab.danielberanek.cz/external-reception/#franklin-ai-commit-boundary-editorial>,
-        <https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent>,
-        <https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access>,
-        <https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match>,
-        <https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation>,
-        <https://vocab.danielberanek.cz/external-reception/#aidb-commit-boundary-japanese-profile>,
+        <https://vocab.danielberanek.cz/external-reception/#cho-commit-boundary-analysis>,
         <https://vocab.danielberanek.cz/external-reception/#dou-commit-boundary-v1-profile>,
-        <https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1>,
+        <https://vocab.danielberanek.cz/external-reception/#franklin-ai-commit-boundary-editorial>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match>,
+        <https://vocab.danielberanek.cz/external-reception/#pickett-missing-ring0-protections>,
+        <https://vocab.danielberanek.cz/external-reception/#powerdrill-commit-boundary-digest>,
         <https://vocab.danielberanek.cz/external-reception/#sciencecast-commit-boundary-audio>,
-        <https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile>,
+        <https://vocab.danielberanek.cz/external-reception/#summarizepaper-commit-boundary-v2>,
         <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail>,
-        <https://vocab.danielberanek.cz/external-reception/#bioregistry-dio-odi-prefix> .
-
-
-
-<https://vocab.danielberanek.cz/mappings/commit-boundary-policy/>
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#pickett-missing-ring0-protections> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#cho-commit-boundary-analysis> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile> ;
-
-    rdfs:seeAlso <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> .
-
-
-
-<https://vocab.danielberanek.cz/external-reception/#pickett-missing-ring0-protections> a schema:CreativeWork ;
-    schema:name "The Missing Ring-0 Protections in AI"@en ;
-    schema:url <https://hwtn.io/essays/t0013-missing-ring-0-protections-ai> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "technical-analysis" .
-
-<https://vocab.danielberanek.cz/external-reception/#cho-commit-boundary-analysis> a schema:CreativeWork ;
-    schema:name "Why an Identity Hypothesis Is Not Permission to Merge"@en ;
-    schema:url <https://sgtcho.com/en/paper/2610-37407-constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resol.html> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "technical-analysis" .
-
-<https://vocab.danielberanek.cz/external-reception/#wren-castillo-entity-resolution-heterogeneous-sources> a schema:CreativeWork ;
-    schema:name "Entity Resolution Across Heterogeneous Web Sources"@en ;
-    schema:url <https://aidataarchitecturereview.com/posts/entity-resolution-across-heterogeneous-web-sources> ;
-    schema:about <https://doi.org/10.5281/zenodo.22416026> ;
-    schema:genre "conceptual-uptake" .
-<https://vocab.danielberanek.cz/external-reception/#wren-castillo-entity-resolution-heterogeneous-sources> cito:cites <https://doi.org/10.5281/zenodo.22416026> .
-
-<https://vocab.danielberanek.cz/external-reception/#summarizepaper-commit-boundary-v2> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — paper summary (v2)"@en ;
-    schema:url <https://www.summarizepaper.com/en/paper/2610.37407v2/> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "ai-summary" .
-
-<https://vocab.danielberanek.cz/external-reception/#aimodels-fyi-commit-boundary-index> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — paper index record"@en ;
-    schema:url <https://www.aimodels.fyi/papers/arxiv/constraining-commit-boundary-dioodi-informed-authorization-guardrail> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "research-discovery" .
-
-<https://vocab.danielberanek.cz/external-reception/#arxivlens-commit-boundary-profile> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — ArxivLens paper profile"@en ;
-    schema:url <https://arxivlens.com/paperview/details/constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resolution-2c7e617c0d906d7a#paper-analysis> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "research-discovery" .
-
-<https://vocab.danielberanek.cz/external-reception/#powerdrill-commit-boundary-digest> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — Powerdrill research digest"@en ;
-    schema:url <https://chat.powerdrill.ai/discover/summary-constraining-the-commit-boundary-a-dioodi-informed-cmvsls1jk0hxr07pocyb94gvx> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "ai-summary" .
-
-<https://vocab.danielberanek.cz/external-reception/#franklin-ai-commit-boundary-editorial> a schema:CreativeWork ;
-    schema:name "Franklin AI — editorial research profile for Commit Boundary"@en ;
-    schema:url <https://franklineh.com/learn/research/editorial-research-b952aa6eca85093b383b4ed956e3c141> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "research-editorial" .
-
-<https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent> a schema:CreativeWork ;
-    schema:name "Agentic systems are making identity permanent before they've earned it"@en ;
-    schema:url <https://www.moltbook.com/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "agent-discussion" .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent> rdfs:seeAlso <https://megalodon.jp/2026-1115-0200-58/https://www.moltbook.com:443/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6> .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent> cito:cites <https://doi.org/10.5281/zenodo.23580733> .
-
-<https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access> a schema:CreativeWork ;
-    schema:name "Database agents should make evidence earn write access"@en ;
-    schema:url <https://www.moltbook.com/post/e37f0b17-66db-4659-9921-d35b749a2d3a> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "agent-discussion" .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access> rdfs:seeAlso <https://megalodon.jp/2026-1115-0159-06/https://www.moltbook.com:443/post/e37f0b17-66db-4659-9921-d35b749a2d3a> .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access> cito:cites <https://arxiv.org/abs/2610.37407> .
-
-<https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match> a schema:CreativeWork ;
-    schema:name "A confident match is not a reason to merge two people"@en ;
-    schema:url <https://www.moltbook.com/post/87b647d7-45bf-4bda-bab4-39dc72236ba6> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "agent-discussion" .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match> rdfs:seeAlso <https://megalodon.jp/2026-1115-0200-01/https://www.moltbook.com:443/post/87b647d7-45bf-4bda-bab4-39dc72236ba6> .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match> cito:cites <https://arxiv.org/abs/2610.37407> .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match> dcterms:relation <https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation> .
-
-<https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation> a schema:CreativeWork ;
-    schema:name "Identity resolution is a permission escalation"@en ;
-    schema:url <https://www.moltbook.com/post/548fb2dc-a82d-47e3-8c64-8fd3eb95b2e7> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "adjacent-community-discussion" .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation> rdfs:seeAlso <https://megalodon.jp/2026-1115-0217-38/https://www.moltbook.com:443/post/548fb2dc-a82d-47e3-8c64-8fd3eb95b2e7> .
-<https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation> dcterms:relation <https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match> .
-
-<https://vocab.danielberanek.cz/external-reception/#aidb-commit-boundary-japanese-profile> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — AIDB paper profile"@en ;
-    schema:url <https://ai-data-base.com/paper/2610-37407> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "ai-summary" .
-
-<https://vocab.danielberanek.cz/external-reception/#dou-commit-boundary-v1-profile> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — DOU paper profile (v1)"@en ;
-    schema:url <https://paper.dou.ac/p/2610.37407v1> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "research-discovery" .
-
-<https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — WeekInPapers profile (v1)"@en ;
-    schema:url <https://weekinpapers.com/paper/2610.37407v1> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "research-discovery" .
-
-<https://vocab.danielberanek.cz/external-reception/#sciencecast-commit-boundary-audio> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary — ScienceCast presentation"@en ;
-    schema:url <https://sciencecast.org/casts/zmse3kphl4fj> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "ai-presentation" .
-
-<https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile> a schema:CreativeWork ;
-    schema:name "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution"@en ;
-    schema:url <https://aichronos.ai/n/constraining-the-commit-boundary-a-dio-odi-informed-authoriz-413347/> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "ai-summary" .
-<https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile> cito:cites <https://arxiv.org/abs/2610.37407> .
-
-<https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> a schema:CreativeWork ;
-    schema:name "The Four-Step Agentic Entity Resolution Loop—and Its Proposed Guardrail"@en ;
-    schema:url <https://unghost.com/blog/the-four-step-agentic-entity-resolution-loopand-its-proposed-guardrail-d6e86> ;
-    schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:genre "research-editorial" .
-<https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> cito:cites <https://arxiv.org/html/2610.37407v1> .
-
+        <https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1> .
 
 <https://vocab.danielberanek.cz/external-reception/#bioregistry-dio-odi-prefix> a schema:CreativeWork ;
-    schema:name "DIO/ODI Reference Vocabulary — BioRegistry prefix record"@en ;
-    schema:url <https://bioregistry.io/registry/dio-odi> ;
+    dcterms:source <https://github.com/biopragmatics/bioregistry/commit/827f8c5c3c85615b8a4328d5f617a33bdc20fb9d>,
+        <https://github.com/biopragmatics/bioregistry/issues/2182> ;
     schema:about <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary> ;
+    schema:datePublished "2026-11-14"^^xsd:date ;
+    schema:description "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies a domain-independent SKOS ConceptScheme, links its canonical homepage and source repository, states the CC-BY-4.0 licence, and describes 40 concepts distributed in Turtle/SKOS and JSON-LD. This is an external registry and interoperability integration, not an independent scholarly review, citation, or endorsement."@en ;
     schema:genre "registry-interoperability" ;
-    schema:identifier "dio-odi" ;
-    schema:datePublished "2026-11-14" ;
-    schema:description "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies a domain-independent SKOS ConceptScheme, links its canonical homepage and source repository, states the CC-BY-4.0 licence, and describes 40 concepts distributed in Turtle/SKOS and JSON-LD. This is an external registry and interoperability integration, not an independent scholarly review, citation, or endorsement."@en .
+    schema:name "DIO/ODI Reference Vocabulary — BioRegistry prefix record"@en ;
+    schema:url <https://bioregistry.io/registry/dio-odi> .
+
+<https://vocab.danielberanek.cz/external-reception/#wren-castillo-entity-resolution-heterogeneous-sources> a schema:CreativeWork ;
+    cito:cites <https://doi.org/10.5281/zenodo.22416026> ;
+    schema:about <https://doi.org/10.5281/zenodo.22416026> ;
+    schema:datePublished "2026-10-22"^^xsd:date ;
+    schema:description "An external conceptual discussion of entity resolution across heterogeneous web sources, connected to identity collapse, semantic fragmentation, temporal discontinuity, and semantic vulnerability. Its research connection is The Crisis of Entity Resolution, not Commit Boundary."@en ;
+    schema:genre "conceptual-uptake" ;
+    schema:name "Entity Resolution Across Heterogeneous Web Sources"@en ;
+    schema:url <https://aidataarchitecturereview.com/posts/entity-resolution-across-heterogeneous-web-sources> .
+
+<https://vocab.danielberanek.cz/external-reception/> a schema:CollectionPage ;
+    schema:hasPart <https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile>,
+        <https://vocab.danielberanek.cz/external-reception/#aidb-commit-boundary-japanese-profile>,
+        <https://vocab.danielberanek.cz/external-reception/#aimodels-fyi-commit-boundary-index>,
+        <https://vocab.danielberanek.cz/external-reception/#arxivlens-commit-boundary-profile>,
+        <https://vocab.danielberanek.cz/external-reception/#bioregistry-dio-odi-prefix>,
+        <https://vocab.danielberanek.cz/external-reception/#cho-commit-boundary-analysis>,
+        <https://vocab.danielberanek.cz/external-reception/#dou-commit-boundary-v1-profile>,
+        <https://vocab.danielberanek.cz/external-reception/#franklin-ai-commit-boundary-editorial>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation>,
+        <https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match>,
+        <https://vocab.danielberanek.cz/external-reception/#pickett-missing-ring0-protections>,
+        <https://vocab.danielberanek.cz/external-reception/#powerdrill-commit-boundary-digest>,
+        <https://vocab.danielberanek.cz/external-reception/#sciencecast-commit-boundary-audio>,
+        <https://vocab.danielberanek.cz/external-reception/#summarizepaper-commit-boundary-v2>,
+        <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail>,
+        <https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1>,
+        <https://vocab.danielberanek.cz/external-reception/#wren-castillo-entity-resolution-heterogeneous-sources> ;
+    schema:name "DIO/ODI External Reception Registry"@en ;
+    schema:url <https://vocab.danielberanek.cz/external-reception/> .
+
+<https://vocab.danielberanek.cz/external-reception/#aichronos-commit-boundary-profile> a schema:CreativeWork ;
+    cito:cites <https://arxiv.org/abs/2610.37407> ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:datePublished "2026-10-31"^^xsd:date ;
+    schema:description "An automatically generated Italian-language paper profile published 31 October 2026 from source material dated 27 October. The page says a local AI model generated it from the original paper and preserves the paper's conceptual status and lack of implementation or empirical validation."@en ;
+    schema:genre "ai-summary" ;
+    schema:name "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution"@en ;
+    schema:url <https://aichronos.ai/n/constraining-the-commit-boundary-a-dio-odi-informed-authoriz-413347/> .
+
+<https://vocab.danielberanek.cz/external-reception/#aidb-commit-boundary-japanese-profile> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "A Japanese-language AI research portal entry with a Japanese interface and Japanese presentation of the paper abstract. It is a localized secondary representation, not an independent technical assessment."@en ;
+    schema:genre "ai-summary" ;
+    schema:name "Constraining the Commit Boundary — AIDB paper profile"@en ;
+    schema:url <https://ai-data-base.com/paper/2610-37407> .
+
+<https://vocab.danielberanek.cz/external-reception/#aimodels-fyi-commit-boundary-index> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "A research-discovery/indexing record identifiable from its URL. Page content was not accessible during review, so no independent analysis or substantive claims are attributed to it."@en ;
+    schema:genre "research-discovery" ;
+    schema:name "Constraining the Commit Boundary — paper index record"@en ;
+    schema:url <https://www.aimodels.fyi/papers/arxiv/constraining-commit-boundary-dioodi-informed-authorization-guardrail> .
+
+<https://vocab.danielberanek.cz/external-reception/#arxivlens-commit-boundary-profile> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "A paper-discovery profile with an AI-analysis section. At the time of review, no generated findings or discussion were available; displayed metadata appeared potentially older than the current arXiv v2 manuscript."@en ;
+    schema:genre "research-discovery" ;
+    schema:name "Constraining the Commit Boundary — ArxivLens paper profile"@en ;
+    schema:url <https://arxivlens.com/paperview/details/constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resolution-2c7e617c0d906d7a#paper-analysis> .
+
+<https://vocab.danielberanek.cz/external-reception/#cho-commit-boundary-analysis> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:datePublished "2026-10-28"^^xsd:date ;
+    schema:description "A substantial technical analysis that reconstructs the commit-boundary contract and develops its own Boolean decision model, examples, and offline validation code. Cho distinguishes his illustrative equations and code from an implementation supplied by the original paper."@en ;
+    schema:genre "technical-analysis" ;
+    schema:name "Why an Identity Hypothesis Is Not Permission to Merge"@en ;
+    schema:url <https://sgtcho.com/en/paper/2610-37407-constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resol.html> .
+
+<https://vocab.danielberanek.cz/external-reception/#dou-commit-boundary-v1-profile> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "A paper-discovery profile identifiable from the URL. Its page content was not independently reviewed, so no substantive analysis is attributed to it."@en ;
+    schema:genre "research-discovery" ;
+    schema:name "Constraining the Commit Boundary — DOU paper profile (v1)"@en ;
+    schema:url <https://paper.dou.ac/p/2610.37407v1> .
+
+<https://vocab.danielberanek.cz/external-reception/#franklin-ai-commit-boundary-editorial> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:datePublished "2026-10-28"^^xsd:date ;
+    schema:description "An editorial-style research explainer associated with the Commit Boundary paper. It is not classified as an independent peer review; its authorship and generation method are not asserted beyond platform attribution."@en ;
+    schema:genre "research-editorial" ;
+    schema:name "Franklin AI — editorial research profile for Commit Boundary"@en ;
+    schema:url <https://franklineh.com/learn/research/editorial-research-b952aa6eca85093b383b4ed956e3c141> .
+
+<https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access> a schema:CreativeWork ;
+    cito:cites <https://arxiv.org/abs/2610.37407> ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "An agent-authored analysis explicitly citing the paper. It emphasizes claim-specific evidence, scope, current policy and graph state, and that UNVERIFIED evidence cannot become authorization evidence through repeated retrieval. It preserves the paper's conceptual, unvalidated status."@en ;
+    schema:genre "agent-discussion" ;
+    schema:name "Database agents should make evidence earn write access"@en ;
+    schema:url <https://www.moltbook.com/post/e37f0b17-66db-4659-9921-d35b749a2d3a> .
+
+<https://vocab.danielberanek.cz/external-reception/#moltbook-evil-robot-identity-permanent> a schema:CreativeWork ;
+    cito:cites <https://doi.org/10.5281/zenodo.23580733> ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "An agent-account post directly analyzes the Commit Boundary paper, separating evidence used for reasoning from evidence eligible to authorize persistent graph mutation and emphasizing claim-specific constraints and deferral."@en ;
+    schema:genre "agent-discussion" ;
+    schema:name "Agentic systems are making identity permanent before they've earned it"@en ;
+    schema:url <https://www.moltbook.com/post/0b1afb03-6f35-4bda-bab4-39dc72236ba6> .
+
+<https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "A community thread about identity resolution as a permission-scope escalation. Its initiating post discusses a Hightouch identity-resolution hybrid and does not cite Commit Boundary. It is adjacent to the paper's problem space and is linked as community context from vina's post."@en ;
+    schema:genre "adjacent-community-discussion" ;
+    schema:name "Identity resolution is a permission escalation"@en ;
+    schema:url <https://www.moltbook.com/post/548fb2dc-a82d-47e3-8c64-8fd3eb95b2e7> .
+
+<https://vocab.danielberanek.cz/external-reception/#moltbook-vina-confidence-match> a schema:CreativeWork ;
+    cito:cites <https://arxiv.org/abs/2610.37407> ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "An agent-authored post links the paper's commit-boundary obligations to the distinction between identity matching and authorization. The discussion explores evidence gaps and the risk of treating confidence as permission."@en ;
+    schema:genre "agent-discussion" ;
+    schema:name "A confident match is not a reason to merge two people"@en ;
+    schema:url <https://www.moltbook.com/post/87b647d7-45bf-4bda-bab4-39dc72236ba6> .
+
+<https://vocab.danielberanek.cz/external-reception/#pickett-missing-ring0-protections> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:datePublished "2026-11-02"^^xsd:date ;
+    schema:description "A technical adaptation of the Commit Boundary idea to coding-agent execution protection. Pickett proposes staged effects, shadow state, copy-on-write, executor-held credentials, and policy checks around privileged actions. These are proposed design directions, not a completed implementation."@en ;
+    schema:genre "technical-analysis" ;
+    schema:name "The Missing Ring-0 Protections in AI"@en ;
+    schema:url <https://hwtn.io/essays/t0013-missing-ring-0-protections-ai> .
+
+<https://vocab.danielberanek.cz/external-reception/#powerdrill-commit-boundary-digest> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "A paper-exploration page associated with an AI digest, mind map, and interactive question workflow. It is a secondary AI-mediated representation, not an independent review."@en ;
+    schema:genre "ai-summary" ;
+    schema:name "Constraining the Commit Boundary — Powerdrill research digest"@en ;
+    schema:url <https://chat.powerdrill.ai/discover/summary-constraining-the-commit-boundary-a-dioodi-informed-cmvsls1jk0hxr07pocyb94gvx> .
+
+<https://vocab.danielberanek.cz/external-reception/#sciencecast-commit-boundary-audio> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "An AI-generated spoken presentation associated with the paper. The page had no comments at review time; audio presentation is not a review or implementation."@en ;
+    schema:genre "ai-presentation" ;
+    schema:name "Constraining the Commit Boundary — ScienceCast presentation"@en ;
+    schema:url <https://sciencecast.org/casts/zmse3kphl4fj> .
+
+<https://vocab.danielberanek.cz/external-reception/#summarizepaper-commit-boundary-v2> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "An AI-generated summary page for the v2 arXiv preprint. It is a secondary representation, not an independent technical review or implementation."@en ;
+    schema:genre "ai-summary" ;
+    schema:name "Constraining the Commit Boundary — paper summary (v2)"@en ;
+    schema:url <https://www.summarizepaper.com/en/paper/2610.37407v2/> .
+
+<https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> a schema:CreativeWork ;
+    cito:cites <https://arxiv.org/html/2610.37407v1> ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:datePublished "2026-11-06"^^xsd:date ;
+    schema:description "An unGhost editorial published on 6 November 2026 that summarizes the agentic ER loop as planning, retrieving evidence, updating hypotheses, and proposing graph mutations. It identifies an authorization guardrail but explicitly says the supplied summary does not specify its mechanics, architecture, policies, or results. It points readers to arXiv HTML v1."@en ;
+    schema:genre "research-editorial" ;
+    schema:name "The Four-Step Agentic Entity Resolution Loop—and Its Proposed Guardrail"@en ;
+    schema:url <https://unghost.com/blog/the-four-step-agentic-entity-resolution-loopand-its-proposed-guardrail-d6e86> .
+
+<https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1> a schema:CreativeWork ;
+    schema:about <https://arxiv.org/abs/2610.37407> ;
+    schema:description "A research-digest profile identifiable from the URL. The specific record could not be independently opened; no page-specific summary or assessment is attributed to it."@en ;
+    schema:genre "research-discovery" ;
+    schema:name "Constraining the Commit Boundary — WeekInPapers profile (v1)"@en ;
+    schema:url <https://weekinpapers.com/paper/2610.37407v1> .
+
