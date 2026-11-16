@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.1.1",
+  "registry_version": "0.1.2",
   "schema_version": "0.1.0",
   "uri": "https://vocab.danielberanek.cz/metadata/external-reception.json",
   "frontend_uri": "https://vocab.danielberanek.cz/external-reception/",
@@ -934,7 +934,19 @@
         "basis": "The public BioRegistry record, the linked prefix-submission issue, and the merged registry-data commit were reviewed. The submission issue was created and closed on 9 November 2026; the registry maintainer said the record would appear with the next weekend data refresh. 14 November 2026 is used as the requested public-observation date; the exact data-refresh timestamp is not exposed.",
         "review_date": "2026-11-15",
         "reviewed_by": "author-assisted-curation"
-      }
+      },
+      "evidence_sources": [
+        {
+          "title": "BioRegistry — prefix submission and maintainer correspondence (#2182)",
+          "url": "https://github.com/biopragmatics/bioregistry/issues/2182",
+          "role": "registry-submission-history"
+        },
+        {
+          "title": "BioRegistry — merged prefix data update",
+          "url": "https://github.com/biopragmatics/bioregistry/commit/827f8c5c3c85615b8a4328d5f617a33bdc20fb9d",
+          "role": "registry-data-merge"
+        }
+      ]
     }
   ]
 }
