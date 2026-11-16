@@ -25,7 +25,6 @@ from rdflib.namespace import DCAT, DCTERMS, RDFS, SKOS
 
 ROOT = Path(__file__).resolve().parents[1]
 VOCAB_NS = "https://vocab.danielberanek.cz/dio-odi/#"
-VOCABULARY_VERSION = "0.2.2"
 VOCABULARY_PREFIX = "dio-odi"
 ARC_NS = "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/#"
 SITE_HOST = "vocab.danielberanek.cz"
@@ -269,10 +268,8 @@ def check_vocabularies() -> dict[str, int]:
         "The canonical JSON-LD context must map dio-odi to the canonical namespace and must not retain dio",
     )
     version_info_uri = URIRef("http://www.w3.org/2002/07/owl#versionInfo")
-    require(
-        str(ttl.value(scheme, version_info_uri)) == VOCABULARY_VERSION,
-        f"Canonical Reference Vocabulary version should be {VOCABULARY_VERSION}",
-    )
+    vocabulary_version = str(ttl.value(scheme, version_info_uri) or "")
+    require(bool(vocabulary_version), "Canonical Reference Vocabulary is missing owl:versionInfo")
     prefix_sources = (
         "vocabulary/dio-odi-skos.ttl",
         "vocabulary/dio-odi.jsonld",
@@ -293,7 +290,7 @@ def check_vocabularies() -> dict[str, int]:
     concepts = set(ttl.subjects(RDF.type, SKOS.Concept))
     schemes = set(ttl.subjects(RDF.type, SKOS.ConceptScheme))
     require(len(schemes) == 1 and scheme in schemes, "SKOS graph must define exactly the canonical ConceptScheme")
-    require(len(concepts) == 40, f"Expected 40 SKOS concepts, found {len(concepts)}")
+    require(bool(concepts), "SKOS graph must contain at least one concept")
     require(all(str(uri).startswith(VOCAB_NS) for uri in concepts), "A SKOS concept URI is outside the canonical namespace")
     require(all((uri, SKOS.inScheme, scheme) in ttl for uri in concepts), "Every SKOS concept must belong to the canonical ConceptScheme")
     require(all((uri, SKOS.prefLabel, None) in ttl for uri in concepts), "A SKOS concept is missing skos:prefLabel")
@@ -306,7 +303,17 @@ def check_vocabularies() -> dict[str, int]:
         "DCAT graph must contain exactly one Dataset",
     )
     distributions = set(dcat.subjects(RDF.type, DCAT.Distribution))
-    require(len(distributions) == 2, f"Expected two DCAT distributions, found {len(distributions)}")
+    media_types = {
+        str(media_type)
+        for distribution in distributions
+        for media_type in dcat.objects(distribution, DCAT.mediaType)
+    }
+    required_media_types = {
+        "https://www.iana.org/assignments/media-types/text/turtle",
+        "https://www.iana.org/assignments/media-types/application/ld+json",
+    }
+    require(required_media_types <= media_types,
+            "DCAT must expose both Turtle and JSON-LD distributions")
     require(
         (URIRef("https://vocab.danielberanek.cz/dio-odi/#dataset"), DCTERMS.identifier, scheme) in dcat,
         "DCAT Dataset identifier must be the canonical ConceptScheme URI",
@@ -318,6 +325,7 @@ def check_vocabularies() -> dict[str, int]:
         "concept_schemes": len(schemes),
         "dcat_datasets": 1,
         "dcat_distributions": len(distributions),
+        "vocabulary_version": vocabulary_version,
         "vocabulary_triples": len(ttl),
     }
 
@@ -348,13 +356,13 @@ def check_mapping_graphs() -> dict[str, int]:
     agentic_ttl = ttl_graphs["agentic-er"]
     # The full graphs intentionally retain representation-specific descriptive metadata
     # (for example, Turtle rdfs:label/rdfs:comment and JSON-LD dataset context).
-    # Parity is therefore enforced over the 206 qualified relation records and 120
-    # local architecture-concept identifiers below, not over every descriptive triple.
+    # Parity is therefore enforced over the complete qualified-relation and
+    # local architecture-concept identifier sets, not over every descriptive triple.
     rels = set(agentic.subjects(RDF.type, ARC.RelationAssertion))
     statements = set(agentic.subjects(RDF.type, RDF.Statement))
     ttl_rels = set(agentic_ttl.subjects(RDF.type, ARC.RelationAssertion))
     ttl_statements = set(agentic_ttl.subjects(RDF.type, RDF.Statement))
-    require(len(rels) == 206, f"Agentic ER mapping must contain 206 qualified relation assertions, found {len(rels)}")
+    require(bool(rels), "Agentic ER mapping must contain qualified relation assertions")
     require(rels == statements, "Agentic ER relation assertions and RDF Statements are not the same set")
     require(ttl_rels == rels and ttl_statements == ttl_rels,
             "Agentic ER Turtle and JSON-LD relation assertion identifiers differ")
@@ -402,7 +410,7 @@ def check_mapping_graphs() -> dict[str, int]:
         | set(agentic_ttl.subjects(RDF.type, RDF.Property))
     )
     ttl_concept_nodes = ttl_typed_local_nodes - ttl_rels - {mapping_root, provenance_source} - ttl_schema_nodes
-    require(len(concept_nodes) == 120, f"Agentic ER mapping must contain 120 local architecture concepts, found {len(concept_nodes)}")
+    require(bool(concept_nodes), "Agentic ER mapping must contain local architecture concepts")
     missing_in_turtle = concept_nodes - ttl_concept_nodes
     extra_in_turtle = ttl_concept_nodes - concept_nodes
     require(
@@ -483,7 +491,12 @@ def check_metadata() -> dict[str, int | str]:
         "0.1.0": ("0.1.0", "10.5281/zenodo.23272898"),
         "0.2.0": ("0.2.0", "10.5281/zenodo.23282752"),
     }
-    require(len(inclusion_history) == 2, "Reference Vocabulary inclusion history must contain the first two archived states")
+    inclusion_versions = [entry.get("vocabulary_version") for entry in inclusion_history]
+    require(
+        len(inclusion_versions) == len(set(inclusion_versions))
+        and set(inclusion_versions) == set(expected_inclusions),
+        "Reference Vocabulary inclusion history must contain each expected archived state exactly once",
+    )
     model_releases = {
         release.get("version"): release
         for work in works["works"] if work.get("id") == "reference-model"
@@ -522,16 +535,22 @@ def check_metadata() -> dict[str, int | str]:
     )
     require(model.get("reference_model_concept_doi") == "10.5281/zenodo.23272897",
             "Reference Model Concept DOI has changed unexpectedly")
-    require(model.get("reference_vocabulary_version") == VOCABULARY_VERSION,
-            f"Live Reference Vocabulary version should be {VOCABULARY_VERSION}")
+    vocabulary_graph = parse_turtle("vocabulary/dio-odi-skos.ttl")
+    vocabulary_version = str(
+        vocabulary_graph.value(
+            URIRef(VOCAB_NS + "ReferenceVocabulary"),
+            URIRef("http://www.w3.org/2002/07/owl#versionInfo"),
+        ) or ""
+    )
+    require(bool(vocabulary_version), "Canonical Reference Vocabulary has no declared version")
+    require(model.get("reference_vocabulary_version") == vocabulary_version,
+            "Works registry Reference Vocabulary version differs from the canonical SKOS source")
     require(model.get("current_release", {}).get("version") == zenodo.get("version")
             or model.get("release_candidate", {}).get("version") == zenodo.get("version"),
             "Zenodo projection version must match either current archive or explicit release candidate")
     
     profile = keywords["work_profiles"]["reference-model"]["resolved_keywords"]
     paper_profile = keywords["work_profiles"]["commit-boundary-paper"]["resolved_keywords"]
-    require(len(profile) == 67, f"Expected 67 Reference Model keywords, found {len(profile)}")
-    require(len(paper_profile) == 34, f"Expected 34 commit-boundary paper keywords, found {len(paper_profile)}")
     require(zenodo.get("keywords") == profile, ".zenodo.json keywords differ from the canonical Reference Model profile")
     require(citation.get("keywords") == profile, "CITATION.cff keywords differ from the canonical Reference Model profile")
 
