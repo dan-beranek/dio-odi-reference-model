@@ -619,6 +619,218 @@ def lambda_match_placeholder(replacement: str):
     return _replace
 
 
+def release_doi_url(release: dict) -> str:
+    doi = release.get("doi", "")
+    return "https://doi.org/" + doi if doi else ""
+
+
+def archived_release_record(release: dict) -> dict:
+    return {
+        "version": release["version"],
+        "doi": release["doi"],
+        "doi_url": release_doi_url(release),
+        **({"publication_date": release["publication_date"]} if release.get("publication_date") else {}),
+    }
+
+
+def vocabulary_version() -> str:
+    graph = Graph()
+    graph.parse(ROOT / "vocabulary/dio-odi-skos.ttl", format="turtle")
+    scheme = URIRef("https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary")
+    version = graph.value(scheme, URIRef("http://www.w3.org/2002/07/owl#versionInfo"))
+    if version is None:
+        raise ValueError("Canonical SKOS vocabulary is missing owl:versionInfo")
+    return str(version)
+
+
+def render_llms_versions(model: dict, live_vocabulary_version: str) -> str:
+    releases = model.get("releases", [])
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+    lines = [
+        "## Versions",
+        "",
+        f"- Current archived Reference Model release: {current['version']} — {release_doi_url(current)}",
+    ]
+    if previous.get("version") and previous.get("doi"):
+        lines.append(
+            f"- Previous archived Reference Model release: {previous['version']} — {release_doi_url(previous)}"
+        )
+    lines.append(f"- Live Reference Vocabulary: {live_vocabulary_version}")
+    if current.get("reference_vocabulary_version"):
+        lines.append(
+            f"- Vocabulary included in archived v{current['version']}: {current['reference_vocabulary_version']}"
+        )
+    if previous.get("version"):
+        previous_release = next(
+            (item for item in releases if item.get("version") == previous["version"]), {}
+        )
+        if previous_release.get("reference_vocabulary_version"):
+            lines.append(
+                f"- Vocabulary included in previous archived v{previous['version']}: "
+                f"{previous_release['reference_vocabulary_version']}"
+            )
+    seen_vocabulary_versions = {
+        current.get("reference_vocabulary_version"),
+        next((item.get("reference_vocabulary_version") for item in releases
+              if item.get("version") == previous.get("version")), None),
+    }
+    for release in releases:
+        value = release.get("reference_vocabulary_version")
+        if value and value not in seen_vocabulary_versions:
+            lines.append(f"- Vocabulary included in archived v{release['version']}: {value}")
+            seen_vocabulary_versions.add(value)
+    for release in releases:
+        if release.get("version") in {current.get("version"), previous.get("version")}:
+            continue
+        if release.get("doi"):
+            lines.append(
+                f"- Earlier archived release: v{release['version']} — {release_doi_url(release)}"
+            )
+    return "\n".join(lines) + "\n"
+
+
+def render_llms_mcp(mcp: dict) -> str:
+    lines = [
+        "## Agent-facing MCP distribution",
+        "",
+        f"- DIO/ODI MCP v{mcp['version']}: {release_doi_url({'doi': mcp['version_doi']})}",
+        f"- MCP Concept DOI (all versions): {release_doi_url({'doi': mcp['concept_doi']})}",
+        f"- Public Streamable HTTP endpoint: {mcp['endpoint']}",
+        f"- Health endpoint: {mcp['health_endpoint']}",
+        f"- Source repository: {mcp['repository']}",
+        f"- Scope: {mcp['note']}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_metadata_projection(
+    metadata: dict,
+    feed: dict,
+    works: dict,
+    keywords: dict,
+    mappings: dict,
+    live_vocabulary_version: str,
+) -> dict:
+    model = next(item for item in works["works"] if item.get("id") == "reference-model")
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
+    taxonomic = next(item for item in works["works"] if item.get("id") == "taxonomic-note")
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+    history = [
+        archived_release_record(release)
+        for release in model.get("releases", [])
+        if release.get("doi")
+    ]
+
+    metadata["title"] = model["title"]
+    metadata["site_homepage"] = model["site_homepage"]
+    metadata["vocabulary_landing_page"] = model["namespace_document"]
+    metadata["version"] = current["version"]
+    metadata["status"] = current.get("status", "archived")
+    metadata["namespace"] = model["canonical_namespace"]
+    metadata["repository"] = model["repository"]
+    metadata["license"] = model["license"]
+    metadata["taxonomic_note_doi"] = taxonomic["version_doi"]
+    metadata["author"] = {
+        "name": works["author"]["name"],
+        "orcid": works["author"]["orcid"],
+        "affiliation": works["author"]["affiliation"],
+        "email": works["author"]["email"],
+    }
+    metadata["reference_model_version"] = current["version"]
+    metadata["reference_vocabulary_version"] = model["reference_vocabulary_version"]
+    metadata["derived_application_mappings"] = mappings["mappings"]
+    metadata["application_mappings_index"] = metadata["site_homepage"].rstrip("/") + "/mappings/"
+    metadata["archive_status"] = current.get("status", "archived")
+    metadata["previous_archived_release"] = archived_release_record(previous)
+    metadata["archived_release_history"] = history
+    metadata["current_release"] = {
+        "version": current["version"],
+        "archive_status": current.get("status", "archived"),
+        "doi": current["doi"],
+        "doi_url": release_doi_url(current),
+        **({"publication_date": current["publication_date"]} if current.get("publication_date") else {}),
+    }
+    metadata["release_doi"] = current["doi"]
+    metadata["release_doi_url"] = release_doi_url(current)
+    metadata["current_archived_release"] = archived_release_record(current)
+    metadata["current_archived_reference_vocabulary_version"] = current.get("reference_vocabulary_version")
+    metadata["live_reference_vocabulary_version"] = live_vocabulary_version
+
+    corpus = metadata.setdefault("corpus_metadata_registry", {})
+    corpus.update({
+        "guide": "metadata/README.md",
+        "works": "metadata/works.json",
+        "relations": "metadata/relations.json",
+        "references": "metadata/references.json",
+        "zenodo_projection": ".zenodo.json",
+        "distributions": "metadata/distributions.json",
+        "keywords": "metadata/keywords.json",
+        "application_mappings": "metadata/application-mappings.json",
+        "application_mappings_schema": "metadata/application-mappings.schema.json",
+        "keyword_grammar_version": model.get("keyword_grammar_version", ""),
+        "keyword_grammar_status": model.get("keyword_profile_status", ""),
+    })
+
+    metadata["mcp_server"] = {
+        "title": mcp["title"],
+        "version": mcp["version"],
+        "version_doi": mcp["version_doi"],
+        "version_doi_url": release_doi_url({"doi": mcp["version_doi"]}),
+        "concept_doi": mcp["concept_doi"],
+        "concept_doi_url": release_doi_url({"doi": mcp["concept_doi"]}),
+        "repository": mcp["repository"],
+        "endpoint": mcp["endpoint"],
+        "health_endpoint": mcp["health_endpoint"],
+        "access": mcp["access"],
+        "license": mcp["license"],
+        "embedded_content_license": mcp["embedded_content_license"],
+        "relation": mcp["relation"],
+    }
+
+    feed_metadata = metadata.setdefault("semantic_change_feed", {})
+    feed_metadata["feed_version"] = feed["feed_version"]
+    feed_metadata["schema_version"] = feed["schema_version"]
+    feed_metadata["coverage_through"] = feed["events"][-1]["date"]
+    feed_metadata.pop("event_count", None)
+    archived_snapshot = feed_metadata.setdefault("archived_snapshot", {})
+    archived_snapshot.update({
+        "reference_model_version": current["version"],
+        "reference_model_doi": current["doi"],
+        "feed_version": current["semantic_change_feed_version"],
+        "schema_version": current["semantic_change_feed_schema_version"],
+        "event_count": current["semantic_change_feed_event_count"],
+    })
+    return metadata
+
+
+def render_keyword_exports(
+    zenodo: dict,
+    citation_text: str,
+    keywords: dict,
+    model: dict,
+) -> tuple[dict, str]:
+    profile_name = model["keyword_profile"]
+    profile = keywords["work_profiles"][profile_name]["resolved_keywords"]
+    if not keywords.get("export_policy", {}).get("complete_sequence_for_exportable_surfaces"):
+        raise ValueError("Keyword registry does not authorize complete-sequence export")
+    zenodo["keywords"] = profile
+
+    keyword_lines = "keywords:\n" + "".join(
+        "  - " + json.dumps(term, ensure_ascii=False) + "\n" for term in profile
+    )
+    citation_text, count = re.subn(
+        r"(?m)^keywords:\n(?:  - .*?(?:\n|$))+",
+        lambda _match: keyword_lines,
+        citation_text,
+        count=1,
+    )
+    if count != 1:
+        raise ValueError("CITATION.cff keyword projection could not be located")
+    return zenodo, citation_text
+
+
 def update_discovery_metadata(
     metadata: dict,
     feed: dict,
