@@ -132,6 +132,22 @@ def replace_once(source: str, pattern: str, replacement: str, label: str) -> str
     return updated
 
 
+def replace_markdown_section(
+    source: str, start_heading: str, end_heading: str, replacement: str, label: str
+) -> str:
+    """Replace one Markdown section using explicit heading boundaries."""
+    if source.count(start_heading) != 1 or source.count(end_heading) != 1:
+        raise ValueError(
+            f"Expected one {start_heading!r} and one {end_heading!r} boundary for {label}; "
+            f"found {source.count(start_heading)} and {source.count(end_heading)}"
+        )
+    start = source.find(start_heading)
+    end = source.find(end_heading, start + len(start_heading))
+    if end < 0:
+        raise ValueError(f"End boundary {end_heading!r} precedes start for {label}")
+    return source[:start] + replacement.rstrip() + "\n\n" + source[end:]
+
+
 def render_reception_jsonld(registry: dict) -> str:
     works = {item["id"]: item for item in registry.get("target_works", [])}
     has_part = []
@@ -900,16 +916,18 @@ def update_discovery_metadata(
         metadata, feed, works, keywords, mappings, live_vocabulary_version
     )
 
-    llms_text = replace_once(
+    llms_text = replace_markdown_section(
         llms_text,
-        r"## Versions\n.*?(?=\n## Referenced research works)",
-        render_llms_versions(model, live_vocabulary_version).rstrip(),
+        "## Versions",
+        "## Referenced research works",
+        render_llms_versions(model, live_vocabulary_version),
         "llms.txt archived release and vocabulary versions",
     )
-    llms_text = replace_once(
+    llms_text = replace_markdown_section(
         llms_text,
-        r"## Agent-facing MCP distribution\n.*?(?=\n## Semantic Change Feed)",
-        render_llms_mcp(mcp).rstrip(),
+        "## Agent-facing MCP distribution",
+        "## Semantic Change Feed",
+        render_llms_mcp(mcp),
         "llms.txt MCP distribution metadata",
     )
 
