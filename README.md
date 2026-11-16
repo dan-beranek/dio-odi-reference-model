@@ -156,6 +156,8 @@ The namespace is owned by the author and is intended to remain stable independen
 - `semantic-change-feed/events.json` — append-only event registry
 - `semantic-change-feed/schema.json` — JSON Schema for the feed and event records
 - `semantic-change-feed/README.md` — SCF model, temporal discipline, and correction policy
+- `scripts/generate_projections.py` — regenerates HTML, JSON-LD, RDF/Turtle, and selected discovery metadata from canonical JSON registries
+- `external-reception/index.html` and `metadata/external-reception.ttl` — generated projections of `metadata/external-reception.json`
 
 ## Derived application mappings
 
