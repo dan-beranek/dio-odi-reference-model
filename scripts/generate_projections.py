@@ -1059,6 +1059,94 @@ def render_root_readme(
 
 
 
+def render_metadata_readme(source: str, works: dict) -> str:
+    model = next(item for item in works["works"] if item.get("id") == "reference-model")
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+
+    mcp_paragraph = (
+        f"The read-only MCP server is registered as the separate work \`mcp-server\` in \`works.json\`. "
+        f"Its v{mcp['version']} version DOI is \`{mcp['version_doi']}\`; its Concept DOI is "
+        f"\`{mcp['concept_doi']}\`. {mcp['note']} Its registered relation is \`{mcp['relation']}\`. "
+        f"Its implementation is licensed under {mcp['license']}; embedded DIO/ODI reference content "
+        f"remains {mcp['embedded_content_license']}."
+    )
+    source = replace_once(
+        source,
+        r"The read-only MCP server is registered.*?embedded DIO/ODI reference content remains CC BY 4\\.0\\.",
+        mcp_paragraph,
+        "Metadata README MCP work identity",
+    )
+
+    def scf_snapshot_line(release: dict) -> str:
+        details = []
+        if release.get("semantic_change_feed_version"):
+            details.append(f"SCF v{release['semantic_change_feed_version']}")
+        if release.get("semantic_change_feed_schema_version"):
+            details.append(f"schema v{release['semantic_change_feed_schema_version']}")
+        if release.get("semantic_change_feed_event_count") is not None:
+            details.append(f"{release['semantic_change_feed_event_count']} events")
+        if release.get("semantic_change_feed_coverage_through"):
+            details.append(f"through {format_date(release['semantic_change_feed_coverage_through'])}")
+        return ", ".join(details)
+
+    status_note = model.get("reference_vocabulary_status_note", "").strip()
+    live_line = f"The live Reference Vocabulary is v{model['reference_vocabulary_version']}"
+    if status_note:
+        live_line += f" ({status_note})"
+    live_line += "."
+    current_line = (
+        f"The current archived Reference Model v{current['version']} "
+        f"(https://doi.org/{current['doi']}) contains Vocabulary "
+        f"v{current['reference_vocabulary_version']} and {scf_snapshot_line(current)}."
+    )
+    previous_release = next(
+        (item for item in model.get("releases", [])
+         if item.get("version") == previous.get("version")),
+        previous,
+    )
+    previous_line = ""
+    if previous.get("version"):
+        previous_line = (
+            f"The previous archived Reference Model v{previous['version']} "
+            f"(https://doi.org/{previous['doi']}) contains Vocabulary "
+            f"v{previous_release.get('reference_vocabulary_version', 'not separately recorded')} "
+            f"and {scf_snapshot_line(previous_release)}."
+        )
+    inclusions = model.get("reference_vocabulary_inclusion_history", [])
+    inclusion_items = []
+    for item in inclusions:
+        inclusion_items.append(
+            f"v{item['vocabulary_version']} was first included in archived Reference Model "
+            f"v{item['reference_model_release_version']} "
+            f"(https://doi.org/{item['reference_model_release_doi']})"
+        )
+    inclusion_line = (
+        "First archival inclusion for each recorded vocabulary state is preserved in "
+        "\`reference_vocabulary_inclusion_history\` in \`works.json\`: "
+        + "; ".join(inclusion_items)
+        + "."
+    )
+    identity_boundary = (
+        "These DOI values identify the enclosing Reference Model archives, not separately "
+        "archived Vocabulary packages. The Vocabulary has no separate version-specific "
+        "Zenodo DOI; use its canonical ConceptScheme URI. The "
+        "\`reference-vocabulary-v0.2.0\` entry in \`references.json\` provides the corresponding "
+        "URI-based citation without assigning the parent model's DOI to the Vocabulary."
+    )
+    paragraph = " ".join(part for part in (
+        live_line, current_line, previous_line, inclusion_line, identity_boundary
+    ) if part)
+    source = replace_once(
+        source,
+        r"The live Reference Vocabulary is v.*?parent model's DOI to the Vocabulary\\.",
+        paragraph,
+        "Metadata README vocabulary and archived release status",
+    )
+    return source
+
+
 def update_sitemap(sitemap_text: str, changed_paths: set[str], generated_date: str) -> str:
     """Advance sitemap lastmod only where Git history or generated content changed."""
     namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
