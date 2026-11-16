@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.16",
+  "registry_version": "1.8.17",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -192,12 +192,14 @@
         {
           "version": "0.1.0",
           "doi": "10.5281/zenodo.23272898",
-          "publication_date": "2026-10-10"
+          "publication_date": "2026-10-10",
+          "reference_vocabulary_version": "0.1.0"
         },
         {
           "version": "0.2.0",
           "doi": "10.5281/zenodo.23282752",
-          "publication_date": "2026-10-10"
+          "publication_date": "2026-10-10",
+          "reference_vocabulary_version": "0.2.0"
         },
         {
           "version": "0.3.0",
@@ -250,10 +252,21 @@
           "vocabulary_version": "0.2.0",
           "reference_model_release_version": "0.2.0",
           "reference_model_release_doi": "10.5281/zenodo.23282752"
+        },
+        {
+          "vocabulary_version": "0.2.1",
+          "reference_model_release_version": "0.7.0",
+          "reference_model_release_doi": "10.5281/zenodo.24020300"
+        },
+        {
+          "vocabulary_version": "0.2.2",
+          "reference_model_release_version": "0.9.0",
+          "reference_model_release_doi": "10.5281/zenodo.24085589"
         }
       ],
       "site_homepage": "https://vocab.danielberanek.cz/",
-      "citation_abstract": "Version 0.9.0 of the DIO/ODI Reference Model is a machine-readable SKOS-first reference layer for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI), with stable concept URIs, Turtle/RDF and JSON-LD serializations, provenance metadata, and explicitly separated non-normative application mappings. It carries forward Reference Vocabulary v0.2.2 with the disambiguated preferred compact prefix dio-odi, preserving the canonical namespace URI and all 40 concept URIs, together with the RAG, HEM, Commit-Boundary × Policy-as-Code, and Agentic ER mappings. This release updates the integrated Semantic Change Feed (SCF) to v0.1.1 with 45 documented events, a human-readable frontend, and JSON Schema v0.2.0. The SCF strengthens temporal and change provenance while remaining separate from the canonical vocabulary and derived mappings; it is not a Git commit log or a separate standalone publication. The Reference Model remains SKOS-first and makes no claim of implementation or empirical validation for its analytical mappings."
+      "citation_abstract": "Version 0.9.0 of the DIO/ODI Reference Model is a machine-readable SKOS-first reference layer for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI), with stable concept URIs, Turtle/RDF and JSON-LD serializations, provenance metadata, and explicitly separated non-normative application mappings. It carries forward Reference Vocabulary v0.2.2 with the disambiguated preferred compact prefix dio-odi, preserving the canonical namespace URI and all 40 concept URIs, together with the RAG, HEM, Commit-Boundary × Policy-as-Code, and Agentic ER mappings. This release updates the integrated Semantic Change Feed (SCF) to v0.1.1 with 45 documented events, a human-readable frontend, and JSON Schema v0.2.0. The SCF strengthens temporal and change provenance while remaining separate from the canonical vocabulary and derived mappings; it is not a Git commit log or a separate standalone publication. The Reference Model remains SKOS-first and makes no claim of implementation or empirical validation for its analytical mappings.",
+      "reference_vocabulary_status_note": "A metadata-only namespace-prefix alignment to v0.2.1; the concept model is unchanged."
     },
     {
       "id": "mcp-server",
