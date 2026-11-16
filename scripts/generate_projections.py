@@ -1066,15 +1066,15 @@ def render_metadata_readme(source: str, works: dict) -> str:
     previous = model.get("previous_archived_release", {})
 
     mcp_paragraph = (
-        f"The read-only MCP server is registered as the separate work \`mcp-server\` in \`works.json\`. "
-        f"Its v{mcp['version']} version DOI is \`{mcp['version_doi']}\`; its Concept DOI is "
-        f"\`{mcp['concept_doi']}\`. {mcp['note']} Its registered relation is \`{mcp['relation']}\`. "
+        f"The read-only MCP server is registered as the separate work `mcp-server` in `works.json`. "
+        f"Its v{mcp['version']} version DOI is `{mcp['version_doi']}`; its Concept DOI is "
+        f"`{mcp['concept_doi']}`. {mcp['note']} Its registered relation is `{mcp['relation']}`. "
         f"Its implementation is licensed under {mcp['license']}; embedded DIO/ODI reference content "
         f"remains {mcp['embedded_content_license']}."
     )
     source = replace_once(
         source,
-        r"The read-only MCP server is registered.*?embedded DIO/ODI reference content remains CC BY 4\\.0\\.",
+        r"The read-only MCP server is registered.*?embedded DIO/ODI reference content remains CC BY 4\.0\.",
         mcp_paragraph,
         "Metadata README MCP work identity",
     )
@@ -1124,7 +1124,7 @@ def render_metadata_readme(source: str, works: dict) -> str:
         )
     inclusion_line = (
         "First archival inclusion for each recorded vocabulary state is preserved in "
-        "\`reference_vocabulary_inclusion_history\` in \`works.json\`: "
+        "`reference_vocabulary_inclusion_history` in `works.json`: "
         + "; ".join(inclusion_items)
         + "."
     )
@@ -1132,7 +1132,7 @@ def render_metadata_readme(source: str, works: dict) -> str:
         "These DOI values identify the enclosing Reference Model archives, not separately "
         "archived Vocabulary packages. The Vocabulary has no separate version-specific "
         "Zenodo DOI; use its canonical ConceptScheme URI. The "
-        "\`reference-vocabulary-v0.2.0\` entry in \`references.json\` provides the corresponding "
+        "`reference-vocabulary-v0.2.0` entry in `references.json` provides the corresponding "
         "URI-based citation without assigning the parent model's DOI to the Vocabulary."
     )
     paragraph = " ".join(part for part in (
@@ -1140,7 +1140,7 @@ def render_metadata_readme(source: str, works: dict) -> str:
     ) if part)
     source = replace_once(
         source,
-        r"The live Reference Vocabulary is v.*?parent model's DOI to the Vocabulary\\.",
+        r"The live Reference Vocabulary is v.*?parent model's DOI to the Vocabulary\.",
         paragraph,
         "Metadata README vocabulary and archived release status",
     )
