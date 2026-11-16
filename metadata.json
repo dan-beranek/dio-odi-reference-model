@@ -196,7 +196,7 @@
     "schema_json": "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
     "feed_version": "0.1.5",
     "schema_version": "0.2.1",
-    "coverage_through": "2026-11-14",
+    "coverage_through": "2026-11-16",
     "status": "live-maintenance-after-archive",
     "license": "CC-BY-4.0",
     "archived_snapshot": {
