@@ -649,6 +649,10 @@ def lambda_match_placeholder(replacement: str):
     return _replace
 
 
+def version_sort_key(version: str) -> tuple[int, ...]:
+    return tuple(int(part) for part in re.findall(r"\d+", version))
+
+
 def release_doi_url(release: dict) -> str:
     doi = release.get("doi", "")
     return "https://doi.org/" + doi if doi else ""
@@ -674,7 +678,11 @@ def vocabulary_version() -> str:
 
 
 def render_llms_versions(model: dict, live_vocabulary_version: str) -> str:
-    releases = model.get("releases", [])
+    releases = sorted(
+        model.get("releases", []),
+        key=lambda item: version_sort_key(item["version"]),
+        reverse=True,
+    )
     current = model["current_release"]
     previous = model.get("previous_archived_release", {})
     lines = [
@@ -749,7 +757,11 @@ def render_metadata_projection(
     previous = model.get("previous_archived_release", {})
     history = [
         archived_release_record(release)
-        for release in model.get("releases", [])
+        for release in sorted(
+            model.get("releases", []),
+            key=lambda item: version_sort_key(item["version"]),
+            reverse=True,
+        )
         if release.get("doi")
     ]
 
@@ -1036,7 +1048,12 @@ def render_root_readme(
     )
 
     release_lines = []
-    for index, release in enumerate(model.get("releases", [])):
+    sorted_releases = sorted(
+        model.get("releases", []),
+        key=lambda item: version_sort_key(item["version"]),
+        reverse=True,
+    )
+    for index, release in enumerate(sorted_releases):
         if not release.get("doi"):
             continue
         label = "Current archived release" if index == 0 else (
