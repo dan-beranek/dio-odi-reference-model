@@ -157,7 +157,8 @@
         "semantic_change_feed_version": "0.1.1",
         "semantic_change_feed_schema_version": "0.2.0",
         "semantic_change_feed_event_count": 45,
-        "status": "archived"
+        "status": "archived",
+        "semantic_change_feed_coverage_through": "2026-11-09"
       },
       "releases": [
         {
@@ -167,7 +168,8 @@
           "reference_vocabulary_version": "0.2.2",
           "semantic_change_feed_version": "0.1.1",
           "semantic_change_feed_schema_version": "0.2.0",
-          "semantic_change_feed_event_count": 45
+          "semantic_change_feed_event_count": 45,
+          "semantic_change_feed_coverage_through": "2026-11-09"
         },
         {
           "version": "0.8.0",
@@ -176,7 +178,8 @@
           "reference_vocabulary_version": "0.2.1",
           "semantic_change_feed_version": "0.1.0",
           "semantic_change_feed_schema_version": "0.2.0",
-          "semantic_change_feed_event_count": 44
+          "semantic_change_feed_event_count": 44,
+          "semantic_change_feed_coverage_through": "2026-11-08"
         },
         {
           "version": "0.7.0",
