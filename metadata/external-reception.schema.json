@@ -246,6 +246,30 @@
           },
           "notes": {
             "type": "string"
+          },
+          "evidence_sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "title",
+                "url",
+                "role"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "role": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
           }
         }
       }
