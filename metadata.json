@@ -113,38 +113,10 @@
       "publication_date": "2026-11-06"
     },
     {
-      "version": "0.1.0",
-      "doi": "10.5281/zenodo.23272898",
-      "doi_url": "https://doi.org/10.5281/zenodo.23272898",
-      "publication_date": "2026-10-10"
-    },
-    {
-      "version": "0.2.0",
-      "doi": "10.5281/zenodo.23282752",
-      "doi_url": "https://doi.org/10.5281/zenodo.23282752",
-      "publication_date": "2026-10-10"
-    },
-    {
-      "version": "0.3.0",
-      "doi": "10.5281/zenodo.23289615",
-      "doi_url": "https://doi.org/10.5281/zenodo.23289615"
-    },
-    {
-      "version": "0.3.1",
-      "doi": "10.5281/zenodo.23290683",
-      "doi_url": "https://doi.org/10.5281/zenodo.23290683"
-    },
-    {
-      "version": "0.3.2",
-      "doi": "10.5281/zenodo.23300703",
-      "doi_url": "https://doi.org/10.5281/zenodo.23300703",
-      "publication_date": "2026-10-11"
-    },
-    {
-      "version": "0.4.0",
-      "doi": "10.5281/zenodo.23632619",
-      "doi_url": "https://doi.org/10.5281/zenodo.23632619",
-      "publication_date": "2026-10-25"
+      "version": "0.6.0",
+      "doi": "10.5281/zenodo.23966487",
+      "doi_url": "https://doi.org/10.5281/zenodo.23966487",
+      "publication_date": "2026-11-05"
     },
     {
       "version": "0.5.0",
@@ -153,10 +125,38 @@
       "publication_date": "2026-10-25"
     },
     {
-      "version": "0.6.0",
-      "doi": "10.5281/zenodo.23966487",
-      "doi_url": "https://doi.org/10.5281/zenodo.23966487",
-      "publication_date": "2026-11-05"
+      "version": "0.4.0",
+      "doi": "10.5281/zenodo.23632619",
+      "doi_url": "https://doi.org/10.5281/zenodo.23632619",
+      "publication_date": "2026-10-25"
+    },
+    {
+      "version": "0.3.2",
+      "doi": "10.5281/zenodo.23300703",
+      "doi_url": "https://doi.org/10.5281/zenodo.23300703",
+      "publication_date": "2026-10-11"
+    },
+    {
+      "version": "0.3.1",
+      "doi": "10.5281/zenodo.23290683",
+      "doi_url": "https://doi.org/10.5281/zenodo.23290683"
+    },
+    {
+      "version": "0.3.0",
+      "doi": "10.5281/zenodo.23289615",
+      "doi_url": "https://doi.org/10.5281/zenodo.23289615"
+    },
+    {
+      "version": "0.2.0",
+      "doi": "10.5281/zenodo.23282752",
+      "doi_url": "https://doi.org/10.5281/zenodo.23282752",
+      "publication_date": "2026-10-10"
+    },
+    {
+      "version": "0.1.0",
+      "doi": "10.5281/zenodo.23272898",
+      "doi_url": "https://doi.org/10.5281/zenodo.23272898",
+      "publication_date": "2026-10-10"
     }
   ],
   "corpus_metadata_registry": {

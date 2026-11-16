@@ -4,6 +4,7 @@
 **Previous archived Reference Model release:** v0.8.0 — https://doi.org/10.5281/zenodo.24056601
 **Live Reference Vocabulary:** v0.2.2
 **Vocabulary included in archived v0.9.0:** 0.2.2
+
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
@@ -198,21 +199,21 @@ In particular:
 
 **Earlier archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300
 
-**Earlier archived release:** DIO/ODI Reference Model v0.1.0 — https://doi.org/10.5281/zenodo.23272898
-
-**Earlier archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
-
-**Earlier archived release:** DIO/ODI Reference Model v0.3.0 — https://doi.org/10.5281/zenodo.23289615
-
-**Earlier archived release:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
-
-**Earlier archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
-
-**Earlier archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+**Earlier archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
 
 **Earlier archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
 
-**Earlier archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+**Earlier archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+
+**Earlier archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+
+**Earlier archived release:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
+
+**Earlier archived release:** DIO/ODI Reference Model v0.3.0 — https://doi.org/10.5281/zenodo.23289615
+
+**Earlier archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+
+**Earlier archived release:** DIO/ODI Reference Model v0.1.0 — https://doi.org/10.5281/zenodo.23272898
 
 A Reference Model release DOI identifies the versioned repository package. It is not asserted as the source of every vocabulary concept; concept provenance remains attached to the underlying DIO/ODI publications.
 
