@@ -457,6 +457,11 @@ def check_mapping_graphs() -> dict[str, int]:
     return totals
 
 
+def mcp_version_doi(works: dict) -> str | None:
+    item = next((work for work in works.get("works", []) if work.get("id") == "mcp-server"), {})
+    return item.get("version_doi")
+
+
 def check_metadata() -> dict[str, int | str]:
     zenodo = load_json(".zenodo.json")
     works = load_json("metadata/works.json")
@@ -467,6 +472,10 @@ def check_metadata() -> dict[str, int | str]:
     external = load_json("metadata/external-concept-mappings.json")
     external_schema = load_json("metadata/external-concept-mappings.schema.json")
     validate_json_schema(instance=external, schema=external_schema)
+    application_mappings = load_json("metadata/application-mappings.json")
+    application_mappings_schema = load_json("metadata/application-mappings.schema.json")
+    validate_json_schema(instance=application_mappings, schema=application_mappings_schema)
+    metadata_projection = load_json("metadata.json")
 
     citation = yaml.safe_load(read_text("CITATION.cff"))
     require(zenodo.get("version") == citation.get("version"), ".zenodo.json and CITATION.cff versions do not match")
@@ -474,6 +483,37 @@ def check_metadata() -> dict[str, int | str]:
     require(citation.get("license") == "CC-BY-4.0", "CITATION.cff must preserve CC BY 4.0")
 
     model = next((item for item in works["works"] if item.get("id") == "reference-model"), None)
+    require(model is not None, "Reference Model work entry is missing")
+    release_target = model.get("release_candidate") or model.get("current_release")
+    author = works.get("author", {})
+    expected_creator = {
+        "name": f"{author.get('family_names')}, {author.get('given_names')}",
+        "orcid": author.get("orcid"),
+        "affiliation": author.get("affiliation"),
+    }
+    require(zenodo.get("title") == model.get("title"), "Zenodo title differs from canonical Reference Model title")
+    require(zenodo.get("version") == release_target.get("version"),
+            "Zenodo version differs from the canonical release target")
+    require(zenodo.get("upload_type") == model.get("type") == "software",
+            "Zenodo upload type must match the canonical Reference Model type")
+    require(zenodo.get("creators") == [expected_creator],
+            "Zenodo creators differ from the canonical works author")
+    require(citation.get("title") == model.get("title")
+            and citation.get("type") == model.get("type")
+            and citation.get("version") == release_target.get("version")
+            and citation.get("abstract") == model.get("citation_abstract")
+            and citation.get("repository-code") == model.get("repository"),
+            "CITATION.cff identity fields differ from canonical works metadata")
+    expected_doi = release_target.get("doi")
+    require(citation.get("doi") == expected_doi,
+            "CITATION.cff DOI differs from the canonical release target")
+    require(citation.get("authors") == [{
+        "family-names": author.get("family_names"),
+        "given-names": author.get("given_names"),
+        "orcid": f"https://orcid.org/{author.get('orcid')}",
+        "affiliation": author.get("affiliation"),
+    }], "CITATION.cff authors differ from the canonical works author")
+
     require(model is not None, "Reference Model work entry is missing")
     require(model.get("reference_vocabulary_uri") == VOCAB_NS + "ReferenceVocabulary",
             "Reference Vocabulary ConceptScheme URI is not canonical")
@@ -487,34 +527,23 @@ def check_metadata() -> dict[str, int | str]:
         )),
         "Reference Vocabulary archive metadata still uses ambiguous standalone-publication fields",
     )
-    expected_inclusions = {
-        "0.1.0": ("0.1.0", "10.5281/zenodo.23272898"),
-        "0.2.0": ("0.2.0", "10.5281/zenodo.23282752"),
+    model_releases = {
+        release.get("version"): release
+        for release in model.get("releases", [])
     }
     inclusion_versions = [entry.get("vocabulary_version") for entry in inclusion_history]
     require(
-        len(inclusion_versions) == len(set(inclusion_versions))
-        and set(inclusion_versions) == set(expected_inclusions),
-        "Reference Vocabulary inclusion history must contain each expected archived state exactly once",
+        all(inclusion_versions)
+        and len(inclusion_versions) == len(set(inclusion_versions)),
+        "Reference Vocabulary inclusion history must use unique, non-empty version identifiers",
     )
-    model_releases = {
-        release.get("version"): release
-        for work in works["works"] if work.get("id") == "reference-model"
-        for release in work.get("releases", [])
-    }
     for entry in inclusion_history:
         vocabulary_version = entry.get("vocabulary_version")
-        expected = expected_inclusions.get(vocabulary_version)
-        require(expected is not None, f"Unexpected archived Reference Vocabulary version in inclusion history: {vocabulary_version}")
-        release_version, release_doi = expected
-        require(
-            entry.get("reference_model_release_version") == release_version
-            and entry.get("reference_model_release_doi") == release_doi,
-            f"Reference Vocabulary {vocabulary_version} must point to its enclosing Reference Model {release_version} archive",
-        )
+        release_version = entry.get("reference_model_release_version")
+        release_doi = entry.get("reference_model_release_doi")
         release = model_releases.get(release_version)
         require(release is not None and release.get("doi") == release_doi,
-                f"Reference Vocabulary inclusion DOI does not resolve to Reference Model release {release_version}")
+                f"Reference Vocabulary {vocabulary_version} inclusion must point to a matching archived Reference Model release")
 
     vocabulary_reference = next(
         (item for item in references.get("references", [])
@@ -553,6 +582,33 @@ def check_metadata() -> dict[str, int | str]:
     paper_profile = keywords["work_profiles"]["commit-boundary-paper"]["resolved_keywords"]
     require(zenodo.get("keywords") == profile, ".zenodo.json keywords differ from the canonical Reference Model profile")
     require(citation.get("keywords") == profile, "CITATION.cff keywords differ from the canonical Reference Model profile")
+    require(
+        metadata_projection.get("derived_application_mappings") == application_mappings.get("mappings"),
+        "metadata.json Application Mappings projection differs from the canonical Application Mappings registry",
+    )
+    current_release = model.get("current_release", {})
+    require(
+        metadata_projection.get("current_release", {}).get("version") == current_release.get("version")
+        and metadata_projection.get("current_release", {}).get("doi") == current_release.get("doi"),
+        "metadata.json current release projection differs from the canonical works registry",
+    )
+    require(
+        metadata_projection.get("mcp_server", {}).get("version_doi") == mcp_version_doi(works),
+        "metadata.json MCP distribution projection differs from the canonical works registry",
+    )
+    require(
+        metadata_projection.get("author", {}).get("email") == works["author"].get("email")
+        and metadata_projection.get("taxonomic_note_doi")
+        == next(item for item in works["works"] if item.get("id") == "taxonomic-note").get("version_doi")
+        and metadata_projection.get("reference_vocabulary_version") == model.get("reference_vocabulary_version")
+        and metadata_projection.get("live_reference_vocabulary_version") == vocabulary_version,
+        "metadata.json identity and author projections differ from canonical registries",
+    )
+    require(
+        metadata_projection.get("corpus_metadata_registry", {}).get("application_mappings")
+        == "metadata/application-mappings.json",
+        "metadata.json does not identify the canonical Application Mappings registry",
+    )
 
     cff_doi = citation.get("doi")
     current_doi = model.get("current_release", {}).get("doi")
@@ -560,17 +616,24 @@ def check_metadata() -> dict[str, int | str]:
         require(cff_doi == current_doi, "CITATION.cff DOI differs from the current archived release DOI")
 
     arxiv = next((item for item in works["works"] if item.get("id") == "commit-boundary-paper"), None)
-    require(arxiv is not None and arxiv.get("arxiv", {}).get("current_version") == "v2",
-            "Commit-Boundary paper registry must identify arXiv v2 as current")
+    require(arxiv is not None and arxiv.get("arxiv", {}).get("current_version"),
+            "Commit-Boundary paper registry must identify its current arXiv version")
     distribution = next(
         (item for work in distributions["works"] if work.get("work") == "commit-boundary-paper"
          for item in work.get("representations", []) if item.get("platform") == "arXiv"),
         None,
     )
-    require(distribution is not None and distribution.get("canonical_relation") == "isNewVersionOf",
-            "arXiv v2 distribution relation must remain isNewVersionOf")
-    require(distribution.get("applies_to_version_doi") == "10.5281/zenodo.23580733",
-            "arXiv v2 relation must remain scoped to Zenodo version 1")
+    require(
+        distribution is not None
+        and distribution.get("version") == arxiv["arxiv"]["current_version"]
+        and distribution.get("version_url") == arxiv["arxiv"]["version_url"],
+        "arXiv distribution must match the current version recorded in works.json",
+    )
+    require(
+        distribution.get("canonical_relation") == "isNewVersionOf"
+        and distribution.get("applies_to_version_doi") == arxiv.get("version_doi"),
+        "arXiv version relation must remain scoped to the canonical Zenodo source version",
+    )
 
     return {
         "keyword_registry": keywords["registry_version"],
@@ -580,6 +643,7 @@ def check_metadata() -> dict[str, int | str]:
         "references_registry": references.get("registry_version", "n/a"),
         "relations_registry": relations.get("registry_version", "n/a"),
         "distributions_registry": distributions["registry_version"],
+        "application_mappings_registry": application_mappings["registry_version"],
     }
 
 
@@ -659,9 +723,11 @@ def check_llms_txt() -> int:
     required_lines = (
         f"- Current archived Reference Model release: {current_release['version']} — {current_release['doi_url']}",
         f"- Previous archived Reference Model release: {previous_release['version']} — {previous_release['doi_url']}",
-        f"- Live Reference Vocabulary: {metadata['live_reference_vocabulary_version']} —",
+        f"- Live Reference Vocabulary: {metadata['live_reference_vocabulary_version']}",
         f"- Vocabulary included in archived v{current_release['version']}: {metadata['current_archived_reference_vocabulary_version']}",
         f"- Feed version: {feed['feed_version']};",
+        "- Application Mappings metadata registry: https://vocab.danielberanek.cz/metadata/application-mappings.json",
+        "- Application Mappings metadata schema: https://vocab.danielberanek.cz/metadata/application-mappings.schema.json",
         f"  - Keyword registry version: {keywords['registry_version']}",
         f"  - Grammar version: {registry['keyword_grammar_version']}",
     )
@@ -703,9 +769,11 @@ def check_llms_txt() -> int:
         and archived.get("event_count") == release.get("semantic_change_feed_event_count"),
         "Live SCF metadata does not preserve the exact archived snapshot recorded in works.json",
     )
+    archive_coverage = date.fromisoformat(archived.get("coverage_through"))
+    archive_coverage_label = f"{archive_coverage.day} {archive_coverage.strftime('%B %Y')}"
     archive_label = (f"- Archived snapshot in Reference Model v{archived.get('reference_model_version')}: "
                      f"feed v{archived.get('feed_version')}, schema v{archived.get('schema_version')}, "
-                     f"{archived.get('event_count')} events through 9 November 2026")
+                     f"{archived.get('event_count')} events through {archive_coverage_label}")
     require(archive_label in source, "llms.txt is missing the archived SCF snapshot boundary")
     return len(required_lines) + 2
 
@@ -798,6 +866,8 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/metadata/external-reception.json",
         "https://vocab.danielberanek.cz/metadata/external-reception.schema.json",
         "https://vocab.danielberanek.cz/metadata/external-reception.ttl",
+        "https://vocab.danielberanek.cz/metadata/application-mappings.json",
+        "https://vocab.danielberanek.cz/metadata/application-mappings.schema.json",
         "https://vocab.danielberanek.cz/semantic-change-feed/",
         "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
         "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",

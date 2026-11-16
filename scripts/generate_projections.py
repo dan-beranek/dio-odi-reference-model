@@ -132,6 +132,36 @@ def replace_once(source: str, pattern: str, replacement: str, label: str) -> str
     return updated
 
 
+def replace_line_with_prefix(
+    source: str, prefix: str, replacement: str, label: str
+) -> str:
+    """Replace exactly one complete line without touching later sections."""
+    lines = source.splitlines()
+    matches = [index for index, line in enumerate(lines) if line.startswith(prefix)]
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected one line starting with {prefix!r} for {label}; found {len(matches)}"
+        )
+    lines[matches[0]] = replacement
+    return "\n".join(lines) + "\n"
+
+
+def replace_markdown_section(
+    source: str, start_heading: str, end_heading: str, replacement: str, label: str
+) -> str:
+    """Replace one Markdown section using explicit heading boundaries."""
+    if source.count(start_heading) != 1 or source.count(end_heading) != 1:
+        raise ValueError(
+            f"Expected one {start_heading!r} and one {end_heading!r} boundary for {label}; "
+            f"found {source.count(start_heading)} and {source.count(end_heading)}"
+        )
+    start = source.find(start_heading)
+    end = source.find(end_heading, start + len(start_heading))
+    if end < 0:
+        raise ValueError(f"End boundary {end_heading!r} precedes start for {label}")
+    return source[:start] + replacement.rstrip() + "\n\n" + source[end:]
+
+
 def render_reception_jsonld(registry: dict) -> str:
     works = {item["id"]: item for item in registry.get("target_works", [])}
     has_part = []
@@ -619,82 +649,353 @@ def lambda_match_placeholder(replacement: str):
     return _replace
 
 
+def release_doi_url(release: dict) -> str:
+    doi = release.get("doi", "")
+    return "https://doi.org/" + doi if doi else ""
+
+
+def archived_release_record(release: dict) -> dict:
+    return {
+        "version": release["version"],
+        "doi": release["doi"],
+        "doi_url": release_doi_url(release),
+        **({"publication_date": release["publication_date"]} if release.get("publication_date") else {}),
+    }
+
+
+def vocabulary_version() -> str:
+    graph = Graph()
+    graph.parse(ROOT / "vocabulary/dio-odi-skos.ttl", format="turtle")
+    scheme = URIRef("https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary")
+    version = graph.value(scheme, URIRef("http://www.w3.org/2002/07/owl#versionInfo"))
+    if version is None:
+        raise ValueError("Canonical SKOS vocabulary is missing owl:versionInfo")
+    return str(version)
+
+
+def render_llms_versions(model: dict, live_vocabulary_version: str) -> str:
+    releases = model.get("releases", [])
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+    lines = [
+        "## Versions",
+        "",
+        f"- Current archived Reference Model release: {current['version']} — {release_doi_url(current)}",
+    ]
+    if previous.get("version") and previous.get("doi"):
+        lines.append(
+            f"- Previous archived Reference Model release: {previous['version']} — {release_doi_url(previous)}"
+        )
+    lines.append(f"- Live Reference Vocabulary: {live_vocabulary_version}")
+    if current.get("reference_vocabulary_version"):
+        lines.append(
+            f"- Vocabulary included in archived v{current['version']}: {current['reference_vocabulary_version']}"
+        )
+    if previous.get("version"):
+        previous_release = next(
+            (item for item in releases if item.get("version") == previous["version"]), {}
+        )
+        if previous_release.get("reference_vocabulary_version"):
+            lines.append(
+                f"- Vocabulary included in previous archived v{previous['version']}: "
+                f"{previous_release['reference_vocabulary_version']}"
+            )
+    seen_vocabulary_versions = {
+        current.get("reference_vocabulary_version"),
+        next((item.get("reference_vocabulary_version") for item in releases
+              if item.get("version") == previous.get("version")), None),
+    }
+    for release in releases:
+        value = release.get("reference_vocabulary_version")
+        if value and value not in seen_vocabulary_versions:
+            lines.append(f"- Vocabulary included in archived v{release['version']}: {value}")
+            seen_vocabulary_versions.add(value)
+    for release in releases:
+        if release.get("version") in {current.get("version"), previous.get("version")}:
+            continue
+        if release.get("doi"):
+            lines.append(
+                f"- Earlier archived release: v{release['version']} — {release_doi_url(release)}"
+            )
+    return "\n".join(lines) + "\n"
+
+
+def render_llms_mcp(mcp: dict) -> str:
+    lines = [
+        "## Agent-facing MCP distribution",
+        "",
+        f"- DIO/ODI MCP v{mcp['version']}: {release_doi_url({'doi': mcp['version_doi']})}",
+        f"- MCP Concept DOI (all versions): {release_doi_url({'doi': mcp['concept_doi']})}",
+        f"- Public Streamable HTTP endpoint: {mcp['endpoint']}",
+        f"- Health endpoint: {mcp['health_endpoint']}",
+        f"- Source repository: {mcp['repository']}",
+        f"- Scope: {mcp['note']}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_metadata_projection(
+    metadata: dict,
+    feed: dict,
+    works: dict,
+    keywords: dict,
+    mappings: dict,
+    live_vocabulary_version: str,
+) -> dict:
+    model = next(item for item in works["works"] if item.get("id") == "reference-model")
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
+    taxonomic = next(item for item in works["works"] if item.get("id") == "taxonomic-note")
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+    history = [
+        archived_release_record(release)
+        for release in model.get("releases", [])
+        if release.get("doi")
+    ]
+
+    metadata["title"] = model["title"]
+    metadata["site_homepage"] = model["site_homepage"]
+    metadata["vocabulary_landing_page"] = model["namespace_document"]
+    metadata["version"] = current["version"]
+    metadata["status"] = current.get("status", "archived")
+    metadata["namespace"] = model["canonical_namespace"]
+    metadata["repository"] = model["repository"]
+    metadata["license"] = model["license"]
+    metadata["taxonomic_note_doi"] = taxonomic["version_doi"]
+    metadata["author"] = {
+        "name": works["author"]["name"],
+        "orcid": works["author"]["orcid"],
+        "affiliation": works["author"]["affiliation"],
+        "email": works["author"]["email"],
+    }
+    metadata["reference_model_version"] = current["version"]
+    metadata["reference_vocabulary_version"] = model["reference_vocabulary_version"]
+    metadata["derived_application_mappings"] = mappings["mappings"]
+    metadata["application_mappings_index"] = metadata["site_homepage"].rstrip("/") + "/mappings/"
+    metadata["archive_status"] = current.get("status", "archived")
+    metadata["previous_archived_release"] = archived_release_record(previous)
+    metadata["archived_release_history"] = history
+    metadata["current_release"] = {
+        "version": current["version"],
+        "archive_status": current.get("status", "archived"),
+        "doi": current["doi"],
+        "doi_url": release_doi_url(current),
+        **({"publication_date": current["publication_date"]} if current.get("publication_date") else {}),
+    }
+    metadata["release_doi"] = current["doi"]
+    metadata["release_doi_url"] = release_doi_url(current)
+    metadata["current_archived_release"] = archived_release_record(current)
+    metadata["current_archived_reference_vocabulary_version"] = current.get("reference_vocabulary_version")
+    metadata["live_reference_vocabulary_version"] = live_vocabulary_version
+
+    corpus = metadata.setdefault("corpus_metadata_registry", {})
+    corpus.update({
+        "guide": "metadata/README.md",
+        "works": "metadata/works.json",
+        "relations": "metadata/relations.json",
+        "references": "metadata/references.json",
+        "zenodo_projection": ".zenodo.json",
+        "distributions": "metadata/distributions.json",
+        "keywords": "metadata/keywords.json",
+        "application_mappings": "metadata/application-mappings.json",
+        "application_mappings_schema": "metadata/application-mappings.schema.json",
+        "keyword_grammar_version": model.get("keyword_grammar_version", ""),
+        "keyword_grammar_status": model.get("keyword_profile_status", ""),
+    })
+
+    metadata["mcp_server"] = {
+        "title": mcp["title"],
+        "version": mcp["version"],
+        "version_doi": mcp["version_doi"],
+        "version_doi_url": release_doi_url({"doi": mcp["version_doi"]}),
+        "concept_doi": mcp["concept_doi"],
+        "concept_doi_url": release_doi_url({"doi": mcp["concept_doi"]}),
+        "repository": mcp["repository"],
+        "endpoint": mcp["endpoint"],
+        "health_endpoint": mcp["health_endpoint"],
+        "access": mcp["access"],
+        "license": mcp["license"],
+        "embedded_content_license": mcp["embedded_content_license"],
+        "relation": mcp["relation"],
+        "note": mcp.get("note", ""),
+    }
+
+    feed_metadata = metadata.setdefault("semantic_change_feed", {})
+    feed_metadata["feed_version"] = feed["feed_version"]
+    feed_metadata["schema_version"] = feed["schema_version"]
+    feed_metadata["coverage_through"] = feed["events"][-1]["date"]
+    feed_metadata.pop("event_count", None)
+    archived_snapshot = feed_metadata.setdefault("archived_snapshot", {})
+    archived_snapshot.update({
+        "reference_model_version": current["version"],
+        "reference_model_doi": current["doi"],
+        "feed_version": current["semantic_change_feed_version"],
+        "schema_version": current["semantic_change_feed_schema_version"],
+        "event_count": current["semantic_change_feed_event_count"],
+        "coverage_through": current["semantic_change_feed_coverage_through"],
+    })
+    return metadata
+
+
+def render_keyword_exports(
+    zenodo: dict,
+    citation_text: str,
+    keywords: dict,
+    model: dict,
+    author: dict,
+) -> tuple[dict, str]:
+    profile_name = model["keyword_profile"]
+    profile = keywords["work_profiles"][profile_name]["resolved_keywords"]
+    if not keywords.get("export_policy", {}).get("complete_sequence_for_exportable_surfaces"):
+        raise ValueError("Keyword registry does not authorize complete-sequence export")
+
+    # A release candidate is the next export target; otherwise use the current archive.
+    target = model.get("release_candidate") or model["current_release"]
+    version = target["version"]
+    doi = target.get("doi")
+    family = author["family_names"]
+    given = author["given_names"]
+    person_orcid = "https://orcid.org/" + author["orcid"]
+
+    zenodo["title"] = model["title"]
+    zenodo["version"] = version
+    zenodo["upload_type"] = "software" if model.get("type") == "software" else model.get("type")
+    zenodo["license"] = model.get("license", "CC-BY-4.0").lower()
+    zenodo["creators"] = [{
+        "name": f"{family}, {given}",
+        "orcid": author["orcid"],
+        "affiliation": author.get("affiliation", ""),
+    }]
+    zenodo["keywords"] = profile
+
+    def replace_cff_scalar(key: str, value: str | None, *, required: bool = True) -> None:
+        nonlocal citation_text
+        pattern = rf"(?m)^{re.escape(key)}:.*(?:\n|$)"
+        if value is None:
+            citation_text, count = re.subn(pattern, "", citation_text, count=1)
+        else:
+            rendered = f"{key}: " + json.dumps(value, ensure_ascii=False) + "\n"
+            citation_text, count = re.subn(pattern, lambda _match: rendered, citation_text, count=1)
+        if required and count != 1:
+            raise ValueError(f"CITATION.cff field could not be updated: {key}")
+
+    replace_cff_scalar("title", model["title"])
+    replace_cff_scalar("type", model.get("type", "software"))
+    replace_cff_scalar("version", version)
+    replace_cff_scalar("doi", doi, required=False)
+    replace_cff_scalar("abstract", model["citation_abstract"])
+    replace_cff_scalar("repository-code", model["repository"])
+    replace_cff_scalar("license", model["license"])
+
+    authors_block = (
+        "authors:\n"
+        f'  - family-names: {json.dumps(family, ensure_ascii=False)}\n'
+        f'    given-names: {json.dumps(given, ensure_ascii=False)}\n'
+        f'    orcid: {json.dumps(person_orcid, ensure_ascii=False)}\n'
+        f'    affiliation: {json.dumps(author.get("affiliation", ""), ensure_ascii=False)}\n'
+    )
+    citation_text = replace_once(
+        citation_text,
+        r"(?m)^authors:\n.*?(?=^[A-Za-z][A-Za-z0-9_-]*:)",
+        authors_block,
+        "CITATION.cff authors",
+    )
+
+    keyword_lines = "keywords:\n" + "".join(
+        "  - " + json.dumps(term, ensure_ascii=False) + "\n" for term in profile
+    )
+    citation_text = replace_once(
+        citation_text,
+        r"(?m)^keywords:\n(?:  - .*?(?:\n|$))+",
+        keyword_lines,
+        "CITATION.cff keyword sequence",
+    )
+    return zenodo, citation_text
+
+
+
+
 def update_discovery_metadata(
     metadata: dict,
     feed: dict,
     works: dict,
     keywords: dict,
+    mappings: dict,
     llms_text: str,
+    live_vocabulary_version: str,
 ) -> tuple[dict, str]:
-    feed_meta = metadata.setdefault("semantic_change_feed", {})
-    feed_meta["feed_version"] = feed["feed_version"]
-    feed_meta["schema_version"] = feed["schema_version"]
-    feed_meta["coverage_through"] = feed["events"][-1]["date"]
-    feed_meta.pop("event_count", None)
-
     model = next(item for item in works["works"] if item.get("id") == "reference-model")
-    archived = model["current_release"]
-    archive_date = format_date(archived.get("publication_date"))
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
+    metadata = render_metadata_projection(
+        metadata, feed, works, keywords, mappings, live_vocabulary_version
+    )
 
-    llms_text = re.sub(
-        r"(?m)^- Feed version: .*?$",
-        "- Feed version: " + feed["feed_version"]
-        + "; current live append-only structured history, first published as v0.1.0, "
-          "with explicit date basis, preserved invariants, impact, provenance, and lineage",
+    llms_text = replace_markdown_section(
         llms_text,
-        count=1,
+        "## Versions",
+        "## Referenced research works",
+        render_llms_versions(model, live_vocabulary_version),
+        "llms.txt archived release and vocabulary versions",
     )
-    llms_text = re.sub(
-        r"(?m)^- Live JSON Schema version: .*?$",
-        "- Live JSON Schema version: " + feed["schema_version"],
+    llms_text = replace_markdown_section(
         llms_text,
-        count=1,
+        "## Agent-facing MCP distribution",
+        "## Semantic Change Feed",
+        render_llms_mcp(mcp),
+        "llms.txt MCP distribution metadata",
     )
-    archived_line = (
-        f"- Archived snapshot in Reference Model v{archived['version']}: "
-        f"feed v{archived['semantic_change_feed_version']}, "
-        f"schema v{archived['semantic_change_feed_schema_version']}, "
-        f"{archived['semantic_change_feed_event_count']} events through {archive_date}"
+
+    releases_heading = re.search(r"(?m)^## Releases\s*$", llms_text)
+    if releases_heading:
+        next_heading = re.search(r"(?m)^## Source repository\s*$", llms_text[releases_heading.end():])
+        if not next_heading:
+            raise ValueError("Could not locate Source repository section after duplicate Releases block")
+        remove_end = releases_heading.end() + next_heading.start()
+        llms_text = llms_text[:releases_heading.start()] + llms_text[remove_end:]
+
+    crisis = next(item for item in works["works"] if item.get("id") == "crisis-entity-resolution")
+    current_version = next(
+        (item for item in crisis.get("versions", [])
+         if item.get("doi") == crisis.get("current_version_doi")),
+        None,
+    )
+    if current_version:
+        crisis_line = (
+            f"- {crisis['title']} — current version {current_version['version']}: "
+            f"https://doi.org/{current_version['doi']}"
+        )
+        llms_text = replace_line_with_prefix(
+            llms_text,
+            "- The Crisis of Entity Resolution in Heterogeneous AI Environments:",
+            crisis_line,
+            "llms.txt current Crisis of Entity Resolution version",
+        )
+
+    archived_snapshot = metadata["semantic_change_feed"]["archived_snapshot"]
+    archived_date = format_date(archived_snapshot["coverage_through"])
+    archived_label = (
+        f"- Archived snapshot in Reference Model v{archived_snapshot['reference_model_version']}: "
+        f"feed v{archived_snapshot['feed_version']}, schema v{archived_snapshot['schema_version']}, "
+        f"{archived_snapshot['event_count']} events through {archived_date}"
     )
     llms_text = re.sub(
         r"(?m)^- Archived snapshot in Reference Model .*?$",
-        lambda _match: archived_line,
+        lambda _match: archived_label,
         llms_text,
         count=1,
-    )
-    coverage_line = re.search(r"(?m)^- Current coverage: (.*?)$", llms_text)
-    if not coverage_line:
-        raise ValueError("llms.txt is missing its current coverage line")
-    current_coverage = coverage_line.group(1)
-    current_coverage = re.sub(
-        r"through \d{1,2} [A-Za-z]+ \d{4}$",
-        f"through {format_date(feed['events'][-1]['date'])}",
-        current_coverage,
-    )
-    if re.search(r"\b\d+\s+events?\b", current_coverage, re.IGNORECASE):
-        raise ValueError("llms.txt current coverage must not repeat the live event count")
-    llms_text = (
-        llms_text[:coverage_line.start(1)]
-        + current_coverage
-        + llms_text[coverage_line.end(1):]
     )
 
-    # Keep the keyword registry projection current without maintaining its versions by hand.
-    corpus = metadata.get("corpus_metadata_registry", {})
-    corpus["keyword_grammar_version"] = keywords.get("grammar_version", corpus.get("keyword_grammar_version", ""))
-    mcp_profile = keywords.get("work_profiles", {}).get("mcp-server", {}).get("resolved_keywords", [])
-    llms_text = re.sub(
-        r"(?m)^  - Keyword registry version: .*?$",
-        "  - Keyword registry version: " + keywords["registry_version"],
-        llms_text,
-        count=1,
-    )
-    llms_text = re.sub(
-        r"(?m)^  - Grammar version: .*?$",
-        "  - Grammar version: " + str(corpus.get("keyword_grammar_version", "")),
-        llms_text,
-        count=1,
-    )
+    corpus = metadata["corpus_metadata_registry"]
+    profiles = keywords.get("work_profiles", {})
+    commit_profile = profiles.get("commit-boundary-paper", {}).get("resolved_keywords", [])
+    mcp_profile = profiles.get("mcp-server", {}).get("resolved_keywords", [])
+    if commit_profile:
+        llms_text = re.sub(
+            r"(?m)^  - Work-specific profile: commit-boundary-paper \(.*?\)$",
+            f"  - Work-specific profile: commit-boundary-paper ({len(commit_profile)} terms; baseline aligned to Zenodo v1 metadata)",
+            llms_text,
+            count=1,
+        )
     if mcp_profile:
         llms_text = re.sub(
             r"(?m)^  - Work-specific profile: mcp-server \(.*?\)$",
@@ -703,6 +1004,180 @@ def update_discovery_metadata(
             count=1,
         )
     return metadata, llms_text
+
+
+def render_root_readme(
+    source: str,
+    model: dict,
+    mcp: dict,
+    live_vocabulary_version: str,
+) -> str:
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+    top_lines = [
+        f"**Current archived Reference Model release:** v{current['version']} — {release_doi_url(current)}",
+    ]
+    if previous.get("version") and previous.get("doi"):
+        top_lines.append(
+            f"**Previous archived Reference Model release:** v{previous['version']} — {release_doi_url(previous)}"
+        )
+    top_lines.append(f"**Live Reference Vocabulary:** v{live_vocabulary_version}")
+    if current.get("reference_vocabulary_version"):
+        top_lines.append(
+            f"**Vocabulary included in archived v{current['version']}:** "
+            f"{current['reference_vocabulary_version']}"
+        )
+    top_block = "\n".join(top_lines) + "\n"
+    source = replace_once(
+        source,
+        r"(?m)(^# DIO/ODI Reference Model\n\n).*?(?=^\*\*Author:\*\*)",
+        lambda match: match.group(1) + top_block,
+        "Root README release metadata header",
+    )
+
+    release_lines = []
+    for index, release in enumerate(model.get("releases", [])):
+        if not release.get("doi"):
+            continue
+        label = "Current archived release" if index == 0 else (
+            "Previous archived release" if release.get("version") == previous.get("version")
+            else "Earlier archived release"
+        )
+        release_lines.append(
+            f"**{label}:** DIO/ODI Reference Model v{release['version']} — {release_doi_url(release)}"
+        )
+    release_block = "\n\n".join(release_lines) + "\n\n"
+    source = replace_once(
+        source,
+        r"(?m)(## Citation and archival release\n\n).*?(?=^A Reference Model release DOI identifies)",
+        lambda match: match.group(1) + release_block,
+        "Root README archival release history",
+    )
+
+    current_vocab = (
+        f"The live Reference Vocabulary is v{live_vocabulary_version}. "
+        f"The current archived Reference Model package is v{current['version']} "
+        f"({release_doi_url(current)}); its predecessor is v{previous.get('version', '')} "
+        f"({release_doi_url(previous)})."
+    )
+    source = replace_once(
+        source,
+        r"The live Reference Vocabulary is v.*?its predecessor is v[^ ]+ \(https://doi\.org/[^)]+\)\.",
+        current_vocab,
+        "Root README current vocabulary/release status",
+    )
+
+    mcp_section = (
+        "## Agent-facing MCP distribution\n\n"
+        f"The Reference Model is also exposed through a separate public, stateless, "
+        f"read-only Model Context Protocol server. **DIO/ODI MCP v{mcp['version']}** "
+        f"{mcp['note']}\n\n"
+        f"- MCP endpoint: {mcp['endpoint']}\n"
+        f"- Health endpoint: {mcp['health_endpoint']}\n"
+        f"- Source repository: {mcp['repository']}\n"
+        f"- Version DOI (v{mcp['version']}): {release_doi_url({'doi': mcp['version_doi']})}\n"
+        f"- Concept DOI (all versions): {release_doi_url({'doi': mcp['concept_doi']})}\n\n"
+        f"The MCP server is a separate derived software distribution. It does not alter "
+        f"the canonical vocabulary or the immutable Reference Model v{current['version']} archive."
+    )
+    source = replace_once(
+        source,
+        r"## Agent-facing MCP distribution\n.*?(?=\n## Concept map)",
+        mcp_section,
+        "Root README MCP distribution metadata",
+    )
+    return source
+
+
+
+
+def render_metadata_readme(source: str, works: dict) -> str:
+    model = next(item for item in works["works"] if item.get("id") == "reference-model")
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
+    current = model["current_release"]
+    previous = model.get("previous_archived_release", {})
+
+    mcp_paragraph = (
+        f"The read-only MCP server is registered as the separate work `mcp-server` in `works.json`. "
+        f"Its v{mcp['version']} version DOI is `{mcp['version_doi']}`; its Concept DOI is "
+        f"`{mcp['concept_doi']}`. {mcp['note']} Its registered relation is `{mcp['relation']}`. "
+        f"Its implementation is licensed under {mcp['license']}; embedded DIO/ODI reference content "
+        f"remains {mcp['embedded_content_license']}."
+    )
+    source = replace_markdown_section(
+        source,
+        "## DIO/ODI MCP software distribution",
+        "## Reference Vocabulary identity and parent Reference Model DOI",
+        "## DIO/ODI MCP software distribution\n\n" + mcp_paragraph,
+        "Metadata README MCP work identity",
+    )
+
+    def scf_snapshot_line(release: dict) -> str:
+        details = []
+        if release.get("semantic_change_feed_version"):
+            details.append(f"SCF v{release['semantic_change_feed_version']}")
+        if release.get("semantic_change_feed_schema_version"):
+            details.append(f"schema v{release['semantic_change_feed_schema_version']}")
+        if release.get("semantic_change_feed_event_count") is not None:
+            details.append(f"{release['semantic_change_feed_event_count']} events")
+        if release.get("semantic_change_feed_coverage_through"):
+            details.append(f"through {format_date(release['semantic_change_feed_coverage_through'])}")
+        return ", ".join(details)
+
+    status_note = model.get("reference_vocabulary_status_note", "").strip()
+    live_line = f"The live Reference Vocabulary is v{model['reference_vocabulary_version']}"
+    if status_note:
+        live_line += f" ({status_note})"
+    live_line += "."
+    current_line = (
+        f"The current archived Reference Model v{current['version']} "
+        f"(https://doi.org/{current['doi']}) contains Vocabulary "
+        f"v{current['reference_vocabulary_version']} and {scf_snapshot_line(current)}."
+    )
+    previous_release = next(
+        (item for item in model.get("releases", [])
+         if item.get("version") == previous.get("version")),
+        previous,
+    )
+    previous_line = ""
+    if previous.get("version"):
+        previous_line = (
+            f"The previous archived Reference Model v{previous['version']} "
+            f"(https://doi.org/{previous['doi']}) contains Vocabulary "
+            f"v{previous_release.get('reference_vocabulary_version', 'not separately recorded')} "
+            f"and {scf_snapshot_line(previous_release)}."
+        )
+    inclusions = model.get("reference_vocabulary_inclusion_history", [])
+    inclusion_items = []
+    for item in inclusions:
+        inclusion_items.append(
+            f"v{item['vocabulary_version']} was first included in archived Reference Model "
+            f"v{item['reference_model_release_version']} "
+            f"(https://doi.org/{item['reference_model_release_doi']})"
+        )
+    inclusion_line = (
+        "First archival inclusion for each recorded vocabulary state is preserved in "
+        "`reference_vocabulary_inclusion_history` in `works.json`: "
+        + "; ".join(inclusion_items)
+        + "."
+    )
+    identity_boundary = (
+        "These DOI values identify the enclosing Reference Model archives, not separately "
+        "archived Vocabulary packages. The Vocabulary has no separate version-specific "
+        "Zenodo DOI; use its canonical ConceptScheme URI. The "
+        "`reference-vocabulary-v0.2.0` entry in `references.json` provides the corresponding "
+        "URI-based citation without assigning the parent model's DOI to the Vocabulary."
+    )
+    paragraph = " ".join(part for part in (
+        live_line, current_line, previous_line, inclusion_line, identity_boundary
+    ) if part)
+    source = replace_once(
+        source,
+        r"The live Reference Vocabulary is v.*?parent model's DOI to the Vocabulary\.",
+        paragraph,
+        "Metadata README vocabulary and archived release status",
+    )
+    return source
 
 
 def update_sitemap(sitemap_text: str, changed_paths: set[str], generated_date: str) -> str:
@@ -755,8 +1230,12 @@ def build_outputs() -> dict[str, str]:
     feed = load_json(SCF_JSON)
     works = load_json(WORKS_JSON)
     keywords = load_json(KEYWORDS_JSON)
+    mappings = load_json("metadata/application-mappings.json")
     metadata = load_json(METADATA_JSON)
     llms_text = read_text(LLMS_TXT)
+    live_vocab_version = vocabulary_version()
+    model = next(item for item in works["works"] if item.get("id") == "reference-model")
+    mcp = next(item for item in works["works"] if item.get("id") == "mcp-server")
 
     outputs = {
         RECEPTION_HTML: render_reception_html(registry),
@@ -764,13 +1243,23 @@ def build_outputs() -> dict[str, str]:
         SCF_HTML: render_scf_html(feed),
     }
 
-    metadata, llms_text = update_discovery_metadata(metadata, feed, works, keywords, llms_text)
+    metadata, llms_text = update_discovery_metadata(
+        metadata, feed, works, keywords, mappings, llms_text, live_vocab_version
+    )
     outputs[METADATA_JSON] = dump_json(metadata)
     outputs[LLMS_TXT] = llms_text
 
-    # Version and schema values are authoritative in events.json; documentation
-    # should not need a separate hand edit after a normal feed update.
-    root_readme = read_text(ROOT_README)
+    zenodo = load_json(".zenodo.json")
+    citation_text = read_text("CITATION.cff")
+    zenodo, citation_text = render_keyword_exports(
+        zenodo, citation_text, keywords, model, works["author"]
+    )
+    outputs[".zenodo.json"] = dump_json(zenodo)
+    outputs["CITATION.cff"] = citation_text
+
+    root_readme = render_root_readme(
+        read_text(ROOT_README), model, mcp, live_vocab_version
+    )
     generic_scf_summary = (
         "The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) "
         "records documented semantic, structural, provenance, mapping, deployment, and "
@@ -790,6 +1279,9 @@ def build_outputs() -> dict[str, str]:
         "Root README SCF summary",
     )
     outputs[ROOT_README] = root_readme
+    outputs["metadata/README.md"] = render_metadata_readme(
+        read_text("metadata/README.md"), works
+    )
 
     scf_readme = read_text(SCF_README)
     scf_readme = re.sub(
@@ -811,11 +1303,12 @@ def build_outputs() -> dict[str, str]:
         count=1,
     )
     archived = next(item for item in works["works"] if item.get("id") == "reference-model")["current_release"]
+    archive_date = format_date(archived["semantic_change_feed_coverage_through"])
     archived_label = (
         f"The archived Reference Model v{archived['version']} "
         f"(https://doi.org/{archived['doi']}) contains SCF v{archived['semantic_change_feed_version']} "
         f"with {archived['semantic_change_feed_event_count']} events and schema "
-        f"v{archived['semantic_change_feed_schema_version']}. The live feed now advances "
+        f"v{archived['semantic_change_feed_schema_version']} through {archive_date}. The live feed now advances "
         f"independently to v{feed['feed_version']} with schema v{feed['schema_version']}."
     )
     scf_readme = replace_once(

@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.14",
+  "registry_version": "1.8.17",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -7,7 +7,10 @@
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
     "orcid": "0009-0004-0050-0264",
-    "affiliation": "Independent Researcher, Brno, Czech Republic"
+    "affiliation": "Independent Researcher, Brno, Czech Republic",
+    "email": "dan@danielberanek.cz",
+    "given_names": "Daniel",
+    "family_names": "Beránek"
   },
   "hub": "https://danielberanek.cz/manifest-dio/",
   "works": [
@@ -156,7 +159,8 @@
         "semantic_change_feed_version": "0.1.1",
         "semantic_change_feed_schema_version": "0.2.0",
         "semantic_change_feed_event_count": 45,
-        "status": "archived"
+        "status": "archived",
+        "semantic_change_feed_coverage_through": "2026-11-09"
       },
       "releases": [
         {
@@ -166,7 +170,8 @@
           "reference_vocabulary_version": "0.2.2",
           "semantic_change_feed_version": "0.1.1",
           "semantic_change_feed_schema_version": "0.2.0",
-          "semantic_change_feed_event_count": 45
+          "semantic_change_feed_event_count": 45,
+          "semantic_change_feed_coverage_through": "2026-11-09"
         },
         {
           "version": "0.8.0",
@@ -175,7 +180,8 @@
           "reference_vocabulary_version": "0.2.1",
           "semantic_change_feed_version": "0.1.0",
           "semantic_change_feed_schema_version": "0.2.0",
-          "semantic_change_feed_event_count": 44
+          "semantic_change_feed_event_count": 44,
+          "semantic_change_feed_coverage_through": "2026-11-08"
         },
         {
           "version": "0.7.0",
@@ -186,12 +192,14 @@
         {
           "version": "0.1.0",
           "doi": "10.5281/zenodo.23272898",
-          "publication_date": "2026-10-10"
+          "publication_date": "2026-10-10",
+          "reference_vocabulary_version": "0.1.0"
         },
         {
           "version": "0.2.0",
           "doi": "10.5281/zenodo.23282752",
-          "publication_date": "2026-10-10"
+          "publication_date": "2026-10-10",
+          "reference_vocabulary_version": "0.2.0"
         },
         {
           "version": "0.3.0",
@@ -244,8 +252,21 @@
           "vocabulary_version": "0.2.0",
           "reference_model_release_version": "0.2.0",
           "reference_model_release_doi": "10.5281/zenodo.23282752"
+        },
+        {
+          "vocabulary_version": "0.2.1",
+          "reference_model_release_version": "0.7.0",
+          "reference_model_release_doi": "10.5281/zenodo.24020300"
+        },
+        {
+          "vocabulary_version": "0.2.2",
+          "reference_model_release_version": "0.9.0",
+          "reference_model_release_doi": "10.5281/zenodo.24085589"
         }
-      ]
+      ],
+      "site_homepage": "https://vocab.danielberanek.cz/",
+      "citation_abstract": "Version 0.9.0 of the DIO/ODI Reference Model is a machine-readable SKOS-first reference layer for Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI), with stable concept URIs, Turtle/RDF and JSON-LD serializations, provenance metadata, and explicitly separated non-normative application mappings. It carries forward Reference Vocabulary v0.2.2 with the disambiguated preferred compact prefix dio-odi, preserving the canonical namespace URI and all 40 concept URIs, together with the RAG, HEM, Commit-Boundary × Policy-as-Code, and Agentic ER mappings. This release updates the integrated Semantic Change Feed (SCF) to v0.1.1 with 45 documented events, a human-readable frontend, and JSON Schema v0.2.0. The SCF strengthens temporal and change provenance while remaining separate from the canonical vocabulary and derived mappings; it is not a Git commit log or a separate standalone publication. The Reference Model remains SKOS-first and makes no claim of implementation or empirical validation for its analytical mappings.",
+      "reference_vocabulary_status_note": "A metadata-only namespace-prefix alignment to v0.2.1; the concept model is unchanged."
     },
     {
       "id": "mcp-server",
@@ -263,7 +284,9 @@
       "note": "Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state.",
       "keyword_profile": "mcp-server",
       "keyword_profile_status": "canonical-approved",
-      "keyword_grammar_version": "2.0.0"
+      "keyword_grammar_version": "2.0.0",
+      "access": "public-read-only",
+      "relation": "derived-read-only-distribution"
     }
   ]
 }

@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vocab.danielberanek.cz/metadata/application-mappings.schema.json",
+  "title": "DIO/ODI Application Mappings Metadata Registry",
+  "type": "object",
+  "required": [
+    "registry_version",
+    "status",
+    "authority_note",
+    "mappings"
+  ],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string"
+    },
+    "authority_note": {
+      "type": "string"
+    },
+    "mappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "path",
+          "frontend",
+          "relation",
+          "release_status"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "frontend": {
+            "type": "string",
+            "format": "uri"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "release_status": {
+            "type": "string"
+          },
+          "mapping_version": {
+            "type": "string"
+          },
+          "introduced_in": {
+            "type": "string"
+          },
+          "machine_readable_metadata": {
+            "type": "string"
+          },
+          "machine_readable_metadata_introduced_in": {
+            "type": "string"
+          },
+          "turtle_rdf": {
+            "type": "string"
+          },
+          "turtle_rdf_introduced_in": {
+            "type": "string"
+          },
+          "architecture_svg": {
+            "type": "string"
+          },
+          "local_architecture_concepts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "qualified_relation_assertions": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_alignment": {
+            "type": "string"
+          },
+          "canonical_reference_vocabulary_version": {
+            "type": "string"
+          },
+          "canonical_vocabulary_modified": {
+            "type": "boolean"
+          },
+          "external_source_doi": {
+            "type": "string"
+          },
+          "introduced_archived_release_doi": {
+            "type": "string"
+          },
+          "archived_release_doi": {
+            "type": "string"
+          },
+          "previous_archived_release_doi": {
+            "type": "string"
+          },
+          "earlier_archived_release_doi": {
+            "type": "string"
+          },
+          "first_archived_release_doi": {
+            "type": "string"
+          },
+          "base_mapping_first_included_in": {
+            "type": "string"
+          },
+          "live_extension_included_in": {
+            "type": "string"
+          },
+          "base_mapping_first_archived_release_doi": {
+            "type": "string"
+          },
+          "live_extension_first_included_in": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

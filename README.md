@@ -151,6 +151,8 @@ The namespace is owned by the author and is intended to remain stable independen
 - `metadata/references.json` — canonical bibliographic references
 - `metadata/distributions.json` — external distribution and supplementary representations with typed relations
 - `metadata/keywords.json` — canonical ordered keyword grammar (C0–C6), work profiles, resolved keyword sequences, and non-export aliases
+- `metadata/application-mappings.json` — canonical descriptive and release metadata for derived Application Mappings
+- `metadata/application-mappings.schema.json` — validation schema for the Application Mappings metadata registry
 - `metadata/README.md` — metadata-registry workflow and relation discipline
 - `semantic-change-feed/index.html` — human-readable Semantic Change Feed frontend
 - `semantic-change-feed/events.json` — append-only event registry

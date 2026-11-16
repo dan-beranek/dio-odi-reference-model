@@ -136,6 +136,8 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Canonical references: https://vocab.danielberanek.cz/metadata/references.json
 - Distribution representations: https://vocab.danielberanek.cz/metadata/distributions.json
 - Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json
+- Application Mappings metadata registry: https://vocab.danielberanek.cz/metadata/application-mappings.json
+- Application Mappings metadata schema: https://vocab.danielberanek.cz/metadata/application-mappings.schema.json
   - Keyword registry version: 2.6.0
   - Grammar version: 2.0.0
   - Status: canonical-approved

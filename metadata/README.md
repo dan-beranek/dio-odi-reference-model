@@ -11,15 +11,17 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 - `references.json` — canonical bibliographic strings for internal and external references.
 - `distributions.json` — external distribution, identical, variant, and supplementary representations of each canonical work, preserving the exact relation type.
 - `keywords.json` — canonical invariant keyword core, work-specific keyword profiles, and non-export aliases.
+- `application-mappings.json` — canonical descriptive metadata, source paths, and release provenance for derived Application Mappings.
+- `application-mappings.schema.json` — JSON Schema 2020-12 validation contract for Application Mappings metadata.
 - root `.zenodo.json` — Zenodo-specific projection for future GitHub → Zenodo Reference Model releases.
 
 ## Workflow
 
-1. Maintain work identities, DOI/version information, relations, distribution representations, keywords, and citations here.
-2. Before a new Reference Model release, ensure `.zenodo.json` reflects the approved subset of this registry.
+1. Maintain canonical work identities, DOI/version information, relations, distribution representations, keyword profiles, and Application Mappings metadata in their JSON registries.
+2. The projection generator refreshes the shared identity and keyword fields in `.zenodo.json` and `CITATION.cff`. Review the release-specific description, related identifiers, and references separately; those remain editorial and relation-governed metadata.
 3. Zenodo GitHub archiving reads `.zenodo.json` for new releases.
 4. Existing historical Zenodo records are not retroactively changed by these files; they require metadata synchronization through Zenodo's editor, API, or browser automation.
-5. Zenodo assigns the version-specific DOI only after the GitHub Release is archived. Do not guess or prepopulate that DOI in the tagged snapshot. After publication, synchronize `metadata/works.json`, `README.md`, and `CITATION.cff` in the live `main` branch with the minted DOI; do not rewrite the immutable archived snapshot.
+5. Zenodo assigns the version-specific DOI only after the GitHub Release is archived. Add the minted DOI and archived snapshot details once to `metadata/works.json`; the generator then synchronizes the derived metadata, citation, documentation, and site projections. Never rewrite an immutable archived snapshot.
 
 ## DIO/ODI MCP software distribution
 
@@ -200,9 +202,9 @@ The registry does not modify the canonical DIO/ODI Reference Vocabulary or the S
 
 ## Generated projections and maintenance
 
-The JSON registry is the editable source for External Reception. The HTML frontend, its embedded JSON-LD, and the RDF/Turtle projection are generated from `metadata/external-reception.json` by `scripts/generate_projections.py`. Do not edit those generated representations independently. Add or correct the underlying JSON record, then let the generator rebuild every projection.
+Canonical JSON sources are the editable layer. External Reception HTML, embedded JSON-LD, and RDF/Turtle are generated from `metadata/external-reception.json`. The Semantic Change Feed frontend is generated from `semantic-change-feed/events.json`. Application Mappings index metadata is maintained in `metadata/application-mappings.json`; the mapping's substantive Markdown, JSON-LD, Turtle, and visualization content remains in its own source files.
 
-The same generator builds the Semantic Change Feed frontend from `semantic-change-feed/events.json`, including its event cards and filter options. It also synchronizes selected live-feed metadata in `metadata.json`, `llms.txt`, the root README, the SCF technical README, and the affected sitemap dates.
+The generator also projects release and author metadata from `metadata/works.json`, keyword sequences from `metadata/keywords.json`, and mapping summaries from the Application Mappings registry into `metadata.json`, the root README, `llms.txt`, `CITATION.cff`, selected `.zenodo.json` fields, the SCF technical README, this guide's release summaries, and sitemap dates. Do not hand-edit generated copies. Change the canonical source and let the generator rebuild the projections.
 
 GitHub Actions runs the generator during validation. After changes reach `main`, it commits regenerated projections automatically. A local rebuild, when needed, is:
 

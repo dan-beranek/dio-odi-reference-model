@@ -44,7 +44,8 @@
       {"@type":"Dataset","name":"DIO/ODI relations registry","url":"https://vocab.danielberanek.cz/metadata/relations.json"},
       {"@type":"Dataset","name":"DIO/ODI references registry","url":"https://vocab.danielberanek.cz/metadata/references.json"},
       {"@type":"Dataset","name":"DIO/ODI distributions registry","url":"https://vocab.danielberanek.cz/metadata/distributions.json"},
-      {"@type":"Dataset","name":"DIO/ODI keywords registry","url":"https://vocab.danielberanek.cz/metadata/keywords.json"}
+      {"@type":"Dataset","name":"DIO/ODI keywords registry","url":"https://vocab.danielberanek.cz/metadata/keywords.json"},
+      {"@type":"Dataset","name":"DIO/ODI Application Mappings metadata registry","url":"https://vocab.danielberanek.cz/metadata/application-mappings.json"}
     ]
   }
   </script>
@@ -92,6 +93,12 @@
     <h2><a href="/metadata/distributions.json">Distribution representations</a></h2>
     <p>External distribution copies, variants, and supplementary representations, with relation types and verification status preserved rather than collapsed into generic equivalence.</p>
     <p class="format-links"><a href="/metadata/distributions.json">JSON</a></p>
+  </section>
+
+  <section class="card">
+    <h2><a href="/metadata/application-mappings.json">Application Mappings metadata</a></h2>
+    <p>Canonical descriptions, source paths, external dependencies, and release provenance for the derived Application Mappings. The mapping content itself remains in its dedicated Markdown, JSON-LD, and Turtle files.</p>
+    <p class="format-links"><a href="/metadata/application-mappings.json">JSON</a> · <a href="/metadata/application-mappings.schema.json">JSON Schema</a></p>
   </section>
 
   <section class="card"><h2><a href="/metadata/external-reception.json">External Reception Registry</a></h2><p>Provenance-preserving records of external analyses, conceptual uptake, agent-authored discussions, AI summaries, discovery profiles, and secondary representations. Separate from the canonical vocabulary and internal inter-work bibliography.</p><p class="format-links"><a href="/external-reception/">Frontend</a> · <a href="/metadata/external-reception.json">JSON</a> · <a href="/metadata/external-reception.schema.json">JSON Schema</a> · <a href="/metadata/external-reception.ttl">Turtle / RDF</a></p></section>
