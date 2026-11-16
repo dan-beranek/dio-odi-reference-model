@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.14",
+  "registry_version": "1.8.15",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -7,7 +7,8 @@
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
     "orcid": "0009-0004-0050-0264",
-    "affiliation": "Independent Researcher, Brno, Czech Republic"
+    "affiliation": "Independent Researcher, Brno, Czech Republic",
+    "email": "dan@danielberanek.cz"
   },
   "hub": "https://danielberanek.cz/manifest-dio/",
   "works": [
@@ -263,7 +264,9 @@
       "note": "Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state.",
       "keyword_profile": "mcp-server",
       "keyword_profile_status": "canonical-approved",
-      "keyword_grammar_version": "2.0.0"
+      "keyword_grammar_version": "2.0.0",
+      "access": "public-read-only",
+      "relation": "derived-read-only-distribution"
     }
   ]
 }
