@@ -172,4 +172,12 @@
     <ns0:loc>https://vocab.danielberanek.cz/semantic-change-feed/schema.json</ns0:loc>
     <ns0:lastmod>2026-11-10</ns0:lastmod>
   </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://vocab.danielberanek.cz/metadata/application-mappings.json</ns0:loc>
+    <ns0:lastmod>2026-11-16</ns0:lastmod>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://vocab.danielberanek.cz/metadata/application-mappings.schema.json</ns0:loc>
+    <ns0:lastmod>2026-11-16</ns0:lastmod>
+  </ns0:url>
 </ns0:urlset>
