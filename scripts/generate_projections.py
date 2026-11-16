@@ -1246,6 +1246,9 @@ def build_outputs() -> dict[str, str]:
         "Root README SCF summary",
     )
     outputs[ROOT_README] = root_readme
+    outputs["metadata/README.md"] = render_metadata_readme(
+        read_text("metadata/README.md"), works
+    )
 
     scf_readme = read_text(SCF_README)
     scf_readme = re.sub(
