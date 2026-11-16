@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.1.2",
+  "registry_version": "0.1.3",
   "schema_version": "0.1.1",
   "uri": "https://vocab.danielberanek.cz/metadata/external-reception.json",
   "frontend_uri": "https://vocab.danielberanek.cz/external-reception/",
@@ -945,6 +945,66 @@
           "title": "BioRegistry — merged prefix data update",
           "url": "https://github.com/biopragmatics/bioregistry/commit/827f8c5c3c85615b8a4328d5f617a33bdc20fb9d",
           "role": "registry-data-merge"
+        }
+      ],
+      "related_entry_ids": [
+        "semantic-farm-dio-odi-prefix"
+      ]
+    },
+    {
+      "id": "semantic-farm-dio-odi-prefix",
+      "title": "DIO/ODI Reference Vocabulary — Semantic Farm registry record",
+      "url": "https://semantic.farm/registry/dio-odi",
+      "platform": "Semantic Farm (Biopragmatics)",
+      "category": "registry-interoperability",
+      "content_kind": "domain-agnostic-semantic-registry-and-resolver-record",
+      "target_work_ids": [
+        "reference-vocabulary"
+      ],
+      "relation_to_work": "registered-in-domain-agnostic-semantic-registry-and-resolver",
+      "citation_status": "registry-entry; no scholarly citation asserted",
+      "content_origin": "externally-maintained-registry",
+      "authors": [
+        {
+          "name": "Semantic Farm",
+          "kind": "registry"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "Semantic Farm registers the DIO/ODI Reference Vocabulary under the compact prefix dio-odi within a domain-agnostic semantic space registry, metaregistry, and compact identifier resolver. It places the vocabulary among resources spanning ontologies, controlled vocabularies, and other semantic spaces, and associates it with digital identity, knowledge organization, and semantic technologies. The record exposes identifier patterns and a resolvable CURIE example, links the canonical SKOS ConceptScheme and source repository, and makes registry data available in JSON, YAML, and RDF serializations including Turtle, JSON-LD, and N3. This is a substantive registry and interoperability integration, not a claim of scholarly peer review or endorsement.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "date": "2026-11-16",
+        "date_basis": "public-registry-observation-date",
+        "language": "en"
+      },
+      "key_points": [
+        "Registers dio-odi in a domain-agnostic semantic registry covering ontologies, controlled vocabularies, and other semantic spaces.",
+        "Positions the vocabulary in a wider semantic context through the keywords digital identity, knowledge organization, and semantic technologies.",
+        "Documents CURIE syntax and the resolvable example dio-odi:DIO, linking it to the canonical DIO/ODI concept identifier.",
+        "Exposes structured registry data in JSON, YAML, RDF Turtle, JSON-LD, and N3, alongside links to the canonical homepage, GitHub repository, and SKOS representation.",
+        "Lists both the canonical vocabulary URI and a BioRegistry provider route in its provider section, making the identifier's cross-registry resolution context explicit."
+      ],
+      "notes": "Semantic Farm describes its platform as a domain-agnostic registry, metaregistry, and compact identifier resolver. The DIO/ODI record identifies Charles Tapley Hoyt as its reviewer; this is a registry-curation role, not scholarly peer review.",
+      "related_entry_ids": [
+        "bioregistry-dio-odi-prefix"
+      ],
+      "provenance": {
+        "basis": "The live Semantic Farm DIO/ODI record, the platform's description of its registry and resolver model, and the record's structured-data and provider sections were reviewed.",
+        "review_date": "2026-11-16",
+        "reviewed_by": "author-assisted-curation"
+      },
+      "evidence_sources": [
+        {
+          "title": "Semantic Farm — DIO/ODI registry record",
+          "url": "https://semantic.farm/registry/dio-odi",
+          "role": "registry-entry-and-identifier-resolution"
+        },
+        {
+          "title": "Semantic Farm — platform summary and registry model",
+          "url": "https://semantic.farm/summary",
+          "role": "domain-agnostic-registry-metaregistry-and-resolver-context"
         }
       ]
     }
