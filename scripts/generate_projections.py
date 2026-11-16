@@ -802,6 +802,7 @@ def render_metadata_projection(
         "feed_version": current["semantic_change_feed_version"],
         "schema_version": current["semantic_change_feed_schema_version"],
         "event_count": current["semantic_change_feed_event_count"],
+        "coverage_through": current["semantic_change_feed_coverage_through"],
     })
     return metadata
 
@@ -885,6 +886,20 @@ def update_discovery_metadata(
             crisis_line,
             "llms.txt current Crisis of Entity Resolution version",
         )
+
+    archived_snapshot = metadata["semantic_change_feed"]["archived_snapshot"]
+    archived_date = format_date(archived_snapshot["coverage_through"])
+    archived_label = (
+        f"- Archived snapshot in Reference Model v{archived_snapshot['reference_model_version']}: "
+        f"feed v{archived_snapshot['feed_version']}, schema v{archived_snapshot['schema_version']}, "
+        f"{archived_snapshot['event_count']} events through {archived_date}"
+    )
+    llms_text = re.sub(
+        r"(?m)^- Archived snapshot in Reference Model .*?$",
+        lambda _match: archived_label,
+        llms_text,
+        count=1,
+    )
 
     corpus = metadata["corpus_metadata_registry"]
     profiles = keywords.get("work_profiles", {})
@@ -1112,11 +1127,12 @@ def build_outputs() -> dict[str, str]:
         count=1,
     )
     archived = next(item for item in works["works"] if item.get("id") == "reference-model")["current_release"]
+    archive_date = format_date(archived["semantic_change_feed_coverage_through"])
     archived_label = (
         f"The archived Reference Model v{archived['version']} "
         f"(https://doi.org/{archived['doi']}) contains SCF v{archived['semantic_change_feed_version']} "
         f"with {archived['semantic_change_feed_event_count']} events and schema "
-        f"v{archived['semantic_change_feed_schema_version']}. The live feed now advances "
+        f"v{archived['semantic_change_feed_schema_version']} through {archive_date}. The live feed now advances "
         f"independently to v{feed['feed_version']} with schema v{feed['schema_version']}."
     )
     scf_readme = replace_once(
