@@ -18,17 +18,20 @@
 
 - Current archived Reference Model release: 0.9.0 — https://doi.org/10.5281/zenodo.24085589
 - Previous archived Reference Model release: 0.8.0 — https://doi.org/10.5281/zenodo.24056601
-- Live Reference Vocabulary: 0.2.2 — metadata-only namespace-prefix alignment to v0.2.1; concept model unchanged from v0.2.0
+- Live Reference Vocabulary: 0.2.2
 - Vocabulary included in archived v0.9.0: 0.2.2
 - Vocabulary included in previous archived v0.8.0: 0.2.1
-- Vocabulary included in archived v0.6.0: 0.2.0
-- Earlier archived release: v0.5.0 — https://doi.org/10.5281/zenodo.23643845
-- Earlier archived release: v0.4.0 — https://doi.org/10.5281/zenodo.23632619
-- Earlier archived release: v0.3.2 — https://doi.org/10.5281/zenodo.23300703
-- Earlier archived release: v0.3.1 — https://doi.org/10.5281/zenodo.23290683
-- Earlier archived release: v0.3.0 — https://doi.org/10.5281/zenodo.23289615
-- Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+- Vocabulary included in archived v0.1.0: 0.1.0
+- Vocabulary included in archived v0.2.0: 0.2.0
+- Earlier archived release: v0.7.0 — https://doi.org/10.5281/zenodo.24020300
 - Earlier archived release: v0.1.0 — https://doi.org/10.5281/zenodo.23272898
+- Earlier archived release: v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+- Earlier archived release: v0.3.0 — https://doi.org/10.5281/zenodo.23289615
+- Earlier archived release: v0.3.1 — https://doi.org/10.5281/zenodo.23290683
+- Earlier archived release: v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+- Earlier archived release: v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+- Earlier archived release: v0.5.0 — https://doi.org/10.5281/zenodo.23643845
+- Earlier archived release: v0.6.0 — https://doi.org/10.5281/zenodo.23966487
 
 ## Referenced research works
 
@@ -104,7 +107,7 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Public Streamable HTTP endpoint: https://mcp.danielberanek.cz/mcp
 - Health endpoint: https://mcp.danielberanek.cz/healthz
 - Source repository: https://github.com/dan-beranek/dio-odi-mcp
-- Scope: stateless, read-only interface to a bounded Reference Model snapshot and selected derived Agentic ER / Policy-as-Code mappings; not an authorization service or MVDIO Supervisor
+- Scope: Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state.
 
 ## Semantic Change Feed
 
@@ -147,18 +150,6 @@ Derived mappings are not part of the canonical DIO/ODI Reference Vocabulary. The
 - Zenodo projection for future GitHub releases: repository root `/.zenodo.json`
 
 This registry is an operational metadata layer and does not modify the canonical DIO/ODI Reference Vocabulary.
-
-## Releases
-
-- v0.7.0: https://doi.org/10.5281/zenodo.24020300
-- v0.6.0: https://doi.org/10.5281/zenodo.23966487
-- v0.5.0: https://doi.org/10.5281/zenodo.23643845
-- v0.4.0: https://doi.org/10.5281/zenodo.23632619
-- v0.3.2: https://doi.org/10.5281/zenodo.23300703
-- v0.3.1: https://doi.org/10.5281/zenodo.23290683
-- v0.3.0: https://doi.org/10.5281/zenodo.23289615
-- v0.2.0: https://doi.org/10.5281/zenodo.23282752
-- v0.1.0: https://doi.org/10.5281/zenodo.23272898
 
 ## Source repository
 

@@ -1,14 +1,9 @@
 # DIO/ODI Reference Model
 
-**Current archived Reference Model release:** v0.9.0 — https://doi.org/10.5281/zenodo.24085589  
-**Previous archived Reference Model release:** v0.8.0 — https://doi.org/10.5281/zenodo.24056601  
-**Earlier archived Reference Model release:** v0.7.0 — https://doi.org/10.5281/zenodo.24020300  
-**Earlier archived Reference Model release:** v0.6.0 — https://doi.org/10.5281/zenodo.23966487  
-**Live Reference Vocabulary:** v0.2.2 — metadata-only prefix alignment; concept model unchanged  
-**Vocabulary included in archived v0.9.0:** v0.2.2  
-**Earlier archived release:** v0.5.0 — https://doi.org/10.5281/zenodo.23643845  
-**Earlier archived release:** v0.4.0 — https://doi.org/10.5281/zenodo.23632619  
-**Earlier archived release:** v0.3.2 — https://doi.org/10.5281/zenodo.23300703  
+**Current archived Reference Model release:** v0.9.0 — https://doi.org/10.5281/zenodo.24085589
+**Previous archived Reference Model release:** v0.8.0 — https://doi.org/10.5281/zenodo.24056601
+**Live Reference Vocabulary:** v0.2.2
+**Vocabulary included in archived v0.9.0:** 0.2.2
 **Author:** Daniel Beránek (ORCID: 0009-0004-0050-0264)  
 **Affiliation:** Independent Researcher, Brno, Czech Republic  
 **Contact:** dan@danielberanek.cz
@@ -27,11 +22,11 @@ The public site root, [vocab.danielberanek.cz](https://vocab.danielberanek.cz/),
 
 The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, deployment, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities. Archived Reference Model releases retain the feed and schema versions included in each immutable package. The live feed advances independently, recording later SPARQL, archive-reconciliation, MCP, and external registry milestones. These are live maintenance updates only: archived packages remain immutable and no new Reference Model release is created. SCF is a Reference Model component, not a separately DOI-identified work.
 
-The live Reference Vocabulary is v0.2.2, a metadata-only prefix-alignment update to v0.2.1; the concept model remains unchanged. The current archived Reference Model package is v0.9.0 (https://doi.org/10.5281/zenodo.24085589); its predecessor is v0.8.0 (https://doi.org/10.5281/zenodo.24056601).
+The live Reference Vocabulary is v0.2.2. The current archived Reference Model package is v0.9.0 (https://doi.org/10.5281/zenodo.24085589); its predecessor is v0.8.0 (https://doi.org/10.5281/zenodo.24056601).
 
 ## Agent-facing MCP distribution
 
-The Reference Model is also exposed through a separate public, stateless, read-only Model Context Protocol server. **DIO/ODI MCP v0.1.1** provides a bounded snapshot of the Reference Model and selected derived Agentic ER and Policy-as-Code mappings; it is an integration and diagnostic interface, not an MVDIO Supervisor or authorization service.
+The Reference Model is also exposed through a separate public, stateless, read-only Model Context Protocol server. **DIO/ODI MCP v0.1.1** Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state.
 
 - MCP endpoint: https://mcp.danielberanek.cz/mcp
 - Health endpoint: https://mcp.danielberanek.cz/healthz
@@ -40,7 +35,6 @@ The Reference Model is also exposed through a separate public, stateless, read-o
 - Concept DOI (all versions): https://doi.org/10.5281/zenodo.24123228
 
 The MCP server is a separate derived software distribution. It does not alter the canonical vocabulary or the immutable Reference Model v0.9.0 archive.
-
 ## Concept map
 
 The current Reconstruction Failure Mode taxonomy is non-exclusive and multi-level. Dashed relations mark related concepts that are deliberately kept outside, or distinct from, the taxonomic hierarchy.
@@ -204,17 +198,21 @@ In particular:
 
 **Earlier archived release:** DIO/ODI Reference Model v0.7.0 — https://doi.org/10.5281/zenodo.24020300
 
-**Earlier archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
+**Earlier archived release:** DIO/ODI Reference Model v0.1.0 — https://doi.org/10.5281/zenodo.23272898
 
-**Earlier archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
+**Earlier archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
 
-**Earlier archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
-
-**Earlier archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+**Earlier archived release:** DIO/ODI Reference Model v0.3.0 — https://doi.org/10.5281/zenodo.23289615
 
 **Earlier archived release:** DIO/ODI Reference Model v0.3.1 — https://doi.org/10.5281/zenodo.23290683
 
-**Earlier archived release:** DIO/ODI Reference Model v0.2.0 — https://doi.org/10.5281/zenodo.23282752
+**Earlier archived release:** DIO/ODI Reference Model v0.3.2 — https://doi.org/10.5281/zenodo.23300703
+
+**Earlier archived release:** DIO/ODI Reference Model v0.4.0 — https://doi.org/10.5281/zenodo.23632619
+
+**Earlier archived release:** DIO/ODI Reference Model v0.5.0 — https://doi.org/10.5281/zenodo.23643845
+
+**Earlier archived release:** DIO/ODI Reference Model v0.6.0 — https://doi.org/10.5281/zenodo.23966487
 
 A Reference Model release DOI identifies the versioned repository package. It is not asserted as the source of every vocabulary concept; concept provenance remains attached to the underlying DIO/ODI publications.
 

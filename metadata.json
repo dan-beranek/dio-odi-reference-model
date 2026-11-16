@@ -97,42 +97,32 @@
     {
       "version": "0.9.0",
       "doi": "10.5281/zenodo.24085589",
-      "doi_url": "https://doi.org/10.5281/zenodo.24085589"
+      "doi_url": "https://doi.org/10.5281/zenodo.24085589",
+      "publication_date": "2026-11-09"
     },
     {
       "version": "0.8.0",
       "doi": "10.5281/zenodo.24056601",
-      "doi_url": "https://doi.org/10.5281/zenodo.24056601"
+      "doi_url": "https://doi.org/10.5281/zenodo.24056601",
+      "publication_date": "2026-11-08"
     },
     {
       "version": "0.7.0",
       "doi": "10.5281/zenodo.24020300",
-      "doi_url": "https://doi.org/10.5281/zenodo.24020300"
+      "doi_url": "https://doi.org/10.5281/zenodo.24020300",
+      "publication_date": "2026-11-06"
     },
     {
-      "version": "0.6.0",
-      "doi": "10.5281/zenodo.23966487",
-      "doi_url": "https://doi.org/10.5281/zenodo.23966487"
+      "version": "0.1.0",
+      "doi": "10.5281/zenodo.23272898",
+      "doi_url": "https://doi.org/10.5281/zenodo.23272898",
+      "publication_date": "2026-10-10"
     },
     {
-      "version": "0.5.0",
-      "doi": "10.5281/zenodo.23643845",
-      "doi_url": "https://doi.org/10.5281/zenodo.23643845"
-    },
-    {
-      "version": "0.4.0",
-      "doi": "10.5281/zenodo.23632619",
-      "doi_url": "https://doi.org/10.5281/zenodo.23632619"
-    },
-    {
-      "version": "0.3.2",
-      "doi": "10.5281/zenodo.23300703",
-      "doi_url": "https://doi.org/10.5281/zenodo.23300703"
-    },
-    {
-      "version": "0.3.1",
-      "doi": "10.5281/zenodo.23290683",
-      "doi_url": "https://doi.org/10.5281/zenodo.23290683"
+      "version": "0.2.0",
+      "doi": "10.5281/zenodo.23282752",
+      "doi_url": "https://doi.org/10.5281/zenodo.23282752",
+      "publication_date": "2026-10-10"
     },
     {
       "version": "0.3.0",
@@ -140,9 +130,33 @@
       "doi_url": "https://doi.org/10.5281/zenodo.23289615"
     },
     {
-      "version": "0.2.0",
-      "doi": "10.5281/zenodo.23282752",
-      "doi_url": "https://doi.org/10.5281/zenodo.23282752"
+      "version": "0.3.1",
+      "doi": "10.5281/zenodo.23290683",
+      "doi_url": "https://doi.org/10.5281/zenodo.23290683"
+    },
+    {
+      "version": "0.3.2",
+      "doi": "10.5281/zenodo.23300703",
+      "doi_url": "https://doi.org/10.5281/zenodo.23300703",
+      "publication_date": "2026-10-11"
+    },
+    {
+      "version": "0.4.0",
+      "doi": "10.5281/zenodo.23632619",
+      "doi_url": "https://doi.org/10.5281/zenodo.23632619",
+      "publication_date": "2026-10-25"
+    },
+    {
+      "version": "0.5.0",
+      "doi": "10.5281/zenodo.23643845",
+      "doi_url": "https://doi.org/10.5281/zenodo.23643845",
+      "publication_date": "2026-10-25"
+    },
+    {
+      "version": "0.6.0",
+      "doi": "10.5281/zenodo.23966487",
+      "doi_url": "https://doi.org/10.5281/zenodo.23966487",
+      "publication_date": "2026-11-05"
     }
   ],
   "corpus_metadata_registry": {
@@ -154,7 +168,9 @@
     "distributions": "metadata/distributions.json",
     "keywords": "metadata/keywords.json",
     "keyword_grammar_version": "2.0.0",
-    "keyword_grammar_status": "canonical-approved"
+    "keyword_grammar_status": "canonical-approved",
+    "application_mappings": "metadata/application-mappings.json",
+    "application_mappings_schema": "metadata/application-mappings.schema.json"
   },
   "current_release": {
     "version": "0.9.0",
@@ -205,6 +221,7 @@
     "access": "public-read-only",
     "license": "MIT",
     "embedded_content_license": "CC-BY-4.0",
-    "relation": "derived-read-only-distribution"
+    "relation": "derived-read-only-distribution",
+    "note": "Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state."
   }
 }
