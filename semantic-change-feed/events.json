@@ -2,7 +2,7 @@
   "feed_version": "0.1.5",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-16",
+  "generated_on": "2026-11-17",
   "title": "DIO/ODI Semantic Change Feed",
   "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, public integration-service deployment, external registry integration, and Agentic ER product-publication events through 16 November 2026.",
   "author": {
