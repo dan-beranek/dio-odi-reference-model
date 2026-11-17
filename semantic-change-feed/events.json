@@ -3188,6 +3188,80 @@
         "supersedes": [],
         "corrects": []
       }
+    },
+    {
+      "id": "SCF-2026-053",
+      "date": "2026-11-16",
+      "date_basis": "documentation_date",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "Semantic Farm registers the DIO/ODI Reference Vocabulary under the dio-odi prefix",
+      "summary": "Semantic Farm lists the DIO/ODI Reference Vocabulary under the compact prefix dio-odi in a domain-agnostic semantic registry, metaregistry, and compact identifier resolver. The record exposes local-identifier and CURIE patterns, the resolvable example dio-odi:DIO, links to the canonical SKOS ConceptScheme and source repository, and registry data in JSON, YAML, and RDF serializations including Turtle, JSON-LD, and N3. It also identifies BioRegistry as a provider route. This adds a distinct registry-level discovery and resolution point alongside the existing BioRegistry entry; it does not change the vocabulary itself.",
+      "scope": [
+        {
+          "component": "Semantic Farm registry record — dio-odi",
+          "component_type": "external-semantic-registry-entry",
+          "uri": "https://semantic.farm/registry/dio-odi",
+          "role": "external-registry-entry"
+        },
+        {
+          "component": "DIO/ODI Reference Vocabulary v0.2.2",
+          "component_type": "reference-vocabulary",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+          "role": "registered-resource"
+        }
+      ],
+      "before": "The DIO/ODI Reference Vocabulary v0.2.2 already had a canonical namespace, stable concept identifiers, and a BioRegistry prefix record under dio-odi (SCF-2026-051), but no separately documented Semantic Farm registry entry.",
+      "after": "Semantic Farm exposes the dio-odi prefix as a domain-agnostic registry, metaregistry, and compact-identifier resolver record. The entry documents CURIE construction and a resolvable example, connects the canonical vocabulary and repository, and provides JSON, YAML, Turtle, JSON-LD, and N3 registry representations. Its provider section also lists BioRegistry as a resolution route.",
+      "preserved_invariants": [
+        "The canonical namespace, Reference Vocabulary ConceptScheme URI, and all concept URIs remain unchanged.",
+        "Semantic Farm's registry record adds an external discovery and resolution layer; it does not alter concept definitions, hierarchy, or semantic relations.",
+        "The Semantic Farm record's reviewer field describes registry curation and is not treated as scholarly peer review, endorsement, or independent empirical validation.",
+        "The Semantic Farm and BioRegistry records are distinct registry integrations. The provider link between them does not collapse their registry identities or make the two records interchangeable.",
+        "The canonical DIO/ODI Reference Vocabulary remains a component of the Reference Model and is not represented as a separately DOI-identified work."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO/ODI Reference Vocabulary v0.2.2",
+          "Semantic Farm registry and metaregistry",
+          "Compact identifier resolution for dio-odi",
+          "External vocabulary discovery and interoperability"
+        ],
+        "notes": "A distinct external registry and resolver integration. It extends discovery and identifier interoperability without modifying the canonical vocabulary or its stable identifiers."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry"
+        ],
+        "temporal_note": "The event date is the public-registry observation date recorded in the External Reception Registry as 16 November 2026. It is not asserted as the exact upstream database commit or deployment timestamp. The Semantic Farm record identifies a reviewer in its registry-curation metadata; that role is not scholarly peer review.",
+        "sources": [
+          {
+            "label": "Semantic Farm — DIO/ODI registry record",
+            "url": "https://semantic.farm/registry/dio-odi",
+            "role": "registry-entry-and-identifier-resolution"
+          },
+          {
+            "label": "Semantic Farm — platform summary and registry model",
+            "url": "https://semantic.farm/summary",
+            "role": "domain-agnostic-registry-metaregistry-and-resolver-context"
+          },
+          {
+            "label": "DIO/ODI External Reception Registry",
+            "url": "https://vocab.danielberanek.cz/external-reception/",
+            "role": "author-maintained-observation-and-provenance-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-051"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
     }
   ]
 }
