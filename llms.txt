@@ -123,12 +123,12 @@ Agentic Entity Resolution Guardrail Planner is a separate published design-time 
 - Technical specification: https://vocab.danielberanek.cz/semantic-change-feed/README.md
 - Purpose: source-backed history of semantic, structural, provenance, mapping, and artifact-state changes; not a Git commit log
 - Boundary: does not replace the Reference Vocabulary, Application Mappings, Corpus Metadata Registry, or immutable Reference Model releases
-- Feed version: 0.1.5; current live append-only structured history, first published as v0.1.0, with explicit date basis, preserved invariants, impact, provenance, and lineage
+- Feed version: 0.1.6; current live append-only structured history, first published as v0.1.0, with explicit date basis, preserved invariants, impact, provenance, and lineage
 - Live JSON Schema version: 0.2.1
 - Archived snapshot in Reference Model v0.9.0: feed v0.1.1, schema v0.2.0, 45 events through 9 November 2026
 - Live-feed status: operational maintenance after the v0.9.0 archive; these updates do not create a new Reference Model release or alter any archived package
 
-- Current coverage: full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, archive-reconciliation, MCP deployment/validation, MCP Zenodo DOI-publication, BioRegistry and Semantic Farm `dio-odi` registry integrations, and Agentic ER planning product publication milestones through 16 November 2026
+- Current coverage: full dated Hub Changelog (25 March–25 October 2026) plus subsequent publication, research-portfolio, archive-reconciliation, MCP deployment/validation, MCP Zenodo DOI-publication, BioRegistry and Semantic Farm `dio-odi` registry integrations, and Agentic ER planning product publication and product-website deployment milestones through 18 November 2026
 
 ## DIO to DIO research portfolio
 
