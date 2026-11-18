@@ -110,18 +110,18 @@ The fixed chunk order is:
 
 Rules:
 
-1. C0 is always first and identical across the DIO/ODI corpus.
-2. C1 is always second and identifies the main reconstruction environments: artificial intelligence, search engines, knowledge graphs, and human observers.
-3. C2 is work-specific.
-4. C3, C5, and C6 are master-ordered chunks: works may activate only a subset, but selected terms retain the same relative order.
-5. C4 (K6) is all-or-nothing and always exported as the complete sequence: K6 Semantic Connectome, Entity, Representation, Interpretation, Trust, Relationship, Reconstruction.
-6. Flattened keyword arrays preserve chunk order and term order.
-7. Aliases support reconstruction and variant recognition but are not exported by default.
-8. Keyword assignment must not retroactively project concepts into a work that the work does not substantively carry.
-9. Every exportable metadata surface that supports the complete sequence, including `.zenodo.json` and `CITATION.cff`, must use the exact resolved sequence for its work profile; do not maintain manually curated shorter parallel sets.
-10. `registry_version` identifies the keyword-registry data version; `keyword_grammar_version` identifies the structural grammar version. These version fields are distinct and must not be conflated.
+1. **C0 is invariant.** It is always exported in full and first for every approved DIO/ODI work or derived artefact profile.
+2. **C1 is a global candidate pool, not a mandatory four-term bundle.** Each object explicitly selects only the reconstruction environments it substantively addresses: artificial intelligence, search engines, knowledge graphs, and/or human observers. The literal selector `all` is not permitted for C1; an explicit ordered array is required, including an empty array where no environment can be established.
+3. C2 is work- or artefact-specific.
+4. C3, C5, and C6 are master-ordered chunks: profiles may activate only a relevant subset, while preserving the canonical relative order.
+5. C4 (K6) is all-or-nothing and is exported only as the complete ordered sequence: K6 Semantic Connectome, Entity, Representation, Interpretation, Trust, Relationship, Reconstruction.
+6. Flattened keyword arrays preserve chunk order and term order. Aliases support reconstruction and variant recognition but are not exported by default.
+7. Keyword assignment must not retroactively project concepts into an object that it does not substantively carry. A citation, incidental mention, shared author, or generic word overlap is not sufficient evidence for a keyword.
+8. Every selected C1 term carries an explicit object-level rationale. Derived artefact profiles additionally provide a rationale for every selected non-C0 term. The projection generator validates these rationales and checks that every selected term belongs to its canonical chunk.
+9. `work_profiles` retain the canonical publication profiles. `surface_profiles` define derived public artefacts, including product pages and demonstrations, without misrepresenting them as separate DIO/ODI publications.
+10. Exportable metadata surfaces use the complete resolved sequence for the specific profile whenever the target format supports it. Do not maintain manually curated, shorter parallel lists. The sequence is generated from the profile's chunk selectors and the canonical chunk definitions.
 
-This creates lexical and structural consistency across records while preserving the conceptual scope of each work.
+The C1 terms remain global to DIO's reconstruction model. Selective export does not narrow the DIO definition; it prevents an individual paper, product, demonstration, or other artefact from being described as covering environments that are not relevant to that object.
 
 
 ## Description discipline
