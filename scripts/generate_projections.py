@@ -857,6 +857,85 @@ def render_metadata_projection(
     return metadata
 
 
+def resolve_keyword_sequence(keywords: dict, profile: dict, profile_id: str) -> list[str]:
+    chunk_order = keywords.get("export_policy", {}).get("chunk_order", [])
+    source_chunks = keywords.get("chunks", {})
+    selections = profile.get("chunks", {})
+    resolved: list[str] = []
+    seen: set[str] = set()
+
+    for chunk_name in chunk_order:
+        if chunk_name not in source_chunks or chunk_name not in selections:
+            raise ValueError(f"{profile_id}: missing chunk or selector for {chunk_name}")
+        source_terms = source_chunks[chunk_name].get("terms", [])
+        selected = selections[chunk_name]
+        if selected == "all":
+            terms = source_terms
+        elif selected == "none":
+            terms = []
+        elif isinstance(selected, list):
+            terms = selected
+            if chunk_name != "C2_work_positioning":
+                positions = [source_terms.index(term) if term in source_terms else -1 for term in terms]
+                if -1 in positions:
+                    raise ValueError(f"{profile_id}: unknown term in {chunk_name}")
+                if positions != sorted(positions) or len(set(terms)) != len(terms):
+                    raise ValueError(f"{profile_id}: {chunk_name} terms must preserve canonical order and be unique")
+        else:
+            raise ValueError(f"{profile_id}: invalid selector for {chunk_name}")
+
+        for term in terms:
+            folded = term.casefold()
+            if folded not in seen:
+                seen.add(folded)
+                resolved.append(term)
+
+    return resolved
+
+
+def validate_keyword_registry(keywords: dict) -> None:
+    c1_name = "C1_reconstruction_environments"
+    c1_terms = keywords.get("chunks", {}).get(c1_name, {}).get("terms", [])
+    if not c1_terms:
+        raise ValueError("C1 reconstruction-environment candidate pool is empty")
+
+    profiles = keywords.get("work_profiles", {})
+    for profile_id, profile in profiles.items():
+        chunks = profile.get("chunks", {})
+        c1 = chunks.get(c1_name)
+        if not isinstance(c1, list):
+            raise ValueError(f"{profile_id}: C1 must be an explicit ordered selection, not 'all'")
+        rationales = profile.get("term_rationales", {})
+        if set(rationales) != set(c1):
+            raise ValueError(f"{profile_id}: C1 term rationales must match the selected C1 terms exactly")
+        calculated = resolve_keyword_sequence(keywords, profile, profile_id)
+        if calculated != profile.get("resolved_keywords"):
+            raise ValueError(f"{profile_id}: resolved_keywords does not match the ordered chunk projection")
+
+    surface_profiles = keywords.get("surface_profiles", {})
+    if not surface_profiles:
+        raise ValueError("No derived artefact surface profiles are defined")
+    for profile_id, profile in surface_profiles.items():
+        chunks = profile.get("chunks", {})
+        if chunks.get("C0_identity_invariant") != "all":
+            raise ValueError(f"{profile_id}: C0 must always be exported in full")
+        c1 = chunks.get(c1_name)
+        if not isinstance(c1, list):
+            raise ValueError(f"{profile_id}: C1 must be an explicit ordered selection")
+        rationales = profile.get("term_rationales", {})
+        selected_terms = resolve_keyword_sequence(keywords, profile, profile_id)
+        c0_terms = set(keywords["chunks"]["C0_identity_invariant"]["terms"])
+        required_rationales = set(selected_terms) - c0_terms
+        if set(rationales) != required_rationales:
+            missing = sorted(required_rationales - set(rationales))
+            extra = sorted(set(rationales) - required_rationales)
+            raise ValueError(f"{profile_id}: term_rationales mismatch; missing={missing}; extra={extra}")
+        if profile.get("status") != "canonical-approved":
+            raise ValueError(f"{profile_id}: surface profile is not canonical-approved")
+        if len(selected_terms) != len(set(term.casefold() for term in selected_terms)):
+            raise ValueError(f"{profile_id}: duplicate terms in resolved projection")
+
+
 def render_keyword_exports(
     zenodo: dict,
     citation_text: str,
@@ -1263,6 +1342,7 @@ def build_outputs() -> dict[str, str]:
     feed["event_count"] = len(feed.get("events", []))
     works = load_json(WORKS_JSON)
     keywords = load_json(KEYWORDS_JSON)
+    validate_keyword_registry(keywords)
     mappings = load_json("metadata/application-mappings.json")
     metadata = load_json(METADATA_JSON)
     llms_text = read_text(LLMS_TXT)
