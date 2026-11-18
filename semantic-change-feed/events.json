@@ -1,8 +1,8 @@
 {
-  "feed_version": "0.1.5",
+  "feed_version": "0.1.6",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-17",
+  "generated_on": "2026-11-18",
   "title": "DIO/ODI Semantic Change Feed",
   "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, public integration-service deployment, external registry integration, and Agentic ER product-publication events through 16 November 2026.",
   "author": {
@@ -3258,6 +3258,104 @@
       "lineage": {
         "related_to": [
           "SCF-2026-051"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-054",
+      "date": "2026-11-18",
+      "date_basis": "deployment_date",
+      "event_class": "Artifact",
+      "change_type": "published",
+      "title": "The Agentic Entity Resolution Guardrail Planner product website is deployed",
+      "summary": "A dedicated English product website for Agentic Entity Resolution Guardrail Planner is deployed on GitHub Pages. The site provides the product overview, a synthetic CRM planning example, and a separate DIO/ODI methodology and research page. It acts as a product-information and discovery layer alongside the existing Agensi marketplace listing; purchase links continue to use the author's Agensi affiliate route, and no fixed price is published on the website.",
+      "scope": [
+        {
+          "component": "Agentic Entity Resolution Guardrail Planner product website",
+          "component_type": "static-product-website",
+          "uri": "https://dan-beranek.github.io/agentic-entity-resolution-guardrail-planner/",
+          "role": "deployed-product-presentation"
+        },
+        {
+          "component": "DIO/ODI methodology and research page for the Planner",
+          "component_type": "methodology-and-research-page",
+          "uri": "https://dan-beranek.github.io/agentic-entity-resolution-guardrail-planner/methodology/",
+          "role": "public-methodology-documentation"
+        },
+        {
+          "component": "Product discovery and machine-readable metadata",
+          "component_type": "website-discovery-artifacts",
+          "uri": "https://dan-beranek.github.io/agentic-entity-resolution-guardrail-planner/llms.txt",
+          "role": "machine-readable-product-context"
+        }
+      ],
+      "before": "The Agentic Entity Resolution Guardrail Planner was publicly distributed through its Agensi listing (SCF-2026-052), while the product repository contained the source for a separate static website that had not yet been deployed as a public product-information destination.",
+      "after": "The English static website is deployed at https://dan-beranek.github.io/agentic-entity-resolution-guardrail-planner/. It includes a concise product overview, a synthetic CRM planning example, a standalone DIO/ODI methodology page, robots.txt, sitemap.xml, and llms.txt. Contextual links from the DIO/ODI homepage and English entity-resolution application page lead to the product website, while the DIO/ODI Evidence pages retain their direct Agensi listing links. Product purchase CTAs on the website continue to route to Agensi through the author's affiliate route; the website does not publish a fixed price.",
+      "preserved_invariants": [
+        "This event records publication of the product website, not a new release or version of the Agent Skill.",
+        "The Planner remains a design-time planning Skill; the website does not imply mutation execution, live authorization, a deployed runtime guard, or guaranteed production safety.",
+        "Agensi remains the distribution and purchase destination recorded in SCF-2026-052; product purchase links use the author's affiliate route.",
+        "The product website does not publish a fixed price; current commercial terms remain on the distribution platform.",
+        "The DIO/ODI Reference MCP remains optional and read-only. It supplies reference material and does not receive customer records, inspect customer systems, or authorize customer writes.",
+        "The CRM example uses synthetic data and does not represent a customer deployment or executed production test."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "Agentic Entity Resolution Guardrail Planner product presentation",
+          "DIO/ODI methodology and research documentation",
+          "Product website discovery artifacts",
+          "Cross-site discovery links from DIO/ODI pages",
+          "Agensi product distribution route"
+        ],
+        "notes": "This is a complementary public product-information and discovery artifact. It does not replace the Agensi marketplace listing, republish the Skill as a new product version, or change the Planner's design-time scope."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "The event is dated 18 November 2026, the successful GitHub Pages deployment date. The product website build and deployment completed successfully in GitHub Actions run 44328991933. This event records the deployed website and its methodology page as public artifacts; it is not dated by the source merge alone and does not duplicate the earlier Agensi product-publication event SCF-2026-052.",
+        "sources": [
+          {
+            "label": "GitHub Pages — successful product website deployment",
+            "url": "https://github.com/dan-beranek/agentic-entity-resolution-guardrail-planner/actions/runs/44328991933",
+            "role": "successful-public-deployment"
+          },
+          {
+            "label": "Agentic Entity Resolution Guardrail Planner — product website",
+            "url": "https://dan-beranek.github.io/agentic-entity-resolution-guardrail-planner/",
+            "role": "deployed-product-website"
+          },
+          {
+            "label": "Planner methodology and DIO/ODI research page",
+            "url": "https://dan-beranek.github.io/agentic-entity-resolution-guardrail-planner/methodology/",
+            "role": "deployed-methodology-page"
+          },
+          {
+            "label": "Agentic Entity Resolution Guardrail Planner — deployed source state",
+            "url": "https://github.com/dan-beranek/agentic-entity-resolution-guardrail-planner/commit/0219f16f9e6eafa0445bc2719dd0c9bbb79b800a",
+            "role": "reviewed-source-state"
+          },
+          {
+            "label": "DIO/ODI application-site cross-links",
+            "url": "https://github.com/dan-beranek/dio-odi-autorsky-koncept/commit/c301b31dc356832c32227eee9e463f6036e5e49b",
+            "role": "cross-site-discovery-links"
+          },
+          {
+            "label": "Agensi — Agentic Entity Resolution Guardrail Planner listing",
+            "url": "https://www.agensi.io/r/DANIELBERANEK?to=/skills/agentic-entity-resolution-guardrail-planner",
+            "role": "existing-marketplace-distribution"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-052"
         ],
         "supersedes": [],
         "corrects": []
