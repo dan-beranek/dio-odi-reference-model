@@ -3316,8 +3316,7 @@
       "evidence": {
         "status": "documented",
         "basis": [
-          "linked-publication-or-artifact",
-          "public-version-history"
+          "linked-publication-or-artifact"
         ],
         "temporal_note": "The event is dated 18 November 2026, the successful GitHub Pages deployment date. The product website build and deployment completed successfully in GitHub Actions run 44328991933. This event records the deployed website and its methodology page as public artifacts; it is not dated by the source merge alone and does not duplicate the earlier Agensi product-publication event SCF-2026-052.",
         "sources": [
