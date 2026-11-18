@@ -150,7 +150,7 @@ Agentic Entity Resolution Guardrail Planner is a separate published design-time 
   - Keyword registry version: 2.7.0
   - Grammar version: 2.0.0
   - Status: canonical-approved
-  - Work-specific profile: commit-boundary-paper (31 terms; current object-scoped profile)
+  - Work-specific profile: commit-boundary-paper (31 terms; baseline aligned to Zenodo v1 metadata)
   - Work-specific profile: mcp-server (51 terms; approved in registry v2.7.0)
   - Order: C0 Identity → C1 Environments → C2 Work positioning → C3 Mechanics → C4 Semantic Connectome → C5 Failures/robustness → C6 Machine-readable representation
 - Zenodo projection for future GitHub releases: repository root `/.zenodo.json`
