@@ -238,7 +238,6 @@ def registry_change_date() -> date:
 
 
 def update_sitemap(source: str, pages: list[dict], manifest_url: str, modified: date) -> str:
-    ET.register_namespace("", SITEMAP_NS)
     try:
         root = ET.fromstring(source)
     except ET.ParseError as exc:
@@ -305,6 +304,17 @@ def build_outputs() -> dict[str, str]:
         parsed = urlparse(page_url)
         if parsed.scheme != "https" or parsed.netloc != "vocab.danielberanek.cz":
             raise ValueError(f"{profile_id}: page URL is outside the canonical site origin")
+        normalized_path = Path(page_path).as_posix()
+        if normalized_path == "index.html":
+            expected_url = SITE_ORIGIN + "/"
+        elif normalized_path.endswith("/index.html"):
+            expected_url = SITE_ORIGIN + "/" + normalized_path[:-len("index.html")]
+        else:
+            raise ValueError(f"{profile_id}: frontend path must point to an index.html page: {page_path}")
+        if page_url != expected_url:
+            raise ValueError(f"{profile_id}: URL/path binding mismatch; expected {expected_url!r}, got {page_url!r}")
+        if not surface.get("page_key"):
+            raise ValueError(f"{profile_id}: page_key is required")
         if not (ROOT / page_path).is_file():
             raise ValueError(f"{profile_id}: mapped HTML page does not exist: {page_path}")
         keywords, chunks = resolve_keywords(registry, profile_id, profile)
