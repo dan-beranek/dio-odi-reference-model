@@ -9,9 +9,9 @@
   "keyword_registry": {
     "repository": "dan-beranek/dio-odi-reference-model",
     "file": "metadata/keywords.json",
-    "registry_version": "2.9.0",
+    "registry_version": "2.10.0",
     "status": "canonical-approved",
-    "sha256": "c84159e6c5501598e8212fe48d8ec514e84e2303801e564e37fb3a6c0d7c57f6"
+    "sha256": "f11bf05e9b683d05367a33e212829109fec0660abb60859a3368051322fa9132"
   },
   "artifacts": [
     {
