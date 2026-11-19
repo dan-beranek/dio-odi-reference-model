@@ -282,8 +282,15 @@ def build_outputs() -> dict[str, str]:
     if registry.get("status") != "canonical-approved":
         raise ValueError("The canonical keyword registry is not approved")
     version = registry.get("registry_version", "")
-    if not re.fullmatch(r"2\.\d+\.\d+", version):
-        raise ValueError(f"Unsupported keyword registry version: {version!r}")
+    version_match = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)", version)
+    if (
+        not version_match
+        or int(version_match.group(1)) != 2
+        or tuple(map(int, version_match.groups())) < (2, 9, 0)
+    ):
+        raise ValueError(
+            f"Expected canonical-approved keyword registry >= 2.9.0 within major version 2; received {version!r}"
+        )
 
     selected_profiles = []
     profile_index = registry.get("surface_profiles", {})
