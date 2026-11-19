@@ -1108,6 +1108,13 @@ def update_discovery_metadata(
         f"  - Keyword registry version: {keywords['registry_version']}",
         "llms.txt canonical keyword registry version",
     )
+    llms_text = replace_line_with_prefix(
+        llms_text,
+        "- Canonical keyword registry:",
+        "- Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json\n"
+        "- Page-level metadata manifest: https://vocab.danielberanek.cz/assets/data/resolved-page-metadata.json",
+        "llms.txt page-level metadata manifest discovery",
+    )
     return metadata, llms_text
 
 
