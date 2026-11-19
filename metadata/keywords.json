@@ -2744,7 +2744,7 @@
         ],
         "C2_work_positioning": [
           "implementation and distribution analysis",
-          "identity collapse",
+          "identity-level phenomenon",
           "conceptual K6 framing",
           "observed distribution graph"
         ],
@@ -2783,7 +2783,6 @@
       "term_rationales": {
         "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
         "implementation and distribution analysis": "The Qwen report explicitly examines DIO/ODI implementation and distribution through its conceptual apparatus.",
-        "identity collapse": "The Qwen report explicitly treats Identity Collapse as a distinct phenomenon-level concept.",
         "conceptual K6 framing": "The Qwen report explicitly distinguishes conceptual K6 from the observed distribution graph.",
         "observed distribution graph": "The Qwen report differentiates the conceptual graph from the empirical network of observed distribution artifacts.",
         "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
@@ -2816,7 +2815,8 @@
         "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
         "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
         "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
-        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph."
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "identity-level phenomenon": "The Qwen report explicitly distinguishes the phenomenon of identity collapse from the structure of the observed distribution graph and from the conceptual K6 framing."
       }
     },
     "dio-to-dio-grok": {
