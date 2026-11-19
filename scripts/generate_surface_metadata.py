@@ -226,10 +226,10 @@ def upsert_jsonld_keyword_node(html_text: str, page_entity_id: str, keywords: li
 
 def upsert_manifest_link(html_text: str, profile_id: str) -> str:
     href = "/" + MANIFEST_PATH
-    link_tags = re.compile(r"<link\\b[^>]*>", re.IGNORECASE)
+    link_tags = re.compile(r"<link\b[^>]*>", re.IGNORECASE)
     matches = [
         match for match in link_tags.finditer(html_text)
-        if re.search(r"\\bhref\\s*=\\s*([\\\"'])" + re.escape(href) + r"\\1", match.group(0), re.IGNORECASE)
+        if re.search(r"\bhref\s*=\s*([\"'])" + re.escape(href) + r"\1", match.group(0), re.IGNORECASE)
     ]
     tag = (
         '<link rel="describedby" type="application/json" '
@@ -241,10 +241,10 @@ def upsert_manifest_link(html_text: str, profile_id: str) -> str:
     if matches:
         match = matches[0]
         return html_text[:match.start()] + tag + html_text[match.end():]
-    head_end = re.search(r"</head\\s*>", html_text, re.IGNORECASE)
+    head_end = re.search(r"</head\s*>", html_text, re.IGNORECASE)
     if not head_end:
         raise ValueError(f"{profile_id}: closing </head> not found for resolved-metadata link")
-    return html_text[:head_end.start()] + tag + "\\n" + html_text[head_end.start():]
+    return html_text[:head_end.start()] + tag + "\n" + html_text[head_end.start():]
 
 
 def registry_change_date() -> date:
