@@ -1,5 +1,5 @@
 {
-  "registry_version": "2.9.0",
+  "registry_version": "2.10.0",
   "status": "canonical-approved",
   "approved_on": "2026-11-19",
   "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus and its derived public surfaces. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for publications, product artefacts and page-level frontends.",
@@ -1953,6 +1953,1060 @@
         "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
         "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
         "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      }
+    },
+    "dio-to-dio-home": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Project-level reflexive research portfolio presenting the shared DIO/ODI reconstruction question and the distinct analytical reports.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "dio-to-dio-home",
+        "paths": [
+          "index.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "reflexive research portfolio",
+          "large language model reconstruction",
+          "graph-theoretical analysis",
+          "distributed identity reconstruction"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "observer",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "reflexive research portfolio": "The homepage describes the project as a reflexive research portfolio and states its common object of inquiry.",
+        "large language model reconstruction": "The homepage explicitly identifies large language models as the systems whose reconstructions are studied.",
+        "graph-theoretical analysis": "The homepage describes graph-theoretical analysis as a shared analytical direction while leaving the individual graph methods open.",
+        "distributed identity reconstruction": "The homepage frames the common research question around reconstructing DIO/ODI across its distributed ecosystem.",
+        "distributed representational state": "The report treats DIO/ODI as distributed across distinct documentary, archival, web, identity, and machine-readable representations. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The portfolio's shared research question concerns how large language models reconstruct DIO/ODI when the framework is applied to its own distributed ecosystem."
+      }
+    },
+    "dio-to-dio-brave-ai": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Brave AI report on reconstruction resilience across heterogeneous representations and entry points.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "brave-ai",
+        "paths": [
+          "analyses/brave-ai.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/brave-ai.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "reconstruction resilience",
+          "heterogeneous representations",
+          "multilingual distribution",
+          "archival and web entry-point comparison"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "observer",
+          "reconstruction mechanism",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "reconstruction resilience": "The Brave AI report's central question and findings evaluate resilience across heterogeneous representations.",
+        "heterogeneous representations": "The Brave AI report compares narrative, archival, multilingual, identity, and machine-readable layers.",
+        "multilingual distribution": "The Brave AI report explicitly examines language projections and differences across language representations.",
+        "archival and web entry-point comparison": "The Brave AI report compares Zenodo, website-hub, and GitHub/vocabulary entry points.",
+        "distributed representational state": "The report treats DIO/ODI as distributed across distinct documentary, archival, web, identity, and machine-readable representations. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "reconstruction mechanism": "The report explains how an observer traverses available representations and reconstructs framework identity or concept status. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Referential Reconstruction Failures": "The report discusses referential failure classes or the distinction between wrong, merged, split, and omitted referents. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Brave AI report evaluates reconstruction resilience across heterogeneous representations, multilingual layers, and archival, website-hub, and vocabulary entry points."
+      }
+    },
+    "dio-to-dio-chatgpt": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "ChatGPT report tracing conceptual and publication provenance across the distributed semantic ecosystem.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "chatgpt",
+        "paths": [
+          "analyses/chatgpt.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/chatgpt.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "cross-layer semantic ecosystem",
+          "publication provenance graph",
+          "machine-readable context files",
+          "derived application mappings"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "observer",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "cross-layer semantic ecosystem": "The ChatGPT report traces relationships across the vocabulary, publications, website, multilingual and secondary distribution layers.",
+        "publication provenance graph": "The ChatGPT report quantifies typed work relations and follows publication-level provenance.",
+        "machine-readable context files": "The ChatGPT report explicitly examines AI-oriented context files as a layer of the observed ecosystem.",
+        "derived application mappings": "The ChatGPT report examines RAG, HEM × DIO, and commit-boundary × Policy-as-Code mappings as derived layers.",
+        "distributed representational state": "The report treats DIO/ODI as distributed across distinct documentary, archival, web, identity, and machine-readable representations. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Referential Reconstruction Failures": "The report discusses referential failure classes or the distinction between wrong, merged, split, and omitted referents. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The ChatGPT report begins with the Reference Vocabulary and follows publication provenance, multilingual distribution, context files, independent reception, and derived application mappings."
+      }
+    },
+    "dio-to-dio-deepseek": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "DeepSeek report on conceptual coherence, the SKOS-first reference layer, machine-readable representation, and network distribution.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "deepseek",
+        "paths": [
+          "analyses/deepseek.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/deepseek.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "SKOS-first strategy",
+          "conceptual coherence",
+          "machine-readable representation",
+          "network distribution"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "observer",
+          "identity-preserving variation",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "SKOS-first strategy": "The DeepSeek report treats the SKOS-first strategy as an epistemic position and describes the reference vocabulary as its machine-readable starting point.",
+        "conceptual coherence": "The DeepSeek report's explicit focus is coherence of DIO/ODI concepts across representations.",
+        "machine-readable representation": "The DeepSeek report examines formal representations and declared machine-readable interfaces.",
+        "network distribution": "The DeepSeek report uses heterogeneous network analysis to examine distribution pathways.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The DeepSeek report uses a SKOS-first, DIO/ODI-native reading to examine conceptual coherence, machine-readable representation, and network distribution."
+      }
+    },
+    "dio-to-dio-gemini-deep-research": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Gemini Deep Research report using a four-level statement hierarchy and graph-topological analysis of persistent identity anchors and entry paths.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "gemini-deep-research",
+        "paths": [
+          "analyses/gemini-deep-research.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/gemini-deep-research.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "four-level statement hierarchy",
+          "persistent identity anchors",
+          "graph topology",
+          "entry-point comparison"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "observer",
+          "reconstruction mechanism",
+          "identity-preserving constraints",
+          "referential continuity"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "four-level statement hierarchy": "The Gemini Deep Research report's defining method distinguishes observed artifacts, architectural roles, local consequences, and system-level significance.",
+        "persistent identity anchors": "The Gemini Deep Research report examines ORCID, DOIs, concept URIs, and archival anchors.",
+        "graph topology": "The Gemini Deep Research report models distributed resources and their directed relations as graph structures.",
+        "entry-point comparison": "The Gemini Deep Research report compares traversal paths from archival and web-hub entry points.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "reconstruction mechanism": "The report explains how an observer traverses available representations and reconstructs framework identity or concept status. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "identity-preserving constraints": "The report states evidential or methodological constraints that prevent a local observation from being generalized beyond its support. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Gemini Deep Research report applies a four-level statement hierarchy and examines persistent anchors, graph topology, traversal paths, and uninspected execution boundaries."
+      }
+    },
+    "dio-to-dio-gemini-pro-latest": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Gemini Pro Latest report comparing archival/epistemic and discursive/multilingual strata and their reconstruction affordances.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "gemini-pro-latest",
+        "paths": [
+          "analyses/gemini-pro-latest.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/gemini-pro-latest.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "archival and discursive strata",
+          "distribution reconstructability",
+          "acquisition friction",
+          "translation variance"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "observer",
+          "reconstruction mechanism",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "archival and discursive strata": "The Gemini Pro report explicitly distinguishes archival/epistemic from discursive/multilingual layers.",
+        "distribution reconstructability": "The Gemini Pro report examines how different distribution strata support reconstruction.",
+        "acquisition friction": "The Gemini Pro report discusses access and retrieval limitations as observer-relative friction.",
+        "translation variance": "The Gemini Pro report examines differences in language projections and uneven translation depth.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "reconstruction mechanism": "The report explains how an observer traverses available representations and reconstructs framework identity or concept status. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Gemini Pro Latest report compares archival/epistemic and discursive/multilingual strata, with attention to acquisition friction, translation variance, and distribution reconstructability."
+      }
+    },
+    "dio-to-dio-leo-ai": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Leo AI report separating framework-level identity reconstruction from precise concept-status reconstruction and documenting integrated prompt delivery.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "leo-ai",
+        "paths": [
+          "analyses/leo-ai.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/leo-ai.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "framework-level identity reconstruction",
+          "concept-status reconstruction",
+          "integrated-prompt analysis",
+          "historical refinement"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "observer",
+          "reconstruction mechanism",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "framework-level identity reconstruction": "The Leo AI report explicitly separates broad framework identity reconstruction from precise concept-status reconstruction.",
+        "concept-status reconstruction": "The Leo AI report identifies concept-status precision as a distinct reconstruction task from recognizing the framework as a whole.",
+        "integrated-prompt analysis": "The Leo AI report documents that the research assignment was delivered as one integrated prompt rather than sequential phases.",
+        "historical refinement": "The Leo AI report examines conceptual continuity alongside historical refinement of the framework.",
+        "distributed representational state": "The report treats DIO/ODI as distributed across distinct documentary, archival, web, identity, and machine-readable representations. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "reconstruction mechanism": "The report explains how an observer traverses available representations and reconstructs framework identity or concept status. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Leo AI report distinguishes framework-level identity reconstruction from precise concept-status reconstruction and documents the single integrated-prompt delivery."
+      }
+    },
+    "dio-to-dio-lumo": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Lumo report's meta-analytical framing of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "lumo",
+        "paths": [
+          "analyses/lumo.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/lumo.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "meta-analytical framing",
+          "accessibility audit",
+          "source provenance",
+          "multilingual distribution"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "observer",
+          "reconstruction mechanism",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "meta-analytical framing": "The Lumo report explicitly frames itself as a meta-analytical study and describes its own method as emerging from the framework's materials.",
+        "accessibility audit": "The Lumo report includes an explicit resource-accessibility table and discusses extraction and acquisition limitations.",
+        "source provenance": "The Lumo report follows origins and provenance of the distributed DIO/ODI corpus.",
+        "multilingual distribution": "The Brave AI report explicitly examines language projections and differences across language representations.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "reconstruction mechanism": "The report explains how an observer traverses available representations and reconstructs framework identity or concept status. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Referential Reconstruction Failures": "The report discusses referential failure classes or the distinction between wrong, merged, split, and omitted referents. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Lumo report frames the inquiry as a meta-analytical study of conceptual continuity, provenance, version history, accessibility, and multilingual representation."
+      }
+    },
+    "dio-to-dio-mistral": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Mistral report's five-level reconstructability assessment, observer-specific materiality analysis, and heterogeneous distribution graph.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "mistral",
+        "paths": [
+          "analyses/mistral.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/mistral.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "five-level reconstructability assessment",
+          "heterogeneous distribution graph",
+          "network materiality",
+          "observer-specific analysis"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "observer",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "five-level reconstructability assessment": "The Mistral report organizes reconstruction into five separately assessed levels of detail.",
+        "heterogeneous distribution graph": "The Mistral report models publications, archives, web pages, concepts, and identity records as a heterogeneous directed graph.",
+        "network materiality": "The Mistral report evaluates the practical significance of concentration, reachability, and structural dependencies.",
+        "observer-specific analysis": "The Mistral report explicitly assesses reconstruction tasks and materiality from distinct observer perspectives.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Referential Reconstruction Failures": "The report discusses referential failure classes or the distinction between wrong, merged, split, and omitted referents. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Mistral report structures reconstructability into five levels and evaluates observer-specific tasks, network materiality, and a heterogeneous distribution graph."
+      }
+    },
+    "dio-to-dio-qwen": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Qwen report on implementation, distribution, identity-level phenomena, and the distinction between conceptual K6 and the observed network.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "qwen",
+        "paths": [
+          "analyses/qwen.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/qwen.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "implementation and distribution analysis",
+          "identity-level phenomenon",
+          "conceptual K6 framing",
+          "observed distribution graph"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "observer",
+          "reconstruction mechanism",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "implementation and distribution analysis": "The Qwen report explicitly examines DIO/ODI implementation and distribution through its conceptual apparatus.",
+        "conceptual K6 framing": "The Qwen report explicitly distinguishes conceptual K6 from the observed distribution graph.",
+        "observed distribution graph": "The Qwen report differentiates the conceptual graph from the empirical network of observed distribution artifacts.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "reconstruction mechanism": "The report explains how an observer traverses available representations and reconstructs framework identity or concept status. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Referential Reconstruction Failures": "The report discusses referential failure classes or the distinction between wrong, merged, split, and omitted referents. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Qwen report analyzes implementation and distribution through the DIO/ODI conceptual apparatus and explicitly separates conceptual K6 from the observed distribution graph.",
+        "identity-level phenomenon": "The Qwen report explicitly distinguishes the phenomenon of identity collapse from the structure of the observed distribution graph and from the conceptual K6 framing."
+      }
+    },
+    "dio-to-dio-grok": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Grok's early-November snapshot analysis of distributed reconstructability, acquisition limits, and Zenodo-versus-hub entry paths.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "grok",
+        "paths": [
+          "analyses/grok.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/grok.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "snapshot analysis",
+          "distributed reconstructability",
+          "route-specific acquisition limits",
+          "Zenodo-hub comparison"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "observer",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Referential Reconstruction Failures",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability",
+          "Semantic Robustness",
+          "Reconstruction Capture"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "snapshot analysis": "The Grok report explicitly presents itself as a snapshot analysis based on an early-November observation point.",
+        "distributed reconstructability": "The Grok report assesses reconstructability across heterogeneous representations and multiple entry points.",
+        "route-specific acquisition limits": "The Grok report discusses route-specific acquisition gaps and unverified semantic fidelity.",
+        "Zenodo-hub comparison": "The Grok report explicitly compares the archival Zenodo corpus with the manifesto hub.",
+        "distributed representational state": "The report treats DIO/ODI as distributed across distinct documentary, archival, web, identity, and machine-readable representations. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Referential Reconstruction Failures": "The report discusses referential failure classes or the distinction between wrong, merged, split, and omitted referents. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Semantic Robustness": "The report assesses resistance to local inconsistency, access limitations, or version variation. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "Reconstruction Capture": "The report discusses a structural condition where a hub or limited entry path could disproportionately control reconstruction. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Grok report is an early-November snapshot analysis comparing Zenodo and hub entry points while assessing route-specific acquisition limits and distributed reconstructability."
+      }
+    },
+    "dio-to-dio-claude": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Claude's report using a four-level epistemic hierarchy and two graph models to assess the observed network and access boundaries.",
+      "surface": {
+        "repository": "dan-beranek/dio-to-dio",
+        "page_key": "claude",
+        "paths": [
+          "analyses/claude.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-to-dio/analyses/claude.html"
+        ],
+        "locale_policy": "single English-language page; report-specific profile is not inherited from the shared Dataset or from another model report"
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "four-level epistemic hierarchy",
+          "two-graph analysis",
+          "observed network topology",
+          "access-boundary assessment"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "observation domain",
+          "observer",
+          "identity-preserving constraints",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "all",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes",
+          "Semantic Fragmentation",
+          "Temporal Reconstruction Failures",
+          "Temporal Discontinuity",
+          "Temporal Misalignment",
+          "Contextual Adequacy Failures",
+          "Contextual Displacement",
+          "Identity Collapse",
+          "Semantic Vulnerability"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "Large language models are the explicit observation systems whose reconstructions the project studies. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "four-level epistemic hierarchy": "The Claude report maintains a four-level distinction between observations, architectural roles, local consequences, and system-level significance.",
+        "two-graph analysis": "The Claude report constructs two separate directed graph models: a SKOS concept graph and a heterogeneous distribution graph.",
+        "observed network topology": "The Claude report reports computed topology metrics within an explicitly bounded extracted sample.",
+        "access-boundary assessment": "The Claude report explicitly records which sources and execution boundaries were not observed.",
+        "distributed representational state": "The report treats DIO/ODI as distributed across distinct documentary, archival, web, identity, and machine-readable representations. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "observation domain": "The report defines a bounded corpus or snapshot and evaluates claims within that observed domain. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "observer": "The report distinguishes model-specific or entry-point-specific observation and reconstruction perspectives. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "identity-preserving constraints": "The report states evidential or methodological constraints that prevent a local observation from being generalized beyond its support. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "identity-preserving variation": "The report distinguishes medium-, language-, version-, or genre-based variation from changes that would alter the referent or conceptual core. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "referential continuity": "The report examines whether works, concepts, versions, identity records, and distribution points remain attributable to the same intended referents. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "semantic coherence": "The report evaluates compatibility of conceptual meanings and relations across the distributed DIO/ODI representations. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "K6 Semantic Connectome": "The report explicitly presents or analyzes the complete six-dimensional K6 construct. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Entity": "Entity is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Representation": "Representation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Interpretation": "Interpretation is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Trust": "Trust is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Relationship": "Relationship is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Reconstruction": "Reconstruction is one of the six dimensions explicitly presented in the report's K6 framing. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Reconstruction Failure Modes": "The report uses the DIO/ODI reconstruction-failure taxonomy to diagnose or assess weaknesses in the distributed ecosystem. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Semantic Fragmentation": "The report discusses incompatibility among representations while the intended referent remains the same. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Temporal Reconstruction Failures": "The report treats time-related reconstruction breakdowns as a distinct diagnostic family. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Temporal Discontinuity": "The report addresses a gap or break in identity-state continuity across time. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Temporal Misalignment": "The report identifies version, release, or snapshot differences that can cause observers to reconstruct different temporal states. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Contextual Adequacy Failures": "The report discusses cases where a representation is inadequate for the context or reconstruction task. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Contextual Displacement": "The report discusses a context or entry-point effect that makes one representation dominate an account beyond its evidential scope. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Identity Collapse": "The report explicitly discusses the phenomenon-level collapse or conflation of distinctions in reconstructed identity. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "Semantic Vulnerability": "The report treats semantic vulnerability as susceptibility or robustness-related property, not automatically as a realized failure. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "SKOS": "The report explicitly examines the canonical SKOS vocabulary or its role in the reference layer. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "RDF": "The report discusses RDF/Turtle as a machine-readable serialization in the observed DIO/ODI infrastructure. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "JSON-LD": "The report discusses JSON-LD as a structured representation or distribution layer. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
+        "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries."
       }
     }
   }
