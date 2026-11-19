@@ -1108,13 +1108,21 @@ def update_discovery_metadata(
         f"  - Keyword registry version: {keywords['registry_version']}",
         "llms.txt canonical keyword registry version",
     )
-    llms_text = replace_line_with_prefix(
-        llms_text,
-        "- Canonical keyword registry:",
-        "- Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json\n"
-        "- Page-level metadata manifest: https://vocab.danielberanek.cz/assets/data/resolved-page-metadata.json",
-        "llms.txt page-level metadata manifest discovery",
-    )
+    manifest_line = "- Page-level metadata manifest: https://vocab.danielberanek.cz/assets/data/resolved-page-metadata.json"
+    if any(line.startswith("- Page-level metadata manifest:") for line in llms_text.splitlines()):
+        llms_text = replace_line_with_prefix(
+            llms_text,
+            "- Page-level metadata manifest:",
+            manifest_line,
+            "llms.txt page-level metadata manifest discovery",
+        )
+    else:
+        lines = llms_text.splitlines()
+        anchors = [index for index, line in enumerate(lines) if line.startswith("- Canonical keyword registry:")]
+        if len(anchors) != 1:
+            raise ValueError("Expected one canonical keyword registry line before adding the page metadata manifest")
+        lines.insert(anchors[0] + 1, manifest_line)
+        llms_text = "\n".join(lines) + "\n"
     return metadata, llms_text
 
 
