@@ -1102,6 +1102,12 @@ def update_discovery_metadata(
             llms_text,
             count=1,
         )
+    llms_text = replace_line_with_prefix(
+        llms_text,
+        "  - Keyword registry version:",
+        f"  - Keyword registry version: {keywords['registry_version']}",
+        "llms.txt canonical keyword registry version",
+    )
     return metadata, llms_text
 
 
