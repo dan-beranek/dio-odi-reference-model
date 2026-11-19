@@ -1520,8 +1520,8 @@
         "C5_failures_robustness": [],
         "C6_machine_readable_representation": [
           "RDF",
-          "provenance",
-          "semantic interoperability"
+          "semantic interoperability",
+          "provenance"
         ]
       },
       "term_rationales": {
