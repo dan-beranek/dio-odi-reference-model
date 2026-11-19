@@ -1,5 +1,5 @@
 {
-  "registry_version": "2.10.0",
+  "registry_version": "2.11.0",
   "status": "canonical-approved",
   "approved_on": "2026-11-19",
   "purpose": "Canonical ordered keyword grammar for the DIO/ODI corpus and its derived public surfaces. It stabilizes lexical identity, preserves conceptual structure, and provides deterministic keyword projections for publications, product artefacts and page-level frontends.",
@@ -3007,6 +3007,310 @@
         "knowledge representation": "The report examines formal representation of DIO/ODI concepts, relations, or metadata. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
         "provenance": "The report traces source origins, authorship, version, citation, derivation, or distribution relationships. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries.",
         "stable concept URIs": "The report discusses persistent SKOS concept identifiers as anchors for concept-level reference. In this object, it is assessed in the context of The Claude report uses a four-level epistemic hierarchy and two distinct graph models, reporting extracted-network topology and explicit access boundaries."
+      }
+    },
+    "opensource-projects-home": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Main presentation applying DIO to open-source projects as distributed, evolving identity-bearing objects across technical, community, governance, and machine-facing representations.",
+      "surface": {
+        "repository": "dan-beranek/digital-identity-optimization-for-open-source-projects",
+        "page_key": "presentation",
+        "paths": [
+          "index.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/digital-identity-optimization-for-open-source-projects/"
+        ],
+        "locale_policy": "Single English-language slide presentation; the text companion has its own page profile."
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs"
+        ],
+        "C2_work_positioning": [
+          "open-source project identity",
+          "distributed project identity",
+          "project continuity across change",
+          "software project governance"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "Identity Collapse"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "term_rationales": {
+        "artificial intelligence": "The presentation explicitly identifies AI systems and AI-generated descriptions or recommendations as machine-facing representations of open-source projects.",
+        "knowledge graphs": "The presentation explicitly names knowledge graphs as one of the machine-readable surfaces through which an open-source project is represented.",
+        "open-source project identity": "The presentation treats the open-source project itself, rather than only its repository, as the identity-bearing object.",
+        "distributed project identity": "The page describes the project as distributed across code, packages, documentation, governance, contributors, community, and machine-facing surfaces.",
+        "project continuity across change": "The central question asks what makes a project remain the same project when maintainers, repositories, package names, licenses, and governance change.",
+        "software project governance": "Governance structures and their changes are explicitly listed as identity-relevant project surfaces.",
+        "distributed representational state": "The project is described as one logical entity represented across heterogeneous technical, human, and machine surfaces.",
+        "identity-preserving variation": "The presentation distinguishes changes in maintainers, repositories, packages, and governance from the continuity of the project referent.",
+        "referential continuity": "The central identity-continuity question concerns whether changed representations still refer to the same open-source project.",
+        "semantic coherence": "The page explicitly frames the problem as maintaining coherence across the project's distributed identity representations.",
+        "Identity Collapse": "The presentation explicitly names identity collapse as a risk when the project's distributed representations are not kept coherent."
+      }
+    },
+    "opensource-projects-text": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Text companion presenting the same DIO application to open-source projects as a distributed identity and continuity problem.",
+      "surface": {
+        "repository": "dan-beranek/digital-identity-optimization-for-open-source-projects",
+        "page_key": "text-companion",
+        "paths": [
+          "text-version.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/digital-identity-optimization-for-open-source-projects/text-version.html"
+        ],
+        "locale_policy": "Single English-language text article; keeps a separate page identity from the slide presentation."
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs"
+        ],
+        "C2_work_positioning": [
+          "open-source project identity",
+          "distributed project identity",
+          "project continuity across change",
+          "software project governance"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "Identity Collapse"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "term_rationales": {
+        "artificial intelligence": "The presentation explicitly identifies AI systems and AI-generated descriptions or recommendations as machine-facing representations of open-source projects.",
+        "knowledge graphs": "The presentation explicitly names knowledge graphs as one of the machine-readable surfaces through which an open-source project is represented.",
+        "open-source project identity": "The presentation treats the open-source project itself, rather than only its repository, as the identity-bearing object.",
+        "distributed project identity": "The page describes the project as distributed across code, packages, documentation, governance, contributors, community, and machine-facing surfaces.",
+        "project continuity across change": "The central question asks what makes a project remain the same project when maintainers, repositories, package names, licenses, and governance change.",
+        "software project governance": "Governance structures and their changes are explicitly listed as identity-relevant project surfaces.",
+        "distributed representational state": "The project is described as one logical entity represented across heterogeneous technical, human, and machine surfaces.",
+        "identity-preserving variation": "The presentation distinguishes changes in maintainers, repositories, packages, and governance from the continuity of the project referent.",
+        "referential continuity": "The central identity-continuity question concerns whether changed representations still refer to the same open-source project.",
+        "semantic coherence": "The page explicitly frames the problem as maintaining coherence across the project's distributed identity representations.",
+        "Identity Collapse": "The presentation explicitly names identity collapse as a risk when the project's distributed representations are not kept coherent."
+      }
+    },
+    "mapping-ai-mediated-environments": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Secondary taxonomic and strategic map relating digital-visibility practices and positioning DIO as a proposed entity-level meta-layer, without presenting the map as empirical validation.",
+      "surface": {
+        "repository": "dan-beranek/mapping-digital-optimizations-in-ai-mediated-environments",
+        "page_key": "overview",
+        "paths": [
+          "index.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/mapping-digital-optimizations-in-ai-mediated-environments/"
+        ],
+        "locale_policy": "Single English-language secondary interpretive presentation."
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "taxonomy of digital optimization practices",
+          "AI-mediated visibility",
+          "entity-based visibility",
+          "strategic meta-layer"
+        ],
+        "C3_reconstruction_mechanics": [
+          "distributed representational state",
+          "semantic coherence"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Identity Collapse",
+          "Semantic Vulnerability"
+        ],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "artificial intelligence": "The map explicitly concerns AI-mediated environments and the retrieval, synthesis, attribution, and recommendation of entities and claims by AI systems.",
+        "knowledge graphs": "Knowledge graphs are explicitly included among the entity-recognition and structured-relationship practices mapped by the presentation.",
+        "human observers": "The map explicitly distinguishes human-facing interpretation from technical and AI-mediated reconstruction.",
+        "taxonomy of digital optimization practices": "The page presents a taxonomic overview relating SEO, AEO, GEO, LLMO, AIO, Entity SEO, and DIO.",
+        "AI-mediated visibility": "AI-mediated discovery, retrieval, synthesis, attribution, and recommendation are explicit parts of the map's scope.",
+        "entity-based visibility": "The map positions DIO around the coherence, recognizability, attribution, and continuity of a digital entity rather than only a page or answer.",
+        "strategic meta-layer": "The page explicitly characterizes DIO as a proposed strategic meta-layer within a wider taxonomy, not as the name of the whole field.",
+        "distributed representational state": "The page describes entities as distributed across pages, profiles, databases, citations, structured data, platforms, and AI-generated responses.",
+        "semantic coherence": "The central DIO positioning is the coherence of an entity's distributed representation across human, technical, and AI-mediated contexts.",
+        "entity resolution": "The page explicitly relates optimization fragmentation to entity resolution.",
+        "Semantic Fragmentation": "The page names semantic fragmentation as a failure risk arising from incompatible or disconnected distributed records.",
+        "Temporal Discontinuity": "The page explicitly names temporal discontinuity as a risk when entities change but indexes, datasets, and summaries retain older states.",
+        "Identity Collapse": "The page explicitly names identity collapse as a risk caused by ambiguity, weak distinction, and conflation.",
+        "Semantic Vulnerability": "The page explicitly names semantic vulnerability as susceptibility to unverified, conflicting, or manipulated context.",
+        "provenance": "The map explicitly relates its diagnosis to provenance and identifies provenance among the relevant DIO/ODI dimensions."
+      }
+    },
+    "terminology-paradox-presentation": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Slide presentation documenting the self-referential DIO terminology paradox: overlapping names across three distinct ontological planes and the resulting interpretive ambiguity.",
+      "surface": {
+        "repository": "dan-beranek/dio-terminology-paradox",
+        "page_key": "presentation",
+        "paths": [
+          "index.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-terminology-paradox/"
+        ],
+        "locale_policy": "Single English-language slide presentation; the text companion is a separate HTML object with equivalent case-study scope."
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "DIO terminology case study",
+          "ontological disambiguation",
+          "ontology governance",
+          "self-referential framework stress test"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic field"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "Identity Collapse"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "term_rationales": {
+        "artificial intelligence": "The presentation explicitly describes an AI parser and AI systems as readers that may collapse the three ontological planes into one low-confidence referent.",
+        "human observers": "The presentation also addresses the casual human reader, whose interpretation can be affected by the same naming overlap.",
+        "DIO terminology case study": "The page is a self-referential case study of ambiguity arising from DIO's own terminology.",
+        "ontological disambiguation": "The presentation distinguishes three separate ontological planes that share a name root but have different referents.",
+        "ontology governance": "The case study concerns naming discipline, canonical identifiers, and explicit relational encoding between ontology layers.",
+        "self-referential framework stress test": "The presentation treats DIO itself as the stress-test object for the identity and terminology principles it proposes.",
+        "semantic field": "The presentation explicitly discusses the shared semantic field in which the three distinct ontological planes are named.",
+        "Identity Collapse": "The presentation repeatedly describes the conflation of distinct ontological planes as identity collapse."
+      }
+    },
+    "terminology-paradox-text": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Text version of the self-referential DIO terminology case study, preserving the presentation's distinctions between three ontological planes and their shared naming root.",
+      "surface": {
+        "repository": "dan-beranek/dio-terminology-paradox",
+        "page_key": "text-version",
+        "paths": [
+          "dio-terminology-paradox-text.html"
+        ],
+        "urls": [
+          "https://dan-beranek.github.io/dio-terminology-paradox/dio-terminology-paradox-text.html"
+        ],
+        "locale_policy": "Single English-language text article; semantically related to but separately identified from the slide presentation."
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "DIO terminology case study",
+          "ontological disambiguation",
+          "ontology governance",
+          "self-referential framework stress test"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic field"
+        ],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "Identity Collapse"
+        ],
+        "C6_machine_readable_representation": []
+      },
+      "term_rationales": {
+        "artificial intelligence": "The presentation explicitly describes an AI parser and AI systems as readers that may collapse the three ontological planes into one low-confidence referent.",
+        "human observers": "The presentation also addresses the casual human reader, whose interpretation can be affected by the same naming overlap.",
+        "DIO terminology case study": "The page is a self-referential case study of ambiguity arising from DIO's own terminology.",
+        "ontological disambiguation": "The presentation distinguishes three separate ontological planes that share a name root but have different referents.",
+        "ontology governance": "The case study concerns naming discipline, canonical identifiers, and explicit relational encoding between ontology layers.",
+        "self-referential framework stress test": "The presentation treats DIO itself as the stress-test object for the identity and terminology principles it proposes.",
+        "semantic field": "The presentation explicitly discusses the shared semantic field in which the three distinct ontological planes are named.",
+        "Identity Collapse": "The presentation repeatedly describes the conflation of distinct ontological planes as identity collapse."
+      }
+    },
+    "dio-odi-mcp-home": {
+      "status": "canonical-approved",
+      "scope": "derived-public-webpage",
+      "purpose": "Human-readable landing page for the public read-only DIO/ODI MCP service; protocol and health endpoints are separate non-page interfaces and are not indexed as webpages.",
+      "surface": {
+        "repository": "dan-beranek/dio-odi-mcp",
+        "page_key": "service-home",
+        "paths": [
+          "/"
+        ],
+        "urls": [
+          "https://mcp.danielberanek.cz/"
+        ],
+        "locale_policy": "Single English-language human-facing landing page; /mcp, /healthz, and machine-discovery endpoints are not assigned webpage profiles."
+      },
+      "chunks": {
+        "C0_identity_invariant": "all",
+        "C1_reconstruction_environments": [],
+        "C2_work_positioning": [
+          "read-only Model Context Protocol service",
+          "canonical DIO/ODI reference interface",
+          "Agentic ER integration reference"
+        ],
+        "C3_reconstruction_mechanics": [],
+        "C4_k6": "none",
+        "C5_failures_robustness": [
+          "Reconstruction Failure Modes"
+        ],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "provenance"
+        ]
+      },
+      "term_rationales": {
+        "read-only Model Context Protocol service": "The landing page identifies the service as a public, stateless, read-only Model Context Protocol interface.",
+        "canonical DIO/ODI reference interface": "The page describes the service as an interface to versioned DIO/ODI Reference Model material and the canonical Reference Vocabulary.",
+        "Agentic ER integration reference": "The page explicitly documents bounded Agentic ER diagnostic and commit-boundary reference material for integrating applications.",
+        "Reconstruction Failure Modes": "The landing page exposes a read-only tool that returns the four-domain Reconstruction Failure taxonomy and its eight failure modes.",
+        "SKOS": "The service landing page links the canonical SKOS Reference Vocabulary and presents it as a distinct canonical resource layer.",
+        "provenance": "The service page explicitly describes source and version provenance returned alongside reference material."
       }
     }
   }
