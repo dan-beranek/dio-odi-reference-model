@@ -1,0 +1,881 @@
+{
+  "schema_version": "1.0.0",
+  "site": {
+    "id": "https://vocab.danielberanek.cz/#website",
+    "url": "https://vocab.danielberanek.cz/",
+    "name": "DIO/ODI Reference Model",
+    "repository": "dan-beranek/dio-odi-reference-model"
+  },
+  "keyword_registry": {
+    "repository": "dan-beranek/dio-odi-reference-model",
+    "file": "metadata/keywords.json",
+    "registry_version": "2.9.0",
+    "status": "canonical-approved",
+    "sha256": "c84159e6c5501598e8212fe48d8ec514e84e2303801e564e37fb3a6c0d7c57f6"
+  },
+  "artifacts": [
+    {
+      "id": "reference-model-home",
+      "page_key": "reference-model-home",
+      "path": "index.html",
+      "url": "https://vocab.danielberanek.cz/",
+      "purpose": "Top-level portal to the DIO/ODI Reference Model, canonical vocabulary, derived mappings, operational metadata and machine-readable resources.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs"
+        ],
+        "C2_work_positioning": [
+          "Reference Model",
+          "canonical Reference Vocabulary",
+          "derived Application Mappings",
+          "machine-readable reference infrastructure"
+        ],
+        "C3_reconstruction_mechanics": [
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "knowledge graphs",
+        "Reference Model",
+        "canonical Reference Vocabulary",
+        "derived Application Mappings",
+        "machine-readable reference infrastructure",
+        "referential continuity",
+        "semantic coherence",
+        "SKOS",
+        "RDF",
+        "JSON-LD",
+        "knowledge representation",
+        "provenance",
+        "stable concept URIs"
+      ],
+      "keyword_rationales": {
+        "artificial intelligence": "The page explicitly addresses an AI-mediated application or machine-mediated identity reconstruction context.",
+        "knowledge graphs": "The page explicitly presents structured concept relations or graph-oriented knowledge representation.",
+        "Reference Model": "The page is the public entry point to the DIO/ODI Reference Model.",
+        "canonical Reference Vocabulary": "The page explicitly presents the canonical vocabulary as the semantic foundation of the reference system.",
+        "derived Application Mappings": "The page explicitly distinguishes derived Application Mappings from the canonical vocabulary.",
+        "machine-readable reference infrastructure": "The page presents the Reference Model as a machine-readable layer with formal resources and provenance.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "SKOS": "The page explicitly presents or links the canonical SKOS vocabulary or SKOS serialization.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "JSON-LD": "The page explicitly provides or links JSON-LD representations.",
+        "knowledge representation": "The page describes formal representations of concepts, relations or domain structures.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope.",
+        "stable concept URIs": "Stable concept URIs are explicitly presented as identifiers for canonical vocabulary concepts."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/#webpage",
+      "in_language": "en"
+    },
+    {
+      "id": "reference-vocabulary",
+      "page_key": "reference-vocabulary",
+      "path": "dio-odi/index.html",
+      "url": "https://vocab.danielberanek.cz/dio-odi/",
+      "purpose": "Canonical DIO/ODI Reference Vocabulary page identifying the SKOS ConceptScheme, stable concept URIs, definitions, relations, provenance and formal distributions.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "Reference Vocabulary",
+          "SKOS ConceptScheme",
+          "controlled vocabulary"
+        ],
+        "C3_reconstruction_mechanics": [
+          "semantic field",
+          "reconstruction mechanism",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": [
+          "K6 Semantic Connectome",
+          "Entity",
+          "Representation",
+          "Interpretation",
+          "Trust",
+          "Relationship",
+          "Reconstruction"
+        ],
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "SKOS",
+          "RDF",
+          "JSON-LD",
+          "semantic web",
+          "linked data",
+          "semantic interoperability",
+          "provenance",
+          "stable concept URIs"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "knowledge graphs",
+        "human observers",
+        "Reference Vocabulary",
+        "SKOS ConceptScheme",
+        "controlled vocabulary",
+        "semantic field",
+        "reconstruction mechanism",
+        "referential continuity",
+        "semantic coherence",
+        "K6 Semantic Connectome",
+        "Entity",
+        "Representation",
+        "Interpretation",
+        "Trust",
+        "Relationship",
+        "Reconstruction",
+        "SKOS",
+        "RDF",
+        "JSON-LD",
+        "semantic web",
+        "linked data",
+        "semantic interoperability",
+        "provenance",
+        "stable concept URIs"
+      ],
+      "keyword_rationales": {
+        "artificial intelligence": "The page explicitly addresses an AI-mediated application or machine-mediated identity reconstruction context.",
+        "knowledge graphs": "The page explicitly presents structured concept relations or graph-oriented knowledge representation.",
+        "human observers": "The page explicitly includes human interpretation or human-authored reception alongside machine-readable representations.",
+        "Reference Vocabulary": "The page is the human-readable presentation of the canonical DIO/ODI Reference Vocabulary.",
+        "SKOS ConceptScheme": "The vocabulary is explicitly identified as a SKOS ConceptScheme.",
+        "controlled vocabulary": "The page presents preferred labels, definitions and semantic relations as a controlled terminology.",
+        "semantic field": "The vocabulary page includes concepts that define the semantic field of DIO/ODI.",
+        "reconstruction mechanism": "The page maps technical processing stages or architecture layers to identity reconstruction consequences.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "K6 Semantic Connectome": "The canonical vocabulary includes the full six-dimensional K6 Semantic Connectome.",
+        "Entity": "Entity is one of the six explicitly represented K6 dimensions.",
+        "Representation": "Representation is one of the six explicitly represented K6 dimensions.",
+        "Interpretation": "Interpretation is one of the six explicitly represented K6 dimensions.",
+        "Trust": "Trust is one of the six explicitly represented K6 dimensions.",
+        "Relationship": "Relationship is one of the six explicitly represented K6 dimensions.",
+        "Reconstruction": "Reconstruction is one of the six explicitly represented K6 dimensions.",
+        "SKOS": "The page explicitly presents or links the canonical SKOS vocabulary or SKOS serialization.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "JSON-LD": "The page explicitly provides or links JSON-LD representations.",
+        "semantic web": "The page publishes a formal semantic-web vocabulary with stable identifiers and relations.",
+        "linked data": "The page exposes stable concept URIs and linked semantic relations.",
+        "semantic interoperability": "The page describes shared terminology and formal representations intended for compatible interpretation across systems.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope.",
+        "stable concept URIs": "Stable concept URIs are explicitly presented as identifiers for canonical vocabulary concepts."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+      "in_language": "en"
+    },
+    {
+      "id": "external-reception",
+      "page_key": "external-reception",
+      "path": "external-reception/index.html",
+      "url": "https://vocab.danielberanek.cz/external-reception/",
+      "purpose": "Provenance-preserving register of external technical analyses, conceptual uptake, agent discussions, AI summaries, discovery records and registry integrations.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "human observers"
+        ],
+        "C2_work_positioning": [
+          "External Reception Registry",
+          "independent technical analyses",
+          "conceptual uptake",
+          "secondary representations",
+          "registry integrations"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "observer",
+          "referential continuity"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "RDF",
+          "semantic interoperability",
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "human observers",
+        "External Reception Registry",
+        "independent technical analyses",
+        "conceptual uptake",
+        "secondary representations",
+        "registry integrations",
+        "observation domain",
+        "observer",
+        "referential continuity",
+        "RDF",
+        "semantic interoperability",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "artificial intelligence": "The page explicitly addresses an AI-mediated application or machine-mediated identity reconstruction context.",
+        "human observers": "The page explicitly includes human interpretation or human-authored reception alongside machine-readable representations.",
+        "External Reception Registry": "The page is the human-readable frontend of the External Reception Registry.",
+        "independent technical analyses": "The registry explicitly separates independent technical analyses from other reception categories.",
+        "conceptual uptake": "The page records external conceptual uptake as a distinct reception type.",
+        "secondary representations": "The registry tracks AI-generated, localized and other secondary representations without treating them as originating works.",
+        "registry integrations": "The registry records prefix, registry and interoperability integrations as a distinct category.",
+        "observer": "The page distinguishes external authors, communities and systems that interpret DIO/ODI works.",
+        "observation domain": "The page scopes records or mappings to the sources, platform, domain or context in which evidence is produced.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope.",
+        "semantic interoperability": "The page describes shared terminology and formal representations intended for compatible interpretation across systems."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/external-reception/",
+      "in_language": "en"
+    },
+    {
+      "id": "application-mappings-index",
+      "page_key": "application-mappings-index",
+      "path": "mappings/index.html",
+      "url": "https://vocab.danielberanek.cz/mappings/",
+      "purpose": "Index of derived, non-normative DIO/ODI application mappings that project canonical concepts into external technical and analytical domains.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [
+          "artificial intelligence",
+          "knowledge graphs"
+        ],
+        "C2_work_positioning": [
+          "Application Mappings",
+          "non-normative application mappings",
+          "cross-domain projections"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving constraints",
+          "semantic coherence"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes"
+        ],
+        "C6_machine_readable_representation": [
+          "RDF",
+          "JSON-LD",
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "knowledge graphs",
+        "Application Mappings",
+        "non-normative application mappings",
+        "cross-domain projections",
+        "identity-preserving constraints",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "RDF",
+        "JSON-LD",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "artificial intelligence": "The page explicitly addresses an AI-mediated application or machine-mediated identity reconstruction context.",
+        "knowledge graphs": "The page explicitly presents structured concept relations or graph-oriented knowledge representation.",
+        "Application Mappings": "The page is the index of derived DIO/ODI Application Mappings.",
+        "non-normative application mappings": "The page explicitly states that derived mappings do not modify canonical vocabulary definitions.",
+        "cross-domain projections": "The listed mappings apply DIO/ODI concepts to external technical or analytical domains.",
+        "identity-preserving constraints": "The mapping examines constraints needed to preserve entity boundaries or authorized identity changes.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "entity resolution": "The mapped technical or diagnostic domain explicitly concerns identifying and reconstructing entities.",
+        "Reconstruction Failure Modes": "The page explicitly applies or references the DIO Reconstruction Failure Modes taxonomy.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "JSON-LD": "The page explicitly provides or links JSON-LD representations.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/mappings/",
+      "in_language": "en"
+    },
+    {
+      "id": "mapping-agentic-er-architecture",
+      "page_key": "mapping-agentic-er-architecture",
+      "path": "mappings/agentic-er-architecture/index.html",
+      "url": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+      "purpose": "Derived, non-normative relation mapping formalizing the DIO/ODI-informed Agentic ER commit-boundary proposal, its diagnostic inputs, constraints, evidence states and two-phase authorization.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "Agentic Entity Resolution",
+          "commit-boundary authorization",
+          "identity-changing mutations",
+          "two-phase authorization",
+          "claim-specific evidence eligibility"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Entity Substitution",
+          "Merge Failure",
+          "Split Failure",
+          "Identity Collapse",
+          "Semantic Vulnerability"
+        ],
+        "C6_machine_readable_representation": [
+          "RDF",
+          "JSON-LD",
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "Agentic Entity Resolution",
+        "commit-boundary authorization",
+        "identity-changing mutations",
+        "two-phase authorization",
+        "claim-specific evidence eligibility",
+        "observation domain",
+        "identity-preserving constraints",
+        "referential continuity",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Identity Collapse",
+        "Semantic Vulnerability",
+        "RDF",
+        "JSON-LD",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "artificial intelligence": "The page explicitly addresses an AI-mediated application or machine-mediated identity reconstruction context.",
+        "Agentic Entity Resolution": "Agentic Entity Resolution is the application domain of the architecture mapping.",
+        "commit-boundary authorization": "The mapping translates commit-boundary obligations into policy request, decision, enforcement and audit requirements.",
+        "identity-changing mutations": "The mapping explicitly concerns persistent identity-changing operations and their write effects.",
+        "two-phase authorization": "The proposed architecture includes a two-phase Supervisor and a protected commit invariant.",
+        "claim-specific evidence eligibility": "The architecture formalizes evidence states and claim-specific eligibility before authorization.",
+        "observation domain": "The page scopes records or mappings to the sources, platform, domain or context in which evidence is produced.",
+        "identity-preserving constraints": "The mapping examines constraints needed to preserve entity boundaries or authorized identity changes.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "entity resolution": "The mapped technical or diagnostic domain explicitly concerns identifying and reconstructing entities.",
+        "Reconstruction Failure Modes": "The page explicitly applies or references the DIO Reconstruction Failure Modes taxonomy.",
+        "Entity Substitution": "Entity Substitution is explicitly included as a mapped referential reconstruction failure.",
+        "Merge Failure": "Merge Failure is explicitly included as a mapped identity-resolution failure.",
+        "Split Failure": "Split Failure is explicitly included as a mapped identity-resolution failure.",
+        "Identity Collapse": "Identity Collapse is a phenomenon-level concern where identity-changing operations erase distinctions between entities.",
+        "Semantic Vulnerability": "The page treats Semantic Vulnerability separately as a susceptibility property, not as a realized failure mode.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "JSON-LD": "The page explicitly provides or links JSON-LD representations.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/mappings/agentic-er-architecture/",
+      "in_language": "en"
+    },
+    {
+      "id": "mapping-commit-boundary-policy",
+      "page_key": "mapping-commit-boundary-policy",
+      "path": "mappings/commit-boundary-policy/index.html",
+      "url": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+      "purpose": "Derived mapping from DIO/ODI-informed commit-boundary authorization obligations to Policy-as-Code representation, evaluation, enforcement and audit requirements.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "Policy-as-Code",
+          "OPA/Rego",
+          "Cedar",
+          "commit-boundary authorization"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [
+          "entity resolution"
+        ],
+        "C6_machine_readable_representation": [
+          "RDF",
+          "JSON-LD",
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "Policy-as-Code",
+        "OPA/Rego",
+        "Cedar",
+        "commit-boundary authorization",
+        "identity-preserving constraints",
+        "referential continuity",
+        "semantic coherence",
+        "entity resolution",
+        "RDF",
+        "JSON-LD",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "artificial intelligence": "The page explicitly addresses an AI-mediated application or machine-mediated identity reconstruction context.",
+        "Policy-as-Code": "Policy-as-Code is the explicit external technical domain of the mapping.",
+        "OPA/Rego": "The page discusses OPA and Rego as policy representation and evaluation reference points.",
+        "Cedar": "Cedar is a named policy-language reference point in the mapping.",
+        "commit-boundary authorization": "The mapping translates commit-boundary obligations into policy request, decision, enforcement and audit requirements.",
+        "identity-preserving constraints": "The mapping examines constraints needed to preserve entity boundaries or authorized identity changes.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "entity resolution": "The mapped technical or diagnostic domain explicitly concerns identifying and reconstructing entities.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "JSON-LD": "The page explicitly provides or links JSON-LD representations.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/",
+      "in_language": "en"
+    },
+    {
+      "id": "mapping-hem-dio",
+      "page_key": "mapping-hem-dio",
+      "path": "mappings/hem-dio/index.html",
+      "url": "https://vocab.danielberanek.cz/mappings/hem-dio/",
+      "purpose": "Derived analytical bridge between Heterogeneous Entity Matching input conditions and possible DIO identity-reconstruction consequences, preserving their distinct taxonomic roles.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [],
+        "C2_work_positioning": [
+          "Heterogeneous Entity Matching",
+          "representation heterogeneity",
+          "semantic heterogeneity",
+          "entity matching"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "identity-preserving variation",
+          "semantic coherence"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Merge Failure",
+          "Split Failure",
+          "Semantic Fragmentation",
+          "Semantic Vulnerability"
+        ],
+        "C6_machine_readable_representation": [
+          "RDF",
+          "JSON-LD",
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "Heterogeneous Entity Matching",
+        "representation heterogeneity",
+        "semantic heterogeneity",
+        "entity matching",
+        "observation domain",
+        "identity-preserving variation",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Merge Failure",
+        "Split Failure",
+        "Semantic Fragmentation",
+        "Semantic Vulnerability",
+        "RDF",
+        "JSON-LD",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "Heterogeneous Entity Matching": "The page is an analytical bridge from the HEM taxonomy to DIO reconstruction consequences.",
+        "representation heterogeneity": "The HEM source explicitly distinguishes multimodality, format and structural/schema heterogeneity.",
+        "semantic heterogeneity": "The HEM source explicitly covers terminology, language, context, granularity, temporal variability and data quality.",
+        "entity matching": "The external HEM taxonomy concerns entity matching across heterogeneous data environments.",
+        "observation domain": "The page scopes records or mappings to the sources, platform, domain or context in which evidence is produced.",
+        "identity-preserving variation": "The feed distinguishes changes that preserve conceptual invariants from changes that alter a component's semantics.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "entity resolution": "The mapped technical or diagnostic domain explicitly concerns identifying and reconstructing entities.",
+        "Reconstruction Failure Modes": "The page explicitly applies or references the DIO Reconstruction Failure Modes taxonomy.",
+        "Merge Failure": "Merge Failure is explicitly included as a mapped identity-resolution failure.",
+        "Split Failure": "Split Failure is explicitly included as a mapped identity-resolution failure.",
+        "Semantic Fragmentation": "Semantic Fragmentation is explicitly included as a mapped semantic-coherence failure.",
+        "Semantic Vulnerability": "The page treats Semantic Vulnerability separately as a susceptibility property, not as a realized failure mode.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "JSON-LD": "The page explicitly provides or links JSON-LD representations.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/mappings/hem-dio/",
+      "in_language": "en"
+    },
+    {
+      "id": "mapping-rag-pipeline",
+      "page_key": "mapping-rag-pipeline",
+      "path": "mappings/rag-pipeline/index.html",
+      "url": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+      "purpose": "Derived diagnostic mapping of DIO Reconstruction Failure Modes onto generic retrieval-augmented generation pipeline loci, including a dated extension for hypothesis-conditioned evidence acquisition.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [
+          "artificial intelligence"
+        ],
+        "C2_work_positioning": [
+          "retrieval-augmented generation",
+          "RAG pipeline",
+          "hypothesis-conditioned evidence acquisition"
+        ],
+        "C3_reconstruction_mechanics": [
+          "observation domain",
+          "reconstruction mechanism",
+          "identity-preserving constraints",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [
+          "entity resolution",
+          "Reconstruction Failure Modes",
+          "Entity Substitution",
+          "Merge Failure",
+          "Split Failure",
+          "Entity Omission",
+          "Semantic Fragmentation",
+          "Temporal Discontinuity",
+          "Contextual Displacement"
+        ],
+        "C6_machine_readable_representation": [
+          "RDF",
+          "JSON-LD",
+          "knowledge representation",
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "artificial intelligence",
+        "retrieval-augmented generation",
+        "RAG pipeline",
+        "hypothesis-conditioned evidence acquisition",
+        "observation domain",
+        "reconstruction mechanism",
+        "identity-preserving constraints",
+        "referential continuity",
+        "semantic coherence",
+        "entity resolution",
+        "Reconstruction Failure Modes",
+        "Entity Substitution",
+        "Merge Failure",
+        "Split Failure",
+        "Entity Omission",
+        "Semantic Fragmentation",
+        "Temporal Discontinuity",
+        "Contextual Displacement",
+        "RDF",
+        "JSON-LD",
+        "knowledge representation",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "artificial intelligence": "The page explicitly addresses an AI-mediated application or machine-mediated identity reconstruction context.",
+        "retrieval-augmented generation": "Retrieval-augmented generation is the explicit external technical domain of the mapping.",
+        "RAG pipeline": "The page structures its analysis around stages and loci in a generic RAG pipeline.",
+        "hypothesis-conditioned evidence acquisition": "The mapping's live extension explicitly examines iterative and hypothesis-conditioned evidence acquisition.",
+        "observation domain": "The page scopes records or mappings to the sources, platform, domain or context in which evidence is produced.",
+        "reconstruction mechanism": "The page maps technical processing stages or architecture layers to identity reconstruction consequences.",
+        "identity-preserving constraints": "The mapping examines constraints needed to preserve entity boundaries or authorized identity changes.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "entity resolution": "The mapped technical or diagnostic domain explicitly concerns identifying and reconstructing entities.",
+        "Reconstruction Failure Modes": "The page explicitly applies or references the DIO Reconstruction Failure Modes taxonomy.",
+        "Entity Substitution": "Entity Substitution is explicitly included as a mapped referential reconstruction failure.",
+        "Merge Failure": "Merge Failure is explicitly included as a mapped identity-resolution failure.",
+        "Split Failure": "Split Failure is explicitly included as a mapped identity-resolution failure.",
+        "Entity Omission": "Entity Omission is explicitly included as a mapped reconstruction failure.",
+        "Semantic Fragmentation": "Semantic Fragmentation is explicitly included as a mapped semantic-coherence failure.",
+        "Temporal Discontinuity": "Temporal Discontinuity is explicitly included as a mapped temporal reconstruction failure.",
+        "Contextual Displacement": "Contextual Displacement is explicitly included as a mapped contextual reconstruction failure.",
+        "RDF": "The page explicitly provides or links RDF/Turtle representations.",
+        "JSON-LD": "The page explicitly provides or links JSON-LD representations.",
+        "knowledge representation": "The page describes formal representations of concepts, relations or domain structures.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/mappings/rag-pipeline/",
+      "in_language": "en"
+    },
+    {
+      "id": "metadata-registry",
+      "page_key": "metadata-registry",
+      "path": "metadata/index.html",
+      "url": "https://vocab.danielberanek.cz/metadata/",
+      "purpose": "Human-readable entry point to the operational Corpus Metadata Registry, covering work identities, publication metadata, typed relations, references, distributions and keyword profiles.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [],
+        "C2_work_positioning": [
+          "Corpus Metadata Registry",
+          "publication metadata",
+          "typed work relations",
+          "distribution provenance",
+          "keyword profiles"
+        ],
+        "C3_reconstruction_mechanics": [
+          "referential continuity"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "Corpus Metadata Registry",
+        "publication metadata",
+        "typed work relations",
+        "distribution provenance",
+        "keyword profiles",
+        "referential continuity",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "Corpus Metadata Registry": "The page is the human-readable entry point to the operational DIO/ODI Corpus Metadata Registry.",
+        "publication metadata": "The registry records work identities, versions, dates, DOIs and archival inclusion history.",
+        "typed work relations": "The page explains the directed and semantically distinct relations between works.",
+        "distribution provenance": "The registry preserves identity and relation types for external copies, variants and supplementary representations.",
+        "keyword profiles": "Canonical work and surface keyword profiles are an explicit component of the registry.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/metadata/",
+      "in_language": "en"
+    },
+    {
+      "id": "semantic-change-feed",
+      "page_key": "semantic-change-feed",
+      "path": "semantic-change-feed/index.html",
+      "url": "https://vocab.danielberanek.cz/semantic-change-feed/",
+      "purpose": "Append-only, source-backed chronology of semantic, structural, provenance, mapping, deployment and artifact-state changes across the DIO/ODI reference system.",
+      "scope": "derived-public-webpage",
+      "keyword_chunks": {
+        "C0_identity_invariant": [
+          "Digital Identity Optimization",
+          "DIO",
+          "Ontology of Digital Identity",
+          "ODI",
+          "digital identity",
+          "identity reconstruction"
+        ],
+        "C1_reconstruction_environments": [],
+        "C2_work_positioning": [
+          "Semantic Change Feed",
+          "append-only event registry",
+          "semantic history",
+          "archive reconciliation",
+          "change provenance"
+        ],
+        "C3_reconstruction_mechanics": [
+          "identity-preserving variation",
+          "referential continuity",
+          "semantic coherence"
+        ],
+        "C4_k6": [],
+        "C5_failures_robustness": [],
+        "C6_machine_readable_representation": [
+          "provenance"
+        ]
+      },
+      "keywords": [
+        "Digital Identity Optimization",
+        "DIO",
+        "Ontology of Digital Identity",
+        "ODI",
+        "digital identity",
+        "identity reconstruction",
+        "Semantic Change Feed",
+        "append-only event registry",
+        "semantic history",
+        "archive reconciliation",
+        "change provenance",
+        "identity-preserving variation",
+        "referential continuity",
+        "semantic coherence",
+        "provenance"
+      ],
+      "keyword_rationales": {
+        "Semantic Change Feed": "The page is the human-readable frontend of the DIO/ODI Semantic Change Feed.",
+        "append-only event registry": "The feed explicitly preserves its event history through append-only records.",
+        "semantic history": "The feed records semantic, structural, provenance, mapping and artifact-state changes.",
+        "archive reconciliation": "The feed documents archive milestones and reconciliation while preserving immutable archived packages.",
+        "change provenance": "Each event records sources, temporal basis, impact and lineage.",
+        "identity-preserving variation": "The feed distinguishes changes that preserve conceptual invariants from changes that alter a component's semantics.",
+        "referential continuity": "Stable identifiers and typed relations preserve concept, work or event identity across representations and versions.",
+        "semantic coherence": "The page explicitly maintains distinctions between canonical concepts, derived applications or compatible interpretations.",
+        "provenance": "Source traceability, origin, evidence or lineage is a named part of the page's scope."
+      },
+      "profile_status": "canonical-approved",
+      "schema_entity_id": "https://vocab.danielberanek.cz/semantic-change-feed/",
+      "in_language": "en"
+    }
+  ]
+}

@@ -145,13 +145,14 @@ Agentic Entity Resolution Guardrail Planner is a separate published design-time 
 - Canonical references: https://vocab.danielberanek.cz/metadata/references.json
 - Distribution representations: https://vocab.danielberanek.cz/metadata/distributions.json
 - Canonical keyword registry: https://vocab.danielberanek.cz/metadata/keywords.json
+- Page-level metadata manifest: https://vocab.danielberanek.cz/assets/data/resolved-page-metadata.json
 - Application Mappings metadata registry: https://vocab.danielberanek.cz/metadata/application-mappings.json
 - Application Mappings metadata schema: https://vocab.danielberanek.cz/metadata/application-mappings.schema.json
-  - Keyword registry version: 2.8.0
+  - Keyword registry version: 2.9.0
   - Grammar version: 2.0.0
   - Status: canonical-approved
   - Work-specific profile: commit-boundary-paper (31 terms; baseline aligned to Zenodo v1 metadata)
-  - Work-specific profile: mcp-server (51 terms; approved in registry v2.8.0)
+  - Work-specific profile: mcp-server (51 terms; approved in registry v2.9.0)
   - Order: C0 Identity → C1 Environments → C2 Work positioning → C3 Mechanics → C4 Semantic Connectome → C5 Failures/robustness → C6 Machine-readable representation
 - Zenodo projection for future GitHub releases: repository root `/.zenodo.json`
 
