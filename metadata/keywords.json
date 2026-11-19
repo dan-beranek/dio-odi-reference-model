@@ -1512,8 +1512,8 @@
           "registry integrations"
         ],
         "C3_reconstruction_mechanics": [
-          "observer",
           "observation domain",
+          "observer",
           "referential continuity"
         ],
         "C4_k6": "none",
