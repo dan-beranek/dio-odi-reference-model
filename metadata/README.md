@@ -10,7 +10,7 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 - `relations.json` — directed inter-work relation graph. Only relations with `approved_for_zenodo: true` should be projected automatically into Zenodo metadata.
 - `references.json` — canonical bibliographic strings for internal and external references.
 - `distributions.json` — external distribution, identical, variant, and supplementary representations of each canonical work, preserving the exact relation type.
-- `keywords.json` — canonical invariant keyword core, work-specific keyword profiles, and non-export aliases.
+- `keywords.json` — canonical C0–C6 keyword grammar, publication profiles, derived product and public-page surface profiles, and non-export aliases.
 - `application-mappings.json` — canonical descriptive metadata, source paths, and release provenance for derived Application Mappings.
 - `application-mappings.schema.json` — JSON Schema 2020-12 validation contract for Application Mappings metadata.
 - root `.zenodo.json` — Zenodo-specific projection for future GitHub → Zenodo Reference Model releases.
@@ -119,7 +119,8 @@ Rules:
 7. Keyword assignment must not retroactively project concepts into an object that it does not substantively carry. A citation, incidental mention, shared author, or generic word overlap is not sufficient evidence for a keyword.
 8. Every selected C1 term carries an explicit object-level rationale. Derived artefact profiles additionally provide a rationale for every selected non-C0 term. The projection generator validates these rationales and checks that every selected term belongs to its canonical chunk.
 9. `work_profiles` retain the canonical publication profiles. `surface_profiles` define derived public artefacts, including product pages and demonstrations, without misrepresenting them as separate DIO/ODI publications.
-10. Exportable metadata surfaces use the complete resolved sequence for the specific profile whenever the target format supports it. Do not maintain manually curated, shorter parallel lists. The sequence is generated from the profile's chunk selectors and the canonical chunk definitions.
+10. Public frontend pages may use one profile per semantic page object. Localized mirrors of the same page may share a profile when their scope is equivalent; language differences do not create a new conceptual object. Each page generator resolves the profile from the canonical registry and records the exact registry version and profile identifier in its generated metadata.
+11. Exportable metadata surfaces use the complete resolved sequence for the specific profile whenever the target format supports it. Do not maintain manually curated, shorter parallel lists. The sequence is generated from the profile's chunk selectors and the canonical chunk definitions.
 
 The C1 terms remain global to DIO's reconstruction model. Selective export does not narrow the DIO definition; it prevents an individual paper, product, demonstration, or other artefact from being described as covering environments that are not relevant to that object.
 
