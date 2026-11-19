@@ -10,7 +10,7 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 - `relations.json` — directed inter-work relation graph. Only relations with `approved_for_zenodo: true` should be projected automatically into Zenodo metadata.
 - `references.json` — canonical bibliographic strings for internal and external references.
 - `distributions.json` — external distribution, identical, variant, and supplementary representations of each canonical work, preserving the exact relation type.
-- `keywords.json` — canonical C0–C6 keyword grammar, publication profiles, derived product and public-page surface profiles, and non-export aliases.
+- `keywords.json` — canonical C0–C6 keyword grammar, publication profiles, derived product and public-page surface profiles for the Planner, author concept site, Reference Model, DIO to DIO analyses, open-source application, taxonomy map, terminology case study, and MCP landing page, plus non-export aliases.
 - `application-mappings.json` — canonical descriptive metadata, source paths, and release provenance for derived Application Mappings.
 - `application-mappings.schema.json` — JSON Schema 2020-12 validation contract for Application Mappings metadata.
 - root `.zenodo.json` — Zenodo-specific projection for future GitHub → Zenodo Reference Model releases.
