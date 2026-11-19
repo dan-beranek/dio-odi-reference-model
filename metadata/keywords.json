@@ -3022,7 +3022,8 @@
         "urls": [
           "https://dan-beranek.github.io/digital-identity-optimization-for-open-source-projects/"
         ],
-        "locale_policy": "Single English-language slide presentation; the text companion has its own page profile."
+        "locale_policy": "Single English-language slide presentation; the text companion has its own page profile.",
+        "entity_id": "https://dan-beranek.github.io/digital-identity-optimization-for-open-source-projects/#presentation"
       },
       "chunks": {
         "C0_identity_invariant": "all",
@@ -3075,7 +3076,8 @@
         "urls": [
           "https://dan-beranek.github.io/digital-identity-optimization-for-open-source-projects/text-version.html"
         ],
-        "locale_policy": "Single English-language text article; keeps a separate page identity from the slide presentation."
+        "locale_policy": "Single English-language text article; keeps a separate page identity from the slide presentation.",
+        "entity_id": "https://dan-beranek.github.io/digital-identity-optimization-for-open-source-projects/text-version.html#article"
       },
       "chunks": {
         "C0_identity_invariant": "all",
@@ -3128,7 +3130,9 @@
         "urls": [
           "https://dan-beranek.github.io/mapping-digital-optimizations-in-ai-mediated-environments/"
         ],
-        "locale_policy": "Single English-language secondary interpretive presentation."
+        "locale_policy": "Single English-language secondary interpretive presentation.",
+        "entity_type": "WebPage",
+        "entity_url": "https://dan-beranek.github.io/mapping-digital-optimizations-in-ai-mediated-environments/"
       },
       "chunks": {
         "C0_identity_invariant": "all",
@@ -3190,7 +3194,8 @@
         "urls": [
           "https://dan-beranek.github.io/dio-terminology-paradox/"
         ],
-        "locale_policy": "Single English-language slide presentation; the text companion is a separate HTML object with equivalent case-study scope."
+        "locale_policy": "Single English-language slide presentation; the text companion is a separate HTML object with equivalent case-study scope.",
+        "entity_id": "https://dan-beranek.github.io/dio-terminology-paradox/#presentation"
       },
       "chunks": {
         "C0_identity_invariant": "all",
@@ -3237,7 +3242,8 @@
         "urls": [
           "https://dan-beranek.github.io/dio-terminology-paradox/dio-terminology-paradox-text.html"
         ],
-        "locale_policy": "Single English-language text article; semantically related to but separately identified from the slide presentation."
+        "locale_policy": "Single English-language text article; semantically related to but separately identified from the slide presentation.",
+        "entity_id": "https://dan-beranek.github.io/dio-terminology-paradox/#text-version"
       },
       "chunks": {
         "C0_identity_invariant": "all",
@@ -3284,7 +3290,8 @@
         "urls": [
           "https://mcp.danielberanek.cz/"
         ],
-        "locale_policy": "Single English-language human-facing landing page; /mcp, /healthz, and machine-discovery endpoints are not assigned webpage profiles."
+        "locale_policy": "Single English-language human-facing landing page; /mcp, /healthz, and machine-discovery endpoints are not assigned webpage profiles.",
+        "entity_id": "https://mcp.danielberanek.cz/#webpage"
       },
       "chunks": {
         "C0_identity_invariant": "all",
