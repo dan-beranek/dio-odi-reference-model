@@ -260,7 +260,7 @@ def registry_change_date() -> date:
     return date.today()
 
 
-def update_sitemap(source: str, pages: list[dict], manifest_url: str, modified: date) -> str:
+def update_sitemap(source: str, pages: list[dict], modified: date) -> str:
     try:
         root = ET.fromstring(source)
     except ET.ParseError as exc:
