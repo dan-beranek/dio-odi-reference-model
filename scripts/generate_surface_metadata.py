@@ -224,6 +224,29 @@ def upsert_jsonld_keyword_node(html_text: str, page_entity_id: str, keywords: li
     return html_text[:head_end.start()] + tag + "\n" + html_text[head_end.start():]
 
 
+def upsert_manifest_link(html_text: str, profile_id: str) -> str:
+    href = "/" + MANIFEST_PATH
+    link_tags = re.compile(r"<link\\b[^>]*>", re.IGNORECASE)
+    matches = [
+        match for match in link_tags.finditer(html_text)
+        if re.search(r"\\bhref\\s*=\\s*([\\\"'])" + re.escape(href) + r"\\1", match.group(0), re.IGNORECASE)
+    ]
+    tag = (
+        '<link rel="describedby" type="application/json" '
+        f'href="{html.escape(href, quote=True)}" '
+        'title="Resolved page metadata and keyword profiles">'
+    )
+    if len(matches) > 1:
+        raise ValueError(f"{profile_id}: duplicate resolved-metadata link elements")
+    if matches:
+        match = matches[0]
+        return html_text[:match.start()] + tag + html_text[match.end():]
+    head_end = re.search(r"</head\\s*>", html_text, re.IGNORECASE)
+    if not head_end:
+        raise ValueError(f"{profile_id}: closing </head> not found for resolved-metadata link")
+    return html_text[:head_end.start()] + tag + "\\n" + html_text[head_end.start():]
+
+
 def registry_change_date() -> date:
     result = subprocess.run(
         ["git", "log", "-1", "--format=%cI", "--", REGISTRY_PATH],
@@ -255,7 +278,6 @@ def update_sitemap(source: str, pages: list[dict], manifest_url: str, modified: 
             by_url[loc] = node
 
     targets = [(page["url"], page["path"]) for page in pages]
-    targets.append((manifest_url, MANIFEST_PATH))
     for url, _path in targets:
         node = by_url.get(url)
         if node is None:
@@ -359,6 +381,7 @@ def build_outputs() -> dict[str, str]:
         html_text = upsert_meta(html_text, "dio-odi:keyword-profile", profile_id, profile_id)
         html_text = upsert_meta(html_text, "dio-odi:keyword-registry-version", version, profile_id)
         html_text = upsert_jsonld_keyword_node(html_text, page_entity_id, artifact["keywords"], profile_id)
+        html_text = upsert_manifest_link(html_text, profile_id)
         outputs[artifact["path"]] = html_text
         manifest_pages.append({
             **artifact,
@@ -387,7 +410,6 @@ def build_outputs() -> dict[str, str]:
     outputs[SITEMAP_PATH] = update_sitemap(
         read_text(SITEMAP_PATH),
         manifest_pages,
-        SITE_ORIGIN + "/" + MANIFEST_PATH,
         modified,
     )
     return outputs
