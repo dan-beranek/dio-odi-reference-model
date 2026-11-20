@@ -1,8 +1,8 @@
 {
-  "feed_version": "0.1.6",
+  "feed_version": "0.1.7",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-18",
+  "generated_on": "2026-11-20",
   "title": "DIO/ODI Semantic Change Feed",
   "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, public integration-service deployment, external registry integration, and Agentic ER product-publication events through 16 November 2026.",
   "author": {
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 54,
+  "event_count": 55,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -3355,6 +3355,91 @@
       "lineage": {
         "related_to": [
           "SCF-2026-052"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-055",
+      "date": "2026-11-19",
+      "date_basis": "publication_date",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "BARTOC catalogues the DIO/ODI Reference Vocabulary as a terminology resource",
+      "summary": "BARTOC adds a full knowledge-organization-systems catalogue record for DIO/ODI Reference Vocabulary v0.2.2. The record classifies it as Terminology, assigns Data processing & computer science (004) and Special computer methods (006), and records English and 40 concepts. It exposes the canonical ConceptScheme URI and namespace, licence, publisher, homepage, formats, direct Turtle distribution, and machine-readable catalogue exports. This is a catalogue-level discovery integration distinct from the earlier BioRegistry and Semantic Farm prefix/resolver records; it does not change the vocabulary itself.",
+      "scope": [
+        {
+          "component": "BARTOC catalogue record — DIO/ODI Reference Vocabulary",
+          "component_type": "external-kos-catalogue-record",
+          "uri": "https://bartoc.org/en/node/21188",
+          "role": "external-kos-catalogue-entry"
+        },
+        {
+          "component": "DIO/ODI Reference Vocabulary v0.2.2",
+          "component_type": "reference-vocabulary",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+          "role": "catalogued-resource"
+        },
+        {
+          "component": "DIO/ODI namespace",
+          "component_type": "reference-vocabulary-namespace",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#",
+          "role": "catalogued-namespace"
+        }
+      ],
+      "before": "The DIO/ODI Reference Vocabulary v0.2.2 had a canonical SKOS ConceptScheme URI and namespace, a public homepage and machine-readable distributions, and separate prefix/resolver records in BioRegistry (SCF-2026-051) and Semantic Farm (SCF-2026-053), but it did not yet have a catalogue record in BARTOC.",
+      "after": "BARTOC publishes a catalogue record for the DIO/ODI Reference Vocabulary as a Terminology KOS. The record documents its version, 40 concepts, English language, subject classifications, CC BY 4.0 licence, publisher, homepage, source issue tracker, available formats, canonical ConceptScheme URI and namespace, and direct SKOS/Turtle distribution. JSKOS, N-Triples, and RDF/XML exports make the catalogue record itself machine-readable.",
+      "preserved_invariants": [
+        "The canonical namespace, ConceptScheme URI, and all 40 concept URIs remain unchanged.",
+        "The Reference Vocabulary remains a canonical component of the DIO/ODI Reference Model and is not represented as a separately archived work with its own version-specific DOI.",
+        "BARTOC catalogues the resource as Terminology; this does not make it a formal OWL ontology or add OWL axioms.",
+        "The BARTOC record is a KOS catalogue entry, not a namespace-prefix registration or CURIE resolver. It remains distinct from the BioRegistry and Semantic Farm records.",
+        "Catalogue inclusion improves external discovery but is not treated as scholarly peer review, endorsement, adoption, or independent empirical validation."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO/ODI Reference Vocabulary v0.2.2",
+          "BARTOC knowledge-organization-systems catalogue",
+          "External vocabulary discovery and KOS cataloguing"
+        ],
+        "notes": "A catalogue-level discovery integration. It extends external discoverability without registering a new prefix, changing identifier resolution, or modifying canonical vocabulary content."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry"
+        ],
+        "temporal_note": "The public BARTOC record reports creation on 19 November 2026 at 15:47 and modification at 16:24. The event is dated to the record's creation/publication date, not to the editor's reply or the subsequent SCF documentation commit. BARTOC editor Mareike Röhl confirmed on 20 November 2026 that the record had been added and invited corrections; the author reviewed the displayed metadata on that date.",
+        "sources": [
+          {
+            "label": "BARTOC — DIO/ODI Reference Vocabulary catalogue record",
+            "url": "https://bartoc.org/en/node/21188",
+            "role": "external-kos-catalogue-entry"
+          },
+          {
+            "label": "BARTOC — JSKOS record export",
+            "url": "https://bartoc.org/api/data?uri=http%3A%2F%2Fbartoc.org%2Fen%2Fnode%2F21188",
+            "role": "machine-readable-catalogue-record"
+          },
+          {
+            "label": "BARTOC — N-Triples export",
+            "url": "https://bartoc.org/en/node/21188?format=nt&inline=1",
+            "role": "n-triples-catalogue-export"
+          },
+          {
+            "label": "BARTOC — RDF/XML export",
+            "url": "https://bartoc.org/en/node/21188?format=rdfxml",
+            "role": "rdf-xml-catalogue-export"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-051",
+          "SCF-2026-053"
         ],
         "supersedes": [],
         "corrects": []

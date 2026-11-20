@@ -697,6 +697,7 @@ def check_semantic_change_feed() -> dict[str, int | str]:
         "SCF-2026-049": ("deployment_date", "2026-11-11"),
         "SCF-2026-050": ("documentation_date", "2026-11-11"),
         "SCF-2026-051": ("documentation_date", "2026-11-14"),
+        "SCF-2026-055": ("publication_date", "2026-11-19"),
     }
     events_by_id = {event["id"]: event for event in events}
     for event_id, expected in required_reconciliations.items():
@@ -834,6 +835,18 @@ def check_external_reception() -> dict[str, int]:
     require(bioregistry is not None and bioregistry.get("category") == "registry-interoperability"
             and bioregistry.get("target_work_ids") == ["reference-vocabulary"],
             "BioRegistry prefix record must remain in the registry/interoperability category and target the Reference Vocabulary")
+    semantic_farm = next((e for e in entries if e.get("id") == "semantic-farm-dio-odi-prefix"), None)
+    require(semantic_farm is not None and semantic_farm.get("category") == "registry-interoperability"
+            and semantic_farm.get("target_work_ids") == ["reference-vocabulary"],
+            "Semantic Farm record must remain a distinct registry/resolver integration targeting the Reference Vocabulary")
+    bartoc = next((e for e in entries if e.get("id") == "bartoc-dio-odi-vocabulary"), None)
+    require(bartoc is not None and bartoc.get("category") == "registry-interoperability"
+            and bartoc.get("content_kind") == "external-kos-catalogue-record"
+            and bartoc.get("relation_to_work") == "catalogued-as-knowledge-organization-system"
+            and bartoc.get("target_work_ids") == ["reference-vocabulary"],
+            "BARTOC must remain a KOS catalogue record targeting the Reference Vocabulary, not a prefix/resolver registration")
+    require(set(bartoc.get("related_entry_ids", [])) == {"bioregistry-dio-odi-prefix", "semantic-farm-dio-odi-prefix"},
+            "BARTOC must retain explicit links to the distinct BioRegistry and Semantic Farm integrations")
     wren = next((e for e in entries if e.get("id") == "wren-castillo-entity-resolution-heterogeneous-sources"), None)
     require(wren is not None and wren.get("target_work_ids") == ["crisis-entity-resolution"],
             "Wren-Castillo must remain linked to Crisis of Entity Resolution")

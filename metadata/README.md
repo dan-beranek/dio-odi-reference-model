@@ -191,9 +191,9 @@ Files:
 - `external-reception.ttl` — RDF projection for discovery and typed relations.
 - `/external-reception/` — human-readable frontend.
 
-The registry distinguishes independent technical analyses, conceptual uptake, agent-account-authored posts and discussions, adjacent community discussion without a direct paper citation, AI-generated or localized summaries, research-discovery/indexing profiles, registry and interoperability integrations, and limited editorial summaries.
+The registry distinguishes independent technical analyses, conceptual uptake, agent-account-authored posts and discussions, adjacent community discussion without a direct paper citation, AI-generated or localized summaries, research-discovery/indexing profiles, registry and knowledge-organization catalogue integrations, and limited editorial summaries.
 
-Each entry is linked to the specific research work or canonical reference artifact it concerns. The BioRegistry record targets the Reference Vocabulary itself; it does not imply a separate Vocabulary DOI or an independent scholarly assessment. The Wren-Castillo article is linked to *The Crisis of Entity Resolution in Heterogeneous AI Environments*, not to *Constraining the Commit Boundary*.
+Each entry is linked to the specific research work or canonical reference artifact it concerns. The BioRegistry and Semantic Farm records document distinct prefix/resolver integrations for the Reference Vocabulary; the BARTOC record catalogues it as a Terminology knowledge-organization system (KOS), without adding a namespace prefix or implying a separate Vocabulary DOI. None of these catalogue or registry entries is treated as an independent scholarly assessment. The Wren-Castillo article is linked to *The Crisis of Entity Resolution in Heterogeneous AI Environments*, not to *Constraining the Commit Boundary*.
 
 CiTO `cito:cites` assertions are emitted only where an explicit citation or source link to the relevant work is documented. Topical relationships or discovery profiles are not automatically treated as citations. The RDF projection uses `rdfs:seeAlso` for navigational links from the Commit-Boundary Policy-as-Code mapping.
 

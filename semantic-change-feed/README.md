@@ -1,6 +1,6 @@
 # DIO/ODI Semantic Change Feed
 
-**Feed version:** 0.1.6  
+**Feed version:** 0.1.7  
 **Schema version:** 0.2.1  
 **Status:** Live append-only maintenance after archived Reference Model v0.9.0; no new Reference Model release  
 **Maintainer:** Daniel Beránek  
@@ -14,15 +14,15 @@ It is not a Git commit log. Repository diffs are not authoritative evidence of c
 
 ## Coverage
 
-Version 0.1.6 is the current live feed and covers:
+Version 0.1.7 is the current live feed and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
-- Subsequent documented vocabulary, mapping, publication, provenance, and deployment milestones through **18 November 2026**, including the dedicated Agentic Entity Resolution Guardrail Planner product website and its DIO/ODI methodology page deployed on GitHub Pages on **18 November 2026** (SCF-2026-054), plus the BioRegistry `dio-odi` prefix integration dated **14 November 2026**, the separate Semantic Farm `dio-odi` registry and resolver integration dated **16 November 2026**, and two previously omitted archive milestones reconciled into the live chronology on **10 November 2026**.
+- Subsequent documented vocabulary, mapping, publication, provenance, registry, and deployment milestones through **19 November 2026**, including the Agentic Entity Resolution Guardrail Planner product website and DIO/ODI methodology page deployed on **18 November 2026** (SCF-2026-054), and the BARTOC catalogue record for the DIO/ODI Reference Vocabulary created on **19 November 2026** (SCF-2026-055), alongside the BioRegistry and Semantic Farm prefix/resolver integrations and the two archive milestones reconciled into the live chronology on **10 November 2026**.
 - Initial publication of the public **DIO to DIO** portfolio with ten author-led, model-specific reconstruction analyses, followed by a separate event recording the addition of the eleventh report (Claude Sonnet 5.5) on 7 November 2026.
 - Compound Changelog bullets split into separate records where they describe distinct conceptual, publication, distribution, mapping, or archival events.
 - The live Reference Vocabulary v0.2.2 metadata-only prefix-alignment update on 9 November 2026.
 - The canonical SPARQL query endpoint at `examples/queries.rq`, publicly deployed on 9 November 2026 with `application/sparql-query`; the former `.sparql` path remains a legacy compatibility copy.
-- The public read-only DIO/ODI MCP service deployment and 31/31 production smoke validation on 11 November 2026, recorded as SCF-2026-049; the v0.1.1 Zenodo archival publication and its version/Concept DOIs, recorded as SCF-2026-050; BioRegistry's external registration of the DIO/ODI Reference Vocabulary under prefix `dio-odi`, recorded as SCF-2026-051 on 14 November 2026; publication of the Agentic Entity Resolution Guardrail Planner as a design-time Agent Skill on Agensi, recorded as SCF-2026-052 on 16 November 2026; the separate Semantic Farm registry and compact-identifier resolver integration for `dio-odi`, recorded as SCF-2026-053 on 16 November 2026; and deployment of the companion Agentic ER product website and standalone DIO/ODI methodology page on 18 November 2026, recorded as SCF-2026-054.
+- The public read-only DIO/ODI MCP service deployment and 31/31 production smoke validation on 11 November 2026, recorded as SCF-2026-049; the v0.1.1 Zenodo archival publication and its version/Concept DOIs, recorded as SCF-2026-050; BioRegistry's external registration of the DIO/ODI Reference Vocabulary under prefix `dio-odi`, recorded as SCF-2026-051 on 14 November 2026; publication of the Agentic Entity Resolution Guardrail Planner as a design-time Agent Skill on Agensi, recorded as SCF-2026-052 on 16 November 2026; the separate Semantic Farm registry and compact-identifier resolver integration for `dio-odi`, recorded as SCF-2026-053 on 16 November 2026; deployment of the companion Agentic ER product website and standalone DIO/ODI methodology page on 18 November 2026, recorded as SCF-2026-054; and BARTOC's catalogue listing of the DIO/ODI Reference Vocabulary as Terminology, recorded as SCF-2026-055 on 19 November 2026.
 - Explicit chronology entries for archived Reference Model v0.8.0 and v0.9.0. These entries were added to the live feed on 10 November 2026 while preserving the releases' actual publication dates and immutable component snapshots.
 
 This is complete coverage of the dated Hub Changelog entries, not a claim that every repository commit or every undated intermediate artifact has its own event.
@@ -47,7 +47,7 @@ The SCF does not replace or redefine any of these sources.
 
 The human-readable SCF frontend is generated from `events.json` by `scripts/generate_projections.py`. Event cards, class/component filter options, and chronology dates are projections of the canonical event records; do not maintain a second manual event inventory in HTML. The `event_count` field in `events.json` is recalculated from the length of `events` during generation. When adding records, edit the event array only; do not maintain the count manually.
 
-The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0 through 9 November 2026. The live feed now advances independently to v0.1.6 with schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
+The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0 through 9 November 2026. The live feed now advances independently to v0.1.7 with schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
 
 The DIO to DIO portfolio is included as a documented research-and-distribution milestone, not as an authority for historical claims. Its model-specific analyses retain different observation boundaries and interpretations; they may guide discovery of potentially relevant evidence, but factual claims entering the SCF must be checked against primary publications, release records, registries, or archives.
 
