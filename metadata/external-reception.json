@@ -1,9 +1,9 @@
 {
-  "registry_version": "0.1.3",
+  "registry_version": "0.1.4",
   "schema_version": "0.1.1",
   "uri": "https://vocab.danielberanek.cz/metadata/external-reception.json",
   "frontend_uri": "https://vocab.danielberanek.cz/external-reception/",
-  "generated_on": "2026-11-16",
+  "generated_on": "2026-11-20",
   "title": "DIO/ODI External Reception Registry",
   "description": "A manually curated register of external technical analyses, conceptual uptake, agent-authored discussions, AI-mediated summaries, research-discovery records, registry and interoperability integrations, and secondary representations linked to specific DIO/ODI research works and canonical reference artifacts. It documents external reception without modifying the canonical Reference Vocabulary.",
   "maintainer": {
@@ -91,7 +91,7 @@
     {
       "id": "registry-interoperability",
       "label": "Registry and interoperability integrations",
-      "description": "External registries and interoperability catalogues that expose DIO/ODI reference artifacts through stable prefixes or identifiers; registration is not treated as scholarly review or endorsement."
+      "description": "External registries, knowledge-organization catalogues, and interoperability services that expose or describe DIO/ODI reference artifacts through stable prefixes, identifiers, or catalogue records; inclusion is not treated as scholarly review or endorsement."
     }
   ],
   "entries": [
@@ -948,7 +948,8 @@
         }
       ],
       "related_entry_ids": [
-        "semantic-farm-dio-odi-prefix"
+        "semantic-farm-dio-odi-prefix",
+        "bartoc-dio-odi-vocabulary"
       ]
     },
     {
@@ -988,7 +989,8 @@
       ],
       "notes": "Semantic Farm describes its platform as a domain-agnostic registry, metaregistry, and compact identifier resolver. The DIO/ODI record identifies Charles Tapley Hoyt as its reviewer; this is a registry-curation role, not scholarly peer review.",
       "related_entry_ids": [
-        "bioregistry-dio-odi-prefix"
+        "bioregistry-dio-odi-prefix",
+        "bartoc-dio-odi-vocabulary"
       ],
       "provenance": {
         "basis": "The live Semantic Farm DIO/ODI record, the platform's description of its registry and resolver model, and the record's structured-data and provider sections were reviewed.",
@@ -1005,6 +1007,75 @@
           "title": "Semantic Farm — platform summary and registry model",
           "url": "https://semantic.farm/summary",
           "role": "domain-agnostic-registry-metaregistry-and-resolver-context"
+        }
+      ]
+    },
+    {
+      "id": "bartoc-dio-odi-vocabulary",
+      "title": "DIO/ODI Reference Vocabulary — BARTOC catalogue record",
+      "url": "https://bartoc.org/en/node/21188",
+      "platform": "BARTOC (Basic Register of Thesauri, Ontologies & Classifications)",
+      "category": "registry-interoperability",
+      "content_kind": "external-kos-catalogue-record",
+      "target_work_ids": [
+        "reference-vocabulary"
+      ],
+      "relation_to_work": "catalogued-as-knowledge-organization-system",
+      "citation_status": "catalogue-entry; no scholarly citation asserted",
+      "content_origin": "externally-maintained-catalogue",
+      "authors": [
+        {
+          "name": "BARTOC",
+          "kind": "catalogue"
+        }
+      ],
+      "review_status": "reviewed",
+      "summary": "BARTOC catalogues DIO/ODI Reference Vocabulary v0.2.2 as a Terminology KOS, assigning the subject classifications Data processing & computer science (004) and Special computer methods (006), English language, and 40 concepts. It exposes the canonical ConceptScheme URI and namespace separately, lists the CC BY 4.0 licence, publisher, homepage, issue tracker, and HTML, JSON-LD, Online, RDF, SKOS, and Turtle formats, and provides a direct Turtle distribution plus JSKOS, N-Triples, and RDF/XML catalogue-record exports. This is a KOS-catalogue integration, distinct from namespace-prefix registration or CURIE resolution.",
+      "implementation_status": "not-claimed",
+      "cited_sources": [],
+      "publication": {
+        "date": "2026-11-19",
+        "date_basis": "registry-record-created-date",
+        "language": "en"
+      },
+      "key_points": [
+        "Catalogues the resource as Terminology and assigns the subject classifications Data processing & computer science (004) and Special computer methods (006).",
+        "Records version 0.2.2, 40 concepts, English language, and existence from 2026.",
+        "Identifies the canonical ConceptScheme URI https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary separately from the namespace https://vocab.danielberanek.cz/dio-odi/#.",
+        "Lists the CC BY 4.0 licence, Daniel Beránek as publisher, the vocabulary homepage, and the Reference Model GitHub issue tracker.",
+        "Lists HTML, JSON-LD, Online, RDF, SKOS, and Turtle formats and links directly to the canonical Turtle distribution.",
+        "Exposes the BARTOC catalogue record as JSKOS, N-Triples, and RDF/XML."
+      ],
+      "notes": "BARTOC is a knowledge-organization-systems catalogue. This entry describes the DIO/ODI Reference Vocabulary as a KOS; it does not register a new dio-odi prefix, provide a new CURIE resolver, or classify the resource as a formal OWL ontology. The Reference Vocabulary remains a component of the DIO/ODI Reference Model and has no separate version-specific Zenodo DOI. Catalogue inclusion is not treated as scholarly peer review, endorsement, or independent validation.",
+      "related_entry_ids": [
+        "bioregistry-dio-odi-prefix",
+        "semantic-farm-dio-odi-prefix"
+      ],
+      "provenance": {
+        "basis": "The BARTOC entry fields, visible creation and modification timestamps, and JSKOS/RDF export links were reviewed from the public record content supplied by the author. BARTOC editor Mareike Röhl confirmed by email on 20 November 2026 that the entry had been added and invited corrections.",
+        "review_date": "2026-11-20",
+        "reviewed_by": "author-assisted-curation"
+      },
+      "evidence_sources": [
+        {
+          "title": "BARTOC — DIO/ODI Reference Vocabulary record",
+          "url": "https://bartoc.org/en/node/21188",
+          "role": "external-kos-catalogue-entry"
+        },
+        {
+          "title": "BARTOC — JSKOS record export",
+          "url": "https://bartoc.org/api/data?uri=http%3A%2F%2Fbartoc.org%2Fen%2Fnode%2F21188",
+          "role": "machine-readable-catalogue-record"
+        },
+        {
+          "title": "BARTOC — N-Triples export",
+          "url": "https://bartoc.org/en/node/21188?format=nt&inline=1",
+          "role": "n-triples-catalogue-export"
+        },
+        {
+          "title": "BARTOC — RDF/XML export",
+          "url": "https://bartoc.org/en/node/21188?format=rdfxml",
+          "role": "rdf-xml-catalogue-export"
         }
       ]
     }
