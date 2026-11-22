@@ -137,17 +137,35 @@ def project_ai_catalog(source: dict) -> dict:
 
 
 def validate_ard(manifest: dict) -> None:
-    schema = read_json(ARD_SCHEMA)
-    Draft202012Validator.check_schema(schema)
-    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    # The pinned upstream file is an ARD-entry schema whose root $ref targets
+    # ArdEntry. It also defines ArdManifest in $defs; validate the published
+    # top-level document against that definition, then validate each entry
+    # against the schema's declared root contract.
+    entry_schema = read_json(ARD_SCHEMA)
+    manifest_schema = {
+        "$schema": entry_schema["$schema"],
+        "$ref": "#/$defs/ArdManifest",
+        "$defs": entry_schema["$defs"],
+    }
+    Draft202012Validator.check_schema(manifest_schema)
+    validator = Draft202012Validator(manifest_schema, format_checker=FormatChecker())
     errors = sorted(validator.iter_errors(manifest), key=lambda error: list(error.path))
     if errors:
         summary = "; ".join(
             f"{'/'.join(map(str, error.path)) or '<root>'}: {error.message}"
             for error in errors
         )
-        raise ValueError(f"ARD v0.91 schema validation failed: {summary}")
+        raise ValueError(f"ARD v0.91 manifest schema validation failed: {summary}")
+
+    entry_validator = Draft202012Validator(entry_schema, format_checker=FormatChecker())
     for index, entry in enumerate(manifest["entries"]):
+        entry_errors = sorted(entry_validator.iter_errors(entry), key=lambda error: list(error.path))
+        if entry_errors:
+            summary = "; ".join(
+                f"{'/'.join(map(str, error.path)) or '<entry>'}: {error.message}"
+                for error in entry_errors
+            )
+            raise ValueError(f"ARD entry {index} schema validation failed: {summary}")
         query_count = len(entry.get("representativeQueries", []))
         if not 2 <= query_count <= 5:
             raise ValueError(f"ARD entry {index} must include 2–5 representativeQueries.")
