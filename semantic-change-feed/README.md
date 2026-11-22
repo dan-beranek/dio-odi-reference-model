@@ -12,6 +12,12 @@ The Semantic Change Feed (SCF) is a curated, append-only record of documented ev
 
 It is not a Git commit log. Repository diffs are not authoritative evidence of conceptual intent, and dates in the feed must not be read as source-control timestamps unless explicitly stated.
 
+## Methodological and reflexive role
+
+DIO/ODI emerged through an iterative process of ethnographic observation, structured documentation, pattern analysis, interpretation, and practical reapplication. Situated experiences were recorded and compared; recurring patterns were interpreted; and possible optimization approaches were derived and brought back into practice, generating further observations.
+
+The Semantic Change Feed is a structured, reflexive artefact within this cycle. It documents evidenced changes across DIO/ODI and its public infrastructure, preserving their context, scope, provenance, and lineage for longitudinal analysis. Read across events, the feed can help reveal recurring optimization strategies and inform further applications. It does not replace the underlying observational corpus, and documented changes alone do not establish the effectiveness of an intervention.
+
 ## Coverage
 
 Version 0.1.7 is the current live feed and covers:
