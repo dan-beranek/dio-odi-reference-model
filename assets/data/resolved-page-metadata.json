@@ -211,7 +211,7 @@
         "stable concept URIs": "Stable concept URIs are explicitly presented as identifiers for canonical vocabulary concepts."
       },
       "profile_status": "canonical-approved",
-      "schema_entity_id": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+      "schema_entity_id": "https://vocab.danielberanek.cz/dio-odi/#webpage",
       "in_language": "en"
     },
     {
