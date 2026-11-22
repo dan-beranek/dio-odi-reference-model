@@ -1,5 +1,5 @@
 {
-  "feed_version": "0.1.9",
+  "feed_version": "0.1.10",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
   "generated_on": "2026-11-22",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 57,
+  "event_count": 58,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -3702,6 +3702,87 @@
         "related_to": [
           "SCF-2026-056",
           "SCF-2026-049"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-058",
+      "date": "2026-11-22",
+      "date_basis": "first_archival_inclusion",
+      "event_class": "Distribution",
+      "change_type": "documented",
+      "title": "The engineering deep dive on entity matching and merge authorization is recorded as a DIO/ODI application-layer publication",
+      "summary": "The DIO/ODI publication metadata records “The Match Is Easy, the Merge Is Not” as a substantive engineering deep dive on the distinction between entity matching and authorization to merge. Hashnode is the canonical publication and DEV.to carries the same article as a secondary publication with its canonical URL pointing to Hashnode. The work supports technical communication around the Agentic Entity Resolution Guardrail Planner, while remaining a non-normative engineering publication rather than a change to the canonical DIO/ODI vocabulary, ontology, Reference Model, or Planner implementation.",
+      "scope": [
+        {
+          "component": "The Match Is Easy, the Merge Is Not",
+          "component_type": "engineering-deep-dive",
+          "uri": "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not",
+          "role": "canonical-publication"
+        },
+        {
+          "component": "The Match Is Easy, the Merge Is Not — DEV.to representation",
+          "component_type": "secondary-web-publication",
+          "uri": "https://dev.to/danielberanek/the-match-is-easy-the-merge-is-not-khb",
+          "role": "secondary-publication-of-the-same-work"
+        },
+        {
+          "component": "Agentic Entity Resolution Guardrail Planner",
+          "component_type": "design-time-agent-skill",
+          "uri": "https://apps.danielberanek.cz/agentic-entity-resolution-guardrail-planner/",
+          "role": "application-context-and-product-discovery"
+        }
+      ],
+      "before": "The engineering deep dive and its Hashnode and DEV.to publication representations were already documented in the publication and distribution registries, but the Semantic Change Feed did not yet contain an explicit event for this external application-layer publication.",
+      "after": "The feed records the engineering deep dive as a non-normative public application-layer publication. Hashnode remains canonical; DEV.to is an identical secondary publication whose canonical URL points to Hashnode. The event records first inclusion in the feed on 22 November 2026 and does not assert that date as the article's original publication date.",
+      "preserved_invariants": [
+        "The article is an engineering deep dive and a separate work from the LinkedIn architectural overview; the two works are not copies, versions, or distributions of one another.",
+        "Hashnode remains the canonical publication for this work; DEV.to is a secondary publication of the same text and declares the Hashnode URL as its canonical URL.",
+        "This is a non-normative engineering publication supporting communication and discovery of the Agentic Entity Resolution Guardrail Planner; it does not modify canonical DIO/ODI concepts, the SKOS Reference Vocabulary, or the Reference Model.",
+        "Publication of the article does not establish runtime authorization, production mutation execution, implementation completeness, or empirical effectiveness of the Planner.",
+        "The LinkedIn architectural overview is intentionally not included in this event."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "The Match Is Easy, the Merge Is Not — engineering deep dive",
+          "Hashnode canonical publication",
+          "DEV.to secondary publication",
+          "Agentic Entity Resolution Guardrail Planner application communication"
+        ],
+        "notes": "A source-linked publication/distribution record for substantive engineering explanation. It adds no normative vocabulary or model assertions and is not a Planner release or implementation milestone."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "22 November 2026 is the date of first inclusion in the Semantic Change Feed, not the article's original publication date. The canonical Hashnode URL, identical DEV.to representation, and engineering-deep-dive content role are recorded in the author-maintained works and distributions registries and were confirmed by the author.",
+        "sources": [
+          {
+            "label": "Hashnode — The Match Is Easy, the Merge Is Not",
+            "url": "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not",
+            "role": "canonical-engineering-deep-dive"
+          },
+          {
+            "label": "DEV.to — The Match Is Easy, the Merge Is Not",
+            "url": "https://dev.to/danielberanek/the-match-is-easy-the-merge-is-not-khb",
+            "role": "secondary-publication-with-hashnode-canonical"
+          },
+          {
+            "label": "Agentic Entity Resolution Guardrail Planner",
+            "url": "https://apps.danielberanek.cz/agentic-entity-resolution-guardrail-planner/",
+            "role": "application-context"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-054"
         ],
         "supersedes": [],
         "corrects": []
