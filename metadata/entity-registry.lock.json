@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "registry_repository": "dan-beranek/dio-odi-entity-registry",
+  "registry_version": "0.1.0",
+  "registry_commit": "857eb432da4c786a1de947db7750a5ed0c8ed80e",
+  "source_path": "entities.json",
+  "snapshot_path": "metadata/entity-registry.snapshot.json",
+  "consumed_entities": [
+    "person-daniel-beranek",
+    "project-dio-odi-reference-model",
+    "vocabulary-dio-odi-reference"
+  ],
+  "update_policy": "Upgrade only through a reviewed commit that updates the pinned commit, snapshot and all derived page-level identity projections together."
+}
