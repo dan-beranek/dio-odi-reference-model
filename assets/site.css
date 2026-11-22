@@ -810,3 +810,42 @@ iframe {
 .reception-status{color:var(--muted);font-size:.82rem;border:1px solid var(--border-strong);border-radius:999px;padding:.1rem .5rem}
 .reception-meta{color:var(--muted);font-size:.86rem}
 @media(max-width:760px){.reception-grid{grid-template-columns:1fr}.reception-card{padding:.9rem}}
+
+
+/* SCF methodological note: a reflexive explanation beneath the hero. */
+.scf-method-note {
+  margin: 1rem 0 2.2rem;
+  padding: 1.15rem clamp(1rem, 2.2vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border-strong);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.scf-method-note-kicker {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.scf-method-note h2 {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  text-align: left;
+}
+
+.scf-method-note p:not(.scf-method-note-kicker) {
+  max-width: 92ch;
+  margin: 0.55rem 0 0;
+  color: var(--text);
+}
+
+.scf-method-note p:last-child {
+  margin-bottom: 0;
+}
