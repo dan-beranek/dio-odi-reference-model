@@ -42,7 +42,29 @@ SCHEMA = Namespace("https://schema.org/")
 CITO = Namespace("http://purl.org/spar/cito/")
 RECEPTION_URI = "https://vocab.danielberanek.cz/external-reception/"
 POLICY_MAPPING_URI = "https://vocab.danielberanek.cz/mappings/commit-boundary-policy/"
-PERSON_URI = "https://danielberanek.cz/#person"
+ENTITY_LOCK = json.loads((ROOT / "metadata/entity-registry.lock.json").read_text(encoding="utf-8"))
+ENTITY_REGISTRY = json.loads((ROOT / ENTITY_LOCK["snapshot_path"]).read_text(encoding="utf-8"))
+if ENTITY_REGISTRY.get("status") != "canonical-approved" or ENTITY_REGISTRY.get("registry_version") != ENTITY_LOCK.get("registry_version"):
+    raise ValueError("Pinned Entity Registry snapshot is missing or inconsistent with its lock.")
+PERSON_ENTITY = next(
+    (item for item in ENTITY_REGISTRY.get("entities", [])
+     if item.get("key") == "person-daniel-beranek" and item.get("status") == "active"),
+    None,
+)
+if PERSON_ENTITY is None:
+    raise ValueError("Pinned Entity Registry does not contain an active canonical Person.")
+PERSON_URI = PERSON_ENTITY["@id"]
+PERSON_PROJECTION_PATHS = (
+    "index.html",
+    "dio-odi/index.html",
+    "mappings/index.html",
+    "mappings/rag-pipeline/index.html",
+    "mappings/hem-dio/index.html",
+    "mappings/commit-boundary-policy/index.html",
+    "mappings/agentic-er-architecture/index.html",
+    "metadata/index.html",
+    "semantic-change-feed/index.html",
+)
 LICENSE_URI = "https://creativecommons.org/licenses/by/4.0/"
 
 MONTHS = (
@@ -75,6 +97,52 @@ def load_json(relative: str):
 
 def dump_json(document) -> str:
     return json.dumps(document, ensure_ascii=False, indent=2) + "\n"
+
+
+def project_person_identity(source: str, relative_path: str) -> str:
+    """Replace duplicated full Person descriptions with the pinned canonical identity."""
+    pattern = re.compile(r'(<script type="application/ld\+json">)([\s\S]*?)(</script>)')
+    matches = list(pattern.finditer(source))
+    if not matches:
+        return source
+    replacements = []
+    found = 0
+
+    def walk(value) -> None:
+        nonlocal found
+        if isinstance(value, dict):
+            node_type = value.get("@type")
+            person_type = node_type == "Person" or (
+                isinstance(node_type, list) and "Person" in node_type
+            )
+            if person_type and value.get("@id") == PERSON_URI:
+                value["@type"] = "Person"
+                value["@id"] = PERSON_ENTITY["@id"]
+                value["name"] = PERSON_ENTITY["name"]
+                value["url"] = PERSON_ENTITY["url"]
+                value["sameAs"] = PERSON_ENTITY.get("sameAs", [])
+                found += 1
+            for child in value.values():
+                walk(child)
+        elif isinstance(value, list):
+            for child in value:
+                walk(child)
+
+    for match in matches:
+        try:
+            document = json.loads(match.group(2))
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Invalid JSON-LD in {relative_path}: {exc}") from exc
+        walk(document)
+        rendered = json.dumps(document, ensure_ascii=False, indent=2)
+        replacements.append((match.start(2), match.end(2), rendered))
+
+    for start, end, rendered in reversed(replacements):
+        source = source[:start] + rendered + source[end:]
+
+    if relative_path in {"index.html", "dio-odi/index.html"} and found == 0:
+        raise ValueError(f"Expected a full canonical Person node in {relative_path}")
+    return source
 
 
 def esc(value) -> str:
@@ -1460,6 +1528,11 @@ def build_outputs() -> dict[str, str]:
         "SCF README live and archived version summary",
     )
     outputs[SCF_README] = scf_readme
+
+    # Normalize repeated full Person nodes from the pinned Entity Registry.
+    for relative_path in PERSON_PROJECTION_PATHS:
+        current = outputs.get(relative_path, read_text(relative_path))
+        outputs[relative_path] = project_person_identity(current, relative_path)
 
     changed_paths = {
         path for path, content in outputs.items()
