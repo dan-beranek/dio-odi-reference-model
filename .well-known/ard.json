@@ -7,7 +7,7 @@
       "type": "application/mcp-server-card+json",
       "url": "https://mcp.danielberanek.cz/mcp/server-card",
       "description": "Public, stateless, read-only MCP Streamable HTTP service exposing the DIO/ODI Reference Model, canonical SKOS vocabulary, and selected derived Agentic ER and Policy-as-Code reference mappings. It does not inspect integrating applications, validate evidence, authorize mutations, or execute production writes.",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "tags": [
         "DIO/ODI",
         "MCP",
