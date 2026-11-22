@@ -3,3 +3,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://vocab.danielberanek.cz/sitemap.xml
+Agentmap: https://vocab.danielberanek.cz/.well-known/ard.json

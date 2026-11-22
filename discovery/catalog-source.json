@@ -1,0 +1,83 @@
+{
+  "source_version": "0.1.0",
+  "publisher": {
+    "displayName": "Daniel Beránek",
+    "identifier": "danielberanek.cz",
+    "documentationUrl": "https://danielberanek.cz/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:danielberanek.cz:mcp:dio-odi-reference",
+      "displayName": "DIO/ODI MCP Reference Service",
+      "type": "application/mcp-server-card+json",
+      "url": "https://mcp.danielberanek.cz/mcp/server-card",
+      "description": "Public, stateless, read-only MCP Streamable HTTP service exposing the DIO/ODI Reference Model, canonical SKOS vocabulary, and selected derived Agentic ER and Policy-as-Code reference mappings. It does not inspect integrating applications, validate evidence, authorize mutations, or execute production writes.",
+      "version": "0.1.4",
+      "tags": [
+        "DIO/ODI",
+        "MCP",
+        "reference model",
+        "SKOS",
+        "Agentic Entity Resolution",
+        "read-only"
+      ],
+      "capabilities": [
+        "search_concepts",
+        "get_concept",
+        "get_relations",
+        "get_mutation_guardrail_profile",
+        "get_evidence_promotion_contract",
+        "get_commit_boundary_contract",
+        "get_reference_status"
+      ],
+      "representativeQueries": [
+        "Find a canonical DIO/ODI concept and its stable identifier.",
+        "Retrieve the broader, narrower, and related SKOS concepts for a DIO/ODI term.",
+        "Find the DIO/ODI diagnostic profile for a proposed entity merge, split, or unmerge.",
+        "Retrieve the evidence-promotion and commit-boundary reference requirements for an identity-changing operation.",
+        "Check the current Reference Model, vocabulary, and application-mapping versions exposed by DIO/ODI MCP."
+      ]
+    },
+    {
+      "identifier": "urn:air:danielberanek.cz:dataset:dio-odi-reference-vocabulary",
+      "displayName": "DIO/ODI Reference Vocabulary",
+      "type": "text/turtle",
+      "url": "https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl",
+      "description": "The canonical DIO/ODI SKOS Reference Vocabulary, providing stable concept URIs, preferred labels, definitions, scope notes, and semantic relations. This is a SKOS vocabulary and is not presented as a completed OWL ontology.",
+      "version": "0.2.2",
+      "tags": [
+        "DIO/ODI",
+        "SKOS",
+        "RDF",
+        "reference vocabulary",
+        "concept identifiers",
+        "semantic relations"
+      ],
+      "representativeQueries": [
+        "Find the canonical SKOS definition and URI for a DIO/ODI concept.",
+        "Retrieve the broader, narrower, and related concept relationships for a DIO/ODI term.",
+        "Download the canonical DIO/ODI Reference Vocabulary in Turtle format."
+      ]
+    },
+    {
+      "identifier": "urn:air:danielberanek.cz:feed:dio-odi-semantic-change-feed",
+      "displayName": "DIO/ODI Semantic Change Feed",
+      "type": "application/json",
+      "url": "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
+      "description": "An append-only, source-linked event feed documenting evidenced changes across the DIO/ODI conceptual system and its public infrastructure, including vocabulary, mappings, provenance, publications, archives, distributions, and deployments. It distinguishes event dates, scope, impact, preserved invariants, evidence, and lineage; it is not a Git commit log or proof of intervention effectiveness.",
+      "tags": [
+        "DIO/ODI",
+        "Semantic Change Feed",
+        "event history",
+        "provenance",
+        "distribution",
+        "append-only"
+      ],
+      "representativeQueries": [
+        "Trace the documented publication and distribution history of DIO/ODI reference artifacts.",
+        "Find the evidence, scope, and preserved invariants associated with a DIO/ODI infrastructure change.",
+        "Identify recurring optimization and distribution patterns across documented DIO/ODI changes."
+      ]
+    }
+  ]
+}

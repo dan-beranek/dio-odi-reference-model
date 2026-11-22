@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "cz.danielberanek/dio-odi-mcp",
+  "title": "DIO/ODI MCP Reference Service",
+  "description": "Read-only DIO/ODI MCP reference service for canonical vocabulary and Agentic ER mappings.",
+  "version": "0.1.4",
+  "websiteUrl": "https://mcp.danielberanek.cz/",
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/dan-beranek/dio-odi-mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.danielberanek.cz/mcp",
+      "supportedProtocolVersions": [
+        "2026-07-28",
+        "2025-11-25"
+      ]
+    }
+  ]
+}
