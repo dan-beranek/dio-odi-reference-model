@@ -1,5 +1,5 @@
 {
-  "feed_version": "0.1.8",
+  "feed_version": "0.1.9",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
   "generated_on": "2026-11-22",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 56,
+  "event_count": 57,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -3584,6 +3584,124 @@
           "SCF-2026-053",
           "SCF-2026-054",
           "SCF-2026-055"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-057",
+      "date": "2026-11-22",
+      "date_basis": "deployment_date",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "DIO/ODI MCP publishes an RFC 9727 API Catalog",
+      "summary": "The public DIO/ODI MCP service publishes an RFC 9727 API Catalog at /.well-known/api-catalog. The Linkset identifies the Streamable HTTP MCP endpoint and connects it to a versioned MCP-specific interface contract, human-readable service and tool documentation, the experimental MCP Server Card, and a health endpoint. The catalog is advertised by the service homepage through rel=\"api-catalog\" and an HTTP Link response header, and is referenced in llms.txt. Production verification confirms GET and HEAD access, the application/linkset+json media type with the RFC 9727 profile, and public reachability of the linked contract and Server Card. This adds service-level API discovery alongside the existing domain-level ARD and AI Catalog manifests without changing the MCP protocol, authorization model, or read-only service boundary.",
+      "scope": [
+        {
+          "component": "DIO/ODI MCP RFC 9727 API Catalog",
+          "component_type": "api-catalog-linkset",
+          "uri": "https://mcp.danielberanek.cz/.well-known/api-catalog",
+          "role": "service-level-api-discovery"
+        },
+        {
+          "component": "DIO/ODI MCP Streamable HTTP endpoint",
+          "component_type": "mcp-service-endpoint",
+          "uri": "https://mcp.danielberanek.cz/mcp",
+          "role": "catalogued-api-endpoint"
+        },
+        {
+          "component": "DIO/ODI MCP interface contract v0.1.1",
+          "component_type": "versioned-mcp-interface-contract",
+          "uri": "https://mcp.danielberanek.cz/schemas/mcp-contract-v0.1.1.json",
+          "role": "machine-readable-service-description"
+        },
+        {
+          "component": "DIO/ODI MCP Server Card",
+          "component_type": "mcp-server-card",
+          "uri": "https://mcp.danielberanek.cz/mcp/server-card",
+          "role": "protocol-specific-service-metadata"
+        },
+        {
+          "component": "DIO/ODI MCP health endpoint",
+          "component_type": "service-health-endpoint",
+          "uri": "https://mcp.danielberanek.cz/healthz",
+          "role": "catalogued-service-status-resource"
+        }
+      ],
+      "before": "The DIO/ODI MCP service exposed its Streamable HTTP endpoint, protocol-specific Server Card, human-readable service documentation, machine-readable MCP contract in its source repository, and health endpoint. The domain-level ARD v0.91 and Common AI Catalog v0.9 manifests already made the MCP service discoverable, but there was no service-local RFC 9727 Linkset connecting the API endpoint to its interface description, documentation, metadata, and status resources.",
+      "after": "The MCP Worker serves /.well-known/api-catalog as an RFC 9727 Linkset using application/linkset+json with the RFC 9727 profile. Its anchor is https://mcp.danielberanek.cz/mcp; service-desc points to the versioned MCP-specific interface contract at /schemas/mcp-contract-v0.1.1.json, service-doc points to the service/tool documentation, service-meta points to /mcp/server-card, and status points to /healthz. The homepage advertises the catalog in HTML with rel=\"api-catalog\" and in the HTTP Link response header; the service footer and llms.txt also reference it. The deployment and production smoke suite complete successfully.",
+      "preserved_invariants": [
+        "The DIO/ODI MCP service remains public, stateless, read-only, and unauthenticated; API Catalog publication does not introduce OAuth, authentication, authorization, or a mutation capability.",
+        "The machine-readable contract describes the Model Context Protocol interface, including tools, resources, prompts, and protocol boundaries. It is not an OpenAPI specification and is not represented as one.",
+        "The API Catalog is a service-level description of the MCP endpoint; it does not replace or redefine the domain-level ARD v0.91 or Common AI Catalog v0.9 manifests.",
+        "The experimental MCP Server Card remains a separate protocol-specific connection-metadata document and is not treated as an accepted or official MCP extension.",
+        "The canonical Reference Vocabulary, Semantic Change Feed semantics, Reference Model archive, and stable identifiers remain unchanged.",
+        "Discovery and status metadata do not establish trust, validate evidence, authorize application actions, or execute mutations.",
+        "This maintenance deployment does not create a new archived Reference Model release or DOI."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO/ODI MCP service-level API discovery",
+          "RFC 9727 API Catalog Linkset",
+          "Versioned MCP interface contract v0.1.1",
+          "MCP homepage and HTTP Link discovery metadata",
+          "MCP service documentation and llms.txt",
+          "MCP Server Card and health-resource discoverability"
+        ],
+        "notes": "A service-level discovery extension for the existing read-only MCP endpoint. It connects the API to its machine-readable MCP contract, documentation, connection metadata, and health resource without modifying protocol behaviour or application semantics."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "The event is dated 22 November 2026, the successful public deployment date of the updated DIO/ODI MCP Worker. Deployment workflow run 45039017431 completed successfully. Its production smoke suite passed all 37 modern-service checks, including API Catalog GET/HEAD, media type and profile, Linkset relationships, contract reachability, and Server Card reachability; the legacy stateless MCP compatibility suite passed all 23 checks. The event date records the public deployment, not the source commit or pull-request merge timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI MCP — RFC 9727 API Catalog",
+            "url": "https://mcp.danielberanek.cz/.well-known/api-catalog",
+            "role": "deployed-api-catalog-linkset"
+          },
+          {
+            "label": "DIO/ODI MCP — versioned machine-readable interface contract v0.1.1",
+            "url": "https://mcp.danielberanek.cz/schemas/mcp-contract-v0.1.1.json",
+            "role": "deployed-mcp-interface-contract"
+          },
+          {
+            "label": "DIO/ODI MCP — service and tool documentation",
+            "url": "https://mcp.danielberanek.cz/#tools",
+            "role": "human-readable-service-documentation"
+          },
+          {
+            "label": "DIO/ODI MCP — Server Card",
+            "url": "https://mcp.danielberanek.cz/mcp/server-card",
+            "role": "deployed-protocol-specific-service-metadata"
+          },
+          {
+            "label": "DIO/ODI MCP — successful Worker deployment and production smoke tests",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp/actions/runs/45039017431",
+            "role": "successful-deployment-and-37-plus-23-production-checks"
+          },
+          {
+            "label": "DIO/ODI MCP — API Catalog implementation",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp/pull/19",
+            "role": "reviewed-api-catalog-implementation"
+          },
+          {
+            "label": "RFC 9727 — The Linkset Media Type",
+            "url": "https://www.rfc-editor.org/rfc/rfc9727",
+            "role": "api-catalog-linkset-format-and-relations-standard"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-056",
+          "SCF-2026-049"
         ],
         "supersedes": [],
         "corrects": []
