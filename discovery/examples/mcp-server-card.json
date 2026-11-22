@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "cz.danielberanek/dio-odi-mcp",
+  "title": "DIO/ODI MCP Reference Service",
+  "description": "Public, stateless, read-only MCP Streamable HTTP service exposing the DIO/ODI Reference Model, canonical SKOS vocabulary, and selected derived Agentic ER and Policy-as-Code reference mappings. It does not access integrating applications, validate evidence, authorize mutations, or execute production writes.",
+  "version": "0.1.3",
+  "websiteUrl": "https://mcp.danielberanek.cz/",
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/dan-beranek/dio-odi-mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.danielberanek.cz/mcp",
+      "supportedProtocolVersions": [
+        "2026-07-28",
+        "2025-11-25"
+      ]
+    }
+  ]
+}
