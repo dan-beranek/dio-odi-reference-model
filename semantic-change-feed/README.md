@@ -20,7 +20,7 @@ The Semantic Change Feed is a structured, reflexive artefact within this cycle. 
 
 ## Coverage
 
-Version 0.1.8 is the current live feed and covers:
+Version 0.1.9 is the current live feed and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
 - Subsequent documented vocabulary, mapping, publication, provenance, registry, and deployment milestones through **22 November 2026**, including the Agentic Entity Resolution Guardrail Planner product website and DIO/ODI methodology page deployed on **18 November 2026** (SCF-2026-054), and the BARTOC catalogue record for the DIO/ODI Reference Vocabulary created on **19 November 2026** (SCF-2026-055), alongside the BioRegistry and Semantic Farm prefix/resolver integrations and the two archive milestones reconciled into the live chronology on **10 November 2026**.
