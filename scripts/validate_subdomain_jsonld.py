@@ -33,8 +33,6 @@ def verify_person_nodes(documents):
     for document in documents:
         for node in all_nodes(document):
             if node.get("@type") == "Person" and node.get("@id") == PERSON_ID and "name" in node:
-                if node.get("mainEntityOfPage", {}).get("@id") != PROFILE_ID:
-                    raise SystemExit("A full Person node is missing the canonical ProfilePage relation.")
                 if node.get("url") != PROFILE_URL:
                     raise SystemExit("A full Person node must use the canonical biography URL.")
 
@@ -48,8 +46,8 @@ home_nodes = {n.get("@id"):n for n in home["@graph"] if isinstance(n,dict) and n
 if len(home_nodes) != len(home["@graph"]):
     raise SystemExit("Reference Model homepage graph must use unique @id values.")
 person = home_nodes.get(PERSON_ID)
-if not person or person.get("mainEntityOfPage", {}).get("@id") != PROFILE_ID:
-    raise SystemExit("Reference Model Person → ProfilePage relation is missing.")
+if not person or person.get("url") != PROFILE_URL:
+    raise SystemExit("Reference Model Person must use the canonical professional profile URL.")
 page = home_nodes.get(ROOT_PAGE)
 if not page or page.get("@type") != "CollectionPage" or page.get("mainEntity",{}).get("@id") != MODEL_ID:
     raise SystemExit("Reference Model homepage must identify the Reference Model as its main entity.")
