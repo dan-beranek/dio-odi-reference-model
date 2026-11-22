@@ -1,0 +1,192 @@
+{
+  "$schema": "./schemas/entity-registry.schema.json",
+  "registry_id": "https://github.com/dan-beranek/dio-odi-entity-registry",
+  "schema_version": "1.0.0",
+  "registry_version": "0.1.0",
+  "status": "canonical-approved",
+  "created": "2026-11-22",
+  "updated": "2026-11-22",
+  "scope": "Shared identity records for public entities reused across Daniel Beránek's web, research and software projects.",
+  "authority_boundaries": {
+    "entity_identity": "This registry is authoritative only for the stable @id, declared type, preferred name, canonical URL, verified sameAs identifiers and provenance fields explicitly recorded for each entity.",
+    "page_graph_semantics": "Each consuming project remains authoritative for its own WebSite and WebPage nodes, page-specific descriptions, mainEntity, mainEntityOfPage, about, isPartOf, publisher, author and other contextual graph relations.",
+    "canonical_vocabulary": "The DIO/ODI Reference Model remains authoritative for SKOS concepts, concept definitions, labels and semantic relations. This registry records the Reference Vocabulary entity identity only and does not redefine the vocabulary.",
+    "publication_metadata": "The DIO/ODI Reference Model publication metadata registry remains authoritative for works, publication versions, DOIs and inter-publication relations.",
+    "keyword_metadata": "The DIO/ODI Reference Model keyword registry remains authoritative for keyword grammar, canonical ordering and resolved work/page keyword profiles."
+  },
+  "entities": [
+    {
+      "key": "person-daniel-beranek",
+      "@id": "https://danielberanek.cz/#person",
+      "@type": [
+        "https://schema.org/Person"
+      ],
+      "name": "Daniel Beránek",
+      "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/",
+      "sameAs": [
+        "https://orcid.org/0009-0004-0050-0264"
+      ],
+      "status": "active",
+      "source_records": [
+        {
+          "repository": "dan-beranek/dio-odi-reference-model",
+          "path": "index.html",
+          "role": "Published homepage JSON-LD Person identity."
+        },
+        {
+          "repository": "dan-beranek-apps/dan-beranek-apps.github.io",
+          "path": "index.html",
+          "role": "Published Apps directory JSON-LD Person identity."
+        },
+        {
+          "repository": "dan-beranek/dio-odi-mcp",
+          "path": "src/index.ts",
+          "role": "MCP homepage rendering and JSON-LD Person identity."
+        },
+        {
+          "repository": "dan-beranek/dio-odi-autorsky-koncept",
+          "path": "scripts/build-site.mjs",
+          "role": "Bilingual site graph generator and canonical Person reference."
+        },
+        {
+          "repository": "dan-beranek-apps/agentic-entity-resolution-guardrail-planner",
+          "path": "scripts/build-site.mjs",
+          "role": "Planner site generator and canonical Person reference."
+        }
+      ]
+    },
+    {
+      "key": "project-dio-odi-reference-model",
+      "@id": "https://vocab.danielberanek.cz/#reference-model",
+      "@type": [
+        "https://schema.org/CreativeWork"
+      ],
+      "name": "DIO/ODI Reference Model",
+      "url": "https://vocab.danielberanek.cz/",
+      "status": "active",
+      "source_records": [
+        {
+          "repository": "dan-beranek/dio-odi-reference-model",
+          "path": "index.html",
+          "role": "Published canonical Reference Model entity in the homepage graph."
+        },
+        {
+          "repository": "dan-beranek/dio-odi-reference-model",
+          "path": "metadata/works.json",
+          "role": "Operational publication metadata and corpus record context."
+        }
+      ]
+    },
+    {
+      "key": "vocabulary-dio-odi-reference",
+      "@id": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+      "@type": [
+        "https://schema.org/DefinedTermSet"
+      ],
+      "name": "DIO/ODI Reference Vocabulary",
+      "url": "https://vocab.danielberanek.cz/dio-odi/",
+      "status": "active",
+      "source_records": [
+        {
+          "repository": "dan-beranek/dio-odi-reference-model",
+          "path": "dio-odi/index.html",
+          "role": "Published DefinedTermSet identity and canonical page relation."
+        },
+        {
+          "repository": "dan-beranek/dio-odi-reference-model",
+          "path": "vocabulary/dio-odi-skos.ttl",
+          "role": "Authoritative SKOS ConceptScheme source; concept semantics remain governed there."
+        }
+      ]
+    },
+    {
+      "key": "software-agentic-er-guardrail-planner",
+      "@id": "https://apps.danielberanek.cz/agentic-entity-resolution-guardrail-planner/#software",
+      "@type": [
+        "https://schema.org/SoftwareApplication"
+      ],
+      "name": "Agentic Entity Resolution Guardrail Planner",
+      "url": "https://apps.danielberanek.cz/agentic-entity-resolution-guardrail-planner/",
+      "status": "active",
+      "source_records": [
+        {
+          "repository": "dan-beranek-apps/agentic-entity-resolution-guardrail-planner",
+          "path": "scripts/build-site.mjs",
+          "role": "Generated SoftwareApplication identity and page relationships."
+        },
+        {
+          "repository": "dan-beranek-apps/agentic-entity-resolution-guardrail-planner",
+          "path": "assets/data/artifact-metadata.json",
+          "role": "Canonical product/artifact metadata."
+        },
+        {
+          "repository": "dan-beranek-apps/dan-beranek-apps.github.io",
+          "path": "index.html",
+          "role": "Apps directory ItemList reference to this SoftwareApplication."
+        }
+      ]
+    },
+    {
+      "key": "service-dio-odi-mcp-api",
+      "@id": "https://mcp.danielberanek.cz/#webapi",
+      "@type": [
+        "https://schema.org/WebAPI"
+      ],
+      "name": "DIO/ODI MCP",
+      "url": "https://mcp.danielberanek.cz/mcp",
+      "landing_page": "https://mcp.danielberanek.cz/",
+      "status": "active",
+      "source_records": [
+        {
+          "repository": "dan-beranek/dio-odi-mcp",
+          "path": "src/index.ts",
+          "role": "MCP homepage graph and WebAPI identity."
+        },
+        {
+          "repository": "dan-beranek-apps/dan-beranek-apps.github.io",
+          "path": "index.html",
+          "role": "Apps directory ItemList reference to the WebAPI."
+        }
+      ]
+    },
+    {
+      "key": "software-dio-odi-mcp",
+      "@id": "https://mcp.danielberanek.cz/#software",
+      "@type": [
+        "https://schema.org/SoftwareApplication"
+      ],
+      "name": "DIO/ODI MCP",
+      "url": "https://mcp.danielberanek.cz/",
+      "status": "active",
+      "source_records": [
+        {
+          "repository": "dan-beranek/dio-odi-mcp",
+          "path": "src/index.ts",
+          "role": "Published SoftwareApplication implementation identity."
+        }
+      ]
+    },
+    {
+      "key": "framework-dio-odi-author-led",
+      "@id": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/#framework",
+      "@type": [
+        "https://schema.org/CreativeWork"
+      ],
+      "name": "DIO/ODI author-led framework",
+      "url": "https://dan-beranek.github.io/dio-odi-autorsky-koncept/",
+      "status": "active",
+      "source_records": [
+        {
+          "repository": "dan-beranek/dio-odi-autorsky-koncept",
+          "path": "scripts/build-site.mjs",
+          "role": "Generated homepage CreativeWork identity and page relationship."
+        },
+        {
+          "repository": "dan-beranek/dio-odi-autorsky-koncept",
+          "path": "metadata/artifact-metadata.json",
+          "role": "Canonical site and artifact metadata."
+        }
+      ]
+    }
+  ]
+}
