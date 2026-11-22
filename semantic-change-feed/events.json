@@ -1,10 +1,10 @@
 {
-  "feed_version": "0.1.7",
+  "feed_version": "0.1.8",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-20",
+  "generated_on": "2026-11-22",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, public integration-service deployment, external registry integration, and Agentic ER product-publication events through 16 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, deployment, external registry, and agent-discovery milestones through 22 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 55,
+  "event_count": 56,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -3440,6 +3440,150 @@
         "related_to": [
           "SCF-2026-051",
           "SCF-2026-053"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-056",
+      "date": "2026-11-22",
+      "date_basis": "deployment_date",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "DIO/ODI publishes ARD and AI Catalog manifests for agentic resource discovery",
+      "summary": "The DIO/ODI Reference Model publishes two domain-level machine-readable discovery manifests: an ARD v0.91 manifest and a separate Common AI Catalog v0.9 catalog. Generated from one versioned source catalog, the manifests make the read-only DIO/ODI MCP reference service, the canonical SKOS vocabulary distribution, and the append-only Semantic Change Feed discoverable to compatible autonomous agents and registries before a client connects to a specific service. The Reference Model homepage advertises both formats through their respective link relations, and robots.txt exposes the ARD entry point through Agentmap. The MCP service separately publishes a Server Card at /mcp/server-card with its Streamable HTTP connection metadata. This extends DIO/ODI's distribution infrastructure with an agent-facing discovery channel; it does not change the underlying concepts, vocabulary, mappings, or MCP authorization boundaries.",
+      "scope": [
+        {
+          "component": "ARD v0.91 discovery manifest",
+          "component_type": "agentic-resource-discovery-manifest",
+          "uri": "https://vocab.danielberanek.cz/.well-known/ard.json",
+          "role": "domain-level-agent-resource-discovery"
+        },
+        {
+          "component": "Common AI Catalog v0.9 discovery manifest",
+          "component_type": "ai-catalog-manifest",
+          "uri": "https://vocab.danielberanek.cz/.well-known/ai-catalog.json",
+          "role": "typed-agent-artifact-catalogue"
+        },
+        {
+          "component": "DIO/ODI MCP Server Card v0.1.4",
+          "component_type": "mcp-server-card",
+          "uri": "https://mcp.danielberanek.cz/mcp/server-card",
+          "role": "protocol-specific-connection-metadata"
+        },
+        {
+          "component": "DIO/ODI agent discovery source catalog",
+          "component_type": "versioned-discovery-catalog-source",
+          "uri": "https://github.com/dan-beranek/dio-odi-reference-model/blob/main/discovery/catalog-source.json",
+          "role": "single-versioned-source-of-truth"
+        },
+        {
+          "component": "DIO/ODI Reference Vocabulary v0.2.2",
+          "component_type": "reference-vocabulary-distribution",
+          "uri": "https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl",
+          "role": "discoverable-canonical-semantic-resource"
+        },
+        {
+          "component": "DIO/ODI Semantic Change Feed v0.1.8",
+          "component_type": "append-only-event-feed",
+          "uri": "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
+          "role": "discoverable-source-linked-change-history"
+        }
+      ],
+      "before": "The DIO/ODI Reference Model already exposed its canonical SKOS vocabulary, machine-readable distributions, and append-only Semantic Change Feed, while the separate read-only MCP service was available at its Streamable HTTP endpoint. These resources had their own publication and protocol-level access paths, but the domain did not yet publish a common, machine-readable agent-discovery catalog that described the available resources before a client selected a specific service or representation.",
+      "after": "The Reference Model publishes ARD v0.91 at /.well-known/ard.json and Common AI Catalog v0.9 at /.well-known/ai-catalog.json, both generated from the versioned discovery/catalog-source.json source through GitHub Actions. The homepage exposes rel=\"ard\" and rel=\"ai-catalog\" links; robots.txt exposes the ARD manifest through Agentmap. The catalog includes the DIO/ODI MCP Server Card, the canonical SKOS vocabulary distribution, and the Semantic Change Feed. The MCP Worker publishes a separate Server Card at https://mcp.danielberanek.cz/mcp/server-card with the service identity, version, and Streamable HTTP endpoint.",
+      "preserved_invariants": [
+        "The canonical DIO/ODI Reference Vocabulary, its ConceptScheme URI, stable concept identifiers, definitions, and SKOS relations remain unchanged.",
+        "The Semantic Change Feed remains append-only and source-linked; this event records a distribution milestone and does not alter the conceptual model or redefine any existing event.",
+        "ARD v0.91 and Common AI Catalog v0.9 are separate discovery representations generated from one versioned source catalog; neither is treated as an alias or as a new canonical vocabulary.",
+        "ARD v0.91 is a proposal and Common AI Catalog v0.9 is a release candidate for v1.0; publication does not imply universal adoption or support by all agents and registries.",
+        "The MCP Server Card format is an experimental extension, not an accepted or official MCP extension. The card provides connection metadata; live tools, resources, and prompts remain discoverable through MCP at runtime.",
+        "Discovery identifies available resources and connection metadata. It does not establish trust, grant authorization, validate evidence, or authorize or execute an integrating application's mutations.",
+        "DIO/ODI MCP remains stateless and read-only. The integrating application remains responsible for evidence validation, local policy, authorization, and persistence.",
+        "This deployment does not create a new archived Reference Model release, modify the immutable v0.9.0 archive, or introduce a new DOI."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO/ODI agent resource discovery",
+          "ARD v0.91 domain-level discovery manifest",
+          "Common AI Catalog v0.9 catalogue manifest",
+          "DIO/ODI MCP Server Card and Streamable HTTP endpoint",
+          "Canonical SKOS Reference Vocabulary distribution",
+          "Semantic Change Feed discovery and source-linked event history",
+          "Reference Model GitHub Actions generation and public Pages deployment"
+        ],
+        "notes": "This adds an agent-facing discovery and communication channel alongside the existing human-facing websites, semantic registries, direct machine-readable distributions, and MCP endpoint. It extends the ways compatible autonomous agents and registries can find DIO/ODI resources without changing the resources' canonical meaning or service authorization boundaries."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact",
+          "public-version-history"
+        ],
+        "temporal_note": "The event is dated 22 November 2026, the successful public deployment date. The Reference Model GitHub Pages deployment completed successfully in workflow run 44981445976. The subsequent public endpoint and MIME-type validation completed successfully in run 44981447013, including HTTP 200 responses for both .well-known manifests. The independent DIO/ODI MCP Worker v0.1.4 deployment and its modern and legacy protocol smoke tests completed successfully in run 44981326487. The event date records the public deployment, not the source commit or merge timestamp.",
+        "sources": [
+          {
+            "label": "DIO/ODI — ARD v0.91 discovery manifest",
+            "url": "https://vocab.danielberanek.cz/.well-known/ard.json",
+            "role": "deployed-ard-resource-discovery-manifest"
+          },
+          {
+            "label": "DIO/ODI — Common AI Catalog v0.9 manifest",
+            "url": "https://vocab.danielberanek.cz/.well-known/ai-catalog.json",
+            "role": "deployed-ai-catalog-manifest"
+          },
+          {
+            "label": "DIO/ODI MCP — Server Card",
+            "url": "https://mcp.danielberanek.cz/mcp/server-card",
+            "role": "deployed-protocol-specific-connection-metadata"
+          },
+          {
+            "label": "Reference Model — successful GitHub Pages deployment",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/actions/runs/44981445976",
+            "role": "successful-public-pages-deployment"
+          },
+          {
+            "label": "Reference Model — 49-endpoint public and MIME validation",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/actions/runs/44981447013",
+            "role": "successful-public-endpoint-and-media-type-validation"
+          },
+          {
+            "label": "DIO/ODI MCP — v0.1.4 Worker deployment and modern/legacy smoke tests",
+            "url": "https://github.com/dan-beranek/dio-odi-mcp/actions/runs/44981326487",
+            "role": "successful-mcp-server-card-and-protocol-deployment"
+          },
+          {
+            "label": "DIO/ODI Reference Model — discovery catalog source and generator",
+            "url": "https://github.com/dan-beranek/dio-odi-reference-model/tree/main/discovery",
+            "role": "versioned-source-of-truth-and-validation"
+          },
+          {
+            "label": "Agentic Resource Discovery — specification",
+            "url": "https://agenticresourcediscovery.org/spec/",
+            "role": "ard-v0-91-proposal-and-discovery-contract"
+          },
+          {
+            "label": "Common AI Catalog — specification",
+            "url": "https://ai-catalog.io/spec/",
+            "role": "ai-catalog-v0-9-release-candidate-and-discovery-contract"
+          },
+          {
+            "label": "MCP Server Card extension — specification and schema",
+            "url": "https://github.com/modelcontextprotocol/ext-server-card",
+            "role": "experimental-server-card-extension-reference"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-049",
+          "SCF-2026-051",
+          "SCF-2026-053",
+          "SCF-2026-054",
+          "SCF-2026-055"
         ],
         "supersedes": [],
         "corrects": []
