@@ -37,6 +37,17 @@ The Reference Model is also exposed through a separate public, stateless, read-o
 
 The MCP server is a separate derived software distribution. It does not alter the canonical vocabulary or the immutable Reference Model v0.9.0 archive.
 
+## Agentic resource discovery
+
+The Reference Model publishes two separate machine-readable discovery manifests from one versioned source catalog in `discovery/catalog-source.json`:
+
+- ARD v0.91 Proposal: https://vocab.danielberanek.cz/.well-known/ard.json
+- Common AI Catalog v0.9 Release Candidate: https://vocab.danielberanek.cz/.well-known/ai-catalog.json
+
+ARD provides semantic resource discovery through representative natural-language queries and is advertised by the `rel="ard"` HTML relation and the `Agentmap:` directive in `robots.txt`. Common AI Catalog provides a typed catalog representation and is advertised with `rel="ai-catalog"`. They are generated from one canonical source but are not aliases. The live DIO/ODI MCP Server Card is separately published at https://mcp.danielberanek.cz/mcp/server-card; its format is an experimental MCP extension, not an accepted or official MCP extension.
+
+The manifests expose the read-only MCP reference service, canonical SKOS vocabulary distribution, and append-only Semantic Change Feed. Discovery identifies available resources and connection metadata; it does not establish trust, authorize an operation, or change the MCP service's read-only boundary. The generator, pinned validation schemas, and deployment workflow are documented in `discovery/README.md`.
+
 ## Related Agentic ER planning product
 
 Agentic Entity Resolution Guardrail Planner is a separate published design-time Agent Skill. It prepares reviewable engineering plans for identity-changing operations; it does not execute mutations, authorize production writes, or deploy a runtime guard.
