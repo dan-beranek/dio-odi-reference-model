@@ -1,6 +1,6 @@
 # DIO/ODI Semantic Change Feed
 
-**Feed version:** 0.1.9  
+**Feed version:** 0.1.10  
 **Schema version:** 0.2.1  
 **Status:** Live append-only maintenance after archived Reference Model v0.9.0; no new Reference Model release  
 **Maintainer:** Daniel Beránek  
@@ -20,7 +20,7 @@ The Semantic Change Feed is a structured, reflexive artefact within this cycle. 
 
 ## Coverage
 
-Version 0.1.9 is the current live feed and covers:
+Version 0.1.10 is the current live feed and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
 - Subsequent documented vocabulary, mapping, publication, provenance, registry, and deployment milestones through **22 November 2026**, including the Agentic Entity Resolution Guardrail Planner product website and DIO/ODI methodology page deployed on **18 November 2026** (SCF-2026-054), and the BARTOC catalogue record for the DIO/ODI Reference Vocabulary created on **19 November 2026** (SCF-2026-055), alongside the BioRegistry and Semantic Farm prefix/resolver integrations and the two archive milestones reconciled into the live chronology on **10 November 2026**.
@@ -55,7 +55,7 @@ The SCF does not replace or redefine any of these sources.
 
 The human-readable SCF frontend is generated from `events.json` by `scripts/generate_projections.py`. Event cards, class/component filter options, and chronology dates are projections of the canonical event records; do not maintain a second manual event inventory in HTML. The `event_count` field in `events.json` is recalculated from the length of `events` during generation. When adding records, edit the event array only; do not maintain the count manually.
 
-The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0 through 9 November 2026. The live feed now advances independently to v0.1.9 with schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
+The archived Reference Model v0.9.0 (https://doi.org/10.5281/zenodo.24085589) contains SCF v0.1.1 with 45 events and schema v0.2.0 through 9 November 2026. The live feed now advances independently to v0.1.10 with schema v0.2.1. The archive-reconciliation records, SPARQL endpoint record, MCP integration-service deployment record, and MCP Zenodo archival-publication record are live maintenance only: neither v0.8.0 nor v0.9.0 is rewritten, and no new Reference Model archive or DOI is created.
 
 The DIO to DIO portfolio is included as a documented research-and-distribution milestone, not as an authority for historical claims. Its model-specific analyses retain different observation boundaries and interpretations; they may guide discovery of potentially relevant evidence, but factual claims entering the SCF must be checked against primary publications, release records, registries, or archives.
 
