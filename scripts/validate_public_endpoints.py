@@ -37,6 +37,8 @@ EXTRA_ENDPOINTS = (
     f"{BASE_URL}/llms.txt",
     f"{BASE_URL}/metadata.json",
     f"{BASE_URL}/sitemap.xml",
+    f"{BASE_URL}/.well-known/ard.json",
+    f"{BASE_URL}/.well-known/ai-catalog.json",
 )
 
 
@@ -57,6 +59,10 @@ def discover_urls() -> list[str]:
 
 def expected_types(url: str) -> set[str]:
     path = urlparse(url).path
+    if path.endswith("/.well-known/ard.json"):
+        return {"application/json"}
+    if path.endswith("/.well-known/ai-catalog.json"):
+        return {"application/ai-catalog+json", "application/json"}
     if path.endswith("/"):
         return {"text/html"}
     suffix = Path(path).suffix.lower()
