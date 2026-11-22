@@ -35,7 +35,7 @@ GitHub Pages uses `_config.yml` to explicitly include the hidden `.well-known` d
 
 ## Pinned upstream schema snapshots
 
-- ARD entry/manifest JSON Schema: https://github.com/ards-project/ard-spec/blob/main/spec/schemas/ard-entry.schema.json (upstream commit `cf20f6d76ce85061f78ba53514b4d446474a476b`; ARD v0.91 Proposal).
+- ARD entry/manifest JSON Schema: https://github.com/ards-project/ard-spec/blob/main/spec/schemas/ard-entry.schema.json (upstream commit `f073b1ea9b01a5f068d0b0986426f2ea49fa30b2`; ARD v0.91 Proposal).
 - MCP Server Card JSON Schema: https://github.com/modelcontextprotocol/ext-server-card/blob/main/schema.json (upstream commit `28db12c9b4a379489d46e49bf1bd4a991f05c9b7`; experimental extension).
 - Common AI Catalog v0.9 specification: https://ai-catalog.io/spec/ (Release Candidate for v1.0; validated against its published structural requirements).
 
