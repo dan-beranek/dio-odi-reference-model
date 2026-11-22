@@ -104,15 +104,18 @@ def project_ard(source: dict) -> dict:
             "identifier": entry["identifier"],
             "displayName": entry["displayName"],
             "type": entry["type"],
-            "url": entry["url"],
-            "description": entry["description"],
-            "tags": entry["tags"],
-            "representativeQueries": entry["representativeQueries"],
         }
+        if "url" in entry:
+            projected["url"] = entry["url"]
+        else:
+            projected["data"] = entry["data"]
+        projected["description"] = entry["description"]
         if entry.get("version"):
             projected["version"] = entry["version"]
+        projected["tags"] = entry["tags"]
         if entry.get("capabilities"):
             projected["capabilities"] = entry["capabilities"]
+        projected["representativeQueries"] = entry["representativeQueries"]
         entries.append(projected)
     return {"entries": entries}
 
