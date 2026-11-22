@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.6",
+  "registry_version": "1.3.7",
   "status": "operational",
   "semantics": "External distribution and supplementary representations of canonical DIO/ODI works. Existing relation types observed on Zenodo are evidence of prior metadata choices, not automatically authoritative semantic classifications.",
   "relation_rule": "Treat existing Zenodo Related Works relation types as observed metadata until independently verified. IsIdenticalTo requires the exact same research output in two locations. IsSupplementedBy requires the related resource to be a genuine supplement, not merely another distribution copy. Where exact equivalence is not established, keep the relation under semantic review.",
@@ -144,6 +144,54 @@
           "reciprocal_identity_relation_version": "v1",
           "zenodo_record_update_confirmed_on": "2026-11-07",
           "zenodo_record_update_verification": "Author-confirmed; not independently re-fetched during this update."
+        }
+      ]
+    },
+    {
+      "work": "match-is-easy-merge-is-not",
+      "audit_status": "author-confirmed",
+      "canonical_url": "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not",
+      "representations": [
+        {
+          "id": "distribution:match-is-easy-merge-is-not:hashnode",
+          "platform": "Hashnode",
+          "identifier_type": "url",
+          "identifier": "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not",
+          "resource_type": "web-publication",
+          "canonical_relation": "canonical-source",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": false,
+          "verification_basis": "Author confirmation that Hashnode is the canonical publication."
+        },
+        {
+          "id": "distribution:match-is-easy-merge-is-not:devto",
+          "platform": "DEV.to",
+          "identifier_type": "url",
+          "identifier": "https://dev.to/danielberanek/the-match-is-easy-the-merge-is-not-khb",
+          "resource_type": "web-publication",
+          "canonical_relation": "isIdenticalTo",
+          "canonical_url": "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": false,
+          "verification_basis": "Author confirmation that DEV.to republishes the same article; DEV.to canonical URL points to Hashnode."
+        }
+      ]
+    },
+    {
+      "work": "confident-entity-match-not-permission-to-merge",
+      "audit_status": "author-confirmed",
+      "canonical_url": "https://www.linkedin.com/pulse/confident-entity-match-not-permission-to-merge-agent-daniel-ber%C3%A1nek-486gf/",
+      "representations": [
+        {
+          "id": "distribution:confident-entity-match-not-permission-to-merge:linkedin",
+          "platform": "LinkedIn",
+          "identifier_type": "url",
+          "identifier": "https://www.linkedin.com/pulse/confident-entity-match-not-permission-to-merge-agent-daniel-ber%C3%A1nek-486gf/",
+          "resource_type": "web-publication",
+          "canonical_relation": "canonical-source",
+          "semantic_status": "verified-by-author",
+          "approved_for_zenodo": false,
+          "verification_basis": "Author confirmation that this LinkedIn Pulse article is a separate architectural overview, not a copy of the engineering deep dive."
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.5.2",
+  "registry_version": "1.5.3",
   "relation_semantics": "Directed edges are expressed from subject to object using Zenodo/DataCite-style relation names where possible. Only edges with approved_for_zenodo=true should be projected automatically into .zenodo.json or historical Zenodo records.",
   "relations": [
     {
@@ -200,6 +200,13 @@
       "relation": "references",
       "object": "taxonomic-note",
       "approved_for_zenodo": true
+    },
+    {
+      "subject": "match-is-easy-merge-is-not",
+      "relation": "isRelatedTo",
+      "object": "confident-entity-match-not-permission-to-merge",
+      "approved_for_zenodo": false,
+      "note": "Complementary treatment of the same entity-resolution problem: engineering deep dive and architectural overview. Distinct works; neither is a copy, version, or derivative of the other."
     }
   ]
 }
