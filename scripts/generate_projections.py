@@ -1044,6 +1044,13 @@ def update_discovery_metadata(
         "llms.txt MCP distribution metadata",
     )
 
+    llms_text = replace_line_with_prefix(
+        llms_text,
+        "- Feed version:",
+        f"- Feed version: {feed['feed_version']}; current live append-only structured history, first published as v0.1.0, with explicit date basis, preserved invariants, impact, provenance, and lineage",
+        "llms.txt Semantic Change Feed version",
+    )
+
     releases_heading = re.search(r"(?m)^## Releases\s*$", llms_text)
     if releases_heading:
         next_heading = re.search(r"(?m)^## Source repository\s*$", llms_text[releases_heading.end():])
