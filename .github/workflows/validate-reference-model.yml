@@ -31,10 +31,14 @@ jobs:
         run: python scripts/generate_projections.py --write
       - name: Generate canonical page-level keyword metadata
         run: python scripts/generate_surface_metadata.py --write
+      - name: Generate agent discovery manifests
+        run: python scripts/generate_agent_discovery.py --write
       - name: Verify generated projections are reproducible
         run: python scripts/generate_projections.py --check
       - name: Verify page-level keyword metadata is reproducible
         run: python scripts/generate_surface_metadata.py --check
+      - name: Verify agent discovery manifests are reproducible
+        run: python scripts/generate_agent_discovery.py --check
       - name: Run release integrity checks
         run: python scripts/validate_reference_model.py
       - name: Verify public endpoints and MIME types
@@ -66,11 +70,12 @@ jobs:
         run: |
           python scripts/generate_projections.py --write
           python scripts/generate_surface_metadata.py --write
+          python scripts/generate_agent_discovery.py --write
       - name: Commit generated projections when needed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html dio-odi/index.html external-reception/index.html metadata/external-reception.ttl mappings/index.html mappings/rag-pipeline/index.html mappings/hem-dio/index.html mappings/commit-boundary-policy/index.html mappings/agentic-er-architecture/index.html metadata/index.html semantic-change-feed/index.html assets/data/resolved-page-metadata.json semantic-change-feed/events.json metadata.json .zenodo.json CITATION.cff llms.txt README.md metadata/README.md semantic-change-feed/README.md sitemap.xml
+          git add index.html dio-odi/index.html external-reception/index.html metadata/external-reception.ttl mappings/index.html mappings/rag-pipeline/index.html mappings/hem-dio/index.html mappings/commit-boundary-policy/index.html mappings/agentic-er-architecture/index.html metadata/index.html semantic-change-feed/index.html assets/data/resolved-page-metadata.json semantic-change-feed/events.json metadata.json .zenodo.json CITATION.cff llms.txt README.md metadata/README.md semantic-change-feed/README.md sitemap.xml .well-known/ard.json .well-known/ai-catalog.json
           if git diff --cached --quiet; then
             echo "Generated projections are already current."
             exit 0
