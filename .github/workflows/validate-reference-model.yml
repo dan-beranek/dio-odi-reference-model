@@ -39,6 +39,8 @@ jobs:
         run: python scripts/generate_surface_metadata.py --check
       - name: Verify agent discovery manifests are reproducible
         run: python scripts/generate_agent_discovery.py --check
+      - name: Validate subdomain JSON-LD identity graph
+        run: python scripts/validate_subdomain_jsonld.py
       - name: Run release integrity checks
         run: python scripts/validate_reference_model.py
       - name: Verify public endpoints and MIME types
