@@ -1,6 +1,6 @@
 # DIO/ODI Semantic Change Feed
 
-**Feed version:** 0.1.7  
+**Feed version:** 0.1.8  
 **Schema version:** 0.2.1  
 **Status:** Live append-only maintenance after archived Reference Model v0.9.0; no new Reference Model release  
 **Maintainer:** Daniel Beránek  
@@ -20,10 +20,11 @@ The Semantic Change Feed is a structured, reflexive artefact within this cycle. 
 
 ## Coverage
 
-Version 0.1.7 is the current live feed and covers:
+Version 0.1.8 is the current live feed and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
-- Subsequent documented vocabulary, mapping, publication, provenance, registry, and deployment milestones through **19 November 2026**, including the Agentic Entity Resolution Guardrail Planner product website and DIO/ODI methodology page deployed on **18 November 2026** (SCF-2026-054), and the BARTOC catalogue record for the DIO/ODI Reference Vocabulary created on **19 November 2026** (SCF-2026-055), alongside the BioRegistry and Semantic Farm prefix/resolver integrations and the two archive milestones reconciled into the live chronology on **10 November 2026**.
+- Subsequent documented vocabulary, mapping, publication, provenance, registry, and deployment milestones through **22 November 2026**, including the Agentic Entity Resolution Guardrail Planner product website and DIO/ODI methodology page deployed on **18 November 2026** (SCF-2026-054), and the BARTOC catalogue record for the DIO/ODI Reference Vocabulary created on **19 November 2026** (SCF-2026-055), alongside the BioRegistry and Semantic Farm prefix/resolver integrations and the two archive milestones reconciled into the live chronology on **10 November 2026**.
+- Deployment of the DIO/ODI agent-facing discovery layer on **22 November 2026** (SCF-2026-056): separate ARD v0.91 and Common AI Catalog v0.9 manifests generated from a single versioned source catalog, the experimental MCP Server Card v0.1.4 connection document, and homepage/Agentmap discovery links. The deployment passed manifest reproducibility, Reference Model integrity, public HTTP 200, and MIME-type validation; the standards' proposal/Release Candidate status and the Server Card's experimental status remain explicit.
 - Initial publication of the public **DIO to DIO** portfolio with ten author-led, model-specific reconstruction analyses, followed by a separate event recording the addition of the eleventh report (Claude Sonnet 5.5) on 7 November 2026.
 - Compound Changelog bullets split into separate records where they describe distinct conceptual, publication, distribution, mapping, or archival events.
 - The live Reference Vocabulary v0.2.2 metadata-only prefix-alignment update on 9 November 2026.
