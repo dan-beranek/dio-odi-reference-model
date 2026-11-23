@@ -91,6 +91,15 @@ Published identifiers are stable. New events are appended; historical events are
 
 The repository validator checks JSON Schema conformance, event ID uniqueness, chronological order, lineage references, archive-snapshot reconciliation, HTML/feed inventory parity, shared navigation, and sitemap presence. The public-endpoint workflow checks deployment and MIME types on `main`.
 
+## Automated evidence intake
+
+Two read-only workflows prepare review material without writing to the canonical event feed:
+
+- [SCF review-candidate intake](../docs/scf-review-intake.md) detects record-level changes in the authoritative works, distributions, external-reception, application-mapping, and discovery registries.
+- [SCF operational evidence intake](../docs/scf-operational-intake.md) collects successful deployments and published GitHub Releases from the six configured DIO/ODI project repositories, then checks their source URLs against existing SCF evidence.
+
+Both workflows produce downloadable review artifacts. They do not assign event IDs, classify semantic change, decide temporal basis, modify events.json, increment the feed version, or publish SCF events. Inclusion remains an editorial decision based on source evidence, scope, impact, preserved invariants, and lineage.
+
 ## License
 
 The files are licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
