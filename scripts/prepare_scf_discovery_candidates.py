@@ -45,6 +45,12 @@ def stable_fingerprint(value: Any) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def ascii_fold(value: str) -> str:
+    """Fold diacritics for matching transliterated profile handles and URL slugs."""
+    decomposed = unicodedata.normalize("NFKD", value)
+    return "".join(char for char in decomposed if not unicodedata.combining(char))
+
+
 def normalise_text(value: str) -> str:
     decomposed = unicodedata.normalize("NFKC", value).casefold()
     return re.sub(r"\s+", " ", re.sub(r"[^\w]+", " ", decomposed)).strip()
@@ -371,8 +377,9 @@ def build_known_context(
     owned_url_prefixes: set[str] = set()
 
     if author_name:
-        slug = re.sub(r"[^a-z0-9]+", "-", normalise_text(author_name)).strip("-")
-        compact = re.sub(r"[^a-z0-9]", "", normalise_text(author_name))
+        folded_author_name = ascii_fold(author_name).casefold()
+        slug = re.sub(r"[^a-z0-9]+", "-", folded_author_name).strip("-")
+        compact = re.sub(r"[^a-z0-9]", "", folded_author_name)
         if slug:
             author_handles.add(slug)
         if compact:
@@ -578,7 +585,7 @@ def detect_source_ownership(url: str, context: dict[str, Any]) -> dict[str, str]
             }
 
     segments = [part for part in path.split("/") if part]
-    slug = re.sub(r"[^a-z0-9]+", "-", path).strip("-")
+    slug = re.sub(r"[^a-z0-9]+", "-", ascii_fold(path).casefold()).strip("-")
     handles = context.get("author_handles", set())
     matching_handle = next(
         (handle for handle in sorted(handles, key=len, reverse=True)
