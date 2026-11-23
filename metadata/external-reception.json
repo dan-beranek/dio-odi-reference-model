@@ -1,9 +1,9 @@
 {
-  "registry_version": "0.1.4",
+  "registry_version": "0.1.5",
   "schema_version": "0.1.1",
   "uri": "https://vocab.danielberanek.cz/metadata/external-reception.json",
   "frontend_uri": "https://vocab.danielberanek.cz/external-reception/",
-  "generated_on": "2026-11-20",
+  "generated_on": "2026-11-23",
   "title": "DIO/ODI External Reception Registry",
   "description": "A manually curated register of external technical analyses, conceptual uptake, agent-authored discussions, AI-mediated summaries, research-discovery records, registry and interoperability integrations, and secondary representations linked to specific DIO/ODI research works and canonical reference artifacts. It documents external reception without modifying the canonical Reference Vocabulary.",
   "maintainer": {
@@ -950,6 +950,12 @@
       "related_entry_ids": [
         "semantic-farm-dio-odi-prefix",
         "bartoc-dio-odi-vocabulary"
+      ],
+      "discovery_url_aliases": [
+        {
+          "url": "https://bioregistry.io/dio-odi",
+          "basis": "Tavily returned this URL with the exact DIO/ODI Bioregistry record title and description, while the current canonical record page is https://bioregistry.io/registry/dio-odi. Stored only as an observed discovery URL variant; no HTTP redirect or URI-level alias is asserted."
+        }
       ]
     },
     {
