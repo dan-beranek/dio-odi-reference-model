@@ -243,6 +243,7 @@ def build_known_context(
 ) -> dict[str, Any]:
     title_to_work: dict[str, str] = {}
     doi_to_work: dict[str, str] = {}
+    arxiv_to_work: dict[str, str] = {}
     known_urls: set[str] = set()
     known_ids: set[str] = set()
 
@@ -258,11 +259,19 @@ def build_known_context(
             if isinstance(work_id, str):
                 doi_to_work[doi] = work_id
             known_ids.add(doi)
-        if isinstance(work.get("arxiv"), dict):
-            arxiv_id = work["arxiv"].get("id")
+        arxiv = work.get("arxiv")
+        if isinstance(arxiv, dict):
+            arxiv_id = arxiv.get("id")
             if isinstance(arxiv_id, str):
-                known_ids.add(arxiv_id.casefold())
-        known_ids.update(match.casefold() for match in ARXIV_RE.findall(serialised))
+                normalised_arxiv = arxiv_id.casefold()
+                known_ids.add(normalised_arxiv)
+                if isinstance(work_id, str):
+                    arxiv_to_work[normalised_arxiv] = work_id
+        for arxiv_id in ARXIV_RE.findall(serialised):
+            normalised_arxiv = arxiv_id.casefold()
+            known_ids.add(normalised_arxiv)
+            if isinstance(work_id, str):
+                arxiv_to_work[normalised_arxiv] = work_id
 
     for registry in registries:
         serialised = json.dumps(registry, ensure_ascii=False)
@@ -277,6 +286,7 @@ def build_known_context(
     return {
         "title_to_work": title_to_work,
         "doi_to_work": doi_to_work,
+        "arxiv_to_work": arxiv_to_work,
         "known_urls": known_urls,
         "known_ids": known_ids,
         "evidence_index": evidence_index,
@@ -311,10 +321,33 @@ def resolve_result(
     combined = " ".join((title, content, url, str(result.get("doi") or "")))
     folded = normalise_text(combined)
 
-    dois = extract_dois(combined, result.get("doi"))
+    # Distinguish the discovered object's own DOI from DOIs merely cited in
+    # its title/snippet. A cited DOI links the candidate to a known work, but
+    # must never become the candidate's identity or deduplication key.
+    primary_dois = set(extract_dois(result.get("doi")))
+    parsed_url = urlparse(clean_url)
+    if parsed_url.hostname in {"doi.org", "dx.doi.org"}:
+        primary_dois.update(extract_dois(parsed_url.path))
+    referenced_dois = set(extract_dois(title, content))
+    referenced_dois.difference_update(primary_dois)
+
+    primary_arxiv_ids = {
+        match.casefold() for match in ARXIV_RE.findall(result.get("arxiv_id", ""))
+    }
+    if "arxiv.org" in (parsed_url.hostname or ""):
+        primary_arxiv_ids.update(match.casefold() for match in ARXIV_RE.findall(parsed_url.path))
+    referenced_arxiv_ids = {
+        match.casefold() for match in ARXIV_RE.findall(" ".join((title, content)))
+    }
+    referenced_arxiv_ids.difference_update(primary_arxiv_ids)
+
     work_ids: set[str] = set()
-    for doi in dois:
+    for doi in primary_dois | referenced_dois:
         work_id = context["doi_to_work"].get(doi)
+        if work_id:
+            work_ids.add(work_id)
+    for arxiv_id in primary_arxiv_ids | referenced_arxiv_ids:
+        work_id = context["arxiv_to_work"].get(arxiv_id)
         if work_id:
             work_ids.add(work_id)
 
@@ -329,8 +362,14 @@ def resolve_result(
         work_ids.add(context["title_to_work"][title_key])
         matched_signals.append("exact-known-work-title")
 
-    if any(doi in context["known_ids"] for doi in dois):
+    if any(doi in context["known_ids"] for doi in primary_dois):
         matched_signals.append("known-doi")
+    if any(doi in context["doi_to_work"] for doi in referenced_dois):
+        matched_signals.append("known-doi-reference")
+    if any(arxiv_id in context["arxiv_to_work"] for arxiv_id in referenced_arxiv_ids):
+        matched_signals.append("known-arxiv-reference")
+    if any(arxiv_id in context["arxiv_to_work"] for arxiv_id in primary_arxiv_ids):
+        matched_signals.append("known-arxiv-identifier")
     if any(orcid in combined for orcid in context.get("orcid_values", [])):
         matched_signals.append("author-orcid")
 
@@ -346,6 +385,7 @@ def resolve_result(
     # are excluded unless another identity or work-level signal corroborates them.
     strong = {
         "core-identity-phrase", "exact-known-work-title", "known-doi",
+        "known-doi-reference", "known-arxiv-reference", "known-arxiv-identifier",
         "author-linked-identity", "identity-linked-concept",
     }
     if not strong.intersection(matched_signals):
@@ -353,6 +393,12 @@ def resolve_result(
 
     if "known-doi" in matched_signals or "exact-known-work-title" in matched_signals:
         match_class, relevance = "known-work-or-identifier", 100
+    elif (
+        "known-doi-reference" in matched_signals
+        or "known-arxiv-reference" in matched_signals
+        or "known-arxiv-identifier" in matched_signals
+    ):
+        match_class, relevance = "known-work-reference", 95
     elif "core-identity-phrase" in matched_signals:
         match_class, relevance = "core-identity-phrase", 90
     else:
@@ -365,7 +411,7 @@ def resolve_result(
     published = parse_date(published) if published else None
 
     evidence_urls = {clean_url}
-    for doi in dois:
+    for doi in primary_dois:
         evidence_urls.add(normalise_url(f"https://doi.org/{doi}"))
     event_ids = sorted({
         event_id
@@ -374,7 +420,11 @@ def resolve_result(
     })
     already_known = any(
         evidence_url in context["known_urls"] for evidence_url in evidence_urls
-    ) or any(doi in context["known_ids"] for doi in dois)
+    ) or any(
+        doi in context["known_ids"] for doi in primary_dois
+    ) or any(
+        arxiv_id in context["known_ids"] for arxiv_id in primary_arxiv_ids
+    )
 
     if event_ids:
         reference_status = "already-cited"
@@ -390,7 +440,9 @@ def resolve_result(
         "query_group": query["group"],
         "title": title or "(title unavailable)",
         "url": clean_url,
-        "doi_values": dois,
+        "doi_values": sorted(primary_dois),
+        "referenced_doi_values": sorted(referenced_dois),
+        "referenced_arxiv_ids": sorted(referenced_arxiv_ids),
         "published_date": published,
         "snippet": content[:1200],
         "provider_score": result.get("score"),
