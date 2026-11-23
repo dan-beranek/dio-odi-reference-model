@@ -61,6 +61,7 @@ class DiscoveryIntakeTests(unittest.TestCase):
             "doi_to_work": {"10.5281/zenodo.1234567": "paper-a"},
             "known_urls": set(),
             "known_ids": {"10.5281/zenodo.1234567"},
+            "arxiv_to_work": {"2610.37407": "paper-a"},
             "evidence_index": {},
             "orcid_values": ["0009-0004-0050-0264"],
         }
@@ -159,6 +160,60 @@ class DiscoveryIntakeTests(unittest.TestCase):
         )
         self.assertEqual(result["reference_status"], "already-registered")
         self.assertEqual(result["related_work_ids"], ["paper-a"])
+
+    def test_cited_doi_links_candidate_without_becoming_its_identity(self):
+        result = discovery.resolve_result(
+            {
+                "title": "An independent analysis of a related method",
+                "url": "https://example.org/independent-analysis",
+                "content": (
+                    "This analysis discusses DIO/ODI and cites "
+                    "10.5281/zenodo.1234567."
+                ),
+            },
+            provider="Tavily Search",
+            query={
+                "id": "identity-1",
+                "query": '"Digital Identity Optimization"',
+                "group": "identity",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNotNone(result)
+        self.assertEqual(result["doi_values"], [])
+        self.assertEqual(result["referenced_doi_values"], ["10.5281/zenodo.1234567"])
+        self.assertEqual(result["related_work_ids"], ["paper-a"])
+        self.assertIn("known-doi-reference", result["matched_signals"])
+        self.assertEqual(result["reference_status"], "review-required")
+        self.assertEqual(
+            discovery.candidate_key(result),
+            "url:https://example.org/independent-analysis",
+        )
+
+    def test_known_arxiv_reference_links_to_registered_work(self):
+        result = discovery.resolve_result(
+            {
+                "title": "Independent commentary on an authorization design",
+                "url": "https://example.org/commentary",
+                "content": "See arXiv:2610.37407v2 for the related work.",
+            },
+            provider="Tavily Search",
+            query={
+                "id": "identity-1",
+                "query": '"Digital Identity Optimization"',
+                "group": "identity",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNotNone(result)
+        self.assertEqual(result["doi_values"], [])
+        self.assertEqual(result["referenced_arxiv_ids"], ["2610.37407"])
+        self.assertEqual(result["related_work_ids"], ["paper-a"])
+        self.assertIn("known-arxiv-reference", result["matched_signals"])
 
     def test_exact_existing_evidence_maps_to_event_id(self):
         context = dict(self.context)
