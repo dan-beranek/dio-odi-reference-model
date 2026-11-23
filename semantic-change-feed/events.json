@@ -1,8 +1,8 @@
 {
-  "feed_version": "0.1.10",
+  "feed_version": "0.1.11",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-22",
+  "generated_on": "2026-11-23",
   "title": "DIO/ODI Semantic Change Feed",
   "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, deployment, external registry, and agent-discovery milestones through 22 November 2026.",
   "author": {
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 58,
+  "event_count": 60,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -3783,6 +3783,156 @@
       "lineage": {
         "related_to": [
           "SCF-2026-054"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-059",
+      "date": "2026-11-23",
+      "date_basis": "documentation_date",
+      "event_class": "Distribution",
+      "change_type": "documented",
+      "title": "Daniel Beránek's multi-epistemic copywriting contribution appears in Ecommerce Bridge",
+      "summary": "In the editorially assembled expert article “Ako zostať dobrým copywriterom v dobe AI?”, Daniel Beránek contributes a two-part position on copy that can withstand AI: it should bring human experience and information that an LLM cannot straightforwardly approximate, and it should address multiple epistemic regimes in one text artefact—the person, search engine, knowledge graph, and LLM. The second proposition is an explicit practice-facing articulation of cross-environment communication relevant to DIO/ODI. The article uses the established AI-and-copywriting agenda as its entry point and does not name DIO/ODI; the feed records the relationship as an author-led applied articulation, not as an explicit DIO/ODI publication or independent reception.",
+      "scope": [
+        {
+          "component": "Ako zostať dobrým copywriterom v dobe AI? — Daniel Beránek's expert contribution",
+          "component_type": "media-expert-contribution",
+          "uri": "https://www.ecommercebridge.sk/ako-zostat-dobrym-copywriterom-v-dobe-ai/",
+          "role": "primary-language-edition-and-attributed-expert-contribution"
+        },
+        {
+          "component": "Jak zůstat dobrým copywriterem v době AI? — Czech localized edition",
+          "component_type": "localized-media-edition",
+          "uri": "https://www.ecommercebridge.cz/jak-zustat-dobrym-copywriterem-v-dobe-ai/",
+          "role": "localized-counterpart"
+        }
+      ],
+      "before": "The SCF documented the DIO/ODI conceptual framework and its formal and application-layer publications, but it did not yet record this public, practice-facing expert contribution on multi-epistemic copywriting.",
+      "after": "The SCF records Daniel Beránek's attributed contribution to the Ecommerce Bridge expert article as an author-led applied articulation of communication across people, search engines, knowledge graphs, and LLMs. The Slovak-language article is treated as the primary edition and the Czech page as a localized counterpart; neither is represented as a standalone work authored by Daniel Beránek.",
+      "preserved_invariants": [
+        "The host article is an editorially assembled expert contribution; Daniel Beránek is attributed for the quoted contribution, not as the author of the entire article.",
+        "The Slovak-language page is treated as the primary editorial edition. The Czech page is a localized counterpart and is not asserted to be a textually identical or functionally equivalent copy.",
+        "The article does not explicitly name DIO/ODI. Its relationship to DIO/ODI is an author-led interpretation of the contribution's substantive correspondence, using an established AI-and-copywriting agenda as the framing context; it is not attributed to the publisher or its editors.",
+        "This is not an independent external review, endorsement, adoption, or validation of DIO/ODI, and it is not a standalone DIO/ODI publication.",
+        "The contribution does not modify canonical DIO/ODI concepts, the Reference Vocabulary, or the Reference Model."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "Daniel Beránek's public expert profile",
+          "Ecommerce Bridge editorial coverage of AI and copywriting",
+          "Author-led applied articulation of multi-epistemic communication",
+          "DIO/ODI public communication and conceptual discovery"
+        ],
+        "notes": "A source-linked record of an external media contribution. It captures a practice-facing articulation and its agenda-setting/framing context without treating it as a new DIO/ODI work, an editorial endorsement, or independent external reception."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "The event is dated 23 November 2026 as the documentation date on which the source-verified contribution is first entered into the live SCF. The Slovak primary edition and the Czech localized counterpart both display 15 October 2026 as the original publication date. The publication dates are preserved here rather than replacing them with the SCF documentation date; the Czech page is not assumed to be an exact or functionally equivalent copy.",
+        "sources": [
+          {
+            "label": "Ecommerce Bridge SK — Ako zostať dobrým copywriterom v dobe AI?",
+            "url": "https://www.ecommercebridge.sk/ako-zostat-dobrym-copywriterom-v-dobe-ai/",
+            "role": "primary-language-article-and-attributed-expert-contribution"
+          },
+          {
+            "label": "Ecommerce Bridge CZ — Jak zůstat dobrým copywriterem v době AI?",
+            "url": "https://www.ecommercebridge.cz/jak-zustat-dobrym-copywriterem-v-dobe-ai/",
+            "role": "localized-counterpart-and-translated-expert-contribution"
+          },
+          {
+            "label": "Ecommerce Bridge — Daniel Beránek expert profile",
+            "url": "https://www.ecommercebridge.sk/autor/seo-specialista-a-copywriter-daniel-beranek/",
+            "role": "linked-expert-attribution-and-person-context"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-002",
+          "SCF-2026-004"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-060",
+      "date": "2026-11-23",
+      "date_basis": "documentation_date",
+      "event_class": "Distribution",
+      "change_type": "documented",
+      "title": "Daniel Beránek's contribution on product-data consistency and digital identity appears in Ecommerce Bridge",
+      "summary": "In the editorially assembled expert article “AI odporúča len to, čomu rozumie. Ktoré produktové dáta musí mať e-shop v poriadku?”, Daniel Beránek's attributed contribution identifies consistency across an e-shop's feed, website, structured data, and commercial terms as essential to a coherent, verifiable digital identity. It also emphasizes complete product information and merchant-specific experience and relevance. The contribution gives an e-commerce application context to DIO/ODI-related concerns about maintaining a consistent identity across distributed representations. The article does not name DIO/ODI; the feed records the relationship as author-led applied articulation, not independent reception.",
+      "scope": [
+        {
+          "component": "AI odporúča len to, čomu rozumie. Ktoré produktové dáta musí mať e-shop v poriadku? — Daniel Beránek's expert contribution",
+          "component_type": "media-expert-contribution",
+          "uri": "https://www.ecommercebridge.sk/ai-odporuca-len-to-comu-rozumie-ktore-produktove-data-musi-mat-e-shop-v-poriadku/",
+          "role": "primary-language-edition-and-attributed-expert-contribution"
+        },
+        {
+          "component": "AI doporučuje jen to, čemu rozumí. Která produktová data musí mít e-shop v pořádku? — Czech localized edition",
+          "component_type": "localized-media-edition",
+          "uri": "https://www.ecommercebridge.cz/ai-doporucuje-jen-to-cemu-rozumi-ktera-produktova-data-musi-mit-e-shop-v-poradku/",
+          "role": "localized-counterpart"
+        }
+      ],
+      "before": "The SCF did not yet record Daniel Beránek's public expert contribution applying data consistency and coherent digital identity to e-commerce product representations.",
+      "after": "The SCF records the contribution as an author-led, practice-facing articulation of identity coherence across product feeds, websites, structured data, and commercial information. The Slovak-language article is treated as the primary edition and the Czech page as a localized counterpart; the contribution is not represented as a standalone DIO/ODI publication.",
+      "preserved_invariants": [
+        "The host article is an editorially assembled multi-expert article; Daniel Beránek is attributed for the relevant expert contribution, not as the author of the entire article.",
+        "The Slovak-language page is treated as the primary editorial edition. The Czech page is a localized counterpart and is not asserted to be a textually identical or functionally equivalent copy.",
+        "The contribution explicitly discusses the digital identity of an e-shop and consistency across its representations, but the article does not name DIO/ODI. The DIO/ODI relationship is recorded as an author-led applied articulation, not as an attribution made by the publisher or its editors.",
+        "The article is not an independent external review, endorsement, adoption, or validation of DIO/ODI, and it is not a standalone DIO/ODI publication.",
+        "The contribution does not modify canonical DIO/ODI concepts, the Reference Vocabulary, or the Reference Model."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "Daniel Beránek's public expert profile",
+          "Ecommerce Bridge editorial coverage of AI product recommendations and e-commerce data",
+          "Author-led applied articulation of cross-representation identity consistency",
+          "DIO/ODI public communication and application discovery"
+        ],
+        "notes": "A source-linked record of an external media contribution. It captures the practical e-commerce framing of identity consistency without treating the contribution as a new DIO/ODI work, an editorial endorsement, or independent external reception."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "The event is dated 23 November 2026 as the documentation date on which the source-verified contribution is first entered into the live SCF. The Slovak primary edition and the Czech localized counterpart both display 20 November 2026 as the original publication date. The publication date is preserved here rather than replaced with the SCF documentation date; the Czech page is not assumed to be an exact or functionally equivalent copy.",
+        "sources": [
+          {
+            "label": "Ecommerce Bridge SK — AI odporúča len to, čomu rozumie. Ktoré produktové dáta musí mať e-shop v poriadku?",
+            "url": "https://www.ecommercebridge.sk/ai-odporuca-len-to-comu-rozumie-ktore-produktove-data-musi-mat-e-shop-v-poriadku/",
+            "role": "primary-language-article-and-attributed-expert-contribution"
+          },
+          {
+            "label": "Ecommerce Bridge CZ — AI doporučuje jen to, čemu rozumí. Která produktová data musí mít e-shop v pořádku?",
+            "url": "https://www.ecommercebridge.cz/ai-doporucuje-jen-to-cemu-rozumi-ktera-produktova-data-musi-mit-e-shop-v-poradku/",
+            "role": "localized-counterpart-and-translated-expert-contribution"
+          },
+          {
+            "label": "Ecommerce Bridge — Daniel Beránek expert profile",
+            "url": "https://www.ecommercebridge.sk/autor/seo-specialista-a-copywriter-daniel-beranek/",
+            "role": "linked-expert-attribution-and-person-context"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-002",
+          "SCF-2026-004"
         ],
         "supersedes": [],
         "corrects": []
