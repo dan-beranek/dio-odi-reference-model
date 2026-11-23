@@ -289,7 +289,9 @@ def existing_evidence_index(feed: dict[str, Any]) -> dict[str, list[str]]:
 
 def build_known_context(
     works: dict[str, Any],
-    registries: list[dict[str, Any]],
+    distributions: dict[str, Any],
+    external_reception: dict[str, Any],
+    application_mappings: dict[str, Any],
     feed: dict[str, Any],
 ) -> dict[str, Any]:
     title_to_work: dict[str, str] = {}
@@ -297,6 +299,25 @@ def build_known_context(
     arxiv_to_work: dict[str, str] = {}
     known_urls: set[str] = set()
     known_ids: set[str] = set()
+
+    url_fields = {
+        "url", "canonical_url", "canonical_hub", "repository", "endpoint",
+        "health_endpoint", "concept_url", "version_url", "pdf_url", "html_url",
+        "site_homepage", "namespace_document", "frontend",
+    }
+
+    def add_urls_from_fields(value: Any) -> None:
+        if isinstance(value, dict):
+            for key, child in value.items():
+                if key in url_fields and isinstance(child, str):
+                    normalised = normalise_url(child)
+                    if normalised:
+                        known_urls.add(normalised)
+                elif isinstance(child, (dict, list)):
+                    add_urls_from_fields(child)
+        elif isinstance(value, list):
+            for child in value:
+                add_urls_from_fields(child)
 
     for work in works.get("works", []):
         if not isinstance(work, dict):
@@ -306,9 +327,9 @@ def build_known_context(
         if isinstance(work_id, str) and isinstance(title, str):
             title_to_work[normalise_text(title)] = work_id
         for doi in work_doi_identifiers(work):
+            known_ids.add(doi)
             if isinstance(work_id, str):
                 doi_to_work[doi] = work_id
-            known_ids.add(doi)
         arxiv = work.get("arxiv")
         if isinstance(arxiv, dict):
             arxiv_id = arxiv.get("id")
@@ -317,13 +338,64 @@ def build_known_context(
                 known_ids.add(normalised_arxiv)
                 if isinstance(work_id, str):
                     arxiv_to_work[normalised_arxiv] = work_id
-    for registry in registries:
-        serialised = json.dumps(registry, ensure_ascii=False)
-        known_ids.update(extract_dois(serialised))
-        for match in re.findall(r"https?://[^\s\"'<>]+", serialised):
-            url = normalise_url(match.rstrip(".,;:)"))
-            if url:
-                known_urls.add(url)
+        add_urls_from_fields(work)
+
+    # A distribution's explicit identifier belongs to the canonical work
+    # named by the registry group. Do not scrape DOI strings from narrative
+    # evidence fields: they may describe bibliographic citations, not identity.
+    for work_group in distributions.get("works", []):
+        if not isinstance(work_group, dict):
+            continue
+        work_id = work_group.get("work")
+        for representation in work_group.get("representations", []):
+            if not isinstance(representation, dict):
+                continue
+            identifier = representation.get("identifier")
+            identifier_type = representation.get("identifier_type")
+            if identifier_type == "doi":
+                for doi in extract_dois(identifier):
+                    known_ids.add(doi)
+                    if isinstance(work_id, str):
+                        doi_to_work[doi] = work_id
+            elif identifier_type == "url":
+                normalised = normalise_url(identifier)
+                if normalised:
+                    known_urls.add(normalised)
+            add_urls_from_fields(representation)
+
+    # In the External Reception Registry, entry URLs and target-work URLs
+    # identify records. cited_sources are references, not record identities.
+    for field in ("target_works", "entries"):
+        for record in external_reception.get(field, []):
+            if not isinstance(record, dict):
+                continue
+            record_url = record.get("url")
+            normalised = normalise_url(record_url)
+            if normalised:
+                known_urls.add(normalised)
+                parsed = urlparse(normalised)
+                if parsed.hostname in {"doi.org", "dx.doi.org"}:
+                    known_ids.update(extract_dois(parsed.path))
+            add_urls_from_fields(record)
+
+    # Only DIO/ODI archived release identifiers count here. External-source
+    # DOIs in application mappings remain external citations.
+    application_doi_fields = {
+        "archived_release_doi", "previous_archived_release_doi",
+        "earlier_archived_release_doi", "first_archived_release_doi",
+        "introduced_archived_release_doi", "base_mapping_first_archived_release_doi",
+    }
+    for mapping in application_mappings.get("mappings", []):
+        if not isinstance(mapping, dict):
+            continue
+        for field in application_doi_fields:
+            known_ids.update(extract_dois(mapping.get(field)))
+        add_urls_from_fields(mapping)
+
+    if isinstance(works.get("hub"), str):
+        normalised_hub = normalise_url(works["hub"])
+        if normalised_hub:
+            known_urls.add(normalised_hub)
 
     evidence_index = existing_evidence_index(feed)
     known_urls.update(evidence_index)
@@ -826,9 +898,7 @@ def build_report(
 
     author = works.get("author", {}) if isinstance(works.get("author"), dict) else {}
     context = build_known_context(
-        works,
-        [works, distributions, external_reception, application_mappings],
-        feed,
+        works, distributions, external_reception, application_mappings, feed
     )
     context["orcid_values"] = [author["orcid"]] if author.get("orcid") else []
     context["author_names"] = [author["name"]] if author.get("name") else []
