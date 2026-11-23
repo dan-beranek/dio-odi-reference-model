@@ -13,6 +13,8 @@ The query profile in discovery/query-profile.json currently supplies:
 - distinctive concept anchors validated against the canonical keyword grammar in metadata/keywords.json;
 - exact titles and the works' own version/concept DOI and arXiv identifiers drawn from the canonical works registry in metadata/works.json.
 
+A small, explicit relationship-query set supplements those anchors with queries for third-party registry/vocabulary records, implementation/application traces, and independent citations or reviews. These are relationship intents, not preferred platforms. The three added Tavily queries keep the daily general-web scan at 27 basic queries (about 810 credits over a 30-day month at one credit per basic search); the scholarly adapters also include these three queries in their selected subset.
+
 The profile can be extended when the identity vocabulary changes. Work-title queries are derived from the work registry rather than duplicated as another manually maintained publication inventory. A small number of distinctive concept anchors are selected deliberately; the engine does not send every generic keyword to a search provider.
 
 ## Search providers
