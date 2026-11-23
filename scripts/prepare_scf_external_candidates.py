@@ -143,6 +143,23 @@ class GitHubClient:
             raise ScanError(f"GitHub API returned invalid JSON for {path}") from exc
 
 
+def fetch_bioregistry_record(revision: str) -> dict[str, Any]:
+    """Fetch one exact upstream dio-odi record from a versioned registry snapshot."""
+    url = (
+        "https://raw.githubusercontent.com/biopragmatics/bioregistry/"
+        f"{revision}/{BIOREGISTRY_PATH}"
+    )
+    body, _ = fetch_resource(url, "application/json")
+    try:
+        document = json.loads(body.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ScanError(f"Invalid upstream BioRegistry snapshot at {revision}") from exc
+    record = document.get("dio-odi") if isinstance(document, dict) else None
+    if not isinstance(record, dict):
+        raise ScanError(f"Upstream BioRegistry snapshot at {revision} has no dio-odi record")
+    return record
+
+
 def entry_by_id(registry: dict[str, Any], entry_id: str) -> dict[str, Any]:
     for entry in registry.get("entries", []):
         if isinstance(entry, dict) and entry.get("id") == entry_id:
@@ -272,36 +289,38 @@ def scan_bioregistry(
             item for item in files
             if isinstance(item, dict) and item.get("filename") == BIOREGISTRY_PATH
         ]
-        for item in matching:
-            patch = item.get("patch")
-            if not isinstance(patch, str):
-                raise ScanError(
-                    f"BioRegistry commit {sha} changed the registry file but its patch is unavailable"
-                )
-            if not re.search(r'^[+-]\s*"dio-odi"\s*:', patch, flags=re.MULTILINE):
-                continue
-            prefix_changes += 1
-            commit_data = detail.get("commit", {})
-            authored = commit_data.get("author", {}) if isinstance(commit_data, dict) else {}
-            committed = commit_data.get("committer", {}) if isinstance(commit_data, dict) else {}
-            timestamp = (authored or {}).get("date") or (committed or {}).get("date")
-            parsed = parse_timestamp(timestamp)
-            candidates.append(make_candidate(
-                f"bioregistry-record-change:{sha}",
-                "external-registry-record-update",
-                entry["url"],
-                [entry["url"], f"https://github.com/biopragmatics/bioregistry/commit/{sha}"],
-                evidence_index,
-                date_candidate=parsed.date().isoformat() if parsed else None,
-                date_basis_candidate="upstream-registry-commit-time",
-                date_basis_note="The commit timestamp identifies an upstream data change. Confirm the public registry refresh time before using it as the SCF event date.",
-                changed=True,
-                registry="BioRegistry",
-                upstream_commit=sha,
-                upstream_commit_url=f"https://github.com/biopragmatics/bioregistry/commit/{sha}",
-                current_record_fingerprint=stable_fingerprint(current),
-                current_record=current,
-            ))
+        if not matching:
+            continue
+        parents = detail.get("parents", []) if isinstance(detail, dict) else []
+        parent_sha = parents[0].get("sha") if parents and isinstance(parents[0], dict) else None
+        if not parent_sha:
+            raise ScanError(f"BioRegistry commit {sha} has no parent snapshot for comparison")
+        before_record = fetch_bioregistry_record(parent_sha)
+        after_record = fetch_bioregistry_record(sha)
+        if before_record == after_record:
+            continue
+        prefix_changes += 1
+        commit_data = detail.get("commit", {})
+        authored = commit_data.get("author", {}) if isinstance(commit_data, dict) else {}
+        committed = commit_data.get("committer", {}) if isinstance(commit_data, dict) else {}
+        timestamp = (authored or {}).get("date") or (committed or {}).get("date")
+        parsed = parse_timestamp(timestamp)
+        candidates.append(make_candidate(
+            f"bioregistry-record-change:{sha}",
+            "external-registry-record-update",
+            entry["url"],
+            [entry["url"], f"https://github.com/biopragmatics/bioregistry/commit/{sha}"],
+            evidence_index,
+            date_candidate=parsed.date().isoformat() if parsed else None,
+            date_basis_candidate="upstream-registry-commit-time",
+            date_basis_note="The upstream commit timestamp identifies a change to the exact dio-odi record. Confirm the public registry refresh time and the semantic materiality of changed fields before using it as an SCF event.",
+            changed=True,
+            registry="BioRegistry",
+            upstream_commit=sha,
+            upstream_commit_url=f"https://github.com/biopragmatics/bioregistry/commit/{sha}",
+            before_record=before_record,
+            after_record=after_record,
+        ))
 
     return candidates, {
         "source": "BioRegistry / Semantic Farm",
