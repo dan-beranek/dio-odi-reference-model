@@ -1,6 +1,6 @@
 {
-  "profile_version": "0.2.0",
-  "purpose": "Discovery anchors for the DIO/ODI identity. Query terms come from the canonical identity, work registry and keyword grammar; no publication platform or external registry is preferred. A small relationship-query set targets independent reception, external registry records, and applications without introducing a platform allowlist.",
+  "profile_version": "0.3.0",
+  "purpose": "Discovery anchors for the DIO/ODI identity. Query terms come from the canonical identity, work registry and keyword grammar; no publication platform or external registry is preferred. Relationship queries test registry, implementation and independent-reception signals against both full identity names as well as the DIO/ODI shorthand.",
   "identity_phrases": [
     "Digital Identity Optimization",
     "Ontology of Digital Identity",
@@ -37,6 +37,30 @@
     {
       "id": "external-reception",
       "query": "\"DIO/ODI\" citation cited-by reference independent review"
+    },
+    {
+      "id": "external-registry-dio",
+      "query": "\"Digital Identity Optimization\" registry vocabulary terminology concept scheme"
+    },
+    {
+      "id": "external-registry-odi",
+      "query": "\"Ontology of Digital Identity\" registry vocabulary terminology concept scheme"
+    },
+    {
+      "id": "external-application-dio",
+      "query": "\"Digital Identity Optimization\" implementation integration application software"
+    },
+    {
+      "id": "external-application-odi",
+      "query": "\"Ontology of Digital Identity\" implementation integration application software"
+    },
+    {
+      "id": "external-reception-dio",
+      "query": "\"Digital Identity Optimization\" cited citation reference independent review"
+    },
+    {
+      "id": "external-reception-odi",
+      "query": "\"Ontology of Digital Identity\" cited citation reference independent review"
     }
   ]
 }
