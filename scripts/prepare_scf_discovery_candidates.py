@@ -448,7 +448,7 @@ def resolve_result(
     referenced_dois.difference_update(primary_dois)
 
     primary_arxiv_ids = {
-        match.casefold() for match in ARXIV_RE.findall(result.get("arxiv_id", ""))
+        match.casefold() for match in ARXIV_RE.findall(str(result.get("arxiv_id") or ""))
     }
     if "arxiv.org" in (parsed_url.hostname or ""):
         primary_arxiv_ids.update(match.casefold() for match in ARXIV_RE.findall(parsed_url.path))
