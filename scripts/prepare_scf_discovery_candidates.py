@@ -407,7 +407,7 @@ def build_known_context(
     # Add the canonical /records/{numeric-id} URL as an alias for every
     # registered Zenodo DOI so indexed landing pages resolve to the same record.
     for identifier in known_ids:
-        match = re.fullmatch(r"10\\.5281/zenodo\\.(\\d+)", identifier)
+        match = re.fullmatch(r"10\.5281/zenodo\.(\d+)", identifier)
         if match:
             alias = normalise_url(f"https://zenodo.org/records/{match.group(1)}")
             if alias:
