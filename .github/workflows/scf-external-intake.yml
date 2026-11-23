@@ -1,0 +1,63 @@
+name: SCF external evidence intake
+
+on:
+  schedule:
+    - cron: "47 6 * * *"
+  workflow_dispatch:
+    inputs:
+      lookback_hours:
+        description: "Publication lookback window (1–720 hours)"
+        required: false
+        default: "168"
+        type: string
+  pull_request:
+    paths:
+      - "scripts/prepare_scf_external_candidates.py"
+      - "tests/test_scf_external_candidates.py"
+      - ".github/workflows/scf-external-intake.yml"
+      - "docs/scf-external-intake.md"
+      - "semantic-change-feed/README.md"
+
+permissions:
+  contents: read
+
+jobs:
+  collect-external-evidence:
+    name: Collect review-only external-source observations
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out canonical SCF repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run external-intake unit tests
+        run: python -m unittest discover -s tests -p "test_scf_external_candidates.py" -v
+
+      - name: Collect external-source observations
+        env:
+          SCF_GITHUB_TOKEN: \${{ github.token }}
+          LOOKBACK_HOURS: \${{ inputs.lookback_hours || '168' }}
+        run: |
+          python scripts/prepare_scf_external_candidates.py \
+            --lookback-hours "$LOOKBACK_HOURS" \
+            --output-dir scf-external-output
+
+      - name: Upload external evidence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scf-external-candidates-\${{ github.run_id }}
+          path: scf-external-output/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Add report to workflow summary
+        if: always() && hashFiles('scf-external-output/scf-external-candidates.md') != ''
+        run: cat scf-external-output/scf-external-candidates.md >> "$GITHUB_STEP_SUMMARY"
