@@ -27,6 +27,14 @@ The initial implementation deliberately uses public metadata and short search-re
 
 The workflow runs daily at 07:17 UTC and can also be started manually. Search queries are not limited to a publication-date window: a page newly indexed today may describe an older event, and a current search result is not reliable evidence of when the underlying event occurred.
 
+## Provider failure isolation
+
+Each provider is evaluated independently and its query count, returned observations, completion state, and errors remain visible in the report.
+
+When Tavily is configured, a fully completed Tavily scan is the workflow's acceptance criterion. An unavailable supplemental scholarly provider (for example, OpenAlex returning HTTP 429) is reported as a provider gap but does not mark the completed general-web scan as failed. The coverage label distinguishes web-and-scholarly from general-web-only when neither scholarly index completes.
+
+When Tavily is not configured, the run remains scholarly-only and requires at least one scholarly metadata provider to complete. If no enabled provider completes, the workflow fails rather than presenting an empty or partial run as a successful scan.
+
 ## Candidate resolution
 
 Results are normalised and deduplicated by the discovered object's own DOI when available, otherwise by URL. A DOI or arXiv identifier merely cited in a result is retained as a reference to a related canonical work; it is never substituted for the discovered page's own identity. The collector retains provider and query provenance so that two search services returning the same work appear as one candidate with multiple observations.
