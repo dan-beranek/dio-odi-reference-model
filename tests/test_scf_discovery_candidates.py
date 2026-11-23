@@ -161,6 +161,48 @@ class DiscoveryIntakeTests(unittest.TestCase):
             "https://doi.org/10.9997/cited-only", context["known_urls"]
         )
 
+    def test_discovery_url_alias_matches_curated_external_registry_record(self):
+        reception = {
+            "entries": [
+                {
+                    "id": "bioregistry-dio-odi-prefix",
+                    "url": "https://bioregistry.io/registry/dio-odi",
+                    "discovery_url_aliases": [
+                        {
+                            "url": "https://bioregistry.io/dio-odi",
+                            "basis": "Observed indexed URL variant; no redirect is asserted.",
+                        }
+                    ],
+                }
+            ]
+        }
+        context = discovery.build_known_context(
+            self.works, {}, reception, {}, {"events": []}
+        )
+        self.assertIn(
+            "https://bioregistry.io/registry/dio-odi", context["known_urls"]
+        )
+        self.assertIn("https://bioregistry.io/dio-odi", context["known_urls"])
+
+        result = discovery.resolve_result(
+            {
+                "title": "Bioregistry - Digital Identity Optimization and Ontology of Digital Identity Reference Vocabulary",
+                "url": "https://bioregistry.io/dio-odi",
+                "description": "The Digital Identity Optimization (DIO) and Ontology of Digital Identity (ODI) Reference Vocabulary is a domain-independent SKOS concept scheme.",
+            },
+            provider="Tavily Search",
+            query={"id": "external-registry", "query": '"DIO/ODI" registry vocabulary terminology', "group": "external-relationship"},
+            context=context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNotNone(result)
+        self.assertEqual(result["reference_status"], "already-registered")
+        candidate = discovery.merge_observations([result])[0]
+        classification = discovery.classify_candidate(candidate, context)
+        self.assertEqual(classification["category"], "external-registry-or-application")
+        self.assertEqual(classification["subcategory"], "registry-or-vocabulary-lead")
+
     def test_known_zenodo_record_url_is_already_registered(self):
         works = {
             "works": [
