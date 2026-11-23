@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -72,7 +73,10 @@ def stable_fingerprint(value: dict[str, Any]) -> str:
 
 
 class GitHubClient:
-    """Minimal unauthenticated client for public GitHub REST resources."""
+    """Read-only client for public GitHub REST resources."""
+
+    def __init__(self, token: str | None = None) -> None:
+        self.token = token or os.environ.get("SCF_GITHUB_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
     def get_json(
         self, path: str, params: dict[str, Any] | None = None
@@ -84,6 +88,7 @@ class GitHubClient:
                 "Accept": "application/vnd.github+json",
                 "X-GitHub-Api-Version": API_VERSION,
                 "User-Agent": USER_AGENT,
+                **({"Authorization": f"Bearer {self.token}"} if self.token else {}),
             },
         )
         try:
@@ -241,10 +246,14 @@ def fetch_all_pages(
     timestamp_field: str,
     per_page: int = 100,
     max_pages: int = 10,
+    extra_params: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     items: list[dict[str, Any]] = []
     for page in range(1, max_pages + 1):
-        payload = client.get_json(path, {"per_page": per_page, "page": page})
+        params = {"per_page": per_page, "page": page}
+        if extra_params:
+            params.update(extra_params)
+        payload = client.get_json(path, params)
         if isinstance(payload, dict):
             current = payload.get("workflow_runs")
         elif isinstance(payload, list):
@@ -292,6 +301,7 @@ def scan_sources(
                 f"/repos/{repository}/actions/runs",
                 cutoff,
                 timestamp_field="updated_at",
+                extra_params={"branch": "main"},
             )
             stats["workflow_runs_inspected"] += len(runs)
             for run in runs:
