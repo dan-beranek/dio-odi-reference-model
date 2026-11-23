@@ -41,7 +41,7 @@ jobs:
       - name: Check out repository history
         uses: actions/checkout@v4
         with:
-          ref: \${{ github.sha }}
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -54,11 +54,11 @@ jobs:
 
       - name: Generate review-candidate report
         env:
-          EVENT_NAME: \${{ github.event_name }}
-          PUSH_BASE_SHA: \${{ github.event.before }}
-          PR_BASE_SHA: \${{ github.event.pull_request.base.sha }}
-          MANUAL_BASE_SHA: \${{ inputs.base_sha }}
-          HEAD_SHA: \${{ github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
+          PUSH_BASE_SHA: ${{ github.event.before }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          MANUAL_BASE_SHA: ${{ inputs.base_sha }}
+          HEAD_SHA: ${{ github.sha }}
         run: |
           BASE_SHA="$PUSH_BASE_SHA"
           if [ "$EVENT_NAME" = "pull_request" ]; then
@@ -80,7 +80,7 @@ jobs:
       - name: Upload review report
         uses: actions/upload-artifact@v4
         with:
-          name: scf-review-candidates-\${{ github.run_id }}
+          name: scf-review-candidates-${{ github.run_id }}
           path: scf-review-output/
           if-no-files-found: error
           retention-days: 30
