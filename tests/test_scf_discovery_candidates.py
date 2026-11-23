@@ -32,6 +32,7 @@ class DiscoveryIntakeTests(unittest.TestCase):
                     "title": "Digital Identity Optimization: A Test Framework",
                     "type": "publication-preprint",
                     "version_doi": "10.5281/zenodo.1234567",
+                    "note": "Related background: 10.9999/external-reference.",
                 },
                 {
                     "id": "paper-b",
@@ -79,6 +80,7 @@ class DiscoveryIntakeTests(unittest.TestCase):
         self.assertEqual(queries[0]["query"], '"Digital Identity Optimization"')
         self.assertTrue(any(item["id"] == "author-orcid" for item in queries))
         self.assertTrue(any(item["id"] == "work-doi-1" for item in queries))
+        self.assertFalse(any("10.9999/external-reference" in item["query"] for item in queries))
         self.assertEqual(
             [item["group"] for item in queries].count("known-work-title"), 2
         )
@@ -265,6 +267,38 @@ class DiscoveryIntakeTests(unittest.TestCase):
         candidates = discovery.merge_observations(observations)
         self.assertEqual(len(candidates), 1)
         self.assertEqual(set(candidates[0]["observed_by"]), {"OpenAlex", "Crossref"})
+
+    def test_tavily_failure_does_not_claim_general_web_coverage(self):
+        with patch.object(
+            discovery, "search_tavily",
+            return_value=([], {
+                "provider": "Tavily Search", "enabled": True,
+                "queries_attempted": 3, "requests_succeeded": 2,
+                "raw_results": 0, "errors": ["identity-3: timeout"],
+                "complete": False,
+            }),
+        ), patch.object(
+            discovery, "search_openalex",
+            return_value=([], {
+                "provider": "OpenAlex", "enabled": True, "queries_attempted": 1,
+                "raw_results": 0, "errors": [], "complete": True,
+            }),
+        ), patch.object(
+            discovery, "search_crossref",
+            return_value=([], {
+                "provider": "Crossref", "enabled": True, "queries_attempted": 1,
+                "raw_results": 0, "errors": [], "complete": True,
+            }),
+        ):
+            report = discovery.build_report(
+                self.profile, self.works, self.keywords, {}, {}, {}, {"events": []},
+                tavily_api_key="configured-test-key",
+            )
+        self.assertFalse(report["scan_complete"])
+        self.assertTrue(report["coverage"]["general_web_search_configured"])
+        self.assertFalse(report["coverage"]["general_web_search_enabled"])
+        self.assertEqual(report["coverage"]["coverage_level"], "scholarly-only")
+        self.assertIn("did not complete all queries", report["coverage"]["limitation"])
 
     def test_build_report_marks_unconfigured_general_search_as_limited(self):
         observation = (
