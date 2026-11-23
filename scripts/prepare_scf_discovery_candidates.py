@@ -163,6 +163,26 @@ def read_json(path: str) -> dict[str, Any]:
     return value
 
 
+def work_doi_identifiers(work: dict[str, Any]) -> list[str]:
+    """Return only DOI values that identify this work or one of its versions."""
+    values: list[str] = []
+    for field in (
+        "version_doi", "concept_doi", "current_version_doi",
+        "reference_model_concept_doi", "preferred_relation_identifier",
+    ):
+        values.extend(extract_dois(work.get(field)))
+    for collection_name in ("versions", "releases"):
+        collection = work.get(collection_name, [])
+        if isinstance(collection, list):
+            for item in collection:
+                if isinstance(item, dict):
+                    values.extend(extract_dois(item.get("doi")))
+    current_release = work.get("current_release")
+    if isinstance(current_release, dict):
+        values.extend(extract_dois(current_release.get("doi")))
+    return list(dict.fromkeys(values))
+
+
 def build_search_queries(
     profile: dict[str, Any], works: dict[str, Any]
 ) -> list[dict[str, str]]:
@@ -227,23 +247,8 @@ def build_search_queries(
     for work in works.get("works", []):
         if not isinstance(work, dict):
             continue
-        own_dois: list[str] = []
-        for field in (
-            "version_doi", "concept_doi", "current_version_doi",
-            "reference_model_concept_doi", "preferred_relation_identifier",
-        ):
-            own_dois.extend(extract_dois(work.get(field)))
-        for collection_name in ("versions", "releases"):
-            collection = work.get(collection_name, [])
-            if isinstance(collection, list):
-                for item in collection:
-                    if isinstance(item, dict):
-                        own_dois.extend(extract_dois(item.get("doi")))
-        current_release = work.get("current_release")
-        if isinstance(current_release, dict):
-            own_dois.extend(extract_dois(current_release.get("doi")))
-
-        for doi in dict.fromkeys(own_dois):
+        own_dois = work_doi_identifiers(work)
+        for doi in own_dois:
             if identifier_count >= identifier_limit:
                 break
             identifier_count += 1
@@ -300,8 +305,7 @@ def build_known_context(
         title = work.get("title")
         if isinstance(work_id, str) and isinstance(title, str):
             title_to_work[normalise_text(title)] = work_id
-        serialised = json.dumps(work, ensure_ascii=False)
-        for doi in extract_dois(serialised):
+        for doi in work_doi_identifiers(work):
             if isinstance(work_id, str):
                 doi_to_work[doi] = work_id
             known_ids.add(doi)
@@ -313,12 +317,6 @@ def build_known_context(
                 known_ids.add(normalised_arxiv)
                 if isinstance(work_id, str):
                     arxiv_to_work[normalised_arxiv] = work_id
-        for arxiv_id in ARXIV_RE.findall(serialised):
-            normalised_arxiv = arxiv_id.casefold()
-            known_ids.add(normalised_arxiv)
-            if isinstance(work_id, str):
-                arxiv_to_work[normalised_arxiv] = work_id
-
     for registry in registries:
         serialised = json.dumps(registry, ensure_ascii=False)
         known_ids.update(extract_dois(serialised))
