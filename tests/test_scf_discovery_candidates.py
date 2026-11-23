@@ -155,6 +155,50 @@ class DiscoveryIntakeTests(unittest.TestCase):
             "https://doi.org/10.9997/cited-only", context["known_urls"]
         )
 
+    def test_known_zenodo_record_url_is_already_registered(self):
+        works = {
+            "works": [
+                {
+                    "id": "reference-model",
+                    "title": "DIO/ODI Reference Model",
+                    "version_doi": "10.5281/zenodo.24085589",
+                    "versions": [
+                        {"version": "0.8.0", "doi": "10.5281/zenodo.24056601"},
+                    ],
+                }
+            ]
+        }
+        context = discovery.build_known_context(
+            works, {}, {}, {}, {"events": []}
+        )
+        self.assertIn(
+            "https://zenodo.org/records/24085589", context["known_urls"]
+        )
+        self.assertIn(
+            "https://zenodo.org/records/24056601", context["known_urls"]
+        )
+        result = discovery.resolve_result(
+            {
+                "title": "DIO/ODI Reference Model",
+                "url": "https://zenodo.org/records/24085589",
+                "content": "Digital Identity Optimization and Ontology of Digital Identity.",
+            },
+            provider="Tavily Search",
+            query={
+                "id": "identity-3",
+                "query": '"DIO/ODI"',
+                "group": "identity",
+            },
+            context={
+                **context,
+                "orcid_values": [],
+                "author_names": [],
+            },
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertEqual(result["reference_status"], "already-registered")
+
     def test_work_notes_do_not_become_canonical_doi_identifiers(self):
         work = {
             "id": "paper-a",
