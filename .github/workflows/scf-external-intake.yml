@@ -42,8 +42,8 @@ jobs:
 
       - name: Collect external-source observations
         env:
-          SCF_GITHUB_TOKEN: \${{ github.token }}
-          LOOKBACK_HOURS: \${{ inputs.lookback_hours || '168' }}
+          SCF_GITHUB_TOKEN: ${{ github.token }}
+          LOOKBACK_HOURS: ${{ inputs.lookback_hours || '168' }}
         run: |
           python scripts/prepare_scf_external_candidates.py \
             --lookback-hours "$LOOKBACK_HOURS" \
@@ -53,7 +53,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: scf-external-candidates-\${{ github.run_id }}
+          name: scf-external-candidates-${{ github.run_id }}
           path: scf-external-output/
           if-no-files-found: warn
           retention-days: 30
