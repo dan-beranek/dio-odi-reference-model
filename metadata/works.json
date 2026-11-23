@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.19",
+  "registry_version": "1.8.20",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -296,7 +296,7 @@
       "content_role": "engineering-deep-dive",
       "status": "published",
       "license": "all-rights-reserved",
-      "note": "Engineering deep dive on the distinction between entity matching and authorization to merge. Hashnode is the canonical publication; DEV.to is a secondary publication of the same article and declares the Hashnode URL as its canonical URL."
+      "note": "Engineering deep dive on the distinction between entity matching and authorization to merge. Hashnode is the canonical publication; DEV.to and Medium are secondary representations of the same article."
     },
     {
       "id": "confident-entity-match-not-permission-to-merge",

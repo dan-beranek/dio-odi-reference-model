@@ -25,6 +25,9 @@ BIOREGISTRY_API = "https://bioregistry.io/api/registry/dio-odi?format=json"
 SEMANTIC_FARM_API = "https://semantic.farm/api/registry/dio-odi?format=json"
 BARTOC_API = "https://bartoc.org/api/data?uri=http%3A%2F%2Fbartoc.org%2Fen%2Fnode%2F21188"
 HASHNODE_RSS = "https://dio-odi.hashnode.dev/rss.xml"
+MEDIUM_RSS = "https://seo-spec-copy-daniel-beranek.medium.com/feed"
+MEDIUM_ARTICLE_URL = "https://seo-spec-copy-daniel-beranek.medium.com/the-match-is-easy-the-merge-is-not-28eaba24a2d6"
+MEDIUM_CANONICAL_URL = "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not"
 DEVTO_API = "https://dev.to/api/articles"
 ARXIV_API = "https://export.arxiv.org/api/query?id_list=2610.37407"
 USER_AGENT = "DIO-ODI-SCF-External-Intake/0.1 (+https://vocab.danielberanek.cz/)"
@@ -535,6 +538,59 @@ def parse_hashnode_rss(xml_text: str) -> list[dict[str, Any]]:
     return items
 
 
+
+def parse_medium_rss(xml_text: str) -> list[dict[str, Any]]:
+    """Return the known Medium mirror while preserving Hashnode as canonical."""
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError as exc:
+        raise ScanError(f"Medium RSS returned invalid XML: {exc}") from exc
+
+    expected = urlparse(MEDIUM_ARTICLE_URL)
+    expected_path = expected.path.rstrip("/")
+    items: list[dict[str, Any]] = []
+
+    def append_item(title: str, url: str, published: str) -> None:
+        parsed_url = urlparse(url)
+        timestamp = parse_timestamp(published)
+        if (
+            parsed_url.hostname != expected.hostname
+            or parsed_url.path.rstrip("/") != expected_path
+            or not title
+            or timestamp is None
+        ):
+            return
+        items.append({
+            "title": title,
+            "canonical_url": MEDIUM_CANONICAL_URL,
+            "published_at": timestamp.isoformat(),
+            "observed_on": "Medium RSS",
+            "representation_urls": [MEDIUM_ARTICLE_URL, MEDIUM_CANONICAL_URL],
+        })
+
+    rss_items = root.findall(".//item")
+    for item in rss_items:
+        append_item(
+            _text_of(item.find("title")),
+            _text_of(item.find("link")),
+            _text_of(item.find("pubDate")) or _text_of(item.find("published")),
+        )
+
+    if not rss_items:
+        for item in root.findall(".//atom:entry", ATOM_NS):
+            title = _text_of(item.find("atom:title", ATOM_NS))
+            link_element = item.find("atom:link[@rel='alternate']", ATOM_NS)
+            if link_element is None:
+                link_element = item.find("atom:link", ATOM_NS)
+            url = link_element.attrib.get("href", "") if link_element is not None else ""
+            published = _text_of(item.find("atom:published", ATOM_NS)) or _text_of(
+                item.find("atom:updated", ATOM_NS)
+            )
+            append_item(title, url, published)
+
+    return items
+
+
 def parse_devto_articles(payload: Any) -> list[dict[str, Any]]:
     if not isinstance(payload, list):
         raise ScanError("DEV.to API did not return an article array")
@@ -577,7 +633,7 @@ def scan_publications(
 ) -> tuple[list[dict[str, Any]], dict[str, int], list[dict[str, str]]]:
     observations: dict[str, dict[str, Any]] = {}
     errors: list[dict[str, str]] = []
-    stats = {"hashnode_items_inspected": 0, "devto_articles_inspected": 0}
+    stats = {"hashnode_items_inspected": 0, "devto_articles_inspected": 0, "medium_items_inspected": 0}
     try:
         xml_text = fetch_text(
             HASHNODE_RSS,
@@ -627,6 +683,36 @@ def scan_publications(
                 observations[key] = item
     except ScanError as exc:
         errors.append({"source": "DEV.to API", "error": str(exc)})
+
+
+    try:
+        medium_xml = fetch_text(
+            MEDIUM_RSS,
+            "application/rss+xml, application/atom+xml, application/xml",
+        )
+        medium_items = parse_medium_rss(medium_xml)
+        stats["medium_items_inspected"] = len(medium_items)
+        for item in medium_items:
+            published_at = parse_timestamp(item["published_at"])
+            if published_at is None or published_at < cutoff:
+                continue
+            key = item["canonical_url"].rstrip("/")
+            if key in observations:
+                current = observations[key]
+                existing_platforms = current.get("observed_on")
+                if isinstance(existing_platforms, str):
+                    existing_platforms = [existing_platforms]
+                current["observed_on"] = sorted(
+                    set(existing_platforms or []) | {item["observed_on"]}
+                )
+                current["representation_urls"] = sorted(
+                    set(current.get("representation_urls", []))
+                    | set(item["representation_urls"])
+                )
+            else:
+                observations[key] = item
+    except ScanError as exc:
+        errors.append({"source": "Medium RSS", "error": str(exc)})
 
     candidates: list[dict[str, Any]] = []
     for item in observations.values():
@@ -735,6 +821,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Registry source groups checked: **{report['stats']['registry_sources_checked']}**  ",
         f"Hashnode items inspected: **{report['stats']['hashnode_items_inspected']}**  ",
         f"DEV.to articles inspected: **{report['stats']['devto_articles_inspected']}**  ",
+        f"Medium items inspected: **{report['stats']['medium_items_inspected']}**  ",
         f"Candidate observations: **{len(candidates)}**",
         "",
         "## Source checks",
@@ -773,7 +860,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         "- BioRegistry and Semantic Farm are checked as one upstream registry record with two API surfaces; a mirror is not a second independent integration.",
         "- BARTOC is monitored as a separate JSKOS catalogue record; its modified timestamp triggers review, not automatic inclusion.",
         "- arXiv version metadata is checked against the canonical Corpus Metadata Registry.",
-        "- Hashnode and DEV.to publication copies are grouped by canonical URL; LinkedIn is not scraped.",
+        "- Hashnode remains canonical for the engineering deep dive; DEV.to and Medium are grouped as secondary representations by that Hashnode canonical URL.",
         "- No SCF event IDs are allocated and semantic-change-feed/events.json is not modified.",
         "- The scan does not update the External Reception Registry, version metadata, archives, or public site.",
         "",

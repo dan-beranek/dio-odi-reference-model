@@ -124,6 +124,21 @@ class TestExternalCandidateHelpers(unittest.TestCase):
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0]["canonical_url"], "https://dio-odi.hashnode.dev/new-analysis")
 
+
+    def test_medium_rss_maps_known_mirror_to_hashnode_canonical(self):
+        xml = """<?xml version="1.0"?>
+        <rss version="2.0"><channel><item>
+          <title>The Match Is Easy, the Merge Is Not</title>
+          <link>https://seo-spec-copy-daniel-beranek.medium.com/the-match-is-easy-the-merge-is-not-28eaba24a2d6?source=rss</link>
+          <pubDate>Mon, 23 Nov 2026 09:00:00 GMT</pubDate>
+        </item></channel></rss>"""
+        items = scf.parse_medium_rss(xml)
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["canonical_url"], scf.MEDIUM_CANONICAL_URL)
+        self.assertEqual(items[0]["observed_on"], "Medium RSS")
+        self.assertIn(scf.MEDIUM_ARTICLE_URL, items[0]["representation_urls"])
+
+
     def test_devto_filters_to_dio_odi_canonical_content(self):
         items = scf.parse_devto_articles([
             {
@@ -248,6 +263,12 @@ class TestExternalCandidateHelpers(unittest.TestCase):
           <link>https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not</link>
           <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
         </item></channel></rss>"""
+        medium_rss = """<?xml version="1.0"?>
+        <rss version="2.0"><channel><item>
+          <title>The Match Is Easy, the Merge Is Not</title>
+          <link>https://seo-spec-copy-daniel-beranek.medium.com/the-match-is-easy-the-merge-is-not-28eaba24a2d6</link>
+          <pubDate>Mon, 23 Nov 2026 09:00:00 GMT</pubDate>
+        </item></channel></rss>"""
         devto = [{
             "title": "The Match Is Easy, the Merge Is Not",
             "url": "https://dev.to/danielberanek/the-match-is-easy-the-merge-is-not-khb",
@@ -255,7 +276,7 @@ class TestExternalCandidateHelpers(unittest.TestCase):
             "published_at": "2026-11-22T12:00:00Z",
             "tag_list": ["agentic"],
         }]
-        with patch.object(scf, "fetch_text", return_value=rss), patch.object(
+        with patch.object(scf, "fetch_text", side_effect=[rss, medium_rss]), patch.object(
             scf, "fetch_json", return_value=(devto, {})
         ):
             candidates, stats, errors = scf.scan_publications(
@@ -267,10 +288,13 @@ class TestExternalCandidateHelpers(unittest.TestCase):
             )
         self.assertEqual(errors, [])
         self.assertEqual(len(candidates), 1)
-        self.assertEqual(set(candidates[0]["observed_on"]), {"Hashnode RSS", "DEV.to API"})
+        self.assertEqual(set(candidates[0]["observed_on"]), {"Hashnode RSS", "DEV.to API", "Medium RSS"})
+        self.assertIn(scf.MEDIUM_ARTICLE_URL, candidates[0]["representation_urls"])
+        self.assertEqual(candidates[0]["source_url"], scf.MEDIUM_CANONICAL_URL)
         self.assertEqual(candidates[0]["reference_status"], "already-cited")
         self.assertEqual(candidates[0]["existing_event_ids"], ["SCF-2026-058"])
         self.assertEqual(stats["devto_articles_inspected"], 1)
+        self.assertEqual(stats["medium_items_inspected"], 1)
 
     def test_arxiv_newer_version_is_a_candidate(self):
         xml = """<?xml version="1.0"?>

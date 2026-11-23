@@ -17,6 +17,10 @@ on:
       - ".github/workflows/scf-external-intake.yml"
       - "docs/scf-external-intake.md"
       - "semantic-change-feed/README.md"
+      - "semantic-change-feed/events.json"
+      - "metadata/distributions.json"
+      - "metadata/works.json"
+      - "metadata/external-reception.json"
 
 permissions:
   contents: read
