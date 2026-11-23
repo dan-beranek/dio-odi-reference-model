@@ -358,21 +358,34 @@ def build_known_context(
     feed: dict[str, Any],
 ) -> dict[str, Any]:
     title_to_work: dict[str, str] = {}
+    work_id_to_title: dict[str, str] = {}
     doi_to_work: dict[str, str] = {}
     arxiv_to_work: dict[str, str] = {}
     known_urls: set[str] = set()
     known_ids: set[str] = set()
+    author = works.get("author", {}) if isinstance(works.get("author"), dict) else {}
+    author_name = str(author.get("name") or "")
+    author_orcid = str(author.get("orcid") or "")
+    author_handles: set[str] = set()
+    own_domains: set[str] = set()
+    owned_url_prefixes: set[str] = set()
 
-    url_fields = {
-        "url", "canonical_url", "canonical_hub", "repository", "endpoint",
-        "health_endpoint", "concept_url", "version_url", "pdf_url", "html_url",
-        "site_homepage", "namespace_document", "frontend",
-    }
+    if author_name:
+        slug = re.sub(r"[^a-z0-9]+", "-", normalise_text(author_name)).strip("-")
+        compact = re.sub(r"[^a-z0-9]", "", normalise_text(author_name))
+        if slug:
+            author_handles.add(slug)
+        if compact:
+            author_handles.add(compact)
 
     def add_urls_from_fields(value: Any) -> None:
         if isinstance(value, dict):
             for key, child in value.items():
-                if key in url_fields and isinstance(child, str):
+                if key in {
+                    "url", "canonical_url", "canonical_hub", "repository", "endpoint",
+                    "health_endpoint", "concept_url", "version_url", "pdf_url", "html_url",
+                    "site_homepage", "namespace_document", "frontend",
+                } and isinstance(child, str):
                     normalised = normalise_url(child)
                     if normalised:
                         known_urls.add(normalised)
@@ -382,6 +395,33 @@ def build_known_context(
             for child in value:
                 add_urls_from_fields(child)
 
+    def remember_owned_url(value: Any, *, account_prefix: bool = False) -> None:
+        if not isinstance(value, str):
+            return
+        normalised = normalise_url(value)
+        if not normalised:
+            return
+        owned_url_prefixes.add(normalised)
+        parsed = urlparse(normalised)
+        host = (parsed.hostname or "").casefold()
+        segments = [part for part in parsed.path.split("/") if part]
+        if account_prefix and host == "github.com" and segments:
+            author_handles.add(segments[0].casefold())
+            owned_url_prefixes.add(f"https://github.com/{segments[0].casefold()}")
+        elif account_prefix and host == "dev.to" and segments:
+            author_handles.add(segments[0].casefold())
+            owned_url_prefixes.add(f"https://dev.to/{segments[0].casefold()}")
+        elif account_prefix and host.endswith("medium.com"):
+            owned_url_prefixes.add(f"https://{host}")
+        elif account_prefix and host.endswith("hashnode.dev"):
+            owned_url_prefixes.add(f"https://{host}")
+
+    person_uri = author.get("person_uri")
+    if isinstance(person_uri, str):
+        person_host = (urlparse(person_uri).hostname or "").casefold()
+        if person_host:
+            own_domains.add(person_host)
+
     for work in works.get("works", []):
         if not isinstance(work, dict):
             continue
@@ -389,6 +429,7 @@ def build_known_context(
         title = work.get("title")
         if isinstance(work_id, str) and isinstance(title, str):
             title_to_work[normalise_text(title)] = work_id
+            work_id_to_title[work_id] = title
         for doi in work_doi_identifiers(work):
             known_ids.add(doi)
             if isinstance(work_id, str):
@@ -402,10 +443,19 @@ def build_known_context(
                 if isinstance(work_id, str):
                     arxiv_to_work[normalised_arxiv] = work_id
         add_urls_from_fields(work)
+        for field in ("canonical_url", "repository", "site_homepage", "frontend"):
+            remember_owned_url(work.get(field), account_prefix=True)
 
-    # A distribution's explicit identifier belongs to the canonical work
-    # named by the registry group. Do not scrape DOI strings from narrative
-    # evidence fields: they may describe bibliographic citations, not identity.
+    for work in works.get("works", []):
+        if isinstance(work, dict):
+            for field in ("canonical_url", "site_homepage"):
+                value = work.get(field)
+                if isinstance(value, str):
+                    host = (urlparse(value).hostname or "").casefold()
+                    if host and host.endswith("danielberanek.cz"):
+                        own_domains.add("danielberanek.cz")
+
+    # A distribution's explicit identifier belongs to the work named by its registry group.
     for work_group in distributions.get("works", []):
         if not isinstance(work_group, dict):
             continue
@@ -424,17 +474,15 @@ def build_known_context(
                 normalised = normalise_url(identifier)
                 if normalised:
                     known_urls.add(normalised)
+                remember_owned_url(identifier, account_prefix=True)
             add_urls_from_fields(representation)
 
-    # In the External Reception Registry, entry URLs and target-work URLs
-    # identify records. cited_sources are references, not record identities.
+    # External Reception URLs identify reception records. cited_sources URLs are
+    # bibliographic edges, not alternate identities for the reception record.
     for field in ("target_works", "entries"):
         for record in external_reception.get(field, []):
             if not isinstance(record, dict):
                 continue
-            # Only the record's own landing page is its identity. In particular,
-            # do not recurse into cited_sources[].url: those are bibliographic
-            # edges to other works, not alternate URLs for this reception record.
             record_url = record.get("url")
             normalised = normalise_url(record_url)
             if normalised:
@@ -443,12 +491,10 @@ def build_known_context(
                 if parsed.hostname in {"doi.org", "dx.doi.org"}:
                     known_ids.update(extract_dois(parsed.path))
             if field == "target_works":
-                normalised_homepage = normalise_url(record.get("homepage", ""))
-                if normalised_homepage:
-                    known_urls.add(normalised_homepage)
+                homepage = normalise_url(record.get("homepage", ""))
+                if homepage:
+                    known_urls.add(homepage)
 
-    # Only DIO/ODI archived release identifiers count here. External-source
-    # DOIs in application mappings remain external citations.
     application_doi_fields = {
         "archived_release_doi", "previous_archived_release_doi",
         "earlier_archived_release_doi", "first_archived_release_doi",
@@ -462,13 +508,14 @@ def build_known_context(
         add_urls_from_fields(mapping)
 
     if isinstance(works.get("hub"), str):
-        normalised_hub = normalise_url(works["hub"])
-        if normalised_hub:
-            known_urls.add(normalised_hub)
+        hub = normalise_url(works["hub"])
+        if hub:
+            known_urls.add(hub)
+            host = (urlparse(hub).hostname or "").casefold()
+            if host.endswith("danielberanek.cz"):
+                own_domains.add("danielberanek.cz")
+            remember_owned_url(hub)
 
-    # Zenodo's record landing pages do not expose their DOI in the URL.
-    # Add the canonical /records/{numeric-id} URL as an alias for every
-    # registered Zenodo DOI so indexed landing pages resolve to the same record.
     for identifier in known_ids:
         match = re.fullmatch(r"10\.5281/zenodo\.(\d+)", identifier)
         if match:
@@ -480,12 +527,131 @@ def build_known_context(
     known_urls.update(evidence_index)
     return {
         "title_to_work": title_to_work,
+        "work_id_to_title": work_id_to_title,
         "doi_to_work": doi_to_work,
         "arxiv_to_work": arxiv_to_work,
         "known_urls": known_urls,
         "known_ids": known_ids,
         "evidence_index": evidence_index,
+        "author_name": author_name,
+        "author_orcid": author_orcid,
+        "author_handles": author_handles,
+        "own_domains": own_domains,
+        "owned_url_prefixes": owned_url_prefixes,
     }
+
+
+def detect_source_ownership(url: str, context: dict[str, Any]) -> dict[str, str] | None:
+    """Return a cautious ownership/profile signal derived from canonical author metadata."""
+    parsed = urlparse(url)
+    host = (parsed.hostname or "").casefold()
+    path = (parsed.path or "").casefold()
+    normalised = normalise_url(url)
+    orcid = str(context.get("author_orcid") or "").casefold()
+    if orcid and orcid in normalised.casefold():
+        return {
+            "subclass": "author-profile",
+            "confidence": "high",
+            "basis": "The URL identifies the canonical author ORCID profile.",
+        }
+
+    for domain in context.get("own_domains", set()):
+        if host == domain or host.endswith("." + domain):
+            return {
+                "subclass": "author-maintained-web-presence",
+                "confidence": "high",
+                "basis": "The URL is on a first-party domain derived from the canonical author URI.",
+            }
+
+    for prefix in context.get("owned_url_prefixes", set()):
+        if normalised == prefix or normalised.startswith(prefix.rstrip("/") + "/"):
+            return {
+                "subclass": "author-controlled-distribution",
+                "confidence": "high",
+                "basis": "The URL matches an author-confirmed canonical distribution or repository location.",
+            }
+
+    segments = [part for part in path.split("/") if part]
+    slug = re.sub(r"[^a-z0-9]+", "-", path).strip("-")
+    handles = context.get("author_handles", set())
+    matching_handle = next(
+        (handle for handle in sorted(handles, key=len, reverse=True)
+         if handle and (handle in slug or handle in segments)),
+        None,
+    )
+    if not matching_handle:
+        return None
+
+    if host == "github.com":
+        return {
+            "subclass": "author-profile-or-repository",
+            "confidence": "high",
+            "basis": "The GitHub account path matches an owner handle derived from canonical repository metadata.",
+        }
+    if host == "researchgate.net" and "profile" in segments:
+        return {
+            "subclass": "author-profile",
+            "confidence": "high",
+            "basis": "The ResearchGate profile path matches the canonical author name.",
+        }
+    if host == "huggingface.co" and len(segments) >= 2 and segments[1] in handles:
+        return {
+            "subclass": "author-associated-distribution",
+            "confidence": "medium",
+            "basis": "The Hugging Face owner slug matches the canonical author name and the page refers to a canonical DIO/ODI work.",
+        }
+    if host == "linkedin.com" or host.endswith(".linkedin.com"):
+        return {
+            "subclass": "author-associated-social-content",
+            "confidence": "medium",
+            "basis": "The LinkedIn URL slug contains the canonical author name; post ownership should still be confirmed on the platform.",
+        }
+    if host == "bioregistry.io" and "contributor" in segments:
+        return {
+            "subclass": "author-profile",
+            "confidence": "high",
+            "basis": "The Bioregistry contributor URL is tied to the canonical author identity.",
+        }
+    if host == "huggingface.co":
+        return {
+            "subclass": "author-associated-platform-content",
+            "confidence": "medium",
+            "basis": "The platform URL contains an account slug matching the canonical author name.",
+        }
+    return {
+        "subclass": "author-associated-platform-content",
+        "confidence": "low",
+        "basis": "The URL contains a slug matching the canonical author name; control of the account is not established.",
+    }
+
+
+def looks_like_external_registry_or_application(candidate: dict[str, Any]) -> tuple[str, str] | None:
+    parsed = urlparse(candidate.get("source_url", ""))
+    host = (parsed.hostname or "").casefold()
+    segments = [part.casefold() for part in (parsed.path or "").split("/") if part]
+    title_snippet = normalise_text(
+        str(candidate.get("title") or "") + " " + str(candidate.get("snippet") or "")
+    )
+    if any(part in {"contributor", "profile", "profiles", "authors", "people", "users"} for part in segments):
+        return None
+    if host in {
+        "zenodo.org", "figshare.com", "papers.ssrn.com", "ssrn.com",
+        "arxiv.org", "github.com", "huggingface.co",
+    }:
+        return None
+    if any(part in {"registry", "prefix", "entry", "entries", "terminology"} for part in segments):
+        return ("registry-record-lead", "A third-party registry-like record URL was found; verify the actual record and its authority.")
+    if any(phrase in title_snippet for phrase in (
+        "registered in", "registry record", "registered as a", "prefix registration",
+        "terminology record", "vocabulary entry", "controlled vocabulary",
+    )):
+        return ("registry-or-vocabulary-lead", "The page text suggests an external registry or vocabulary relationship; verify the underlying record.")
+    if any(phrase in title_snippet for phrase in (
+        "implemented in", "implementation of", "integrates with", "integration with",
+        "deployed in", "adopted by", "used by", "application of dio",
+    )):
+        return ("application-or-implementation-lead", "The page text suggests an external application or implementation; verify that it is independent and substantive.")
+    return None
 
 
 def resolve_result(
