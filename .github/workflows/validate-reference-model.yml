@@ -23,6 +23,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Run SCF review-intake unit tests when present
+        run: |
+          if [ -f scripts/prepare_scf_review_candidates.py ]; then
+            python -m unittest discover -s tests -p "test_scf_review_candidates.py" -v
+          else
+            echo "SCF review-intake scanner is not present on this branch; skipping its tests."
+          fi
+
       - name: Install validation dependencies
         run: |
           python -m pip install --upgrade pip

@@ -1,0 +1,86 @@
+name: SCF review-candidate intake
+
+on:
+  pull_request:
+    paths:
+      - "metadata/works.json"
+      - "metadata/distributions.json"
+      - "metadata/external-reception.json"
+      - "metadata/application-mappings.json"
+      - "discovery/catalog-source.json"
+      - "scripts/prepare_scf_review_candidates.py"
+      - "tests/test_scf_review_candidates.py"
+      - ".github/workflows/scf-review-intake.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "metadata/works.json"
+      - "metadata/distributions.json"
+      - "metadata/external-reception.json"
+      - "metadata/application-mappings.json"
+      - "discovery/catalog-source.json"
+      - "scripts/prepare_scf_review_candidates.py"
+      - "tests/test_scf_review_candidates.py"
+      - ".github/workflows/scf-review-intake.yml"
+  workflow_dispatch:
+    inputs:
+      base_sha:
+        description: "Optional base commit to compare against (defaults to the previous commit)"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  prepare-review-candidates:
+    name: Prepare non-publishing SCF review queue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository history
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run intake unit tests
+        run: python -m unittest discover -s tests -p "test_scf_review_candidates.py" -v
+
+      - name: Generate review-candidate report
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PUSH_BASE_SHA: ${{ github.event.before }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          MANUAL_BASE_SHA: ${{ inputs.base_sha }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          BASE_SHA="$PUSH_BASE_SHA"
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            BASE_SHA="$PR_BASE_SHA"
+          elif [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            BASE_SHA="$MANUAL_BASE_SHA"
+          fi
+
+          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            BASE_SHA="$(git rev-parse "$HEAD_SHA^")"
+          fi
+
+          git cat-file -e "$BASE_SHA^{commit}"
+          python scripts/prepare_scf_review_candidates.py \
+            --base-sha "$BASE_SHA" \
+            --head-sha "$HEAD_SHA" \
+            --output-dir scf-review-output
+
+      - name: Upload review report
+        uses: actions/upload-artifact@v4
+        with:
+          name: scf-review-candidates-${{ github.run_id }}
+          path: scf-review-output/
+          if-no-files-found: error
+          retention-days: 30
