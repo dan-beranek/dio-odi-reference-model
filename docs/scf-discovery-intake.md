@@ -46,7 +46,7 @@ Each deduplicated candidate receives a separate discovery class. This is a triag
 - **external-registry-or-application** — a third-party registry-like record or a page suggesting an implementation or application, both requiring primary-source verification;
 - **unattributed-or-ambiguous** — an identity-related result for which available metadata does not establish authorship, ownership, independent authorship, or a canonical-work reference.
 
-Authorship is considered explicit only when OpenAlex or Crossref supplies an author list. A page URL on a known first-party domain, an author-confirmed distribution URL, an ORCID profile, or an account slug matching canonical metadata can identify author-associated traces; account-slug matches are deliberately lower confidence. A search snippet mentioning the author is not itself treated as authorship.
+Authorship is considered explicit only when OpenAlex or Crossref supplies an author list. A page URL on a known first-party domain, a GitHub Pages hostname matching the canonical repository owner, an author-confirmed distribution URL, an ORCID profile, or an account slug matching canonical metadata can identify author-associated traces; account-slug matches are deliberately lower confidence. A search snippet mentioning the author is not itself treated as authorship.
 
 The report includes a class summary and clusters separate records under linked canonical work IDs. A cluster does not merge distinct DOI records: it shows that different platform records may represent distributions or versions of one canonical work. Each record retains its own persistent identifier and observed URLs.
 
