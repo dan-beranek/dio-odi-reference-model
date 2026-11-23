@@ -1,0 +1,63 @@
+name: SCF discovery-first evidence intake
+
+on:
+  schedule:
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/prepare_scf_discovery_candidates.py"
+      - "tests/test_scf_discovery_candidates.py"
+      - "discovery/query-profile.json"
+      - ".github/workflows/scf-discovery-intake.yml"
+      - "docs/scf-discovery-intake.md"
+      - "semantic-change-feed/README.md"
+      - "semantic-change-feed/events.json"
+      - "metadata/works.json"
+      - "metadata/keywords.json"
+      - "metadata/distributions.json"
+      - "metadata/external-reception.json"
+      - "metadata/application-mappings.json"
+
+permissions:
+  contents: read
+
+jobs:
+  discover-external-evidence:
+    name: Discover public DIO ODI evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out canonical SCF repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run discovery-intake unit tests
+        run: python -m unittest discover -s tests -p "test_scf_discovery_candidates.py" -v
+
+      - name: Search web and scholarly metadata indexes
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: |
+          python scripts/prepare_scf_discovery_candidates.py \
+            --output-dir scf-discovery-output
+
+      - name: Upload discovery review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scf-discovery-candidates-${{ github.run_id }}
+          path: scf-discovery-output/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Add discovery report to workflow summary
+        if: always() && hashFiles('scf-discovery-output/scf-discovery-candidates.md') != ''
+        run: cat scf-discovery-output/scf-discovery-candidates.md >> "$GITHUB_STEP_SUMMARY"

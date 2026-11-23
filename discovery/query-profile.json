@@ -1,0 +1,42 @@
+{
+  "profile_version": "0.2.0",
+  "purpose": "Discovery anchors for the DIO/ODI identity. Query terms come from the canonical identity, work registry and keyword grammar; no publication platform or external registry is preferred. A small relationship-query set targets independent reception, external registry records, and applications without introducing a platform allowlist.",
+  "identity_phrases": [
+    "Digital Identity Optimization",
+    "Ontology of Digital Identity",
+    "DIO/ODI"
+  ],
+  "concept_anchors": [
+    "K6 Semantic Connectome",
+    "Reconstruction Failure Modes",
+    "Semantic Fragmentation",
+    "Identity Collapse"
+  ],
+  "work_title_query_limit": 8,
+  "max_results_per_query": 5,
+  "query_policy": {
+    "exact_phrases": true,
+    "include_orcid": true,
+    "include_author_name_only_with_identity_phrase": true,
+    "include_known_work_titles": true,
+    "platform_allowlist": [],
+    "platform_denylist": [],
+    "generic_acronym_only_queries": false,
+    "search_known_work_identifiers": true
+  },
+  "identifier_query_limit": 6,
+  "relationship_queries": [
+    {
+      "id": "external-registry",
+      "query": "\"DIO/ODI\" registry vocabulary terminology"
+    },
+    {
+      "id": "external-application",
+      "query": "\"DIO/ODI\" implementation integration application"
+    },
+    {
+      "id": "external-reception",
+      "query": "\"DIO/ODI\" citation cited-by reference independent review"
+    }
+  ]
+}
