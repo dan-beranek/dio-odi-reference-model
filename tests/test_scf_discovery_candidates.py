@@ -65,6 +65,7 @@ class DiscoveryIntakeTests(unittest.TestCase):
             "arxiv_to_work": {"2610.37407": "paper-a"},
             "evidence_index": {},
             "orcid_values": ["0009-0004-0050-0264"],
+            "author_names": ["Daniel Beránek"],
         }
 
     def test_known_context_maps_only_structured_distribution_identifiers(self):
@@ -439,7 +440,7 @@ class DiscoveryIntakeTests(unittest.TestCase):
             {
                 "title": "Digital Identity Optimization external analysis",
                 "url": "https://example.org/dio-analysis",
-                "content": "A new paper on Digital Identity Optimization.",
+                "content": "Daniel Beránek discusses Digital Identity Optimization in a new paper.",
                 "published_date": "2026-11-22",
                 "score": 0.91,
             },
