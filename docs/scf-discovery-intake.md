@@ -35,9 +35,28 @@ When Tavily is configured, a fully completed Tavily scan is the workflow's accep
 
 When Tavily is not configured, the run remains scholarly-only and requires at least one scholarly metadata provider to complete. If no enabled provider completes, the workflow fails rather than presenting an empty or partial run as a successful scan.
 
+## Candidate classification
+
+Each deduplicated candidate receives a separate discovery class. This is a triage aid, not a finding that the item constitutes reception or adoption:
+
+- **author-corpus** — a publication whose metadata lists the author, an author-maintained page or repository, an author profile, or a distribution trace associated with a canonical work;
+- **independent-external-reception** — a source with other listed authors or an unattributed reference to a known DIO/ODI work; unattributed leads deliberately receive lower confidence;
+- **external-registry-or-application** — a third-party registry-like record or a page suggesting an implementation or application, both requiring primary-source verification;
+- **unattributed-or-ambiguous** — an identity-related result for which available metadata does not establish authorship, ownership, independent authorship, or a canonical-work reference.
+
+Authorship is considered explicit only when OpenAlex or Crossref supplies an author list. A page URL on a known first-party domain, an author-confirmed distribution URL, an ORCID profile, or an account slug matching canonical metadata can identify author-associated traces; account-slug matches are deliberately lower confidence. A search snippet mentioning the author is not itself treated as authorship.
+
+The report includes a class summary and clusters separate records under linked canonical work IDs. A cluster does not merge distinct DOI records: it shows that different platform records may represent distributions or versions of one canonical work. Each record retains its own persistent identifier and observed URLs.
+
+## Platform-URL identity resolution
+
+When a provider returns a landing URL instead of a DOI field, the collector can infer the result's own identifier from supported URL patterns: Zenodo record IDs, Figshare article IDs, SSRN abstract/PDF IDs, and arXiv identifiers. These URL-derived identifiers are treated as the discovered object's identity, not as citations found in page text. This allows DOI pages, platform landing pages, PDFs, and versioned arXiv pages for the same object to collapse into one candidate.
+
+Where an identifier is mapped to a canonical work or registered distribution, that relation is used for classification and work-level clustering. Distinct DOIs on different platforms remain distinct records unless they resolve to the same DOI. Near-identical title matching is conservative and requires a clear similarity margin over other registered work titles.
+
 ## Candidate resolution
 
-Results are normalised and deduplicated by the discovered object's own DOI when available, otherwise by URL. A DOI or arXiv identifier merely cited in a result is retained as a reference to a related canonical work; it is never substituted for the discovered page's own identity. The collector retains provider and query provenance so that two search services returning the same work appear as one candidate with multiple observations.
+Results are normalised and deduplicated by the discovered object's own DOI when available, otherwise by its canonical arXiv ID or URL. When a provider omits the DOI field, supported DOI-bearing landing URLs (Zenodo, Figshare and SSRN) and arXiv landing URLs are used to resolve the same object identity. A DOI or arXiv identifier merely cited in page text is retained as a reference to a related canonical work; it is never substituted for the discovered object's identity. The collector retains provider and query provenance so that DOI pages, platform landing pages, PDFs, and audio/HTML variants for the same identified object appear as one candidate with multiple observations.
 
 Deterministic relevance signals include distinctive DIO/ODI phrases, exact canonical work titles, known DOI/arXiv identifiers, and distinctive keyword anchors corroborated by identity context. The broader phrase Digital Identity Optimization alone is treated as ambiguous: it must be corroborated by the author name/ORCID or a distinctive concept. An author identifier alone, an author name alone, or a generic acronym match is insufficient.
 
