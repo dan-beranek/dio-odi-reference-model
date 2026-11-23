@@ -4,7 +4,7 @@
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
   "generated_on": "2026-11-23",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, deployment, external registry, and agent-discovery milestones through 22 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, deployment, external registry, and agent-discovery milestones through 23 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
