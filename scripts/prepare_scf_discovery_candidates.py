@@ -16,6 +16,7 @@ import sys
 import time
 import unicodedata
 from datetime import date, datetime, timezone
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -71,6 +72,68 @@ def normalise_url(value: str) -> str:
     return urlunparse((
         parsed.scheme.casefold(), netloc, path, "", urlencode(query, doseq=True), ""
     ))
+
+
+def identifiers_from_url(value: str) -> tuple[list[str], list[str]]:
+    """Infer identifiers only when the URL itself identifies the returned object."""
+    clean = normalise_url(value)
+    if not clean:
+        return [], []
+    parsed = urlparse(clean)
+    host = (parsed.hostname or "").casefold()
+    path = parsed.path or ""
+    query = dict(parse_qsl(parsed.query, keep_blank_values=True))
+    dois: set[str] = set()
+    arxiv_ids: set[str] = set()
+    if host in {"doi.org", "dx.doi.org"}:
+        dois.update(extract_dois(path))
+    elif host == "zenodo.org" or host.endswith(".zenodo.org"):
+        match = re.search(r"/records/(\d+)(?:/|$)", path)
+        if match:
+            dois.add(f"10.5281/zenodo.{match.group(1)}")
+    elif host == "figshare.com" or host.endswith(".figshare.com"):
+        match = re.search(r"/articles/(?:[^/]+/)*(\d+)(?:/|$)", path)
+        if match:
+            dois.add(f"10.6084/m9.figshare.{match.group(1)}")
+    elif host.endswith("ssrn.com"):
+        abstract_id = query.get("abstract_id") or query.get("abstractid")
+        if not abstract_id:
+            match = re.search(r"/(?:Delivery|papers)\.cfm/(\d+)", path, re.IGNORECASE)
+            if match:
+                abstract_id = match.group(1)
+        if abstract_id and abstract_id.isdigit():
+            dois.add(f"10.2139/ssrn.{abstract_id}")
+    elif host == "arxiv.org" or host.endswith(".arxiv.org"):
+        matches = ARXIV_RE.findall(path)
+        if matches:
+            arxiv_id = matches[-1].casefold()
+            arxiv_ids.add(arxiv_id)
+            dois.add(f"10.48550/arxiv.{arxiv_id}")
+    return sorted({item.casefold() for item in dois}), sorted(arxiv_ids)
+
+
+def resolve_work_title(title: str, title_to_work: dict[str, str]) -> tuple[str | None, float]:
+    """Resolve exact or near-identical indexed title variants without guessing across ties."""
+    normalised = normalise_text(title)
+    if not normalised:
+        return None, 0.0
+    exact = title_to_work.get(normalised)
+    if exact:
+        return exact, 1.0
+    scored = sorted(
+        (
+            (SequenceMatcher(None, normalised, known_title).ratio(), work_id)
+            for known_title, work_id in title_to_work.items()
+        ),
+        reverse=True,
+    )
+    if not scored:
+        return None, 0.0
+    best_score, best_work = scored[0]
+    second_score = scored[1][0] if len(scored) > 1 else 0.0
+    if best_score >= 0.86 and best_score - second_score >= 0.06:
+        return best_work, best_score
+    return None, best_score
 
 
 def extract_dois(*values: Any) -> list[str]:
