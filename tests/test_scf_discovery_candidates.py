@@ -1,0 +1,254 @@
+import unittest
+from unittest.mock import patch
+
+from scripts import prepare_scf_discovery_candidates as discovery
+
+
+class DiscoveryIntakeTests(unittest.TestCase):
+    def setUp(self):
+        self.profile = {
+            "profile_version": "0.1.0",
+            "identity_phrases": [
+                "Digital Identity Optimization",
+                "Ontology of Digital Identity",
+                "DIO/ODI",
+            ],
+            "concept_anchors": [
+                "K6 Semantic Connectome",
+                "Reconstruction Failure Modes",
+            ],
+            "work_title_query_limit": 2,
+            "max_results_per_query": 5,
+        }
+        self.works = {
+            "author": {
+                "name": "Daniel Beránek",
+                "orcid": "0009-0004-0050-0264",
+                "email": "public@example.invalid",
+            },
+            "works": [
+                {
+                    "id": "paper-a",
+                    "title": "Digital Identity Optimization: A Test Framework",
+                    "type": "publication-preprint",
+                    "version_doi": "10.5281/zenodo.1234567",
+                },
+                {
+                    "id": "paper-b",
+                    "title": "A Separate Identity Paper",
+                    "type": "publication-preprint",
+                },
+            ],
+        }
+        self.keywords = {
+            "chunks": {
+                "C0": {
+                    "terms": [
+                        "Digital Identity Optimization",
+                        "Ontology of Digital Identity",
+                        "DIO",
+                        "ODI",
+                    ]
+                },
+                "C4": {"terms": ["K6 Semantic Connectome"]},
+                "C5": {"terms": ["Reconstruction Failure Modes"]},
+            }
+        }
+        self.context = {
+            "title_to_work": {
+                discovery.normalise_text(self.works["works"][0]["title"]): "paper-a"
+            },
+            "doi_to_work": {"10.5281/zenodo.1234567": "paper-a"},
+            "known_urls": set(),
+            "known_ids": {"10.5281/zenodo.1234567"},
+            "evidence_index": {},
+            "orcid_values": ["0009-0004-0050-0264"],
+        }
+
+    def test_normalise_url_removes_tracking_and_fragment(self):
+        self.assertEqual(
+            discovery.normalise_url(
+                "HTTPS://WWW.Example.com/Article/?utm_source=x&v=2#section"
+            ),
+            "https://example.com/Article?v=2",
+        )
+
+    def test_query_profile_has_no_platform_allowlist(self):
+        queries = discovery.build_search_queries(self.profile, self.works)
+        self.assertEqual(queries[0]["query"], '"Digital Identity Optimization"')
+        self.assertTrue(any(item["id"] == "author-orcid" for item in queries))
+        self.assertEqual(
+            [item["group"] for item in queries].count("known-work-title"), 2
+        )
+
+    def test_author_identifier_without_identity_or_work_signal_is_not_enough(self):
+        result = discovery.resolve_result(
+            {
+                "title": "Daniel Beranek profile",
+                "url": "https://example.org/profile",
+                "content": "ORCID 0009-0004-0050-0264",
+            },
+            provider="Tavily Search",
+            query={
+                "id": "author-orcid",
+                "query": '"0009-0004-0050-0264"',
+                "group": "author-identifier",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNone(result)
+
+    def test_concept_anchor_requires_identity_context(self):
+        result = discovery.resolve_result(
+            {
+                "title": "K6 Semantic Connectome overview",
+                "url": "https://example.org/k6",
+                "content": "A description of the K6 Semantic Connectome.",
+            },
+            provider="Tavily Search",
+            query={
+                "id": "concept-1",
+                "query": '"K6 Semantic Connectome"',
+                "group": "concept-anchor",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNone(result)
+
+    def test_concept_anchor_with_core_identity_is_a_candidate(self):
+        result = discovery.resolve_result(
+            {
+                "title": "DIO/ODI and the K6 Semantic Connectome",
+                "url": "https://example.org/k6-dio",
+                "content": "Digital Identity Optimization and the K6 Semantic Connectome.",
+            },
+            provider="Tavily Search",
+            query={
+                "id": "concept-1",
+                "query": '"K6 Semantic Connectome"',
+                "group": "concept-anchor",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNotNone(result)
+        self.assertIn("identity-linked-concept", result["matched_signals"])
+
+    def test_exact_work_doi_maps_to_registered_record(self):
+        result = discovery.resolve_result(
+            {
+                "title": "Digital Identity Optimization: A Test Framework",
+                "url": "https://doi.org/10.5281/zenodo.1234567",
+                "doi": "10.5281/zenodo.1234567",
+                "publication_date": "2026-11-20",
+            },
+            provider="OpenAlex",
+            query={
+                "id": "work-title-1",
+                "query": '"Digital Identity Optimization: A Test Framework"',
+                "group": "known-work-title",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertEqual(result["reference_status"], "already-registered")
+        self.assertEqual(result["related_work_ids"], ["paper-a"])
+
+    def test_exact_existing_evidence_maps_to_event_id(self):
+        context = dict(self.context)
+        context["evidence_index"] = {
+            "https://doi.org/10.5281/zenodo.1234567": ["SCF-2026-001"]
+        }
+        result = discovery.resolve_result(
+            {
+                "title": "Digital Identity Optimization: A Test Framework",
+                "url": "https://doi.org/10.5281/zenodo.1234567",
+                "doi": "10.5281/zenodo.1234567",
+            },
+            provider="Crossref",
+            query={
+                "id": "identity-1",
+                "query": '"Digital Identity Optimization"',
+                "group": "identity",
+            },
+            context=context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertEqual(result["reference_status"], "already-cited")
+        self.assertEqual(result["existing_event_ids"], ["SCF-2026-001"])
+
+    def test_same_doi_from_multiple_providers_is_one_candidate(self):
+        base = {
+            "url": "https://doi.org/10.5281/zenodo.7654321",
+            "doi_values": ["10.5281/zenodo.7654321"],
+            "title": "Digital Identity Optimization external analysis",
+            "published_date": "2026-11-20",
+            "snippet": "Digital Identity Optimization and DIO/ODI.",
+            "provider_score": 0.8,
+            "matched_signals": ["core-identity-phrase"],
+            "match_class": "core-identity-phrase",
+            "relevance_score": 90,
+            "related_work_ids": [],
+            "reference_status": "review-required",
+            "existing_event_ids": [],
+            "evidence_urls": ["https://doi.org/10.5281/zenodo.7654321"],
+        }
+        observations = [
+            dict(base, provider="OpenAlex", query_id="identity-1",
+                 query='"Digital Identity Optimization"', query_group="identity"),
+            dict(base, provider="Crossref", query_id="identity-1",
+                 query='"Digital Identity Optimization"', query_group="identity"),
+        ]
+        candidates = discovery.merge_observations(observations)
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(set(candidates[0]["observed_by"]), {"OpenAlex", "Crossref"})
+
+    def test_build_report_marks_unconfigured_general_search_as_limited(self):
+        observation = (
+            {
+                "title": "Digital Identity Optimization external analysis",
+                "url": "https://example.org/dio-analysis",
+                "content": "A new paper on Digital Identity Optimization.",
+                "published_date": "2026-11-22",
+                "score": 0.91,
+            },
+            {
+                "id": "identity-1",
+                "query": '"Digital Identity Optimization"',
+                "group": "identity",
+            },
+        )
+        with patch.object(
+            discovery, "search_openalex",
+            return_value=([observation], {
+                "provider": "OpenAlex", "enabled": True, "queries_attempted": 1,
+                "raw_results": 1, "errors": [], "complete": True,
+            }),
+        ), patch.object(
+            discovery, "search_crossref",
+            return_value=([], {
+                "provider": "Crossref", "enabled": True, "queries_attempted": 1,
+                "raw_results": 0, "errors": [], "complete": True,
+            }),
+        ):
+            report = discovery.build_report(
+                self.profile, self.works, self.keywords, {}, {}, {}, {"events": []},
+                now=__import__("datetime").datetime(
+                    2026, 11, 23, tzinfo=__import__("datetime").timezone.utc
+                ),
+            )
+        self.assertTrue(report["scan_complete"])
+        self.assertEqual(report["coverage"]["coverage_level"], "scholarly-only")
+        self.assertEqual(report["stats"]["unique_candidates"], 1)
+        self.assertIn("not a broad web scan", report["coverage"]["limitation"])
+
+
+if __name__ == "__main__":
+    unittest.main()
