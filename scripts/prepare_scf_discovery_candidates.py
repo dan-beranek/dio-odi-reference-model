@@ -1063,10 +1063,10 @@ def classify_candidate(candidate: dict[str, Any], context: dict[str, Any]) -> di
         }
     if references_known_work:
         return {
-            "category": "independent-external-reception",
+            "category": "unattributed-or-ambiguous",
             "subcategory": "unattributed-citation-or-reference-lead",
             "confidence": "low",
-            "basis": "The page refers to a canonical work, but available metadata does not establish who authored or controls the page.",
+            "basis": "The page refers to a canonical work, but available metadata does not establish who authored or controls the page; it is not counted as independent external reception.",
         }
     return {
         "category": "unattributed-or-ambiguous",
@@ -1524,7 +1524,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         "| Discovery class | Candidates | Interpretation |",
         "|---|---:|---|",
         f"| Author corpus and distributions | **{report['classification_summary']['author-corpus']}** | Author-authored outputs, author-maintained pages, profiles, and distribution traces |",
-        f"| Independent external reception | **{report['classification_summary']['independent-external-reception']}** | Externally authored or unattributed references; require primary-source verification |",
+        f"| Independent external reception | **{report['classification_summary']['independent-external-reception']}** | Externally authored items; require primary-source verification |",
         f"| External registries or applications | **{report['classification_summary']['external-registry-or-application']}** | Potential third-party registrations or implementations, not confirmed adoption |",
         f"| Unattributed / ambiguous | **{report['classification_summary']['unattributed-or-ambiguous']}** | Identity-related leads without sufficient attribution or relationship evidence |",
         "",
