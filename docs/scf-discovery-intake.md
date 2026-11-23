@@ -42,9 +42,9 @@ When Tavily is not configured, the run remains scholarly-only and requires at le
 Each deduplicated candidate receives a separate discovery class. This is a triage aid, not a finding that the item constitutes reception or adoption:
 
 - **author-corpus** — a publication whose metadata lists the author, an author-maintained page or repository, an author profile, or a distribution trace associated with a canonical work;
-- **independent-external-reception** — a source with other listed authors or an unattributed reference to a known DIO/ODI work; unattributed leads deliberately receive lower confidence;
+- **independent-external-reception** — a source whose structured publication metadata lists authors other than the canonical author and that references or independently discusses DIO/ODI; a mere unattributed reference is not sufficient;
 - **external-registry-or-application** — a third-party registry-like record or a page suggesting an implementation or application, both requiring primary-source verification;
-- **unattributed-or-ambiguous** — an identity-related result for which available metadata does not establish authorship, ownership, independent authorship, or a canonical-work reference.
+- **unattributed-or-ambiguous** — an identity-related result for which available metadata does not establish authorship or ownership, including a reference to a canonical work whose source authorship is unknown.
 
 Authorship is considered explicit only when OpenAlex or Crossref supplies an author list. A page URL on a known first-party domain, a GitHub Pages hostname matching the canonical repository owner, an author-confirmed distribution URL, an ORCID profile, or an account slug matching canonical metadata can identify author-associated traces; account-slug matches are deliberately lower confidence. A search snippet mentioning the author is not itself treated as authorship.
 
