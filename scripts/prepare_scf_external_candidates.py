@@ -374,8 +374,16 @@ def scan_bartoc(
     if not reviewed_on:
         raise ScanError("BARTOC entry has no provenance.review_date baseline")
     document, headers = fetch_json(BARTOC_API)
+    if isinstance(document, list):
+        records = [item for item in document if isinstance(item, dict)]
+        if len(records) != 1:
+            raise ScanError(
+                "BARTOC JSKOS data endpoint did not return exactly one record "
+                f"for the requested URI (received {len(records)})"
+            )
+        document = records[0]
     if not isinstance(document, dict):
-        raise ScanError("BARTOC JSKOS endpoint did not return an object")
+        raise ScanError("BARTOC JSKOS endpoint did not return an object or a single-record array")
     modified = extract_modified_timestamp(document, headers)
     baseline = datetime.combine(
         date.fromisoformat(reviewed_on), datetime.min.time(), timezone.utc
