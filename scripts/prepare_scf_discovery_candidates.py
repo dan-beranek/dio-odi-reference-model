@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from email.utils import parsedate_to_datetime
 import os
 import re
 import sys
@@ -112,7 +113,10 @@ def parse_date(value: Any) -> str | None:
         try:
             return date.fromisoformat(candidate[:10]).isoformat()
         except ValueError:
-            return None
+            try:
+                return parsedate_to_datetime(candidate).date().isoformat()
+            except (TypeError, ValueError, OverflowError):
+                return None
 
 
 def fetch_json(
@@ -701,7 +705,7 @@ def build_report(
     author = works.get("author", {}) if isinstance(works.get("author"), dict) else {}
     context = build_known_context(
         works,
-        [distributions, external_reception, application_mappings],
+        [works, distributions, external_reception, application_mappings],
         feed,
     )
     context["orcid_values"] = [author["orcid"]] if author.get("orcid") else []
