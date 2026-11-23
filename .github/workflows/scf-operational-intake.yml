@@ -17,6 +17,7 @@ on:
       - ".github/workflows/scf-operational-intake.yml"
 
 permissions:
+  actions: read
   contents: read
 
 jobs:
@@ -40,6 +41,7 @@ jobs:
 
       - name: Collect deployment and release observations
         env:
+          SCF_GITHUB_TOKEN: ${{ github.token }}
           LOOKBACK_HOURS: ${{ inputs.lookback_hours || '48' }}
         run: |
           python scripts/prepare_scf_operational_candidates.py \
