@@ -93,11 +93,12 @@ The repository validator checks JSON Schema conformance, event ID uniqueness, ch
 
 ## Automated evidence intake
 
-Three read-only workflows prepare review material without writing to the canonical event feed:
+Four read-only workflows prepare review material without writing to the canonical event feed:
 
 - [SCF review-candidate intake](../docs/scf-review-intake.md) detects record-level changes in the authoritative works, distributions, external-reception, application-mapping, and discovery registries.
 - [SCF operational evidence intake](../docs/scf-operational-intake.md) collects successful deployments and published GitHub Releases from the six configured DIO/ODI project repositories, then checks their source URLs against existing SCF evidence.
 - [SCF external evidence intake](../docs/scf-external-intake.md) checks the BioRegistry/Semantic Farm prefix record (one upstream record exposed through two interfaces), the BARTOC JSKOS catalogue record, the arXiv version state, and relevant Hashnode/DEV.to/Medium representations grouped under the Hashnode canonical URL.
+- [SCF discovery-first evidence intake](../docs/scf-discovery-intake.md) searches the indexed web and scholarly metadata using the canonical DIO/ODI identity, ORCID, distinctive vocabulary anchors, and work titles derived from the works registry; it has no preferred-platform allowlist.
 
 All three workflows produce review artifacts. They do not assign event IDs, classify semantic change, decide temporal basis, modify events.json, increment the feed version, update source registries, create archives, or publish SCF events. Inclusion remains an editorial decision based on primary evidence, source state, scope, impact, preserved invariants, and lineage.
 
