@@ -215,6 +215,52 @@ def build_search_queries(
             f'"{work["title"].strip()}"',
             "known-work-title",
         )
+
+    # Search for references to canonical research identifiers as well as titles.
+    # Only the work's own DOI fields and version records are used here; cited DOIs
+    # embedded in notes or abstracts are deliberately not treated as its identity.
+    identifier_limit = profile.get("identifier_query_limit", 6)
+    if not isinstance(identifier_limit, int) or identifier_limit < 0:
+        raise DiscoveryError("identifier_query_limit must be a non-negative integer")
+    identifier_count = 0
+    arxiv_count = 0
+    for work in works.get("works", []):
+        if not isinstance(work, dict):
+            continue
+        own_dois: list[str] = []
+        for field in (
+            "version_doi", "concept_doi", "current_version_doi",
+            "reference_model_concept_doi", "preferred_relation_identifier",
+        ):
+            own_dois.extend(extract_dois(work.get(field)))
+        for collection_name in ("versions", "releases"):
+            collection = work.get(collection_name, [])
+            if isinstance(collection, list):
+                for item in collection:
+                    if isinstance(item, dict):
+                        own_dois.extend(extract_dois(item.get("doi")))
+        current_release = work.get("current_release")
+        if isinstance(current_release, dict):
+            own_dois.extend(extract_dois(current_release.get("doi")))
+
+        for doi in dict.fromkeys(own_dois):
+            if identifier_count >= identifier_limit:
+                break
+            identifier_count += 1
+            add(f"work-doi-{identifier_count}", f'"{doi}"', "work-identifier")
+
+        arxiv = work.get("arxiv")
+        if isinstance(arxiv, dict) and isinstance(arxiv.get("id"), str):
+            arxiv_count += 1
+            add(
+                f"work-arxiv-{arxiv_count}",
+                f'"arXiv:{arxiv["id"]}"',
+                "work-identifier",
+            )
+
+        if identifier_count >= identifier_limit and arxiv_count:
+            break
+
     return queries
 
 
@@ -604,10 +650,11 @@ def search_openalex(
 ) -> tuple[list[tuple[dict[str, Any], dict[str, str]]], dict[str, Any]]:
     observations: list[tuple[dict[str, Any], dict[str, str]]] = []
     errors: list[str] = []
-    selected = [
-        query for query in queries
-        if query["group"] in {"identity", "concept-anchor", "known-work-title"}
-    ][:8]
+    selected = (
+        [query for query in queries if query["group"] == "identity"][:3]
+        + [query for query in queries if query["group"] == "concept-anchor"][:2]
+        + [query for query in queries if query["group"] == "known-work-title"][:2]
+    )
     for query in selected:
         params = {
             "search": query["query"].replace('"', ""),
@@ -660,10 +707,11 @@ def search_crossref(
 ) -> tuple[list[tuple[dict[str, Any], dict[str, str]]], dict[str, Any]]:
     observations: list[tuple[dict[str, Any], dict[str, str]]] = []
     errors: list[str] = []
-    selected = [
-        query for query in queries
-        if query["group"] in {"identity", "concept-anchor"}
-    ][:5]
+    selected = (
+        [query for query in queries if query["group"] == "identity"][:3]
+        + [query for query in queries if query["group"] == "concept-anchor"][:2]
+        + [query for query in queries if query["group"] == "known-work-title"][:2]
+    )
     for query in selected:
         params = {
             "query.bibliographic": query["query"].replace('"', ""),
