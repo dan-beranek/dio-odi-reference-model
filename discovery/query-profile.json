@@ -21,6 +21,8 @@
     "include_known_work_titles": true,
     "platform_allowlist": [],
     "platform_denylist": [],
-    "generic_acronym_only_queries": false
-  }
+    "generic_acronym_only_queries": false,
+    "search_known_work_identifiers": true
+  },
+  "identifier_query_limit": 6
 }
