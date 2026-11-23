@@ -151,12 +151,16 @@ class TestExternalCandidateHelpers(unittest.TestCase):
         with patch.object(
             scf, "fetch_json",
             side_effect=[(BIO_RECORD, {}), (BIO_RECORD, {})],
+        ), patch.object(
+            scf, "fetch_bioregistry_record",
+            side_effect=[BIO_RECORD, BIO_RECORD],
         ):
             candidates, status = scf.scan_bioregistry(
                 registry_fixture(), {}, FakeGitHub(
                     commits=[{"sha": "abc123"}],
                     details={
                         "abc123": {
+                            "parents": [{"sha": "parent123"}],
                             "files": [{
                                 "filename": scf.BIOREGISTRY_PATH,
                                 "patch": '+  "other-prefix": {',
@@ -173,22 +177,28 @@ class TestExternalCandidateHelpers(unittest.TestCase):
         event_index = {
             "https://bioregistry.io/registry/dio-odi": ["SCF-2026-051"]
         }
+        before = dict(BIO_RECORD)
+        after = dict(BIO_RECORD, description="Updated DIO/ODI description")
         with patch.object(
             scf, "fetch_json",
             side_effect=[(BIO_RECORD, {}), (BIO_RECORD, {})],
+        ), patch.object(
+            scf, "fetch_bioregistry_record",
+            side_effect=[before, after],
         ):
             candidates, _ = scf.scan_bioregistry(
                 registry_fixture(), event_index, FakeGitHub(
                     commits=[{"sha": "def456"}],
                     details={
                         "def456": {
+                            "parents": [{"sha": "parent456"}],
                             "commit": {
                                 "author": {"date": "2026-11-21T10:00:00Z"},
                                 "committer": {"date": "2026-11-21T10:00:00Z"},
                             },
                             "files": [{
                                 "filename": scf.BIOREGISTRY_PATH,
-                                "patch": '+  "dio-odi": {',
+                                "patch": '@@ -1,3 +1,3 @@',
                             }]
                         }
                     },
@@ -197,6 +207,8 @@ class TestExternalCandidateHelpers(unittest.TestCase):
         self.assertEqual(len(candidates), 1)
         self.assertEqual(candidates[0]["reference_status"], "previously-cited-source-updated")
         self.assertEqual(candidates[0]["existing_event_ids"], ["SCF-2026-051"])
+        self.assertEqual(candidates[0]["before_record"]["description"], BIO_RECORD["description"])
+        self.assertEqual(candidates[0]["after_record"]["description"], "Updated DIO/ODI description")
 
     def test_bartoc_update_after_review_baseline_becomes_candidate(self):
         with patch.object(
