@@ -511,6 +511,11 @@ def build_known_context(
                 parsed = urlparse(normalised)
                 if parsed.hostname in {"doi.org", "dx.doi.org"}:
                     known_ids.update(extract_dois(parsed.path))
+            for alias in record.get("discovery_url_aliases", []):
+                if isinstance(alias, dict):
+                    alias_url = normalise_url(alias.get("url", ""))
+                    if alias_url:
+                        known_urls.add(alias_url)
             if field == "target_works":
                 homepage = normalise_url(record.get("homepage", ""))
                 if homepage:
@@ -680,6 +685,7 @@ def looks_like_external_registry_or_application(candidate: dict[str, Any]) -> tu
     if any(phrase in title_snippet for phrase in (
         "registered in", "registry record", "registered as a", "prefix registration",
         "terminology record", "vocabulary entry", "controlled vocabulary",
+        "reference vocabulary", "concept scheme", "prefix record",
     )):
         return ("registry-or-vocabulary-lead", "The page text suggests an external registry or vocabulary relationship; verify the underlying record.")
     if any(phrase in title_snippet for phrase in (
