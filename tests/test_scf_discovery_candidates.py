@@ -435,6 +435,53 @@ class DiscoveryIntakeTests(unittest.TestCase):
         self.assertEqual(report["coverage"]["coverage_level"], "scholarly-only")
         self.assertIn("did not complete all queries", report["coverage"]["limitation"])
 
+    def test_openalex_failure_does_not_fail_complete_tavily_scan(self):
+        observation = (
+            {
+                "title": "An independently indexed DIO/ODI note",
+                "url": "https://example.org/dio-odi-note",
+                "content": "Digital Identity Optimization and Ontology of Digital Identity.",
+                "published_date": "2026-11-22",
+                "score": 0.9,
+            },
+            {
+                "id": "identity-1",
+                "query": '"Digital Identity Optimization"',
+                "group": "identity",
+            },
+        )
+        with patch.object(
+            discovery, "search_tavily",
+            return_value=([observation], {
+                "provider": "Tavily Search", "enabled": True,
+                "queries_attempted": 24, "requests_succeeded": 24,
+                "raw_results": 1, "errors": [], "complete": True,
+            }),
+        ), patch.object(
+            discovery, "search_openalex",
+            return_value=([], {
+                "provider": "OpenAlex", "enabled": True, "queries_attempted": 13,
+                "raw_results": 0, "errors": ["HTTP 429"], "complete": False,
+            }),
+        ), patch.object(
+            discovery, "search_crossref",
+            return_value=([], {
+                "provider": "Crossref", "enabled": True, "queries_attempted": 13,
+                "raw_results": 0, "errors": [], "complete": True,
+            }),
+        ):
+            report = discovery.build_report(
+                self.profile, self.works, self.keywords, {}, {}, {}, {"events": []},
+                tavily_api_key="configured-test-key",
+            )
+        self.assertTrue(report["scan_complete"])
+        self.assertEqual(report["scan_status"], "complete-with-provider-gaps")
+        self.assertTrue(report["coverage"]["general_web_search_enabled"])
+        self.assertTrue(report["coverage"]["scholarly_indexes_complete"])
+        self.assertEqual(report["coverage"]["coverage_level"], "web-and-scholarly")
+        self.assertEqual(report["errors"][0]["source"], "OpenAlex")
+        self.assertIn("OpenAlex", report["coverage"]["limitation"])
+
     def test_build_report_marks_unconfigured_general_search_as_limited(self):
         observation = (
             {
