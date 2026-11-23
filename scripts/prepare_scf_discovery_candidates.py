@@ -956,22 +956,74 @@ def build_report(
     )
     web_configured = bool(tavily_api_key)
     web_enabled = web_configured and tavily_check.get("complete") is True
-    if web_enabled:
-        coverage_limitation = None
-    elif web_configured:
+    scholarly_checks = [
+        check for check in provider_checks
+        if check["provider"] in {"OpenAlex", "Crossref"} and check.get("enabled")
+    ]
+    scholarly_enabled = bool(scholarly_checks)
+    scholarly_complete = any(
+        check.get("complete") is True for check in scholarly_checks
+    )
+    completed_scholarly = [
+        check["provider"] for check in scholarly_checks
+        if check.get("complete") is True
+    ]
+    incomplete_providers = [
+        check["provider"] for check in provider_checks
+        if check.get("enabled") and check.get("complete") is False
+    ]
+    if web_enabled and scholarly_complete:
+        coverage_level = "web-and-scholarly"
+    elif web_enabled:
+        coverage_level = "general-web-only"
+    elif scholarly_complete:
+        coverage_level = "scholarly-only"
+    else:
+        coverage_level = "no-complete-provider"
+
+    if web_configured and not web_enabled:
         coverage_limitation = (
             "Tavily Search was configured but did not complete all queries. "
             "This run has no complete general-web coverage."
         )
-    else:
+    elif not web_configured and not scholarly_complete:
+        coverage_limitation = (
+            "General web search is disabled and no scholarly metadata provider "
+            "completed successfully. This run has no complete search coverage."
+        )
+    elif not web_configured:
         coverage_limitation = (
             "General web search is disabled because TAVILY_API_KEY is not configured. "
             "This run is limited to scholarly metadata indexes and is not a broad web scan."
         )
+    elif not scholarly_complete:
+        coverage_limitation = (
+            "Tavily completed the general-web scan, but neither scholarly metadata "
+            "provider completed successfully."
+        )
+    elif incomplete_providers:
+        coverage_limitation = (
+            "The Tavily general-web scan completed and scholarly coverage is available "
+            f"through {', '.join(completed_scholarly)}. Supplemental provider gaps remain: "
+            f"{', '.join(incomplete_providers)}. See provider checks for details."
+        )
+    else:
+        coverage_limitation = None
+
     errors = [
         {"source": check["provider"], "error": error}
         for check in provider_checks for error in check.get("errors", [])
     ]
+    # When Tavily is configured, its full completion is the acceptance criterion:
+    # scholarly providers are supplementary and must report their own gaps without
+    # turning a successful general-web scan into a failed workflow. In scholarly-only
+    # mode, at least one scholarly index must complete.
+    scan_complete = web_enabled if web_configured else scholarly_complete
+    scan_status = (
+        "complete" if scan_complete and not errors
+        else "complete-with-provider-gaps" if scan_complete
+        else "incomplete"
+    )
     return {
         "report_version": "0.1.0",
         "generated_at": now.isoformat(),
@@ -981,8 +1033,9 @@ def build_report(
         "coverage": {
             "general_web_search_configured": web_configured,
             "general_web_search_enabled": web_enabled,
-            "scholarly_indexes_enabled": True,
-            "coverage_level": "web-and-scholarly" if web_enabled else "scholarly-only",
+            "scholarly_indexes_enabled": scholarly_enabled,
+            "scholarly_indexes_complete": scholarly_complete,
+            "coverage_level": coverage_level,
             "limitation": coverage_limitation,
         },
         "policy": {
@@ -1016,9 +1069,8 @@ def build_report(
         "provider_checks": provider_checks,
         "candidates": candidates,
         "errors": errors,
-        "scan_complete": not errors and all(
-            check.get("complete") is not False for check in provider_checks
-        ),
+        "scan_complete": scan_complete,
+        "scan_status": scan_status,
     }
 
 
@@ -1031,6 +1083,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Query profile: {report.get('query_profile_version') or 'unknown'}",
         f"Queries generated: **{report['query_count']}**",
         f"Coverage: **{coverage['coverage_level']}**",
+        f"Run status: **{report.get('scan_status', 'unknown')}**",
         "",
         "> Discovery output is a review queue, not a record of verified reception, citation, endorsement, adoption, or implementation.",
         "",
@@ -1050,6 +1103,7 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"- **{check['provider']}** — "
             f"{'enabled' if check.get('enabled') else 'disabled'}; "
             f"queries: {check.get('queries_attempted', 0)}; "
+            f"successful requests: {check.get('requests_succeeded', 'n/a')}; "
             f"raw observations: {check.get('raw_results', 0)}; "
             f"complete: {check.get('complete')}"
         )
