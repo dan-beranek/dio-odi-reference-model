@@ -396,8 +396,17 @@ def resolve_result(
             work_ids.add(work_id)
 
     matched_signals: list[str] = []
-    if any(normalise_text(phrase) in folded for phrase in identity_phrases):
+    matched_identity_phrases = [
+        phrase for phrase in identity_phrases
+        if normalise_text(phrase) and normalise_text(phrase) in folded
+    ]
+    if matched_identity_phrases:
         matched_signals.append("core-identity-phrase")
+    if any(
+        normalise_text(phrase) != normalise_text("Digital Identity Optimization")
+        for phrase in matched_identity_phrases
+    ):
+        matched_signals.append("distinctive-identity-phrase")
     if any(normalise_text(anchor) in folded for anchor in concept_anchors):
         matched_signals.append("distinctive-concept-anchor")
 
@@ -416,8 +425,20 @@ def resolve_result(
         matched_signals.append("known-arxiv-identifier")
     if any(orcid in combined for orcid in context.get("orcid_values", [])):
         matched_signals.append("author-orcid")
+    if any(
+        normalise_text(author_name) in folded
+        for author_name in context.get("author_names", [])
+        if normalise_text(author_name)
+    ):
+        matched_signals.append("author-name")
 
-    if "core-identity-phrase" in matched_signals and "author-orcid" in matched_signals:
+    if (
+        "core-identity-phrase" in matched_signals
+        and (
+            "author-orcid" in matched_signals
+            or "author-name" in matched_signals
+        )
+    ):
         matched_signals.append("author-linked-identity")
     if (
         "distinctive-concept-anchor" in matched_signals
@@ -428,7 +449,7 @@ def resolve_result(
     # A query is not itself proof of relevance. Author-only and generic acronym hits
     # are excluded unless another identity or work-level signal corroborates them.
     strong = {
-        "core-identity-phrase", "exact-known-work-title", "known-doi",
+        "distinctive-identity-phrase", "exact-known-work-title", "known-doi",
         "known-doi-reference", "known-arxiv-reference", "known-arxiv-identifier",
         "author-linked-identity", "identity-linked-concept",
     }
@@ -443,8 +464,11 @@ def resolve_result(
         or "known-arxiv-identifier" in matched_signals
     ):
         match_class, relevance = "known-work-reference", 95
-    elif "core-identity-phrase" in matched_signals:
-        match_class, relevance = "core-identity-phrase", 90
+    elif (
+        "distinctive-identity-phrase" in matched_signals
+        or "author-linked-identity" in matched_signals
+    ):
+        match_class, relevance = "identity-linked-identity", 90
     else:
         match_class, relevance = "identity-linked-concept", 75
 
@@ -807,6 +831,7 @@ def build_report(
         feed,
     )
     context["orcid_values"] = [author["orcid"]] if author.get("orcid") else []
+    context["author_names"] = [author["name"]] if author.get("name") else []
 
     provider_checks: list[dict[str, Any]] = []
     raw_observations: list[tuple[dict[str, Any], dict[str, str], str]] = []
