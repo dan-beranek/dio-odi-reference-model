@@ -369,6 +369,9 @@ def build_known_context(
         for record in external_reception.get(field, []):
             if not isinstance(record, dict):
                 continue
+            # Only the record's own landing page is its identity. In particular,
+            # do not recurse into cited_sources[].url: those are bibliographic
+            # edges to other works, not alternate URLs for this reception record.
             record_url = record.get("url")
             normalised = normalise_url(record_url)
             if normalised:
@@ -376,7 +379,10 @@ def build_known_context(
                 parsed = urlparse(normalised)
                 if parsed.hostname in {"doi.org", "dx.doi.org"}:
                     known_ids.update(extract_dois(parsed.path))
-            add_urls_from_fields(record)
+            if field == "target_works":
+                normalised_homepage = normalise_url(record.get("homepage", ""))
+                if normalised_homepage:
+                    known_urls.add(normalised_homepage)
 
     # Only DIO/ODI archived release identifiers count here. External-source
     # DOIs in application mappings remain external citations.
