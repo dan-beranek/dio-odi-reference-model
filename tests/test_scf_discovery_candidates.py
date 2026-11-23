@@ -104,6 +104,45 @@ class DiscoveryIntakeTests(unittest.TestCase):
         )
         self.assertIsNone(result)
 
+    def test_ambiguous_core_phrase_without_identity_context_is_filtered(self):
+        result = discovery.resolve_result(
+            {
+                "title": "Technology Management for Digital Identity Optimization",
+                "url": "https://example.org/college-professors",
+                "content": "Digital identity optimisation for college professors.",
+            },
+            provider="OpenAlex",
+            query={
+                "id": "identity-1",
+                "query": '"Digital Identity Optimization"',
+                "group": "identity",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNone(result)
+
+    def test_core_phrase_with_author_identity_is_a_candidate(self):
+        result = discovery.resolve_result(
+            {
+                "title": "Notes on Digital Identity Optimization",
+                "url": "https://example.org/author-note",
+                "content": "Daniel Beránek discusses Digital Identity Optimization.",
+            },
+            provider="Tavily Search",
+            query={
+                "id": "author-identity",
+                "query": '"Daniel Beránek" "Digital Identity Optimization"',
+                "group": "author-identity",
+            },
+            context=self.context,
+            identity_phrases=self.profile["identity_phrases"],
+            concept_anchors=self.profile["concept_anchors"],
+        )
+        self.assertIsNotNone(result)
+        self.assertIn("author-linked-identity", result["matched_signals"])
+
     def test_concept_anchor_requires_identity_context(self):
         result = discovery.resolve_result(
             {
