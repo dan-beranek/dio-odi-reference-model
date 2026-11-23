@@ -381,6 +381,14 @@ class DiscoveryIntakeTests(unittest.TestCase):
         self.assertEqual(
             [item["group"] for item in queries].count("known-work-title"), 2
         )
+        self.profile["relationship_queries"] = [
+            {"id": "external-registry", "query": '"DIO/ODI" registry vocabulary terminology'},
+            {"id": "external-reception", "query": '"DIO/ODI" citation independent review'},
+        ]
+        expanded = discovery.build_search_queries(self.profile, self.works)
+        self.assertTrue(any(item["id"] == "external-registry" and item["group"] == "external-relationship" for item in expanded))
+        self.assertTrue(any(item["id"] == "external-reception" and item["group"] == "external-relationship" for item in expanded))
+
 
     def test_author_identifier_without_identity_or_work_signal_is_not_enough(self):
         result = discovery.resolve_result(
