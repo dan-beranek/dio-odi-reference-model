@@ -565,6 +565,12 @@ def detect_source_ownership(url: str, context: dict[str, Any]) -> dict[str, str]
 
     for prefix in context.get("owned_url_prefixes", set()):
         if normalised == prefix or normalised.startswith(prefix.rstrip("/") + "/"):
+            if host == "github.com":
+                return {
+                    "subclass": "author-profile-or-repository",
+                    "confidence": "high",
+                    "basis": "The GitHub account or repository path matches an owner handle derived from canonical repository metadata.",
+                }
             return {
                 "subclass": "author-controlled-distribution",
                 "confidence": "high",
