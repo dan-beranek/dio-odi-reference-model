@@ -822,7 +822,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Hashnode items inspected: **{report['stats']['hashnode_items_inspected']}**  ",
         f"DEV.to articles inspected: **{report['stats']['devto_articles_inspected']}**  ",
         f"Medium items inspected: **{report['stats']['medium_items_inspected']}**  ",
-        f"Candidate observations: **{len(candidates)}**
+        f"Candidate observations: **{len(candidates)}**",
         "",
         "## Source checks",
         "",
