@@ -1316,6 +1316,22 @@ def build_report(
             resolved.append(candidate)
 
     candidates = merge_observations(resolved)
+    for candidate in candidates:
+        classification = classify_candidate(candidate, context)
+        candidate["discovery_class"] = classification["category"]
+        candidate["discovery_subclass"] = classification["subcategory"]
+        candidate["classification_confidence"] = classification["confidence"]
+        candidate["classification_basis"] = classification["basis"]
+    work_groups = build_work_groups(candidates, context)
+    classification_counts = {
+        category: sum(1 for item in candidates if item["discovery_class"] == category)
+        for category in (
+            "author-corpus",
+            "independent-external-reception",
+            "external-registry-or-application",
+            "unattributed-or-ambiguous",
+        )
+    }
     tavily_check = next(
         check for check in provider_checks if check["provider"] == "Tavily Search"
     )
@@ -1390,7 +1406,7 @@ def build_report(
         else "incomplete"
     )
     return {
-        "report_version": "0.1.0",
+        "report_version": "0.2.0",
         "generated_at": now.isoformat(),
         "query_profile_version": profile.get("profile_version"),
         "query_count": len(queries),
@@ -1413,6 +1429,8 @@ def build_report(
             "provider_observations_are_deduplicated": True,
             "source_platforms_are_not_preselected": True,
         },
+        "classification_summary": classification_counts,
+        "work_groups": work_groups,
         "stats": {
             "providers_configured": sum(1 for check in provider_checks if check.get("enabled")),
             "raw_observations": len(raw_observations),
@@ -1430,6 +1448,10 @@ def build_report(
                 1 for candidate in candidates
                 if candidate["reference_status"] == "already-cited"
             ),
+            "author_corpus": classification_counts["author-corpus"],
+            "independent_external_reception": classification_counts["independent-external-reception"],
+            "external_registry_or_application": classification_counts["external-registry-or-application"],
+            "unattributed_or_ambiguous": classification_counts["unattributed-or-ambiguous"],
         },
         "provider_checks": provider_checks,
         "candidates": candidates,
