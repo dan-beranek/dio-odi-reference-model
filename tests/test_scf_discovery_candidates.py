@@ -78,6 +78,7 @@ class DiscoveryIntakeTests(unittest.TestCase):
         queries = discovery.build_search_queries(self.profile, self.works)
         self.assertEqual(queries[0]["query"], '"Digital Identity Optimization"')
         self.assertTrue(any(item["id"] == "author-orcid" for item in queries))
+        self.assertTrue(any(item["id"] == "work-doi-1" for item in queries))
         self.assertEqual(
             [item["group"] for item in queries].count("known-work-title"), 2
         )
