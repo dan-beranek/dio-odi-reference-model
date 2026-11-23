@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.3.8",
+  "registry_version": "1.3.9",
   "status": "operational",
   "semantics": "External distribution and supplementary representations of canonical DIO/ODI works. Existing relation types observed on Zenodo are evidence of prior metadata choices, not automatically authoritative semantic classifications.",
   "relation_rule": "Treat existing Zenodo Related Works relation types as observed metadata until independently verified. IsIdenticalTo requires the exact same research output in two locations. IsSupplementedBy requires the related resource to be a genuine supplement, not merely another distribution copy. Where exact equivalence is not established, keep the relation under semantic review.",
@@ -117,7 +117,7 @@
     },
     {
       "work": "commit-boundary-paper",
-      "audit_status": "verified-by-author",
+      "audit_status": "existing arXiv v2 relation verified by author; additional Zenodo-declared representations recorded pending semantic review",
       "representations": [
         {
           "id": "distribution:commit-boundary-paper:arxiv-v2",
@@ -144,6 +144,63 @@
           "reciprocal_identity_relation_version": "v1",
           "zenodo_record_update_confirmed_on": "2026-11-07",
           "zenodo_record_update_verification": "Author-confirmed; not independently re-fetched during this update."
+        },
+        {
+          "id": "distribution:commit-boundary-paper:ssrn",
+          "platform": "SSRN",
+          "identifier_type": "doi",
+          "identifier": "10.2139/ssrn.7659038",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7659038",
+          "resource_type": "publication-preprint",
+          "applies_to_version_doi": "10.5281/zenodo.23580733",
+          "observed_relation_on_zenodo": "isIdenticalTo",
+          "semantic_status": "pending-author-confirmation",
+          "evidence": "The Zenodo v1.0.0 record 10.5281/zenodo.23580733 lists this SSRN DOI under Related works as Is identical to. The SSRN record matches the paper title, author, abstract, and October 2026 date. The observed Zenodo relation is recorded here without asserting a separately verified canonical relation.",
+          "verification_basis": "Primary Zenodo record and SSRN landing metadata checked on 2026-11-23. Full-file equivalence was not independently hash-verified; author confirmation of the canonical relation remains pending."
+        },
+        {
+          "id": "distribution:commit-boundary-paper:researchgate",
+          "platform": "ResearchGate",
+          "identifier_type": "doi",
+          "identifier": "10.13140/RG.2.2.36724.72320",
+          "url": "https://www.researchgate.net/publication/416616502_Constraining_the_Commit_Boundary_A_DIOODI-Informed_Authorization_Guardrail_for_Agentic_Entity_Resolution",
+          "resource_type": "publication-preprint",
+          "applies_to_version_doi": "10.5281/zenodo.23580733",
+          "observed_relation_on_zenodo": "isIdenticalTo",
+          "semantic_status": "pending-author-confirmation",
+          "evidence": "The Zenodo v1.0.0 record 10.5281/zenodo.23580733 lists this ResearchGate DOI under Related works as Is identical to. The ResearchGate page exposes the matching title, author, DOI, CC BY 4.0 licence, and a public full-text upload. The observed Zenodo relation is recorded here without asserting a separately verified canonical relation.",
+          "verification_basis": "Primary Zenodo record and ResearchGate landing page checked on 2026-11-23. Full-file equivalence was not independently hash-verified; author confirmation of the canonical relation remains pending."
+        },
+        {
+          "id": "distribution:commit-boundary-paper:figshare",
+          "platform": "Figshare",
+          "identifier_type": "doi",
+          "identifier": "10.6084/m9.figshare.34751127",
+          "url": "https://figshare.com/articles/preprint/Constraining_the_Commit_Boundary_A_DIO_ODI-Informed_Authorization_Guardrail_for_Agentic_Entity_Resolution/34751127",
+          "resource_type": "publication-preprint",
+          "applies_to_version_doi": "10.5281/zenodo.23580733",
+          "observed_relation_on_zenodo": "isIdenticalTo",
+          "semantic_status": "pending-author-confirmation",
+          "evidence": "The Zenodo v1.0.0 record 10.5281/zenodo.23580733 lists this Figshare DOI under Related works as Is identical to. The DOI resolver identifies the corresponding Figshare preprint record with the matching paper title. The observed Zenodo relation is recorded here without asserting a separately verified canonical relation.",
+          "verification_basis": "Primary Zenodo record and Figshare DOI landing metadata checked on 2026-11-23. Full-file equivalence was not independently hash-verified; author confirmation of the canonical relation remains pending."
+        },
+        {
+          "id": "distribution:commit-boundary-paper:arxiv-v1",
+          "platform": "arXiv",
+          "identifier_type": "url",
+          "identifier": "https://arxiv.org/abs/2610.37407v1",
+          "url": "https://arxiv.org/abs/2610.37407v1",
+          "resource_type": "publication-preprint",
+          "version": "v1",
+          "concept_url": "https://arxiv.org/abs/2610.37407",
+          "version_url": "https://arxiv.org/abs/2610.37407v1",
+          "pdf_url": "https://arxiv.org/pdf/2610.37407v1",
+          "html_url": "https://arxiv.org/html/2610.37407v1",
+          "applies_to_version_doi": "10.5281/zenodo.23580733",
+          "observed_relation_on_zenodo": "isIdenticalTo",
+          "semantic_status": "pending-author-confirmation",
+          "evidence": "The Zenodo v1.0.0 record 10.5281/zenodo.23580733 lists arXiv:2610.37407v1 under Related works as Is identical to, and lists arXiv v2 separately under Is previous version of. The arXiv version history identifies v1 as submitted on 27 October 2026 and v2 as the current version. The observed Zenodo relation is recorded here without asserting a separately verified canonical relation.",
+          "verification_basis": "Primary Zenodo record and arXiv v1 version history checked on 2026-11-23. The arXiv v1/v2 distinction is preserved; the v1 equivalence relation remains pending author confirmation."
         }
       ]
     },
