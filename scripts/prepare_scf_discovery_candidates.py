@@ -748,6 +748,7 @@ def search_openalex(
         [query for query in queries if query["group"] == "identity"][:3]
         + [query for query in queries if query["group"] == "concept-anchor"][:2]
         + [query for query in queries if query["group"] == "known-work-title"][:2]
+        + [query for query in queries if query["group"] == "work-identifier"][:6]
     )
     for query in selected:
         params = {
@@ -805,6 +806,7 @@ def search_crossref(
         [query for query in queries if query["group"] == "identity"][:3]
         + [query for query in queries if query["group"] == "concept-anchor"][:2]
         + [query for query in queries if query["group"] == "known-work-title"][:2]
+        + [query for query in queries if query["group"] == "work-identifier"][:6]
     )
     for query in selected:
         params = {
