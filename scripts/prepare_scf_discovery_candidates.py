@@ -1481,7 +1481,35 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Already registered: **{report['stats']['already_registered']}**  ",
         f"Already cited: **{report['stats']['already_cited']}**",
         "",
+        "## Classification overview",
+        "",
+        "| Discovery class | Candidates | Interpretation |",
+        "|---|---:|---|",
+        f"| Author corpus and distributions | **{report['classification_summary']['author-corpus']}** | Author-authored outputs, author-maintained pages, profiles, and distribution traces |",
+        f"| Independent external reception | **{report['classification_summary']['independent-external-reception']}** | Externally authored or unattributed references; require primary-source verification |",
+        f"| External registries or applications | **{report['classification_summary']['external-registry-or-application']}** | Potential third-party registrations or implementations, not confirmed adoption |",
+        f"| Unattributed / ambiguous | **{report['classification_summary']['unattributed-or-ambiguous']}** | Identity-related leads without sufficient attribution or relationship evidence |",
+        "",
     ]
+    if report["classification_summary"]["independent-external-reception"] == 0:
+        lines.extend([
+            "**No independent external-reception candidate was identified in this run.** The current results primarily describe the author's own publication and distribution footprint.",
+            "",
+        ])
+    if report["classification_summary"]["external-registry-or-application"] == 0:
+        lines.extend([
+            "No distinct third-party registry or application record was identified in this run.",
+            "",
+        ])
+    if report.get("work_groups"):
+        lines.extend(["## Canonical-work clusters", ""])
+        for group in report["work_groups"]:
+            identifiers = ", ".join(group["identifiers"]) or "no persistent identifier resolved"
+            lines.append(
+                f"- **{group['work_title']}** ({group['work_id']}) — "
+                f"{group['candidate_count']} distinct record(s); identifiers: {identifiers}"
+            )
+        lines.append("")
     if coverage.get("limitation"):
         lines.extend([f"**Coverage limitation:** {coverage['limitation']}", ""])
     lines.extend(["## Provider checks", ""])
@@ -1507,13 +1535,18 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"### {item['title']}",
             "",
             f"- Candidate ID: {item['candidate_id']}",
+            f"- Discovery class: **{item.get('discovery_class', 'unclassified')} / {item.get('discovery_subclass', 'unclassified')}** (confidence: {item.get('classification_confidence', 'unknown')})",
+            f"- Classification basis: {item.get('classification_basis', 'not available')}",
             f"- Match class: **{item['match_class']}** (heuristic relevance {item['relevance_score']}/100)",
             f"- Matched signals: {', '.join(item['matched_signals'])}",
             f"- Reference status: **{item['reference_status']}**",
             f"- Related canonical works: {', '.join(item['related_work_ids']) or 'not resolved'}",
             f"- DOI: {', '.join(item['doi_values']) or 'not identified'}",
+            f"- Referenced DOI(s): {', '.join(item.get('referenced_doi_values', [])) or 'none identified'}",
+            f"- Primary arXiv ID(s): {', '.join(item.get('primary_arxiv_ids', [])) or 'none identified'}",
             f"- Publication date (provisional): {item.get('published_date') or 'not supplied'}",
             f"- Candidate URL: {item['source_url']}",
+            f"- Source URLs observed: {', '.join(item.get('source_urls', [])) or item['source_url']}",
             f"- Observed by: {', '.join(item['observed_by'])}",
             f"- Existing SCF events: {', '.join(item['existing_event_ids']) or 'none found by exact URL'}",
             f"- Queries: {', '.join(query['query_id'] for query in item['queries'])}",
