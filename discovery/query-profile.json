@@ -61,6 +61,10 @@
     {
       "id": "external-reception-odi",
       "query": "\"Ontology of Digital Identity\" cited citation reference independent review"
+    },
+    {
+      "id": "bioregistry-observed-alias",
+      "query": "site:bioregistry.io/dio-odi \"Digital Identity Optimization\""
     }
   ]
 }
