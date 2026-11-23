@@ -584,6 +584,15 @@ def detect_source_ownership(url: str, context: dict[str, Any]) -> dict[str, str]
                 "basis": "The URL is on a first-party domain derived from the canonical author URI.",
             }
 
+    if host.endswith(".github.io"):
+        pages_owner = host.removesuffix(".github.io")
+        if pages_owner in context.get("author_handles", set()):
+            return {
+                "subclass": "author-maintained-web-presence",
+                "confidence": "high",
+                "basis": "The GitHub Pages hostname matches the author account derived from canonical repository metadata.",
+            }
+
     for prefix in context.get("owned_url_prefixes", set()):
         if normalised == prefix or normalised.startswith(prefix.rstrip("/") + "/"):
             if host == "github.com":
