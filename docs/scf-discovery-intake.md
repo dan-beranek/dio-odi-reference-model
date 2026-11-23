@@ -58,6 +58,8 @@ Each run creates:
 
 Reports are uploaded as GitHub Actions artifacts for 30 days and the Markdown report is added to the workflow summary. An API error from an enabled provider is reported as an incomplete scan; missing Tavily credentials are not silently passed off as general-web coverage.
 
+Zenodo record landing pages are matched to registered Zenodo DOIs through their numeric record IDs. This prevents already registered archived versions from reappearing as new review candidates merely because a search provider returned the `zenodo.org/records/{id}` URL instead of the DOI URL.
+
 The collector is review-only. It does not assign SCF event IDs, classify semantic change, decide whether an event is material, establish a definitive event date, update the External Reception Registry or any other canonical registry, modify semantic-change-feed/events.json, increment the feed version, create an archive, open issues, or deploy the site. All discovered items remain candidates for editorial assessment against primary evidence.
 
 The workflow reads the canonical registries but does not make any changes to them. No search provider is treated as an authority for DIO/ODI identity or for the truth of a candidate's claims.
