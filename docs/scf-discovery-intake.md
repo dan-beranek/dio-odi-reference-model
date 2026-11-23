@@ -62,7 +62,7 @@ Results are normalised and deduplicated by the discovered object's own DOI when 
 
 Deterministic relevance signals include distinctive DIO/ODI phrases, exact canonical work titles, known DOI/arXiv identifiers, and distinctive keyword anchors corroborated by identity context. The broader phrase Digital Identity Optimization alone is treated as ambiguous: it must be corroborated by the author name/ORCID or a distinctive concept. An author identifier alone, an author name alone, or a generic acronym match is insufficient.
 
-Each candidate is compared against the canonical work and distribution metadata and the exact evidence URLs already present in the SCF. The resulting statuses are:
+Each candidate is compared against the canonical work and distribution metadata and the exact evidence URLs already present in the SCF. External Reception entries may also define `discovery_url_aliases`: observed alternative URLs returned by search providers for an already-curated record. These aliases are used only for matching; they do not assert that the alternate URL redirects to the canonical URL or is an equivalent URI. The candidate retains the URL actually returned by the provider. The resulting statuses are:
 
 - already-cited — an exact evidence URL is already cited by one or more SCF events;
 - already-registered — the URL or DOI is present in the current metadata registries but not found as an exact SCF evidence URL;

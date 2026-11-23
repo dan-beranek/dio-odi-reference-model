@@ -270,6 +270,27 @@
               },
               "additionalProperties": false
             }
+          },
+          "discovery_url_aliases": {
+            "type": "array",
+            "description": "Observed alternative URLs returned by discovery providers for the same curated registry entry. These are matching aliases only and do not assert HTTP redirects or URI equivalence.",
+            "items": {
+              "type": "object",
+              "required": [
+                "url",
+                "basis"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "basis": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
           }
         }
       }
