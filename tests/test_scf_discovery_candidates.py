@@ -67,6 +67,101 @@ class DiscoveryIntakeTests(unittest.TestCase):
             "orcid_values": ["0009-0004-0050-0264"],
         }
 
+    def test_known_context_maps_only_structured_distribution_identifiers(self):
+        works = {
+            "works": [
+                {
+                    "id": "paper-a",
+                    "title": "Paper A",
+                    "version_doi": "10.5281/zenodo.1111111",
+                    "note": "Cites 10.9999/external-reference.",
+                }
+            ],
+            "hub": "https://danielberanek.cz/manifest-dio/",
+        }
+        distributions = {
+            "works": [
+                {
+                    "work": "paper-a",
+                    "representations": [
+                        {
+                            "identifier_type": "doi",
+                            "identifier": "10.5281/zenodo.7654321",
+                            "evidence": "Relation page cites 10.9998/other-source.",
+                        },
+                        {
+                            "identifier_type": "url",
+                            "identifier": "https://example.org/paper-a-mirror",
+                        },
+                    ]
+                }
+            ]
+        }
+        reception = {
+            "target_works": [
+                {
+                    "id": "paper-a",
+                    "url": "https://doi.org/10.5281/zenodo.1111111",
+                }
+            ],
+            "entries": [
+                {
+                    "id": "external-commentary",
+                    "url": "https://example.org/commentary",
+                    "cited_sources": [
+                        {
+                            "title": "Paper A",
+                            "url": "https://doi.org/10.5281/zenodo.1111111",
+                        },
+                        {
+                            "title": "Unrelated source",
+                            "url": "https://doi.org/10.9997/cited-only",
+                        },
+                    ],
+                }
+            ],
+        }
+        mappings = {
+            "mappings": [
+                {
+                    "title": "Mapping A",
+                    "archived_release_doi": "10.5281/zenodo.2222222",
+                    "external_source_doi": "10.1016/j.external.2026.123456",
+                    "note": "Mentions 10.9996/narrative-only.",
+                }
+            ]
+        }
+        context = discovery.build_known_context(
+            works, distributions, reception, mappings, {"events": []}
+        )
+        self.assertEqual(
+            context["doi_to_work"]["10.5281/zenodo.7654321"], "paper-a"
+        )
+        self.assertIn("10.5281/zenodo.7654321", context["known_ids"])
+        self.assertIn("10.5281/zenodo.1111111", context["known_ids"])
+        self.assertIn("10.5281/zenodo.2222222", context["known_ids"])
+        self.assertNotIn("10.9999/external-reference", context["known_ids"])
+        self.assertNotIn("10.9998/other-source", context["known_ids"])
+        self.assertNotIn("10.9996/narrative-only", context["known_ids"])
+        self.assertNotIn("10.1016/j.external.2026.123456", context["known_ids"])
+        self.assertIn(
+            "https://example.org/commentary", context["known_urls"]
+        )
+        self.assertIn(
+            "https://example.org/paper-a-mirror", context["known_urls"]
+        )
+        self.assertNotIn(
+            "https://doi.org/10.9997/cited-only", context["known_urls"]
+        )
+
+    def test_work_notes_do_not_become_canonical_doi_identifiers(self):
+        work = {
+            "id": "paper-a",
+            "title": "Paper A",
+            "note": "Bibliographic reference: 10.9999/external-reference",
+        }
+        self.assertEqual(discovery.work_doi_identifiers(work), [])
+
     def test_normalise_url_removes_tracking_and_fragment(self):
         self.assertEqual(
             discovery.normalise_url(
