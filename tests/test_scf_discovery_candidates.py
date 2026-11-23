@@ -319,6 +319,15 @@ class DiscoveryIntakeTests(unittest.TestCase):
         self.assertEqual(profile["subclass"], "author-profile")
         self.assertEqual(github["subclass"], "author-profile-or-repository")
         self.assertEqual(huggingface["subclass"], "author-associated-distribution")
+        researchgate = discovery.detect_source_ownership(
+            "https://researchgate.net/profile/Daniel-Beranek", context
+        )
+        linkedin = discovery.detect_source_ownership(
+            "https://linkedin.com/posts/seo-specialista-copywriter-daniel-beranek_digitalidentityoptimization-activity-7516523106669355008-tTtE",
+            context,
+        )
+        self.assertEqual(researchgate["subclass"], "author-profile")
+        self.assertEqual(linkedin["subclass"], "author-associated-social-content")
 
     def test_external_registry_record_is_classified_as_a_review_lead(self):
         candidate = {
