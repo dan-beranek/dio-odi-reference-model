@@ -232,6 +232,15 @@ class TestExternalCandidateHelpers(unittest.TestCase):
         self.assertEqual(candidates, [])
         self.assertFalse(status["newer_than_review_baseline"])
 
+    def test_bartoc_api_single_record_array_is_supported(self):
+        with patch.object(
+            scf, "fetch_json",
+            return_value=([{"modified": ["2026-11-19T10:15:00Z"]}], {}),
+        ):
+            candidates, status = scf.scan_bartoc(registry_fixture(), {})
+        self.assertEqual(candidates, [])
+        self.assertTrue(status["record_retrieved"])
+
     def test_publication_feeds_merge_canonical_and_syndicated_copy(self):
         rss = """<?xml version="1.0"?>
         <rss version="2.0"><channel><item>
