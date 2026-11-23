@@ -56,3 +56,7 @@ jobs:
           path: scf-operational-output/
           if-no-files-found: warn
           retention-days: 30
+
+      - name: Add report to workflow summary
+        if: always() && hashFiles('scf-operational-output/scf-operational-candidates.md') != ''
+        run: cat scf-operational-output/scf-operational-candidates.md >> "$GITHUB_STEP_SUMMARY"
