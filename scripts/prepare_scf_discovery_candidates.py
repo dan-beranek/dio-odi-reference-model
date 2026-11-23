@@ -305,6 +305,20 @@ def build_search_queries(
             "known-work-title",
         )
 
+    relationship_queries = profile.get("relationship_queries", [])
+    if not isinstance(relationship_queries, list):
+        raise DiscoveryError("relationship_queries must be an array")
+    for item in relationship_queries:
+        if not isinstance(item, dict):
+            raise DiscoveryError("Each relationship query must be an object")
+        query_id = item.get("id")
+        query = item.get("query")
+        if not isinstance(query_id, str) or not query_id.strip():
+            raise DiscoveryError("Each relationship query needs a non-empty id")
+        if not isinstance(query, str) or not query.strip():
+            raise DiscoveryError("Each relationship query needs a non-empty query")
+        add(query_id.strip(), query.strip(), "external-relationship")
+
     # Search for references to canonical research identifiers as well as titles.
     # Only the work's own DOI fields and version records are used here; cited DOIs
     # embedded in notes or abstracts are deliberately not treated as its identity.
@@ -1133,6 +1147,7 @@ def search_openalex(
         + [query for query in queries if query["group"] == "concept-anchor"][:2]
         + [query for query in queries if query["group"] == "known-work-title"][:2]
         + [query for query in queries if query["group"] == "work-identifier"][:6]
+        + [query for query in queries if query["group"] == "external-relationship"][:3]
     )
     for query in selected:
         params = {
@@ -1191,6 +1206,7 @@ def search_crossref(
         + [query for query in queries if query["group"] == "concept-anchor"][:2]
         + [query for query in queries if query["group"] == "known-work-title"][:2]
         + [query for query in queries if query["group"] == "work-identifier"][:6]
+        + [query for query in queries if query["group"] == "external-relationship"][:3]
     )
     for query in selected:
         params = {
