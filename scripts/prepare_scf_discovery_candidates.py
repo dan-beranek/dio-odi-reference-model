@@ -403,6 +403,16 @@ def build_known_context(
         if normalised_hub:
             known_urls.add(normalised_hub)
 
+    # Zenodo's record landing pages do not expose their DOI in the URL.
+    # Add the canonical /records/{numeric-id} URL as an alias for every
+    # registered Zenodo DOI so indexed landing pages resolve to the same record.
+    for identifier in known_ids:
+        match = re.fullmatch(r"10\\.5281/zenodo\\.(\\d+)", identifier)
+        if match:
+            alias = normalise_url(f"https://zenodo.org/records/{match.group(1)}")
+            if alias:
+                known_urls.add(alias)
+
     evidence_index = existing_evidence_index(feed)
     known_urls.update(evidence_index)
     return {
