@@ -310,6 +310,9 @@ class DiscoveryIntakeTests(unittest.TestCase):
         profile = discovery.detect_source_ownership(
             "https://bioregistry.io/contributor/0009-0004-0050-0264", context
         )
+        github_pages = discovery.detect_source_ownership(
+            "https://dan-beranek.github.io/dio-odi-autorsky-koncept/en", context
+        )
         github = discovery.detect_source_ownership(
             "https://github.com/dan-beranek", context
         )
@@ -318,6 +321,7 @@ class DiscoveryIntakeTests(unittest.TestCase):
         )
         self.assertEqual(profile["subclass"], "author-profile")
         self.assertEqual(github["subclass"], "author-profile-or-repository")
+        self.assertEqual(github_pages["subclass"], "author-maintained-web-presence")
         self.assertEqual(huggingface["subclass"], "author-associated-distribution")
         researchgate = discovery.detect_source_ownership(
             "https://researchgate.net/profile/Daniel-Beranek", context
