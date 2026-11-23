@@ -848,7 +848,23 @@ def build_report(
             resolved.append(candidate)
 
     candidates = merge_observations(resolved)
-    web_enabled = bool(tavily_api_key)
+    tavily_check = next(
+        check for check in provider_checks if check["provider"] == "Tavily Search"
+    )
+    web_configured = bool(tavily_api_key)
+    web_enabled = web_configured and tavily_check.get("complete") is True
+    if web_enabled:
+        coverage_limitation = None
+    elif web_configured:
+        coverage_limitation = (
+            "Tavily Search was configured but did not complete all queries. "
+            "This run has no complete general-web coverage."
+        )
+    else:
+        coverage_limitation = (
+            "General web search is disabled because TAVILY_API_KEY is not configured. "
+            "This run is limited to scholarly metadata indexes and is not a broad web scan."
+        )
     errors = [
         {"source": check["provider"], "error": error}
         for check in provider_checks for error in check.get("errors", [])
@@ -860,14 +876,11 @@ def build_report(
         "query_count": len(queries),
         "queries": queries,
         "coverage": {
+            "general_web_search_configured": web_configured,
             "general_web_search_enabled": web_enabled,
             "scholarly_indexes_enabled": True,
             "coverage_level": "web-and-scholarly" if web_enabled else "scholarly-only",
-            "limitation": (
-                None if web_enabled else
-                "General web search is disabled because TAVILY_API_KEY is not configured. "
-                "This run is limited to scholarly metadata indexes and is not a broad web scan."
-            ),
+            "limitation": coverage_limitation,
         },
         "policy": {
             "review_required": True,
