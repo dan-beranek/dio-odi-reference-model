@@ -305,6 +305,24 @@ class DiscoveryIntakeTests(unittest.TestCase):
         self.assertEqual(classification["category"], "independent-external-reception")
         self.assertEqual(classification["confidence"], "high")
 
+    def test_unattributed_reference_is_not_counted_as_independent_reception(self):
+        candidate = {
+            "source_url": "https://instagram.com/p/example-post",
+            "title": "Instagram",
+            "snippet": "A post linking to a canonical DIO/ODI paper.",
+            "authorship_status": "not-provided",
+            "doi_values": [],
+            "referenced_doi_values": ["10.5281/zenodo.1234567"],
+            "primary_arxiv_ids": [],
+            "referenced_arxiv_ids": [],
+            "related_work_ids": ["paper-a"],
+            "matched_signals": ["known-doi-reference"],
+        }
+        classification = discovery.classify_candidate(candidate, self.context)
+        self.assertEqual(classification["category"], "unattributed-or-ambiguous")
+        self.assertEqual(classification["subcategory"], "unattributed-citation-or-reference-lead")
+        self.assertEqual(classification["confidence"], "low")
+
     def test_author_profiles_and_platform_handles_are_not_external_reception(self):
         context = dict(self.context)
         profile = discovery.detect_source_ownership(
