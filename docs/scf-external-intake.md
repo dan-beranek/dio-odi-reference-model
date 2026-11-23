@@ -30,9 +30,9 @@ The scanner checks the Atom API record for arXiv 2610.37407 and compares the cur
 
 ### Hashnode and DEV.to
 
-The scanner reads the Hashnode publication RSS feed and the public DEV.to articles API for the danielberanek account. It filters for relevant DIO/ODI and Agentic Entity Resolution content, then groups syndicated representations by canonical URL.
+The scanner reads the Hashnode publication RSS feed, the public DEV.to articles API for the danielberanek account, and the Medium profile RSS feed at https://seo-spec-copy-daniel-beranek.medium.com/feed. It filters or maps the known DIO/ODI and Agentic Entity Resolution representations, then groups them by the canonical work URL.
 
-Hashnode is the canonical publication source for “The Match Is Easy, the Merge Is Not”; DEV.to is a secondary representation. The two are not counted as separate works. LinkedIn is not scraped: the existing LinkedIn architectural overview is a separate work, and no suitable public API is configured for this read-only monitor.
+Hashnode remains the canonical publication for “The Match Is Easy, the Merge Is Not”. DEV.to and Medium are secondary representations of that same work and are attached to the Hashnode canonical URL. The Medium mirror is matched by its known article URL; it is not treated as a separate publication work. LinkedIn is not scraped: the existing LinkedIn architectural overview is a separate work, and no suitable public API is configured for this read-only monitor.
 
 ## Deliberate exclusions
 
