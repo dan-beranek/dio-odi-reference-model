@@ -11,7 +11,7 @@ The query profile in discovery/query-profile.json currently supplies:
 - the canonical identity phrases Digital Identity Optimization, Ontology of Digital Identity, and DIO/ODI;
 - the author's ORCID and a name query coupled to the full identity phrase;
 - distinctive concept anchors validated against the canonical keyword grammar in metadata/keywords.json;
-- exact titles drawn from the canonical works registry in metadata/works.json.
+- exact titles and the works' own version/concept DOI and arXiv identifiers drawn from the canonical works registry in metadata/works.json.
 
 The profile can be extended when the identity vocabulary changes. Work-title queries are derived from the work registry rather than duplicated as another manually maintained publication inventory. A small number of distinctive concept anchors are selected deliberately; the engine does not send every generic keyword to a search provider.
 
@@ -29,7 +29,7 @@ The workflow runs daily at 07:17 UTC and can also be started manually. Search qu
 
 ## Candidate resolution
 
-Results are normalised and deduplicated by DOI when available, otherwise by URL. The collector retains provider and query provenance so that two search services returning the same work appear as one candidate with multiple observations.
+Results are normalised and deduplicated by the discovered object's own DOI when available, otherwise by URL. A DOI or arXiv identifier merely cited in a result is retained as a reference to a related canonical work; it is never substituted for the discovered page's own identity. The collector retains provider and query provenance so that two search services returning the same work appear as one candidate with multiple observations.
 
 Deterministic relevance signals include exact core-identity phrases, exact canonical work titles, known DOI values, and distinctive keyword anchors corroborated by DIO/ODI identity context. An author identifier alone, an author name alone, or a generic acronym match is insufficient.
 
