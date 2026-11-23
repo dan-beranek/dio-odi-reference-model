@@ -31,7 +31,7 @@ The workflow runs daily at 07:17 UTC and can also be started manually. Search qu
 
 Results are normalised and deduplicated by the discovered object's own DOI when available, otherwise by URL. A DOI or arXiv identifier merely cited in a result is retained as a reference to a related canonical work; it is never substituted for the discovered page's own identity. The collector retains provider and query provenance so that two search services returning the same work appear as one candidate with multiple observations.
 
-Deterministic relevance signals include exact core-identity phrases, exact canonical work titles, known DOI values, and distinctive keyword anchors corroborated by DIO/ODI identity context. An author identifier alone, an author name alone, or a generic acronym match is insufficient.
+Deterministic relevance signals include distinctive DIO/ODI phrases, exact canonical work titles, known DOI/arXiv identifiers, and distinctive keyword anchors corroborated by identity context. The broader phrase Digital Identity Optimization alone is treated as ambiguous: it must be corroborated by the author name/ORCID or a distinctive concept. An author identifier alone, an author name alone, or a generic acronym match is insufficient.
 
 Each candidate is compared against the canonical work and distribution metadata and the exact evidence URLs already present in the SCF. The resulting statuses are:
 
