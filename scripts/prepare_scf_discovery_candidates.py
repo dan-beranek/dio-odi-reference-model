@@ -848,7 +848,9 @@ def resolve_result(
 
 def candidate_key(observation: dict[str, Any]) -> str:
     if observation.get("doi_values"):
-        return f"doi:{observation['doi_values'][0]}"
+        return f"doi:{sorted(observation['doi_values'])[0]}"
+    if observation.get("primary_arxiv_ids"):
+        return f"arxiv:{sorted(observation['primary_arxiv_ids'])[0]}"
     return f"url:{observation['url']}"
 
 
@@ -863,11 +865,16 @@ def merge_observations(observations: list[dict[str, Any]]) -> list[dict[str, Any
                 "candidate_fingerprint": stable_fingerprint(key),
                 "kind": "web-discovery-observation",
                 "source_url": observation["url"],
+                "source_urls": [],
                 "title": observation["title"],
-                "doi_values": observation["doi_values"],
+                "doi_values": [],
+                "referenced_doi_values": [],
+                "primary_arxiv_ids": [],
+                "referenced_arxiv_ids": [],
                 "published_date": observation["published_date"],
                 "snippet": observation["snippet"],
                 "provider_score": observation["provider_score"],
+                "authorship_status": "not-provided",
                 "matched_signals": [],
                 "match_class": observation["match_class"],
                 "relevance_score": observation["relevance_score"],
@@ -886,14 +893,14 @@ def merge_observations(observations: list[dict[str, Any]]) -> list[dict[str, Any
             }
             merged[key] = current
         current["observed_by"] = sorted(set(current["observed_by"]) | {observation["provider"]})
+        for field in (
+            "doi_values", "referenced_doi_values", "primary_arxiv_ids",
+            "referenced_arxiv_ids", "related_work_ids", "evidence_urls",
+        ):
+            current[field] = sorted(set(current[field]) | set(observation.get(field, [])))
+        current["source_urls"] = sorted(set(current["source_urls"]) | {observation["url"]})
         current["matched_signals"] = sorted(
             set(current["matched_signals"]) | set(observation["matched_signals"])
-        )
-        current["related_work_ids"] = sorted(
-            set(current["related_work_ids"]) | set(observation["related_work_ids"])
-        )
-        current["evidence_urls"] = sorted(
-            set(current["evidence_urls"]) | set(observation["evidence_urls"])
         )
         current["existing_event_ids"] = sorted(
             set(current["existing_event_ids"]) | set(observation["existing_event_ids"])
@@ -910,7 +917,15 @@ def merge_observations(observations: list[dict[str, Any]]) -> list[dict[str, Any
             "published_date": observation["published_date"],
             "provider_score": observation["provider_score"],
             "snippet": observation["snippet"],
+            "authorship_status": observation.get("authorship_status", "not-provided"),
         })
+        if observation.get("authorship_status") == "author-listed":
+            current["authorship_status"] = "author-listed"
+        elif (
+            observation.get("authorship_status") == "other-authors-listed"
+            and current["authorship_status"] == "not-provided"
+        ):
+            current["authorship_status"] = "other-authors-listed"
         if observation["reference_status"] == "already-cited":
             current["reference_status"] = "already-cited"
         elif (
@@ -941,6 +956,112 @@ def merge_observations(observations: list[dict[str, Any]]) -> list[dict[str, Any
             item["source_url"],
         ),
     )
+
+
+def classify_candidate(candidate: dict[str, Any], context: dict[str, Any]) -> dict[str, str]:
+    """Separate author-corpus traces from independent external-reception/application leads."""
+    authorship = candidate.get("authorship_status", "not-provided")
+    doi_values = set(candidate.get("doi_values", []))
+    arxiv_ids = set(candidate.get("primary_arxiv_ids", []))
+    registered_work_ids = {
+        context["doi_to_work"][doi] for doi in doi_values
+        if doi in context["doi_to_work"]
+    }
+    registered_work_ids.update(
+        context["arxiv_to_work"][item] for item in arxiv_ids
+        if item in context["arxiv_to_work"]
+    )
+    ownership = detect_source_ownership(candidate.get("source_url", ""), context)
+
+    if authorship == "author-listed":
+        return {
+            "category": "author-corpus",
+            "subcategory": "author-authored-publication",
+            "confidence": "high",
+            "basis": "OpenAlex or Crossref explicitly lists the canonical author in publication authorship metadata.",
+        }
+    if ownership:
+        return {
+            "category": "author-corpus",
+            "subcategory": ownership["subclass"],
+            "confidence": ownership["confidence"],
+            "basis": ownership["basis"],
+        }
+    if registered_work_ids:
+        return {
+            "category": "author-corpus",
+            "subcategory": "registered-author-work-or-release",
+            "confidence": "high",
+            "basis": "The discovered object's own DOI or arXiv identifier maps to a work in the canonical works or distribution registry.",
+        }
+
+    registry_application = looks_like_external_registry_or_application(candidate)
+    if registry_application:
+        subcategory, basis = registry_application
+        return {
+            "category": "external-registry-or-application",
+            "subcategory": subcategory,
+            "confidence": "medium",
+            "basis": basis,
+        }
+
+    references_known_work = bool(
+        candidate.get("referenced_doi_values")
+        or candidate.get("referenced_arxiv_ids")
+        or "known-doi-reference" in candidate.get("matched_signals", [])
+        or "known-arxiv-reference" in candidate.get("matched_signals", [])
+    )
+    if authorship == "other-authors-listed":
+        if references_known_work:
+            return {
+                "category": "independent-external-reception",
+                "subcategory": "externally-authored-work-referencing-dio-odi",
+                "confidence": "high",
+                "basis": "Structured publication metadata lists other authors and the result references a known DIO/ODI work.",
+            }
+        return {
+            "category": "independent-external-reception",
+            "subcategory": "externally-authored-identity-related-work",
+            "confidence": "medium",
+            "basis": "Structured publication metadata lists other authors; topical relevance still requires primary-source review.",
+        }
+    if references_known_work:
+        return {
+            "category": "independent-external-reception",
+            "subcategory": "unattributed-citation-or-reference-lead",
+            "confidence": "low",
+            "basis": "The page refers to a canonical work, but available metadata does not establish who authored or controls the page.",
+        }
+    return {
+        "category": "unattributed-or-ambiguous",
+        "subcategory": "author-attribution-or-relevance-unresolved",
+        "confidence": "low",
+        "basis": "The result is identity-related, but authorship, ownership, independent authorship, or a canonical-work reference is not established by available metadata.",
+    }
+
+
+def build_work_groups(candidates: list[dict[str, Any]], context: dict[str, Any]) -> list[dict[str, Any]]:
+    """Group distinct discovered records by canonical work without collapsing their identifiers."""
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for candidate in candidates:
+        for work_id in candidate.get("related_work_ids", []):
+            grouped.setdefault(work_id, []).append(candidate)
+    output = []
+    for work_id, items in sorted(grouped.items()):
+        identifiers = sorted({
+            identifier
+            for item in items
+            for identifier in item.get("doi_values", []) + item.get("primary_arxiv_ids", [])
+        })
+        unique_ids = sorted({item["candidate_id"] for item in items})
+        output.append({
+            "work_id": work_id,
+            "work_title": context.get("work_id_to_title", {}).get(work_id, work_id),
+            "candidate_ids": unique_ids,
+            "candidate_count": len(unique_ids),
+            "identifiers": identifiers,
+        })
+    return output
 
 
 def search_tavily(
