@@ -1,0 +1,62 @@
+name: SCF operational evidence intake
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+    inputs:
+      lookback_hours:
+        description: "Lookback window for deployment runs and releases (1–720 hours)"
+        required: false
+        default: "48"
+        type: string
+  pull_request:
+    paths:
+      - "scripts/prepare_scf_operational_candidates.py"
+      - "tests/test_scf_operational_candidates.py"
+      - ".github/workflows/scf-operational-intake.yml"
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  collect-operational-evidence:
+    name: Collect review-only deployment and release observations
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out canonical SCF repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run operational-intake unit tests
+        run: python -m unittest discover -s tests -p "test_scf_operational_candidates.py" -v
+
+      - name: Collect deployment and release observations
+        env:
+          SCF_GITHUB_TOKEN: ${{ github.token }}
+          LOOKBACK_HOURS: ${{ inputs.lookback_hours || '48' }}
+        run: |
+          python scripts/prepare_scf_operational_candidates.py \
+            --lookback-hours "$LOOKBACK_HOURS" \
+            --output-dir scf-operational-output
+
+      - name: Upload operational evidence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scf-operational-candidates-${{ github.run_id }}
+          path: scf-operational-output/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Add report to workflow summary
+        if: always() && hashFiles('scf-operational-output/scf-operational-candidates.md') != ''
+        run: cat scf-operational-output/scf-operational-candidates.md >> "$GITHUB_STEP_SUMMARY"
