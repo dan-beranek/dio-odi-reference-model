@@ -750,6 +750,9 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         1 for item in urls.values()
         if any(s["kind"] in {"current-public-profile-html", "current-public-profile-rendered-browser"} for s in item["discovery_sources"])
     )
+    registered_url_keys = {normalized_url(item["url"]) for item in known}
+    unregistered_indexed_search_keys = indexed_search_keys - registered_url_keys
+    indexed_search_keys_not_queried = indexed_search_keys - set(urls)
     summary = {
         "profile_reported_count": profile_reported_count,
         "current_profile_urls": current_count,
@@ -766,10 +769,8 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "profile_count_to_html_link_gap": (max(0, profile_reported_count - current_count) if profile_reported_count is not None else None),
         "profile_discovery_status": derive_profile_discovery_status(profile_reported_count, current_count),
         "indexed_search_slide_urls": len(indexed_search_keys),
-        "unregistered_indexed_search_urls": sum(
-            1 for key in indexed_search_keys
-            if key in urls and not urls[key]["registry_artefact_ids"]
-        ),
+        "unregistered_indexed_search_urls": len(unregistered_indexed_search_keys),
+        "indexed_search_urls_not_queried_due_to_url_limit": len(indexed_search_keys_not_queried),
     }
     report = {
         "report_version": "0.1.0",
