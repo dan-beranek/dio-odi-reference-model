@@ -2369,7 +2369,9 @@
       "summary": "The SlideShare profile lists an 11-slide item with this title and author/uploader attribution. A 2009 Masaryk University thesis titled Pozitivní psychologie a vybrané duchovní směry: komparativní analýza is a potentially related academic object, but the titles and framing differ: the university abstract names Bateson's binocular-vision method, while the SlideShare title references Castaneda. Treat them as potentially related, not as the same work, until the deck content and source relation are checked.",
       "platform": "SlideShare",
       "related_uri": "https://is.muni.cz/th/wknmn/",
-      "related_object_id": "positive-psychology-and-spiritual-streams-thesis"
+      "candidate_related_object_ids": [
+        "positive-psychology-and-spiritual-streams-thesis"
+      ]
     },
     {
       "title": "Reartikulace konceptů ideologie a hegemonie — SlideShare profile item",
@@ -2379,7 +2381,9 @@
       "summary": "The SlideShare profile lists a seven-slide item under the shortened but matching title and displays the author/uploader attribution. The official Masaryk University record confirms the 2011 master's thesis with the full title. The direct SlideShare item URL and presentation-to-thesis content relationship have not yet been verified.",
       "platform": "SlideShare",
       "related_uri": "https://is.muni.cz/th/ajfb6/",
-      "related_object_id": "rearticulation-ideology-hegemony-thesis"
+      "candidate_related_object_ids": [
+        "rearticulation-ideology-hegemony-thesis"
+      ]
     },
     {
       "title": "Přesahy 005 — Internetová propagace festivalu — SlideShare profile item",
