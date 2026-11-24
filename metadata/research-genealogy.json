@@ -202,7 +202,12 @@
           "provider": "ResearchGate",
           "role": "persistent-publication-identifier"
         }
-      ]
+      ],
+      "institutional_record_status": {
+        "status": "public-record-available",
+        "basis": "directly-verified",
+        "note": "The Masaryk University Information System and Theses.cz records refer to the same thesis."
+      }
     },
     {
       "id": "semiotic-mobscene-sign-expansion-thesis",
@@ -274,7 +279,12 @@
           "provider": "ResearchGate",
           "role": "persistent-publication-identifier"
         }
-      ]
+      ],
+      "institutional_record_status": {
+        "status": "no-public-record",
+        "basis": "author-confirmed",
+        "note": "No public Masaryk University Information System or Theses.cz page exists for this thesis. Its public bibliographic trail is the author's academic-publications record and the ResearchGate full-text page/DOI."
+      }
     }
   ],
   "research_processes": [
