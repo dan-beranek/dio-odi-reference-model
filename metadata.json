@@ -170,7 +170,10 @@
     "keyword_grammar_version": "2.0.0",
     "keyword_grammar_status": "canonical-approved",
     "application_mappings": "metadata/application-mappings.json",
-    "application_mappings_schema": "metadata/application-mappings.schema.json"
+    "application_mappings_schema": "metadata/application-mappings.schema.json",
+    "research_genealogy": "metadata/research-genealogy.json",
+    "research_genealogy_schema": "metadata/research-genealogy.schema.json",
+    "research_genealogy_guide": "docs/research-genealogy.md"
   },
   "current_release": {
     "version": "0.9.0",
