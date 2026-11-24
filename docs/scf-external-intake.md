@@ -24,6 +24,10 @@ The scanner retrieves the BARTOC JSKOS record for the DIO/ODI Reference Vocabula
 
 It checks the record's modified timestamp (or the HTTP Last-Modified header) against the last reviewed date in metadata/external-reception.json. A newer timestamp triggers review; it does not establish that the changed fields are material to the SCF.
 
+### FAIRsharing
+
+The DIO/ODI Reference Vocabulary has a public FAIRsharing record at https://fairsharing.org/9470, documented in SCF-2026-061. This record is currently handled through manual source review and is not queried by the automated intake workflow.
+
 ### arXiv
 
 The scanner checks the Atom API record for arXiv 2610.37407 and compares the current version and update timestamp with the canonical state in metadata/works.json. A new version or a timestamp newer than the recorded version is surfaced for review.
@@ -37,9 +41,9 @@ Hashnode remains the canonical publication for “The Match Is Easy, the Merge I
 ## Deliberate exclusions
 
 - The workflow does not treat BioRegistry and Semantic Farm as two independent registry integrations.
-- It does not infer scholarly citation, independent review, endorsement, adoption, or implementation from a registry listing.
+- Registry entries are compared with canonical resource identities and existing SCF citations before candidate changes are prepared.
 - It does not scrape LinkedIn or infer a publication date from an inaccessible profile.
-- TIB terminology services and FAIRsharing are not included yet. They require stable, directly addressable public record identifiers and a source interface that can be checked reliably; a submitted URL or an unconfirmed record is not enough.
+- TIB terminology services are not included yet; they require a stable, directly addressable public record identifier and a source interface that can be checked reliably.
 - The workflow does not modify metadata/external-reception.json, metadata/works.json, metadata/distributions.json, or semantic-change-feed/events.json.
 
 ## Output and schedule

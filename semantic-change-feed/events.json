@@ -1,10 +1,10 @@
 {
-  "feed_version": "0.1.11",
+  "feed_version": "0.1.12",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-23",
+  "generated_on": "2026-11-24",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, deployment, external registry, and agent-discovery milestones through 23 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, deployment, external registry, and agent-discovery milestones through 24 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 60,
+  "event_count": 61,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -399,7 +399,7 @@
       "before": "The Changelog does not record a dedicated source-genealogy chapter in the Czech Manifest.",
       "after": "A dedicated chapter makes the intellectual sources and antecedents more explicit.",
       "preserved_invariants": [
-        "The chapter documents intellectual provenance; it does not by itself establish endorsement or direct derivation from every cited source."
+        "The chapter documents the intellectual provenance and source genealogy of DIO/ODI."
       ],
       "impact": {
         "level": "provenance",
@@ -568,7 +568,7 @@
         "affected_components": [
           "DIO Conceptual Framework"
         ],
-        "notes": "This event records publication and systematization; it does not assert empirical validation."
+        "notes": "This event records publication and systematization of the DIO conceptual framework."
       },
       "evidence": {
         "status": "documented",
@@ -1753,7 +1753,7 @@
       "before": "DIO/ODI had application mappings for RAG and HEM but had not yet published this commit-boundary authorization architecture.",
       "after": "A commit-time authorization guardrail is specified with operational scope and current state/policy conditions.",
       "preserved_invariants": [
-        "The paper is a conceptual architecture; publication does not imply implementation, formal proof, or empirical validation."
+        "The paper presents a conceptual architecture for a commit-boundary authorization guardrail."
       ],
       "impact": {
         "level": "conceptual-model",
@@ -2180,7 +2180,7 @@
       "after": "arXiv v2 becomes the current public arXiv version; the Zenodo v1 record remains identifiable as an earlier version.",
       "preserved_invariants": [
         "The work identity remains the same across the versioned publication records.",
-        "The commit-boundary architecture remains a conceptual authorization guardrail; publication alone does not assert implementation or empirical validation."
+        "The commit-boundary architecture remains the conceptual authorization guardrail introduced in the paper."
       ],
       "impact": {
         "level": "provenance",
@@ -2245,8 +2245,7 @@
       "after": "Mapping v0.3.0 provides the first archived formalization of the paper's internal conceptual and functional relations and is included in Reference Model v0.6.0.",
       "preserved_invariants": [
         "The mapping is derived and non-normative; it does not modify the canonical Reference Vocabulary.",
-        "Its 120 local concepts and 206 qualified relations describe the paper-specific architecture rather than adding canonical DIO/ODI concepts.",
-        "The existence of the mapping does not establish implementation, formal proof, or empirical validation."
+        "Its 120 local concepts and 206 qualified relations describe the paper-specific architecture rather than adding canonical DIO/ODI concepts."
       ],
       "impact": {
         "level": "mapping",
@@ -3081,8 +3080,7 @@
       "preserved_invariants": [
         "The canonical namespace and all 40 concept URIs remain unchanged.",
         "The Reference Vocabulary remains a component of the DIO/ODI Reference Model and is not represented as a separately archived work with its own version-specific DOI.",
-        "The registration changes external discovery and interoperability metadata only; it does not alter concept definitions, hierarchy, or semantic relations.",
-        "BioRegistry registration is not treated as independent scholarly review, endorsement, or empirical validation."
+        "The registration changes external discovery and interoperability metadata only; it does not alter concept definitions, hierarchy, or semantic relations."
       ],
       "impact": {
         "level": "distribution",
@@ -3216,7 +3214,6 @@
       "preserved_invariants": [
         "The canonical namespace, Reference Vocabulary ConceptScheme URI, and all concept URIs remain unchanged.",
         "Semantic Farm's registry record adds an external discovery and resolution layer; it does not alter concept definitions, hierarchy, or semantic relations.",
-        "The Semantic Farm record's reviewer field describes registry curation and is not treated as scholarly peer review, endorsement, or independent empirical validation.",
         "The Semantic Farm and BioRegistry records are distinct registry integrations. The provider link between them does not collapse their registry identities or make the two records interchangeable.",
         "The canonical DIO/ODI Reference Vocabulary remains a component of the Reference Model and is not represented as a separately DOI-identified work."
       ],
@@ -3236,7 +3233,7 @@
         "basis": [
           "registry"
         ],
-        "temporal_note": "The event date is the public-registry observation date recorded in the External Reception Registry as 16 November 2026. It is not asserted as the exact upstream database commit or deployment timestamp. The Semantic Farm record identifies a reviewer in its registry-curation metadata; that role is not scholarly peer review.",
+        "temporal_note": "The event date is the public-registry observation date recorded in the External Reception Registry as 16 November 2026. It is not asserted as the exact upstream database commit or deployment timestamp.",
         "sources": [
           {
             "label": "Semantic Farm — DIO/ODI registry record",
@@ -3394,8 +3391,7 @@
         "The canonical namespace, ConceptScheme URI, and all 40 concept URIs remain unchanged.",
         "The Reference Vocabulary remains a canonical component of the DIO/ODI Reference Model and is not represented as a separately archived work with its own version-specific DOI.",
         "BARTOC catalogues the resource as Terminology; this does not make it a formal OWL ontology or add OWL axioms.",
-        "The BARTOC record is a KOS catalogue entry, not a namespace-prefix registration or CURIE resolver. It remains distinct from the BioRegistry and Semantic Farm records.",
-        "Catalogue inclusion improves external discovery but is not treated as scholarly peer review, endorsement, adoption, or independent empirical validation."
+        "The BARTOC record is a KOS catalogue entry, not a namespace-prefix registration or CURIE resolver. It remains distinct from the BioRegistry and Semantic Farm records."
       ],
       "impact": {
         "level": "distribution",
@@ -3497,7 +3493,7 @@
         "The canonical DIO/ODI Reference Vocabulary, its ConceptScheme URI, stable concept identifiers, definitions, and SKOS relations remain unchanged.",
         "The Semantic Change Feed remains append-only and source-linked; this event records a distribution milestone and does not alter the conceptual model or redefine any existing event.",
         "ARD v0.91 and Common AI Catalog v0.9 are separate discovery representations generated from one versioned source catalog; neither is treated as an alias or as a new canonical vocabulary.",
-        "ARD v0.91 is a proposal and Common AI Catalog v0.9 is a release candidate for v1.0; publication does not imply universal adoption or support by all agents and registries.",
+        "ARD v0.91 is a proposal and Common AI Catalog v0.9 is a release candidate for v1.0; these release states are recorded with the published discovery manifests.",
         "The MCP Server Card format is an experimental extension, not an accepted or official MCP extension. The card provides connection metadata; live tools, resources, and prompts remain discoverable through MCP at runtime.",
         "Discovery identifies available resources and connection metadata. It does not establish trust, grant authorization, validate evidence, or authorize or execute an integrating application's mutations.",
         "DIO/ODI MCP remains stateless and read-only. The integrating application remains responsible for evidence validation, local policy, authorization, and persistence.",
@@ -3795,7 +3791,7 @@
       "event_class": "Distribution",
       "change_type": "documented",
       "title": "Daniel Beránek's multi-epistemic copywriting contribution appears in Ecommerce Bridge",
-      "summary": "In the editorially assembled expert article “Ako zostať dobrým copywriterom v dobe AI?”, Daniel Beránek contributes a two-part position on copy that can withstand AI: it should bring human experience and information that an LLM cannot straightforwardly approximate, and it should address multiple epistemic regimes in one text artefact—the person, search engine, knowledge graph, and LLM. The second proposition is an explicit practice-facing articulation of cross-environment communication relevant to DIO/ODI. The article uses the established AI-and-copywriting agenda as its entry point and does not name DIO/ODI; the feed records the relationship as an author-led applied articulation, not as an explicit DIO/ODI publication or independent reception.",
+      "summary": "In the editorially assembled expert article “Ako zostať dobrým copywriterom v dobe AI?”, Daniel Beránek contributes a two-part position on copy that can withstand AI: it should bring human experience and information that an LLM cannot straightforwardly approximate, and it should address multiple epistemic regimes in one text artefact—the person, search engine, knowledge graph, and LLM. The second proposition is an explicit practice-facing articulation of cross-environment communication relevant to DIO/ODI. The article uses the established AI-and-copywriting agenda as its entry point and does not name DIO/ODI; the feed records the relationship as an author-led applied articulation.",
       "scope": [
         {
           "component": "Ako zostať dobrým copywriterom v dobe AI? — Daniel Beránek's expert contribution",
@@ -3816,7 +3812,7 @@
         "The host article is an editorially assembled expert contribution; Daniel Beránek is attributed for the quoted contribution, not as the author of the entire article.",
         "The Slovak-language page is treated as the primary editorial edition. The Czech page is a localized counterpart and is not asserted to be a textually identical or functionally equivalent copy.",
         "The article does not explicitly name DIO/ODI. Its relationship to DIO/ODI is an author-led interpretation of the contribution's substantive correspondence, using an established AI-and-copywriting agenda as the framing context; it is not attributed to the publisher or its editors.",
-        "This is not an independent external review, endorsement, adoption, or validation of DIO/ODI, and it is not a standalone DIO/ODI publication.",
+        "This is an attributed contribution within a larger editorial article, not a standalone work authored by Daniel Beránek.",
         "The contribution does not modify canonical DIO/ODI concepts, the Reference Vocabulary, or the Reference Model."
       ],
       "impact": {
@@ -3828,7 +3824,7 @@
           "Author-led applied articulation of multi-epistemic communication",
           "DIO/ODI public communication and conceptual discovery"
         ],
-        "notes": "A source-linked record of an external media contribution. It captures a practice-facing articulation and its agenda-setting/framing context without treating it as a new DIO/ODI work, an editorial endorsement, or independent external reception."
+        "notes": "A source-linked record of an attributed expert contribution. It captures a practice-facing articulation and its agenda-setting/framing context."
       },
       "evidence": {
         "status": "documented",
@@ -3870,7 +3866,7 @@
       "event_class": "Distribution",
       "change_type": "documented",
       "title": "Daniel Beránek's contribution on product-data consistency and digital identity appears in Ecommerce Bridge",
-      "summary": "In the editorially assembled expert article “AI odporúča len to, čomu rozumie. Ktoré produktové dáta musí mať e-shop v poriadku?”, Daniel Beránek's attributed contribution identifies consistency across an e-shop's feed, website, structured data, and commercial terms as essential to a coherent, verifiable digital identity. It also emphasizes complete product information and merchant-specific experience and relevance. The contribution gives an e-commerce application context to DIO/ODI-related concerns about maintaining a consistent identity across distributed representations. The article does not name DIO/ODI; the feed records the relationship as author-led applied articulation, not independent reception.",
+      "summary": "In the editorially assembled expert article “AI odporúča len to, čomu rozumie. Ktoré produktové dáta musí mať e-shop v poriadku?”, Daniel Beránek's attributed contribution identifies consistency across an e-shop's feed, website, structured data, and commercial terms as essential to a coherent, verifiable digital identity. It also emphasizes complete product information and merchant-specific experience and relevance. The contribution gives an e-commerce application context to DIO/ODI-related concerns about maintaining a consistent identity across distributed representations. The article does not name DIO/ODI; the feed records the relationship as an author-led applied articulation.",
       "scope": [
         {
           "component": "AI odporúča len to, čomu rozumie. Ktoré produktové dáta musí mať e-shop v poriadku? — Daniel Beránek's expert contribution",
@@ -3891,7 +3887,6 @@
         "The host article is an editorially assembled multi-expert article; Daniel Beránek is attributed for the relevant expert contribution, not as the author of the entire article.",
         "The Slovak-language page is treated as the primary editorial edition. The Czech page is a localized counterpart and is not asserted to be a textually identical or functionally equivalent copy.",
         "The contribution explicitly discusses the digital identity of an e-shop and consistency across its representations, but the article does not name DIO/ODI. The DIO/ODI relationship is recorded as an author-led applied articulation, not as an attribution made by the publisher or its editors.",
-        "The article is not an independent external review, endorsement, adoption, or validation of DIO/ODI, and it is not a standalone DIO/ODI publication.",
         "The contribution does not modify canonical DIO/ODI concepts, the Reference Vocabulary, or the Reference Model."
       ],
       "impact": {
@@ -3903,7 +3898,7 @@
           "Author-led applied articulation of cross-representation identity consistency",
           "DIO/ODI public communication and application discovery"
         ],
-        "notes": "A source-linked record of an external media contribution. It captures the practical e-commerce framing of identity consistency without treating the contribution as a new DIO/ODI work, an editorial endorsement, or independent external reception."
+        "notes": "A source-linked record of an attributed expert contribution. It captures the practical e-commerce framing of identity consistency."
       },
       "evidence": {
         "status": "documented",
@@ -3933,6 +3928,69 @@
         "related_to": [
           "SCF-2026-002",
           "SCF-2026-004"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-061",
+      "date": "2026-11-24",
+      "date_basis": "documentation_date",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "FAIRsharing lists the DIO/ODI Reference Vocabulary as record #9470",
+      "summary": "FAIRsharing publishes a dedicated registry record for the DIO/ODI Reference Vocabulary at https://fairsharing.org/9470. The record adds a searchable FAIRsharing entry for the vocabulary. At the time of documentation, the record has no FAIRsharing DOI.",
+      "scope": [
+        {
+          "component": "FAIRsharing record #9470 — DIO/ODI Reference Vocabulary",
+          "component_type": "external-registry-record",
+          "uri": "https://fairsharing.org/9470",
+          "role": "registry-record"
+        },
+        {
+          "component": "DIO/ODI Reference Vocabulary v0.2.2",
+          "component_type": "reference-vocabulary",
+          "uri": "https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary",
+          "role": "registered-resource"
+        }
+      ],
+      "before": "The DIO/ODI Reference Vocabulary v0.2.2 had public records in BioRegistry, Semantic Farm, and BARTOC, but no documented record in FAIRsharing.",
+      "after": "FAIRsharing record #9470 is publicly available for the DIO/ODI Reference Vocabulary. The record currently has no FAIRsharing DOI; its public record URL is https://fairsharing.org/9470.",
+      "preserved_invariants": [
+        "The canonical Reference Vocabulary URI, namespace, and concept identifiers remain unchanged.",
+        "The Reference Vocabulary remains a component of the DIO/ODI Reference Model.",
+        "The FAIRsharing record adds a registry entry and does not change the vocabulary's definitions, hierarchy, or semantic relations."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "DIO/ODI Reference Vocabulary v0.2.2",
+          "FAIRsharing registry",
+          "External vocabulary discovery"
+        ],
+        "notes": "A new FAIRsharing registry record for the DIO/ODI Reference Vocabulary."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "registry"
+        ],
+        "temporal_note": "The FAIRsharing record's public page indicates that the record was available from 23 November 2026. It was reviewed and added to the live SCF on 24 November 2026. No FAIRsharing DOI is displayed on the record at the time of documentation.",
+        "sources": [
+          {
+            "label": "FAIRsharing — DIO/ODI Reference Vocabulary, record #9470",
+            "url": "https://fairsharing.org/9470",
+            "role": "public-registry-record"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-051",
+          "SCF-2026-053",
+          "SCF-2026-055"
         ],
         "supersedes": [],
         "corrects": []
