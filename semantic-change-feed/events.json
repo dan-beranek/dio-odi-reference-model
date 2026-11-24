@@ -1,10 +1,10 @@
 {
-  "feed_version": "0.1.12",
+  "feed_version": "0.1.13",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
   "generated_on": "2026-11-24",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, Reference Model release, deployment, external registry, and agent-discovery milestones through 24 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, external identity-outcome, Reference Model release, deployment, external registry, and agent-discovery milestones through 24 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -930,6 +930,124 @@
       "lineage": {
         "related_to": [
           "SCF-2026-016"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-062",
+      "date": "2026-09-21",
+      "date_basis": "publication_date",
+      "event_class": "Structural",
+      "change_type": "introduced",
+      "title": "Google Search displays a Knowledge Panel for Daniel Beránek",
+      "summary": "A Google Search Knowledge Panel for Daniel Beránek becomes visible and is reported as verified. The author observed that Google confirmed the identity within an hour of receiving the submitted information and digital properties under the author's ownership or control. The event records this externally visible representation as a concrete outcome associated with Digital Identity Optimization, not as a new DIO/ODI publication or a change to the canonical vocabulary.",
+      "scope": [
+        {
+          "component": "Google Search Knowledge Panel for Daniel Beránek",
+          "component_type": "google-search-knowledge-panel",
+          "uri": "https://www.google.com/search?q=Daniel+Ber%C3%A1nek",
+          "role": "visible-external-identity-representation"
+        },
+        {
+          "component": "Daniel Beránek — canonical person identity",
+          "component_type": "person-entity",
+          "uri": "https://danielberanek.cz/#person",
+          "role": "represented-identity"
+        }
+      ],
+      "before": "The author's recorded Google Search state did not yet show a visible Knowledge Panel for Daniel Beránek.",
+      "after": "A Google Search Knowledge Panel is reported as visible and verified for Daniel Beránek. The author announced the result across multiple social platforms on 21 September 2026.",
+      "preserved_invariants": [
+        "The event records the visible Google Search Knowledge Panel, not direct inspection of Google's internal Knowledge Graph record.",
+        "No internal Google entity identifier, creation timestamp, or API-level verification response is asserted.",
+        "The author recalls that Google confirmed the identity within an hour of receiving the submitted information and digital properties under the author's ownership or control. This records the author's observation of the visible process, not an official Google processing metric.",
+        "The cross-platform posts are multiple announcements of one underlying observation, not separate outcomes or independent validations.",
+        "The event does not modify canonical DIO/ODI concepts, the Reference Vocabulary, or the Reference Model."
+      ],
+      "impact": {
+        "level": "cross-layer",
+        "compatibility": "not-assessed",
+        "affected_components": [
+          "Daniel Beránek's externally visible digital identity",
+          "Google Search Knowledge Panel",
+          "DIO identity-coherence outcome"
+        ],
+        "notes": "An externally visible representation of the author's digital identity is recorded as a concrete outcome associated with DIO. The public panel is the observed Google Search surface; it is not treated as a direct view into Google's internal entity data."
+      },
+      "evidence": {
+        "status": "partially-documented",
+        "basis": [
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "The event is dated 21 September 2026, the date of the author's contemporaneous public announcements reporting the newly visible Knowledge Panel. The author recalls that Google confirmed the identity within an hour of receiving the submitted information and digital properties under the author's ownership or control. This is an author-reported elapsed interval, not an official Google processing metric. The social posts document the public report of the visible outcome and the author's contemporaneous interpretation of the process.",
+        "sources": [
+          {
+            "label": "Instagram — Knowledge Panel announcement",
+            "url": "https://www.instagram.com/p/Ddi5W8aAKup/",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "LinkedIn — Knowledge Panel announcement",
+            "url": "https://www.linkedin.com/posts/danielberanek_digitalidentityoptimization-knowledgepanel-share-7507737299917365249-88yw/",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Pinterest — Knowledge Panel announcement",
+            "url": "https://cz.pinterest.com/pin/1148980923715021658/",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "X — Knowledge Panel announcement",
+            "url": "https://x.com/_danielberanek/status/2101974873140506949",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Facebook — SEO specialista a copywriter page",
+            "url": "https://www.facebook.com/seo.specialista.copywriter.daniel.beranek/posts/pfbid02WEVHuvoAVUE9WyEW6F6pTsfKQfaWuC7jGjxJfzxYaAyXmr3kDkvzaAnTt84LTuHtl",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Facebook — Daniel Beranek Copywriter page",
+            "url": "https://www.facebook.com/danielberanek.copywriter/posts/pfbid02eihUDMPQezW6aGacN2Pes1e52DxqqsnfcNgmxyPJUSr9A9xNJWnbTkKsUdothvaVl",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Tumblr — Knowledge Panel announcement",
+            "url": "https://www.tumblr.com/seo-copywriter-daniel-beranek/828358718523637760/does-digitalidentityoptimization-work-i-just?source=share",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Mastodon — Knowledge Panel announcement",
+            "url": "https://mastodon.social/@seo_copywriter_daniel_beranek/117308426131129246",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Bluesky — Knowledge Panel announcement",
+            "url": "https://bsky.app/profile/danielberanek.cz/post/3mvzh3wvsic2a",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Witter — Knowledge Panel announcement",
+            "url": "https://witter.cz/@seo_copywriter_daniel_beranek/117308433586909811",
+            "role": "contemporaneous-author-announcement"
+          },
+          {
+            "label": "Witter — follow-up on Knowledge Panel confirmation within an hour",
+            "url": "https://witter.cz/@seo_copywriter_daniel_beranek/117320020484498771",
+            "role": "author-reported-within-one-hour-confirmation"
+          },
+          {
+            "label": "Threads — Knowledge Panel announcement",
+            "url": "https://www.threads.com/@danielberanek.cz/post/Ddi5QtxiIyZ",
+            "role": "contemporaneous-author-announcement"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-002"
         ],
         "supersedes": [],
         "corrects": []
