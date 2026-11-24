@@ -113,13 +113,13 @@ Tasks:
 **Question:** Which meta-analyses are independently generated, and which pages are alternate manifestations of one synthesis?
 
 Tasks:
-1. Compare the six directly reviewed SlideShare meta-analyses attributed to Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, and Mistral AI as separate works.
+1. Compare the six previously identified SlideShare meta-analyses attributed to Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, and Mistral AI, alongside the separately reviewed four-slide Manus-labelled PDF.
 2. Compare each with corresponding Manus, Kimi, Macaly, Lovable, Netlify, Perplexity, ChatGPT, Gemini, Grok, or other web/shared artifacts.
 3. Match exact section sequences, source-report enumerations, unique paragraphs, and conclusions.
 4. Record source-set differences as substantive evidence. Do not silently unify the Claude/Macaly Gemini 2.5 reference with the Gemini 3.1 reference in Kimi/ChatGPT.
 5. Preserve the distinction between first-order E-E-A-T reports and second-order meta-analyses.
 
-**Deliverable:** A meta-analysis lineage map showing source reports, six directly reviewed independent SlideShare synthesis output IDs, and separate Manus PDF and web-output records linked by an explicitly unconfirmed source-document hypothesis.
+**Deliverable:** A meta-analysis lineage map showing the seven directly reviewed SlideShare synthesis outputs, source reports, and separate Manus PDF and web-output records linked by an explicitly unconfirmed source-document hypothesis.
 
 **Priority:** High. The Manus SlideShare PDF has readable text, but the Manus-hosted page has not been accessible for direct comparison. Keep both records separate until section order, distinctive wording, sources, and conclusions have been checked.
 
@@ -204,7 +204,7 @@ Phases may overlap where a new archive capture helps identify a manifestation, b
 - The merged PR #106 published Research Genealogy registry v0.3.0 with 45 artefact records. PR #107 proposes registry v0.3.1 with 56 artefact records, 14 inventory leads, and the expanded profile inventory.
 - The author supplied 49 unique SlideShare URLs from the public profile. All 49 have been triaged and classified; the 49-item profile count is not treated as a count of DIO/ODI research outputs. The current registry contains 33 primary SlideShare artefact records and four nested SlideShare manifestations.
 - The original nine first-order E-E-A-T reports assessing the SEO pillar page remain a distinct series. Additional separately registered analyses include a Copilot Research assessment of the copywriting pillar page, a Mistral analysis of the broader professional ethnography, a Qwen Beyond E-E-A-T analysis, and a Gemini 3.1 Pro Preview semiotic/structured-data reading.
-- Six independently attributed SlideShare E-E-A-T meta-analysis decks have been directly reviewed: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, and Mistral AI. The four-slide Manus-labelled SlideShare PDF is a separate reviewed output record from the Manus-hosted meta-analysis page. Its exact relationship to the website remains unresolved because the website content could not be read; the PDF may be a source document, an export, or a separate analysis.
+- Seven SlideShare E-E-A-T meta-analysis outputs have been directly reviewed: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, Mistral AI, and the four-slide Manus-labelled PDF. The Manus PDF is a separate output record from the Manus-hosted meta-analysis page. Its exact relationship to the website remains unresolved because the website content could not be read; the PDF may be a source document, an export, or a separate analysis.
 - The Claude meta-analysis remains one underlying synthesis with three publication manifestations: SlideShare, Macaly, and Lovable. The Qwen Beyond Buzzwords and Kimi Structural Isomorphisms works each have a Czech original and an explicitly linked English reader's edition. These language-specific publications are nested manifestations, not additional underlying outputs.
 - The 2011 ideology/hegemony thesis and the 2005 mOBSCENE semiotic analysis are direct theoretical and methodological antecedents, explicitly revisited in the professional ethnography. The 86-slide and seven-slide SlideShare copies of the 2011 thesis are retained only as distribution locators, not independent research outputs.
 - Model mocenské situace remains an unresolved historical-context lead. Positive-psychology thesis materials, the OpenLiteSpeed technical presentation/article, and unrelated customer-facing presentations are outside the direct DIO/ODI genealogy. The Seznam Asistent strategy presentation is registered as contextual professional AI-industry analysis. The Přesahy 005 festival campaign, Top1Taxi brochure, stem-cell brochure, and Nero 2015 manual are classified as out of scope for the DIO/ODI research artefact count.
