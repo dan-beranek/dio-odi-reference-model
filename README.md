@@ -21,6 +21,8 @@ The repository intentionally begins with **SKOS**. A future OWL layer should add
 
 The public site root, [vocab.danielberanek.cz](https://vocab.danielberanek.cz/), is the top-level overview of the Reference Model site. The [Reference Vocabulary page](https://vocab.danielberanek.cz/dio-odi/) is a distinct child resource identifying the canonical SKOS ConceptScheme; it is not the site's homepage. [Application Mappings](https://vocab.danielberanek.cz/mappings/) form a derived, non-normative layer. The [Corpus Metadata frontend](https://vocab.danielberanek.cz/metadata/) provides a human-readable entry point to the operational registry and its machine-readable records; the [technical registry documentation](https://vocab.danielberanek.cz/metadata/README.md) describes its workflow and governance rules. The wider Manifest and publication corpus is presented separately on the [DIO/ODI Hub](https://danielberanek.cz/manifest-dio/).
 
+The [Research Genealogy Registry](https://vocab.danielberanek.cz/metadata/research-genealogy.json) records the multimodal professional-ethnography object, the AI-assisted secondary exploration through which DIO emerged, the subsequent articulation of ODI, and selected intermediate artefacts. Its [technical guide](https://vocab.danielberanek.cz/docs/research-genealogy.md) explains the chronology and curation model.
+
 The [Semantic Change Feed](https://vocab.danielberanek.cz/semantic-change-feed/) records documented semantic, structural, provenance, mapping, deployment, and artifact-state changes across the reference system. Its event registry is append-only and separate from the current component authorities. Archived Reference Model releases retain the feed and schema versions included in each immutable package. The live feed advances independently, recording later SPARQL, archive-reconciliation, MCP, external registry, and Agentic ER product-publication milestones. These are live maintenance updates only: archived packages remain immutable and no new Reference Model release is created. SCF is a Reference Model component, not a separately DOI-identified work.
 
 The live Reference Vocabulary is v0.2.2. The current archived Reference Model package is v0.9.0 (https://doi.org/10.5281/zenodo.24085589); its predecessor is v0.8.0 (https://doi.org/10.5281/zenodo.24056601).
@@ -155,6 +157,9 @@ The namespace is owned by the author and is intended to remain stable independen
 - `metadata/keywords.json` — canonical ordered keyword grammar (C0–C6), work profiles, resolved keyword sequences, and non-export aliases
 - `metadata/application-mappings.json` — canonical descriptive and release metadata for derived Application Mappings
 - `metadata/application-mappings.schema.json` — validation schema for the Application Mappings metadata registry
+- `metadata/research-genealogy.json` — structured research-object, process, milestone, and exploratory-artefact genealogy
+- `metadata/research-genealogy.schema.json` — JSON Schema for the Research Genealogy Registry
+- `docs/research-genealogy.md` — human-readable research genealogy and SlideShare curation guide
 - `metadata/README.md` — metadata-registry workflow and relation discipline
 - `semantic-change-feed/index.html` — human-readable Semantic Change Feed frontend
 - `semantic-change-feed/events.json` — append-only event registry
