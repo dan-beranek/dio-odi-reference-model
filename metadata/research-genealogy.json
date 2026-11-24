@@ -1490,7 +1490,7 @@
       "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
       "summary": "A Perplexity Page supplied in the E-E-A-T meta-analysis sequence. The associated Megalodon URL uses a different slug from the original UUID; the mapping is retained as an unresolved candidate rather than assumed to be an exact capture.",
       "provenance": {
-        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed. The associated Megalodon locator has a different page slug; the recorded target URL reflects the slug embedded in the archive request, not an assertion that it is identical to the UUID page.",
         "source_description_url": "https://www.perplexity.ai/page/1daf0768-1984-4ed2-8e91-f848b37cd650"
       },
       "review_status": "author-supplied-locators-content-unreviewed",
@@ -1502,9 +1502,9 @@
           "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
           "timestamp_source_value": "2026-0319-0200-31",
           "timestamp_source_timezone": "Asia/Tokyo",
-          "target_url": "https://www.perplexity.ai/page/1daf0768-1984-4ed2-8e91-f848b37cd650",
-          "capture_status": "timestamped-locator-content-unreviewed",
-          "note": "The archived URL path contains a different slug from the supplied original UUID. It may be a canonical/renamed page or another page; exact target identity is unresolved."
+          "target_url": "https://www.perplexity.ai/page/11-seznam-zdroju-s-url-v-plain-Ha8HaBmETtKOkfhIs3zWUA",
+          "capture_status": "target-url-mismatch-identity-unresolved",
+          "note": "Megalodon URL path contains a slug different from the author-supplied Perplexity Page UUID. The archive may be a renamed/canonical page or a different page; relationship is not established."
         }
       ]
     },
