@@ -18,6 +18,8 @@ on:
       - "metadata/distributions.json"
       - "metadata/external-reception.json"
       - "metadata/application-mappings.json"
+      - "metadata/research-genealogy.json"
+      - "metadata/research-genealogy.schema.json"
 
 permissions:
   contents: read
