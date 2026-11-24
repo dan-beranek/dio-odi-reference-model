@@ -491,8 +491,6 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "unique_presentation_urls": len(presentation_results),
         "cdx_queries_attempted": query_attempts + profile_cdx_queries_attempted,
         "cdx_queries_succeeded": query_successes + profile_cdx_queries_succeeded,
-            1 for obs in profile_observations if obs["kind"] == "archived-profile-html"
-        ),
         "capture_records": capture_total,
         "unregistered_urls": len(unmatched),
         "profile_snapshots_inspected": len(sorted_profile_captures),
