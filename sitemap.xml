@@ -180,4 +180,16 @@
     <ns0:loc>https://vocab.danielberanek.cz/metadata/application-mappings.schema.json</ns0:loc>
     <ns0:lastmod>2026-11-16</ns0:lastmod>
   </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://vocab.danielberanek.cz/metadata/research-genealogy.json</ns0:loc>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://vocab.danielberanek.cz/metadata/research-genealogy.schema.json</ns0:loc>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://vocab.danielberanek.cz/docs/research-genealogy.md</ns0:loc>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
+  </ns0:url>
 </ns0:urlset>
