@@ -18,7 +18,8 @@
     "source_collections",
     "artefacts",
     "inventory_leads",
-    "relations"
+    "relations",
+    "research_clusters"
   ],
   "properties": {
     "registry_version": {
@@ -509,6 +510,37 @@
           },
           "curation_status": {
             "type": "string"
+          },
+          "representations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "platform",
+                "url",
+                "representation_type",
+                "relation",
+                "status"
+              ],
+              "properties": {
+                "platform": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "representation_type": {
+                  "type": "string"
+                },
+                "relation": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -522,7 +554,6 @@
           "title",
           "url",
           "platform",
-          "source_collection_id",
           "artefact_type",
           "content_origin",
           "research_role",
@@ -784,6 +815,158 @@
                 "format": "uri"
               }
             }
+          },
+          "archive_captures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "url",
+                "archive_service",
+                "captured_at",
+                "timestamp_basis",
+                "target_url",
+                "capture_status",
+                "note"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "archive_service": {
+                  "type": "string"
+                },
+                "captured_at": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
+                },
+                "timestamp_basis": {
+                  "type": "string"
+                },
+                "timestamp_source_value": {
+                  "type": "string"
+                },
+                "timestamp_source_timezone": {
+                  "type": "string"
+                },
+                "target_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "capture_status": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "representations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "platform",
+                "representation_type",
+                "url",
+                "relation",
+                "relationship_status",
+                "evidence_basis",
+                "archive_captures"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "platform": {
+                  "type": "string"
+                },
+                "representation_type": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "relation": {
+                  "type": "string"
+                },
+                "relationship_status": {
+                  "type": "string"
+                },
+                "evidence_basis": {
+                  "type": "string"
+                },
+                "archive_captures": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "url",
+                      "archive_service",
+                      "captured_at",
+                      "timestamp_basis",
+                      "target_url",
+                      "capture_status",
+                      "note"
+                    ],
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "archive_service": {
+                        "type": "string"
+                      },
+                      "captured_at": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "format": "date-time"
+                      },
+                      "timestamp_basis": {
+                        "type": "string"
+                      },
+                      "timestamp_source_value": {
+                        "type": "string"
+                      },
+                      "timestamp_source_timezone": {
+                        "type": "string"
+                      },
+                      "target_url": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "capture_status": {
+                        "type": "string"
+                      },
+                      "note": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "research_cluster_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "curation_note": {
+            "type": "string"
           }
         }
       }
@@ -794,7 +977,6 @@
         "type": "object",
         "required": [
           "title",
-          "source_collection_id",
           "artefact_type",
           "discovery_status",
           "summary"
@@ -818,6 +1000,9 @@
           "url": {
             "type": "string",
             "format": "uri"
+          },
+          "platform": {
+            "type": "string"
           }
         }
       }
@@ -845,6 +1030,59 @@
           "evidence_url": {
             "type": "string",
             "format": "uri"
+          }
+        }
+      }
+    },
+    "research_clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "cluster_type",
+          "description",
+          "membership_basis",
+          "members"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "cluster_type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "membership_basis": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "artefact_id",
+                "relationship",
+                "status"
+              ],
+              "properties": {
+                "artefact_id": {
+                  "type": "string"
+                },
+                "relationship": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
