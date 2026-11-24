@@ -33,7 +33,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: research-genealogy-archive-intake-\${{ github.ref }}
+  group: research-genealogy-archive-intake-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -57,9 +57,9 @@ jobs:
 
       - name: Query public SlideShare profile HTML and Wayback CDX
         env:
-          PROFILE_SNAPSHOT_LIMIT: \${{ inputs.profile_snapshot_limit || '40' }}
-          URL_LIMIT: \${{ inputs.url_limit || '150' }}
-          DELAY_SECONDS: \${{ inputs.delay_seconds || '0.15' }}
+          PROFILE_SNAPSHOT_LIMIT: ${{ inputs.profile_snapshot_limit || '40' }}
+          URL_LIMIT: ${{ inputs.url_limit || '150' }}
+          DELAY_SECONDS: ${{ inputs.delay_seconds || '0.15' }}
         run: |
           python scripts/prepare_research_genealogy_archive_intake.py \
             --profile-snapshot-limit "$PROFILE_SNAPSHOT_LIMIT" \
@@ -71,7 +71,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: research-genealogy-wayback-candidates-\${{ github.run_id }}
+          name: research-genealogy-wayback-candidates-${{ github.run_id }}
           path: research-genealogy-archive-output/
           if-no-files-found: warn
           retention-days: 30
