@@ -194,9 +194,9 @@
     "frontend": "https://vocab.danielberanek.cz/semantic-change-feed/",
     "events_json": "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
     "schema_json": "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",
-    "feed_version": "0.1.10",
+    "feed_version": "0.1.11",
     "schema_version": "0.2.1",
-    "coverage_through": "2026-11-22",
+    "coverage_through": "2026-11-23",
     "status": "live-maintenance-after-archive",
     "license": "CC-BY-4.0",
     "archived_snapshot": {
