@@ -1,0 +1,81 @@
+name: Research Genealogy archive intake
+
+on:
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      profile_snapshot_limit:
+        description: "Maximum archived profile snapshots to inspect"
+        required: false
+        default: "40"
+        type: string
+      url_limit:
+        description: "Maximum distinct presentation URLs to query"
+        required: false
+        default: "150"
+        type: string
+      delay_seconds:
+        description: "Delay between public CDX requests"
+        required: false
+        default: "0.15"
+        type: string
+  pull_request:
+    paths:
+      - "scripts/prepare_research_genealogy_archive_intake.py"
+      - "tests/test_research_genealogy_archive_intake.py"
+      - ".github/workflows/research-genealogy-archive-intake.yml"
+      - "docs/research-genealogy-archive-intake.md"
+      - "metadata/research-genealogy.json"
+      - "metadata/research-genealogy.schema.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: research-genealogy-archive-intake-\${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  collect-wayback-observations:
+    name: Collect review-only SlideShare archive observations
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out canonical Research Genealogy
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run archive-intake unit tests
+        run: python -m unittest discover -s tests -p "test_research_genealogy_archive_intake.py" -v
+
+      - name: Query public SlideShare profile HTML and Wayback CDX
+        env:
+          PROFILE_SNAPSHOT_LIMIT: \${{ inputs.profile_snapshot_limit || '40' }}
+          URL_LIMIT: \${{ inputs.url_limit || '150' }}
+          DELAY_SECONDS: \${{ inputs.delay_seconds || '0.15' }}
+        run: |
+          python scripts/prepare_research_genealogy_archive_intake.py \
+            --profile-snapshot-limit "$PROFILE_SNAPSHOT_LIMIT" \
+            --url-limit "$URL_LIMIT" \
+            --delay-seconds "$DELAY_SECONDS" \
+            --output-dir research-genealogy-archive-output
+
+      - name: Upload archive candidates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-genealogy-wayback-candidates-\${{ github.run_id }}
+          path: research-genealogy-archive-output/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Add archive report to workflow summary
+        if: always() && hashFiles('research-genealogy-archive-output/research-genealogy-archive-candidates.md') != ''
+        run: cat research-genealogy-archive-output/research-genealogy-archive-candidates.md >> "$GITHUB_STEP_SUMMARY"
