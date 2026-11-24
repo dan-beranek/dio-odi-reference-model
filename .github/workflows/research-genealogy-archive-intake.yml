@@ -20,6 +20,11 @@ on:
         required: false
         default: "0.15"
         type: string
+      indexed_web_search:
+        description: "Enable Tavily indexed-web discovery (uses API credits)"
+        required: false
+        default: false
+        type: boolean
   pull_request:
     paths:
       - "scripts/prepare_research_genealogy_archive_intake.py"
@@ -65,7 +70,7 @@ jobs:
           PROFILE_SNAPSHOT_LIMIT: ${{ inputs.profile_snapshot_limit || '40' }}
           URL_LIMIT: ${{ inputs.url_limit || '150' }}
           DELAY_SECONDS: ${{ inputs.delay_seconds || '0.15' }}
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          TAVILY_API_KEY: ${{ github.event_name == 'workflow_dispatch' && inputs.indexed_web_search && secrets.TAVILY_API_KEY || '' }}
         run: |
           python scripts/prepare_research_genealogy_archive_intake.py \
             --profile-snapshot-limit "$PROFILE_SNAPSHOT_LIMIT" \
