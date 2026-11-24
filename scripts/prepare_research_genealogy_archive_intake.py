@@ -584,7 +584,7 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
     current_profile_urls = {
         normalized_url(item["url"])
         for item in urls.values()
-        if any(s["kind"] == "current-public-profile-html" for s in item["discovery_sources"])
+        if any(s["kind"] in {"current-public-profile-html", "current-public-profile-rendered-browser"} for s in item["discovery_sources"])
     }
     current_count = sum(
         1 for item in urls.values()
@@ -603,7 +603,8 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "profile_snapshots_inspected": len(sorted_profile_captures),
         "profile_snapshot_limit_reached": profile_snapshot_limit_reached,
         "presentation_url_limit_reached": presentation_url_limit_reached,
-        "profile_count_to_html_link_gap": (max(0, profile_reported_count - current_count) if profile_reported_count is not None else None),\n        "profile_discovery_status": derive_profile_discovery_status(profile_reported_count, current_count),
+        "profile_count_to_html_link_gap": (max(0, profile_reported_count - current_count) if profile_reported_count is not None else None),
+        "profile_discovery_status": derive_profile_discovery_status(profile_reported_count, current_count),
     }
     report = {
         "report_version": "0.1.0",
@@ -614,8 +615,8 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "registry_version": registry.get("registry_version"),
         "inventory_completeness": "partial",
         "completeness_note": (
-            "The report is limited to canonical registry URLs plus links visible in the "
-            "current public profile HTML and the inspected Wayback profile snapshots. "
+            "The report is limited to canonical registry URLs plus links visible in the current "
+            "public profile HTML, rendered public profile DOM, and inspected Wayback snapshots. "
             "SlideShare's public API is retired and the website does not expose a documented "
             "replacement API. Profile HTML can show only part of the uploads; no exhaustive "
             "claim is made."
