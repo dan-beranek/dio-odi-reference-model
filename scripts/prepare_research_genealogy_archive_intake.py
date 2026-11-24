@@ -518,9 +518,8 @@ def markdown_report(report: dict[str, Any]) -> str:
         dates = [c["captured_at"] for c in captures if c.get("captured_at")]
         ids = ", ".join(item["registry_artefact_ids"])
         representation_ids = [
-            f"{parent_id} / representation: {representation_id}"
-            for parent_id in item.get("registry_parent_artefact_ids", [])
-            for representation_id in item.get("registry_representation_ids", [])
+            f"{pair['parent_artefact_id']} / representation: {pair['representation_id']}"
+            for pair in item.get("registry_representations", [])
         ]
         ids = ", ".join(part for part in [ids, *representation_ids] if part) or "Unmatched candidate"
         sources = ", ".join(sorted({
@@ -600,6 +599,7 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
             "registry_artefact_ids": [],
             "registry_representation_ids": [],
             "registry_parent_artefact_ids": [],
+            "registry_representations": [],
         })
         if label and label not in entry["labels"]:
             entry["labels"].append(label[:300])
@@ -614,6 +614,9 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
                     entry["registry_representation_ids"].append(representation_id)
                 if parent_id and parent_id not in entry["registry_parent_artefact_ids"]:
                     entry["registry_parent_artefact_ids"].append(parent_id)
+                pair = {"representation_id": representation_id, "parent_artefact_id": parent_id}
+                if representation_id and pair not in entry["registry_representations"]:
+                    entry["registry_representations"].append(pair)
             else:
                 artefact_id = registry_item.get("id")
                 if artefact_id and artefact_id not in entry["registry_artefact_ids"]:
