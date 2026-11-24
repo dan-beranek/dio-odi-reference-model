@@ -29,6 +29,23 @@
         "author-maintained changelog"
       ],
       "role_in_genealogy": "Primary research object examined through iterative AI-assisted secondary exploration."
+    },
+    {
+      "id": "ai-startup-marketing-article",
+      "title": "Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence",
+      "uri": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
+      "object_type": "author-authored-web-article",
+      "status": "published-web-article",
+      "displayed_date": "2026-10-21",
+      "date_basis": "date-displayed-in-source-page-byline",
+      "description": "An author-written professional article about marketing, copywriting, and SEO for AI startups and SaaS products. Its section 'Vztah k jednotlivým AI: zhola subjektivně a děsně útržkovitě' compares major AI systems through practical use, strengths, limitations, and workarounds.",
+      "components": [
+        "author-written professional article",
+        "comparative discussion of ChatGPT, Copilot, Claude, Mistral AI, DeepSeek, Perplexity, Gemini, and Monica.im",
+        "practical observations on Czech-language processing, text generation, research, and daily professional use",
+        "source material for an eight-slide SlideShare presentation"
+      ],
+      "role_in_genealogy": "A later professional article and source object for a SlideShare presentation. It documents the author's comparative AI practice and forms part of the wider exploratory archive, but postdates the May–June 2026 articulation of DIO and ODI."
     }
   ],
   "research_processes": [
@@ -341,17 +358,45 @@
         "source_description_url": "https://fr.slideshare.net/slideshow/the-crisis-of-entity-resolution-in-heterogeneous-ai-environments-data-financial-and-semantic-dimensions/289325700"
       },
       "review_status": "page-description-and-uploader-reviewed"
-    }
-  ],
-  "inventory_leads": [
+    },
     {
+      "id": "slideshare-ai-tools-comparative-review",
       "title": "AIs: zhola subjektivně a děsně útržkovitě",
+      "url": "https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914",
+      "platform": "SlideShare",
       "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "comparative-ai-tool-review",
-      "discovery_status": "visible-in-profile-listing-permalink-unresolved",
-      "summary": "The SlideShare profile listing describes an eight-slide comparison of AI systems focused on Czech-language processing, text creation, and practical use. The direct item permalink is to be added after it is resolved from the platform."
+      "artefact_type": "author-authored-comparative-ai-tool-review-presentation",
+      "content_origin": "author-written-source-article-adapted-into-presentation",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [],
+      "source_object_ids": [
+        "ai-startup-marketing-article"
+      ],
+      "process_ids": [],
+      "related_work_ids": [],
+      "research_role": "An eight-slide presentation adapted from the author's article on marketing for AI startups and SaaS. It condenses the article's subjective comparison of major LLM and AI systems, including Czech-language handling, text generation, practical strengths, limitations, and workarounds. It is a later professional AI-practice artefact, not a direct milestone in the May–June 2026 emergence of DIO/ODI.",
+      "summary": "The SlideShare page explicitly identifies the presentation as being based on the author's source article. It covers ChatGPT, Copilot, Claude, Mistral AI, DeepSeek, Perplexity, Gemini, and Monica.im.",
+      "source_material": {
+        "title": "Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence",
+        "url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
+        "displayed_date": "2026-10-21",
+        "date_basis": "date-displayed-in-source-page-byline"
+      },
+      "temporal_metadata": {
+        "source_page_displayed_date": "2026-10-21",
+        "source_page_date_basis": "date-displayed-in-source-page-byline",
+        "slideshare_upload_date": null,
+        "slideshare_last_modified": null,
+        "timestamp_note": "The public SlideShare page displays uploader attribution, title, format, slide count, and description, but no explicit upload or last-modified date. No date is inferred from the numeric item identifier."
+      },
+      "provenance": {
+        "basis": "The SlideShare page description explicitly identifies the source article URL; the SlideShare page supplies the title, uploader attribution, file format, and eight-slide count. The source article byline displays 21 October 2026.",
+        "source_description_url": "https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914"
+      },
+      "review_status": "source-article-and-slide-page-reviewed"
     }
   ],
+  "inventory_leads": [],
   "relations": [
     {
       "subject_id": "professional-ethnography",
@@ -388,6 +433,12 @@
       "relation": "presents",
       "object_id": "crisis-entity-resolution",
       "evidence_url": "https://fr.slideshare.net/slideshow/the-crisis-of-entity-resolution-in-heterogeneous-ai-environments-data-financial-and-semantic-dimensions/289325700"
+    },
+    {
+      "subject_id": "slideshare-ai-tools-comparative-review",
+      "relation": "is-derived-from",
+      "object_id": "ai-startup-marketing-article",
+      "evidence_url": "https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914"
     }
   ]
 }
