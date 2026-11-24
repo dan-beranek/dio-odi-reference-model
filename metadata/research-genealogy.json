@@ -1,16 +1,16 @@
 {
-  "registry_version": "0.1.0",
-  "schema_version": "0.1.0",
+  "registry_version": "0.2.0",
+  "schema_version": "0.2.0",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
   "title": "DIO/ODI Research Genealogy Registry",
-  "description": "A source-linked, author-curated reconstruction of the research object, exploratory process, milestones, and intermediate artefacts through which Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI) emerged.",
+  "description": "A source-linked reconstruction of the DIO/ODI research objects and processes, related professional AI practice, intermediate outputs, alternative publication manifestations, and archive observations. The registry distinguishes thematic relatedness from confirmed same-output identity.",
   "maintainer": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
     "orcid": "https://orcid.org/0009-0004-0050-0264"
   },
-  "scope": "Research-object, research-process, concept-emergence, and exploratory-artefact provenance. The registry complements the author-maintained professional ethnography and the publication corpus metadata.",
+  "scope": "Research-object, research-process, output, manifestation, archive-observation, and provenance records associated with the emergence and early exploration of DIO/ODI. Subsequent applied outcomes and external representation events are maintained in their relevant operational feeds rather than treated as genesis artefacts.",
   "research_objects": [
     {
       "id": "professional-ethnography",
@@ -98,6 +98,37 @@
           "role": "corroborating-archive-copy"
         }
       ]
+    },
+    {
+      "id": "ai-related-professional-writing",
+      "title": "AI-related professional writing and practice",
+      "uri": "https://linktr.ee/seo_copy_daniel_beranek_ai",
+      "object_type": "author-authored-ai-related-writing-collection",
+      "status": "distributed-indexes-author-confirmed-content-not-yet-reconciled",
+      "description": "A body of professional writing about AI, AI systems, products, implementations, model developments, practical use, and prompting. The author reports that the texts were written with varying degrees of AI assistance while his own practical ability to work with AI developed. The degree and nature of AI assistance were not systematically recorded at item level and are therefore not retroactively classified.",
+      "components": [
+        "professional and technology journalism about AI",
+        "commentary on AI systems, models, products, and implementations",
+        "practical AI-use and prompting material",
+        "articles and posts indexed through Linktree, Bitly, and Bio.link",
+        "overlapping and potentially incomplete directory versions"
+      ],
+      "role_in_genealogy": "Preceding and continuing professional-practice context documenting the development of the author's AI-related information work. It is a contextual writing collection, not a uniformly authored or methodologically homogeneous research corpus."
+    },
+    {
+      "id": "eeat-digital-identity-assessment-subject",
+      "title": "Daniel Beránek's professional digital identity as an E-E-A-T assessment subject",
+      "uri": "https://danielberanek.cz/#person",
+      "object_type": "professional-digital-identity-assessment-subject",
+      "status": "research-subject-referenced-by-multi-platform-ai-outputs",
+      "description": "The public professional identity and its distributed digital representations as the subject of E-E-A-T assessments, meta-analyses, and related AI-assisted exploration. Individual outputs may assess different evidence subsets and should not be assumed to be identical solely because they concern the same subject.",
+      "components": [
+        "professional website and author profile",
+        "public professional content and external references",
+        "AI-generated and AI-assisted E-E-A-T assessments",
+        "cross-platform analytical and presentation outputs"
+      ],
+      "role_in_genealogy": "Common subject of a cluster of E-E-A-T assessments and meta-analyses; individual report identities and cross-format equivalences remain subject to content-level reconciliation."
     }
   ],
   "research_processes": [
@@ -160,6 +191,44 @@
       ],
       "preceding_context_object_ids": [
         "ai-startup-marketing-article"
+      ]
+    },
+    {
+      "id": "cross-platform-ai-exploration",
+      "title": "Open-ended cross-platform AI exploration and E-E-A-T assessment work",
+      "status": "retrospectively-reconstructed-in-part",
+      "research_object_ids": [
+        "professional-ethnography",
+        "ai-startup-marketing-article",
+        "ai-related-professional-writing",
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "summary": "A broad, creative, and non-linear period of experimentation with AI systems and output environments. The supplied record includes E-E-A-T analyses and meta-analyses, digital-identity readings, shared conversations, Deep Research sessions, public artifacts, generated web pages, deployed applications, and presentation forms. The author did not operate one fixed research protocol across all items. Archive timestamps establish observation points for particular public representations; they do not establish creation dates or the complete beginning and end of the activity.",
+      "process_characteristics": [
+        "creative and exploratory rather than governed by one pre-specified protocol",
+        "cross-platform experimentation with different AI systems and creation environments",
+        "multiple output forms, including shared conversations, analytical reports, web applications, pages, and presentations",
+        "overlapping thematic strands and possible cross-format manifestations of the same underlying output",
+        "retrospective reconstruction from original URLs, archive locators, and author recollection",
+        "content-level identity and exact relationships left open where evidence is insufficient"
+      ],
+      "methods": [
+        "open-ended prompting and AI-assisted exploration",
+        "E-E-A-T assessment and meta-analysis",
+        "cross-platform comparison and synthesis",
+        "publication of selected outputs as web artifacts or shared AI outputs",
+        "conversion or adaptation of analytical material into other publication forms",
+        "retrospective provenance and archive reconstruction"
+      ],
+      "roles": {
+        "author": "Research direction, experimentation, selection and interpretation of outputs, editing and publication in different forms, and retrospective identification of relationships.",
+        "ai_systems": "Generative, analytical, research, and content-production capabilities used in exploratory work; model versions and exact roles remain unrecorded where not explicitly identified.",
+        "publication_and_archive_platforms": "Hosting, publishing, sharing, rendering, and preserving particular manifestations of outputs."
+      },
+      "concept_outcomes": [],
+      "preceding_context_object_ids": [
+        "ai-startup-marketing-article",
+        "ai-related-professional-writing"
       ]
     }
   ],
@@ -306,6 +375,37 @@
         "basis": "The author identifies this profile as their own. The public profile and reviewed item pages display the uploader name SEO specialista a copywriter Daniel Beránek."
       },
       "curation_status": "initial-curated-sample"
+    },
+    {
+      "id": "ai-related-professional-writing-directories",
+      "platform": "Linktree / Bitly / Bio.link",
+      "title": "AI-related professional writing by Daniel Beránek — distributed indexes",
+      "url": "https://linktr.ee/seo_copy_daniel_beranek_ai",
+      "profile_display_name": "AI News · SEO copywriter Daniel Beránek",
+      "collection_role": "author-maintained-content-index-and-alternative-directory-representations",
+      "content_scope": "Distributed indexes of the author's professional writing about AI, AI products, model developments, implementations, practical use, prompting, and related topics. The indexes may overlap; some entries may be missing from individual directory versions. The extent of AI assistance varied and was not systematically recorded at item level, so the registry does not infer or assign per-text assistance categories.",
+      "attribution": {
+        "status": "author-confirmed",
+        "person_uri": "https://danielberanek.cz/#person",
+        "basis": "The author supplied all three directory URLs and described them as indexes of texts he wrote about AI, with varying and unrecorded degrees of AI assistance."
+      },
+      "curation_status": "author-supplied-indexes-awaiting-link-reconciliation",
+      "representations": [
+        {
+          "platform": "Bitly",
+          "url": "https://bit.ly/m/ai-specialista-copywriter-daniel-beranek",
+          "representation_type": "alternative-content-index",
+          "relation": "alternate-index-of-same-writing-collection",
+          "status": "author-supplied-content-not-reviewed"
+        },
+        {
+          "platform": "Bio.link",
+          "url": "https://bio.link/ai_writer_spec_db",
+          "representation_type": "alternative-content-index",
+          "relation": "alternate-index-of-same-writing-collection",
+          "status": "author-supplied-content-not-reviewed"
+        }
+      ]
     }
   ],
   "artefacts": [
@@ -390,7 +490,41 @@
         "basis": "Individual SlideShare page title, description, and uploader attribution.",
         "source_description_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-deep-research/286570153"
       },
-      "review_status": "page-description-and-uploader-reviewed"
+      "review_status": "page-description-and-uploader-reviewed",
+      "representations": [
+        {
+          "id": "gemini-share-a4e8c0d5",
+          "platform": "Google Gemini",
+          "representation_type": "shared-chat-or-report-manifestation",
+          "url": "https://gemini.google.com/share/a4e8c0d5d558",
+          "title": "Metaanalýza a komplexní evaluace E-E-A-T profilu subjektu Daniel Beránek: Průnik multidisciplinární expertízy, technické infrastruktury a sémantické autority",
+          "relation": "possible-same-underlying-output",
+          "relationship_status": "author-suggested-candidate-content-comparison-pending",
+          "evidence_basis": "The author identified this Gemini share as probably the previously mentioned E-E-A-T meta-analysis. The title is thematically close to the existing Gemini 3 Deep Research SlideShare record, but content-level equivalence has not been checked.",
+          "archive_captures": [
+            {
+              "url": "https://archive.is/bR27Y",
+              "archive_service": "Archive.today / Archive.is / Archive.ph",
+              "captured_at": null,
+              "timestamp_basis": "Timestamp not established from supplied locator.",
+              "target_url": "https://gemini.google.com/share/a4e8c0d5d558",
+              "capture_status": "locator-supplied-content-unreviewed",
+              "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+            },
+            {
+              "url": "https://megalodon.jp/2026-1125-0122-27/https://gemini.google.com:443/share/a4e8c0d5d558",
+              "archive_service": "Megalodon.jp",
+              "captured_at": "2026-11-24T16:22:27Z",
+              "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+              "timestamp_source_value": "2026-1125-0122-27",
+              "timestamp_source_timezone": "Asia/Tokyo",
+              "target_url": "https://gemini.google.com/share/a4e8c0d5d558",
+              "capture_status": "timestamped-locator-content-unreviewed",
+              "note": "Author-supplied archive locator; captured content not yet inspected."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "slideshare-crisis-entity-resolution-presentation",
@@ -488,9 +622,1141 @@
         "source_description_url": "https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914"
       },
       "review_status": "source-article-and-slide-page-reviewed"
+    },
+    {
+      "id": "kimi-web-gx4mgkxy",
+      "title": "Kimi published web output — content review pending",
+      "url": "https://gx4mgkxyomtpq.kimi.page/",
+      "platform": "Kimi",
+      "artefact_type": "hosted-web-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "Standalone Kimi-hosted web output. The author supplied a Wayback capture dated 26 May 2026; content and exact title remain to be reviewed.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://gx4mgkxyomtpq.kimi.page/"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://web.archive.org/web/20260526125112/https://gx4mgkxyomtpq.kimi.page/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-05-26T12:51:12Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://gx4mgkxyomtpq.kimi.page/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "manus-eeat-web-june-2026",
+      "title": "Manus E-E-A-T web output — June 2026",
+      "url": "https://eeat-daniel-abkszntk.manus.space/",
+      "platform": "Manus",
+      "artefact_type": "deployed-web-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A separate Manus-hosted E-E-A-T web output, distinct from the March 2026 Manus E-E-A-T site. Content review and exact relation to other reports remain pending.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://eeat-daniel-abkszntk.manus.space/"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://web.archive.org/web/20260605164053/https://eeat-daniel-abkszntk.manus.space/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-06-05T16:40:53Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://eeat-daniel-abkszntk.manus.space/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "deepseek-share-pbeqhrfth",
+      "title": "DeepSeek shared conversation — content review pending",
+      "url": "https://chat.deepseek.com/share/pbeqhrfth7nn5r4skc",
+      "platform": "DeepSeek",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "DeepSeek shared conversation with one timestamped Megalodon locator and two domain variants for the Archive.today identifier pMJZc.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://chat.deepseek.com/share/pbeqhrfth7nn5r4skc"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0526-2229-28/https://chat.deepseek.com:443/share/pbeqhrfth7nn5r4skc",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-05-26T13:29:28Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0526-2229-28",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://chat.deepseek.com/share/pbeqhrfth7nn5r4skc",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.ph/pMJZc",
+          "archive_service": "Archive.today / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://chat.deepseek.com/share/pbeqhrfth7nn5r4skc",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "The author separately supplied archive.ph/pMJZc and archive.is/pMJZc as references to this DeepSeek output; retain both host variants for the same short identifier."
+        },
+        {
+          "url": "https://archive.is/pMJZc",
+          "archive_service": "Archive.today / Archive.is",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://chat.deepseek.com/share/pbeqhrfth7nn5r4skc",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Same short identifier as archive.ph/pMJZc; alternate host variant, not an independent archive service."
+        }
+      ]
+    },
+    {
+      "id": "qwen-deploy-8f117fbf",
+      "title": "Qwen deployed conversation output — content review pending",
+      "url": "https://chat.qwen.ai/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb",
+      "platform": "Qwen",
+      "artefact_type": "deployed-conversation-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "Qwen deploy output with near-simultaneous Wayback and Megalodon timestamped captures, plus an Archive.today identifier supplied under both archive.is and archive.ph.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://chat.qwen.ai/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0526-2215-14/https://chat.qwen.ai:443/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-05-26T13:15:14Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0526-2215-14",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://chat.qwen.ai/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260526131516/https://chat.qwen.ai/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-05-26T13:15:16Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://chat.qwen.ai/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/UyqAA",
+          "archive_service": "Archive.today / Archive.is",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://chat.qwen.ai/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "The author also supplied archive.ph/UyqAA as the alternate domain for this same Archive.today identifier."
+        },
+        {
+          "url": "https://archive.ph/UyqAA",
+          "archive_service": "Archive.today / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://chat.qwen.ai/s/deploy/t_8f117fbf-03f0-40cb-9c3b-6e155c27dbcb",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Same short identifier as archive.is/UyqAA; alternate host variant."
+        }
+      ]
+    },
+    {
+      "id": "perplexity-computer-226357ae",
+      "title": "Perplexity Computer task — shared agentic work record",
+      "url": "https://www.perplexity.ai/computer/a/226357ae-362b-5205-b008-cfedc2b032fa",
+      "platform": "Perplexity",
+      "artefact_type": "computer-task-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "Perplexity Computer work record with two archive observations on 26 May 2026 and a later Megalodon recapture in November 2026. Archive dates are not creation dates.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://www.perplexity.ai/computer/a/226357ae-362b-5205-b008-cfedc2b032fa"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0526-2256-41/https://www.perplexity.ai:443/computer/a/226357ae-362b-5205-b008-cfedc2b032fa",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-05-26T13:56:41Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0526-2256-41",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://www.perplexity.ai/computer/a/226357ae-362b-5205-b008-cfedc2b032fa",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260526135738/https://www.perplexity.ai/computer/a/226357ae-362b-5205-b008-cfedc2b032fa",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-05-26T13:57:38Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://www.perplexity.ai/computer/a/226357ae-362b-5205-b008-cfedc2b032fa",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-1125-0029-02/https://www.perplexity.ai:443/computer/a/226357ae-362b-5205-b008-cfedc2b032fa",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-11-24T15:29:02Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-1125-0029-02",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://www.perplexity.ai/computer/a/226357ae-362b-5205-b008-cfedc2b032fa",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "chatgpt-share-6b05b0ef",
+      "title": "ChatGPT shared conversation — content review pending",
+      "url": "https://chatgpt.com/share/6b05b0ef-6bac-83eb-8f88-aa2bcfa28d74",
+      "platform": "ChatGPT",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "A ChatGPT Share output with Wayback and Megalodon archive locators supplied on 24 November 2026. Conversation title and model version remain unreviewed.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://chatgpt.com/share/6b05b0ef-6bac-83eb-8f88-aa2bcfa28d74"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-1125-0045-14/https://chatgpt.com:443/share/6b05b0ef-6bac-83eb-8f88-aa2bcfa28d74",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-11-24T15:45:14Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-1125-0045-14",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://chatgpt.com/share/6b05b0ef-6bac-83eb-8f88-aa2bcfa28d74",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20261124154652/https://chatgpt.com/share/6b05b0ef-6bac-83eb-8f88-aa2bcfa28d74",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-11-24T15:46:52Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://chatgpt.com/share/6b05b0ef-6bac-83eb-8f88-aa2bcfa28d74",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "mistral-work-676e158c",
+      "title": "Mistral Work session — content review pending",
+      "url": "https://chat.mistral.ai/work/676e158c-1a38-4c99-be4c-0cdc6e5f328c",
+      "platform": "Mistral / Le Chat",
+      "artefact_type": "work-session-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "A Mistral Work session, distinct from the separately supplied Le Chat chat-session URL. Both archive timestamps are retained.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://chat.mistral.ai/work/676e158c-1a38-4c99-be4c-0cdc6e5f328c"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://web.archive.org/web/20261124154923/https://chat.mistral.ai/work/676e158c-1a38-4c99-be4c-0cdc6e5f328c",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-11-24T15:49:23Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://chat.mistral.ai/work/676e158c-1a38-4c99-be4c-0cdc6e5f328c",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-1125-0049-34/https://chat.mistral.ai:443/work/676e158c-1a38-4c99-be4c-0cdc6e5f328c",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-11-24T15:49:34Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-1125-0049-34",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://chat.mistral.ai/work/676e158c-1a38-4c99-be4c-0cdc6e5f328c",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "gemini-canvas-5ab4301e",
+      "title": "Gemini Canvas web artifact — content review pending",
+      "url": "https://gemini.google.com/app/5ab4301e97aa7978?canvas-id=c_5ab4301e97aa7978_index.html",
+      "platform": "Google Gemini",
+      "artefact_type": "canvas-web-artifact",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "Gemini Canvas item identified by its canvas-id parameter. This is a web artifact, not a conventional Gemini chat-share.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://gemini.google.com/app/5ab4301e97aa7978?canvas-id=c_5ab4301e97aa7978_index.html"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-1125-0053-20/https://gemini.google.com:443/app/5ab4301e97aa7978?canvas-id=c_5ab4301e97aa7978_index.html",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-11-24T15:53:20Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-1125-0053-20",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://gemini.google.com/app/5ab4301e97aa7978?canvas-id=c_5ab4301e97aa7978_index.html",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20261124155333/https://gemini.google.com/app/5ab4301e97aa7978?canvas-id=c_5ab4301e97aa7978_index.html",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-11-24T15:53:33Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://gemini.google.com/app/5ab4301e97aa7978?canvas-id=c_5ab4301e97aa7978_index.html",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "grok-share-5dd05929",
+      "title": "Grok shared conversation — artifact 1",
+      "url": "https://grok.com/share/c2hhcmQtMi1jb3B5_5dd05929-8a0f-403b-bd70-a1597e97e9de",
+      "platform": "Grok / xAI",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "First of several individually identified Grok Share outputs; kept as a distinct artifact rather than merged by platform.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_5dd05929-8a0f-403b-bd70-a1597e97e9de"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-1125-0055-27/https://grok.com:443/share/c2hhcmQtMi1jb3B5_5dd05929-8a0f-403b-bd70-a1597e97e9de",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-11-24T15:55:27Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-1125-0055-27",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_5dd05929-8a0f-403b-bd70-a1597e97e9de",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20261124155517/https://grok.com/share/c2hhcmQtMi1jb3B5_5dd05929-8a0f-403b-bd70-a1597e97e9de",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-11-24T15:55:17Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_5dd05929-8a0f-403b-bd70-a1597e97e9de",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "grok-share-561b3e41",
+      "title": "Grok shared conversation — artifact 2",
+      "url": "https://grok.com/share/c2hhcmQtMi1jb3B5_561b3e41-0fe2-44ac-adf2-355ac802425f",
+      "platform": "Grok / xAI",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "Second individually identified Grok Share output. Its archive locators are distinct from the first Grok Share item.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_561b3e41-0fe2-44ac-adf2-355ac802425f"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-1125-0057-29/https://grok.com:443/share/c2hhcmQtMi1jb3B5_561b3e41-0fe2-44ac-adf2-355ac802425f",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-11-24T15:57:29Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-1125-0057-29",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_561b3e41-0fe2-44ac-adf2-355ac802425f",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20261124155711/https://grok.com/share/c2hhcmQtMi1jb3B5_561b3e41-0fe2-44ac-adf2-355ac802425f",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-11-24T15:57:11Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_561b3e41-0fe2-44ac-adf2-355ac802425f",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "manus-eeat-web-march",
+      "title": "Manus E-E-A-T website — early March 2026",
+      "url": "https://eeatweb-kqecgq4k.manus.space/",
+      "platform": "Manus",
+      "artefact_type": "deployed-web-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "An early Manus-hosted E-E-A-T website. Its March 2026 archival timestamps precede the documented start of the professional-ethnography text on 25 March 2026.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://eeatweb-kqecgq4k.manus.space/"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0305-0422-40/https://eeatweb-kqecgq4k.manus.space:443/",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-04T19:22:40Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0305-0422-40",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://eeatweb-kqecgq4k.manus.space/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260304193731/https://eeatweb-kqecgq4k.manus.space/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-04T19:37:31Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://eeatweb-kqecgq4k.manus.space/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/utWaI",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://eeatweb-kqecgq4k.manus.space/",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "claude-public-artifact-905942d9",
+      "title": "Claude public artifact — content title pending",
+      "url": "https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+      "platform": "Claude / Anthropic",
+      "artefact_type": "public-artifact",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "Claude public Artifact identified as part of the March E-E-A-T and digital-identity exploration sequence. Four timestamped archive locators and one Archive.today identifier were supplied; artifact title and content remain to be checked.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0305-0500-25/https://claude.ai:443/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-04T20:00:25Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0305-0500-25",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-0307-0130-19/https://claude.ai:443/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-06T16:30:19Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0307-0130-19",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260308013432/https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-08T01:34:32Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-0309-0632-23/https://claude.ai:443/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-08T21:32:23Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0309-0632-23",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/rznNH",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://claude.ai/public/artifacts/905942d9-4ec4-4086-a4d0-fc61d4a613b5",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "gemini-share-4ccd59b5",
+      "title": "Gemini shared conversation — March 2026 E-E-A-T exploration",
+      "url": "https://gemini.google.com/share/4ccd59b54a3c",
+      "platform": "Google Gemini",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "Gemini Share item in the March 2026 E-E-A-T exploration sequence, with two Megalodon observations and one Archive.today reference.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://gemini.google.com/share/4ccd59b54a3c"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0305-0527-41/https://gemini.google.com:443/share/4ccd59b54a3c",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-04T20:27:41Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0305-0527-41",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://gemini.google.com/share/4ccd59b54a3c",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-0307-0152-09/https://gemini.google.com:443/share/4ccd59b54a3c",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-06T16:52:09Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0307-0152-09",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://gemini.google.com/share/4ccd59b54a3c",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/Fp0Vm",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://gemini.google.com/share/4ccd59b54a3c",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "perplexity-page-8794045c",
+      "title": "Perplexity Page — content title pending",
+      "url": "https://www.perplexity.ai/page/8794045c-f4d1-43f6-82da-c94f291e0c1c",
+      "platform": "Perplexity",
+      "artefact_type": "published-page",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "A separate Perplexity Page item. It is distinct from the Perplexity page whose supplied archive path carries a different slug.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://www.perplexity.ai/page/8794045c-f4d1-43f6-82da-c94f291e0c1c"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-1125-0106-22/https://www.perplexity.ai:443/page/8794045c-f4d1-43f6-82da-c94f291e0c1c",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-11-24T16:06:22Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-1125-0106-22",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://www.perplexity.ai/page/8794045c-f4d1-43f6-82da-c94f291e0c1c",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "chatgpt-deep-research-69a8a4da",
+      "title": "ChatGPT Deep Research shared output",
+      "url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+      "platform": "ChatGPT / OpenAI",
+      "artefact_type": "deep-research-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "ChatGPT Deep Research output, distinguished from a conventional shared chat. It has three timestamped archive locators and three separate Archive.today identifiers.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0307-0039-12/https://chatgpt.com:443/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-06T15:39:12Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0307-0039-12",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260308035749/https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-08T03:57:49Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-0309-0632-23/https://chatgpt.com:443/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-08T21:32:23Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0309-0632-23",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/CNHLA",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/KJcUo",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/N7BwZ",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://chatgpt.com/s/dr_69a8a4da9dfc8191be4139dbee5ac412",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "grok-share-9bd04fc3",
+      "title": "Grok shared conversation — March 2026 E-E-A-T exploration",
+      "url": "https://grok.com/share/c2hhcmQtMi1jb3B5_9bd04fc3-e5dd-469f-9f4e-b031cc8a9a01?rid=5ab1b415-9150-494a-b86e-4238dea238e8",
+      "platform": "Grok / xAI",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "Grok Share item; the original rid query parameter is preserved exactly. The item was supplied in the E-E-A-T meta-analysis sequence.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_9bd04fc3-e5dd-469f-9f4e-b031cc8a9a01?rid=5ab1b415-9150-494a-b86e-4238dea238e8"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0309-0538-09/https://grok.com:443/share/c2hhcmQtMi1jb3B5_9bd04fc3-e5dd-469f-9f4e-b031cc8a9a01?rid=5ab1b415-9150-494a-b86e-4238dea238e8",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-08T20:38:09Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0309-0538-09",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_9bd04fc3-e5dd-469f-9f4e-b031cc8a9a01?rid=5ab1b415-9150-494a-b86e-4238dea238e8",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/FQS1c",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_9bd04fc3-e5dd-469f-9f4e-b031cc8a9a01?rid=5ab1b415-9150-494a-b86e-4238dea238e8",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "seznam-assistant-share",
+      "title": "Seznam Asistent shared conversation — content review pending",
+      "url": "https://asistent.seznam.cz/?share=tCTOK4LZNjAfHvb3t8YJAC-OzuOqRXvfFMnUjNVCFQgBG",
+      "platform": "Seznam Asistent",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A platform-specific AI output identified by the author during retrospective reconstruction. Its substantive content, exact research question, model version, and relationship to other outputs have not yet been reviewed.",
+      "summary": "A shared Seznam Asistent record. The specific underlying model, conversation title, and content have not yet been established.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://asistent.seznam.cz/?share=tCTOK4LZNjAfHvb3t8YJAC-OzuOqRXvfFMnUjNVCFQgBG"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0312-0010-59/https://asistent.seznam.cz:443/?share=tCTOK4LZNjAfHvb3t8YJAC-OzuOqRXvfFMnUjNVCFQgBG",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-11T15:10:59Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0312-0010-59",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://asistent.seznam.cz/?share=tCTOK4LZNjAfHvb3t8YJAC-OzuOqRXvfFMnUjNVCFQgBG",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "manus-eeat-meta-analysis-b4jrwdnu",
+      "title": "Manus E-E-A-T analysis meta-analysis",
+      "url": "https://eeat-analysis-b4jrwdnu.manus.space/",
+      "platform": "Manus",
+      "artefact_type": "deployed-meta-analysis-web-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A Manus-hosted meta-analysis of E-E-A-T analyses, supplied by the author as the start of a distinct E-E-A-T meta-analysis set.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://eeat-analysis-b4jrwdnu.manus.space/"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://web.archive.org/web/20260313205916/https://eeat-analysis-b4jrwdnu.manus.space/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-13T20:59:16Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://eeat-analysis-b4jrwdnu.manus.space/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-0314-0556-11/https://eeat-analysis-b4jrwdnu.manus.space:443/",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-13T20:56:11Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0314-0556-11",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://eeat-analysis-b4jrwdnu.manus.space/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/aovrb",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://eeat-analysis-b4jrwdnu.manus.space/",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "perplexity-page-1daf0768",
+      "title": "Perplexity Page — archive locator has a different page slug",
+      "url": "https://www.perplexity.ai/page/1daf0768-1984-4ed2-8e91-f848b37cd650",
+      "platform": "Perplexity",
+      "artefact_type": "published-page",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A Perplexity Page supplied in the E-E-A-T meta-analysis sequence. The associated Megalodon URL uses a different slug from the original UUID; the mapping is retained as an unresolved candidate rather than assumed to be an exact capture.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed. The associated Megalodon locator has a different page slug; the recorded target URL reflects the slug embedded in the archive request, not an assertion that it is identical to the UUID page.",
+        "source_description_url": "https://www.perplexity.ai/page/1daf0768-1984-4ed2-8e91-f848b37cd650"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0319-0200-31/https://www.perplexity.ai:443/page/11-seznam-zdroju-s-url-v-plain-Ha8HaBmETtKOkfhIs3zWUA",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-18T17:00:31Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0319-0200-31",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://www.perplexity.ai/page/11-seznam-zdroju-s-url-v-plain-Ha8HaBmETtKOkfhIs3zWUA",
+          "capture_status": "target-url-mismatch-identity-unresolved",
+          "note": "Megalodon URL path contains a slug different from the author-supplied Perplexity Page UUID. The archive may be a renamed/canonical page or a different page; relationship is not established."
+        }
+      ]
+    },
+    {
+      "id": "kimi-web-2dym7ypi",
+      "title": "Kimi hosted website — E-E-A-T meta-analysis sequence",
+      "url": "https://2dym7ypizs4wa.ok.kimi.link/",
+      "platform": "Kimi",
+      "artefact_type": "hosted-web-output",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A Kimi-hosted web output supplied during the E-E-A-T meta-analysis inventory. Its exact title and relation to other reports remain to be verified.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://2dym7ypizs4wa.ok.kimi.link/"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://web.archive.org/web/20260318184514/https://2dym7ypizs4wa.ok.kimi.link/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-18T18:45:14Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://2dym7ypizs4wa.ok.kimi.link/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/ijacU",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://2dym7ypizs4wa.ok.kimi.link/",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-0319-0320-00/https://2dym7ypizs4wa.ok.kimi.link:443/",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-18T18:20:00Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0319-0320-00",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://2dym7ypizs4wa.ok.kimi.link/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "grok-share-cdea2353",
+      "title": "Grok shared conversation — E-E-A-T meta-analysis sequence",
+      "url": "https://grok.com/share/c2hhcmQtMi1jb3B5_cdea2353-6690-4a65-80ec-0e4a2ad7f481?rid=85906a9d-934d-4bb0-983a-4856fd529375",
+      "platform": "Grok / xAI",
+      "artefact_type": "chat-share",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A separate Grok Share item in the E-E-A-T meta-analysis sequence. The full rid parameter is preserved; two Archive.today identifiers and one Megalodon capture were supplied.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_cdea2353-6690-4a65-80ec-0e4a2ad7f481?rid=85906a9d-934d-4bb0-983a-4856fd529375"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://archive.is/B1h5V",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_cdea2353-6690-4a65-80ec-0e4a2ad7f481?rid=85906a9d-934d-4bb0-983a-4856fd529375",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        },
+        {
+          "url": "https://archive.is/Qx4hc",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_cdea2353-6690-4a65-80ec-0e4a2ad7f481?rid=85906a9d-934d-4bb0-983a-4856fd529375",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/2026-0318-0020-30/https://grok.com:443/share/c2hhcmQtMi1jb3B5_cdea2353-6690-4a65-80ec-0e4a2ad7f481?rid=85906a9d-934d-4bb0-983a-4856fd529375",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-17T15:20:30Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0318-0020-30",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://grok.com/share/c2hhcmQtMi1jb3B5_cdea2353-6690-4a65-80ec-0e4a2ad7f481?rid=85906a9d-934d-4bb0-983a-4856fd529375",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "mistral-chat-dfd88fe5",
+      "title": "Mistral Le Chat conversation — original page now unavailable",
+      "url": "https://chat.mistral.ai/chat/dfd88fe5-ba35-4b9a-97c8-2d2f016e7a51",
+      "platform": "Mistral / Le Chat",
+      "artefact_type": "chat-session",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A Mistral chat session reported by the author as no longer available. The supplied Browseo/Megalodon rendering is not attached as an archive capture because its embedded target contains a different Mistral chat ID (4e8ae9f8-8862-4225-a6a8-0e6948651d91).",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://chat.mistral.ai/chat/dfd88fe5-ba35-4b9a-97c8-2d2f016e7a51"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": []
+    },
+    {
+      "id": "netlify-web-gilded-klepon",
+      "title": "Netlify deployed web artifact — origin tool not established",
+      "url": "https://gilded-klepon-bb1f77.netlify.app/",
+      "platform": "Netlify (hosting)",
+      "artefact_type": "deployed-web-artifact",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A separate Netlify-hosted web output. Netlify is recorded as the hosting platform; the underlying AI builder or model is not identified.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://gilded-klepon-bb1f77.netlify.app/"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://megalodon.jp/2026-0320-2350-30/https://gilded-klepon-bb1f77.netlify.app:443/",
+          "archive_service": "Megalodon.jp",
+          "captured_at": "2026-03-20T14:50:30Z",
+          "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
+          "timestamp_source_value": "2026-0320-2350-30",
+          "timestamp_source_timezone": "Asia/Tokyo",
+          "target_url": "https://gilded-klepon-bb1f77.netlify.app/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260320145022/https://gilded-klepon-bb1f77.netlify.app/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-20T14:50:22Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://gilded-klepon-bb1f77.netlify.app/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        }
+      ]
+    },
+    {
+      "id": "lovable-eeat-meta-analysis",
+      "title": "Metaanalýza E-E-A-T SEO specialist a copywriter Dan Beránek",
+      "url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+      "platform": "Lovable (builder/hosting)",
+      "artefact_type": "deployed-web-application",
+      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
+      "research_object_ids": [],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
+      "summary": "A Lovable-published E-E-A-T meta-analysis application. Three separate Wayback captures may represent successive page states; they are not separate research outputs. Archive.today and Megalodon references are retained as additional representations.",
+      "provenance": {
+        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "source_description_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/"
+      },
+      "review_status": "author-supplied-locators-content-unreviewed",
+      "archive_captures": [
+        {
+          "url": "https://archive.is/cHCUM",
+          "archive_service": "Archive.today / Archive.is / Archive.ph",
+          "captured_at": null,
+          "timestamp_basis": "Timestamp not established from supplied locator.",
+          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260323134924/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-23T13:49:24Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260323231015/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-23T23:10:15Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://web.archive.org/web/20260323231242/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "archive_service": "Internet Archive Wayback Machine",
+          "captured_at": "2026-03-23T23:12:42Z",
+          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "capture_status": "timestamped-locator-content-unreviewed",
+          "note": "Author-supplied archive locator; captured content not yet inspected."
+        },
+        {
+          "url": "https://megalodon.jp/pc/main?url=https%3A%2F%2Fmeta-analyza-e-e-a-t-daniel-beranek.lovable.app%2F",
+          "archive_service": "Megalodon.jp",
+          "captured_at": null,
+          "timestamp_basis": "The supplied /pc/main?url= locator does not expose a timestamp in the URL.",
+          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "capture_status": "locator-supplied-content-unreviewed",
+          "note": "Archive page reference supplied; snapshot timestamp is not exposed in the supplied URL."
+        }
+      ]
     }
   ],
-  "inventory_leads": [],
+  "inventory_leads": [
+    {
+      "title": "Unmatched Archive.today capture provisionally associated with DeepSeek",
+      "artefact_type": "unmatched-archive-reference",
+      "discovery_status": "awaiting-source-url-or-content-identification",
+      "summary": "Archive.today identifier QyL2T was supplied by the author as a possibly DeepSeek-related capture. Its original URL and relation to the already registered DeepSeek share pbeqhrfth7nn5r4skc are not yet established.",
+      "url": "https://archive.is/QyL2T"
+    },
+    {
+      "title": "Browseo rendering with a different Mistral chat identifier",
+      "artefact_type": "intermediate-rendering-and-archive-trail",
+      "discovery_status": "target-id-mismatch-unresolved",
+      "summary": "A Megalodon snapshot of a Browseo URL was supplied in connection with Mistral chat dfd88fe5-ba35-4b9a-97c8-2d2f016e7a51. The URL-encoded Browseo target is https://chat.mistral.ai/chat/4e8ae9f8-8862-4225-a6a8-0e6948651d91, a different ID. Keep this as an unresolved trail rather than assigning it to the dfd88fe5 chat.",
+      "url": "https://megalodon.jp/2026-0320-2206-31/https://www.browseo.net:443/?url=https%3A%2F%2Fchat.mistral.ai%2Fchat%2F4e8ae9f8-8862-4225-a6a8-0e6948651d91"
+    }
+  ],
   "relations": [
     {
       "subject_id": "professional-ethnography",
@@ -539,6 +1805,240 @@
       "relation": "provides-preceding-professional-context-for",
       "object_id": "dio-odi-genesis-exploration",
       "evidence_url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/"
+    },
+    {
+      "subject_id": "ai-related-professional-writing",
+      "relation": "provides-professional-practice-context-for",
+      "object_id": "cross-platform-ai-exploration",
+      "evidence_url": "https://linktr.ee/seo_copy_daniel_beranek_ai"
+    },
+    {
+      "subject_id": "eeat-digital-identity-assessment-subject",
+      "relation": "is-the-subject-of",
+      "object_id": "cross-platform-ai-exploration",
+      "evidence_url": "https://www.linkedin.com/posts/danielberanek_digitalidentityoptimization-knowledgepanel-share-7507737299917365249-88yw/"
+    },
+    {
+      "subject_id": "cross-platform-ai-exploration",
+      "relation": "is-thematically-associated-with",
+      "object_id": "eeat-analysis-meta-analysis-cluster",
+      "evidence_url": "https://eeat-analysis-b4jrwdnu.manus.space/"
+    },
+    {
+      "subject_id": "slideshare-eeat-meta-analysis-gemini-3",
+      "relation": "has-possible-alternative-manifestation",
+      "object_id": "gemini-share-a4e8c0d5",
+      "evidence_url": "https://gemini.google.com/share/a4e8c0d5d558"
+    }
+  ],
+  "research_clusters": [
+    {
+      "id": "cross-platform-ai-exploration-cluster",
+      "title": "Cross-platform AI exploration and published outputs",
+      "cluster_type": "broad-exploratory-collection",
+      "description": "A curated set of AI-platform outputs and published web artifacts identified by the author across several systems and creation environments. The group records breadth of experimentation and output forms; it does not imply that all items share one topic, protocol, or underlying content.",
+      "membership_basis": "Author-supplied URLs and contextual grouping in the conversation. Exact contents and individual research roles remain unreviewed where noted on each record.",
+      "members": [
+        {
+          "artefact_id": "kimi-web-gx4mgkxy",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "manus-eeat-web-june-2026",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "deepseek-share-pbeqhrfth",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "qwen-deploy-8f117fbf",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "perplexity-computer-226357ae",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "chatgpt-share-6b05b0ef",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "mistral-work-676e158c",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "gemini-canvas-5ab4301e",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "grok-share-5dd05929",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "grok-share-561b3e41",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "manus-eeat-web-march",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "claude-public-artifact-905942d9",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "gemini-share-4ccd59b5",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "perplexity-page-8794045c",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "chatgpt-deep-research-69a8a4da",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "grok-share-9bd04fc3",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "seznam-assistant-share",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "manus-eeat-meta-analysis-b4jrwdnu",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "perplexity-page-1daf0768",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "kimi-web-2dym7ypi",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "grok-share-cdea2353",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "mistral-chat-dfd88fe5",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "netlify-web-gilded-klepon",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "lovable-eeat-meta-analysis",
+          "relationship": "member-of-broad-exploratory-set",
+          "status": "author-supplied-content-review-pending"
+        }
+      ]
+    },
+    {
+      "id": "eeat-analysis-meta-analysis-cluster",
+      "title": "E-E-A-T analyses and meta-analysis outputs",
+      "cluster_type": "thematic-research-cluster",
+      "description": "A thematic group of AI-assisted E-E-A-T analyses, meta-analyses, related web presentations, and shared outputs concerning the author's professional digital identity. Items remain separate where their content identities have not been compared; thematic grouping does not mean all items are the same output.",
+      "membership_basis": "The author explicitly introduced this part of the inventory as the E-E-A-T meta-analysis set and supplied the subsequent links in that context. Exact same-output relationships require comparison of the actual content.",
+      "members": [
+        {
+          "artefact_id": "manus-eeat-web-june-2026",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "manus-eeat-web-march",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "claude-public-artifact-905942d9",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "gemini-share-4ccd59b5",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "chatgpt-deep-research-69a8a4da",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "grok-share-9bd04fc3",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "manus-eeat-meta-analysis-b4jrwdnu",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "perplexity-page-1daf0768",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "kimi-web-2dym7ypi",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "grok-share-cdea2353",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "mistral-chat-dfd88fe5",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "netlify-web-gilded-klepon",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "lovable-eeat-meta-analysis",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-meta-analysis-gemini-3",
+          "relationship": "thematic-member; exact-output-identity-not-implied",
+          "status": "author-context-grouped-content-review-pending"
+        }
+      ]
     }
   ]
 }

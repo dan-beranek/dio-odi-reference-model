@@ -12,6 +12,7 @@
 - Semantic Change Feed events JSON: https://vocab.danielberanek.cz/semantic-change-feed/events.json
 - Semantic Change Feed JSON Schema: https://vocab.danielberanek.cz/semantic-change-feed/schema.json
 - Corpus Metadata Registry technical guide: https://vocab.danielberanek.cz/metadata/README.md
+- Research Genealogy frontend: https://vocab.danielberanek.cz/research-genealogy/
 - Research Genealogy Registry: https://vocab.danielberanek.cz/metadata/research-genealogy.json
 - Research Genealogy JSON Schema: https://vocab.danielberanek.cz/metadata/research-genealogy.schema.json
 - Research Genealogy technical guide: https://vocab.danielberanek.cz/docs/research-genealogy.md
@@ -135,11 +136,15 @@ Agentic Entity Resolution Guardrail Planner is a separate published design-time 
 
 ## Research Genealogy
 
+- Human-readable frontend: https://vocab.danielberanek.cz/research-genealogy/
+- Canonical machine-readable registry: https://vocab.danielberanek.cz/metadata/research-genealogy.json
+- JSON Schema: https://vocab.danielberanek.cz/metadata/research-genealogy.schema.json
+- Technical curation guide: https://vocab.danielberanek.cz/docs/research-genealogy.md
 - The professional ethnography is the primary multimodal research object from which DIO was derived: https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/
 - The author-maintained changelog records DIO articulation on 21 May 2026 and ODI articulation on 22 June 2026.
-- The Research Genealogy Registry records the exploratory process, dated milestones, selected model-generated readings, and SlideShare archive attribution.
-- SlideShare profile and exploratory/publication artefact archive: https://www.slideshare.net/danielberanek
-- The registry distinguishes AI-assisted readings of the professional ethnography from model-generated conceptual notes and presentation layers for existing research works.
+- The registry records research objects and processes, professional AI-writing context, cross-platform AI outputs, E-E-A-T analysis clusters, publication manifestations, archive observations, and unresolved provenance leads.
+- The registry distinguishes underlying output identity from web, chat, application, document, or presentation manifestations and from archive captures. Thematic clustering does not assert content identity.
+- AI-assistance levels are recorded only where supported; the author's AI-writing collection is not retrospectively classified item by item because assistance was not systematically logged.
 
 ## DIO to DIO research portfolio
 

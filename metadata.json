@@ -226,5 +226,6 @@
     "embedded_content_license": "CC-BY-4.0",
     "relation": "derived-read-only-distribution",
     "note": "Public, stateless, read-only MCP distribution exposing a bounded snapshot of the DIO/ODI Reference Model and selected derived Agentic ER and Policy-as-Code mappings. It is not an MVDIO Supervisor or authorization service and does not execute application-side authorization or mutate application state."
-  }
+  },
+  "research_genealogy_frontend": "https://vocab.danielberanek.cz/research-genealogy/"
 }

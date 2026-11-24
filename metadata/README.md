@@ -13,8 +13,9 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 - `keywords.json` — canonical C0–C6 keyword grammar, publication profiles, derived product and public-page surface profiles for the Planner, author concept site, Reference Model, DIO to DIO analyses, open-source application, taxonomy map, terminology case study, and MCP landing page, plus non-export aliases.
 - `application-mappings.json` — canonical descriptive metadata, source paths, and release provenance for derived Application Mappings.
 - `application-mappings.schema.json` — JSON Schema 2020-12 validation contract for Application Mappings metadata.
-- `research-genealogy.json` — source-linked research-object, process, milestone, and exploratory-artefact genealogy for the emergence of DIO/ODI.
-- `research-genealogy.schema.json` — JSON Schema 2020-12 validation contract for the Research Genealogy Registry.
+- `research-genealogy.json` — source-linked research-object, process, milestone, output, publication-manifestation, archive-observation, cluster, and provenance-lead genealogy for the emergence and early exploration of DIO/ODI.
+- [Research Genealogy frontend](https://vocab.danielberanek.cz/research-genealogy/) — human-readable timeline, thematic clusters, artifact filters, and archive-capture navigation.
+- `research-genealogy.schema.json` — JSON Schema 2020-12 validation contract for the Research Genealogy Registry, including output manifestations, archive captures, and thematic clusters.
 - root `.zenodo.json` — Zenodo-specific projection for future GitHub → Zenodo Reference Model releases.
 
 ## Workflow
