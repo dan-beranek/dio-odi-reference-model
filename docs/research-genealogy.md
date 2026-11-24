@@ -34,6 +34,19 @@ The current registry preserves seven milestones sourced from the author-maintain
 
 The date basis for these milestones is the professional ethnography's own changelog. Individual SlideShare artefacts are dated only where a direct publication date is available; otherwise their chronology remains unassigned.
 
+## Earlier professional and AI context
+
+The article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/) was originally published on **23 September 2025**, according to the earlier author-site AI-category archive listing. The current article page displays **21 October 2026**; this is the later last-update date, not the original publication date.
+
+The article is relevant to the genealogy because it already formulates a reciprocal relationship between professional expertise and AI:
+
+- **What professional expertise can contribute to AI products:** SEO and discoverability, brand positioning, copywriting and product explanation, journalism and PR, psychology, customer perspective, and the ability to bridge technical domains with audience understanding.
+- **What AI systems can contribute to professional work:** assistance with research, writing, synthesis, and information handling, alongside model-specific limitations in Czech-language output, context retention, factual sourcing, consistency, and instruction following.
+
+This is a pre-DIO professional and conceptual precursor. It documents an existing line of inquiry into the relationship between human professional capabilities and AI systems before the DIO articulation on 21 May 2026. It is linked as preceding context for the later exploratory environment, not substituted for the multimodal professional ethnography that the changelog explicitly identifies as the empirical and asynchronous foundation from which DIO was derived.
+
+The article's date fields are kept separate: original publication date (23 September 2025) and later last-update date (21 October 2026). The latter must not overwrite the former.
+
 ## SlideShare archive
 
 The [SlideShare profile](https://www.slideshare.net/danielberanek) is recorded as an exploratory-research archive and a publication-distribution surface. It contains several distinct kinds of material, including model-generated readings of the professional ethnography, comparative AI materials, conceptual notes, research presentations, and presentation layers for existing works.
