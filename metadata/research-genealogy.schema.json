@@ -175,6 +175,65 @@
                 }
               }
             }
+          },
+          "first_known_online_by": {
+            "type": "string",
+            "format": "date"
+          },
+          "first_known_online_basis": {
+            "type": "string"
+          },
+          "earliest_archived_capture": {
+            "type": "object",
+            "required": [
+              "captured_at",
+              "archive",
+              "url"
+            ],
+            "properties": {
+              "captured_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "archive": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "corroborating_archives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "archive",
+                "url",
+                "captured_at",
+                "role"
+              ],
+              "properties": {
+                "archive": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "captured_at": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -609,31 +668,82 @@
                     }
                   }
                 }
+              },
+              "first_known_online_by": {
+                "type": "string",
+                "format": "date"
+              },
+              "first_known_online_basis": {
+                "type": "string"
+              },
+              "earliest_archived_capture": {
+                "type": "object",
+                "required": [
+                  "captured_at",
+                  "archive",
+                  "url"
+                ],
+                "properties": {
+                  "captured_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "archive": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              },
+              "corroborating_archives": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "archive",
+                    "url",
+                    "captured_at",
+                    "role"
+                  ],
+                  "properties": {
+                    "archive": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "captured_at": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date-time"
+                    },
+                    "role": {
+                      "type": "string"
+                    }
+                  }
+                }
               }
             }
           },
           "temporal_metadata": {
             "type": "object",
             "required": [
-              "source_article_publication_date",
               "source_article_publication_date_basis",
+              "source_article_first_known_online_by",
+              "source_article_earliest_archived_capture_at",
               "source_article_last_updated_date",
               "source_article_last_updated_date_basis",
+              "corroborating_archive_url",
               "slideshare_upload_date",
               "slideshare_last_modified",
               "timestamp_note"
             ],
             "properties": {
-              "source_article_publication_date": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "format": "date"
-              },
-              "source_article_publication_date_basis": {
-                "type": "string"
-              },
               "source_article_last_updated_date": {
                 "type": [
                   "string",
@@ -660,6 +770,18 @@
               },
               "timestamp_note": {
                 "type": "string"
+              },
+              "source_article_first_known_online_by": {
+                "type": "string",
+                "format": "date"
+              },
+              "source_article_earliest_archived_capture_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "corroborating_archive_url": {
+                "type": "string",
+                "format": "uri"
               }
             }
           }
