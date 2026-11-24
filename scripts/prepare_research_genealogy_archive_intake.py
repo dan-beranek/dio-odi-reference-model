@@ -185,7 +185,6 @@ def fetch_profile_with_browser(
             )
             try:
                 context = browser.new_context(
-                    user_agent=USER_AGENT,
                     locale="en-US",
                     viewport={"width": 1440, "height": 1200},
                 )
@@ -440,7 +439,6 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
                 label=item.get("title", ""), registry_item=item)
 
     # Fetch both publicly visible profile variants and extract only presentation URLs.
-    current_profile_documents: list[tuple[str, str]] = []
     profile_reported_count: int | None = None
     for profile in profile_variants:
         try:
@@ -456,7 +454,6 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
                 "profile_reported_count": count,
                 "links_extracted": len(links),
             })
-            current_profile_documents.append((profile, document))
             for link in links:
                 add_url(link["url"], source_kind="current-public-profile-html",
                         source_url=profile, label=link.get("label", ""))
