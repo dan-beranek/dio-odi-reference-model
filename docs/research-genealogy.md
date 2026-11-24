@@ -1,6 +1,6 @@
 # DIO/ODI Research Genealogy
 
-The Research Genealogy Registry records the source object, exploratory process, dated concept-development milestones, and selected intermediate artefacts associated with the emergence of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
+The Research Genealogy Registry records the source object, exploratory process, dated concept-development milestones, and intermediate artefacts, alternative publication manifestations, and archive observations associated with the emergence of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
 
 It is a research-process layer within the Reference Model's operational metadata. It is maintained separately from the publication registry, distribution registry, canonical Reference Vocabulary, and Semantic Change Feed.
 
@@ -82,4 +82,31 @@ The registry separates:
 
 New artefacts are added only after their source page and uploader information have been inspected. The registry preserves the model attribution shown by the source page and does not infer a specific model where none is named. The source object's changelog remains the primary date basis for the concept-development chronology.
 
-The initial registry is intentionally a curated first sample, not an assertion that every item in the SlideShare profile has already been classified. The same record structure can accommodate additional platforms and other intermediate research artefacts as they are identified.
+The registry now covers a wider, author-supplied set of multi-platform outputs and three alternative indexes of AI-related professional writing. Records whose contents have not yet been inspected are explicitly labelled as such. The registry does not infer artifact creation dates from archive captures, nor does it assign per-text AI-assistance levels where those were not recorded.
+
+
+## Outputs, manifestations, and archive observations
+
+The registry distinguishes three layers that may otherwise be counted as separate research outputs:
+
+- **Underlying research output:** an analysis, synthesis, interpretation, or other substantive work.
+- **Publication manifestation:** a particular web page, shared AI conversation, Canvas artifact, deployed application, PDF, or SlideShare presentation through which that work is presented. A manifestation may be linked to an existing output when the relationship is supported; a candidate relationship remains labelled as such until the content is compared.
+- **Archive observation:** a time-stamped capture of a manifestation in Wayback Machine, Megalodon, or Archive.today / Archive.is / Archive.ph. Multiple captures of one manifestation do not create additional research outputs.
+
+Archive timestamps are preserved in UTC. For Megalodon URLs, the source timestamp and Asia/Tokyo (JST) basis are also recorded before normalization. A timestamp identifies an archive observation, not necessarily the creation, completion, or first-publication date of the underlying work. Capture content remains marked unreviewed until inspected.
+
+Where the author supplied an original platform URL but the artifact's content or model version has not been inspected, the record keeps a provisional title and a content-review status. Similar titles or common topics do not by themselves establish identity between two outputs.
+
+## Open-ended AI-related professional writing
+
+The Linktree, Bitly, and Bio.link pages are recorded as alternative indexes of a broader collection of professional writing about AI. Their item lists may overlap and may be incomplete relative to one another. The author reports varying degrees of AI assistance in these texts, but did not record the degree or nature of assistance for each item. The registry therefore records this as collection-level context and does not retrospectively assign item-level assistance categories.
+
+## Thematic clusters and output identity
+
+The E-E-A-T analysis cluster groups related items by the author's contextual identification and their shared research subject. Cluster membership is thematic and does not assert that every item is the same report. The Gemini Share identified as probably corresponding to the existing Gemini 3 Deep Research SlideShare item is registered as a possible alternative manifestation pending content comparison.
+
+A second broad cluster records cross-platform exploratory outputs without asserting that they share one topic or protocol. Unmatched archive references and target-ID mismatches remain in `inventory_leads` until their source artifacts can be identified.
+
+## Scope boundary
+
+The later appearance of the author's entity or Knowledge Panel in Google Search is a result of digital-identity work and belongs in the Semantic Change Feed or a related outcomes record. It is not treated as a genesis artifact in this Research Genealogy registry.
