@@ -36,7 +36,7 @@ The date basis for these milestones is the professional ethnography's own change
 
 ## Earlier professional and AI context
 
-The article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/) was originally published on **23 September 2025**, according to the earlier author-site AI-category archive listing. The current article page displays **21 October 2026**; this is the later last-update date, not the original publication date.
+The article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/) was originally published on **23 September 2025**, as preserved in the [author-site AI category archive](https://danielberanek.cz/oblast/ai/). The current article page displays **21 October 2026**; this is the later last-update date, not the original publication date.
 
 The article is relevant to the genealogy because it already formulates a reciprocal relationship between professional expertise and AI:
 
