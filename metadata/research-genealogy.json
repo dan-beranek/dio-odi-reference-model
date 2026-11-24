@@ -238,7 +238,7 @@
       "research_object_ids": [
         "eeat-digital-identity-assessment-subject"
       ],
-      "summary": "A multi-model assessment sequence examined the author's professional digital identity and SEO pillar page through distinct E-E-A-T reports. The currently verified SlideShare series contains nine directly reviewed model-specific first-order assessments, alongside independent meta-analyses published under Gemini 3 Deep Research, Kimi, Claude, and ChatGPT. The Kimi meta-analysis names ten first-order reports, including a Seznam Asistent report whose direct SlideShare page remains unverified in this review. Some first-order reports may also have shared-chat, web, or archive manifestations already registered elsewhere; those cross-platform identities remain separate until their content is compared.",
+      "summary": "A multi-model assessment sequence examined the author's professional digital identity and SEO pillar page through distinct E-E-A-T reports. The currently verified SlideShare series contains nine directly reviewed model-specific first-order assessments, alongside independent secondary meta-analyses published under Gemini 3 Deep Research, Kimi, Claude, and ChatGPT. The meta-analysis source sets do not fully agree on the Gemini model version: the Claude synthesis names Gemini 2.5 Pro Preview, while Kimi and ChatGPT name Gemini 3.1 Pro Preview. The 2.5 reference remains a separate inventory lead. Some first-order reports may also have shared-chat, web, or archive manifestations already registered elsewhere; those cross-platform identities remain separate until their content is compared.",
       "process_characteristics": [
         "distinct model-specific first-order E-E-A-T assessments",
         "secondary synthesis of a common multi-model report set",
@@ -2134,7 +2134,20 @@
       "model_attribution": {
         "system": "Claude / Anthropic",
         "model": "Claude (exact model/version not stated)"
-      }
+      },
+      "representations": [
+        {
+          "id": "macaly-eeat-meta-analysis-claude",
+          "platform": "Macaly",
+          "representation_type": "hosted-web-document",
+          "url": "https://macaly-hqpnq1cnpjs45ur7xate74ba.macaly.app/",
+          "title": "E-E-A-T Metaanalýza",
+          "relation": "alternate-web-manifestation-of-same-underlying-output",
+          "relationship_status": "content-and-structure-match-observed; platform-authorship-not-verified",
+          "evidence_basis": "The Macaly page reproduces the same 12-section report structure, the same ten-model source list including Gemini 2.5 Pro Preview, the same opening methodology paragraph, and matching passages and conclusion text present in the Claude-attributed SlideShare PDF. This is recorded as an alternate web manifestation of the same meta-analysis, not as an additional meta-analysis output. The hosting-page authorship/uploader attribution is not independently established.",
+          "archive_captures": []
+        }
+      ]
     },
     {
       "platform": "SlideShare",
@@ -2192,6 +2205,14 @@
       "discovery_status": "referenced-as-one-of-ten-primary-reports-in-Kimi-meta-analysis; direct-page-uploader-review-pending",
       "summary": "The Kimi meta-analysis lists a Seznam Asistent E-E-A-T analysis among its ten primary model-specific reports and provides a direct SlideShare URL. The direct page could not be inspected in this review; keep the item as a lead until its title, uploader attribution, and content are checked.",
       "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-seznam-asistent/286459934",
+      "platform": "SlideShare"
+    },
+    {
+      "title": "Gemini 2.5 Pro Preview E-E-A-T report cited by the Claude meta-analysis",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-eeat-analysis",
+      "discovery_status": "referenced-in-Claude-meta-analysis; direct-presentation-locator-unidentified",
+      "summary": "The Claude-attributed E-E-A-T meta-analysis and its matching Macaly web manifestation list Gemini 2.5 Pro Preview among ten first-order SlideShare analyses. The Kimi and ChatGPT meta-analyses instead list Gemini 3.1 Pro Preview, for which a separate SlideShare presentation is directly identified. Keep the Gemini 2.5 reference as a separate unresolved source lead; do not merge it with the Gemini 3.1 presentation without content and version evidence.",
       "platform": "SlideShare"
     }
   ],
