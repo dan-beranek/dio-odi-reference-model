@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.3.6",
+  "registry_version": "0.3.7",
   "schema_version": "0.3.3",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
@@ -392,11 +392,12 @@
         },
         {
           "record_type": "first-attempt-front-matter",
-          "title": "DP Kvalitativní evaluace poz. PSY — úvodní strany a obsah",
+          "title": "Titulní a úvodní strany a obsah diplomové práce „Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení“",
           "url": "https://is.muni.cz/th/wknmn/uvodni_strany_a_obsah.doc",
-          "role": "separately stored title/opening pages and contents file recorded 5 January 2009; companion file listed alongside the main body",
+          "role": "Separately stored companion file recorded 5 January 2009. Its TXT transcription has now been reviewed and confirms the title page, authorship declaration, acknowledgements, and table of contents; it complements the separately stored main-body DOC.",
           "repository_file_date": "2009-01-05",
-          "relationship_status": "listed under same wknmn archive and same date as the main body"
+          "relationship_status": "Confirmed companion component of the first-attempt thesis: same IS MU record, same repository file date as the main-body DOC, and matching thesis title.",
+          "content_review_status": "reviewed-from-author-supplied-TXT-transcription"
         },
         {
           "record_type": "later-front-matter-file",
@@ -461,9 +462,9 @@
           "status": "not-defended",
           "defense_status": "The IS MU record lists the first defense attempt on 20 January 2009 as not defended.",
           "pages": 88,
-          "content_review_status": "main-body-reviewed; front-matter-file-not-yet-opened",
-          "relationship_status": "The main body and opening-pages/contents file are separately listed under the same IS MU record and have the same 5 January 2009 file date.",
-          "notes": "The author-supplied DOC contains the main body: chapter 1 Introduction through chapter 9 Conclusion and chapter 10 Sources. It starts at printed page 1 with chapter 1 and ends at printed page 88 with the bibliography. The title/opening pages and contents are a separate file named uvodni_strany_a_obsah.doc; the missing front matter is therefore not evidence that chapters are absent from this DOC."
+          "content_review_status": "main-body-and-front-matter-reviewed",
+          "relationship_status": "The main body and front-matter/contents file are confirmed as complementary parts of the same first-attempt thesis: both are separately listed under the same IS MU record and have the same 5 January 2009 file date; the front-matter file contains the title page, authorship declaration, acknowledgements, and table of contents.",
+          "notes": "The author-supplied DOC contains the main body: chapter 1 Introduction through chapter 9 Conclusion and chapter 10 Sources. The separately supplied TXT transcription of uvodni_strany_a_obsah.doc confirms the title page, authorship declaration, acknowledgements, and contents. The title page identifies Masaryk University, Faculty of Social Studies, Department of Psychology; the thesis title is “Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení”; supervisor prof. PhDr. Vladimír Smékal, CSc.; Brno 2008. The contents list ten chapters, from Introduction and Method through Positive Psychology, Castaneda's Teaching, comparative evaluation, agreements/conflicts/differences, evaluation, conclusion, and sources. The main-body DOC starts at printed page 1 with chapter 1 and ends at printed page 88 with sources; the front matter is a separate companion file, not missing content."
         },
         {
           "id": "second-version",
