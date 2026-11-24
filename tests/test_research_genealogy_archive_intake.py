@@ -194,13 +194,28 @@ class TestResearchGenealogyArchiveIntake(unittest.TestCase):
             "https://www.slideshare.net/slideshow/example/12345",
         )
 
-    def test_registry_items_are_limited_to_slide_share_platform(self):
+    def test_registry_items_include_primary_and_nested_slide_share_urls_only(self):
         registry = {
             "artefacts": [
                 {
                     "id": "slide-a",
+                    "title": "Primary deck",
                     "platform": "SlideShare",
                     "url": "https://www.slideshare.net/slideshow/a/111",
+                    "representations": [
+                        {
+                            "id": "slide-a-en",
+                            "platform": "SlideShare",
+                            "representation_type": "english-readers-edition",
+                            "url": "https://www.slideshare.net/slideshow/a-en/112",
+                            "title": "Primary deck — English reader's edition",
+                        },
+                        {
+                            "id": "other-platform",
+                            "platform": "Google Gemini",
+                            "url": "https://gemini.google.com/share/abc",
+                        },
+                    ],
                 },
                 {
                     "id": "other",
@@ -215,7 +230,13 @@ class TestResearchGenealogyArchiveIntake(unittest.TestCase):
             ]
         }
         records = intake.slideshare_registry_items(registry)
-        self.assertEqual([item["id"] for item in records], ["slide-a"])
+        self.assertEqual([item["id"] for item in records], ["slide-a", "slide-a-en"])
+        self.assertEqual(
+            [item["_registry_entry_type"] for item in records],
+            ["artefact", "representation"],
+        )
+        self.assertEqual(records[1]["_registry_parent_artefact_id"], "slide-a")
+        self.assertEqual(records[1]["title"], "Primary deck — English reader's edition")
 
 
 if __name__ == "__main__":
