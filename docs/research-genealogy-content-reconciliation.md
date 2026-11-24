@@ -191,7 +191,7 @@ Tasks:
 | Phase | Work packages | Exit condition |
 |---|---|---|
 | A — Inventory | WP1 + initial WP6 | All 49 profile-export URLs are classified as existing, new, nested, unresolved, or out of scope; content review can continue separately |
-| B — High-value identity | WP2 + WP3 | The nine-report SEO-pillar series, additional model-specific assessments, and six independently attributed SlideShare meta-analyses have stable identities; Manus PDF and Manus web output are retained as separate records, with their source/derivation relationship unresolved |
+| B — High-value identity | WP2 + WP3 | The nine-report SEO-pillar series, additional model-specific assessments, and seven directly reviewed SlideShare meta-analysis outputs have stable identities; Manus PDF and Manus web output are retained as separate records, with their source/derivation relationship unresolved |
 | C — Platform reconciliation | WP4 | Accessible AI shares and deployed outputs have evidence-based relationships or explicit unresolved status |
 | D — Historical context | WP5 | Older materials are separated into relevant context and unrelated collection items |
 | E — Archive completion | WP6 | Every confirmed manifestation has its archive-query state and inspected captures where available |
