@@ -95,7 +95,7 @@
           "archive": "Archive.today / Archive.is",
           "url": "https://archive.is/Bq8tr",
           "captured_at": null,
-          "role": "corroborating-archived-copy"
+          "role": "corroborating-archive-copy"
         }
       ]
     }
@@ -467,7 +467,7 @@
             "archive": "Archive.today / Archive.is",
             "url": "https://archive.is/Bq8tr",
             "captured_at": null,
-            "role": "corroborating-archived-copy"
+            "role": "corroborating-archive-copy"
           }
         ]
       },
