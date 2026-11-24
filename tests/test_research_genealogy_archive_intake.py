@@ -135,6 +135,31 @@ class TestResearchGenealogyArchiveIntake(unittest.TestCase):
                 "id": "invalid", "query": "invalid"
             })
 
+    def test_search_tavily_stops_after_first_plan_limit_response(self):
+        import io
+        from unittest.mock import patch
+        from urllib.error import HTTPError
+
+        body = (
+            b'{"detail":{"error":"This request exceeds your plan\'s set usage limit."}}'
+        )
+        error = HTTPError(
+            "https://api.tavily.com/search",
+            432,
+            "Usage limit exceeded",
+            hdrs=None,
+            fp=io.BytesIO(body),
+        )
+        with patch.object(intake, "urlopen", side_effect=error) as mocked:
+            with patch.object(intake.time, "sleep"):
+                candidates, status = intake.search_tavily("test-api-key")
+        self.assertEqual(candidates, [])
+        self.assertEqual(mocked.call_count, 1)
+        self.assertEqual(status["queries_attempted"], 1)
+        self.assertTrue(status["blocked_by_plan_limit"])
+        self.assertEqual(len(status["errors"]), 1)
+
+
     def test_search_tavily_without_key_is_explicitly_disabled(self):
         candidates, status = intake.search_tavily(None)
         self.assertEqual(candidates, [])
