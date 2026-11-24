@@ -12,6 +12,7 @@
 - Semantic Change Feed events JSON: https://vocab.danielberanek.cz/semantic-change-feed/events.json
 - Semantic Change Feed JSON Schema: https://vocab.danielberanek.cz/semantic-change-feed/schema.json
 - Corpus Metadata Registry technical guide: https://vocab.danielberanek.cz/metadata/README.md
+- Research Genealogy frontend: https://vocab.danielberanek.cz/research-genealogy/
 - Research Genealogy Registry: https://vocab.danielberanek.cz/metadata/research-genealogy.json
 - Research Genealogy JSON Schema: https://vocab.danielberanek.cz/metadata/research-genealogy.schema.json
 - Research Genealogy technical guide: https://vocab.danielberanek.cz/docs/research-genealogy.md
