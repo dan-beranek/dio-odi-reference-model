@@ -1,0 +1,547 @@
+#!/usr/bin/env python3
+"""Prepare a review-only Internet Archive CDX inventory for SlideShare research items.
+
+This script does not edit the canonical Research Genealogy registry. It reads the
+public profile HTML and the registry, discovers links in those representations,
+queries the public Wayback CDX index for the profile and each discovered
+presentation URL, and writes a JSON/Markdown review report.
+"""
+from __future__ import annotations
+
+import argparse
+import html
+import json
+import re
+import sys
+import time
+from datetime import datetime, timezone
+from html.parser import HTMLParser
+from pathlib import Path
+from typing import Any
+from urllib.error import HTTPError, URLError
+from urllib.parse import parse_qs, urlencode, urljoin, urlsplit, urlunsplit
+from urllib.request import Request, urlopen
+
+ROOT = Path(__file__).resolve().parents[1]
+REGISTRY_PATH = ROOT / "metadata" / "research-genealogy.json"
+DEFAULT_OUTPUT_DIR = ROOT / "research-genealogy-archive-output"
+CDX_ENDPOINT = "https://web.archive.org/cdx/search/cdx"
+USER_AGENT = "DIO-ODI-Research-Genealogy-Archive-Intake/0.1 (+https://vocab.danielberanek.cz/)"
+MAX_RESPONSE_BYTES = 25_000_000
+SLIDESHOW_PATH_PREFIXES = ("/slideshow/", "/document/", "/infographics/", "/presentation/")
+CDX_FIELDS = "timestamp,original,mimetype,statuscode,digest,length"
+
+
+class IntakeError(RuntimeError):
+    """Raised when a public resource cannot be inspected reliably."""
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def normalized_url(value: str) -> str:
+    """Normalize harmless host/scheme/trailing-slash differences for matching."""
+    parsed = urlsplit(value.strip())
+    if parsed.scheme.lower() not in ("http", "https") or not parsed.netloc:
+        return ""
+    host = parsed.netloc.lower().split("@")[-1]
+    if host.endswith(":80") and parsed.scheme.lower() == "http":
+        host = host[:-3]
+    elif host.endswith(":443") and parsed.scheme.lower() == "https":
+        host = host[:-4]
+    if host.startswith("www."):
+        host = host[4:]
+    path = parsed.path or "/"
+    if path != "/":
+        path = path.rstrip("/")
+    query = parsed.query
+    return urlunsplit(("https", host, path, query, ""))
+
+
+def is_slideshare_url(value: str) -> bool:
+    parsed = urlsplit(value)
+    host = (parsed.hostname or "").lower()
+    return (
+        (host == "slideshare.net" or host.endswith(".slideshare.net"))
+        and any(parsed.path.startswith(prefix) for prefix in SLIDESHOW_PATH_PREFIXES)
+    )
+
+
+class LinkExtractor(HTMLParser):
+    """Extract visible anchors and labels from public profile HTML."""
+
+    def __init__(self, base_url: str) -> None:
+        super().__init__(convert_charrefs=True)
+        self.base_url = base_url
+        self.links: list[dict[str, str]] = []
+        self._anchor: dict[str, str] | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = {key.lower(): (value or "") for key, value in attrs}
+        if tag.lower() == "a":
+            href = values.get("href", "").strip()
+            if href:
+                self._anchor = {
+                    "url": urljoin(self.base_url, html.unescape(href)),
+                    "label": values.get("aria-label") or values.get("title") or values.get("alt") or "",
+                }
+
+    def handle_data(self, data: str) -> None:
+        if self._anchor is not None and data.strip():
+            current = self._anchor.get("label", "")
+            self._anchor["label"] = (current + " " + data.strip()).strip()
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() == "a" and self._anchor is not None:
+            self.links.append(self._anchor)
+            self._anchor = None
+
+
+def extract_slideshow_links(document: str, base_url: str) -> list[dict[str, str]]:
+    parser = LinkExtractor(base_url)
+    parser.feed(document)
+    parser.close()
+    found: dict[str, dict[str, str]] = {}
+    for item in parser.links:
+        url = item["url"].split("#", 1)[0]
+        if not is_slideshare_url(url):
+            continue
+        key = normalized_url(url)
+        if key and key not in found:
+            found[key] = {"url": url, "label": item.get("label", "")[:300]}
+    # Some profile templates retain absolute links in inline JSON/script payloads.
+    # These are treated as locators only; the visible uploader context still comes
+    # from the public profile page or an author-maintained registry entry.
+    for match in re.findall(
+        r"https?://(?:www\\.)?(?:[a-z0-9-]+\\.)?slideshare\\.net/(?:slideshow|document|infographics|presentation)/[^\\s\\"'<>\\\\]+",
+        document,
+        flags=re.IGNORECASE,
+    ):
+        url = html.unescape(match).rstrip("),;]")
+        key = normalized_url(url)
+        if key and key not in found and is_slideshare_url(url):
+            found[key] = {"url": url, "label": ""}
+    return list(found.values())
+
+
+def fetch_bytes(url: str, accept: str = "text/html,application/json;q=0.9,*/*;q=0.8",
+                retries: int = 3, timeout: int = 35) -> tuple[bytes, dict[str, str], int]:
+    last_error: Exception | None = None
+    for attempt in range(retries):
+        request = Request(url, headers={"Accept": accept, "User-Agent": USER_AGENT})
+        try:
+            with urlopen(request, timeout=timeout) as response:
+                body = response.read(MAX_RESPONSE_BYTES + 1)
+                if len(body) > MAX_RESPONSE_BYTES:
+                    raise IntakeError(f"Response exceeds {MAX_RESPONSE_BYTES} bytes: {url}")
+                headers = {key.lower(): value for key, value in response.headers.items()}
+                return body, headers, response.status
+        except HTTPError as exc:
+            detail = exc.read(500).decode("utf-8", errors="replace")
+            last_error = IntakeError(f"HTTP {exc.code} for {url}: {detail}")
+            if exc.code not in (408, 425, 429, 500, 502, 503, 504):
+                raise last_error from exc
+        except (URLError, TimeoutError, OSError) as exc:
+            last_error = IntakeError(f"Request failed for {url}: {exc}")
+        if attempt < retries - 1:
+            time.sleep(1.5 * (attempt + 1))
+    assert last_error is not None
+    raise last_error
+
+
+def fetch_text(url: str, accept: str = "text/html") -> tuple[str, dict[str, str], int]:
+    body, headers, status = fetch_bytes(url, accept)
+    try:
+        return body.decode("utf-8", errors="replace"), headers, status
+    except UnicodeDecodeError as exc:
+        raise IntakeError(f"Could not decode UTF-8 response: {url}") from exc
+
+
+def cdx_query(url: str, match_type: str = "exact", limit: int = 500) -> list[dict[str, str]]:
+    """Return all available CDX columns requested, preserving each capture row."""
+    params = [
+        ("url", url),
+        ("matchType", match_type),
+        ("output", "json"),
+        ("fl", CDX_FIELDS),
+        ("gzip", "false"),
+        ("limit", str(limit)),
+    ]
+    query_url = CDX_ENDPOINT + "?" + urlencode(params)
+    body, _, _ = fetch_bytes(query_url, accept="application/json,text/plain;q=0.9")
+    try:
+        payload = json.loads(body.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise IntakeError(f"CDX returned invalid JSON for {url}") from exc
+    if not isinstance(payload, list) or not payload:
+        return []
+    header = payload[0]
+    if not isinstance(header, list) or not all(isinstance(x, str) for x in header):
+        raise IntakeError(f"CDX response has no valid header row for {url}")
+    rows: list[dict[str, str]] = []
+    for raw in payload[1:]:
+        if isinstance(raw, list) and len(raw) == len(header):
+            rows.append({header[i]: str(raw[i]) for i in range(len(header))})
+    return rows
+
+
+def timestamp_to_iso(value: str) -> str | None:
+    if not re.fullmatch(r"\\d{14}", value or ""):
+        return None
+    try:
+        parsed = datetime.strptime(value, "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+    return parsed.isoformat().replace("+00:00", "Z")
+
+
+def archive_replay_url(timestamp: str, original: str) -> str:
+    return f"https://web.archive.org/web/{timestamp}/{original}"
+
+
+def archive_raw_url(timestamp: str, original: str) -> str:
+    return f"https://web.archive.org/web/{timestamp}id_/{original}"
+
+
+def profile_count(document: str) -> int | None:
+    match = re.search(r"\\b(\\d+)\\s+Slideshow\\b", document, flags=re.IGNORECASE)
+    return int(match.group(1)) if match else None
+
+
+def load_registry(path: Path = REGISTRY_PATH) -> dict[str, Any]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise IntakeError(f"Could not read Research Genealogy registry: {exc}") from exc
+    if not isinstance(data, dict):
+        raise IntakeError("Research Genealogy registry must be a JSON object")
+    return data
+
+
+def slideshare_registry_items(registry: dict[str, Any]) -> list[dict[str, Any]]:
+    result = []
+    for item in registry.get("artefacts", []):
+        if not isinstance(item, dict) or str(item.get("platform", "")).casefold() != "slideshare":
+            continue
+        if not is_slideshare_url(str(item.get("url", ""))):
+            continue
+        result.append(item)
+    return result
+
+
+def cdx_capture_record(row: dict[str, str]) -> dict[str, Any]:
+    timestamp = row.get("timestamp", "")
+    original = row.get("original", "")
+    return {
+        "timestamp": timestamp,
+        "captured_at": timestamp_to_iso(timestamp),
+        "original": original,
+        "mimetype": row.get("mimetype", ""),
+        "status_code": row.get("statuscode", ""),
+        "digest": row.get("digest", ""),
+        "length": row.get("length", ""),
+        "replay_url": archive_replay_url(timestamp, original) if timestamp and original else None,
+    }
+
+
+def markdown_report(report: dict[str, Any]) -> str:
+    stats = report["summary"]
+    lines = [
+        "# Research Genealogy — SlideShare / Wayback CDX intake",
+        "",
+        f"- Generated: {report['generated_at']}",
+        f"- Profile: {report['profile_url']}",
+        f"- Inventory coverage: **{report['inventory_completeness']}**",
+        "",
+        "## Summary",
+        "",
+        f"- SlideShare count reported by profile HTML: {stats.get('profile_reported_count')}",
+        f"- URLs discovered in current public profile HTML: {stats['current_profile_urls']}",
+        f"- URLs discovered in archived profile snapshots: {stats['archived_profile_urls']}",
+        f"- Known SlideShare artefacts in the canonical registry: {stats['registered_artefacts']}",
+        f"- Unique presentation URLs examined: {stats['unique_presentation_urls']}",
+        f"- CDX queries completed: {stats['cdx_queries_succeeded']} / {stats['cdx_queries_attempted']}",
+        f"- Capture records returned: {stats['capture_records']}",
+        f"- URLs without a corresponding registry artefact: {stats['unregistered_urls']}",
+        "",
+        "## Interpretation boundary",
+        "",
+        "This is a review-only discovery report. It does not modify the canonical Research Genealogy registry. Public SlideShare API access has been retired; this intake uses public profile HTML and the Internet Archive CDX index only. The profile may render only a subset of uploads in the HTML response, and archived profile snapshots may also be incomplete. Therefore, the report is not a claim of exhaustive coverage of all uploads.",
+        "",
+        "CDX records are archive-index observations, not upload or creation dates. A timestamp identifies an archived capture. Multiple host aliases, redirects, or duplicate capture records must be reconciled before being attached to one research artefact.",
+        "",
+        "## Presentation URL inventory",
+        "",
+        "| URL | Registry item | Captures | First capture (UTC) | Last capture (UTC) |",
+        "|---|---|---:|---|---|",
+    ]
+    for item in report["presentations"]:
+        captures = item["captures"]
+        dates = [c["captured_at"] for c in captures if c.get("captured_at")]
+        ids = ", ".join(item["registry_artefact_ids"]) or "Unmatched candidate"
+        lines.append(
+            f"| {item['url']} | {ids} | {len(captures)} | "
+            f"{min(dates) if dates else '—'} | {max(dates) if dates else '—'} |"
+        )
+    lines.extend(["", "## Source observations", ""])
+    for obs in report["profile_observations"]:
+        lines.append(
+            f"- {obs['kind']}: {obs['url']} — HTTP {obs.get('http_status', 'n/a')}; "
+            f"links extracted: {obs.get('links_extracted', 0)}; "
+            f"profile count: {obs.get('profile_reported_count')}"
+        )
+    if report["errors"]:
+        lines.extend(["", "## Errors and incomplete observations", ""])
+        lines.extend(f"- {error}" for error in report["errors"])
+    lines.extend([
+        "",
+        "## Next curation action",
+        "",
+        "Compare each unmatched presentation against the author's SlideShare profile and presentation page, verify uploader attribution, then attach only source-matched capture URLs and timestamps to the corresponding artefact. Keep unresolved matches in inventory leads rather than merging them by topic or URL similarity.",
+        "",
+    ])
+    return "\\n".join(lines)
+
+
+def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
+               delay_seconds: float = 0.15) -> dict[str, Any]:
+    registry = load_registry()
+    known = slideshare_registry_items(registry)
+    profile_collection = next(
+        (item for item in registry.get("source_collections", [])
+         if item.get("id") == "slideshare-danielberanek"),
+        None,
+    )
+    if not profile_collection:
+        raise IntakeError("The canonical SlideShare source collection is missing")
+    profile_url = profile_collection["url"].rstrip("/")
+    profile_variants = [
+        profile_url,
+        profile_url + "?tab=presentations",
+    ]
+
+    errors: list[str] = []
+    profile_observations: list[dict[str, Any]] = []
+    urls: dict[str, dict[str, Any]] = {}
+
+    def add_url(url: str, *, source_kind: str, source_url: str,
+                label: str = "", registry_item: dict[str, Any] | None = None) -> None:
+        key = normalized_url(url)
+        if not key:
+            return
+        entry = urls.setdefault(key, {
+            "url": url.split("#", 1)[0],
+            "labels": [],
+            "discovery_sources": [],
+            "registry_artefact_ids": [],
+        })
+        if label and label not in entry["labels"]:
+            entry["labels"].append(label[:300])
+        evidence = {"kind": source_kind, "source_url": source_url}
+        if evidence not in entry["discovery_sources"]:
+            entry["discovery_sources"].append(evidence)
+        if registry_item and registry_item.get("id") not in entry["registry_artefact_ids"]:
+            entry["registry_artefact_ids"].append(registry_item.get("id"))
+
+    # Start with the canonical registry: exact-URL CDX queries can still find
+    # earlier captures even when a presentation has disappeared from the profile.
+    for item in known:
+        add_url(item["url"], source_kind="canonical-registry",
+                source_url=REGISTRY_PATH.as_posix() if hasattr(REGISTRY_PATH, "as_posix") else str(REGISTRY_PATH),
+                label=item.get("title", ""), registry_item=item)
+
+    # Fetch both publicly visible profile variants and extract only presentation URLs.
+    current_profile_documents: list[tuple[str, str]] = []
+    profile_reported_count: int | None = None
+    for profile in profile_variants:
+        try:
+            document, _, status = fetch_text(profile)
+            count = profile_count(document)
+            if count is not None:
+                profile_reported_count = max(profile_reported_count or 0, count)
+            links = extract_slideshow_links(document, profile)
+            profile_observations.append({
+                "kind": "current-public-profile-html",
+                "url": profile,
+                "http_status": status,
+                "profile_reported_count": count,
+                "links_extracted": len(links),
+            })
+            current_profile_documents.append((profile, document))
+            for link in links:
+                add_url(link["url"], source_kind="current-public-profile-html",
+                        source_url=profile, label=link.get("label", ""))
+        except IntakeError as exc:
+            errors.append(f"Current profile fetch failed for {profile}: {exc}")
+
+    # Use only documented CDX query parameters. No undocumented SlideShare API is
+    # called. Archive profile captures can reveal historical profile link sets.
+    profile_captures: dict[str, dict[str, str]] = {}
+    for profile in profile_variants:
+        parsed = urlsplit(profile)
+        host_path = (parsed.netloc + parsed.path).rstrip("/")
+        for query_url, match_type in ((host_path, "exact"), (host_path + "/*", "prefix")):
+            try:
+                rows = cdx_query(query_url, match_type=match_type, limit=1000)
+                for row in rows:
+                    if row.get("statuscode") != "200" or row.get("mimetype") != "text/html":
+                        continue
+                    key = "|".join((row.get("timestamp", ""), row.get("original", "")))
+                    profile_captures[key] = row
+            except IntakeError as exc:
+                errors.append(f"Profile CDX query failed for {query_url}: {exc}")
+            time.sleep(delay_seconds)
+
+    sorted_profile_captures = sorted(
+        profile_captures.values(), key=lambda row: row.get("timestamp", ""), reverse=True
+    )[:profile_snapshot_limit]
+    archived_profile_urls: set[str] = set()
+    for row in sorted_profile_captures:
+        timestamp = row.get("timestamp", "")
+        original = row.get("original", "")
+        snapshot_url = archive_raw_url(timestamp, original)
+        try:
+            document, _, status = fetch_text(snapshot_url)
+            links = extract_slideshow_links(document, original)
+            profile_observations.append({
+                "kind": "archived-profile-html",
+                "url": archive_replay_url(timestamp, original),
+                "http_status": status,
+                "captured_at": timestamp_to_iso(timestamp),
+                "profile_reported_count": profile_count(document),
+                "links_extracted": len(links),
+            })
+            for link in links:
+                key = normalized_url(link["url"])
+                if key:
+                    archived_profile_urls.add(key)
+                add_url(link["url"], source_kind="archived-profile-html",
+                        source_url=archive_replay_url(timestamp, original),
+                        label=link.get("label", ""))
+        except IntakeError as exc:
+            errors.append(f"Archived profile fetch failed for {snapshot_url}: {exc}")
+        time.sleep(delay_seconds)
+
+    if len(urls) > url_limit:
+        # Keep all registry-known URLs; truncate only extra discovered candidates.
+        registry_keys = {
+            normalized_url(item["url"]) for item in known
+        }
+        ordered_keys = sorted(
+            urls,
+            key=lambda key: (key not in registry_keys, key),
+        )
+        urls = {key: urls[key] for key in ordered_keys[:url_limit]}
+
+    presentation_results: list[dict[str, Any]] = []
+    query_successes = 0
+    query_attempts = 0
+    capture_total = 0
+    for key, item in sorted(urls.items(), key=lambda pair: pair[1]["url"].casefold()):
+        parsed = urlsplit(item["url"])
+        target = parsed.netloc + parsed.path
+        if parsed.query:
+            target += "?" + parsed.query
+        query_attempts += 1
+        try:
+            rows = cdx_query(target, match_type="exact", limit=1000)
+            query_successes += 1
+            captures = [cdx_capture_record(row) for row in rows]
+            captures.sort(key=lambda capture: capture.get("timestamp", ""))
+            capture_total += len(captures)
+            presentation_results.append({
+                **item,
+                "captures": captures,
+                "capture_count": len(captures),
+                "first_capture": next((c["captured_at"] for c in captures if c.get("captured_at")), None),
+                "last_capture": next((c["captured_at"] for c in reversed(captures) if c.get("captured_at")), None),
+            })
+        except IntakeError as exc:
+            errors.append(f"Presentation CDX query failed for {item['url']}: {exc}")
+            presentation_results.append({**item, "captures": [], "capture_count": 0,
+                                         "query_error": str(exc)})
+        time.sleep(delay_seconds)
+
+    unmatched = [item for item in presentation_results if not item["registry_artefact_ids"]]
+    current_profile_urls = {
+        normalized_url(item["url"])
+        for item in urls.values()
+        if any(s["kind"] == "current-public-profile-html" for s in item["discovery_sources"])
+    }
+    current_count = sum(
+        1 for item in urls.values()
+        if any(s["kind"] == "current-public-profile-html" for s in item["discovery_sources"])
+    )
+    summary = {
+        "profile_reported_count": profile_reported_count,
+        "current_profile_urls": current_count,
+        "archived_profile_urls": len(archived_profile_urls),
+        "registered_artefacts": len(known),
+        "unique_presentation_urls": len(presentation_results),
+        "cdx_queries_attempted": query_attempts + len(profile_variants) * 2,
+        "cdx_queries_succeeded": query_successes + sum(
+            1 for obs in profile_observations if obs["kind"] == "archived-profile-html"
+        ),
+        "capture_records": capture_total,
+        "unregistered_urls": len(unmatched),
+        "profile_snapshots_inspected": len(sorted_profile_captures),
+    }
+    report = {
+        "report_version": "0.1.0",
+        "generated_at": utc_now(),
+        "source_collection_id": profile_collection["id"],
+        "profile_url": profile_url,
+        "profile_variants": profile_variants,
+        "registry_version": registry.get("registry_version"),
+        "inventory_completeness": "partial",
+        "completeness_note": (
+            "The report is limited to canonical registry URLs plus links visible in the "
+            "current public profile HTML and the inspected Wayback profile snapshots. "
+            "SlideShare's public API is retired and the website does not expose a documented "
+            "replacement API. Profile HTML can show only part of the uploads; no exhaustive "
+            "claim is made."
+        ),
+        "summary": summary,
+        "profile_observations": profile_observations,
+        "presentations": presentation_results,
+        "unmatched_candidates": unmatched,
+        "errors": errors,
+    }
+    return report
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--profile-snapshot-limit", type=int, default=40)
+    parser.add_argument("--url-limit", type=int, default=150)
+    parser.add_argument("--delay-seconds", type=float, default=0.15)
+    args = parser.parse_args()
+    if args.profile_snapshot_limit < 0 or args.url_limit < 1 or args.delay_seconds < 0:
+        parser.error("limits and delay must be non-negative; url-limit must be at least 1")
+    try:
+        report = run_intake(
+            profile_snapshot_limit=args.profile_snapshot_limit,
+            url_limit=args.url_limit,
+            delay_seconds=args.delay_seconds,
+        )
+    except IntakeError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    json_path = args.output_dir / "research-genealogy-archive-candidates.json"
+    markdown_path = args.output_dir / "research-genealogy-archive-candidates.md"
+    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    markdown_path.write_text(markdown_report(report), encoding="utf-8")
+    print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
+    if report["errors"]:
+        print(f"Completed with {len(report['errors'])} recoverable source errors.", file=sys.stderr)
+    if report["summary"]["cdx_queries_succeeded"] == 0:
+        print("No CDX queries succeeded; report is incomplete.", file=sys.stderr)
+        return 2
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
