@@ -1,6 +1,6 @@
 {
-  "registry_version": "0.3.3",
-  "schema_version": "0.3.0",
+  "registry_version": "0.3.4",
+  "schema_version": "0.3.1",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
   "title": "DIO/ODI Research Genealogy Registry",
@@ -285,6 +285,198 @@
         "basis": "author-confirmed",
         "note": "No public Masaryk University Information System or Theses.cz page exists for this thesis. Its public bibliographic trail is the author's academic-publications record and the ResearchGate full-text page/DOI."
       }
+    },
+    {
+      "id": "positive-psychology-and-spiritual-streams-thesis",
+      "title": "Aktualizace východisek a možností pozitivní psychologie",
+      "uri": "https://is.muni.cz/th/k2bkc/",
+      "object_type": "university-masters-thesis-version-lineage",
+      "status": "two-submission-lineage-second-attempt-successfully-defended",
+      "description": "A 2009 master's thesis in Psychology at Masaryk University's Faculty of Social Studies, preserved as a two-attempt version lineage. The first registered submission is titled “Pozitivní psychologie a vybrané duchovní směry: komparativní analýza” (IS MU record wknmn); the second, successfully defended submission is titled “Aktualizace východisek a možností pozitivní psychologie” (IS MU record k2bkc). The second-version PDF explicitly documents that it retains 71% similarity to the first version and represents a 29% textual revision. Its method combines reconstruction, reproduction, comparison, interpretation, and extrapolation of two closely related but differently coded perspectives, explicitly inspired by Gregory Bateson's binocular-vision principle. Its secondary theoretical background names semiotics, Derrida's différance, ethnomethodology, and critical discourse analysis, including context-dependent meaning and discourse as a power practice.",
+      "components": [
+        "first IS MU submission record and thesis metadata: wknmn",
+        "second IS MU submission record and successful defense: k2bkc",
+        "ResearchGate full-text PDF of the second version, 126 pages",
+        "explicit methodological use of Gregory Bateson's binocular-vision principle",
+        "reconstruction and reproduction of differently coded conceptual perspectives",
+        "comparison, interpretation, and extrapolation into new perspectives",
+        "secondary theoretical background: Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis",
+        "version-history note documenting 71% similarity and 29% textual revision between the two submissions"
+      ],
+      "role_in_genealogy": "A direct methodological antecedent in the DIO/ODI lineage. The thesis formalizes a method of reconstructing and comparing differently coded perspectives to produce new logical information and interpretive depth. The professional ethnography explicitly carries this binocular-perspective principle into ongoing professional practice, including the comparison of human language effectiveness with search/AI algorithms and business aims with people's needs and emotions. The thesis also records a secondary theoretical backdrop of semiotics and discourse analysis, including contextual meaning and discourse as a power practice. This establishes methodological and conceptual continuity without treating the 2009 thesis as the source of DIO's specific identity-optimization concepts.",
+      "publication_date": "2009",
+      "publication_date_basis": "Both IS MU records identify 2009. The second-attempt record k2bkc records successful defense on 2 June 2009.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University Information System — first submission, Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "url": "https://is.muni.cz/th/wknmn/",
+          "role": "first-submission-institutional-record"
+        },
+        {
+          "title": "Masaryk University Information System — second submission, Aktualizace východisek a možností pozitivní psychologie",
+          "url": "https://is.muni.cz/th/k2bkc/",
+          "role": "second-submission-institutional-record-and-successful-defense"
+        },
+        {
+          "title": "ResearchGate — second-version full text and DOI",
+          "url": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
+          "role": "second-version-full-text-and-identifier-record"
+        }
+      ],
+      "conceptual_themes": [
+        {
+          "theme": "binocular-perspective-and-cross-coded-comparison",
+          "description": "Combines closely related but differently coded perspectives to produce a new logical type of information and interpretive depth, following Gregory Bateson's binocular-vision principle."
+        },
+        {
+          "theme": "reconstruction-reproduction-comparison-and-extrapolation",
+          "description": "Reconstructs and reproduces two thought systems, compares and interprets them, then extrapolates new perspectives from their differences."
+        },
+        {
+          "theme": "semiotics-and-contextual-meaning",
+          "description": "The secondary theoretical background explicitly includes Saussure, Barthes, and Derrida's différance; meaning is treated as context-dependent and continually deferred."
+        },
+        {
+          "theme": "discourse-and-power",
+          "description": "Critical discourse analysis is listed among the secondary theoretical foundations; the thesis notes that discourse production is a power practice and that scientific language is not a neutral meta-language."
+        },
+        {
+          "theme": "recipient-and-perspective-specificity",
+          "description": "The thesis argues for identifying a specific recipient and clarifying the perspective from which evaluative or applied claims are made."
+        }
+      ],
+      "publication_records": [
+        {
+          "record_type": "institutional-thesis-record",
+          "title": "IS MU — Pozitivní psychologie a vybrané duchovní směry: komparativní analýza (first submission)",
+          "url": "https://is.muni.cz/th/wknmn/",
+          "role": "first-submission-institutional-record"
+        },
+        {
+          "record_type": "institutional-thesis-record",
+          "title": "IS MU — Aktualizace východisek a možností pozitivní psychologie (second submission)",
+          "url": "https://is.muni.cz/th/k2bkc/",
+          "role": "second-submission-institutional-record; successfully defended on 2 June 2009"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — Aktualizace východisek a možností pozitivní psychologie",
+          "url": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
+          "role": "full-text PDF and DOI page for the second submission"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "DOI",
+          "value": "10.13140/RG.2.2.32958.86087",
+          "uri": "https://doi.org/10.13140/RG.2.2.32958.86087",
+          "provider": "ResearchGate",
+          "role": "persistent identifier for the second, successfully defended thesis version",
+          "version_id": "second-submission"
+        }
+      ],
+      "institutional_record_status": {
+        "status": "public-record-available",
+        "basis": "directly-verified",
+        "note": "Two IS MU records document the first and second thesis submissions; the second submission was successfully defended on 2 June 2009."
+      },
+      "versions": [
+        {
+          "id": "first-submission",
+          "title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "record_uri": "https://is.muni.cz/th/wknmn/",
+          "submission_attempt": 1,
+          "status": "not-defended-on-first-attempt",
+          "notes": "The IS MU record identifies this as the earlier submission. The author-maintained professional ethnography describes subsequent rewriting and renaming before the successful second attempt."
+        },
+        {
+          "id": "second-submission",
+          "title": "Aktualizace východisek a možností pozitivní psychologie",
+          "record_uri": "https://is.muni.cz/th/k2bkc/",
+          "submission_attempt": 2,
+          "status": "successfully-defended",
+          "defended_on": "2009-06-02",
+          "similarity_to_previous_version_percent": 71,
+          "revision_extent_percent": 29,
+          "doi": "10.13140/RG.2.2.32958.86087",
+          "full_text_uri": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
+          "notes": "The full text explicitly documents the second-version changes and reports 71% textual similarity to the first version, corresponding to a 29% revision."
+        }
+      ]
+    },
+    {
+      "id": "suicidal-cults-power-situation-thesis",
+      "title": "Klíčové aspekty sebevražedných sekt z hlediska jedince",
+      "uri": "https://is.muni.cz/th/d2622/",
+      "object_type": "university-bachelors-thesis",
+      "status": "preserved-university-record-and-full-text",
+      "description": "A 2006 bachelor's thesis in Psychology at Masaryk University's Faculty of Social Studies. It analyses Jonestown, the Branch Davidians, and the Order of the Solar Temple through concepts of prestige, identification, group narcissism, conformity, obedience, psychological manipulation, cognitive dissonance, memetics, and ideology from a semiotic perspective. The author supports the use of these concepts through textual analysis and synthesizes the findings into a unified model of the power situation. The full text also examines control of behaviour, thought, emotions, and information, the protection of group memes, and propaganda techniques.",
+      "components": [
+        "Masaryk University Information System record and bibliographic metadata",
+        "ResearchGate full-text page and PDF",
+        "analysis of three historical groups: People's Temple/Jonestown, Branch Davidians/Waco, and Order of the Solar Temple",
+        "psychological concepts of prestige, identification, group narcissism, conformity, obedience, and cognitive dissonance",
+        "analysis of psychological manipulation through control of behaviour, thought, emotion, and information",
+        "memetics, ideological structures, semiotic analysis, and propaganda techniques",
+        "synthesis of partial analytical insights into a model of the power situation"
+      ],
+      "role_in_genealogy": "A direct psychological and communication-theoretical antecedent in the professional-ethnography lineage. The ethnography explicitly revisits the thesis's model of the power situation and translates the analysis of identity, authority, group meaning, persuasion, and information control into a reflection on commercial conversion and brand communication. This is a specific antecedent strand within the broader DIO/ODI research object, not a claim that the 2006 thesis itself formulated DIO.",
+      "publication_date": "2006",
+      "publication_date_basis": "The IS MU record identifies the work as a 2006 bachelor's thesis and records successful defense on 9 June 2006.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University Information System — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://is.muni.cz/th/d2622/",
+          "role": "official-university-record-and-thesis-citation"
+        },
+        {
+          "title": "ResearchGate — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://www.researchgate.net/publication/256483475_Klicove_aspekty_sebevrazednych_sekt_z_hlediska_jedince",
+          "role": "public-full-text-and-content-source"
+        }
+      ],
+      "publication_records": [
+        {
+          "record_type": "institutional-thesis-record",
+          "title": "Masaryk University Information System — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://is.muni.cz/th/d2622/",
+          "role": "official-institutional-bibliographic-record"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://www.researchgate.net/publication/256483475_Klicove_aspekty_sebevrazednych_sekt_z_hlediska_jedince",
+          "role": "full-text PDF page"
+        }
+      ],
+      "identifiers": [],
+      "institutional_record_status": {
+        "status": "public-record-available",
+        "basis": "directly-verified",
+        "note": "The IS MU record is public and lists the thesis as successfully defended on 9 June 2006."
+      },
+      "conceptual_themes": [
+        {
+          "theme": "power-situation-model",
+          "description": "Synthesizes the psychological and communication mechanisms identified across the three case studies into a unified model of the power situation."
+        },
+        {
+          "theme": "identity-identification-and-conformity",
+          "description": "Examines prestige, identification, group narcissism, conformity, obedience, and social attachment to group structures."
+        },
+        {
+          "theme": "information-control-and-memetic-protection",
+          "description": "Analyses control of information, censorship of communication channels, differentiated truth levels, and protection of group memes."
+        },
+        {
+          "theme": "semiotics-ideology-and-propaganda",
+          "description": "Examines ideology from a semiotic perspective and identifies symbolic and rhetorical propaganda techniques."
+        },
+        {
+          "theme": "psychological-manipulation",
+          "description": "Explores manipulation through the control of behaviour, thought, emotions, and information."
+        }
+      ]
     }
   ],
   "research_processes": [
@@ -3257,6 +3449,18 @@
       "relation": "possible-source-document-for (author-suggested; not confirmed)",
       "object_id": "manus-eeat-meta-analysis-b4jrwdnu",
       "evidence_url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "reapplies-and-translates-the-model-of-power-situation-from",
+      "object_id": "suicidal-cults-power-situation-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "reapplies-the-binocular-perspective-method-from",
+      "object_id": "positive-psychology-and-spiritual-streams-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
     }
   ],
   "research_clusters": [
