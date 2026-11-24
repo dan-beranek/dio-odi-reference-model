@@ -40,7 +40,7 @@ jobs:
   collect-wayback-observations:
     name: Collect review-only SlideShare archive observations
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Check out canonical Research Genealogy
         uses: actions/checkout@v4
@@ -51,6 +51,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Install Playwright and Chromium for rendered public profile discovery
+        run: |
+          python -m pip install --disable-pip-version-check playwright
+          python -m playwright install --with-deps chromium
 
       - name: Run archive-intake unit tests
         run: python -m unittest discover -s tests -p "test_research_genealogy_archive_intake.py" -v
