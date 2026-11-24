@@ -1,6 +1,6 @@
 {
-  "registry_version": "0.3.5",
-  "schema_version": "0.3.2",
+  "registry_version": "0.3.6",
+  "schema_version": "0.3.3",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
   "title": "DIO/ODI Research Genealogy Registry",
@@ -288,52 +288,61 @@
     },
     {
       "id": "positive-psychology-and-spiritual-streams-thesis",
-      "title": "Pozitivní psychologie a Castanedovo učení / Aktualizace východisek a možností pozitivní psychologie",
-      "uri": "https://is.muni.cz/th/k2bkc/",
+      "title": "Pozitivní psychologie a Castanedovo učení — thesis development and submission lineage",
+      "uri": "https://is.muni.cz/th/wknmn/",
       "object_type": "university-masters-thesis-version-lineage",
-      "status": "first-attempt-not-defended; second-revised-version-successfully-defended",
-      "description": "A 2009 master's-thesis lineage in Psychology at Masaryk University's Faculty of Social Studies. The first version, titled “Pozitivní psychologie a Castanedovo učení: komparativní analýza”, was not defended at the first attempt. It was rewritten and retitled “Aktualizace východisek a možností pozitivní psychologie”, then successfully defended on 2 June 2009. The author describes the second version as a 29% revision, with cited sources increasing from 173 to 257 and footnotes from 182 to 573. The methodological core combines analogous but differently coded perspectives using Gregory Bateson's binocular-vision principle, then reconstructs, reproduces, compares, interprets, and extrapolates them. The second version's secondary theoretical background explicitly includes semiotics, Derrida's différance, ethnomethodology, and critical discourse analysis, including context-dependent meaning and discourse as a power practice.",
+      "status": "multi-file-first-submission-not-defended; second-submission-successfully-defended",
+      "description": "A 2008–2009 master's-thesis development lineage in Psychology at Masaryk University's Faculty of Social Studies. The IS MU archive contains multiple separately stored files from successive stages. An earlier file named Pozitivni_psychologie_a_Castanedovo_uceni.doc is dated 20 May 2008. The first registered examination attempt on 20 January 2009 was not defended; its 5 January 2009 body file is titled “Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení” and is accompanied by a separately stored file “uvodni_strany_a_obsah” containing the opening pages and table of contents. The uploaded 88-page DOC contains the main body (chapters 1–10, conclusion, and sources), but not those separately stored opening pages. A later separate file “uvodni_strany.doc” is dated 29 May 2009; its association with the second attempt is not yet established. The second submission, retitled “Aktualizace východisek a možností pozitivní psychologie”, was successfully defended on 2 June 2009. Its method combines analogous but differently coded perspectives using Gregory Bateson's binocular-vision principle and explicitly draws on semiotics, Derrida's différance, ethnomethodology, and critical discourse analysis.",
       "components": [
-        "first thesis version: Pozitivní psychologie a Castanedovo učení: komparativní analýza",
-        "first-version archived PDF supplied through the IS MU wknmn record",
-        "first attempt not defended",
-        "second version: Aktualizace východisek a možností pozitivní psychologie",
-        "second IS MU record and successful defense on 2 June 2009",
-        "ResearchGate DOI and full-text PDF for the second version",
-        "author-reported 29% revision between versions",
-        "bibliographic expansion from 173 to 257 cited sources",
-        "footnote expansion from 182 to 573 notes",
+        "IS MU thesis lineage record wknmn and its separately stored archive files",
+        "earlier file Pozitivni_psychologie_a_Castanedovo_uceni.doc, recorded 20 May 2008",
+        "first-attempt body file Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc, recorded 5 January 2009",
+        "separate first-attempt opening-pages-and-table-of-contents file uvodni_strany_a_obsah.doc, recorded 5 January 2009",
+        "uploaded 88-page DOC body containing chapters 1–10, conclusion, and references; opening pages/contents are not inside this file",
+        "separate uvodni_strany.doc file recorded 29 May 2009; relation to the second attempt not confirmed",
+        "second IS MU submission record k2bkc and successful defense on 2 June 2009",
+        "ResearchGate DOI and full-text PDF for the successful second version",
         "Gregory Bateson's binocular-vision principle and comparison of differently coded perspectives",
-        "secondary theoretical background: Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis"
+        "secondary theoretical background: semiotics, Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis"
       ],
-      "role_in_genealogy": "A direct methodological and conceptual antecedent in the DIO/ODI lineage. The thesis formalizes cross-perspective reconstruction and comparison as a way of producing additional depth and new information. The professional ethnography explicitly carries this binocular-perspective principle into ongoing practice, including the paired reading of human-language effectiveness and search/AI algorithms, and of business aims and people's needs/emotions. The thesis also brings semiotics, contextual meaning, and critical discourse analysis into the psychological work. It contributes a methodological and interpretive strand to the later DIO/ODI research object; it is not presented as an early formulation of DIO itself.",
+      "role_in_genealogy": "A direct methodological and conceptual antecedent in the DIO/ODI lineage. The successful second submission formalizes cross-perspective reconstruction and comparison as a way of producing additional depth and new information. The professional ethnography explicitly carries the binocular-perspective principle into ongoing practice, including the paired reading of human-language effectiveness and search/AI algorithms, and business aims and people's needs/emotions. The thesis line also brings semiotics, contextual meaning, and critical discourse analysis into the psychological work. The archived first-attempt material documents the development of this method before the successful second submission.",
       "publication_date": "2009",
-      "publication_date_basis": "Both submissions belong to 2009. The first attempt was not defended; the second version was successfully defended on 2 June 2009.",
+      "publication_date_basis": "The first attempt was scheduled for 20 January 2009 and was not defended. The second submission was successfully defended on 2 June 2009. An earlier file in the IS MU archive is dated 20 May 2008.",
       "date_evidence": [
         {
-          "title": "Masaryk University Information System — first submission record, wknmn",
+          "title": "Masaryk University Information System — first thesis record wknmn and its file inventory",
           "url": "https://is.muni.cz/th/wknmn/",
-          "role": "first-submission-record-and-archive-file-index"
+          "role": "institutional-record-and-archive-file-inventory"
         },
         {
-          "title": "First-version archive PDF — Pozitivní psychologie a Castanedovo učení",
+          "title": "Earlier file — Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf",
           "url": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
-          "role": "first-version-full-text-PDF"
+          "role": "separately archived file recorded 20 May 2008; content equivalence to the January 2009 body not yet reviewed"
+        },
+        {
+          "title": "First-attempt body DOC — Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "url": "https://is.muni.cz/th/wknmn/Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "role": "5 January 2009 main-text file, directly reviewed from author-supplied DOC"
+        },
+        {
+          "title": "First-attempt opening pages and contents — uvodni_strany_a_obsah.doc",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany_a_obsah.doc",
+          "role": "separately stored front matter listed for 5 January 2009"
+        },
+        {
+          "title": "Later opening-pages file — uvodni_strany.doc",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany.doc",
+          "role": "separately listed file recorded 29 May 2009; relationship to the second attempt not confirmed"
         },
         {
           "title": "Masaryk University Information System — second submission, Aktualizace východisek a možností pozitivní psychologie",
           "url": "https://is.muni.cz/th/k2bkc/",
-          "role": "second-submission-institutional-record-and-successful-defense"
-        },
-        {
-          "title": "Professional ethnography — Psychology, positive psychology, Bateson and Castaneda",
-          "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/",
-          "role": "author's account of first-version failure, second-version revision, and transfer of the binocular method into professional practice"
+          "role": "second-submission institutional record and successful defense"
         },
         {
           "title": "ResearchGate — second-version full text and DOI",
           "url": "https://doi.org/10.13140/RG.2.2.32958.86087",
-          "role": "persistent identifier and full-text page for the second version"
+          "role": "persistent identifier and full-text page for the successfully defended second version"
         }
       ],
       "conceptual_themes": [
@@ -363,13 +372,39 @@
           "record_type": "institutional-thesis-record",
           "title": "IS MU — first submission record wknmn",
           "url": "https://is.muni.cz/th/wknmn/",
-          "role": "first-submission-catalogue record"
+          "role": "institutional thesis record; first attempt was not defended on 20 January 2009"
         },
         {
-          "record_type": "first-version-archive-pdf",
-          "title": "Pozitivní psychologie a Castanedovo učení: komparativní analýza",
+          "record_type": "archived-working-file",
+          "title": "Pozitivni_psychologie_a_Castanedovo_uceni.doc / Archive.pdf",
           "url": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
-          "role": "full text of first thesis version; first attempt not defended"
+          "role": "separately stored earlier file recorded 20 May 2008; not yet content-compared with the January 2009 attempt",
+          "repository_file_date": "2008-05-20",
+          "content_review_status": "not-yet-compared"
+        },
+        {
+          "record_type": "first-attempt-main-text",
+          "title": "Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení",
+          "url": "https://is.muni.cz/th/wknmn/Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "role": "main body file recorded 5 January 2009; author-supplied DOC directly reviewed",
+          "repository_file_date": "2009-01-05",
+          "content_review_status": "reviewed"
+        },
+        {
+          "record_type": "first-attempt-front-matter",
+          "title": "DP Kvalitativní evaluace poz. PSY — úvodní strany a obsah",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany_a_obsah.doc",
+          "role": "separately stored title/opening pages and contents file recorded 5 January 2009; companion file listed alongside the main body",
+          "repository_file_date": "2009-01-05",
+          "relationship_status": "listed under same wknmn archive and same date as the main body"
+        },
+        {
+          "record_type": "later-front-matter-file",
+          "title": "uvodni_strany.doc",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany.doc",
+          "role": "separately listed file recorded 29 May 2009; association with the second attempt remains unconfirmed",
+          "repository_file_date": "2009-05-29",
+          "content_review_status": "not-reviewed"
         },
         {
           "record_type": "institutional-thesis-record",
@@ -397,24 +432,44 @@
       "institutional_record_status": {
         "status": "public-record-available",
         "basis": "directly-verified",
-        "note": "IS MU preserves the first submission at wknmn and the successfully defended second submission at k2bkc. The first full text is separately linked as an archive PDF."
+        "note": "The IS MU wknmn record lists the 20 January 2009 first attempt as not defended and exposes a set of separately stored files from 2008 and 2009. The k2bkc second attempt was successfully defended on 2 June 2009."
       },
       "versions": [
         {
-          "id": "first-version",
-          "title": "Pozitivní psychologie a Castanedovo učení: komparativní analýza",
+          "id": "earlier-archived-file-2008",
+          "title": "Pozitivní psychologie a Castanedovo učení",
           "catalogue_title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
           "record_uri": "https://is.muni.cz/th/wknmn/",
+          "source_file_uri": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni.doc",
           "full_text_uri": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
+          "repository_file_date": "2008-05-20",
+          "submission_attempt": 0,
+          "status": "earlier-archived-file; relationship-to-January-2009-body-not-yet-content-compared",
+          "content_review_status": "not-yet-compared",
+          "notes": "This is the exact Archive.pdf link originally supplied by the author. The IS MU file inventory lists its DOC, PDF, Archive.pdf, and TXT forms under the wknmn record and dates the DOC entry 20 May 2008. Do not treat it as the same binary/text as the separately listed January 2009 Kvalitativní evaluace file until compared."
+        },
+        {
+          "id": "first-attempt-2009",
+          "title": "Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení",
+          "catalogue_title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "record_uri": "https://is.muni.cz/th/wknmn/",
+          "source_file_uri": "https://is.muni.cz/th/wknmn/Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "front_matter_uri": "https://is.muni.cz/th/wknmn/uvodni_strany_a_obsah.doc",
+          "repository_file_date": "2009-01-05",
+          "front_matter_file_date": "2009-01-05",
           "submission_attempt": 1,
           "status": "not-defended",
-          "defense_status": "The first attempt was not defended; the author reports that the thesis was rewritten and retitled before the successful second attempt.",
-          "notes": "This is the first-version PDF supplied by the author. The IS MU record uses a different catalogue title, while the PDF filename and the professional-ethnography account identify the version as Pozitivní psychologie a Castanedovo učení: komparativní analýza."
+          "defense_status": "The IS MU record lists the first defense attempt on 20 January 2009 as not defended.",
+          "pages": 88,
+          "content_review_status": "main-body-reviewed; front-matter-file-not-yet-opened",
+          "relationship_status": "The main body and opening-pages/contents file are separately listed under the same IS MU record and have the same 5 January 2009 file date.",
+          "notes": "The author-supplied DOC contains the main body: chapter 1 Introduction through chapter 9 Conclusion and chapter 10 Sources. It starts at printed page 1 with chapter 1 and ends at printed page 88 with the bibliography. The title/opening pages and contents are a separate file named uvodni_strany_a_obsah.doc; the missing front matter is therefore not evidence that chapters are absent from this DOC."
         },
         {
           "id": "second-version",
           "title": "Aktualizace východisek a možností pozitivní psychologie",
           "record_uri": "https://is.muni.cz/th/k2bkc/",
+          "source_file_uri": "https://is.muni.cz/th/k2bkc/DP_Aktualizace_vychodisek_moznosti_pozitivni_psychologie.doc",
           "submission_attempt": 2,
           "status": "successfully-defended",
           "defended_on": "2009-06-02",
