@@ -1,6 +1,6 @@
 {
-  "registry_version": "0.3.4",
-  "schema_version": "0.3.1",
+  "registry_version": "0.3.5",
+  "schema_version": "0.3.2",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
   "title": "DIO/ODI Research Genealogy Registry",
@@ -288,29 +288,37 @@
     },
     {
       "id": "positive-psychology-and-spiritual-streams-thesis",
-      "title": "Aktualizace východisek a možností pozitivní psychologie",
+      "title": "Pozitivní psychologie a Castanedovo učení / Aktualizace východisek a možností pozitivní psychologie",
       "uri": "https://is.muni.cz/th/k2bkc/",
       "object_type": "university-masters-thesis-version-lineage",
-      "status": "two-submission-lineage-second-attempt-successfully-defended",
-      "description": "A 2009 master's thesis in Psychology at Masaryk University's Faculty of Social Studies, preserved as a two-attempt version lineage. The first registered submission is titled “Pozitivní psychologie a vybrané duchovní směry: komparativní analýza” (IS MU record wknmn); the second, successfully defended submission is titled “Aktualizace východisek a možností pozitivní psychologie” (IS MU record k2bkc). The second-version PDF explicitly documents that it retains 71% similarity to the first version and represents a 29% textual revision. Its method combines reconstruction, reproduction, comparison, interpretation, and extrapolation of two closely related but differently coded perspectives, explicitly inspired by Gregory Bateson's binocular-vision principle. Its secondary theoretical background names semiotics, Derrida's différance, ethnomethodology, and critical discourse analysis, including context-dependent meaning and discourse as a power practice.",
+      "status": "first-attempt-not-defended; second-revised-version-successfully-defended",
+      "description": "A 2009 master's-thesis lineage in Psychology at Masaryk University's Faculty of Social Studies. The first version, titled “Pozitivní psychologie a Castanedovo učení: komparativní analýza”, was not defended at the first attempt. It was rewritten and retitled “Aktualizace východisek a možností pozitivní psychologie”, then successfully defended on 2 June 2009. The author describes the second version as a 29% revision, with cited sources increasing from 173 to 257 and footnotes from 182 to 573. The methodological core combines analogous but differently coded perspectives using Gregory Bateson's binocular-vision principle, then reconstructs, reproduces, compares, interprets, and extrapolates them. The second version's secondary theoretical background explicitly includes semiotics, Derrida's différance, ethnomethodology, and critical discourse analysis, including context-dependent meaning and discourse as a power practice.",
       "components": [
-        "first IS MU submission record and thesis metadata: wknmn",
-        "second IS MU submission record and successful defense: k2bkc",
-        "ResearchGate full-text PDF of the second version, 126 pages",
-        "explicit methodological use of Gregory Bateson's binocular-vision principle",
-        "reconstruction and reproduction of differently coded conceptual perspectives",
-        "comparison, interpretation, and extrapolation into new perspectives",
-        "secondary theoretical background: Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis",
-        "version-history note documenting 71% similarity and 29% textual revision between the two submissions"
+        "first thesis version: Pozitivní psychologie a Castanedovo učení: komparativní analýza",
+        "first-version archived PDF supplied through the IS MU wknmn record",
+        "first attempt not defended",
+        "second version: Aktualizace východisek a možností pozitivní psychologie",
+        "second IS MU record and successful defense on 2 June 2009",
+        "ResearchGate DOI and full-text PDF for the second version",
+        "author-reported 29% revision between versions",
+        "bibliographic expansion from 173 to 257 cited sources",
+        "footnote expansion from 182 to 573 notes",
+        "Gregory Bateson's binocular-vision principle and comparison of differently coded perspectives",
+        "secondary theoretical background: Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis"
       ],
-      "role_in_genealogy": "A direct methodological antecedent in the DIO/ODI lineage. The thesis formalizes a method of reconstructing and comparing differently coded perspectives to produce new logical information and interpretive depth. The professional ethnography explicitly carries this binocular-perspective principle into ongoing professional practice, including the comparison of human language effectiveness with search/AI algorithms and business aims with people's needs and emotions. The thesis also records a secondary theoretical backdrop of semiotics and discourse analysis, including contextual meaning and discourse as a power practice. This establishes methodological and conceptual continuity without treating the 2009 thesis as the source of DIO's specific identity-optimization concepts.",
+      "role_in_genealogy": "A direct methodological and conceptual antecedent in the DIO/ODI lineage. The thesis formalizes cross-perspective reconstruction and comparison as a way of producing additional depth and new information. The professional ethnography explicitly carries this binocular-perspective principle into ongoing practice, including the paired reading of human-language effectiveness and search/AI algorithms, and of business aims and people's needs/emotions. The thesis also brings semiotics, contextual meaning, and critical discourse analysis into the psychological work. It contributes a methodological and interpretive strand to the later DIO/ODI research object; it is not presented as an early formulation of DIO itself.",
       "publication_date": "2009",
-      "publication_date_basis": "Both IS MU records identify 2009. The second-attempt record k2bkc records successful defense on 2 June 2009.",
+      "publication_date_basis": "Both submissions belong to 2009. The first attempt was not defended; the second version was successfully defended on 2 June 2009.",
       "date_evidence": [
         {
-          "title": "Masaryk University Information System — first submission, Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "title": "Masaryk University Information System — first submission record, wknmn",
           "url": "https://is.muni.cz/th/wknmn/",
-          "role": "first-submission-institutional-record"
+          "role": "first-submission-record-and-archive-file-index"
+        },
+        {
+          "title": "First-version archive PDF — Pozitivní psychologie a Castanedovo učení",
+          "url": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
+          "role": "first-version-full-text-PDF"
         },
         {
           "title": "Masaryk University Information System — second submission, Aktualizace východisek a možností pozitivní psychologie",
@@ -318,51 +326,62 @@
           "role": "second-submission-institutional-record-and-successful-defense"
         },
         {
+          "title": "Professional ethnography — Psychology, positive psychology, Bateson and Castaneda",
+          "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/",
+          "role": "author's account of first-version failure, second-version revision, and transfer of the binocular method into professional practice"
+        },
+        {
           "title": "ResearchGate — second-version full text and DOI",
-          "url": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
-          "role": "second-version-full-text-and-identifier-record"
+          "url": "https://doi.org/10.13140/RG.2.2.32958.86087",
+          "role": "persistent identifier and full-text page for the second version"
         }
       ],
       "conceptual_themes": [
         {
           "theme": "binocular-perspective-and-cross-coded-comparison",
-          "description": "Combines closely related but differently coded perspectives to produce a new logical type of information and interpretive depth, following Gregory Bateson's binocular-vision principle."
+          "description": "Combines analogous but differently coded perspectives to produce interpretive depth, following Gregory Bateson's binocular-vision principle."
         },
         {
           "theme": "reconstruction-reproduction-comparison-and-extrapolation",
-          "description": "Reconstructs and reproduces two thought systems, compares and interprets them, then extrapolates new perspectives from their differences."
+          "description": "Reconstructs and reproduces two conceptual systems, compares and interprets them, then extrapolates additional perspectives."
         },
         {
           "theme": "semiotics-and-contextual-meaning",
-          "description": "The secondary theoretical background explicitly includes Saussure, Barthes, and Derrida's différance; meaning is treated as context-dependent and continually deferred."
+          "description": "The second version's secondary theoretical background includes Saussure, Barthes, and Derrida's différance; meaning is treated as contextual and continually deferred."
         },
         {
           "theme": "discourse-and-power",
-          "description": "Critical discourse analysis is listed among the secondary theoretical foundations; the thesis notes that discourse production is a power practice and that scientific language is not a neutral meta-language."
+          "description": "Critical discourse analysis is part of the secondary theoretical foundation; discourse production is treated as a power practice rather than a neutral description."
         },
         {
           "theme": "recipient-and-perspective-specificity",
-          "description": "The thesis argues for identifying a specific recipient and clarifying the perspective from which evaluative or applied claims are made."
+          "description": "The method makes the selection of a specific recipient and the clarification of the interpretive perspective central to evaluation and applied claims."
         }
       ],
       "publication_records": [
         {
           "record_type": "institutional-thesis-record",
-          "title": "IS MU — Pozitivní psychologie a vybrané duchovní směry: komparativní analýza (first submission)",
+          "title": "IS MU — first submission record wknmn",
           "url": "https://is.muni.cz/th/wknmn/",
-          "role": "first-submission-institutional-record"
+          "role": "first-submission-catalogue record"
+        },
+        {
+          "record_type": "first-version-archive-pdf",
+          "title": "Pozitivní psychologie a Castanedovo učení: komparativní analýza",
+          "url": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
+          "role": "full text of first thesis version; first attempt not defended"
         },
         {
           "record_type": "institutional-thesis-record",
-          "title": "IS MU — Aktualizace východisek a možností pozitivní psychologie (second submission)",
+          "title": "IS MU — Aktualizace východisek a možností pozitivní psychologie",
           "url": "https://is.muni.cz/th/k2bkc/",
-          "role": "second-submission-institutional-record; successfully defended on 2 June 2009"
+          "role": "second submission record; successfully defended on 2 June 2009"
         },
         {
           "record_type": "researchgate-publication-page",
           "title": "ResearchGate — Aktualizace východisek a možností pozitivní psychologie",
           "url": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
-          "role": "full-text PDF and DOI page for the second submission"
+          "role": "full-text PDF and DOI page for the second version"
         }
       ],
       "identifiers": [
@@ -372,35 +391,41 @@
           "uri": "https://doi.org/10.13140/RG.2.2.32958.86087",
           "provider": "ResearchGate",
           "role": "persistent identifier for the second, successfully defended thesis version",
-          "version_id": "second-submission"
+          "version_id": "second-version"
         }
       ],
       "institutional_record_status": {
         "status": "public-record-available",
         "basis": "directly-verified",
-        "note": "Two IS MU records document the first and second thesis submissions; the second submission was successfully defended on 2 June 2009."
+        "note": "IS MU preserves the first submission at wknmn and the successfully defended second submission at k2bkc. The first full text is separately linked as an archive PDF."
       },
       "versions": [
         {
-          "id": "first-submission",
-          "title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "id": "first-version",
+          "title": "Pozitivní psychologie a Castanedovo učení: komparativní analýza",
+          "catalogue_title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
           "record_uri": "https://is.muni.cz/th/wknmn/",
+          "full_text_uri": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
           "submission_attempt": 1,
-          "status": "not-defended-on-first-attempt",
-          "notes": "The IS MU record identifies this as the earlier submission. The author-maintained professional ethnography describes subsequent rewriting and renaming before the successful second attempt."
+          "status": "not-defended",
+          "defense_status": "The first attempt was not defended; the author reports that the thesis was rewritten and retitled before the successful second attempt.",
+          "notes": "This is the first-version PDF supplied by the author. The IS MU record uses a different catalogue title, while the PDF filename and the professional-ethnography account identify the version as Pozitivní psychologie a Castanedovo učení: komparativní analýza."
         },
         {
-          "id": "second-submission",
+          "id": "second-version",
           "title": "Aktualizace východisek a možností pozitivní psychologie",
           "record_uri": "https://is.muni.cz/th/k2bkc/",
           "submission_attempt": 2,
           "status": "successfully-defended",
           "defended_on": "2009-06-02",
-          "similarity_to_previous_version_percent": 71,
           "revision_extent_percent": 29,
+          "bibliography_items_before": 173,
+          "bibliography_items_after": 257,
+          "footnotes_before": 182,
+          "footnotes_after": 573,
           "doi": "10.13140/RG.2.2.32958.86087",
           "full_text_uri": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
-          "notes": "The full text explicitly documents the second-version changes and reports 71% textual similarity to the first version, corresponding to a 29% revision."
+          "notes": "The author reports 29% revision, expanding cited sources from 173 to 257 and footnotes from 182 to 573. The first and second submissions are one thesis lineage, not separate research objects."
         }
       ]
     },
@@ -441,6 +466,12 @@
           "title": "Masaryk University Information System — Klíčové aspekty sebevražedných sekt z hlediska jedince",
           "url": "https://is.muni.cz/th/d2622/",
           "role": "official-institutional-bibliographic-record"
+        },
+        {
+          "record_type": "author-supplied-institutional-route",
+          "title": "IS MU thesis route supplied by the author",
+          "url": "https://is.muni.cz/th/78577/fss_b/",
+          "role": "author-supplied route to the same thesis record"
         },
         {
           "record_type": "researchgate-publication-page",
@@ -3854,6 +3885,95 @@
           "artefact_id": "slideshare-manus-eeat-meta-analysis-pdf",
           "relationship": "separate-Manus-labelled-meta-analysis-output;relationship-to-Manus-web-output-unresolved",
           "status": "slide-content-reviewed;cross-format-relationship-pending"
+        }
+      ]
+    }
+  ],
+  "intellectual_threads": [
+    {
+      "id": "semiotics-and-signification",
+      "title": "Semiotics, signification, and meaning reconstruction",
+      "description": "A recurring line across the academic works: signs, semiosis, signification, ideological meaning, memes, and the contextual reconstruction or expansion of meaning. The individual works operationalize this line differently.",
+      "research_object_ids": [
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis",
+        "suicidal-cults-power-situation-thesis",
+        "positive-psychology-and-spiritual-streams-thesis"
+      ],
+      "expressions": [
+        {
+          "research_object_id": "rearticulation-ideology-hegemony-thesis",
+          "expression": "Structural semiotics and nodal points are used to reconstruct ideology, hegemony, and the fixation/articulation of meaning."
+        },
+        {
+          "research_object_id": "semiotic-mobscene-sign-expansion-thesis",
+          "expression": "The audiovisual text is deconstructed into signs and semiosis is reconstructed as an expansion of sign meaning."
+        },
+        {
+          "research_object_id": "suicidal-cults-power-situation-thesis",
+          "expression": "Ideology is analysed from a semiotic perspective alongside memetics, group symbolism, and propaganda."
+        },
+        {
+          "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
+          "expression": "The second version includes semiotics and contextual meaning among its secondary theoretical foundations, including Saussure, Barthes, and Derrida's différance."
+        }
+      ]
+    },
+    {
+      "id": "communication-theory-discourse-and-power",
+      "title": "Communication theory, discourse, and power",
+      "description": "A cross-cutting concern with how meaning is communicated, reproduced, naturalized, contested, and embedded in power relations. The works approach it through media discourse, audiovisual communication, group manipulation and information control, or critical discourse theory.",
+      "research_object_ids": [
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis",
+        "suicidal-cults-power-situation-thesis",
+        "positive-psychology-and-spiritual-streams-thesis"
+      ],
+      "expressions": [
+        {
+          "research_object_id": "rearticulation-ideology-hegemony-thesis",
+          "expression": "Ideological discourse, hegemony, articulation, and the naturalization of partial meanings as a general order."
+        },
+        {
+          "research_object_id": "semiotic-mobscene-sign-expansion-thesis",
+          "expression": "Reconstruction of signification and its operation within an audiovisual communication text."
+        },
+        {
+          "research_object_id": "suicidal-cults-power-situation-thesis",
+          "expression": "Communication and information control, propaganda, conformity, manipulation, and the model of the power situation."
+        },
+        {
+          "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
+          "expression": "Discourse and critical discourse analysis appear in the theoretical background, including discourse as a power practice."
+        }
+      ]
+    },
+    {
+      "id": "structuralism-poststructuralism-and-critical-discourse",
+      "title": "Structuralism, poststructuralism, and critical discourse",
+      "description": "A recurring theoretical repertoire across the author's academic work, including structuralist semiotics, contextual and unstable signification, discourse, ideology, rearticulation, différance, and poststructuralist approaches to power and meaning. Specific thinkers and concepts are not asserted to appear identically in every work.",
+      "research_object_ids": [
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis",
+        "suicidal-cults-power-situation-thesis",
+        "positive-psychology-and-spiritual-streams-thesis"
+      ],
+      "expressions": [
+        {
+          "research_object_id": "rearticulation-ideology-hegemony-thesis",
+          "expression": "Poststructuralist discourse theory, Laclau and Mouffe, nodal points, and rearticulation of ideology and hegemony."
+        },
+        {
+          "research_object_id": "semiotic-mobscene-sign-expansion-thesis",
+          "expression": "Structuralist semiotics and the reconstruction of sign meaning, with later interpretation through simulacrum and hyperreality in the professional ethnography."
+        },
+        {
+          "research_object_id": "suicidal-cults-power-situation-thesis",
+          "expression": "Structuralist semiotics, ideology, and memetics provide the analytical lens for the interpretation of destructive group dynamics."
+        },
+        {
+          "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
+          "expression": "The revised version explicitly includes Derrida's différance, semiotics, and critical discourse analysis in its secondary theoretical background."
         }
       ]
     }
