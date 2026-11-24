@@ -19,7 +19,8 @@
     "artefacts",
     "inventory_leads",
     "relations",
-    "research_clusters"
+    "research_clusters",
+    "intellectual_threads"
   ],
   "properties": {
     "registry_version": {
