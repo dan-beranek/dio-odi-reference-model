@@ -18,6 +18,8 @@ on:
       - "metadata/distributions.json"
       - "metadata/external-reception.json"
       - "metadata/application-mappings.json"
+      - "metadata/research-genealogy.json"
+      - "metadata/research-genealogy.schema.json"
 
 permissions:
   contents: read
@@ -42,6 +44,7 @@ jobs:
         run: python -m unittest discover -s tests -p "test_scf_discovery_candidates.py" -v
 
       - name: Search web and scholarly metadata indexes
+        if: github.event_name != 'pull_request'
         env:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
@@ -50,7 +53,7 @@ jobs:
             --output-dir scf-discovery-output
 
       - name: Upload discovery review report
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: scf-discovery-candidates-${{ github.run_id }}
@@ -59,5 +62,5 @@ jobs:
           retention-days: 30
 
       - name: Add discovery report to workflow summary
-        if: always() && hashFiles('scf-discovery-output/scf-discovery-candidates.md') != ''
+        if: always() && github.event_name != 'pull_request' && hashFiles('scf-discovery-output/scf-discovery-candidates.md') != ''
         run: cat scf-discovery-output/scf-discovery-candidates.md >> "$GITHUB_STEP_SUMMARY"

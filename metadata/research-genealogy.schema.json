@@ -1,0 +1,853 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vocab.danielberanek.cz/metadata/research-genealogy.schema.json",
+  "title": "DIO/ODI Research Genealogy Registry",
+  "type": "object",
+  "required": [
+    "registry_version",
+    "schema_version",
+    "uri",
+    "generated_on",
+    "title",
+    "description",
+    "maintainer",
+    "scope",
+    "research_objects",
+    "research_processes",
+    "milestones",
+    "source_collections",
+    "artefacts",
+    "inventory_leads",
+    "relations"
+  ],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "generated_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "maintainer": {
+      "type": "object",
+      "required": [
+        "name",
+        "person_uri",
+        "orcid"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "person_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "orcid": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "research_objects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "uri",
+          "object_type",
+          "description",
+          "components",
+          "role_in_genealogy"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "object_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "role_in_genealogy": {
+            "type": "string"
+          },
+          "publication_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "publication_date_basis": {
+            "type": "string"
+          },
+          "last_updated_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "last_updated_date_basis": {
+            "type": "string"
+          },
+          "conceptual_themes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "theme",
+                "description"
+              ],
+              "properties": {
+                "theme": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "date_evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "title",
+                "url",
+                "role"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "first_known_online_by": {
+            "type": "string",
+            "format": "date"
+          },
+          "first_known_online_basis": {
+            "type": "string"
+          },
+          "earliest_archived_capture": {
+            "type": "object",
+            "required": [
+              "captured_at",
+              "archive",
+              "url"
+            ],
+            "properties": {
+              "captured_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "archive": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "corroborating_archives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "archive",
+                "url",
+                "captured_at",
+                "role"
+              ],
+              "properties": {
+                "archive": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "captured_at": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "research_processes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "status",
+          "research_object_ids",
+          "summary",
+          "process_characteristics",
+          "methods",
+          "roles",
+          "concept_outcomes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "temporal_scope": {
+            "type": "object",
+            "required": [
+              "start",
+              "end",
+              "basis"
+            ],
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date"
+              },
+              "end": {
+                "type": "string",
+                "format": "date"
+              },
+              "basis": {
+                "type": "string"
+              }
+            }
+          },
+          "research_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "process_characteristics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "methods": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "roles": {
+            "type": "object"
+          },
+          "concept_outcomes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "uri",
+                "articulated_on",
+                "relation"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "articulated_on": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "relation": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subsequent_research": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "title",
+                "uri",
+                "relation"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "relation": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "preceding_context_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "milestones": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "date",
+          "date_basis",
+          "title",
+          "summary",
+          "research_object_ids",
+          "process_ids",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "date_end": {
+            "type": "string",
+            "format": "date"
+          },
+          "date_basis": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "research_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "process_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "concept_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source": {
+            "type": "object",
+            "required": [
+              "title",
+              "url"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "source_collections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "platform",
+          "title",
+          "url",
+          "collection_role",
+          "attribution",
+          "curation_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "profile_display_name": {
+            "type": "string"
+          },
+          "collection_role": {
+            "type": "string"
+          },
+          "content_scope": {
+            "type": "string"
+          },
+          "attribution": {
+            "type": "object",
+            "required": [
+              "status",
+              "person_uri",
+              "basis"
+            ],
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "person_uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "basis": {
+                "type": "string"
+              }
+            }
+          },
+          "curation_status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "artefacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url",
+          "platform",
+          "source_collection_id",
+          "artefact_type",
+          "content_origin",
+          "research_role",
+          "summary",
+          "provenance",
+          "review_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "source_collection_id": {
+            "type": "string"
+          },
+          "artefact_type": {
+            "type": "string"
+          },
+          "content_origin": {
+            "type": "string"
+          },
+          "model_attribution": {
+            "type": "object"
+          },
+          "uploader_attribution": {
+            "type": "string"
+          },
+          "research_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "process_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "related_work_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "research_role": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "basis",
+              "source_description_url"
+            ],
+            "properties": {
+              "basis": {
+                "type": "string"
+              },
+              "source_description_url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "review_status": {
+            "type": "string"
+          },
+          "source_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_material": {
+            "type": "object",
+            "required": [
+              "title",
+              "url",
+              "publication_date",
+              "publication_date_basis",
+              "last_updated_date",
+              "last_updated_date_basis"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "publication_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "publication_date_basis": {
+                "type": "string"
+              },
+              "last_updated_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "last_updated_date_basis": {
+                "type": "string"
+              },
+              "date_evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "title",
+                    "url",
+                    "role"
+                  ],
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "role": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "first_known_online_by": {
+                "type": "string",
+                "format": "date"
+              },
+              "first_known_online_basis": {
+                "type": "string"
+              },
+              "earliest_archived_capture": {
+                "type": "object",
+                "required": [
+                  "captured_at",
+                  "archive",
+                  "url"
+                ],
+                "properties": {
+                  "captured_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "archive": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              },
+              "corroborating_archives": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "archive",
+                    "url",
+                    "captured_at",
+                    "role"
+                  ],
+                  "properties": {
+                    "archive": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "captured_at": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date-time"
+                    },
+                    "role": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "temporal_metadata": {
+            "type": "object",
+            "required": [
+              "source_article_publication_date_basis",
+              "source_article_first_known_online_by",
+              "source_article_earliest_archived_capture_at",
+              "source_article_last_updated_date",
+              "source_article_last_updated_date_basis",
+              "corroborating_archive_url",
+              "slideshare_upload_date",
+              "slideshare_last_modified",
+              "timestamp_note"
+            ],
+            "properties": {
+              "source_article_last_updated_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "source_article_last_updated_date_basis": {
+                "type": "string"
+              },
+              "slideshare_upload_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "slideshare_last_modified": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "timestamp_note": {
+                "type": "string"
+              },
+              "source_article_first_known_online_by": {
+                "type": "string",
+                "format": "date"
+              },
+              "source_article_earliest_archived_capture_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "corroborating_archive_url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "inventory_leads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "source_collection_id",
+          "artefact_type",
+          "discovery_status",
+          "summary"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "source_collection_id": {
+            "type": "string"
+          },
+          "artefact_type": {
+            "type": "string"
+          },
+          "discovery_status": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "subject_id",
+          "relation",
+          "object_id",
+          "evidence_url"
+        ],
+        "properties": {
+          "subject_id": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "object_id": {
+            "type": "string"
+          },
+          "evidence_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  }
+}

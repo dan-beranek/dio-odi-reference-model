@@ -475,6 +475,9 @@ def check_metadata() -> dict[str, int | str]:
     application_mappings = load_json("metadata/application-mappings.json")
     application_mappings_schema = load_json("metadata/application-mappings.schema.json")
     validate_json_schema(instance=application_mappings, schema=application_mappings_schema)
+    research_genealogy = load_json("metadata/research-genealogy.json")
+    research_genealogy_schema = load_json("metadata/research-genealogy.schema.json")
+    validate_json_schema(instance=research_genealogy, schema=research_genealogy_schema)
     metadata_projection = load_json("metadata.json")
 
     citation = yaml.safe_load(read_text("CITATION.cff"))
@@ -641,6 +644,15 @@ def check_metadata() -> dict[str, int | str]:
         == "metadata/application-mappings.json",
         "metadata.json does not identify the canonical Application Mappings registry",
     )
+    require(
+        metadata_projection.get("corpus_metadata_registry", {}).get("research_genealogy")
+        == "metadata/research-genealogy.json"
+        and metadata_projection.get("corpus_metadata_registry", {}).get("research_genealogy_schema")
+        == "metadata/research-genealogy.schema.json"
+        and metadata_projection.get("corpus_metadata_registry", {}).get("research_genealogy_guide")
+        == "docs/research-genealogy.md",
+        "metadata.json does not identify the canonical Research Genealogy resources",
+    )
 
     cff_doi = citation.get("doi")
     current_doi = model.get("current_release", {}).get("doi")
@@ -667,6 +679,201 @@ def check_metadata() -> dict[str, int | str]:
         "arXiv version relation must remain scoped to the canonical Zenodo source version",
     )
 
+    research_objects = research_genealogy.get("research_objects", [])
+    research_processes = research_genealogy.get("research_processes", [])
+    genealogy_milestones = research_genealogy.get("milestones", [])
+    genealogy_collections = research_genealogy.get("source_collections", [])
+    genealogy_artefacts = research_genealogy.get("artefacts", [])
+    genealogy_leads = research_genealogy.get("inventory_leads", [])
+    genealogy_relations = research_genealogy.get("relations", [])
+
+    object_ids = [item.get("id") for item in research_objects]
+    process_ids = [item.get("id") for item in research_processes]
+    milestone_ids = [item.get("id") for item in genealogy_milestones]
+    collection_ids = [item.get("id") for item in genealogy_collections]
+    artefact_ids = [item.get("id") for item in genealogy_artefacts]
+    require(
+        all(object_ids) and len(object_ids) == len(set(object_ids))
+        and all(process_ids) and len(process_ids) == len(set(process_ids))
+        and all(milestone_ids) and len(milestone_ids) == len(set(milestone_ids))
+        and all(collection_ids) and len(collection_ids) == len(set(collection_ids))
+        and all(artefact_ids) and len(artefact_ids) == len(set(artefact_ids)),
+        "Research Genealogy object, process, milestone, collection, and artefact identifiers must be unique and non-empty",
+    )
+
+    concept_ids = {
+        outcome.get("id")
+        for process in research_processes
+        for outcome in process.get("concept_outcomes", [])
+        if outcome.get("id")
+    }
+    work_ids = {item.get("id") for item in works.get("works", []) if item.get("id")}
+    genealogy_entity_ids = (
+        set(object_ids) | set(process_ids) | set(milestone_ids)
+        | set(collection_ids) | set(artefact_ids) | concept_ids | work_ids
+    )
+    for process in research_processes:
+        require(
+            set(process.get("research_object_ids", [])) <= set(object_ids)
+            and set(process.get("preceding_context_object_ids", [])) <= set(object_ids),
+            f"Research process has an unresolved research or preceding-context object: {process.get('id')}",
+        )
+        outcomes = {item.get("id"): item for item in process.get("concept_outcomes", [])}
+        require(
+            outcomes.get("DIO", {}).get("articulated_on") == "2026-05-21"
+            and outcomes.get("ODI", {}).get("articulated_on") == "2026-06-22",
+            "DIO and ODI concept outcomes must retain their changelog articulation dates",
+        )
+        for outcome in process.get("concept_outcomes", []):
+            require(outcome.get("uri") in {
+                VOCAB_NS + "DIO", VOCAB_NS + "ODI"
+            }, f"Research Genealogy concept URI is outside the canonical namespace: {outcome.get('id')}")
+
+    milestone_dates = [item.get("date") for item in genealogy_milestones]
+    require(
+        milestone_dates == sorted(milestone_dates),
+        "Research Genealogy milestones must be in chronological order",
+    )
+    for milestone in genealogy_milestones:
+        require(
+            set(milestone.get("research_object_ids", [])) <= set(object_ids)
+            and set(milestone.get("process_ids", [])) <= set(process_ids)
+            and set(milestone.get("concept_ids", [])) <= concept_ids,
+            f"Research Genealogy milestone has an unresolved reference: {milestone.get('id')}",
+        )
+
+    for artefact in genealogy_artefacts:
+        require(
+            artefact.get("source_collection_id") in set(collection_ids),
+            f"Research Genealogy artefact has an unresolved source collection: {artefact.get('id')}",
+        )
+        require(
+            set(artefact.get("research_object_ids", [])) <= set(object_ids)
+            and set(artefact.get("process_ids", [])) <= set(process_ids)
+            and set(artefact.get("source_object_ids", [])) <= set(object_ids)
+            and set(artefact.get("related_work_ids", [])) <= work_ids,
+            f"Research Genealogy artefact has an unresolved research, source-object, or work relation: {artefact.get('id')}",
+        )
+    for lead in genealogy_leads:
+        require(
+            lead.get("source_collection_id") in set(collection_ids),
+            f"Research Genealogy inventory lead has an unresolved source collection: {lead.get('title')}",
+        )
+    for relation in genealogy_relations:
+        require(
+            relation.get("subject_id") in genealogy_entity_ids
+            and relation.get("object_id") in genealogy_entity_ids,
+            f"Research Genealogy relation has an unresolved endpoint: {relation.get('subject_id')} -> {relation.get('object_id')}",
+        )
+
+    professional_ethnography = next(
+        (item for item in research_objects if item.get("id") == "professional-ethnography"),
+        None,
+    )
+    slideshare_collection = next(
+        (item for item in genealogy_collections if item.get("id") == "slideshare-danielberanek"),
+        None,
+    )
+    semiotic_artefact = next(
+        (item for item in genealogy_artefacts
+         if item.get("id") == "slideshare-semiotic-discursive-deconstruction"),
+        None,
+    )
+    crisis_presentation = next(
+        (item for item in genealogy_artefacts
+         if item.get("id") == "slideshare-crisis-entity-resolution-presentation"),
+        None,
+    )
+    ai_comparison_article = next(
+        (item for item in research_objects
+         if item.get("id") == "ai-startup-marketing-article"),
+        None,
+    )
+    ai_comparison_presentation = next(
+        (item for item in genealogy_artefacts
+         if item.get("id") == "slideshare-ai-tools-comparative-review"),
+        None,
+    )
+    require(
+        professional_ethnography is not None
+        and professional_ethnography.get("uri") == "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        and slideshare_collection is not None
+        and slideshare_collection.get("url") == "https://www.slideshare.net/danielberanek",
+        "Research Genealogy must preserve the canonical professional-ethnography object and SlideShare source collection",
+    )
+    require(
+        semiotic_artefact is not None
+        and "DIO" in semiotic_artefact.get("research_role", "")
+        and crisis_presentation is not None
+        and crisis_presentation.get("related_work_ids") == ["crisis-entity-resolution"],
+        "Research Genealogy must distinguish an exploratory reading from a presentation of a registered research work",
+    )
+    article_themes = {
+        item.get("theme") for item in (ai_comparison_article or {}).get("conceptual_themes", [])
+    }
+    require(
+        ai_comparison_article is not None
+        and ai_comparison_article.get("publication_date") is None
+        and ai_comparison_article.get("first_known_online_by") == "2025-03-12"
+        and ai_comparison_article.get("earliest_archived_capture", {}).get("captured_at") == "2025-03-12T18:37:17Z"
+        and ai_comparison_article.get("earliest_archived_capture", {}).get("url") == "https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/"
+        and any(
+            item.get("url") == "https://archive.is/Bq8tr"
+            and item.get("role") == "corroborating-archive-copy"
+            for item in ai_comparison_article.get("corroborating_archives", [])
+        )
+        and ai_comparison_article.get("last_updated_date") == "2026-10-21"
+        and set(article_themes) == {
+            "professional-expertise-for-AI",
+            "AI-for-professional-practice",
+            "reciprocal-human-AI-capability",
+        }
+        and ai_comparison_presentation is not None
+        and ai_comparison_presentation.get("source_object_ids") == ["ai-startup-marketing-article"]
+        and ai_comparison_presentation.get("source_material", {}).get("url") == ai_comparison_article.get("uri")
+        and ai_comparison_presentation.get("source_material", {}).get("publication_date") is None
+        and ai_comparison_presentation.get("source_material", {}).get("first_known_online_by") == "2025-03-12"
+        and ai_comparison_presentation.get("source_material", {}).get("earliest_archived_capture", {}).get("captured_at") == "2025-03-12T18:37:17Z"
+        and ai_comparison_presentation.get("source_material", {}).get("last_updated_date") == "2026-10-21"
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("source_article_first_known_online_by") == "2025-03-12"
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("source_article_earliest_archived_capture_at") == "2025-03-12T18:37:17Z"
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("corroborating_archive_url") == "https://archive.is/Bq8tr"
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_upload_date") is None
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_last_modified") is None
+        and any(
+            milestone.get("id") == "dio-articulation"
+            and milestone.get("date") == "2026-05-21"
+            for milestone in genealogy_milestones
+        )
+        and any(
+            relation.get("subject_id") == "ai-startup-marketing-article"
+            and relation.get("relation") == "provides-preceding-professional-context-for"
+            and relation.get("object_id") == "dio-odi-genesis-exploration"
+            for relation in genealogy_relations
+        )
+        and any(
+            relation.get("subject_id") == "slideshare-ai-tools-comparative-review"
+            and relation.get("relation") == "is-derived-from"
+            and relation.get("object_id") == "ai-startup-marketing-article"
+            for relation in genealogy_relations
+        ),
+        "AI article genealogy must distinguish unknown original publication date, earliest archived capture, later last update, reciprocal expertise themes, and SlideShare source relationship",
+    )
+
+    genealogy_page = read_text("metadata/index.html")
+    require(
+        "/metadata/research-genealogy.json" in genealogy_page
+        and "/metadata/research-genealogy.schema.json" in genealogy_page
+        and "/docs/research-genealogy.md" in genealogy_page,
+        "Corpus Metadata frontend is missing the Research Genealogy registry links",
+    )
+    genealogy_discovery = read_text("llms.txt")
+    require(
+        "- Research Genealogy Registry: https://vocab.danielberanek.cz/metadata/research-genealogy.json" in genealogy_discovery
+        and "## Research Genealogy" in genealogy_discovery,
+        "llms.txt is missing the Research Genealogy discovery entry",
+    )
+
     return {
         "keyword_registry": keywords["registry_version"],
         "reference_model_keywords": len(profile),
@@ -676,6 +883,10 @@ def check_metadata() -> dict[str, int | str]:
         "relations_registry": relations.get("registry_version", "n/a"),
         "distributions_registry": distributions["registry_version"],
         "application_mappings_registry": application_mappings["registry_version"],
+        "research_genealogy_objects": len(research_objects),
+        "research_genealogy_processes": len(research_processes),
+        "research_genealogy_milestones": len(genealogy_milestones),
+        "research_genealogy_artefacts": len(genealogy_artefacts),
     }
 
 
@@ -913,6 +1124,9 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/metadata/external-reception.ttl",
         "https://vocab.danielberanek.cz/metadata/application-mappings.json",
         "https://vocab.danielberanek.cz/metadata/application-mappings.schema.json",
+        "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
+        "https://vocab.danielberanek.cz/metadata/research-genealogy.schema.json",
+        "https://vocab.danielberanek.cz/docs/research-genealogy.md",
         "https://vocab.danielberanek.cz/semantic-change-feed/",
         "https://vocab.danielberanek.cz/semantic-change-feed/events.json",
         "https://vocab.danielberanek.cz/semantic-change-feed/schema.json",

@@ -74,6 +74,50 @@ class DiscoveryIntakeTests(unittest.TestCase):
             "work_id_to_title": {"paper-a": "Digital Identity Optimization: A Test Framework"},
         }
 
+    def test_research_genealogy_artifacts_are_resolved_as_author_corpus(self):
+        source_url = (
+            "https://de.slideshare.net/slideshow/semioticka-a-diskurzivni-dekonstrukce-"
+            "digitalni-identity-v-profesni-etnografii-daniela-beranka/287729434"
+        )
+        works = {
+            **self.works,
+            "author": {
+                **self.works["author"],
+                "person_uri": "https://danielberanek.cz/#person",
+            },
+        }
+        research_genealogy = {
+            "source_collections": [
+                {
+                    "id": "slideshare-danielberanek",
+                    "attribution": {
+                        "status": "author-confirmed",
+                        "person_uri": "https://danielberanek.cz/#person",
+                    },
+                }
+            ],
+            "artefacts": [
+                {
+                    "url": source_url,
+                    "source_collection_id": "slideshare-danielberanek",
+                    "uploader_attribution": "Daniel Beránek",
+                }
+            ],
+        }
+        context = discovery.build_known_context(
+            works, {}, {}, {}, {"events": []},
+            research_genealogy=research_genealogy,
+        )
+        classification = discovery.classify_candidate(
+            {"source_url": source_url}, context
+        )
+        self.assertEqual(classification["category"], "author-corpus")
+        self.assertEqual(
+            classification["subcategory"], "author-curated-research-artefact"
+        )
+        self.assertEqual(classification["confidence"], "high")
+        self.assertIn(source_url, context["known_urls"])
+
     def test_known_context_maps_only_structured_distribution_identifiers(self):
         works = {
             "works": [

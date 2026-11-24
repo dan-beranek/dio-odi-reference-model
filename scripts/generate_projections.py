@@ -887,6 +887,9 @@ def render_metadata_projection(
         "keywords": "metadata/keywords.json",
         "application_mappings": "metadata/application-mappings.json",
         "application_mappings_schema": "metadata/application-mappings.schema.json",
+        "research_genealogy": "metadata/research-genealogy.json",
+        "research_genealogy_schema": "metadata/research-genealogy.schema.json",
+        "research_genealogy_guide": "docs/research-genealogy.md",
         "keyword_grammar_version": model.get("keyword_grammar_version", ""),
         "keyword_grammar_status": model.get("keyword_profile_status", ""),
     })

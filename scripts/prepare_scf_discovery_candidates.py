@@ -376,6 +376,7 @@ def build_known_context(
     external_reception: dict[str, Any],
     application_mappings: dict[str, Any],
     feed: dict[str, Any],
+    research_genealogy: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     title_to_work: dict[str, str] = {}
     work_id_to_title: dict[str, str] = {}
@@ -389,6 +390,8 @@ def build_known_context(
     author_handles: set[str] = set()
     own_domains: set[str] = set()
     owned_url_prefixes: set[str] = set()
+    research_artifact_urls: set[str] = set()
+    author_research_artifact_urls: set[str] = set()
 
     if author_name:
         folded_author_name = ascii_fold(author_name).casefold()
@@ -549,6 +552,41 @@ def build_known_context(
             if alias:
                 known_urls.add(alias)
 
+    genealogy = research_genealogy if isinstance(research_genealogy, dict) else {}
+    confirmed_collection_ids: set[str] = set()
+    expected_person_uri = author.get("person_uri")
+    for collection in genealogy.get("source_collections", []):
+        if not isinstance(collection, dict):
+            continue
+        profile_url = normalise_url(collection.get("url", ""))
+        if profile_url:
+            known_urls.add(profile_url)
+        attribution = collection.get("attribution", {})
+        if (
+            isinstance(attribution, dict)
+            and attribution.get("status") == "author-confirmed"
+            and expected_person_uri
+            and attribution.get("person_uri") == expected_person_uri
+            and isinstance(collection.get("id"), str)
+        ):
+            confirmed_collection_ids.add(collection["id"])
+
+    for artefact in genealogy.get("artefacts", []):
+        if not isinstance(artefact, dict):
+            continue
+        artefact_url = normalise_url(artefact.get("url", ""))
+        if not artefact_url:
+            continue
+        known_urls.add(artefact_url)
+        research_artifact_urls.add(artefact_url)
+        uploader = normalise_text(artefact.get("uploader_attribution", ""))
+        if (
+            artefact.get("source_collection_id") in confirmed_collection_ids
+            and uploader
+            and uploader == normalise_text(author_name)
+        ):
+            author_research_artifact_urls.add(artefact_url)
+
     evidence_index = existing_evidence_index(feed)
     known_urls.update(evidence_index)
     return {
@@ -564,6 +602,8 @@ def build_known_context(
         "author_handles": author_handles,
         "own_domains": own_domains,
         "owned_url_prefixes": owned_url_prefixes,
+        "research_artifact_urls": research_artifact_urls,
+        "author_research_artifact_urls": author_research_artifact_urls,
     }
 
 
@@ -573,6 +613,12 @@ def detect_source_ownership(url: str, context: dict[str, Any]) -> dict[str, str]
     host = (parsed.hostname or "").casefold()
     path = (parsed.path or "").casefold()
     normalised = normalise_url(url)
+    if normalised and normalised in context.get("author_research_artifact_urls", set()):
+        return {
+            "subclass": "author-curated-research-artefact",
+            "confidence": "high",
+            "basis": "The exact item URL is recorded in the Research Genealogy Registry under an author-confirmed platform collection and matching uploader attribution.",
+        }
     orcid = str(context.get("author_orcid") or "").casefold()
     if orcid and orcid in normalised.casefold():
         return {
@@ -1284,6 +1330,7 @@ def build_report(
     tavily_api_key: str | None = None,
     openalex_api_key: str | None = None,
     now: datetime | None = None,
+    research_genealogy: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
     queries = build_search_queries(profile, works)
@@ -1315,7 +1362,8 @@ def build_report(
 
     author = works.get("author", {}) if isinstance(works.get("author"), dict) else {}
     context = build_known_context(
-        works, distributions, external_reception, application_mappings, feed
+        works, distributions, external_reception, application_mappings, feed,
+        research_genealogy=research_genealogy,
     )
     context["orcid_values"] = [author["orcid"]] if author.get("orcid") else []
     context["author_names"] = [author["name"]] if author.get("name") else []
@@ -1629,10 +1677,12 @@ def main() -> int:
         distributions = read_json("metadata/distributions.json")
         external_reception = read_json("metadata/external-reception.json")
         application_mappings = read_json("metadata/application-mappings.json")
+        research_genealogy = read_json("metadata/research-genealogy.json")
         feed = read_json("semantic-change-feed/events.json")
         report = build_report(
             profile, works, keywords, distributions, external_reception,
             application_mappings, feed,
+            research_genealogy=research_genealogy,
             tavily_api_key=os.environ.get("TAVILY_API_KEY"),
             openalex_api_key=os.environ.get("OPENALEX_API_KEY"),
         )
