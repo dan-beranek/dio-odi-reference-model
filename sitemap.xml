@@ -2,11 +2,11 @@
 <ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/</ns0:loc>
-    <ns0:lastmod>2026-11-22</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/dio-odi/</ns0:loc>
-    <ns0:lastmod>2026-11-22</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl</ns0:loc>
@@ -34,11 +34,11 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/</ns0:loc>
-    <ns0:lastmod>2026-11-22</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/rag-pipeline/</ns0:loc>
-    <ns0:lastmod>2026-11-22</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/rag-pipeline-mapping.md</ns0:loc>
@@ -54,7 +54,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/hem-dio/</ns0:loc>
-    <ns0:lastmod>2026-11-22</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/hem-dio-mapping.md</ns0:loc>
@@ -74,7 +74,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy/</ns0:loc>
-    <ns0:lastmod>2026-11-22</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/commit-boundary-policy-mapping.md</ns0:loc>
@@ -90,7 +90,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/agentic-er-architecture/</ns0:loc>
-    <ns0:lastmod>2026-11-22</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/mappings/agentic-er-architecture/architecture.svg</ns0:loc>
@@ -150,7 +150,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/external-reception/</ns0:loc>
-    <ns0:lastmod>2026-11-20</ns0:lastmod>
+    <ns0:lastmod>2026-11-24</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata/external-reception.json</ns0:loc>
