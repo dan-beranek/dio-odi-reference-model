@@ -129,6 +129,86 @@
         "cross-platform analytical and presentation outputs"
       ],
       "role_in_genealogy": "Common subject of a cluster of E-E-A-T assessments and meta-analyses; individual report identities and cross-format equivalences remain subject to content-level reconciliation."
+    },
+    {
+      "id": "rearticulation-ideology-hegemony-thesis",
+      "title": "Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií",
+      "uri": "https://is.muni.cz/th/ajfb6/",
+      "object_type": "university-masters-thesis",
+      "status": "preserved-university-record",
+      "description": "A 2011 master's thesis in Media Studies and Journalism at Masaryk University. The abstract describes a reconstruction of ideology and hegemony concepts for analysing contemporary media representations, including ideological discourse, hegemonic formations, nodal points, dominant discourse, and general discourse.",
+      "components": [
+        "official university thesis record and bibliographic metadata",
+        "abstract and research assignment",
+        "keywords on ideology, hegemony, discourse, nodal points, representation, structural semiotics, cultural studies, post-Marxism, and post-structuralism",
+        "full-text PDF listed in the university record"
+      ],
+      "role_in_genealogy": "An earlier academic work in the author's media-studies background. It documents engagement with discourse, ideology, hegemony, and nodal points that may contextualize later theoretical interests. It is not asserted as a direct source or formal derivation of DIO/ODI.",
+      "publication_date": "2011",
+      "publication_date_basis": "Masaryk University record and its citation export identify the thesis as a 2011 work; the record states that the thesis was successfully defended on 25 January 2011.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University thesis record — Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií",
+          "url": "https://is.muni.cz/th/ajfb6/",
+          "role": "official-university-record-and-thesis-citation"
+        }
+      ],
+      "conceptual_themes": [
+        {
+          "theme": "ideology-and-hegemony",
+          "description": "Critical reconstruction of ideology and hegemony concepts for media-studies analysis."
+        },
+        {
+          "theme": "discourse-and-ideological-discourse",
+          "description": "Distinguishes general discourse from ideological discourse and examines their articulation."
+        },
+        {
+          "theme": "hegemonic-formations-and-nodal-points",
+          "description": "Defines hegemonic formation, nodal points, dominant discourse, and general discourse."
+        },
+        {
+          "theme": "media-representation",
+          "description": "Applies the conceptual discussion to analysis of contemporary media imagery."
+        }
+      ]
+    },
+    {
+      "id": "positive-psychology-and-spiritual-streams-thesis",
+      "title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+      "uri": "https://is.muni.cz/th/wknmn/",
+      "object_type": "university-thesis",
+      "status": "preserved-university-record",
+      "description": "A 2009 psychology thesis record at Masaryk University's Faculty of Social Studies. The abstract describes an update of positive-psychology foundations through comparison of differently coded but related perspectives, drawing on Gregory Bateson's Mind and Nature and a binocular-vision method for combining information from multiple sources.",
+      "components": [
+        "official university thesis record and bibliographic metadata",
+        "abstract describing the binocular-vision method",
+        "references to Gregory Bateson's Mind and Nature",
+        "university-record metadata and supervisor information"
+      ],
+      "role_in_genealogy": "An earlier academic work in the author's psychology background. Its explicit method of combining related but differently coded perspectives may contextualize later interdisciplinary practice. No direct derivation relation to DIO/ODI is asserted.",
+      "publication_date": "2009",
+      "publication_date_basis": "Masaryk University record and citation export identify the thesis as a 2009 work.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University thesis record — Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "url": "https://is.muni.cz/th/wknmn/",
+          "role": "official-university-record-and-thesis-citation"
+        }
+      ],
+      "conceptual_themes": [
+        {
+          "theme": "positive-psychology",
+          "description": "Critical update of the foundations and possibilities of positive psychology."
+        },
+        {
+          "theme": "binocular-vision-method",
+          "description": "Combines information from two or more related but differently coded perspectives to produce a deeper view of a problem."
+        },
+        {
+          "theme": "Bateson-and-systems-thinking",
+          "description": "The method is inspired by Gregory Bateson's Mind and Nature and its idea of necessary unity."
+        }
+      ]
     }
   ],
   "research_processes": [
@@ -2286,18 +2366,20 @@
       "source_collection_id": "slideshare-danielberanek",
       "artefact_type": "author-authored-academic-presentation",
       "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-source-relation-unresolved",
-      "summary": "The current author profile lists an 11-slide presentation under this title and uploader attribution. A potentially related Masaryk University thesis record titled Pozitivní psychologie a vybrané duchovní směry: komparativní analýza is referenced elsewhere, but an exact relationship has not been confirmed.",
+      "summary": "The SlideShare profile lists an 11-slide item with this title and author/uploader attribution. A 2009 Masaryk University thesis titled Pozitivní psychologie a vybrané duchovní směry: komparativní analýza is a potentially related academic object, but the titles and framing differ: the university abstract names Bateson's binocular-vision method, while the SlideShare title references Castaneda. Treat them as potentially related, not as the same work, until the deck content and source relation are checked.",
       "platform": "SlideShare",
-      "related_uri": "https://is.muni.cz/th/wknmn/"
+      "related_uri": "https://is.muni.cz/th/wknmn/",
+      "related_object_id": "positive-psychology-and-spiritual-streams-thesis"
     },
     {
       "title": "Reartikulace konceptů ideologie a hegemonie — SlideShare profile item",
       "source_collection_id": "slideshare-danielberanek",
       "artefact_type": "author-authored-academic-presentation",
       "discovery_status": "profile-listing-reviewed; direct-presentation-URL-unresolved; likely-related-university-thesis-identified",
-      "summary": "The current author profile lists a seven-slide presentation titled Reartikulace konceptů ideologie a hegemonie and attributes it to SEO specialista a copywriter Daniel Beránek. A Masaryk University thesis record with the corresponding title exists; the direct SlideShare page and exact presentation-to-thesis relation remain to be confirmed.",
+      "summary": "The SlideShare profile lists a seven-slide item under the shortened but matching title and displays the author/uploader attribution. The official Masaryk University record confirms the 2011 master's thesis with the full title. The direct SlideShare item URL and presentation-to-thesis content relationship have not yet been verified.",
       "platform": "SlideShare",
-      "related_uri": "https://is.muni.cz/th/ajfb6/"
+      "related_uri": "https://is.muni.cz/th/ajfb6/",
+      "related_object_id": "rearticulation-ideology-hegemony-thesis"
     },
     {
       "title": "Přesahy 005 — Internetová propagace festivalu — SlideShare profile item",
