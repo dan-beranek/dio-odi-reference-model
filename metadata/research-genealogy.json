@@ -507,7 +507,7 @@
               "archive_service": "Archive.today / Archive.is / Archive.ph",
               "captured_at": null,
               "timestamp_basis": "Timestamp not established from supplied locator.",
-              "target_url": null,
+              "target_url": "https://gemini.google.com/share/a4e8c0d5d558",
               "capture_status": "locator-supplied-content-unreviewed",
               "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
             },
@@ -518,7 +518,7 @@
               "timestamp_basis": "Timestamp encoded in Megalodon URL; interpreted as Asia/Tokyo (JST), normalized to UTC.",
               "timestamp_source_value": "2026-1125-0122-27",
               "timestamp_source_timezone": "Asia/Tokyo",
-              "target_url": null,
+              "target_url": "https://gemini.google.com/share/a4e8c0d5d558",
               "capture_status": "timestamped-locator-content-unreviewed",
               "note": "Author-supplied archive locator; captured content not yet inspected."
             }
