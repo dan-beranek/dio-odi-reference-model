@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.2.0",
+  "registry_version": "0.3.0",
   "schema_version": "0.2.0",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
@@ -129,6 +129,86 @@
         "cross-platform analytical and presentation outputs"
       ],
       "role_in_genealogy": "Common subject of a cluster of E-E-A-T assessments and meta-analyses; individual report identities and cross-format equivalences remain subject to content-level reconciliation."
+    },
+    {
+      "id": "rearticulation-ideology-hegemony-thesis",
+      "title": "Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií",
+      "uri": "https://is.muni.cz/th/ajfb6/",
+      "object_type": "university-masters-thesis",
+      "status": "preserved-university-record",
+      "description": "A 2011 master's thesis in Media Studies and Journalism at Masaryk University. The abstract describes a reconstruction of ideology and hegemony concepts for analysing contemporary media representations, including ideological discourse, hegemonic formations, nodal points, dominant discourse, and general discourse.",
+      "components": [
+        "official university thesis record and bibliographic metadata",
+        "abstract and research assignment",
+        "keywords on ideology, hegemony, discourse, nodal points, representation, structural semiotics, cultural studies, post-Marxism, and post-structuralism",
+        "full-text PDF listed in the university record"
+      ],
+      "role_in_genealogy": "An earlier academic work in the author's media-studies background. It documents engagement with discourse, ideology, hegemony, and nodal points that may contextualize later theoretical interests. It is not asserted as a direct source or formal derivation of DIO/ODI.",
+      "publication_date": "2011",
+      "publication_date_basis": "Masaryk University record and its citation export identify the thesis as a 2011 work; the record states that the thesis was successfully defended on 25 January 2011.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University thesis record — Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií",
+          "url": "https://is.muni.cz/th/ajfb6/",
+          "role": "official-university-record-and-thesis-citation"
+        }
+      ],
+      "conceptual_themes": [
+        {
+          "theme": "ideology-and-hegemony",
+          "description": "Critical reconstruction of ideology and hegemony concepts for media-studies analysis."
+        },
+        {
+          "theme": "discourse-and-ideological-discourse",
+          "description": "Distinguishes general discourse from ideological discourse and examines their articulation."
+        },
+        {
+          "theme": "hegemonic-formations-and-nodal-points",
+          "description": "Defines hegemonic formation, nodal points, dominant discourse, and general discourse."
+        },
+        {
+          "theme": "media-representation",
+          "description": "Applies the conceptual discussion to analysis of contemporary media imagery."
+        }
+      ]
+    },
+    {
+      "id": "positive-psychology-and-spiritual-streams-thesis",
+      "title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+      "uri": "https://is.muni.cz/th/wknmn/",
+      "object_type": "university-thesis",
+      "status": "preserved-university-record",
+      "description": "A 2009 psychology thesis record at Masaryk University's Faculty of Social Studies. The abstract describes an update of positive-psychology foundations through comparison of differently coded but related perspectives, drawing on Gregory Bateson's Mind and Nature and a binocular-vision method for combining information from multiple sources.",
+      "components": [
+        "official university thesis record and bibliographic metadata",
+        "abstract describing the binocular-vision method",
+        "references to Gregory Bateson's Mind and Nature",
+        "university-record metadata and supervisor information"
+      ],
+      "role_in_genealogy": "An earlier academic work in the author's psychology background. Its explicit method of combining related but differently coded perspectives may contextualize later interdisciplinary practice. No direct derivation relation to DIO/ODI is asserted.",
+      "publication_date": "2009",
+      "publication_date_basis": "Masaryk University record and citation export identify the thesis as a 2009 work.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University thesis record — Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "url": "https://is.muni.cz/th/wknmn/",
+          "role": "official-university-record-and-thesis-citation"
+        }
+      ],
+      "conceptual_themes": [
+        {
+          "theme": "positive-psychology",
+          "description": "Critical update of the foundations and possibilities of positive psychology."
+        },
+        {
+          "theme": "binocular-vision-method",
+          "description": "Combines information from two or more related but differently coded perspectives to produce a deeper view of a problem."
+        },
+        {
+          "theme": "Bateson-and-systems-thinking",
+          "description": "The method is inspired by Gregory Bateson's Mind and Nature and its idea of necessary unity."
+        }
+      ]
     }
   ],
   "research_processes": [
@@ -203,7 +283,7 @@
         "ai-related-professional-writing",
         "eeat-digital-identity-assessment-subject"
       ],
-      "summary": "A broad, creative, and non-linear period of experimentation with AI systems and output environments. The supplied record includes E-E-A-T analyses and meta-analyses, digital-identity readings, shared conversations, Deep Research sessions, public artifacts, generated web pages, deployed applications, and presentation forms. The author did not operate one fixed research protocol across all items. Archive timestamps establish observation points for particular public representations; they do not establish creation dates or the complete beginning and end of the activity.",
+      "summary": "A broad, creative, and non-linear period of experimentation with AI systems and output environments. The supplied record includes E-E-A-T analyses and meta-analyses, digital-identity readings, shared conversations, Deep Research sessions, public artifacts, generated web pages, deployed applications, and presentation forms. The author did not operate one fixed research protocol across all items. Archive timestamps establish observation points for particular public representations; they do not establish creation dates or the complete beginning and end of the activity. The curated SlideShare set now also includes a DeepSeek text-only E-E-A-T/semiotic interpretation of the professional ethnography and a Qwen interdisciplinary synthesis that treats the ethnography as the source for articulating DIO. These remain separate model-specific outputs.",
       "process_characteristics": [
         "creative and exploratory rather than governed by one pre-specified protocol",
         "cross-platform experimentation with different AI systems and creation environments",
@@ -228,6 +308,39 @@
       "concept_outcomes": [],
       "preceding_context_object_ids": [
         "ai-startup-marketing-article",
+        "ai-related-professional-writing"
+      ]
+    },
+    {
+      "id": "eeat-multimodel-assessment-and-meta-analysis",
+      "title": "Cross-model E-E-A-T assessments and independent meta-analyses",
+      "status": "retrospectively-reconstructed-in-part",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "summary": "A multi-model assessment sequence examined the author's professional digital identity and SEO pillar page through distinct E-E-A-T reports. The currently verified SlideShare series contains nine directly reviewed model-specific first-order assessments, alongside independent secondary meta-analyses published under Gemini 3 Deep Research, Kimi, Claude, and ChatGPT. The meta-analysis source sets do not fully agree on the Gemini model version: the Claude synthesis names Gemini 2.5 Pro Preview, while Kimi and ChatGPT name Gemini 3.1 Pro Preview. The 2.5 reference remains a separate inventory lead. Some first-order reports may also have shared-chat, web, or archive manifestations already registered elsewhere; those cross-platform identities remain separate until their content is compared. A separate 12-slide Gemini Deep Research report titled Spektrografie digitální identity Daniela Beránka applies a transdisciplinary E-E-A-T and semantic analysis to the broader professional-ethnography object; it is retained as an independent analysis, not folded into the first-order SEO-pillar report series or the four meta-analyses. A separate Claude-led E-E-A-T/semiotic analysis of the broader professional ethnography is represented by a nine-slide first edition and a ten-slide v2 revision. The v2 page explicitly describes additions of structured data, external references, and DIO-priority evidence; these reports are distinct from the first-order SEO-pillar report series and from the four meta-analyses.",
+      "process_characteristics": [
+        "distinct model-specific first-order E-E-A-T assessments",
+        "secondary synthesis of a common multi-model report set",
+        "independent meta-analyses generated by different AI systems",
+        "publication of report and synthesis manifestations through SlideShare",
+        "overlapping subject matter without assumed output identity",
+        "retrospective reconciliation of shared chats, deployed web outputs, and archive observations"
+      ],
+      "methods": [
+        "AI-assisted E-E-A-T assessment",
+        "model-specific analysis of a common professional digital-identity subject",
+        "cross-model synthesis and comparative interpretation",
+        "secondary meta-analysis of first-order reports",
+        "publication and curation of report manifestations"
+      ],
+      "roles": {
+        "author": "Selected the common assessment subject, initiated and curated the model-specific analyses and syntheses, and published the identified reports through the SlideShare collection. Exact cross-platform manifestation links remain under reconciliation.",
+        "ai_systems": "Produced distinct first-order E-E-A-T assessments and independent secondary meta-analyses. Model names are retained as stated on the public publication pages; exact versions are not inferred where absent.",
+        "publication_platforms": "Hosted and distributed individual model-specific reports and their separate meta-analyses as presentation/PDF manifestations."
+      },
+      "concept_outcomes": [],
+      "preceding_context_object_ids": [
         "ai-related-professional-writing"
       ]
     }
@@ -368,13 +481,13 @@
       "url": "https://www.slideshare.net/danielberanek",
       "profile_display_name": "SEO specialista a copywriter Daniel Beránek",
       "collection_role": "exploratory-research-archive-and-publication-distribution-surface",
-      "content_scope": "A mixed collection containing AI-assisted readings, model-generated conceptual explorations, comparative AI materials, research presentations, publication presentation layers, and earlier academic, professional, and technical materials.",
+      "content_scope": "A mixed collection containing AI-assisted readings, model-generated conceptual explorations, comparative AI materials, research presentations, publication presentation layers, and earlier academic, professional, and technical materials. The public profile reported 49 Slideshow items when reviewed on 24 November 2026. The registry currently covers a curated subset, including the identified model-specific E-E-A-T report series and several meta-analyses; the profile total is not treated as a count of DIO/ODI research outputs.",
       "attribution": {
         "status": "author-confirmed",
         "person_uri": "https://danielberanek.cz/#person",
         "basis": "The author identifies this profile as their own. The public profile and reviewed item pages display the uploader name SEO specialista a copywriter Daniel Beránek."
       },
-      "curation_status": "initial-curated-sample"
+      "curation_status": "expanded-curated-sample-not-exhaustive"
     },
     {
       "id": "ai-related-professional-writing-directories",
@@ -540,13 +653,26 @@
       "related_work_ids": [
         "crisis-entity-resolution"
       ],
-      "research_role": "A presentation layer for an existing research work, recorded here to distinguish publication distribution from exploratory readings of the professional ethnography.",
-      "summary": "A ten-slide public presentation of the canonical Crisis of Entity Resolution work. The SlideShare page itself identifies the Zenodo, SSRN, Figshare, and ResearchGate records as its canonical academic and citation records.",
+      "research_role": "A public presentation manifestation of the separately registered Crisis of Entity Resolution research work. The English SlideShare deck and its explicitly linked Czech-language edition are recorded as two language manifestations of the same underlying work, not as separate research outputs.",
+      "summary": "A public presentation layer for the canonical Crisis of Entity Resolution research work, distributed in English and Czech SlideShare editions. The English page explicitly links to the Czech edition, and the two pages share the same underlying study, date, four-anomaly structure, and DIO/ODI theoretical conclusion.",
       "provenance": {
         "basis": "Individual SlideShare page description, canonical work identifiers, and uploader attribution.",
         "source_description_url": "https://fr.slideshare.net/slideshow/the-crisis-of-entity-resolution-in-heterogeneous-ai-environments-data-financial-and-semantic-dimensions/289325700"
       },
-      "review_status": "page-description-and-uploader-reviewed"
+      "review_status": "english-and-czech-slide-pages-reviewed; same-work-language-relation-confirmed",
+      "representations": [
+        {
+          "id": "slideshare-crisis-entity-resolution-czech-edition",
+          "platform": "SlideShare",
+          "representation_type": "translated-presentation-edition",
+          "url": "https://www.slideshare.net/slideshow/krize-identifikace-entit-v-heterogennim-prostredi-ai-datove-financni-a-semanticke-dimenze/289325363",
+          "title": "Krize identifikace entit v heterogenním prostředí AI: datové, finanční a sémantické dimenze",
+          "relation": "same-underlying-work-czech-language-edition",
+          "relationship_status": "source-page-explicitly-identifies-CZ-version; title-abstract-structure-and-date-match-reviewed",
+          "evidence_basis": "The English SlideShare page explicitly labels this URL as its CZ version and links directly to it. Both pages identify Daniel Beránek as uploader/author, give the work date as 17 August 2026, and present the same abstract, four-anomaly structure, empirical sections, and concluding DIO/ODI discussion in the corresponding language edition. The Czech page directly displays the author/uploader attribution.",
+          "archive_captures": []
+        }
+      ]
     },
     {
       "id": "slideshare-ai-tools-comparative-review",
@@ -1674,71 +1800,638 @@
       ]
     },
     {
-      "id": "lovable-eeat-meta-analysis",
-      "title": "Metaanalýza E-E-A-T SEO specialist a copywriter Dan Beránek",
-      "url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-      "platform": "Lovable (builder/hosting)",
-      "artefact_type": "deployed-web-application",
-      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
-      "research_object_ids": [],
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "A comprehensive E-E-A-T evaluation of the SEO pillar page, covering expertise, experience, authoritativeness, and trustworthiness in SEO, copywriting, and digital marketing. The public listing identifies a 29-slide PDF/PPTX presentation.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-claude/286343682"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-claude",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Claude)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-claude/286343682",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Claude / Anthropic",
+        "model": "Claude (exact model version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "An in-depth E-E-A-T audit of the SEO pillar page, including case studies, certifications, external citations, and technical SEO. The public listing identifies a 19-slide presentation.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-copilot/286343860"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-copilot",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Copilot)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-copilot/286343860",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Microsoft Copilot",
+        "model": "Copilot (exact model/version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "A concise four-slide E-E-A-T assessment of the SEO pillar page, with a summary of experience, expertise, authoritativeness, and trustworthiness aligned with Google's quality standards.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-mistral/286344025"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-mistral",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Mistral)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-mistral/286344025",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Mistral AI",
+        "model": "Mistral (exact model/version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "An E-E-A-T evaluation of the author's expertise, experience, authority, and trustworthiness in SEO and copywriting, highlighting professional background, certifications, and client validations. The public listing identifies a ten-slide presentation.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-manus/286344747"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-manus",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Manus)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-manus/286344747",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Manus",
+        "model": "Manus (exact model/version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "A 23-slide model-specific E-E-A-T analysis of the author's SEO pillar page, applying the four E-E-A-T dimensions to expertise, experience, authority, and trustworthiness.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286346550"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-kimi",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Kimi)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286346550",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Kimi",
+        "model": "Kimi (exact model/version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "An eleven-slide report on the author's expert, authoritative, and trustworthy digital footprint, emphasizing SEO, technical optimization, and academic multidisciplinarity.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-research/286346835"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-gemini-research",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Gemini - Research)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-research/286346835",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Google Gemini",
+        "model": "Gemini Research (exact model/version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "A three-slide E-E-A-T assessment of the author's SEO site, covering expertise, experience, authority, and trustworthiness with practical case studies and technical insights.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286346980"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-chatgpt",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (ChatGPT)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286346980",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "ChatGPT / OpenAI",
+        "model": "ChatGPT (exact model/version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "A three-slide E-E-A-T evaluation of the SEO pillar page, focusing on semantic structure, topic clusters, and trust signals aligned with Google's Search Quality Rater Guidelines.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-1-pro-preview/286362734"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-gemini-3-1-pro",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Gemini 3.1 Pro Preview)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-1-pro-preview/286362734",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Google Gemini",
+        "model": "Gemini 3.1 Pro Preview"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-report-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-specific first-order E-E-A-T assessment of the author's professional digital identity. The report is kept separate from the other model outputs. Its exact identity relationship to any shared chat or web artifact remains open until content-level comparison.",
+      "summary": "A four-slide E-E-A-T evaluation of the author's professional digital presence, covering experience, expertise, authority, and trustworthiness through case studies, technical SEO, and transparency.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-grok-4-2-beta-thinking-hard/286401301"
+      },
+      "review_status": "public-page-title-description-uploader-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Indexed as a distinct model-specific report. Do not merge with a shared chat, Canvas, or web artifact solely on the basis of model name or common E-E-A-T subject.",
+      "id": "slideshare-eeat-analysis-grok",
+      "title": "E-E-A-T analýza subjektu SEO specialista a copywriter Daniel Beránek (Grok 4.2 Beta - Thinking Hard)",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-grok-4-2-beta-thinking-hard/286401301",
+      "artefact_type": "model-generated-eeat-analysis",
+      "model_attribution": {
+        "system": "Grok / xAI",
+        "model": "Grok 4.2 Beta — Thinking Hard"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-meta-analysis-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-generated secondary synthesis of the multi-model E-E-A-T report set. This meta-analysis is kept separate from the first-order model reports and from other model-generated meta-analyses; it is not treated as an alternative copy of those syntheses.",
+      "summary": "A fourteen-slide meta-analysis synthesizing ten model-specific E-E-A-T assessments, explicitly listing Claude, Copilot, Mistral, Manus, Kimi, Gemini Research, ChatGPT, Gemini 3.1 Pro Preview, Grok 4.2 Beta, and Seznam Asistent as its source set.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+      },
+      "review_status": "public-page-title-description-uploader-and-synthesis-scope-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "A separate synthesis produced by a different AI system. Its shared subject and source set do not make it the same output as another model's meta-analysis.",
+      "artefact_type": "model-generated-eeat-meta-analysis",
+      "id": "slideshare-eeat-meta-analysis-kimi",
+      "title": "Metaanalýza E-E-A-T analýz subjektu SEO specialista a copywriter Daniel Beránek (Kimi)",
+      "url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792",
+      "model_attribution": {
+        "system": "Kimi",
+        "model": "Kimi (exact model/version not stated)"
+      }
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-meta-analysis-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "The underlying work is a model-generated meta-analysis of ten first-order AI E-E-A-T assessments. The Claude-attributed SlideShare deck, the Macaly hosted page, and the Lovable web application are separate publication manifestations of this same twelve-section synthesis. It remains distinct from the separately generated Gemini 3 Deep Research, Kimi, and ChatGPT meta-analyses of the primary reports.",
+      "summary": "A twelve-slide Claude-generated E-E-A-T meta-analysis of the author's professional digital identity, presented as a separate synthesis with its own title and content.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-claude/286570213"
+      },
+      "review_status": "content-identity-reviewed-across-SlideShare-Macaly-and-Lovable; archive-captures-retained-pending-individual-inspection",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "A separate synthesis produced by a different AI system. Its shared subject and source set do not make it the same output as another model's meta-analysis.",
+      "artefact_type": "model-generated-eeat-meta-analysis",
+      "id": "slideshare-eeat-meta-analysis-claude",
+      "title": "Metaanalýza E-E-A-T analýz subjektu SEO specialista a copywriter Daniel Beránek (Claude)",
+      "url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-claude/286570213",
+      "model_attribution": {
+        "system": "Claude / Anthropic",
+        "model": "Claude (exact model/version not stated)"
+      },
+      "representations": [
+        {
+          "id": "macaly-eeat-meta-analysis-claude",
+          "platform": "Macaly",
+          "representation_type": "hosted-web-document",
+          "url": "https://macaly-hqpnq1cnpjs45ur7xate74ba.macaly.app/",
+          "title": "E-E-A-T Metaanalýza",
+          "relation": "alternate-web-manifestation-of-same-underlying-output",
+          "relationship_status": "content-and-structure-match-observed; platform-authorship-not-verified",
+          "evidence_basis": "The Macaly page reproduces the same 12-section report structure, the same ten-model source list including Gemini 2.5 Pro Preview, the same opening methodology paragraph, and matching passages and conclusion text present in the Claude-attributed SlideShare PDF. This is recorded as an alternate web manifestation of the same meta-analysis, not as an additional meta-analysis output. The hosting-page authorship/uploader attribution is not independently established.",
+          "archive_captures": []
+        },
+        {
+          "id": "lovable-eeat-meta-analysis",
+          "platform": "Lovable",
+          "representation_type": "deployed-web-application",
+          "url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "title": "Metaanalýza E-E-A-T SEO specialist a copywriter Dan Beránek",
+          "relation": "alternate-web-manifestation-of-same-underlying-output",
+          "relationship_status": "live-page-content-matches-Claude-SlideShare-and-Macaly; source-set-and-12-section-structure-match-reviewed",
+          "evidence_basis": "The live Lovable page states that it synthesizes ten independent model-generated E-E-A-T analyses, names the same ten model sources as the Claude-attributed SlideShare deck (Claude, Copilot, Mistral, Manus, Kimi, Gemini Research, ChatGPT, Gemini 2.5 Pro Preview, Grok 4.2 Beta, Seznam Asistent), and reproduces the same opening methodological text and twelve-chapter structure. The Claude SlideShare source and the already reviewed Macaly representation carry the same text and source set. No evidence on the page indicates that the Lovable version synthesizes the four later independent meta-analyses themselves; it is therefore recorded as another web manifestation of the same underlying first-order E-E-A-T meta-analysis, not as a separate meta-meta-analysis.",
+          "archive_captures": [
+            {
+              "url": "https://archive.is/cHCUM",
+              "archive_service": "Archive.today / Archive.is / Archive.ph",
+              "captured_at": null,
+              "timestamp_basis": "Timestamp not established from supplied locator.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://web.archive.org/web/20260323134924/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "archive_service": "Internet Archive Wayback Machine",
+              "captured_at": "2026-03-23T13:49:24Z",
+              "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Author-supplied archive locator; captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://web.archive.org/web/20260323231015/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "archive_service": "Internet Archive Wayback Machine",
+              "captured_at": "2026-03-23T23:10:15Z",
+              "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Author-supplied archive locator; captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://web.archive.org/web/20260323231242/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "archive_service": "Internet Archive Wayback Machine",
+              "captured_at": "2026-03-23T23:12:42Z",
+              "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Author-supplied archive locator; captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://megalodon.jp/pc/main?url=https%3A%2F%2Fmeta-analyza-e-e-a-t-daniel-beranek.lovable.app%2F",
+              "archive_service": "Megalodon.jp",
+              "captured_at": null,
+              "timestamp_basis": "The supplied /pc/main?url= locator does not expose a timestamp in the URL.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Archive page reference supplied; snapshot timestamp is not exposed in the supplied URL. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-meta-analysis-curated-and-published-by-author",
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct model-generated secondary synthesis of the multi-model E-E-A-T report set. This meta-analysis is kept separate from the first-order model reports and from other model-generated meta-analyses; it is not treated as an alternative copy of those syntheses.",
+      "summary": "An eight-slide ChatGPT meta-analysis synthesizing multiple model audits of the author's SEO pillar page, with a comparative discussion of experience, expertise, authoritativeness, and trustworthiness.",
+      "provenance": {
+        "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
+        "source_description_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+      },
+      "review_status": "public-page-title-description-uploader-and-synthesis-scope-reviewed; cross-platform-equivalence-pending",
+      "research_cluster_ids": [
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "A separate synthesis produced by a different AI system. Its shared subject and source set do not make it the same output as another model's meta-analysis.",
+      "artefact_type": "model-generated-eeat-meta-analysis",
+      "id": "slideshare-eeat-meta-analysis-chatgpt",
+      "title": "Metaanalýza E-E-A-T analýz subjektu SEO specialista a copywriter Daniel Beránek (ChatGPT)",
+      "url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918",
+      "model_attribution": {
+        "system": "ChatGPT / OpenAI",
+        "model": "ChatGPT (exact model/version not stated)"
+      }
+    },
+    {
+      "id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
+      "title": "Spektrografie digitální identity Daniela Beránka: transdisciplinární E-E-A-T a sémantická analýza (Gemini Deep Research)",
+      "url": "https://pt.slideshare.net/slideshow/spektrografie-digitalni-identity-daniela-beranka-transdisciplinarni-e-e-a-t-a-semanticka-analyza-gemini-deep-research/287937291",
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-transdisciplinary-eeat-semantic-analysis",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Google Gemini",
+        "model": "Gemini Deep Research"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography",
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct Gemini Deep Research analysis of the author's professional digital identity. It combines transdisciplinary E-E-A-T assessment with semantic deconstruction and interpretation of the professional-ethnography source. It is separate from the Gemini Research first-order SEO-pillar assessment and from the Gemini 3 Deep Research meta-analysis of multiple E-E-A-T reports.",
+      "summary": "A 12-slide report examining Daniel Beránek's digital identity through transdisciplinary interpretation, E-E-A-T assessment, semantic deconstruction, retail experience, academic expertise, and technical expertise in AI and marketing. The opening section explicitly discusses the professional trajectory as a non-linear iterative spiral and the role of Czech-language semantics in reconstructing identity.",
+      "provenance": {
+        "basis": "Direct SlideShare page title, public description, displayed model attribution in the title, 12-slide count, and uploader attribution.",
+        "source_description_url": "https://pt.slideshare.net/slideshow/spektrografie-digitalni-identity-daniela-beranka-transdisciplinarni-e-e-a-t-a-semanticka-analyza-gemini-deep-research/287937291"
+      },
+      "review_status": "public-page-title-description-content-uploader-reviewed",
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "A standalone transdisciplinary E-E-A-T and semantic analysis. Do not merge with the Gemini Research first-order assessment or Gemini 3 Deep Research meta-analysis solely because all three involve Gemini."
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Claude / Anthropic",
+        "model": "Claude (exact model version not stated)"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography",
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "provenance": {
+        "basis": "Direct SlideShare page title, description, rendered slide text, slide count, uploader attribution, and version notes.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
+      },
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "id": "slideshare-eeat-semiotic-analysis-claude-v1",
+      "title": "E-E-A-T analýza + sémiotika, poststrukturalismus, kritika ideologie a diskurzivní analýza — Claude",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude/287791074",
+      "artefact_type": "model-generated-transdisciplinary-eeat-semiotic-analysis",
+      "research_role": "A distinct Claude-generated E-E-A-T analysis of the broader professional-ethnography object, combining semantic and semiotic interpretation, poststructuralism, ideology critique, discourse analysis, technical metadata, and AI-governance aspects. It is not part of the nine-report SEO-pillar series or the four E-E-A-T meta-analyses.",
+      "summary": "A nine-slide analysis of the professional ethnography as a layered, non-linear and heteroglossic source. The report covers E-E-A-T, semiotics, poststructuralism, ideology critique, discourse analysis, the technical metadata layer, and AI-governance directives. The page identifies the underlying professional-ethnography URL and states a 25 May 2026 last-updated date for the source page.",
+      "review_status": "public-page-title-description-rendered-content-slide-count-and-uploader-reviewed; v2-relation-confirmed"
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Claude / Anthropic",
+        "model": "Claude v2; exact model version not stated"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography",
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "provenance": {
+        "basis": "Direct SlideShare page title, description, rendered slide text, slide count, uploader attribution, and version notes.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
+      },
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "id": "slideshare-eeat-semiotic-analysis-claude-v2",
+      "title": "E-E-A-T analýza + sémiotika, poststrukturalismus, kritika ideologie a diskurzivní analýza — Claude-v2",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595",
+      "artefact_type": "model-generated-transdisciplinary-eeat-semiotic-analysis-revision",
+      "research_role": "A revised ten-slide edition of the Claude transdisciplinary E-E-A-T/semiotic analysis of the professional ethnography. The SlideShare page explicitly labels it v2 and states that complete structured data and external references absent from the prior version have been added. It is therefore recorded as a substantive revision of v1, not as a separate unrelated analysis or an identical alternate manifestation.",
+      "summary": "A ten-slide revised analysis that retains the earlier E-E-A-T, semiotic, poststructuralist, ideology-critical, and discourse-analytic framing while adding structured-data and external-reference analysis, expanded sameAs/entity-recognition discussion, thesis entities, and an explicit DIO-evidence priority. The page compares qualitative E-E-A-T scores with v1 and explains the changes attributed to JSON-LD, external references, and AI-governance signals.",
+      "review_status": "public-page-title-description-rendered-content-slide-count-and-explicit-v2-lineage-reviewed"
+    },
+    {
+      "id": "slideshare-deepseek-eeat-semiotic-analysis",
+      "title": "Konstrukce expertní autority v digitálním diskurzu — E-E-A-T analýza profesní etnografie Daniela Beránka (DeepSeek)",
+      "url": "https://de.slideshare.net/slideshow/konstrukce-expertni-autority-v-digit-diskurzu-e-e-a-t-analyza-profesni-etnografie-daniel-beranka-deepseek/287768813",
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-eeat-semiotic-discourse-analysis",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "DeepSeek",
+        "model": "DeepSeek (exact model/version not stated)"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography"
+      ],
       "process_ids": [
         "cross-platform-ai-exploration"
       ],
       "related_work_ids": [],
-      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
-      "summary": "A Lovable-published E-E-A-T meta-analysis application. Three separate Wayback captures may represent successive page states; they are not separate research outputs. Archive.today and Megalodon references are retained as additional representations.",
+      "research_role": "A distinct DeepSeek-generated E-E-A-T interpretation of the professional-ethnography object, with a deliberately text-only evidence boundary. Its analytical frame overlaps with Claude's semiotic analyses, but its distinct authorship, contents, and model-specific interpretation are retained as a separate output.",
+      "summary": "A three-slide qualitative E-E-A-T analysis of the professional ethnography, using semiotics, poststructuralist narrative deconstruction, ideology critique, and discourse analysis. The page explicitly states that it examines visible textual content and excludes the site's structured-data/technical layer. It is a distinct DeepSeek analysis, not an alternate manifestation of either Claude semiotic version.",
       "provenance": {
-        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
-        "source_description_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/"
+        "basis": "Direct SlideShare page title, description, rendered presentation text, slide count, displayed uploader attribution, and model attribution in the page title/content.",
+        "source_description_url": "https://de.slideshare.net/slideshow/konstrukce-expertni-autority-v-digit-diskurzu-e-e-a-t-analyza-profesni-etnografie-daniel-beranka-deepseek/287768813"
       },
-      "review_status": "author-supplied-locators-content-unreviewed",
-      "archive_captures": [
-        {
-          "url": "https://archive.is/cHCUM",
-          "archive_service": "Archive.today / Archive.is / Archive.ph",
-          "captured_at": null,
-          "timestamp_basis": "Timestamp not established from supplied locator.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "locator-supplied-content-unreviewed",
-          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
-        },
-        {
-          "url": "https://web.archive.org/web/20260323134924/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "archive_service": "Internet Archive Wayback Machine",
-          "captured_at": "2026-03-23T13:49:24Z",
-          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "timestamped-locator-content-unreviewed",
-          "note": "Author-supplied archive locator; captured content not yet inspected."
-        },
-        {
-          "url": "https://web.archive.org/web/20260323231015/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "archive_service": "Internet Archive Wayback Machine",
-          "captured_at": "2026-03-23T23:10:15Z",
-          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "timestamped-locator-content-unreviewed",
-          "note": "Author-supplied archive locator; captured content not yet inspected."
-        },
-        {
-          "url": "https://web.archive.org/web/20260323231242/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "archive_service": "Internet Archive Wayback Machine",
-          "captured_at": "2026-03-23T23:12:42Z",
-          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "timestamped-locator-content-unreviewed",
-          "note": "Author-supplied archive locator; captured content not yet inspected."
-        },
-        {
-          "url": "https://megalodon.jp/pc/main?url=https%3A%2F%2Fmeta-analyza-e-e-a-t-daniel-beranek.lovable.app%2F",
-          "archive_service": "Megalodon.jp",
-          "captured_at": null,
-          "timestamp_basis": "The supplied /pc/main?url= locator does not expose a timestamp in the URL.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "locator-supplied-content-unreviewed",
-          "note": "Archive page reference supplied; snapshot timestamp is not exposed in the supplied URL."
-        }
-      ]
+      "review_status": "public-page-title-description-rendered-content-slide-count-uploader-and-model-attribution-reviewed",
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Distinct model-specific interpretation. Shared subject matter and overlapping semiotic vocabulary do not make the output identical to analyses produced by other models."
+    },
+    {
+      "id": "slideshare-qwen-dio-interdisciplinary-synthesis",
+      "title": "Digital Identity Optimization (DIO): Integrating Psychology, Media Studies, and AI for Trust Architecture",
+      "url": "https://www.slideshare.net/slideshow/digital-identity-optimization-dio-integrating-psychology-media-studies-and-ai-for-trust-architecture/287747736",
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-dio-interdisciplinary-synthesis",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Qwen",
+        "model": "Qwen (exact model/version not stated)"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct Qwen-generated interdisciplinary synthesis of the professional-ethnography object and the emergence of DIO. It is not treated as a canonical DIO paper or as an alternate manifestation of the Manifest; it is a model-specific interpretive output published as a SlideShare presentation.",
+      "summary": "A 14-slide report whose opening identifies the professional ethnography as the primary source for synthesizing the interdisciplinary influences behind DIO. The presentation examines psychology, media studies, academic methodology, technical standards, and ethical principles, and describes DIO as a dual-readable identity framework for people, search algorithms, and generative AI. The first slide carries the Czech working title 'Od Psychologie k AI-Readability: Architektura Důvěry a Syntéza Nového Oboru Digital Identity Optimization'.",
+      "provenance": {
+        "basis": "Direct SlideShare page title, description, rendered presentation text, slide count, displayed uploader attribution, and model attribution in the page title/content.",
+        "source_description_url": "https://www.slideshare.net/slideshow/digital-identity-optimization-dio-integrating-psychology-media-studies-and-ai-for-trust-architecture/287747736"
+      },
+      "review_status": "public-page-title-description-rendered-content-slide-count-uploader-and-model-attribution-reviewed",
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster"
+      ],
+      "curation_note": "Distinct model-specific interpretation. Shared subject matter and overlapping semiotic vocabulary do not make the output identical to analyses produced by other models."
     }
   ],
   "inventory_leads": [
@@ -1755,6 +2448,73 @@
       "discovery_status": "target-id-mismatch-unresolved",
       "summary": "A Megalodon snapshot of a Browseo URL was supplied in connection with Mistral chat dfd88fe5-ba35-4b9a-97c8-2d2f016e7a51. The URL-encoded Browseo target is https://chat.mistral.ai/chat/4e8ae9f8-8862-4225-a6a8-0e6948651d91, a different ID. Keep this as an unresolved trail rather than assigning it to the dfd88fe5 chat.",
       "url": "https://megalodon.jp/2026-0320-2206-31/https://www.browseo.net:443/?url=https%3A%2F%2Fchat.mistral.ai%2Fchat%2F4e8ae9f8-8862-4225-a6a8-0e6948651d91"
+    },
+    {
+      "title": "Seznam Asistent E-E-A-T report on SlideShare — direct page confirmation pending",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-eeat-analysis",
+      "discovery_status": "referenced-as-one-of-ten-primary-reports-in-Kimi-meta-analysis; direct-page-uploader-review-pending",
+      "summary": "The Kimi meta-analysis lists a Seznam Asistent E-E-A-T analysis among its ten primary model-specific reports and provides a direct SlideShare URL. The direct page could not be inspected in this review; keep the item as a lead until its title, uploader attribution, and content are checked.",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-seznam-asistent/286459934",
+      "platform": "SlideShare"
+    },
+    {
+      "title": "Gemini 2.5 Pro Preview E-E-A-T report cited by the Claude meta-analysis",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-eeat-analysis",
+      "discovery_status": "referenced-in-Claude-meta-analysis; direct-presentation-locator-unidentified",
+      "summary": "The Claude-attributed E-E-A-T meta-analysis and its matching Macaly web manifestation list Gemini 2.5 Pro Preview among ten first-order SlideShare analyses. The Kimi and ChatGPT meta-analyses instead list Gemini 3.1 Pro Preview, for which a separate SlideShare presentation is directly identified. Keep the Gemini 2.5 reference as a separate unresolved source lead; do not merge it with the Gemini 3.1 presentation without content and version evidence.",
+      "platform": "SlideShare"
+    },
+    {
+      "title": "OpenLiteSpeed and LiteSpeed Enterprise technical study — presentation and article relationship",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-technical-study-and-presentation-candidate",
+      "discovery_status": "both-public-pages-identified; temporal-and-derivation-direction-unresolved",
+      "summary": "The SlideShare profile lists an eight-slide presentation, and a directly identified SlideShare page is available at the supplied URL. The last slide points to the author's article at danielberanek.cz/studie-webserveru-openlitespeed-vs-litespeed-enterprise/. The SlideShare page displays 5 April 2025, while the article page byline displays 14 October 2025. Their content and temporal relationship should be compared before describing the deck as derived from the article or vice versa.",
+      "url": "https://www.slideshare.net/slideshow/studie-webserveru-openlitespeed-a-litespeed-enterprise/277555372",
+      "platform": "SlideShare",
+      "related_uri": "https://danielberanek.cz/studie-webserveru-openlitespeed-vs-litespeed-enterprise/"
+    },
+    {
+      "title": "Model mocenské situace — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-academic-or-conceptual-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-source-context-unresolved",
+      "summary": "The current author profile lists a five-slide presentation titled Model mocenské situace and attributes it to SEO specialista a copywriter Daniel Beránek. The direct presentation page and its relationship to any academic work or later conceptual development have not yet been established.",
+      "platform": "SlideShare"
+    },
+    {
+      "title": "Evaluace pozitivní psychologie perspektivou Castanedova učení — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-academic-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-source-relation-unresolved",
+      "summary": "The SlideShare profile lists an 11-slide item with this title and author/uploader attribution. A 2009 Masaryk University thesis titled Pozitivní psychologie a vybrané duchovní směry: komparativní analýza is a potentially related academic object, but the titles and framing differ: the university abstract names Bateson's binocular-vision method, while the SlideShare title references Castaneda. Treat them as potentially related, not as the same work, until the deck content and source relation are checked.",
+      "platform": "SlideShare",
+      "related_uri": "https://is.muni.cz/th/wknmn/",
+      "candidate_related_object_ids": [
+        "positive-psychology-and-spiritual-streams-thesis"
+      ]
+    },
+    {
+      "title": "Reartikulace konceptů ideologie a hegemonie — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-academic-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-unresolved; likely-related-university-thesis-identified",
+      "summary": "The SlideShare profile lists a seven-slide item under the shortened but matching title and displays the author/uploader attribution. The official Masaryk University record confirms the 2011 master's thesis with the full title. The direct SlideShare item URL and presentation-to-thesis content relationship have not yet been verified.",
+      "platform": "SlideShare",
+      "related_uri": "https://is.muni.cz/th/ajfb6/",
+      "candidate_related_object_ids": [
+        "rearticulation-ideology-hegemony-thesis"
+      ]
+    },
+    {
+      "title": "Přesahy 005 — Internetová propagace festivalu — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-associated-project-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-project-attribution-unresolved",
+      "summary": "The current author profile lists a four-slide presentation titled Propagace presahy005. The thumbnail identifies it as Internetová propagace festivalu and displays EU regional-development funding marks. It is retained as a project-communication lead; its inclusion in the SlideShare collection does not by itself make it a DIO/ODI research output.",
+      "platform": "SlideShare"
     }
   ],
   "relations": [
@@ -1829,6 +2589,126 @@
       "relation": "has-possible-alternative-manifestation",
       "object_id": "gemini-share-a4e8c0d5",
       "evidence_url": "https://gemini.google.com/share/a4e8c0d5d558"
+    },
+    {
+      "subject_id": "eeat-digital-identity-assessment-subject",
+      "relation": "was-assessed-through",
+      "object_id": "eeat-multimodel-assessment-and-meta-analysis",
+      "evidence_url": "https://www.slideshare.net/danielberanek"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-claude",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-claude",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-copilot",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-copilot",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-mistral",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-mistral",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-manus",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-manus",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-kimi",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-kimi",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-gemini-research",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-gemini-research",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-chatgpt",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-chatgpt",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-gemini-3-1-pro",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-gemini-3-1-pro",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-grok",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-kimi",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792"
+    },
+    {
+      "subject_id": "slideshare-eeat-analysis-grok",
+      "relation": "is-listed-as-source-in",
+      "object_id": "slideshare-eeat-meta-analysis-chatgpt",
+      "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-semiotic-analysis-claude-v2",
+      "relation": "is-revision-of",
+      "object_id": "slideshare-eeat-semiotic-analysis-claude-v1",
+      "evidence_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
     }
   ],
   "research_clusters": [
@@ -1955,9 +2835,29 @@
           "status": "author-supplied-content-review-pending"
         },
         {
-          "artefact_id": "lovable-eeat-meta-analysis",
-          "relationship": "member-of-broad-exploratory-set",
-          "status": "author-supplied-content-review-pending"
+          "artefact_id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
+          "relationship": "distinct-model-generated-analysis-in-the-broad-cross-platform-exploration",
+          "status": "page-content-uploader-reviewed; distinct-output-identified"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v1",
+          "relationship": "claude-model-specific-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v2",
+          "relationship": "claude-model-specific-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-deepseek-eeat-semiotic-analysis",
+          "relationship": "model-specific-interpretive-output-derived-from-professional-ethnography",
+          "status": "direct-page-content-and-uploader-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-qwen-dio-interdisciplinary-synthesis",
+          "relationship": "model-specific-interpretive-output-derived-from-professional-ethnography",
+          "status": "direct-page-content-and-uploader-reviewed"
         }
       ]
     },
@@ -2029,14 +2929,89 @@
           "status": "author-context-grouped-content-review-pending"
         },
         {
-          "artefact_id": "lovable-eeat-meta-analysis",
+          "artefact_id": "slideshare-eeat-meta-analysis-gemini-3",
           "relationship": "thematic-member; exact-output-identity-not-implied",
           "status": "author-context-grouped-content-review-pending"
         },
         {
-          "artefact_id": "slideshare-eeat-meta-analysis-gemini-3",
-          "relationship": "thematic-member; exact-output-identity-not-implied",
-          "status": "author-context-grouped-content-review-pending"
+          "artefact_id": "slideshare-eeat-analysis-claude",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-copilot",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-mistral",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-manus",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-kimi",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-gemini-research",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-chatgpt",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-gemini-3-1-pro",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-analysis-grok",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-meta-analysis-kimi",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-meta-analysis-claude",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-eeat-meta-analysis-chatgpt",
+          "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
+          "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
+          "relationship": "distinct-transdisciplinary-eeat-and-semantic-analysis-not-a-first-order-seo-pillar-report-or-meta-analysis",
+          "status": "page-content-uploader-reviewed; distinct-output-identified"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v1",
+          "relationship": "transdisciplinary-e-e-a-t-and-semiotic-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v2",
+          "relationship": "transdisciplinary-e-e-a-t-and-semiotic-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-deepseek-eeat-semiotic-analysis",
+          "relationship": "distinct-first-order-e-e-a-t-analysis-of-the-professional-ethnography",
+          "status": "direct-page-content-and-uploader-reviewed"
         }
       ]
     }

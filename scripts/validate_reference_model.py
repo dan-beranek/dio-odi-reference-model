@@ -773,6 +773,11 @@ def check_metadata() -> dict[str, int | str]:
                 lead.get("source_collection_id") in set(collection_ids),
                 f"Research Genealogy inventory lead has an unresolved source collection: {lead.get('title')}",
             )
+        candidate_objects = set(lead.get("candidate_related_object_ids", []))
+        require(
+            candidate_objects <= set(object_ids),
+            f"Research Genealogy inventory lead has an unresolved candidate research object: {lead.get('title')}",
+        )
     for relation in genealogy_relations:
         require(
             relation.get("subject_id") in genealogy_entity_ids
