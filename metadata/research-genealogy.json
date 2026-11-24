@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.3.8",
+  "registry_version": "0.3.9",
   "schema_version": "0.3.3",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-25",
@@ -18,7 +18,7 @@
       "uri": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/",
       "object_type": "multimodal-professional-ethnography",
       "status": "living-author-maintained-web-object",
-      "description": "An evolving, layered representation of professional experience, knowledge, practice, and digital traces. Its research object is distributed across narrative text, explicit interpretive guidance, visual and semantic structures, linked sources, machine-readable metadata, and a dated changelog. The object also explicitly revisits two earlier works in media and communication studies: the 2011 Rearticulation of Ideology and Hegemony thesis and the 2005 semiotic analysis of mOBSCENE, integrating their theoretical and methodological contributions into the professional-ethnography narrative.",
+      "description": "An evolving, layered representation of professional experience, knowledge, practice, and digital traces. Its research object is distributed across narrative text, explicit interpretive guidance, visual and semantic structures, linked sources, machine-readable metadata, and a dated changelog. The object also explicitly revisits two earlier works in media and communication studies: the 2011 Rearticulation of Ideology and Hegemony thesis and the 2005 semiotic analysis of mOBSCENE, integrating their theoretical and methodological contributions into the professional-ethnography narrative. The author's chronology distinguishes four different beginnings: retail work with his brother in 1992; university study and sustained work with meaning from 2002; first professional work in SEO, copywriting, web design, and related online-marketing activities in 2005/2006; and self-employment (OSVČ) from 2013. These are distinct professional, intellectual, and business milestones, not competing estimates of one tenure.",
       "components": [
         "narrative text and non-linear professional trajectory",
         "methodological and interpretive notes",
@@ -27,9 +27,33 @@
         "AI-use notice and machine-readable agent instructions",
         "structured page metadata and semantic markup",
         "author-maintained changelog",
-        "explicit retrospective integration of the Rearticulation of Ideology and Hegemony thesis and the mOBSCENE semiotic analysis"
+        "explicit retrospective integration of the Rearticulation of Ideology and Hegemony thesis and the mOBSCENE semiotic analysis",
+        "author-confirmed professional and intellectual chronology: retail work from 1992; university study and work with meaning from 2002; professional SEO, copywriting, web design, and online marketing from 2005/2006; self-employment from 2013"
       ],
-      "role_in_genealogy": "Primary research object examined through iterative AI-assisted secondary exploration."
+      "role_in_genealogy": "Primary research object examined through iterative AI-assisted secondary exploration.",
+      "professional_timeline": [
+        {
+          "year": 1992,
+          "milestone": "Beginning of retail work with his brother.",
+          "basis": "Author-confirmed chronology."
+        },
+        {
+          "year": 2002,
+          "milestone": "Beginning of university studies and sustained work with meaning.",
+          "basis": "Author-confirmed chronology; the 24-year formulation refers to this intellectual and interpretive continuity, not professional SEO tenure."
+        },
+        {
+          "year": 2005,
+          "year_end": 2006,
+          "milestone": "First professional work in SEO, copywriting, web design, and related online-marketing activities.",
+          "basis": "Author-confirmed chronology; the start is given as 2005/2006."
+        },
+        {
+          "year": 2013,
+          "milestone": "Beginning of self-employment (OSVČ).",
+          "basis": "Author-confirmed chronology; this is the start of self-employment, not the start of professional practice."
+        }
+      ]
     },
     {
       "id": "ai-startup-marketing-article",

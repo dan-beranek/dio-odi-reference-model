@@ -448,6 +448,38 @@
               },
               "description": "Version records may describe a thesis submission or a separately archived earlier file whose relationship to the submission is still being reconciled."
             }
+          },
+          "professional_timeline": {
+            "type": "array",
+            "description": "Author-confirmed chronology of professional, intellectual, and business milestones. Year precision is retained without inventing month or day.",
+            "items": {
+              "type": "object",
+              "required": [
+                "year",
+                "milestone",
+                "basis"
+              ],
+              "properties": {
+                "year": {
+                  "type": "integer",
+                  "minimum": 1900,
+                  "maximum": 2100
+                },
+                "year_end": {
+                  "type": "integer",
+                  "minimum": 1900,
+                  "maximum": 2100
+                },
+                "milestone": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "basis": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
           }
         }
       }
