@@ -145,22 +145,23 @@ Tasks:
 
 **Priority:** Medium–high after WPs 2–3.
 
-### WP5 — Direct theoretical, methodological, and psychological antecedents
+### WP5 — Recurring intellectual lineages and direct antecedents
 
-**Question:** Which earlier works are explicitly revisited and reused by the professional ethnography as part of the conceptual and methodological development leading into DIO/ODI?
+**Question:** Which earlier works and recurring theoretical traditions are explicitly carried into the professional ethnography and the DIO/ODI research object?
 
 Tasks:
-1. Preserve the 2011 *Reartikulace konceptů ideologie a hegemonie* thesis as a direct theoretical antecedent because the professional ethnography explicitly returns to ideology, hegemony, discourse, nodal points, and rearticulation.
-2. Preserve the 2005 *Sémiotická analýza klipu Marilyna Mansona mOBSCENE* thesis as a direct semiotic/methodological antecedent because the professional ethnography explicitly revisits its reconstruction of semiosis and sign-meaning expansion.
-3. Preserve the 2006 *Klíčové aspekty sebevražedných sekt z hlediska jedince* thesis as a direct psychological and communication-theoretical antecedent because the professional ethnography explicitly reuses its model of the power situation and translates it into commercial conversion and brand communication.
-4. Preserve the 2009 *Pozitivní psychologie* thesis lineage as a direct methodological antecedent. Its second, successfully defended attempt (*Aktualizace východisek a možností pozitivní psychologie*) documents Bateson's binocular-vision method, reconstruction and comparison of differently coded perspectives, and secondary semiotic/discourse-theoretical foundations. The professional ethnography explicitly generalizes this cross-perspective method into current professional practice.
-5. Keep both successive positive-psychology thesis submissions within one version lineage. The ResearchGate DOI identifies the second, successfully defended version; the first and second IS MU records are bibliographic records for successive attempts, not separate unrelated research objects.
-6. Link these works to the professional-ethnography research object using explicit source-page evidence. Keep other academic submissions, technical presentations, and customer-facing presentations outside the direct lineage unless a specific direct relationship is established.
-7. Retain SlideShare copies of the 2011 thesis only as distribution locators; do not count them as independent research outputs.
+1. Preserve the 2011 *Reartikulace konceptů ideologie a hegemonie* thesis as a theoretical antecedent in ideology, hegemony, discourse, nodal points, and poststructuralist rearticulation.
+2. Preserve the 2005 *Sémiotická analýza klipu mOBSCENE* thesis as a semiotic antecedent in deconstruction, semiosis, and sign-meaning expansion.
+3. Preserve the 2006 *Klíčové aspekty sebevražedných sekt z hlediska jedince* thesis as a psychological and communication-theoretical antecedent. Its model of the power situation is explicitly reinterpreted in the professional ethnography in relation to commercial conversion, identity, persuasion, needs, vulnerabilities, and brand communication.
+4. Preserve the 2009 positive-psychology thesis as one version lineage: the first version *Pozitivní psychologie a Castanedovo učení: komparativní analýza* (IS MU wknmn, first attempt not defended) and the rewritten, retitled *Aktualizace východisek a možností pozitivní psychologie* (IS MU k2bkc, successfully defended 2 June 2009). The first-version PDF is explicitly linked; the second-version DOI is 10.13140/RG.2.2.32958.86087.
+5. Record the documented revision between the two versions: 29% revised content, cited-source count from 173 to 257, and footnotes from 182 to 573. Do not infer a separate work or an additional thesis from the title and metadata changes.
+6. Record Bateson's binocular-vision principle as a direct methodological contribution: reconstruction and comparison of analogous but differently coded perspectives, interpretation, and extrapolation. Connect it to the professional ethnography's explicit application to human language/search-AI perspectives and business/human-needs perspectives.
+7. Model semiotics, communication theory/discourse, and structuralist/poststructuralist thought as cross-cutting intellectual threads across all four academic works, while retaining the distinct object-specific expressions. Do not reduce the whole genealogy to four isolated antecedents or imply the same concept carries equal weight in each.
+8. Keep other academic submissions, technical presentations, and customer-facing material outside the lineage unless a specific relationship is evidenced.
 
-**Deliverable:** A compact map of explicit theoretical, semiotic, psychological, and methodological antecedents, with the author-maintained professional ethnography as the evidence-bearing bridge.
+**Deliverable:** A structured map of four earlier works plus their recurring intellectual threads and object-specific expressions, with the professional ethnography as the evidence-bearing bridge.
 
-**Priority:** High, because these antecedents document distinct strands carried into the primary research object.
+**Priority:** High. These records clarify both the common theoretical repertoire and the different methodological/conceptual contributions that preceded DIO/ODI.
 ### WP6 — Archive provenance reconciliation
 
 **Question:** Which public representations have time-stamped captures, and which captures are duplicates or unmatched?
@@ -208,7 +209,7 @@ Phases may overlap where a new archive capture helps identify a manifestation, b
 
 ## Current state on 24 November 2026
 
-- The merged PR #107 published Research Genealogy registry v0.3.1 with 56 artefact records and the expanded profile inventory. PR #108 proposes registry v0.3.4 with eight research objects, 14 inventory leads, 33 primary SlideShare artefacts, and three nested SlideShare manifestations.
+- The merged PR #107 published Research Genealogy registry v0.3.1 with 56 artefact records and the expanded profile inventory. PR #108 proposes registry v0.3.5 with eight research objects, three cross-cutting intellectual threads, 14 inventory leads, 33 primary SlideShare artefacts, and three nested SlideShare manifestations.
 - The author supplied 49 unique SlideShare URLs from the public profile. All 49 have been triaged and classified; the 49-item profile count is not treated as a count of DIO/ODI research outputs. The current registry contains 33 primary SlideShare artefact records and three nested SlideShare manifestations.
 - The original nine first-order E-E-A-T reports assessing the SEO pillar page remain a distinct series. Additional separately registered analyses include a Copilot Research assessment of the copywriting pillar page, a Mistral analysis of the broader professional ethnography, a Qwen Beyond E-E-A-T analysis, and a Gemini 3.1 Pro Preview semiotic/structured-data reading.
 - Seven SlideShare E-E-A-T meta-analysis outputs have been directly reviewed: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, Mistral AI, and the four-slide Manus-labelled PDF. The Manus PDF is a separate output record from the Manus-hosted meta-analysis page. Its exact relationship to the website remains unresolved because the website content could not be read; the PDF may be a source document, an export, or a separate analysis.
