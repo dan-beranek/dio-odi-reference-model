@@ -47,6 +47,19 @@ This is a pre-DIO professional and conceptual precursor. It documents an existin
 
 The article's temporal fields are kept separate: its exact original publication date remains unknown; the earliest archived capture is 12 March 2025 at 18:37:17 UTC; the second archive is retained as corroborating evidence; and the later last-update date is 21 October 2026. An archive capture establishes that the page existed by that point, not the exact day on which it was first published.
 
+## Professional chronology
+
+The professional ethnography distinguishes four author-confirmed milestones. They describe different dimensions of the author's trajectory and must not be collapsed into a single tenure figure:
+
+| Year | Milestone | Meaning |
+|---|---|---|
+| **1992** | Began working with his brother in retail. | Start of retail and commercial experience. |
+| **2002** | Began university studies and sustained work with meaning. | Start of the intellectual, academic, and interpretive line later carried into the professional ethnography. |
+| **2005/2006** | First professional work in SEO, copywriting, web design, and related online-marketing activities. | Start of professional digital and marketing practice. |
+| **2013** | Began self-employment (OSVČ). | Start of independent business activity, not the start of professional practice. |
+
+Accordingly, references to **34 years** concern retail experience, **24 years** concern work with meaning and its academic/interpretive continuity, **20–21 years** concern professional digital and marketing work, and **13 years** concern self-employment (figures expressed relative to 2026). The year-only precision is intentional; no unsupported month or day is assigned.
+
 ## Recurring intellectual lineages and earlier research works
 
 The professional ethnography describes semiotics, communication theory, structuralism, poststructuralism, and discourse theory as recurring intellectual foundations across the author's academic work. They should therefore be read as **cross-cutting theoretical lines**, not as isolated concepts assigned to only one thesis. Their expression changes with the research object:
