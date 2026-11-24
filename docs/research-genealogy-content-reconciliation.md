@@ -200,7 +200,7 @@ Phases may overlap where a new archive capture helps identify a manifestation, b
 
 ## Current state on 24 November 2026
 
-- Research Genealogy registry v0.2.0 began with 29 artefact records. PR #106 now proposes registry v0.3.0 with 56 underlying artefact records, 17 inventory leads, and an expanded profile inventory.
+- The merged PR #106 published Research Genealogy registry v0.3.0 with 45 artefact records. PR #107 proposes registry v0.3.1 with 56 artefact records, 17 inventory leads, and the expanded profile inventory.
 - The author supplied 49 unique SlideShare URLs from the public profile. All 49 have been triaged and classified; the 49-item profile count is not treated as a count of DIO/ODI research outputs. The current registry contains 33 primary SlideShare artefact records and five nested SlideShare manifestations.
 - The original nine first-order E-E-A-T reports assessing the SEO pillar page remain a distinct series. Additional separately registered analyses include a Copilot Research assessment of the copywriting pillar page, a Mistral analysis of the broader professional ethnography, a Qwen Beyond E-E-A-T analysis, and a Gemini 3.1 Pro Preview semiotic/structured-data reading.
 - Six independently attributed SlideShare E-E-A-T meta-analysis decks have been directly reviewed: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, and Mistral AI. The Manus-labelled PDF is preserved as a candidate manifestation under the Manus-hosted web meta-analysis; content identity remains unverified.
