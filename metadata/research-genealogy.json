@@ -1,6 +1,6 @@
 {
-  "registry_version": "0.3.2",
-  "schema_version": "0.2.0",
+  "registry_version": "0.3.3",
+  "schema_version": "0.3.0",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
   "title": "DIO/ODI Research Genealogy Registry",
@@ -142,7 +142,9 @@
         "official university thesis record and bibliographic metadata",
         "abstract and research assignment",
         "keywords on ideology, hegemony, discourse, nodal points, representation, structural semiotics, cultural studies, post-Marxism, and post-structuralism",
-        "full-text PDF listed in the university record"
+        "full-text PDF listed in the university record",
+        "Theses.cz national thesis-database record",
+        "ResearchGate full-text publication page and DOI identifier"
       ],
       "role_in_genealogy": "A direct theoretical antecedent in the DIO/ODI lineage. The professional ethnography explicitly returns to this thesis, identifies its rearticulation of ideology and hegemony, and connects discourse, nodal points, hegemonic formation, and relational meaning to contemporary SEO, branding, and digital identity.",
       "publication_date": "2011",
@@ -171,6 +173,35 @@
           "theme": "media-representation",
           "description": "Applies the conceptual discussion to analysis of contemporary media imagery."
         }
+      ],
+      "publication_records": [
+        {
+          "record_type": "institutional-repository-record",
+          "title": "Masaryk University Information System — thesis record",
+          "url": "https://is.muni.cz/th/ajfb6/",
+          "role": "primary-institutional-bibliographic-record"
+        },
+        {
+          "record_type": "national-thesis-database-record",
+          "title": "Theses.cz — thesis record",
+          "url": "https://theses.cz/id/ii7gdr/",
+          "role": "national-thesis-database-record"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — full-text publication page",
+          "url": "https://www.researchgate.net/publication/256483582_Reartikulace_konceptu_ideologie_a_hegemonie_v_ramci_medialnich_studii",
+          "role": "public-full-text-page-and-DOI-display"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "DOI",
+          "value": "10.13140/RG.2.2.24570.25281",
+          "uri": "https://doi.org/10.13140/RG.2.2.24570.25281",
+          "provider": "ResearchGate",
+          "role": "persistent-publication-identifier"
+        }
       ]
     },
     {
@@ -186,7 +217,8 @@
         "reconstruction of semiosis from constituent signs",
         "emergent expansion of sign meaning across denotative and connotative layers",
         "progression into ideological and hegemonic meaning structures",
-        "interpretation through simulacrum and hyperreality"
+        "interpretation through simulacrum and hyperreality",
+        "ResearchGate full-text publication page and DOI identifier"
       ],
       "role_in_genealogy": "A direct semiotic and methodological antecedent in the DIO/ODI lineage. The professional ethnography explicitly revisits this work, formulates its procedure as emergent sign-meaning expansion, and connects the reconstruction of meaning to present-day reverse engineering of communication, brand meaning, and E-E-A-T.",
       "publication_date": "2005",
@@ -218,6 +250,29 @@
         {
           "theme": "simulacrum-and-hyperreality",
           "description": "Extends the analysis to an interpretation of the represented world through simulacrum and hyperreality."
+        }
+      ],
+      "publication_records": [
+        {
+          "record_type": "author-maintained-bibliographic-record",
+          "title": "Author-maintained academic publications page",
+          "url": "https://danielberanek.cz/reference/akademicke-publikace/semioticka-analyza-klipu-marilyna-mansona-mobscene/",
+          "role": "author-maintained-bibliographic-citation-and-access-index"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — full-text publication page",
+          "url": "https://www.researchgate.net/publication/256483782_Semioticka_analyza_klipu_mOBSCENE_skupiny_Marilyn_manson",
+          "role": "public-full-text-page-and-DOI-display"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "DOI",
+          "value": "10.13140/RG.2.2.28764.55685",
+          "uri": "https://doi.org/10.13140/RG.2.2.28764.55685",
+          "provider": "ResearchGate",
+          "role": "persistent-publication-identifier"
         }
       ]
     }
