@@ -644,6 +644,15 @@ def check_metadata() -> dict[str, int | str]:
         == "metadata/application-mappings.json",
         "metadata.json does not identify the canonical Application Mappings registry",
     )
+    require(
+        metadata_projection.get("corpus_metadata_registry", {}).get("research_genealogy")
+        == "metadata/research-genealogy.json"
+        and metadata_projection.get("corpus_metadata_registry", {}).get("research_genealogy_schema")
+        == "metadata/research-genealogy.schema.json"
+        and metadata_projection.get("corpus_metadata_registry", {}).get("research_genealogy_guide")
+        == "docs/research-genealogy.md",
+        "metadata.json does not identify the canonical Research Genealogy resources",
+    )
 
     cff_doi = citation.get("doi")
     current_doi = model.get("current_release", {}).get("doi")
