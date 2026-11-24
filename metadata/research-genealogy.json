@@ -318,7 +318,7 @@
       "research_object_ids": [
         "eeat-digital-identity-assessment-subject"
       ],
-      "summary": "A multi-model assessment sequence examined the author's professional digital identity and SEO pillar page through distinct E-E-A-T reports. The currently verified SlideShare series contains nine directly reviewed model-specific first-order assessments, alongside independent secondary meta-analyses published under Gemini 3 Deep Research, Kimi, Claude, and ChatGPT. The meta-analysis source sets do not fully agree on the Gemini model version: the Claude synthesis names Gemini 2.5 Pro Preview, while Kimi and ChatGPT name Gemini 3.1 Pro Preview. The 2.5 reference remains a separate inventory lead. Some first-order reports may also have shared-chat, web, or archive manifestations already registered elsewhere; those cross-platform identities remain separate until their content is compared. A separate 12-slide Gemini Deep Research report titled Spektrografie digitální identity Daniela Beránka applies a transdisciplinary E-E-A-T and semantic analysis to the broader professional-ethnography object; it is retained as an independent analysis, not folded into the first-order SEO-pillar report series or the four meta-analyses.",
+      "summary": "A multi-model assessment sequence examined the author's professional digital identity and SEO pillar page through distinct E-E-A-T reports. The currently verified SlideShare series contains nine directly reviewed model-specific first-order assessments, alongside independent secondary meta-analyses published under Gemini 3 Deep Research, Kimi, Claude, and ChatGPT. The meta-analysis source sets do not fully agree on the Gemini model version: the Claude synthesis names Gemini 2.5 Pro Preview, while Kimi and ChatGPT name Gemini 3.1 Pro Preview. The 2.5 reference remains a separate inventory lead. Some first-order reports may also have shared-chat, web, or archive manifestations already registered elsewhere; those cross-platform identities remain separate until their content is compared. A separate 12-slide Gemini Deep Research report titled Spektrografie digitální identity Daniela Beránka applies a transdisciplinary E-E-A-T and semantic analysis to the broader professional-ethnography object; it is retained as an independent analysis, not folded into the first-order SEO-pillar report series or the four meta-analyses. A separate Claude-led E-E-A-T/semiotic analysis of the broader professional ethnography is represented by a nine-slide first edition and a ten-slide v2 revision. The v2 page explicitly describes additions of structured data, external references, and DIO-priority evidence; these reports are distinct from the first-order SEO-pillar report series and from the four meta-analyses.",
       "process_characteristics": [
         "distinct model-specific first-order E-E-A-T assessments",
         "secondary synthesis of a common multi-model report set",
@@ -2309,6 +2309,74 @@
         "eeat-analysis-meta-analysis-cluster"
       ],
       "curation_note": "A standalone transdisciplinary E-E-A-T and semantic analysis. Do not merge with the Gemini Research first-order assessment or Gemini 3 Deep Research meta-analysis solely because all three involve Gemini."
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Claude / Anthropic",
+        "model": "Claude (exact model version not stated)"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography",
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "provenance": {
+        "basis": "Direct SlideShare page title, description, rendered slide text, slide count, uploader attribution, and version notes.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
+      },
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "id": "slideshare-eeat-semiotic-analysis-claude-v1",
+      "title": "E-E-A-T analýza + sémiotika, poststrukturalismus, kritika ideologie a diskurzivní analýza — Claude",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude/287791074",
+      "artefact_type": "model-generated-transdisciplinary-eeat-semiotic-analysis",
+      "research_role": "A distinct Claude-generated E-E-A-T analysis of the broader professional-ethnography object, combining semantic and semiotic interpretation, poststructuralism, ideology critique, discourse analysis, technical metadata, and AI-governance aspects. It is not part of the nine-report SEO-pillar series or the four E-E-A-T meta-analyses.",
+      "summary": "A nine-slide analysis of the professional ethnography as a layered, non-linear and heteroglossic source. The report covers E-E-A-T, semiotics, poststructuralism, ideology critique, discourse analysis, the technical metadata layer, and AI-governance directives. The page identifies the underlying professional-ethnography URL and states a 25 May 2026 last-updated date for the source page.",
+      "review_status": "public-page-title-description-rendered-content-slide-count-and-uploader-reviewed; v2-relation-confirmed"
+    },
+    {
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Claude / Anthropic",
+        "model": "Claude v2; exact model version not stated"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography",
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "provenance": {
+        "basis": "Direct SlideShare page title, description, rendered slide text, slide count, uploader attribution, and version notes.",
+        "source_description_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
+      },
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "id": "slideshare-eeat-semiotic-analysis-claude-v2",
+      "title": "E-E-A-T analýza + sémiotika, poststrukturalismus, kritika ideologie a diskurzivní analýza — Claude-v2",
+      "url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595",
+      "artefact_type": "model-generated-transdisciplinary-eeat-semiotic-analysis-revision",
+      "research_role": "A revised ten-slide edition of the Claude transdisciplinary E-E-A-T/semiotic analysis of the professional ethnography. The SlideShare page explicitly labels it v2 and states that complete structured data and external references absent from the prior version have been added. It is therefore recorded as a substantive revision of v1, not as a separate unrelated analysis or an identical alternate manifestation.",
+      "summary": "A ten-slide revised analysis that retains the earlier E-E-A-T, semiotic, poststructuralist, ideology-critical, and discourse-analytic framing while adding structured-data and external-reference analysis, expanded sameAs/entity-recognition discussion, thesis entities, and an explicit DIO-evidence priority. The page compares qualitative E-E-A-T scores with v1 and explains the changes attributed to JSON-LD, external references, and AI-governance signals.",
+      "review_status": "public-page-title-description-rendered-content-slide-count-and-explicit-v2-lineage-reviewed"
     }
   ],
   "inventory_leads": [
@@ -2580,6 +2648,12 @@
       "relation": "is-listed-as-source-in",
       "object_id": "slideshare-eeat-meta-analysis-chatgpt",
       "evidence_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918"
+    },
+    {
+      "subject_id": "slideshare-eeat-semiotic-analysis-claude-v2",
+      "relation": "is-revision-of",
+      "object_id": "slideshare-eeat-semiotic-analysis-claude-v1",
+      "evidence_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
     }
   ],
   "research_clusters": [
@@ -2714,6 +2788,16 @@
           "artefact_id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
           "relationship": "distinct-model-generated-analysis-in-the-broad-cross-platform-exploration",
           "status": "page-content-uploader-reviewed; distinct-output-identified"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v1",
+          "relationship": "claude-model-specific-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v2",
+          "relationship": "claude-model-specific-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
         }
       ]
     },
@@ -2858,6 +2942,16 @@
           "artefact_id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
           "relationship": "distinct-transdisciplinary-eeat-and-semantic-analysis-not-a-first-order-seo-pillar-report-or-meta-analysis",
           "status": "page-content-uploader-reviewed; distinct-output-identified"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v1",
+          "relationship": "transdisciplinary-e-e-a-t-and-semiotic-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v2",
+          "relationship": "transdisciplinary-e-e-a-t-and-semiotic-analysis-of-professional-ethnography",
+          "status": "direct-page-content-reviewed"
         }
       ]
     }
