@@ -235,6 +235,66 @@
                 }
               }
             }
+          },
+          "publication_records": {
+            "type": "array",
+            "description": "Bibliographic and repository pages that identify or expose the same underlying research object. Multiple records do not create multiple research outputs.",
+            "items": {
+              "type": "object",
+              "required": [
+                "record_type",
+                "title",
+                "url",
+                "role"
+              ],
+              "properties": {
+                "record_type": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "Persistent identifiers associated with the research object. Identifiers are not separate research outputs.",
+            "items": {
+              "type": "object",
+              "required": [
+                "scheme",
+                "value",
+                "uri",
+                "provider",
+                "role"
+              ],
+              "properties": {
+                "scheme": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
