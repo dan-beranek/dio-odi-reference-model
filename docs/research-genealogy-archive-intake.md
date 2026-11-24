@@ -4,11 +4,12 @@
 
 The archive intake creates a review-only inventory of Wayback Machine captures for the SlideShare source collection recorded in metadata/research-genealogy.json.
 
-It reads three types of evidence:
+It reads four types of evidence:
 
 1. SlideShare presentation URLs already recorded in the canonical Research Genealogy registry.
 2. Presentation links exposed in the current public SlideShare profile HTML or its rendered DOM after ordinary browser navigation and scrolling.
 3. Presentation links exposed in inspected archived HTML snapshots of that profile.
+4. Direct presentation URLs returned by Tavily's indexed-web search, filtered to SlideShare presentation paths and retained as discovery leads.
 
 It then queries the Internet Archive CDX index for each discovered presentation URL and writes a JSON report plus a Markdown summary as a GitHub Actions artifact.
 
@@ -20,7 +21,7 @@ It then queries the Internet Archive CDX index for each discovered presentation 
 - It does not treat multiple captures, redirects, host aliases, or duplicate digests as separate research outputs.
 - It does not claim an exhaustive inventory of all SlideShare uploads.
 
-SlideShare's public API has been retired and Scribd states that there is no replacement API. The intake therefore uses the public profile HTML, a headless Chromium session that renders the publicly accessible presentation tab and scrolls its visible content, and the documented Internet Archive CDX interface. Profile HTML may expose only a subset of uploads in a given response; historic profile captures may also be incomplete. The report explicitly marks its inventory as partial.
+SlideShare's public API has been retired and Scribd states that there is no replacement API. The intake therefore uses the public profile HTML, a headless Chromium session that renders the publicly accessible presentation tab and scrolls its visible content, optional Tavily indexed-web search for direct presentation URLs, and the documented Internet Archive CDX interface. Profile HTML may expose only a subset of uploads in a given response; historic profile captures may also be incomplete. Tavily may only return pages currently present in its search index, and a search result is not proof of authorship, uploader attribution, publication date, or identity with an existing output. The report explicitly marks its inventory as partial.
 
 ## Run manually
 
@@ -34,6 +35,8 @@ Inputs:
 | url_limit | 150 | Safety limit for distinct presentation URLs queried |
 | delay_seconds | 0.15 | Delay between requests to the public CDX service |
 
+The optional repository Actions secret `TAVILY_API_KEY` enables four basic indexed-web queries. Without it, the report explicitly marks Tavily as disabled and continues with profile and archive sources only.
+
 The workflow also runs weekly and on pull requests that modify the scanner, its tests, or its supporting metadata and documentation.
 
 ## Output
@@ -42,7 +45,7 @@ The workflow installs Playwright/Chromium for the public-profile rendering step.
 
 The workflow artifact contains:
 
-- research-genealogy-archive-candidates.json — complete query report, profile observations, each URL's registry match, CDX capture timestamps, status codes, MIME types, digests, lengths, and Wayback replay URLs.
+- research-genealogy-archive-candidates.json — complete query report, profile observations, each URL's discovery source, registry match, candidate labels/snippets where available, CDX capture timestamps, status codes, MIME types, digests, lengths, and Wayback replay URLs. Provider status records whether Tavily was enabled and how many requests and direct SlideShare candidates it returned.
 - research-genealogy-archive-candidates.md — concise review summary, coverage assessment, source observations, and outstanding errors.
 
 Artifacts are retained for 30 days. The workflow also writes the Markdown report to the Actions run summary.
@@ -51,11 +54,11 @@ Artifacts are retained for 30 days. The workflow also writes the Markdown report
 
 For every unmatched candidate:
 
-1. Open the public presentation page and verify the uploader/profile attribution.
+1. Open the public presentation page and verify the uploader/profile attribution, especially for URLs found only through indexed-web search.
 2. Inspect the CDX replay and confirm that the original URL matches the page, not merely a redirect or a similarly named item.
 3. Compare the presentation's content with existing research works and artefacts.
 4. Classify the result as a distinct output, an alternative manifestation of an existing output, or unresolved.
-5. Only after those checks, add a matching artefact or archive observation to the canonical registry in a separate reviewed change.
+5. Only after those checks, add a matching artefact or archive observation to the canonical registry in a separate reviewed change. Do not treat a Tavily snippet or candidate URL as sufficient evidence for an artifact record.
 
 CDX timestamps document archive capture observations. They can establish that a particular URL representation was captured at or before a given time; they do not by themselves establish when the work was created or uploaded.
 
