@@ -100,7 +100,7 @@ Tasks:
 1. Verify the direct SlideShare pages and exact model/version labels.
 2. Compare each report with any candidate shared conversation, hosted page, or deployed web artifact already registered.
 3. Use source lists, section sequence, distinctive passages, and conclusions to test identity.
-4. Keep model-version differences explicit, especially Gemini 2.5 Pro Preview versus Gemini 3.1 Pro Preview.
+4. Keep model/version differences explicit, especially Gemini 2.5 Pro Preview versus Gemini 3.1 Pro Preview. The Gemini 2.5 Pro Preview analysis was produced in Google AI Studio and is represented only by a PDF export; it has no separate public web output or SlideShare presentation. Keep it distinct from Gemini 3.1 Pro Preview.
 5. Keep the Seznam Asistent report as a discovery lead until its original page and uploader attribution are verified.
 6. Record each proven alternate manifestation under its underlying output; retain materially revised versions separately.
 
@@ -202,7 +202,7 @@ Phases may overlap where a new archive capture helps identify a manifestation, b
 ## Current state on 24 November 2026
 
 - The merged PR #106 published Research Genealogy registry v0.3.0 with 45 artefact records. PR #107 proposes registry v0.3.1 with 56 artefact records, 14 inventory leads, and the expanded profile inventory.
-- The author supplied 49 unique SlideShare URLs from the public profile. All 49 have been triaged and classified; the 49-item profile count is not treated as a count of DIO/ODI research outputs. The current registry contains 33 primary SlideShare artefact records and four nested SlideShare manifestations.
+- The author supplied 49 unique SlideShare URLs from the public profile. All 49 have been triaged and classified; the 49-item profile count is not treated as a count of DIO/ODI research outputs. The current registry contains 33 primary SlideShare artefact records and three nested SlideShare manifestations.
 - The original nine first-order E-E-A-T reports assessing the SEO pillar page remain a distinct series. Additional separately registered analyses include a Copilot Research assessment of the copywriting pillar page, a Mistral analysis of the broader professional ethnography, a Qwen Beyond E-E-A-T analysis, and a Gemini 3.1 Pro Preview semiotic/structured-data reading.
 - Seven SlideShare E-E-A-T meta-analysis outputs have been directly reviewed: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, Mistral AI, and the four-slide Manus-labelled PDF. The Manus PDF is a separate output record from the Manus-hosted meta-analysis page. Its exact relationship to the website remains unresolved because the website content could not be read; the PDF may be a source document, an export, or a separate analysis.
 - The Claude meta-analysis remains one underlying synthesis with three publication manifestations: SlideShare, Macaly, and Lovable. The Qwen Beyond Buzzwords and Kimi Structural Isomorphisms works each have a Czech original and an explicitly linked English reader's edition. These language-specific publications are nested manifestations, not additional underlying outputs.
@@ -211,3 +211,4 @@ Phases may overlap where a new archive capture helps identify a manifestation, b
 - The profile inventory does not imply that every URL is a DIO/ODI research output. The canonical registry retains a curated research subset, while preserving unresolved leads and out-of-scope distinctions.
 - The SCF Knowledge Panel event is maintained separately from the Research Genealogy registry.
 - The read-only SlideShare/Wayback intake workflow is validated in PR #105. Its CDX-only pass queried archive observations for the registered SlideShare URLs; no new profile URLs were extracted from the rendered public profile, which is why the author-provided 49-URL export became the inventory basis.
+
