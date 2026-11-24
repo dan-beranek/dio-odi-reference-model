@@ -114,7 +114,7 @@ def extract_slideshow_links(document: str, base_url: str) -> list[dict[str, str]
     # These are treated as locators only; the visible uploader context still comes
     # from the public profile page or an author-maintained registry entry.
     for match in re.findall(
-        r"https?://(?:www\\.)?(?:[a-z0-9-]+\\.)?slideshare\\.net/(?:slideshow|document|infographics|presentation)/[^\\s\\"'<>\\\\]+",
+        r"https?://(?:www\.)?(?:[a-z0-9-]+\.)?slideshare\.net/(?:slideshow|document|infographics|presentation)/[^\s\"'<>\\]+",
         document,
         flags=re.IGNORECASE,
     ):
@@ -187,7 +187,7 @@ def cdx_query(url: str, match_type: str = "exact", limit: int = 500) -> list[dic
 
 
 def timestamp_to_iso(value: str) -> str | None:
-    if not re.fullmatch(r"\\d{14}", value or ""):
+    if not re.fullmatch(r"\d{14}", value or ""):
         return None
     try:
         parsed = datetime.strptime(value, "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
@@ -205,7 +205,7 @@ def archive_raw_url(timestamp: str, original: str) -> str:
 
 
 def profile_count(document: str) -> int | None:
-    match = re.search(r"\\b(\\d+)\\s+Slideshow\\b", document, flags=re.IGNORECASE)
+    match = re.search(r"\b(\d+)\s+Slideshow\b", document, flags=re.IGNORECASE)
     return int(match.group(1)) if match else None
 
 
@@ -301,7 +301,7 @@ def markdown_report(report: dict[str, Any]) -> str:
         "Compare each unmatched presentation against the author's SlideShare profile and presentation page, verify uploader attribution, then attach only source-matched capture URLs and timestamps to the corresponding artefact. Keep unresolved matches in inventory leads rather than merging them by topic or URL similarity.",
         "",
     ])
-    return "\\n".join(lines)
+    return "\n".join(lines)
 
 
 def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
@@ -378,12 +378,17 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
     # Use only documented CDX query parameters. No undocumented SlideShare API is
     # called. Archive profile captures can reveal historical profile link sets.
     profile_captures: dict[str, dict[str, str]] = {}
+    profile_cdx_queries_attempted = 0;
+    profile_cdx_queries_succeeded = 0;
     for profile in profile_variants:
         parsed = urlsplit(profile)
         host_path = (parsed.netloc + parsed.path).rstrip("/")
-        for query_url, match_type in ((host_path, "exact"), (host_path + "/*", "prefix")):
+        query_variants = [(host_path + (("?" + parsed.query) if parsed.query else ""), "exact"), (host_path + "/*", "prefix")]
+        for query_url, match_type in query_variants:
+            profile_cdx_queries_attempted += 1;
             try:
                 rows = cdx_query(query_url, match_type=match_type, limit=1000)
+                profile_cdx_queries_succeeded += 1;
                 for row in rows:
                     if row.get("statuscode") != "200" or row.get("mimetype") != "text/html":
                         continue
@@ -479,8 +484,8 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "archived_profile_urls": len(archived_profile_urls),
         "registered_artefacts": len(known),
         "unique_presentation_urls": len(presentation_results),
-        "cdx_queries_attempted": query_attempts + len(profile_variants) * 2,
-        "cdx_queries_succeeded": query_successes + sum(
+        "cdx_queries_attempted": query_attempts + profile_cdx_queries_attempted,
+        "cdx_queries_succeeded": query_successes + profile_cdx_queries_succeeded,
             1 for obs in profile_observations if obs["kind"] == "archived-profile-html"
         ),
         "capture_records": capture_total,
@@ -532,7 +537,7 @@ def main() -> int:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     json_path = args.output_dir / "research-genealogy-archive-candidates.json"
     markdown_path = args.output_dir / "research-genealogy-archive-candidates.md"
-    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     markdown_path.write_text(markdown_report(report), encoding="utf-8")
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
     if report["errors"]:
