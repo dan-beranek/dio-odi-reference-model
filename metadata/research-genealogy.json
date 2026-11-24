@@ -283,7 +283,7 @@
         "ai-related-professional-writing",
         "eeat-digital-identity-assessment-subject"
       ],
-      "summary": "A broad, creative, and non-linear period of experimentation with AI systems and output environments. The supplied record includes E-E-A-T analyses and meta-analyses, digital-identity readings, shared conversations, Deep Research sessions, public artifacts, generated web pages, deployed applications, and presentation forms. The author did not operate one fixed research protocol across all items. Archive timestamps establish observation points for particular public representations; they do not establish creation dates or the complete beginning and end of the activity.",
+      "summary": "A broad, creative, and non-linear period of experimentation with AI systems and output environments. The supplied record includes E-E-A-T analyses and meta-analyses, digital-identity readings, shared conversations, Deep Research sessions, public artifacts, generated web pages, deployed applications, and presentation forms. The author did not operate one fixed research protocol across all items. Archive timestamps establish observation points for particular public representations; they do not establish creation dates or the complete beginning and end of the activity. The curated SlideShare set now also includes a DeepSeek text-only E-E-A-T/semiotic interpretation of the professional ethnography and a Qwen interdisciplinary synthesis that treats the ethnography as the source for articulating DIO. These remain separate model-specific outputs.",
       "process_characteristics": [
         "creative and exploratory rather than governed by one pre-specified protocol",
         "cross-platform experimentation with different AI systems and creation environments",
@@ -2377,6 +2377,71 @@
       "research_role": "A revised ten-slide edition of the Claude transdisciplinary E-E-A-T/semiotic analysis of the professional ethnography. The SlideShare page explicitly labels it v2 and states that complete structured data and external references absent from the prior version have been added. It is therefore recorded as a substantive revision of v1, not as a separate unrelated analysis or an identical alternate manifestation.",
       "summary": "A ten-slide revised analysis that retains the earlier E-E-A-T, semiotic, poststructuralist, ideology-critical, and discourse-analytic framing while adding structured-data and external-reference analysis, expanded sameAs/entity-recognition discussion, thesis entities, and an explicit DIO-evidence priority. The page compares qualitative E-E-A-T scores with v1 and explains the changes attributed to JSON-LD, external references, and AI-governance signals.",
       "review_status": "public-page-title-description-rendered-content-slide-count-and-explicit-v2-lineage-reviewed"
+    },
+    {
+      "id": "slideshare-deepseek-eeat-semiotic-analysis",
+      "title": "Konstrukce expertní autority v digitálním diskurzu — E-E-A-T analýza profesní etnografie Daniela Beránka (DeepSeek)",
+      "url": "https://de.slideshare.net/slideshow/konstrukce-expertni-autority-v-digit-diskurzu-e-e-a-t-analyza-profesni-etnografie-daniel-beranka-deepseek/287768813",
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-eeat-semiotic-discourse-analysis",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "DeepSeek",
+        "model": "DeepSeek (exact model/version not stated)"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct DeepSeek-generated E-E-A-T interpretation of the professional-ethnography object, with a deliberately text-only evidence boundary. Its analytical frame overlaps with Claude's semiotic analyses, but its distinct authorship, contents, and model-specific interpretation are retained as a separate output.",
+      "summary": "A three-slide qualitative E-E-A-T analysis of the professional ethnography, using semiotics, poststructuralist narrative deconstruction, ideology critique, and discourse analysis. The page explicitly states that it examines visible textual content and excludes the site's structured-data/technical layer. It is a distinct DeepSeek analysis, not an alternate manifestation of either Claude semiotic version.",
+      "provenance": {
+        "basis": "Direct SlideShare page title, description, rendered presentation text, slide count, displayed uploader attribution, and model attribution in the page title/content.",
+        "source_description_url": "https://de.slideshare.net/slideshow/konstrukce-expertni-autority-v-digit-diskurzu-e-e-a-t-analyza-profesni-etnografie-daniel-beranka-deepseek/287768813"
+      },
+      "review_status": "public-page-title-description-rendered-content-slide-count-uploader-and-model-attribution-reviewed",
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "Distinct model-specific interpretation. Shared subject matter and overlapping semiotic vocabulary do not make the output identical to analyses produced by other models."
+    },
+    {
+      "id": "slideshare-qwen-dio-interdisciplinary-synthesis",
+      "title": "Digital Identity Optimization (DIO): Integrating Psychology, Media Studies, and AI for Trust Architecture",
+      "url": "https://www.slideshare.net/slideshow/digital-identity-optimization-dio-integrating-psychology-media-studies-and-ai-for-trust-architecture/287747736",
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-dio-interdisciplinary-synthesis",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Qwen",
+        "model": "Qwen (exact model/version not stated)"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct Qwen-generated interdisciplinary synthesis of the professional-ethnography object and the emergence of DIO. It is not treated as a canonical DIO paper or as an alternate manifestation of the Manifest; it is a model-specific interpretive output published as a SlideShare presentation.",
+      "summary": "A 14-slide report whose opening identifies the professional ethnography as the primary source for synthesizing the interdisciplinary influences behind DIO. The presentation examines psychology, media studies, academic methodology, technical standards, and ethical principles, and describes DIO as a dual-readable identity framework for people, search algorithms, and generative AI. The first slide carries the Czech working title 'Od Psychologie k AI-Readability: Architektura Důvěry a Syntéza Nového Oboru Digital Identity Optimization'.",
+      "provenance": {
+        "basis": "Direct SlideShare page title, description, rendered presentation text, slide count, displayed uploader attribution, and model attribution in the page title/content.",
+        "source_description_url": "https://www.slideshare.net/slideshow/digital-identity-optimization-dio-integrating-psychology-media-studies-and-ai-for-trust-architecture/287747736"
+      },
+      "review_status": "public-page-title-description-rendered-content-slide-count-uploader-and-model-attribution-reviewed",
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster"
+      ],
+      "curation_note": "Distinct model-specific interpretation. Shared subject matter and overlapping semiotic vocabulary do not make the output identical to analyses produced by other models."
     }
   ],
   "inventory_leads": [
@@ -2798,6 +2863,16 @@
           "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v2",
           "relationship": "claude-model-specific-analysis-of-professional-ethnography",
           "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-deepseek-eeat-semiotic-analysis",
+          "relationship": "model-specific-interpretive-output-derived-from-professional-ethnography",
+          "status": "direct-page-content-and-uploader-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-qwen-dio-interdisciplinary-synthesis",
+          "relationship": "model-specific-interpretive-output-derived-from-professional-ethnography",
+          "status": "direct-page-content-and-uploader-reviewed"
         }
       ]
     },
@@ -2952,6 +3027,11 @@
           "artefact_id": "slideshare-eeat-semiotic-analysis-claude-v2",
           "relationship": "transdisciplinary-e-e-a-t-and-semiotic-analysis-of-professional-ethnography",
           "status": "direct-page-content-reviewed"
+        },
+        {
+          "artefact_id": "slideshare-deepseek-eeat-semiotic-analysis",
+          "relationship": "distinct-first-order-e-e-a-t-analysis-of-the-professional-ethnography",
+          "status": "direct-page-content-and-uploader-reviewed"
         }
       ]
     }
