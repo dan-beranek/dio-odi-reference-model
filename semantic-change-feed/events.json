@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 61,
+  "event_count": 62,
   "events": [
     {
       "id": "SCF-2026-001",
