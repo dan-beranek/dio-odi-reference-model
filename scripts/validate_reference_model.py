@@ -874,6 +874,25 @@ def check_metadata() -> dict[str, int | str]:
         "AI article genealogy must distinguish unknown original publication date, earliest archived capture, later last update, reciprocal expertise themes, and SlideShare source relationship",
     )
 
+    navigation_pages = [
+        "index.html",
+        "dio-odi/index.html",
+        "mappings/index.html",
+        "mappings/rag-pipeline/index.html",
+        "mappings/hem-dio/index.html",
+        "mappings/commit-boundary-policy/index.html",
+        "mappings/agentic-er-architecture/index.html",
+        "metadata/index.html",
+        "external-reception/index.html",
+        "semantic-change-feed/index.html",
+    ]
+    for page_path in navigation_pages:
+        page_html = read_text(page_path)
+        require(
+            'href="/research-genealogy/"' in page_html,
+            f"Shared navigation is missing Research Genealogy on {page_path}",
+        )
+
     genealogy_page = read_text("metadata/index.html")
     genealogy_frontend = read_text("research-genealogy/index.html")
     require(
@@ -888,6 +907,10 @@ def check_metadata() -> dict[str, int | str]:
         and "/metadata/research-genealogy.schema.json" in genealogy_page
         and "/docs/research-genealogy.md" in genealogy_page,
         "Corpus Metadata frontend is missing the Research Genealogy registry links",
+    )
+    require(
+        metadata_projection.get("research_genealogy_frontend") == "https://vocab.danielberanek.cz/research-genealogy/",
+        "metadata.json does not identify the Research Genealogy frontend",
     )
     genealogy_discovery = read_text("llms.txt")
     require(
