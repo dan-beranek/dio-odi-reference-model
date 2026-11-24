@@ -1800,73 +1800,6 @@
       ]
     },
     {
-      "id": "lovable-eeat-meta-analysis",
-      "title": "Metaanalýza E-E-A-T SEO specialist a copywriter Dan Beránek",
-      "url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-      "platform": "Lovable (builder/hosting)",
-      "artefact_type": "deployed-web-application",
-      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
-      "research_object_ids": [],
-      "process_ids": [
-        "cross-platform-ai-exploration"
-      ],
-      "related_work_ids": [],
-      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
-      "summary": "A Lovable-published E-E-A-T meta-analysis application. Three separate Wayback captures may represent successive page states; they are not separate research outputs. Archive.today and Megalodon references are retained as additional representations.",
-      "provenance": {
-        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
-        "source_description_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/"
-      },
-      "review_status": "author-supplied-locators-content-unreviewed",
-      "archive_captures": [
-        {
-          "url": "https://archive.is/cHCUM",
-          "archive_service": "Archive.today / Archive.is / Archive.ph",
-          "captured_at": null,
-          "timestamp_basis": "Timestamp not established from supplied locator.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "locator-supplied-content-unreviewed",
-          "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
-        },
-        {
-          "url": "https://web.archive.org/web/20260323134924/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "archive_service": "Internet Archive Wayback Machine",
-          "captured_at": "2026-03-23T13:49:24Z",
-          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "timestamped-locator-content-unreviewed",
-          "note": "Author-supplied archive locator; captured content not yet inspected."
-        },
-        {
-          "url": "https://web.archive.org/web/20260323231015/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "archive_service": "Internet Archive Wayback Machine",
-          "captured_at": "2026-03-23T23:10:15Z",
-          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "timestamped-locator-content-unreviewed",
-          "note": "Author-supplied archive locator; captured content not yet inspected."
-        },
-        {
-          "url": "https://web.archive.org/web/20260323231242/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "archive_service": "Internet Archive Wayback Machine",
-          "captured_at": "2026-03-23T23:12:42Z",
-          "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "timestamped-locator-content-unreviewed",
-          "note": "Author-supplied archive locator; captured content not yet inspected."
-        },
-        {
-          "url": "https://megalodon.jp/pc/main?url=https%3A%2F%2Fmeta-analyza-e-e-a-t-daniel-beranek.lovable.app%2F",
-          "archive_service": "Megalodon.jp",
-          "captured_at": null,
-          "timestamp_basis": "The supplied /pc/main?url= locator does not expose a timestamp in the URL.",
-          "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
-          "capture_status": "locator-supplied-content-unreviewed",
-          "note": "Archive page reference supplied; snapshot timestamp is not exposed in the supplied URL."
-        }
-      ]
-    },
-    {
       "platform": "SlideShare",
       "source_collection_id": "slideshare-danielberanek",
       "content_origin": "model-generated-report-curated-and-published-by-author",
@@ -2209,13 +2142,13 @@
         "eeat-multimodel-assessment-and-meta-analysis"
       ],
       "related_work_ids": [],
-      "research_role": "A distinct model-generated secondary synthesis of the multi-model E-E-A-T report set. This meta-analysis is kept separate from the first-order model reports and from other model-generated meta-analyses; it is not treated as an alternative copy of those syntheses.",
+      "research_role": "The underlying work is a model-generated meta-analysis of ten first-order AI E-E-A-T assessments. The Claude-attributed SlideShare deck, the Macaly hosted page, and the Lovable web application are separate publication manifestations of this same twelve-section synthesis. It remains distinct from the separately generated Gemini 3 Deep Research, Kimi, and ChatGPT meta-analyses of the primary reports.",
       "summary": "A twelve-slide Claude-generated E-E-A-T meta-analysis of the author's professional digital identity, presented as a separate synthesis with its own title and content.",
       "provenance": {
         "basis": "SlideShare public listing title, model attribution, description, and uploader attribution; the presentation page provides a separately addressable publication manifestation.",
         "source_description_url": "https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-claude/286570213"
       },
-      "review_status": "public-page-title-description-uploader-and-synthesis-scope-reviewed; cross-platform-equivalence-pending",
+      "review_status": "content-identity-reviewed-across-SlideShare-Macaly-and-Lovable; archive-captures-retained-pending-individual-inspection",
       "research_cluster_ids": [
         "eeat-analysis-meta-analysis-cluster"
       ],
@@ -2239,6 +2172,63 @@
           "relationship_status": "content-and-structure-match-observed; platform-authorship-not-verified",
           "evidence_basis": "The Macaly page reproduces the same 12-section report structure, the same ten-model source list including Gemini 2.5 Pro Preview, the same opening methodology paragraph, and matching passages and conclusion text present in the Claude-attributed SlideShare PDF. This is recorded as an alternate web manifestation of the same meta-analysis, not as an additional meta-analysis output. The hosting-page authorship/uploader attribution is not independently established.",
           "archive_captures": []
+        },
+        {
+          "id": "lovable-eeat-meta-analysis",
+          "platform": "Lovable",
+          "representation_type": "deployed-web-application",
+          "url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+          "title": "Metaanalýza E-E-A-T SEO specialist a copywriter Dan Beránek",
+          "relation": "alternate-web-manifestation-of-same-underlying-output",
+          "relationship_status": "live-page-content-matches-Claude-SlideShare-and-Macaly; source-set-and-12-section-structure-match-reviewed",
+          "evidence_basis": "The live Lovable page states that it synthesizes ten independent model-generated E-E-A-T analyses, names the same ten model sources as the Claude-attributed SlideShare deck (Claude, Copilot, Mistral, Manus, Kimi, Gemini Research, ChatGPT, Gemini 2.5 Pro Preview, Grok 4.2 Beta, Seznam Asistent), and reproduces the same opening methodological text and twelve-chapter structure. The Claude SlideShare source and the already reviewed Macaly representation carry the same text and source set. No evidence on the page indicates that the Lovable version synthesizes the four later independent meta-analyses themselves; it is therefore recorded as another web manifestation of the same underlying first-order E-E-A-T meta-analysis, not as a separate meta-meta-analysis.",
+          "archive_captures": [
+            {
+              "url": "https://archive.is/cHCUM",
+              "archive_service": "Archive.today / Archive.is / Archive.ph",
+              "captured_at": null,
+              "timestamp_basis": "Timestamp not established from supplied locator.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://web.archive.org/web/20260323134924/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "archive_service": "Internet Archive Wayback Machine",
+              "captured_at": "2026-03-23T13:49:24Z",
+              "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Author-supplied archive locator; captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://web.archive.org/web/20260323231015/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "archive_service": "Internet Archive Wayback Machine",
+              "captured_at": "2026-03-23T23:10:15Z",
+              "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Author-supplied archive locator; captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://web.archive.org/web/20260323231242/https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "archive_service": "Internet Archive Wayback Machine",
+              "captured_at": "2026-03-23T23:12:42Z",
+              "timestamp_basis": "Timestamp encoded in Wayback URL; UTC.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Author-supplied archive locator; captured content not yet inspected. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            },
+            {
+              "url": "https://megalodon.jp/pc/main?url=https%3A%2F%2Fmeta-analyza-e-e-a-t-daniel-beranek.lovable.app%2F",
+              "archive_service": "Megalodon.jp",
+              "captured_at": null,
+              "timestamp_basis": "The supplied /pc/main?url= locator does not expose a timestamp in the URL.",
+              "target_url": "https://meta-analyza-e-e-a-t-daniel-beranek.lovable.app/",
+              "capture_status": "archive-locator-preserved-content-not-individually-reviewed",
+              "note": "Archive page reference supplied; snapshot timestamp is not exposed in the supplied URL. The underlying live-page content has been matched to the Claude SlideShare meta-analysis; this individual archive capture has not been opened for content comparison."
+            }
+          ]
         }
       ]
     },
@@ -2845,11 +2835,6 @@
           "status": "author-supplied-content-review-pending"
         },
         {
-          "artefact_id": "lovable-eeat-meta-analysis",
-          "relationship": "member-of-broad-exploratory-set",
-          "status": "author-supplied-content-review-pending"
-        },
-        {
           "artefact_id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
           "relationship": "distinct-model-generated-analysis-in-the-broad-cross-platform-exploration",
           "status": "page-content-uploader-reviewed; distinct-output-identified"
@@ -2940,11 +2925,6 @@
         },
         {
           "artefact_id": "netlify-web-gilded-klepon",
-          "relationship": "thematic-member; exact-output-identity-not-implied",
-          "status": "author-context-grouped-content-review-pending"
-        },
-        {
-          "artefact_id": "lovable-eeat-meta-analysis",
           "relationship": "thematic-member; exact-output-identity-not-implied",
           "status": "author-context-grouped-content-review-pending"
         },
