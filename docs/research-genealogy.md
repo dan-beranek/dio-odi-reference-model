@@ -99,6 +99,7 @@ The public SlideShare profile displayed **49 Slideshow items** when reviewed on 
 - `metadata/research-genealogy.json` is the canonical structured source.
 - `metadata/research-genealogy.schema.json` is its JSON Schema 2020-12 contract.
 - This document explains the current record model and curation decisions.
+- [Content and provenance reconciliation protocol](research-genealogy-content-reconciliation.md) defines the evidence hierarchy, output/manifestation decision rules, and staged work packages for continued curation.
 
 The registry separates:
 
