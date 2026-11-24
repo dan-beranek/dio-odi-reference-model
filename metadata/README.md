@@ -13,6 +13,8 @@ It is deliberately separate from the canonical DIO/ODI Reference Vocabulary. Upd
 - `keywords.json` — canonical C0–C6 keyword grammar, publication profiles, derived product and public-page surface profiles for the Planner, author concept site, Reference Model, DIO to DIO analyses, open-source application, taxonomy map, terminology case study, and MCP landing page, plus non-export aliases.
 - `application-mappings.json` — canonical descriptive metadata, source paths, and release provenance for derived Application Mappings.
 - `application-mappings.schema.json` — JSON Schema 2020-12 validation contract for Application Mappings metadata.
+- `research-genealogy.json` — source-linked research-object, process, milestone, and exploratory-artefact genealogy for the emergence of DIO/ODI.
+- `research-genealogy.schema.json` — JSON Schema 2020-12 validation contract for the Research Genealogy Registry.
 - root `.zenodo.json` — Zenodo-specific projection for future GitHub → Zenodo Reference Model releases.
 
 ## Workflow
@@ -217,3 +219,18 @@ python scripts/generate_projections.py --check
 ```
 
 The `--check` mode is read-only and exits with an error if any generated projection is stale. Generated files remain committed to the repository so the public static site and machine-readable endpoints do not depend on a runtime rendering service.
+
+
+## Research Genealogy
+
+The Research Genealogy Registry records the multimodal professional-ethnography object, the AI-assisted secondary exploration through which DIO emerged, the subsequent articulation of ODI, and selected intermediate research artefacts.
+
+- `research-genealogy.json` — canonical structured record of research objects, processes, dated milestones, source collections, exploratory artefacts, and typed relationships.
+- `research-genealogy.schema.json` — JSON Schema 2020-12 validation contract.
+- `/docs/research-genealogy.md` — human-readable account of the research genealogy and current SlideShare curation.
+
+The primary research object is the living professional ethnography at https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/. The 21 May 2026 changelog entry records the transition to DIO and explicitly describes the ethnography as the empirical and asynchronous foundation from which DIO was derived. The 22 June entry records the articulation of ODI as the broader theoretical layer.
+
+SlideShare is represented as an archive and distribution surface. Individual records distinguish AI-assisted readings, model-generated conceptual notes, related exploratory material, and presentation layers for registered works. Uploader attribution, model attribution, source context, and the research role of each item are stored separately.
+
+The registry complements the Works and Distribution registries. It records research-process provenance and intermediate artefacts rather than treating every artefact as a separate canonical publication or vocabulary concept.
