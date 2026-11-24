@@ -90,6 +90,59 @@ class TestResearchGenealogyArchiveIntake(unittest.TestCase):
         )
 
 
+    def test_parse_tavily_results_keeps_direct_presentation_urls_only(self):
+        payload = {
+            "results": [
+                {
+                    "url": "https://www.slideshare.net/slideshow/example-deck/12345",
+                    "title": "Daniel Beránek — example deck",
+                    "content": "A public presentation page.",
+                    "published_date": "2026-08-17",
+                },
+                {
+                    "url": "https://www.slideshare.net/danielberanek",
+                    "title": "Profile",
+                    "content": "Author profile, not a presentation.",
+                },
+                {
+                    "url": "https://example.com/slideshow/example/12345",
+                    "title": "Unrelated page",
+                    "content": "Not a SlideShare URL.",
+                },
+                {
+                    "url": "https://de.slideshare.net/document/another-deck/45678",
+                    "title": "German SlideShare document",
+                    "content": "Another direct presentation URL.",
+                },
+            ]
+        }
+        query = {"id": "fixture-query", "query": "site:slideshare.net/slideshow Daniel Beranek"}
+        candidates = intake.parse_tavily_results(payload, query)
+        self.assertEqual(len(candidates), 2)
+        self.assertEqual(
+            {item["url"] for item in candidates},
+            {
+                "https://www.slideshare.net/slideshow/example-deck/12345",
+                "https://de.slideshare.net/document/another-deck/45678",
+            },
+        )
+        self.assertEqual(candidates[0]["query_id"], "fixture-query")
+        self.assertIn("published_date", candidates[0])
+
+    def test_parse_tavily_results_rejects_invalid_result_shape(self):
+        with self.assertRaises(intake.IntakeError):
+            intake.parse_tavily_results({"results": "not-an-array"}, {
+                "id": "invalid", "query": "invalid"
+            })
+
+    def test_search_tavily_without_key_is_explicitly_disabled(self):
+        candidates, status = intake.search_tavily(None)
+        self.assertEqual(candidates, [])
+        self.assertFalse(status["enabled"])
+        self.assertEqual(status["reason"], "TAVILY_API_KEY is not configured")
+        self.assertEqual(status["queries_attempted"], 0)
+
+
     def test_timestamp_to_iso_uses_utc(self):
         self.assertEqual(
             intake.timestamp_to_iso("20260312183717"),
