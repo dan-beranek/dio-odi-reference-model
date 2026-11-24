@@ -289,7 +289,7 @@ def archive_raw_url(timestamp: str, original: str) -> str:
 
 
 def profile_count(document: str) -> int | None:
-    match = re.search(r"\b(\d+)\s+Slideshow\b", document, flags=re.IGNORECASE)
+    match = re.search(r"\b(\d+)\s+Slideshows?\b", document, flags=re.IGNORECASE)
     return int(match.group(1)) if match else None
 
 
@@ -341,20 +341,20 @@ def markdown_report(report: dict[str, Any]) -> str:
         "## Summary",
         "",
         f"- SlideShare count reported by profile HTML: {stats.get('profile_reported_count')}",
-        f"- URLs discovered in current public profile HTML: {stats['current_profile_urls']}",
+        f"- URLs discovered from current public profile sources: {stats['current_profile_urls']}",
         f"- URLs discovered in archived profile snapshots: {stats['archived_profile_urls']}",
         f"- Known SlideShare artefacts in the canonical registry: {stats['registered_artefacts']}",
         f"- Unique presentation URLs examined: {stats['unique_presentation_urls']}",
         f"- CDX queries completed: {stats['cdx_queries_succeeded']} / {stats['cdx_queries_attempted']}",
         f"- Capture records returned: {stats['capture_records']}",
         f"- URLs without a corresponding registry artefact: {stats['unregistered_urls']}",
-        f"- Difference between the profile-reported total and extracted current-profile links (unreconciled): {stats['profile_count_to_html_link_gap']}",
+        f"- Difference between the profile-reported total and extracted current-profile links (unreconciled): {stats['profile_count_to_html_link_gap'] if stats['profile_count_to_html_link_gap'] is not None else 'not measurable'}",\n        f"- Profile discovery status: {stats['profile_discovery_status']}",
         f"- Profile snapshot cap reached: {stats['profile_snapshot_limit_reached']}",
         f"- Presentation URL cap reached: {stats['presentation_url_limit_reached']}",
         "",
         "## Interpretation boundary",
         "",
-        "This is a review-only discovery report. It does not modify the canonical Research Genealogy registry. Public SlideShare API access has been retired; this intake uses public profile HTML and the Internet Archive CDX index only. The profile may render only a subset of uploads in the HTML response, and archived profile snapshots may also be incomplete. Therefore, the report is not a claim of exhaustive coverage of all uploads.",
+        "This is a review-only discovery report. It does not modify the canonical Research Genealogy registry. Public SlideShare API access has been retired; this intake uses public profile HTML, rendered public profile pages, and the Internet Archive CDX index only. The profile may render only a subset of uploads in the HTML response, and archived profile snapshots may also be incomplete. Therefore, the report is not a claim of exhaustive coverage of all uploads.",
         "",
         "CDX records are archive-index observations, not upload or creation dates. A timestamp identifies an archived capture. Multiple host aliases, redirects, or duplicate capture records must be reconciled before being attached to one research artefact.",
         "",
@@ -461,6 +461,29 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
                         source_url=profile, label=link.get("label", ""))
         except IntakeError as exc:
             errors.append(f"Current profile fetch failed for {profile}: {exc}")
+
+    # The server-side HTML returned HTTP 200 but exposed no presentation links.
+    # Render only the presentation-tab profile through a normal browser session,
+    # then scroll to trigger public lazy-loaded profile cards.
+    rendered_profile_url = profile_url + "?tab=presentations"
+    try:
+        rendered_html, rendered_text, rendered_status = fetch_profile_with_browser(rendered_profile_url)
+        rendered_links = extract_slideshow_links(rendered_html, rendered_profile_url)
+        rendered_count = profile_count(rendered_text)
+        if rendered_count is not None:
+            profile_reported_count = max(profile_reported_count or 0, rendered_count)
+        profile_observations.append({
+            "kind": "current-public-profile-rendered-browser",
+            "url": rendered_profile_url,
+            "http_status": rendered_status,
+            "profile_reported_count": rendered_count,
+            "links_extracted": len(rendered_links),
+        })
+        for link in rendered_links:
+            add_url(link["url"], source_kind="current-public-profile-rendered-browser",
+                    source_url=rendered_profile_url, label=link.get("label", ""))
+    except IntakeError as exc:
+        errors.append(f"Rendered current profile fetch failed for {rendered_profile_url}: {exc}")
 
     # Use only documented CDX query parameters. No undocumented SlideShare API is
     # called. Archive profile captures can reveal historical profile link sets.
@@ -580,7 +603,7 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "profile_snapshots_inspected": len(sorted_profile_captures),
         "profile_snapshot_limit_reached": profile_snapshot_limit_reached,
         "presentation_url_limit_reached": presentation_url_limit_reached,
-        "profile_count_to_html_link_gap": max(0, (profile_reported_count or 0) - current_count),
+        "profile_count_to_html_link_gap": (max(0, profile_reported_count - current_count) if profile_reported_count is not None else None),\n        "profile_discovery_status": derive_profile_discovery_status(profile_reported_count, current_count),
     }
     report = {
         "report_version": "0.1.0",
