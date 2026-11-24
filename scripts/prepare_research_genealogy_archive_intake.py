@@ -428,13 +428,34 @@ def load_registry(path: Path = REGISTRY_PATH) -> dict[str, Any]:
 
 
 def slideshare_registry_items(registry: dict[str, Any]) -> list[dict[str, Any]]:
-    result = []
+    """Flatten primary SlideShare artefacts and nested SlideShare manifestations."""
+    result: list[dict[str, Any]] = []
     for item in registry.get("artefacts", []):
-        if not isinstance(item, dict) or str(item.get("platform", "")).casefold() != "slideshare":
+        if not isinstance(item, dict):
             continue
-        if not is_slideshare_url(str(item.get("url", ""))):
-            continue
-        result.append(item)
+        if str(item.get("platform", "")).casefold() == "slideshare" and is_slideshare_url(str(item.get("url", ""))):
+            primary = dict(item)
+            primary["_registry_entry_type"] = "artefact"
+            primary["_registry_parent_artefact_id"] = item.get("id")
+            result.append(primary)
+
+        parent_id = item.get("id")
+        for representation in item.get("representations", []):
+            if not isinstance(representation, dict):
+                continue
+            if str(representation.get("platform", "")).casefold() != "slideshare":
+                continue
+            url = str(representation.get("url", ""))
+            if not is_slideshare_url(url):
+                continue
+            result.append({
+                "id": representation.get("id"),
+                "title": representation.get("title") or item.get("title", ""),
+                "url": url,
+                "platform": "SlideShare",
+                "_registry_entry_type": "representation",
+                "_registry_parent_artefact_id": parent_id,
+            })
     return result
 
 
@@ -467,7 +488,8 @@ def markdown_report(report: dict[str, Any]) -> str:
         f"- SlideShare count reported by rendered public profile: {stats.get('profile_reported_count')}",
         f"- URLs discovered from current public profile sources: {stats['current_profile_urls']}",
         f"- URLs discovered in archived profile snapshots: {stats['archived_profile_urls']}",
-        f"- Known SlideShare artefacts in the canonical registry: {stats['registered_artefacts']}",
+        f"- Known primary SlideShare artefacts in the canonical registry: {stats['registered_artefacts']}",
+        f"- Nested SlideShare representations in the canonical registry: {stats['registered_representations']}",
         f"- Unique presentation URLs examined: {stats['unique_presentation_urls']}",
         f"- CDX queries completed: {stats['cdx_queries_succeeded']} / {stats['cdx_queries_attempted']}",
         f"- Capture records returned: {stats['capture_records']}",
@@ -494,7 +516,13 @@ def markdown_report(report: dict[str, Any]) -> str:
     for item in report["presentations"]:
         captures = item["captures"]
         dates = [c["captured_at"] for c in captures if c.get("captured_at")]
-        ids = ", ".join(item["registry_artefact_ids"]) or "Unmatched candidate"
+        ids = ", ".join(item["registry_artefact_ids"])
+        representation_ids = [
+            f"{parent_id} / representation: {representation_id}"
+            for parent_id in item.get("registry_parent_artefact_ids", [])
+            for representation_id in item.get("registry_representation_ids", [])
+        ]
+        ids = ", ".join(part for part in [ids, *representation_ids] if part) or "Unmatched candidate"
         sources = ", ".join(sorted({
             source.get("kind", "unknown") for source in item.get("discovery_sources", [])
         })) or "unknown"
@@ -570,14 +598,26 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
             "labels": [],
             "discovery_sources": [],
             "registry_artefact_ids": [],
+            "registry_representation_ids": [],
+            "registry_parent_artefact_ids": [],
         })
         if label and label not in entry["labels"]:
             entry["labels"].append(label[:300])
         evidence = {"kind": source_kind, "source_url": source_url}
         if evidence not in entry["discovery_sources"]:
             entry["discovery_sources"].append(evidence)
-        if registry_item and registry_item.get("id") not in entry["registry_artefact_ids"]:
-            entry["registry_artefact_ids"].append(registry_item.get("id"))
+        if registry_item:
+            if registry_item.get("_registry_entry_type") == "representation":
+                representation_id = registry_item.get("id")
+                parent_id = registry_item.get("_registry_parent_artefact_id")
+                if representation_id and representation_id not in entry["registry_representation_ids"]:
+                    entry["registry_representation_ids"].append(representation_id)
+                if parent_id and parent_id not in entry["registry_parent_artefact_ids"]:
+                    entry["registry_parent_artefact_ids"].append(parent_id)
+            else:
+                artefact_id = registry_item.get("id")
+                if artefact_id and artefact_id not in entry["registry_artefact_ids"]:
+                    entry["registry_artefact_ids"].append(artefact_id)
 
     # Indexed-web discovery is a fallback for presentation cards that are
     # omitted from both the server HTML and rendered profile DOM. Search hits
@@ -748,7 +788,10 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
                                          "query_error": str(exc)})
         time.sleep(delay_seconds)
 
-    unmatched = [item for item in presentation_results if not item["registry_artefact_ids"]]
+    unmatched = [
+        item for item in presentation_results
+        if not item["registry_artefact_ids"] and not item["registry_representation_ids"]
+    ]
     current_profile_urls = {
         normalized_url(item["url"])
         for item in urls.values()
@@ -765,7 +808,8 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "profile_reported_count": profile_reported_count,
         "current_profile_urls": current_count,
         "archived_profile_urls": len(archived_profile_urls),
-        "registered_artefacts": len(known),
+        "registered_artefacts": sum(1 for item in known if item.get("_registry_entry_type") != "representation"),
+        "registered_representations": sum(1 for item in known if item.get("_registry_entry_type") == "representation"),
         "unique_presentation_urls": len(presentation_results),
         "cdx_queries_attempted": query_attempts + profile_cdx_queries_attempted,
         "cdx_queries_succeeded": query_successes + profile_cdx_queries_succeeded,
