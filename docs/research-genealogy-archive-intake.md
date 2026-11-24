@@ -7,7 +7,7 @@ The archive intake creates a review-only inventory of Wayback Machine captures f
 It reads three types of evidence:
 
 1. SlideShare presentation URLs already recorded in the canonical Research Genealogy registry.
-2. Presentation links exposed in the current public SlideShare profile HTML.
+2. Presentation links exposed in the current public SlideShare profile HTML or its rendered DOM after ordinary browser navigation and scrolling.
 3. Presentation links exposed in inspected archived HTML snapshots of that profile.
 
 It then queries the Internet Archive CDX index for each discovered presentation URL and writes a JSON report plus a Markdown summary as a GitHub Actions artifact.
@@ -20,7 +20,7 @@ It then queries the Internet Archive CDX index for each discovered presentation 
 - It does not treat multiple captures, redirects, host aliases, or duplicate digests as separate research outputs.
 - It does not claim an exhaustive inventory of all SlideShare uploads.
 
-SlideShare's public API has been retired and Scribd states that there is no replacement API. The intake therefore uses only the publicly rendered profile HTML and the documented Internet Archive CDX interface. Profile HTML may expose only a subset of uploads in a given response; historic profile captures may also be incomplete. The report explicitly marks its inventory as partial.
+SlideShare's public API has been retired and Scribd states that there is no replacement API. The intake therefore uses the public profile HTML, a headless Chromium session that renders the publicly accessible presentation tab and scrolls its visible content, and the documented Internet Archive CDX interface. Profile HTML may expose only a subset of uploads in a given response; historic profile captures may also be incomplete. The report explicitly marks its inventory as partial.
 
 ## Run manually
 
@@ -37,6 +37,8 @@ Inputs:
 The workflow also runs weekly and on pull requests that modify the scanner, its tests, or its supporting metadata and documentation.
 
 ## Output
+
+The workflow installs Playwright/Chromium for the public-profile rendering step. If the rendered page still exposes no presentation links, the report marks that discovery state explicitly; a successful CDX query of previously known URLs must not be mistaken for a complete profile inventory.
 
 The workflow artifact contains:
 
@@ -62,3 +64,13 @@ CDX timestamps document archive capture observations. They can establish that a 
 - Internet Archive Wayback CDX Server documentation: https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md
 - SlideShare API retirement notice: https://support.scribd.com/hc/en-us/articles/53231623793684-Slideshare-API-errors-the-public-API-has-been-retired
 - SlideShare profile help: https://support.scribd.com/hc/en-us/articles/360055257592-Your-Slideshare-profile
+
+
+## Discovery-state interpretation
+
+- `profile-links-extracted` — at least one current-profile presentation URL was extracted and the profile count was visible.
+- `profile-links-extracted-count-not-observed` — presentation URLs were extracted, but the profile's displayed total was not readable.
+- `profile-count-visible-but-links-not-extracted` — the page exposed its total, but no presentation links were extracted; this is an explicit discovery failure, not a zero-item inventory.
+- `no-profile-links-or-count-extracted` — neither a displayed total nor presentation links were captured; only registry-known URLs and archive observations can be reported.
+
+When the profile total is unavailable, the report displays the count-to-link difference as `not measurable`, not zero.
