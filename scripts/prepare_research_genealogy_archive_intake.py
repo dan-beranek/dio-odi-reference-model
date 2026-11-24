@@ -340,7 +340,7 @@ def markdown_report(report: dict[str, Any]) -> str:
         "",
         "## Summary",
         "",
-        f"- SlideShare count reported by profile HTML: {stats.get('profile_reported_count')}",
+        f"- SlideShare count reported by rendered public profile: {stats.get('profile_reported_count')}",
         f"- URLs discovered from current public profile sources: {stats['current_profile_urls']}",
         f"- URLs discovered in archived profile snapshots: {stats['archived_profile_urls']}",
         f"- Known SlideShare artefacts in the canonical registry: {stats['registered_artefacts']}",
@@ -348,7 +348,8 @@ def markdown_report(report: dict[str, Any]) -> str:
         f"- CDX queries completed: {stats['cdx_queries_succeeded']} / {stats['cdx_queries_attempted']}",
         f"- Capture records returned: {stats['capture_records']}",
         f"- URLs without a corresponding registry artefact: {stats['unregistered_urls']}",
-        f"- Difference between the profile-reported total and extracted current-profile links (unreconciled): {stats['profile_count_to_html_link_gap'] if stats['profile_count_to_html_link_gap'] is not None else 'not measurable'}",\n        f"- Profile discovery status: {stats['profile_discovery_status']}",
+        f"- Difference between the profile-reported total and extracted current-profile links (unreconciled): {stats['profile_count_to_html_link_gap'] if stats['profile_count_to_html_link_gap'] is not None else 'not measurable'}",
+        f"- Profile discovery status: {stats['profile_discovery_status']}",
         f"- Profile snapshot cap reached: {stats['profile_snapshot_limit_reached']}",
         f"- Presentation URL cap reached: {stats['presentation_url_limit_reached']}",
         "",
@@ -588,7 +589,7 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
     }
     current_count = sum(
         1 for item in urls.values()
-        if any(s["kind"] == "current-public-profile-html" for s in item["discovery_sources"])
+        if any(s["kind"] in {"current-public-profile-html", "current-public-profile-rendered-browser"} for s in item["discovery_sources"])
     )
     summary = {
         "profile_reported_count": profile_reported_count,
