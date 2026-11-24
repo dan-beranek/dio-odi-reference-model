@@ -942,7 +942,7 @@
       "event_class": "Structural",
       "change_type": "introduced",
       "title": "Google Search displays a Knowledge Panel for Daniel Beránek",
-      "summary": "A Google Search Knowledge Panel for Daniel Beránek becomes visible and is reported as verified. The event records this externally visible representation of the author's digital identity as a concrete outcome associated with Digital Identity Optimization, not as a new DIO/ODI publication or a change to the canonical vocabulary.",
+      "summary": "A Google Search Knowledge Panel for Daniel Beránek becomes visible and is reported as verified. The author observed that Google handled the confirmation readily using the submitted information and digital properties under the author's ownership or control. The event records this externally visible representation as a concrete outcome associated with Digital Identity Optimization, not as a new DIO/ODI publication or a change to the canonical vocabulary.",
       "scope": [
         {
           "component": "Google Search Knowledge Panel for Daniel Beránek",
@@ -962,7 +962,7 @@
       "preserved_invariants": [
         "The event records the visible Google Search Knowledge Panel, not direct inspection of Google's internal Knowledge Graph record.",
         "No internal Google entity identifier, creation timestamp, or API-level verification response is asserted.",
-        "The author recalls that approval happened quickly, but no precise elapsed time is assigned and no Google processing metric is asserted.",
+        "The author observed that confirmation and verification proceeded quickly and without apparent difficulty, using the submitted information and digital properties under the author's ownership or control. This records the author's interpretation of the visible process, not an assertion about Google's internal workflow.",
         "The cross-platform posts are multiple announcements of one underlying observation, not separate outcomes or independent validations.",
         "The event does not modify canonical DIO/ODI concepts, the Reference Vocabulary, or the Reference Model."
       ],
@@ -981,7 +981,7 @@
         "basis": [
           "linked-publication-or-artifact"
         ],
-        "temporal_note": "The event is dated 21 September 2026, the date of the author's contemporaneous public announcements reporting the newly visible Knowledge Panel. The author recalls that approval happened quickly, but no precise elapsed time is assigned. The social posts document the public report of the visible outcome, not an independently exposed creation or verification timestamp from Google's internal systems.",
+        "temporal_note": "The event is dated 21 September 2026, the date of the author's contemporaneous public announcements reporting the newly visible Knowledge Panel. The author recalls that confirmation and verification proceeded quickly and appeared straightforward given the submitted information and digital properties under the author's ownership or control. No precise elapsed time is assigned. The social posts document the public report of the visible outcome and the author's contemporaneous interpretation of the process.",
         "sources": [
           {
             "label": "Instagram — Knowledge Panel announcement",
@@ -1034,9 +1034,9 @@
             "role": "contemporaneous-author-announcement"
           },
           {
-            "label": "Witter — follow-up on the Knowledge Panel approval",
+            "label": "Witter — follow-up on the rapid Knowledge Panel confirmation",
             "url": "https://witter.cz/@seo_copywriter_daniel_beranek/117320020484498771",
-            "role": "author-reported-rapid-approval"
+            "role": "author-reported-rapid-confirmation"
           },
           {
             "label": "Threads — Knowledge Panel announcement",
