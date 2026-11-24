@@ -379,10 +379,33 @@
                 },
                 "full_text_uri": {
                   "type": "string",
-                  "format": "uri"
+                  "format": "uri",
+                  "description": "Direct PDF, repository, or full-text URL for this version."
                 },
                 "notes": {
                   "type": "string"
+                },
+                "catalogue_title": {
+                  "type": "string"
+                },
+                "defense_status": {
+                  "type": "string"
+                },
+                "bibliography_items_before": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "bibliography_items_after": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "footnotes_before": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "footnotes_after": {
+                  "type": "integer",
+                  "minimum": 0
                 }
               }
             }
@@ -1237,6 +1260,55 @@
                   "type": "string"
                 },
                 "status": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "intellectual_threads": {
+      "type": "array",
+      "description": "Cross-cutting intellectual traditions that recur across multiple research objects, with object-specific expressions and an explicit scope of continuity.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "description",
+          "research_object_ids",
+          "expressions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "research_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expressions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "research_object_id",
+                "expression"
+              ],
+              "properties": {
+                "research_object_id": {
+                  "type": "string"
+                },
+                "expression": {
                   "type": "string"
                 }
               }
