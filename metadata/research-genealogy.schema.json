@@ -261,6 +261,16 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "repository_file_date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "content_review_status": {
+                  "type": "string"
+                },
+                "relationship_status": {
+                  "type": "string"
                 }
               }
             }
@@ -356,7 +366,8 @@
                 },
                 "submission_attempt": {
                   "type": "integer",
-                  "minimum": 1
+                  "minimum": 0,
+                  "description": "Ordinal thesis attempt when known. Zero may be used for a pre-submission archived working file."
                 },
                 "status": {
                   "type": "string"
@@ -407,8 +418,35 @@
                 "footnotes_after": {
                   "type": "integer",
                   "minimum": 0
+                },
+                "source_file_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "front_matter_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "repository_file_date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "front_matter_file_date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "pages": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "content_review_status": {
+                  "type": "string"
+                },
+                "relationship_status": {
+                  "type": "string"
                 }
-              }
+              },
+              "description": "Version records may describe a thesis submission or a separately archived earlier file whose relationship to the submission is still being reconciled."
             }
           }
         }
