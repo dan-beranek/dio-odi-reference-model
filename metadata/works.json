@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.20",
+  "registry_version": "1.8.21",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -26,7 +26,8 @@
       "note": "Canonical multilingual Zenodo edition.",
       "keyword_profile": "manifest-v1",
       "keyword_profile_status": "canonical-approved",
-      "keyword_grammar_version": "2.0.0"
+      "keyword_grammar_version": "2.0.0",
+      "description": "The canonical multilingual manifesto defining Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI). It establishes their conceptual scope, principles and terminology, and describes a framework for coherent, reconstructable digital identity across AI systems, search engines, knowledge graphs and human interpretation."
     },
     {
       "id": "manifest-v2-web",
