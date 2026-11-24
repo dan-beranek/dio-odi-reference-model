@@ -19,7 +19,8 @@
     "artefacts",
     "inventory_leads",
     "relations",
-    "research_clusters"
+    "research_clusters",
+    "intellectual_threads"
   ],
   "properties": {
     "registry_version": {
@@ -234,6 +235,218 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "publication_records": {
+            "type": "array",
+            "description": "Bibliographic and repository pages that identify or expose the same underlying research object. Multiple records do not create multiple research outputs.",
+            "items": {
+              "type": "object",
+              "required": [
+                "record_type",
+                "title",
+                "url",
+                "role"
+              ],
+              "properties": {
+                "record_type": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "repository_file_date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "content_review_status": {
+                  "type": "string"
+                },
+                "relationship_status": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "Persistent identifiers associated with the research object. Identifiers are not separate research outputs.",
+            "items": {
+              "type": "object",
+              "required": [
+                "scheme",
+                "value",
+                "uri",
+                "provider",
+                "role"
+              ],
+              "properties": {
+                "scheme": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "version_id": {
+                  "type": "string",
+                  "description": "Optional ID of the specific version identified by this persistent identifier."
+                }
+              }
+            }
+          },
+          "institutional_record_status": {
+            "type": "object",
+            "description": "Availability of a public institutional or national thesis-catalogue page; absence may be recorded when author-confirmed.",
+            "required": [
+              "status",
+              "basis",
+              "note"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "public-record-available",
+                  "no-public-record",
+                  "not-assessed"
+                ]
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "directly-verified",
+                  "author-confirmed",
+                  "not-assessed"
+                ]
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          },
+          "versions": {
+            "type": "array",
+            "description": "Explicitly documented versions or successive submission attempts belonging to one research-object lineage.",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "title",
+                "record_uri",
+                "submission_attempt",
+                "status"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "record_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "submission_attempt": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "Ordinal thesis attempt when known. Zero may be used for a pre-submission archived working file."
+                },
+                "status": {
+                  "type": "string"
+                },
+                "defended_on": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "similarity_to_previous_version_percent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "revision_extent_percent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "doi": {
+                  "type": "string"
+                },
+                "full_text_uri": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "Direct PDF, repository, or full-text URL for this version."
+                },
+                "notes": {
+                  "type": "string"
+                },
+                "catalogue_title": {
+                  "type": "string"
+                },
+                "defense_status": {
+                  "type": "string"
+                },
+                "bibliography_items_before": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "bibliography_items_after": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "footnotes_before": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "footnotes_after": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "source_file_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "front_matter_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "repository_file_date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "front_matter_file_date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "pages": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "content_review_status": {
+                  "type": "string"
+                },
+                "relationship_status": {
+                  "type": "string"
+                }
+              },
+              "description": "Version records may describe a thesis submission or a separately archived earlier file whose relationship to the submission is still being reconciled."
             }
           }
         }
@@ -1086,6 +1299,55 @@
                   "type": "string"
                 },
                 "status": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "intellectual_threads": {
+      "type": "array",
+      "description": "Cross-cutting intellectual traditions that recur across multiple research objects, with object-specific expressions and an explicit scope of continuity.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "description",
+          "research_object_ids",
+          "expressions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "research_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expressions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "research_object_id",
+                "expression"
+              ],
+              "properties": {
+                "research_object_id": {
+                  "type": "string"
+                },
+                "expression": {
                   "type": "string"
                 }
               }

@@ -1,8 +1,8 @@
 {
-  "registry_version": "0.3.1",
-  "schema_version": "0.2.0",
+  "registry_version": "0.3.8",
+  "schema_version": "0.3.3",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
-  "generated_on": "2026-11-24",
+  "generated_on": "2026-11-25",
   "title": "DIO/ODI Research Genealogy Registry",
   "description": "A source-linked reconstruction of the DIO/ODI research objects and processes, related professional AI practice, intermediate outputs, alternative publication manifestations, and archive observations. The registry distinguishes thematic relatedness from confirmed same-output identity.",
   "maintainer": {
@@ -18,7 +18,7 @@
       "uri": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/",
       "object_type": "multimodal-professional-ethnography",
       "status": "living-author-maintained-web-object",
-      "description": "An evolving, layered representation of professional experience, knowledge, practice, and digital traces. Its research object is distributed across narrative text, explicit interpretive guidance, visual and semantic structures, linked sources, machine-readable metadata, and a dated changelog.",
+      "description": "An evolving, layered representation of professional experience, knowledge, practice, and digital traces. Its research object is distributed across narrative text, explicit interpretive guidance, visual and semantic structures, linked sources, machine-readable metadata, and a dated changelog. The object also explicitly revisits two earlier works in media and communication studies: the 2011 Rearticulation of Ideology and Hegemony thesis and the 2005 semiotic analysis of mOBSCENE, integrating their theoretical and methodological contributions into the professional-ethnography narrative.",
       "components": [
         "narrative text and non-linear professional trajectory",
         "methodological and interpretive notes",
@@ -26,7 +26,8 @@
         "semantic inventory and linked references",
         "AI-use notice and machine-readable agent instructions",
         "structured page metadata and semantic markup",
-        "author-maintained changelog"
+        "author-maintained changelog",
+        "explicit retrospective integration of the Rearticulation of Ideology and Hegemony thesis and the mOBSCENE semiotic analysis"
       ],
       "role_in_genealogy": "Primary research object examined through iterative AI-assisted secondary exploration."
     },
@@ -135,15 +136,17 @@
       "title": "Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií",
       "uri": "https://is.muni.cz/th/ajfb6/",
       "object_type": "university-masters-thesis",
-      "status": "preserved-university-record",
-      "description": "A 2011 master's thesis in Media Studies and Journalism at Masaryk University. The abstract describes a reconstruction of ideology and hegemony concepts for analysing contemporary media representations, including ideological discourse, hegemonic formations, nodal points, dominant discourse, and general discourse.",
+      "status": "preserved-university-record-and-explicitly-revisited-theoretical-antecedent",
+      "description": "A 2011 master's thesis in Media Studies and Journalism at Masaryk University. It reconstructs concepts of ideology and hegemony for analysing media representations, including ideological discourse, hegemonic formations, nodal points, and the articulation of meaning. The professional ethnography explicitly revisits this thesis and carries its theoretical framework into the subsequent DIO/ODI conceptual development.",
       "components": [
         "official university thesis record and bibliographic metadata",
         "abstract and research assignment",
         "keywords on ideology, hegemony, discourse, nodal points, representation, structural semiotics, cultural studies, post-Marxism, and post-structuralism",
-        "full-text PDF listed in the university record"
+        "full-text PDF listed in the university record",
+        "Theses.cz national thesis-database record",
+        "ResearchGate full-text publication page and DOI identifier"
       ],
-      "role_in_genealogy": "An earlier academic work in the author's media-studies background. It documents engagement with discourse, ideology, hegemony, and nodal points that may contextualize later theoretical interests. It is not asserted as a direct source or formal derivation of DIO/ODI.",
+      "role_in_genealogy": "A direct theoretical antecedent in the DIO/ODI lineage. The professional ethnography explicitly returns to this thesis, identifies its rearticulation of ideology and hegemony, and connects discourse, nodal points, hegemonic formation, and relational meaning to contemporary SEO, branding, and digital identity.",
       "publication_date": "2011",
       "publication_date_basis": "Masaryk University record and its citation export identify the thesis as a 2011 work; the record states that the thesis was successfully defended on 25 January 2011.",
       "date_evidence": [
@@ -170,43 +173,403 @@
           "theme": "media-representation",
           "description": "Applies the conceptual discussion to analysis of contemporary media imagery."
         }
-      ]
+      ],
+      "publication_records": [
+        {
+          "record_type": "institutional-repository-record",
+          "title": "Masaryk University Information System — thesis record",
+          "url": "https://is.muni.cz/th/ajfb6/",
+          "role": "primary-institutional-bibliographic-record"
+        },
+        {
+          "record_type": "national-thesis-database-record",
+          "title": "Theses.cz — thesis record",
+          "url": "https://theses.cz/id/ii7gdr/",
+          "role": "national-thesis-database-record"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — full-text publication page",
+          "url": "https://www.researchgate.net/publication/256483582_Reartikulace_konceptu_ideologie_a_hegemonie_v_ramci_medialnich_studii",
+          "role": "public-full-text-page-and-DOI-display"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "DOI",
+          "value": "10.13140/RG.2.2.24570.25281",
+          "uri": "https://doi.org/10.13140/RG.2.2.24570.25281",
+          "provider": "ResearchGate",
+          "role": "persistent-publication-identifier"
+        }
+      ],
+      "institutional_record_status": {
+        "status": "public-record-available",
+        "basis": "directly-verified",
+        "note": "The Masaryk University Information System and Theses.cz records refer to the same thesis."
+      }
     },
     {
-      "id": "positive-psychology-and-spiritual-streams-thesis",
-      "title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
-      "uri": "https://is.muni.cz/th/wknmn/",
-      "object_type": "university-thesis",
-      "status": "preserved-university-record",
-      "description": "A 2009 psychology thesis record at Masaryk University's Faculty of Social Studies. The abstract describes an update of positive-psychology foundations through comparison of differently coded but related perspectives, drawing on Gregory Bateson's Mind and Nature and a binocular-vision method for combining information from multiple sources.",
+      "id": "semiotic-mobscene-sign-expansion-thesis",
+      "title": "Sémiotická analýza klipu Marilyna Mansona mOBSCENE",
+      "uri": "https://danielberanek.cz/reference/akademicke-publikace/semioticka-analyza-klipu-marilyna-mansona-mobscene/",
+      "object_type": "university-masters-thesis",
+      "status": "author-maintained-academic-publication-record-and-explicitly-revisited-methodological-antecedent",
+      "description": "A 2005 master's thesis in Media Studies and Journalism at Masaryk University, preserved on the author's academic-publications page with PDF and ODT formats. The professional ethnography explicitly revisits its semiotic deconstruction of the mOBSCENE music video and retrospectively articulates the analysis as an emergent expansion of sign meaning, progressing from isolated signs through denotation, connotation, tropes, ideological structures, hegemony, and finally simulacrum and hyperreality.",
       "components": [
-        "official university thesis record and bibliographic metadata",
-        "abstract describing the binocular-vision method",
-        "references to Gregory Bateson's Mind and Nature",
-        "university-record metadata and supervisor information"
+        "2005 master's thesis in Media Studies and Journalism at Masaryk University",
+        "semiotic deconstruction of the mOBSCENE audiovisual music video",
+        "reconstruction of semiosis from constituent signs",
+        "emergent expansion of sign meaning across denotative and connotative layers",
+        "progression into ideological and hegemonic meaning structures",
+        "interpretation through simulacrum and hyperreality",
+        "ResearchGate full-text publication page and DOI identifier"
       ],
-      "role_in_genealogy": "An earlier academic work in the author's psychology background. Its explicit method of combining related but differently coded perspectives may contextualize later interdisciplinary practice. No direct derivation relation to DIO/ODI is asserted.",
-      "publication_date": "2009",
-      "publication_date_basis": "Masaryk University record and citation export identify the thesis as a 2009 work.",
+      "role_in_genealogy": "A direct semiotic and methodological antecedent in the DIO/ODI lineage. The professional ethnography explicitly revisits this work, formulates its procedure as emergent sign-meaning expansion, and connects the reconstruction of meaning to present-day reverse engineering of communication, brand meaning, and E-E-A-T.",
+      "publication_date": "2005",
+      "publication_date_basis": "The author-maintained academic-publications page cites the work as a 2005 master's thesis at Masaryk University, Faculty of Social Studies.",
       "date_evidence": [
         {
-          "title": "Masaryk University thesis record — Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
-          "url": "https://is.muni.cz/th/wknmn/",
-          "role": "official-university-record-and-thesis-citation"
+          "title": "Author-maintained academic-publications page — bibliographic citation to the 2005 master's thesis",
+          "url": "https://danielberanek.cz/reference/akademicke-publikace/semioticka-analyza-klipu-marilyna-mansona-mobscene/",
+          "role": "author-maintained-bibliographic-record"
         }
       ],
       "conceptual_themes": [
         {
-          "theme": "positive-psychology",
-          "description": "Critical update of the foundations and possibilities of positive psychology."
+          "theme": "semiotic-analysis-and-semiosis",
+          "description": "Deconstructs an audiovisual text into signs and reconstructs the process through which meaning is produced."
         },
         {
-          "theme": "binocular-vision-method",
-          "description": "Combines information from two or more related but differently coded perspectives to produce a deeper view of a problem."
+          "theme": "emergent-sign-meaning-expansion",
+          "description": "Tracks the expansion of sign meaning from isolated recognition through widening contextual and interpretive layers."
         },
         {
-          "theme": "Bateson-and-systems-thinking",
-          "description": "The method is inspired by Gregory Bateson's Mind and Nature and its idea of necessary unity."
+          "theme": "denotation-connotation-and-tropes",
+          "description": "Follows denotative and connotative interpretation, including metaphorical and metonymic transfers."
+        },
+        {
+          "theme": "ideology-and-hegemony",
+          "description": "Connects the expansion of meaning to ideological meta-structures and social relations of hegemony."
+        },
+        {
+          "theme": "simulacrum-and-hyperreality",
+          "description": "Extends the analysis to an interpretation of the represented world through simulacrum and hyperreality."
+        }
+      ],
+      "publication_records": [
+        {
+          "record_type": "author-maintained-bibliographic-record",
+          "title": "Author-maintained academic publications page",
+          "url": "https://danielberanek.cz/reference/akademicke-publikace/semioticka-analyza-klipu-marilyna-mansona-mobscene/",
+          "role": "author-maintained-bibliographic-citation-and-access-index"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — full-text publication page",
+          "url": "https://www.researchgate.net/publication/256483782_Semioticka_analyza_klipu_mOBSCENE_skupiny_Marilyn_manson",
+          "role": "public-full-text-page-and-DOI-display"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "DOI",
+          "value": "10.13140/RG.2.2.28764.55685",
+          "uri": "https://doi.org/10.13140/RG.2.2.28764.55685",
+          "provider": "ResearchGate",
+          "role": "persistent-publication-identifier"
+        }
+      ],
+      "institutional_record_status": {
+        "status": "no-public-record",
+        "basis": "author-confirmed",
+        "note": "No public Masaryk University Information System or Theses.cz page exists for this thesis. Its public bibliographic trail is the author's academic-publications record and the ResearchGate full-text page/DOI."
+      }
+    },
+    {
+      "id": "positive-psychology-and-spiritual-streams-thesis",
+      "title": "Pozitivní psychologie a Castanedovo učení — thesis development and submission lineage",
+      "uri": "https://is.muni.cz/th/wknmn/",
+      "object_type": "university-masters-thesis-version-lineage",
+      "status": "multi-file-first-submission-not-defended; second-submission-successfully-defended",
+      "description": "A 2008–2009 master's-thesis development lineage in Psychology at Masaryk University's Faculty of Social Studies. The IS MU archive contains multiple separately stored files from successive stages. An earlier file named Pozitivni_psychologie_a_Castanedovo_uceni.doc is dated 20 May 2008. The first registered examination attempt on 20 January 2009 was not defended; its 5 January 2009 body file is titled “Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení” and is accompanied by a separately stored file “uvodni_strany_a_obsah” containing the opening pages and table of contents. The uploaded 88-page DOC contains the main body (chapters 1–10, conclusion, and sources), but not those separately stored opening pages. A later separate file “uvodni_strany.doc” is dated 29 May 2009; its association with the second attempt is not yet established. The second submission, retitled “Aktualizace východisek a možností pozitivní psychologie”, was successfully defended on 2 June 2009. Its second version substantially revises the method and analytical structure: it sharpens the methodological definitions and research plan, adds a worked analysis of Love's text, restructures the comparative synthesis, and rewrites the proposals section. It uses Gregory Bateson's binocular-vision principle to compare analogous but differently coded perspectives and explicitly draws on semiotics, Saussure, Barthes, Derrida's différance, ethnomethodology, and critical discourse analysis. The two submissions remain one thesis-development lineage.",
+      "components": [
+        "IS MU thesis lineage record wknmn and its separately stored archive files",
+        "earlier file Pozitivni_psychologie_a_Castanedovo_uceni.doc, recorded 20 May 2008",
+        "first-attempt body file Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc, recorded 5 January 2009",
+        "separate first-attempt opening-pages-and-table-of-contents file uvodni_strany_a_obsah.doc, recorded 5 January 2009",
+        "uploaded 88-page DOC body containing chapters 1–10, conclusion, and references; opening pages/contents are not inside this file",
+        "separate uvodni_strany.doc file recorded 29 May 2009; relation to the second attempt not confirmed",
+        "second IS MU submission record k2bkc and successful defense on 2 June 2009",
+        "ResearchGate DOI and full-text PDF for the successful second version",
+        "Gregory Bateson's binocular-vision principle and comparison of differently coded perspectives",
+        "secondary theoretical background: semiotics, Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis",
+        "second-version revision account in section 2.8, documenting methodological, analytical, structural, and bibliographic changes from the first attempt",
+        "worked application of the analytical procedure to Love's text in chapter 6.1",
+        "tabular comparative synthesis and supplement in chapter 7; fully rewritten extension/proposals section in chapter 8",
+        "additional separately stored opening-pages file uvodni_strany.doc dated 29 May 2009, belonging to the first version"
+      ],
+      "role_in_genealogy": "A direct methodological and conceptual antecedent in the DIO/ODI lineage. The successful second submission formalizes cross-perspective reconstruction and comparison as a way of producing additional depth and new information. The professional ethnography explicitly carries the binocular-perspective principle into ongoing practice, including the paired reading of human-language effectiveness and search/AI algorithms, and business aims and people's needs/emotions. The thesis line also brings semiotics, contextual meaning, and critical discourse analysis into the psychological work. The archived first-attempt material documents the development of this method before the successful second submission.",
+      "publication_date": "2009",
+      "publication_date_basis": "The first attempt was scheduled for 20 January 2009 and was not defended. The second submission was successfully defended on 2 June 2009. An earlier file in the IS MU archive is dated 20 May 2008.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University Information System — first thesis record wknmn and its file inventory",
+          "url": "https://is.muni.cz/th/wknmn/",
+          "role": "institutional-record-and-archive-file-inventory"
+        },
+        {
+          "title": "Earlier file — Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf",
+          "url": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
+          "role": "separately archived file recorded 20 May 2008; content equivalence to the January 2009 body not yet reviewed"
+        },
+        {
+          "title": "First-attempt body DOC — Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "url": "https://is.muni.cz/th/wknmn/Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "role": "5 January 2009 main-text file, directly reviewed from author-supplied DOC"
+        },
+        {
+          "title": "First-attempt opening pages and contents — uvodni_strany_a_obsah.doc",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany_a_obsah.doc",
+          "role": "separately stored front matter listed for 5 January 2009"
+        },
+        {
+          "title": "Later opening-pages file — uvodni_strany.doc",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany.doc",
+          "role": "separately listed file recorded 29 May 2009; relationship to the second attempt not confirmed"
+        },
+        {
+          "title": "Masaryk University Information System — second submission, Aktualizace východisek a možností pozitivní psychologie",
+          "url": "https://is.muni.cz/th/k2bkc/",
+          "role": "second-submission institutional record and successful defense"
+        },
+        {
+          "title": "ResearchGate — second-version full text and DOI",
+          "url": "https://doi.org/10.13140/RG.2.2.32958.86087",
+          "role": "persistent identifier and full-text page for the successfully defended second version"
+        }
+      ],
+      "conceptual_themes": [
+        {
+          "theme": "binocular-perspective-and-cross-coded-comparison",
+          "description": "Combines analogous but differently coded perspectives to produce interpretive depth, following Gregory Bateson's binocular-vision principle."
+        },
+        {
+          "theme": "reconstruction-reproduction-comparison-and-extrapolation",
+          "description": "Reconstructs and reproduces two conceptual systems, compares and interprets them, then extrapolates additional perspectives."
+        },
+        {
+          "theme": "semiotics-and-contextual-meaning",
+          "description": "The second version's secondary theoretical background includes Saussure, Barthes, and Derrida's différance; meaning is treated as contextual and continually deferred."
+        },
+        {
+          "theme": "discourse-and-power",
+          "description": "Critical discourse analysis is part of the secondary theoretical foundation; discourse production is treated as a power practice rather than a neutral description."
+        },
+        {
+          "theme": "recipient-and-perspective-specificity",
+          "description": "The method makes the selection of a specific recipient and the clarification of the interpretive perspective central to evaluation and applied claims."
+        }
+      ],
+      "publication_records": [
+        {
+          "record_type": "institutional-thesis-record",
+          "title": "IS MU — first submission record wknmn",
+          "url": "https://is.muni.cz/th/wknmn/",
+          "role": "institutional thesis record; first attempt was not defended on 20 January 2009"
+        },
+        {
+          "record_type": "archived-working-file",
+          "title": "Pozitivni_psychologie_a_Castanedovo_uceni.doc / Archive.pdf",
+          "url": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
+          "role": "separately stored earlier file recorded 20 May 2008; not yet content-compared with the January 2009 attempt",
+          "repository_file_date": "2008-05-20",
+          "content_review_status": "not-yet-compared"
+        },
+        {
+          "record_type": "first-attempt-main-text",
+          "title": "Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení",
+          "url": "https://is.muni.cz/th/wknmn/Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "role": "main body file recorded 5 January 2009; author-supplied DOC directly reviewed",
+          "repository_file_date": "2009-01-05",
+          "content_review_status": "reviewed"
+        },
+        {
+          "record_type": "first-attempt-front-matter",
+          "title": "Titulní a úvodní strany a obsah diplomové práce „Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení“",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany_a_obsah.doc",
+          "role": "Separately stored companion file recorded 5 January 2009. Its TXT transcription has now been reviewed and confirms the title page, authorship declaration, acknowledgements, and table of contents; it complements the separately stored main-body DOC.",
+          "repository_file_date": "2009-01-05",
+          "relationship_status": "Confirmed companion component of the first-attempt thesis: same IS MU record, same repository file date as the main-body DOC, and matching thesis title.",
+          "content_review_status": "reviewed-from-author-supplied-TXT-transcription"
+        },
+        {
+          "record_type": "later-front-matter-file",
+          "title": "uvodni_strany.doc",
+          "url": "https://is.muni.cz/th/wknmn/uvodni_strany.doc",
+          "role": "separately listed file recorded 29 May 2009; association with the second attempt remains unconfirmed",
+          "repository_file_date": "2009-05-29",
+          "content_review_status": "not-reviewed"
+        },
+        {
+          "record_type": "institutional-thesis-record",
+          "title": "IS MU — Aktualizace východisek a možností pozitivní psychologie",
+          "url": "https://is.muni.cz/th/k2bkc/",
+          "role": "second submission record; successfully defended on 2 June 2009"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — Aktualizace východisek a možností pozitivní psychologie",
+          "url": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
+          "role": "full-text PDF and DOI page for the second version"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "DOI",
+          "value": "10.13140/RG.2.2.32958.86087",
+          "uri": "https://doi.org/10.13140/RG.2.2.32958.86087",
+          "provider": "ResearchGate",
+          "role": "persistent identifier for the second, successfully defended thesis version",
+          "version_id": "second-version"
+        }
+      ],
+      "institutional_record_status": {
+        "status": "public-record-available",
+        "basis": "directly-verified",
+        "note": "The IS MU wknmn record lists the 20 January 2009 first attempt as not defended and exposes a set of separately stored files from 2008 and 2009. The k2bkc second attempt was successfully defended on 2 June 2009."
+      },
+      "versions": [
+        {
+          "id": "earlier-archived-file-2008",
+          "title": "Pozitivní psychologie a Castanedovo učení",
+          "catalogue_title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "record_uri": "https://is.muni.cz/th/wknmn/",
+          "source_file_uri": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni.doc",
+          "full_text_uri": "https://is.muni.cz/th/wknmn/Pozitivni_psychologie_a_Castanedovo_uceni_Archive.pdf?kodomez=termin-540379;lang=en",
+          "repository_file_date": "2008-05-20",
+          "submission_attempt": 0,
+          "status": "earlier-archived-file; relationship-to-January-2009-body-not-yet-content-compared",
+          "content_review_status": "not-yet-compared",
+          "notes": "This is the exact Archive.pdf link originally supplied by the author. The IS MU file inventory lists its DOC, PDF, Archive.pdf, and TXT forms under the wknmn record and dates the DOC entry 20 May 2008. Do not treat it as the same binary/text as the separately listed January 2009 Kvalitativní evaluace file until compared."
+        },
+        {
+          "id": "first-attempt-2009",
+          "title": "Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení",
+          "catalogue_title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
+          "record_uri": "https://is.muni.cz/th/wknmn/",
+          "source_file_uri": "https://is.muni.cz/th/wknmn/Kvalitativni_evaluace_pozitivni_PSY_perspektivou_Castanedova_uceni.doc",
+          "front_matter_uri": "https://is.muni.cz/th/wknmn/uvodni_strany_a_obsah.doc",
+          "repository_file_date": "2009-01-05",
+          "front_matter_file_date": "2009-01-05",
+          "submission_attempt": 1,
+          "status": "not-defended",
+          "defense_status": "The IS MU record lists the first defense attempt on 20 January 2009 as not defended.",
+          "pages": 88,
+          "content_review_status": "main-body-and-front-matter-reviewed",
+          "relationship_status": "The main body and front-matter/contents file are confirmed as complementary parts of the same first-attempt thesis: both are separately listed under the same IS MU record and have the same 5 January 2009 file date; the front-matter file contains the title page, authorship declaration, acknowledgements, and table of contents. The separately archived uvodni_strany.doc dated 29 May 2009 also belongs to the first version, as confirmed by the author; it is not part of the second version.",
+          "notes": "The author-supplied DOC contains the main body: chapter 1 Introduction through chapter 9 Conclusion and chapter 10 Sources. The separately supplied TXT transcription of uvodni_strany_a_obsah.doc confirms the title page, authorship declaration, acknowledgements, and contents. The title page identifies Masaryk University, Faculty of Social Studies, Department of Psychology; the thesis title is “Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení”; supervisor prof. PhDr. Vladimír Smékal, CSc.; Brno 2008. The contents list ten chapters, from Introduction and Method through Positive Psychology, Castaneda's Teaching, comparative evaluation, agreements/conflicts/differences, evaluation, conclusion, and sources. The main-body DOC starts at printed page 1 with chapter 1 and ends at printed page 88 with sources; the front matter is a separate companion file, not missing content. The same first-attempt archive also lists a later separate file, uvodni_strany.doc, dated 29 May 2009; the author confirms that this file belongs to version 1. It must not be assigned to the second version."
+        },
+        {
+          "id": "second-version",
+          "title": "Aktualizace východisek a možností pozitivní psychologie",
+          "record_uri": "https://is.muni.cz/th/k2bkc/",
+          "source_file_uri": "https://is.muni.cz/th/k2bkc/DP_Aktualizace_vychodisek_moznosti_pozitivni_psychologie.doc",
+          "submission_attempt": 2,
+          "status": "successfully-defended",
+          "defended_on": "2009-06-02",
+          "revision_extent_percent": 29,
+          "bibliography_items_before": 173,
+          "bibliography_items_after": 257,
+          "footnotes_before": 182,
+          "footnotes_after": 573,
+          "doi": "10.13140/RG.2.2.32958.86087",
+          "full_text_uri": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
+          "notes": "The author reports 29% revised content, a change from 173 to 257 cited bibliography items, and an increase from 182 to 573 footnotes. The second version's own section 2.8 documents the revision. Compared with the first attempt, it sharpens the methodological definitions and research plan, revises data processing, and adds a separately articulated secondary theoretical foundation. It adds a worked analysis of Love's text (chapter 6.1), turns the agreements/conflicts/differences comparison into a tabular presentation with an added supplement (chapter 7), completely rewrites the section on possibilities for extending positive psychology (chapter 8), and revises the conclusion and sources. The second version therefore represents a substantial methodological and analytical revision within the same thesis-development lineage, not a separate research object. Its explicitly stated secondary theoretical background includes semiotics and signification (Saussure and Barthes), Derrida's différance, ethnomethodology, and critical discourse analysis. The revised method retains Bateson's binocular-vision principle: reconstruct and reproduce analogous but differently coded perspectives, compare and interpret them, and extrapolate further possibilities. The second version is a complete thesis in a single file in a different IS MU archive (record k2bkc); it does not depend on separately stored opening pages from the first-version archive.",
+          "similarity_to_previous_version_percent": 71,
+          "components": [
+            "complete single-file thesis held in the separate IS MU k2bkc archive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suicidal-cults-power-situation-thesis",
+      "title": "Klíčové aspekty sebevražedných sekt z hlediska jedince",
+      "uri": "https://is.muni.cz/th/d2622/",
+      "object_type": "university-bachelors-thesis",
+      "status": "preserved-university-record-and-full-text",
+      "description": "A 2006 bachelor's thesis in Psychology at Masaryk University's Faculty of Social Studies. It analyses Jonestown, the Branch Davidians, and the Order of the Solar Temple through concepts of prestige, identification, group narcissism, conformity, obedience, psychological manipulation, cognitive dissonance, memetics, and ideology from a semiotic perspective. The author supports the use of these concepts through textual analysis and synthesizes the findings into a unified model of the power situation. The full text also examines control of behaviour, thought, emotions, and information, the protection of group memes, and propaganda techniques.",
+      "components": [
+        "Masaryk University Information System record and bibliographic metadata",
+        "ResearchGate full-text page and PDF",
+        "analysis of three historical groups: People's Temple/Jonestown, Branch Davidians/Waco, and Order of the Solar Temple",
+        "psychological concepts of prestige, identification, group narcissism, conformity, obedience, and cognitive dissonance",
+        "analysis of psychological manipulation through control of behaviour, thought, emotion, and information",
+        "memetics, ideological structures, semiotic analysis, and propaganda techniques",
+        "synthesis of partial analytical insights into a model of the power situation"
+      ],
+      "role_in_genealogy": "A direct psychological and communication-theoretical antecedent in the professional-ethnography lineage. The ethnography explicitly revisits the thesis's model of the power situation and translates the analysis of identity, authority, group meaning, persuasion, and information control into a reflection on commercial conversion and brand communication. This is a specific antecedent strand within the broader DIO/ODI research object, not a claim that the 2006 thesis itself formulated DIO.",
+      "publication_date": "2006",
+      "publication_date_basis": "The IS MU record identifies the work as a 2006 bachelor's thesis and records successful defense on 9 June 2006.",
+      "date_evidence": [
+        {
+          "title": "Masaryk University Information System — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://is.muni.cz/th/d2622/",
+          "role": "official-university-record-and-thesis-citation"
+        },
+        {
+          "title": "ResearchGate — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://www.researchgate.net/publication/256483475_Klicove_aspekty_sebevrazednych_sekt_z_hlediska_jedince",
+          "role": "public-full-text-and-content-source"
+        }
+      ],
+      "publication_records": [
+        {
+          "record_type": "institutional-thesis-record",
+          "title": "Masaryk University Information System — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://is.muni.cz/th/d2622/",
+          "role": "official-institutional-bibliographic-record"
+        },
+        {
+          "record_type": "author-supplied-institutional-route",
+          "title": "IS MU thesis route supplied by the author",
+          "url": "https://is.muni.cz/th/78577/fss_b/",
+          "role": "author-supplied route to the same thesis record"
+        },
+        {
+          "record_type": "researchgate-publication-page",
+          "title": "ResearchGate — Klíčové aspekty sebevražedných sekt z hlediska jedince",
+          "url": "https://www.researchgate.net/publication/256483475_Klicove_aspekty_sebevrazednych_sekt_z_hlediska_jedince",
+          "role": "full-text PDF page"
+        }
+      ],
+      "identifiers": [],
+      "institutional_record_status": {
+        "status": "public-record-available",
+        "basis": "directly-verified",
+        "note": "The IS MU record is public and lists the thesis as successfully defended on 9 June 2006."
+      },
+      "conceptual_themes": [
+        {
+          "theme": "power-situation-model",
+          "description": "Synthesizes the psychological and communication mechanisms identified across the three case studies into a unified model of the power situation."
+        },
+        {
+          "theme": "identity-identification-and-conformity",
+          "description": "Examines prestige, identification, group narcissism, conformity, obedience, and social attachment to group structures."
+        },
+        {
+          "theme": "information-control-and-memetic-protection",
+          "description": "Analyses control of information, censorship of communication channels, differentiated truth levels, and protection of group memes."
+        },
+        {
+          "theme": "semiotics-ideology-and-propaganda",
+          "description": "Examines ideology from a semiotic perspective and identifies symbolic and rhetorical propaganda techniques."
+        },
+        {
+          "theme": "psychological-manipulation",
+          "description": "Explores manipulation through the control of behaviour, thought, emotions, and information."
         }
       ]
     }
@@ -224,7 +587,7 @@
       "research_object_ids": [
         "professional-ethnography"
       ],
-      "summary": "The professional ethnography became the subject of iterative secondary exploration through AI-assisted machine readings and model-generated interpretations. These readings were examined in relation to the source text and its context. Their cross-domain associations, interpretive discrepancies, implicit readings, and algorithmic noise became material for the author's inquiry. The exploratory process contributed to the discovery and articulation of DIO, followed by the differentiation and articulation of ODI as its broader theoretical layer.",
+      "summary": "The professional ethnography became the subject of iterative secondary exploration through AI-assisted machine readings and model-generated interpretations. These readings were examined in relation to the source text and its context. Their cross-domain associations, interpretive discrepancies, implicit readings, and algorithmic noise became material for the author's inquiry. The exploratory process contributed to the discovery and articulation of DIO, followed by the differentiation and articulation of ODI as its broader theoretical layer. The professional-ethnography object itself explicitly revisits the author's 2011 rearticulation of ideology and hegemony and the 2005 semiotic analysis of mOBSCENE; these are recorded as direct theoretical and methodological antecedents integrated into the source object.",
       "process_characteristics": [
         "iterative rather than strictly linear inquiry",
         "secondary exploration of an existing multimodal source object",
@@ -270,7 +633,9 @@
         }
       ],
       "preceding_context_object_ids": [
-        "ai-startup-marketing-article"
+        "ai-startup-marketing-article",
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis"
       ]
     },
     {
@@ -318,7 +683,7 @@
       "research_object_ids": [
         "eeat-digital-identity-assessment-subject"
       ],
-      "summary": "A multi-model assessment sequence examined the author's professional digital identity, professional ethnography, and multiple public-facing content targets through distinct E-E-A-T reports. The directly reviewed SlideShare corpus includes model-specific first-order assessments and six independently attributable E-E-A-T meta-analysis decks: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, and Mistral AI. A Manus-labelled PDF is now linked as a candidate manifestation of the existing Manus-hosted meta-analysis output; exact PDF-to-web content identity remains unverified. Further distinct assessments include a Copilot Research report targeting the copywriting pillar page and a Mistral analysis of the broader professional ethnography. Reports remain separate where target pages, scope, model, source set, or structure differ.",
+      "summary": "A multi-model assessment sequence examined the author's professional digital identity, professional ethnography, and multiple public-facing content targets through distinct E-E-A-T reports. The directly reviewed SlideShare corpus includes model-specific first-order assessments and seven directly reviewed SlideShare E-E-A-T meta-analysis outputs: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, Mistral AI, and the four-slide Manus-labelled PDF. The four-slide Manus-labelled PDF is maintained as a separate E-E-A-T meta-analysis output from the Manus-hosted web page; their source/derivation relationship remains unresolved pending direct content comparison. Further distinct assessments include a Copilot Research report targeting the copywriting pillar page and a Mistral analysis of the broader professional ethnography. Reports remain separate where target pages, scope, model, source set, or structure differ.",
       "process_characteristics": [
         "distinct model-specific first-order E-E-A-T assessments",
         "secondary synthesis of a common multi-model report set",
@@ -327,7 +692,7 @@
         "overlapping subject matter without assumed output identity",
         "retrospective reconciliation of shared chats, deployed web outputs, and archive observations",
         "distinct target-page E-E-A-T assessments alongside broader professional-ethnography analyses",
-        "at least six directly reviewed model-attributed SlideShare meta-analysis decks, with a separate Manus PDF/web manifestation relationship still under comparison"
+        "seven directly reviewed SlideShare meta-analysis outputs, including the separately registered four-slide Manus-labelled PDF; the Manus web page remains a separate unresolved record"
       ],
       "methods": [
         "AI-assisted E-E-A-T assessment",
@@ -484,7 +849,7 @@
       "url": "https://www.slideshare.net/danielberanek",
       "profile_display_name": "SEO specialista a copywriter Daniel Beránek",
       "collection_role": "exploratory-research-archive-and-publication-distribution-surface",
-      "content_scope": "A mixed collection containing AI-assisted readings, model-generated conceptual explorations, comparative AI materials, research presentations, publication presentation layers, and earlier academic, professional, and technical materials. On 24 November 2026 the author supplied a profile export containing 49 unique SlideShare URLs. Each locator has been mapped to an existing artefact, a new artefact, a nested language/version manifestation, an unresolved discovery lead, or an out-of-scope collection item. The 49-item profile total is not treated as a count of DIO/ODI research outputs.",
+      "content_scope": "A mixed collection containing AI-assisted readings, model-generated conceptual explorations, comparative AI materials, research presentations, and publication-distribution items. On 24 November 2026 the author supplied a profile export containing 49 unique SlideShare URLs. Each locator has been reconciled as a registered output, a nested publication representation, a distribution-only lead, an unresolved lead, or an out-of-scope collection item. Only works with a direct research or evidential role in the DIO/ODI lineage are included as research artefacts; unrelated technical material, other academic work, and customer-facing presentations are not promoted into that lineage. The 49-item profile total is not treated as a count of DIO/ODI research outputs.",
       "attribution": {
         "status": "author-confirmed",
         "person_uri": "https://danielberanek.cz/#person",
@@ -1559,19 +1924,22 @@
       "url": "https://eeat-analysis-b4jrwdnu.manus.space/",
       "platform": "Manus",
       "artefact_type": "deployed-meta-analysis-web-output",
-      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
-      "research_object_ids": [],
+      "content_origin": "Manus-hosted E-E-A-T meta-analysis web output; its production sequence and relationship to the separately listed SlideShare PDF remain unresolved.",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
       "process_ids": [
-        "cross-platform-ai-exploration"
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
       ],
       "related_work_ids": [],
-      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
-      "summary": "A Manus-hosted meta-analysis of E-E-A-T analyses, supplied by the author as the start of a distinct E-E-A-T meta-analysis set.",
+      "research_role": "A separately registered Manus-hosted E-E-A-T meta-analysis web output. The four-slide Manus-labelled PDF on SlideShare is retained as a separate output record; whether it supplied the website's source content, was exported from the website, or was prepared independently has not been established.",
+      "summary": "A Manus-hosted web meta-analysis of E-E-A-T assessments. The page is retained as its own output record, separately from the four-slide Manus-labelled SlideShare PDF. Their relationship awaits a direct comparison of the page's structure, wording, source set, and conclusions.",
       "provenance": {
-        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "basis": "Original Manus URL and archive locators supplied by the author. The live page and supplied archive captures have not yet yielded readable page content for direct comparison with the SlideShare PDF. Wayback timestamps are UTC; the Megalodon timestamp is normalized from Asia/Tokyo (JST).",
         "source_description_url": "https://eeat-analysis-b4jrwdnu.manus.space/"
       },
-      "review_status": "author-supplied-locators-content-unreviewed",
+      "review_status": "author-supplied-live-and-archive-locators;direct-page-content-unavailable;pdf-relationship-unresolved",
       "archive_captures": [
         {
           "url": "https://web.archive.org/web/20260313205916/https://eeat-analysis-b4jrwdnu.manus.space/",
@@ -1603,19 +1971,7 @@
           "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
         }
       ],
-      "representations": [
-        {
-          "id": "slideshare-manus-eeat-meta-analysis-pdf",
-          "platform": "SlideShare",
-          "representation_type": "PDF-presentation-manifestation-candidate",
-          "url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578",
-          "title": "Meta-analysis of E-E-A-T analyses of SEO specialist and copywriter Daniel Beránek (Manus).pdf",
-          "relation": "possible-alternate-publication-manifestation-of-same-underlying-output",
-          "relationship_status": "candidate-same-output; direct content comparison between Manus-hosted web page and SlideShare PDF pending",
-          "evidence_basis": "The SlideShare page is a four-slide Manus-labelled PDF titled as an E-E-A-T meta-analysis of the same subject; the existing Manus web artefact is also described as an E-E-A-T meta-analysis. The Manus web page content is not currently accessible for direct comparison, so same-output identity is not asserted.",
-          "archive_captures": []
-        }
-      ]
+      "curation_note": "Keep this web output separate from the four-slide SlideShare PDF. Resolve the relationship only after a direct comparison of section structure, distinctive formulations, source-report list, and conclusions."
     },
     {
       "id": "perplexity-page-1daf0768",
@@ -2807,41 +3163,38 @@
       ]
     },
     {
-      "id": "slideshare-rearticulation-thesis-distribution",
-      "title": "Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií — SlideShare thesis copy",
-      "url": "https://www.slideshare.net/slideshow/reartikulace-koncept-ideologie-a-hegemonie/75199856",
+      "id": "slideshare-manus-eeat-meta-analysis-pdf",
+      "title": "Meta-analysis of E-E-A-T analyses of SEO specialista a copywriter Daniel Beránek (Manus).pdf",
+      "url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578",
       "platform": "SlideShare",
       "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "academic-thesis-distribution-and-presentation",
-      "content_origin": "author-authored-academic-thesis-republished-as-slide-format",
-      "uploader_attribution": "Daniel Beránek",
-      "source_object_ids": [
-        "rearticulation-ideology-hegemony-thesis"
-      ],
-      "research_object_ids": [],
-      "process_ids": [],
-      "related_work_ids": [],
-      "research_role": "A SlideShare distribution manifestation of the author's 2011 Masaryk University master's thesis on ideology and hegemony. It documents earlier academic context; no direct derivation from DIO/ODI is asserted.",
-      "summary": "An 86-slide SlideShare document whose title and abstract match the existing Masaryk University thesis record. A separate seven-slide SlideShare deck is linked as a condensed presentation of the thesis.",
-      "provenance": {
-        "basis": "SlideShare title, 86-slide count, abstract matching the Masaryk University thesis record, and the existing official university record at https://is.muni.cz/th/ajfb6/.",
-        "source_description_url": "https://www.slideshare.net/slideshow/reartikulace-koncept-ideologie-a-hegemonie/75199856"
+      "artefact_type": "model-generated-eeat-meta-analysis",
+      "content_origin": "Manus-labelled E-E-A-T meta-analysis presented as a four-slide PDF and uploaded to SlideShare by the author; the exact sequence of creation, export, and web publication has not been established.",
+      "model_attribution": {
+        "system": "Manus",
+        "model": "Manus (exact model/version not stated)"
       },
-      "review_status": "public-page-title-abstract-and-slide-count-reviewed; university-record-title-and-abstract-match-observed",
-      "representations": [
-        {
-          "id": "slideshare-rearticulation-thesis-short-presentation",
-          "platform": "SlideShare",
-          "representation_type": "condensed-thesis-presentation",
-          "url": "https://www.slideshare.net/slideshow/dp-reartikulace-ideologie/13978383",
-          "title": "DP — Reartikulace ideologie",
-          "relation": "condensed-presentation-of-same-underlying-thesis",
-          "relationship_status": "same-author-uploader-and-thesis-topic; seven-slide presentation treated as a derivative presentation manifestation of the thesis",
-          "evidence_basis": "The 86-slide SlideShare document matches the official Masaryk University thesis title and abstract. The seven-slide page is titled 'DP — Reartikulace ideologie', carries the same uploader, and links to the author's web page for the thesis. The two SlideShare pages are different formats/representations of the same academic work, not two theses.",
-          "archive_captures": []
-        }
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
       ],
-      "curation_note": "Historical academic context only. The thesis is not presented as a direct source or formal derivation of DIO/ODI."
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "research_role": "A distinct four-slide Manus-labelled second-order E-E-A-T synthesis. Its five main sections cover introduction, methodology, E-E-A-T factor analysis, conclusion, and references. It names ten first-order AI reports, including Gemini 3.1 Pro Preview and Seznam Asistent. Its relationship to the separately registered Manus-hosted web output is unresolved.",
+      "summary": "A four-slide E-E-A-T meta-analysis of the author's professional identity. The extracted document text contains five main sections and identifies ten source reports: Claude, Copilot, Mistral, Manus, Kimi, Gemini Research, ChatGPT, Gemini 3.1 Pro Preview, Grok 4.2 Beta, and Seznam Asistent. It also cites academic records, business registries, and professional profiles.",
+      "provenance": {
+        "basis": "SlideShare public-page metadata and extracted PDF text. The page identifies the title, author/uploader, four-page format, and E-E-A-T scope. The extracted content exposes the five-part structure and the ten-report source list, including Gemini 3.1 Pro Preview.",
+        "source_description_url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578"
+      },
+      "review_status": "slide-content-reviewed;cross-format-relationship-to-manus-web-output-pending",
+      "curation_note": "Retain as a separate underlying output from the Manus-hosted web page until a direct comparison establishes whether this PDF supplied the website's content, was exported from it, or represents a separate analysis."
     }
   ],
   "inventory_leads": [
@@ -2870,21 +3223,13 @@
     },
     {
       "title": "Gemini 2.5 Pro Preview E-E-A-T report cited by the Claude meta-analysis",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "model-generated-eeat-analysis",
-      "discovery_status": "referenced-in-Claude-meta-analysis; direct-presentation-locator-unidentified",
-      "summary": "The Claude-attributed E-E-A-T meta-analysis and its matching Macaly web manifestation list Gemini 2.5 Pro Preview among ten first-order SlideShare analyses. The Kimi and ChatGPT meta-analyses instead list Gemini 3.1 Pro Preview, for which a separate SlideShare presentation is directly identified. Keep the Gemini 2.5 reference as a separate unresolved source lead; do not merge it with the Gemini 3.1 presentation without content and version evidence.",
-      "platform": "SlideShare"
-    },
-    {
-      "title": "OpenLiteSpeed and LiteSpeed Enterprise technical study — presentation and article relationship",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "technical-study-presentation-and-article-reconciliation",
-      "discovery_status": "slide-page-reviewed; article-presentation-identity-and-temporal-direction-unresolved",
-      "summary": "The eight-slide SlideShare study page and the author's technical article on OpenLiteSpeed vs LiteSpeed Enterprise are both identified. The relationship and direction of derivation remain unresolved; do not infer chronology from the platform URL or article byline.",
-      "url": "https://www.slideshare.net/slideshow/studie-webserveru-openlitespeed-a-litespeed-enterprise/277555372",
-      "platform": "SlideShare",
-      "related_uri": "https://danielberanek.cz/studie-webserveru-openlitespeed-vs-litespeed-enterprise/"
+      "artefact_type": "model-generated-eeat-analysis-pdf",
+      "discovery_status": "author-confirmed-google-ai-studio-origin; PDF-export-only; content-review-pending",
+      "summary": "The Claude-attributed E-E-A-T meta-analysis names Gemini 2.5 Pro Preview among its ten first-order sources. The author confirms that this analysis was produced in Google AI Studio and exists here only as a PDF export, without a separate public web output or SlideShare presentation. Keep it distinct from the Gemini 3.1 Pro Preview report. The PDF content and source-file locator remain to be reviewed.",
+      "platform": "Google AI Studio (PDF export)",
+      "candidate_related_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ]
     },
     {
       "title": "Model mocenské situace — SlideShare profile item",
@@ -2896,29 +3241,17 @@
       "url": "https://www.slideshare.net/slideshow/model-mocensk-situace/257179651"
     },
     {
-      "title": "Evaluace pozitivní psychologie perspektivou Castanedova učení — SlideShare profile item",
+      "title": "SlideShare distribution copies of Reartikulace konceptů ideologie a hegemonie",
       "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "historical-academic-context",
-      "discovery_status": "direct-page-reviewed; relationship-to-existing-MU-thesis-not-verified",
-      "summary": "An eleven-slide evaluation of positive psychology through Castaneda's teaching. It is thematically related to the author's registered 2009 positive-psychology thesis, but exact identity or derivation has not been established.",
-      "platform": "SlideShare",
-      "related_uri": "https://is.muni.cz/th/wknmn/",
-      "candidate_related_object_ids": [
-        "positive-psychology-and-spiritual-streams-thesis"
-      ],
-      "url": "https://www.slideshare.net/slideshow/evaluce-pp/13978386"
-    },
-    {
-      "title": "Reartikulace konceptů ideologie a hegemonie — SlideShare profile item",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "author-authored-academic-presentation",
-      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-unresolved; likely-related-university-thesis-identified",
-      "summary": "The SlideShare profile lists a seven-slide item under the shortened but matching title and displays the author/uploader attribution. The official Masaryk University record confirms the 2011 master's thesis with the full title. The direct SlideShare item URL and presentation-to-thesis content relationship have not yet been verified.",
+      "artefact_type": "academic-thesis-distribution-locators",
+      "discovery_status": "direct-page-and-thesis-relationship-reviewed; distribution-only; not-counted-as-separate-research-output",
+      "summary": "The 86-slide SlideShare document matches the registered 2011 thesis. A seven-slide condensed presentation is available at https://www.slideshare.net/slideshow/dp-reartikulace-ideologie/13978383. Both URLs are retained as distribution copies of the single research object; neither is counted as a separate DIO/ODI analysis.",
       "platform": "SlideShare",
       "related_uri": "https://is.muni.cz/th/ajfb6/",
       "candidate_related_object_ids": [
         "rearticulation-ideology-hegemony-thesis"
-      ]
+      ],
+      "url": "https://www.slideshare.net/slideshow/reartikulace-koncept-ideologie-a-hegemonie/75199856"
     },
     {
       "title": "Přesahy 005 — Internetová propagace festivalu — SlideShare profile item",
@@ -2927,18 +3260,6 @@
       "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-project-attribution-unresolved",
       "summary": "The current author profile lists a four-slide presentation titled Propagace presahy005. The thumbnail identifies it as Internetová propagace festivalu and displays EU regional-development funding marks. It is retained as a project-communication lead; its inclusion in the SlideShare collection does not by itself make it a DIO/ODI research output.",
       "platform": "SlideShare"
-    },
-    {
-      "title": "Aktualizace východisek a možností pozitivní psychologie — possible SlideShare thesis copy",
-      "url": "https://www.slideshare.net/slideshow/aktualizace-vchodisek-a-monost-pozitivn-psychologie/75199762",
-      "platform": "SlideShare",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "historical-academic-thesis-candidate",
-      "discovery_status": "title-page-and-abstract-reviewed; exact-match-to-MU-record-pending",
-      "summary": "A 126-slide SlideShare document whose title page identifies a Masaryk University psychology thesis and whose subject concerns positive psychology and Castaneda's teachings. The title differs from the existing MUNI thesis record; retain as a candidate representation until author/name, title, and thesis metadata are fully reconciled.",
-      "candidate_related_object_ids": [
-        "positive-psychology-and-spiritual-streams-thesis"
-      ]
     },
     {
       "title": "ChatGPT Thinking — professional ethnography analysis",
@@ -3205,6 +3526,36 @@
       "relation": "is-revision-of",
       "object_id": "slideshare-eeat-semiotic-analysis-claude-v1",
       "evidence_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "explicitly-rearticulates-the-theoretical-framework-of",
+      "object_id": "rearticulation-ideology-hegemony-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "retrospectively-reconstructs-and-reapplies-the-semiotic-method-of",
+      "object_id": "semiotic-mobscene-sign-expansion-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+    },
+    {
+      "subject_id": "slideshare-manus-eeat-meta-analysis-pdf",
+      "relation": "possible-source-document-for (author-suggested; not confirmed)",
+      "object_id": "manus-eeat-meta-analysis-b4jrwdnu",
+      "evidence_url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "reapplies-and-translates-the-model-of-power-situation-from",
+      "object_id": "suicidal-cults-power-situation-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "reapplies-the-binocular-perspective-method-from",
+      "object_id": "positive-psychology-and-spiritual-streams-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
     }
   ],
   "research_clusters": [
@@ -3376,11 +3727,6 @@
           "status": "page-reviewed-distinct-output"
         },
         {
-          "artefact_id": "slideshare-rearticulation-thesis-distribution",
-          "relationship": "distinct-output-or-historical-context-in-broad-cross-platform-collection",
-          "status": "page-reviewed-distinct-output"
-        },
-        {
           "artefact_id": "slideshare-qwen-beyond-eeat-professional-ethnography",
           "relationship": "model-specific-analysis-in-cross-platform-exploration",
           "status": "page-reviewed-distinct-output"
@@ -3409,6 +3755,11 @@
           "artefact_id": "slideshare-eeat-meta-analysis-mistral",
           "relationship": "model-specific-analysis-in-cross-platform-exploration",
           "status": "page-reviewed-distinct-output"
+        },
+        {
+          "artefact_id": "slideshare-manus-eeat-meta-analysis-pdf",
+          "relationship": "separate-Manus-labelled-meta-analysis-output;relationship-to-Manus-web-output-unresolved",
+          "status": "slide-content-reviewed;cross-format-relationship-pending"
         }
       ]
     },
@@ -3593,6 +3944,100 @@
           "artefact_id": "slideshare-eeat-meta-analysis-mistral",
           "relationship": "distinct-E-E-A-T-or-related-analysis-output",
           "status": "page-reviewed-distinct-output"
+        },
+        {
+          "artefact_id": "slideshare-manus-eeat-meta-analysis-pdf",
+          "relationship": "separate-Manus-labelled-meta-analysis-output;relationship-to-Manus-web-output-unresolved",
+          "status": "slide-content-reviewed;cross-format-relationship-pending"
+        }
+      ]
+    }
+  ],
+  "intellectual_threads": [
+    {
+      "id": "semiotics-and-signification",
+      "title": "Semiotics, signification, and meaning reconstruction",
+      "description": "A recurring line across the academic works: signs, semiosis, signification, ideological meaning, memes, and the contextual reconstruction or expansion of meaning. The individual works operationalize this line differently.",
+      "research_object_ids": [
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis",
+        "suicidal-cults-power-situation-thesis",
+        "positive-psychology-and-spiritual-streams-thesis"
+      ],
+      "expressions": [
+        {
+          "research_object_id": "rearticulation-ideology-hegemony-thesis",
+          "expression": "Structural semiotics and nodal points are used to reconstruct ideology, hegemony, and the fixation/articulation of meaning."
+        },
+        {
+          "research_object_id": "semiotic-mobscene-sign-expansion-thesis",
+          "expression": "The audiovisual text is deconstructed into signs and semiosis is reconstructed as an expansion of sign meaning."
+        },
+        {
+          "research_object_id": "suicidal-cults-power-situation-thesis",
+          "expression": "Ideology is analysed from a semiotic perspective alongside memetics, group symbolism, and propaganda."
+        },
+        {
+          "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
+          "expression": "The second version includes semiotics and contextual meaning among its secondary theoretical foundations, including Saussure, Barthes, and Derrida's différance."
+        }
+      ]
+    },
+    {
+      "id": "communication-theory-discourse-and-power",
+      "title": "Communication theory, discourse, and power",
+      "description": "A cross-cutting concern with how meaning is communicated, reproduced, naturalized, contested, and embedded in power relations. The works approach it through media discourse, audiovisual communication, group manipulation and information control, or critical discourse theory.",
+      "research_object_ids": [
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis",
+        "suicidal-cults-power-situation-thesis",
+        "positive-psychology-and-spiritual-streams-thesis"
+      ],
+      "expressions": [
+        {
+          "research_object_id": "rearticulation-ideology-hegemony-thesis",
+          "expression": "Ideological discourse, hegemony, articulation, and the naturalization of partial meanings as a general order."
+        },
+        {
+          "research_object_id": "semiotic-mobscene-sign-expansion-thesis",
+          "expression": "Reconstruction of signification and its operation within an audiovisual communication text."
+        },
+        {
+          "research_object_id": "suicidal-cults-power-situation-thesis",
+          "expression": "Communication and information control, propaganda, conformity, manipulation, and the model of the power situation."
+        },
+        {
+          "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
+          "expression": "Discourse and critical discourse analysis appear in the theoretical background, including discourse as a power practice."
+        }
+      ]
+    },
+    {
+      "id": "structuralism-poststructuralism-and-critical-discourse",
+      "title": "Structuralism, poststructuralism, and critical discourse",
+      "description": "A recurring theoretical repertoire across the author's academic work, including structuralist semiotics, contextual and unstable signification, discourse, ideology, rearticulation, différance, and poststructuralist approaches to power and meaning. Specific thinkers and concepts are not asserted to appear identically in every work.",
+      "research_object_ids": [
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis",
+        "suicidal-cults-power-situation-thesis",
+        "positive-psychology-and-spiritual-streams-thesis"
+      ],
+      "expressions": [
+        {
+          "research_object_id": "rearticulation-ideology-hegemony-thesis",
+          "expression": "Poststructuralist discourse theory, Laclau and Mouffe, nodal points, and rearticulation of ideology and hegemony."
+        },
+        {
+          "research_object_id": "semiotic-mobscene-sign-expansion-thesis",
+          "expression": "Structuralist semiotics and the reconstruction of sign meaning, with later interpretation through simulacrum and hyperreality in the professional ethnography."
+        },
+        {
+          "research_object_id": "suicidal-cults-power-situation-thesis",
+          "expression": "Structuralist semiotics, ideology, and memetics provide the analytical lens for the interpretation of destructive group dynamics."
+        },
+        {
+          "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
+          "expression": "The revised version explicitly includes Derrida's différance, semiotics, and critical discourse analysis in its secondary theoretical background."
         }
       ]
     }
