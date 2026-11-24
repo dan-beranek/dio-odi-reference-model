@@ -119,9 +119,9 @@ Tasks:
 4. Record source-set differences as substantive evidence. Do not silently unify the Claude/Macaly Gemini 2.5 reference with the Gemini 3.1 reference in Kimi/ChatGPT.
 5. Preserve the distinction between first-order E-E-A-T reports and second-order meta-analyses.
 
-**Deliverable:** A meta-analysis lineage map showing source reports, six directly reviewed independent SlideShare synthesis output IDs, the Manus PDF/web candidate manifestation relationship, and remaining unresolved relationships.
+**Deliverable:** A meta-analysis lineage map showing source reports, six directly reviewed independent SlideShare synthesis output IDs, and separate Manus PDF and web-output records linked by an explicitly unconfirmed source-document hypothesis.
 
-**Priority:** High. The Manus PDF is provisionally nested under the Manus-hosted meta-analysis web output; direct content equivalence remains to be checked.
+**Priority:** High. The Manus SlideShare PDF has readable text, but the Manus-hosted page has not been accessible for direct comparison. Keep both records separate until section order, distinctive wording, sources, and conclusions have been checked.
 
 ### WP4 — Cross-platform AI output reconciliation outside E-E-A-T
 
@@ -139,19 +139,20 @@ Tasks:
 
 **Priority:** Medium–high after WPs 2–3.
 
-### WP5 — Earlier academic, professional, and technical SlideShare materials
+### WP5 — Direct theoretical and methodological antecedents
 
-**Question:** Which older SlideShare items are relevant preceding context, distinct research objects, or simply professional distribution artifacts?
+**Question:** Which earlier works are explicitly revisited and reused by the professional ethnography as part of the conceptual development leading to DIO/ODI?
 
 Tasks:
-1. Review older profile items such as the comparative AI-tools presentation, the Rearticulation of Ideology and Hegemony work, the OpenLiteSpeed study, positive-psychology analysis, the power-situation model, and the Internet-promotion project.
-2. Compare them with existing canonical articles, publication pages, or research outputs.
-3. Register a presentation as a separate manifestation where it is derived from an existing work; create a distinct research object only where the underlying material warrants one.
-4. Do not automatically attach every historical SlideShare item to DIO/ODI merely because it appears in the same profile collection.
+1. Preserve the 2011 *Reartikulace konceptů ideologie a hegemonie* thesis as a direct theoretical antecedent because the professional ethnography explicitly returns to ideology, hegemony, discourse, nodal points, and rearticulation.
+2. Preserve the 2005 *Sémiotická analýza klipu Marilyna Mansona mOBSCENE* thesis as a direct semiotic/methodological antecedent because the professional ethnography explicitly revisits its reconstruction of semiosis and sign-meaning expansion.
+3. Link both works to the professional-ethnography research object using explicit source-page evidence.
+4. Keep other academic submissions, positive-psychology materials, technical presentations, and customer-facing presentations outside the direct DIO/ODI lineage unless a specific direct relation is established.
+5. Retain SlideShare copies of the 2011 thesis only as distribution locators; do not count them as independent research outputs.
 
-**Deliverable:** A contextual-material map separating pre-DIO professional context, academic publications, technical experiments, and unrelated distribution artifacts.
+**Deliverable:** A compact map of explicit theoretical and methodological antecedents, with the author-maintained professional ethnography as the evidence-bearing bridge.
 
-**Priority:** Medium.
+**Priority:** High, because these direct antecedents clarify the conceptual and semiotic components already integrated into the primary research object.
 
 ### WP6 — Archive provenance reconciliation
 
@@ -190,7 +191,7 @@ Tasks:
 | Phase | Work packages | Exit condition |
 |---|---|---|
 | A — Inventory | WP1 + initial WP6 | All 49 profile-export URLs are classified as existing, new, nested, unresolved, or out of scope; content review can continue separately |
-| B — High-value identity | WP2 + WP3 | The nine-report SEO-pillar series, additional model-specific assessments, and six independently attributed SlideShare meta-analyses have stable identities; Manus PDF/web equivalence remains marked as a candidate |
+| B — High-value identity | WP2 + WP3 | The nine-report SEO-pillar series, additional model-specific assessments, and six independently attributed SlideShare meta-analyses have stable identities; Manus PDF and Manus web output are retained as separate records, with their source/derivation relationship unresolved |
 | C — Platform reconciliation | WP4 | Accessible AI shares and deployed outputs have evidence-based relationships or explicit unresolved status |
 | D — Historical context | WP5 | Older materials are separated into relevant context and unrelated collection items |
 | E — Archive completion | WP6 | Every confirmed manifestation has its archive-query state and inspected captures where available |
@@ -200,13 +201,13 @@ Phases may overlap where a new archive capture helps identify a manifestation, b
 
 ## Current state on 24 November 2026
 
-- The merged PR #106 published Research Genealogy registry v0.3.0 with 45 artefact records. PR #107 proposes registry v0.3.1 with 56 artefact records, 17 inventory leads, and the expanded profile inventory.
-- The author supplied 49 unique SlideShare URLs from the public profile. All 49 have been triaged and classified; the 49-item profile count is not treated as a count of DIO/ODI research outputs. The current registry contains 33 primary SlideShare artefact records and five nested SlideShare manifestations.
+- The merged PR #106 published Research Genealogy registry v0.3.0 with 45 artefact records. PR #107 proposes registry v0.3.1 with 56 artefact records, 14 inventory leads, and the expanded profile inventory.
+- The author supplied 49 unique SlideShare URLs from the public profile. All 49 have been triaged and classified; the 49-item profile count is not treated as a count of DIO/ODI research outputs. The current registry contains 33 primary SlideShare artefact records and four nested SlideShare manifestations.
 - The original nine first-order E-E-A-T reports assessing the SEO pillar page remain a distinct series. Additional separately registered analyses include a Copilot Research assessment of the copywriting pillar page, a Mistral analysis of the broader professional ethnography, a Qwen Beyond E-E-A-T analysis, and a Gemini 3.1 Pro Preview semiotic/structured-data reading.
-- Six independently attributed SlideShare E-E-A-T meta-analysis decks have been directly reviewed: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, and Mistral AI. The Manus-labelled PDF is preserved as a candidate manifestation under the Manus-hosted web meta-analysis; content identity remains unverified.
+- Six independently attributed SlideShare E-E-A-T meta-analysis decks have been directly reviewed: Gemini 3 Deep Research, Gemini 3.1 Pro Preview, Kimi, Claude, ChatGPT, and Mistral AI. The four-slide Manus-labelled SlideShare PDF is a separate reviewed output record from the Manus-hosted meta-analysis page. Its exact relationship to the website remains unresolved because the website content could not be read; the PDF may be a source document, an export, or a separate analysis.
 - The Claude meta-analysis remains one underlying synthesis with three publication manifestations: SlideShare, Macaly, and Lovable. The Qwen Beyond Buzzwords and Kimi Structural Isomorphisms works each have a Czech original and an explicitly linked English reader's edition. These language-specific publications are nested manifestations, not additional underlying outputs.
-- The 2011 ideology/hegemony thesis remains a distinct contextual academic research object. Its 86-slide SlideShare copy and seven-slide summary deck are now recorded as thesis distribution/presentation manifestations. The 2009 positive-psychology thesis and the supplied SlideShare material with a different title remain separate until their exact identity is verified.
-- Historical and professional inventory leads include Model mocenské situace, the positive-psychology materials, and the OpenLiteSpeed technical study/article relationship. The Seznam Asistent strategy presentation is registered as contextual professional AI-industry analysis. The Přesahy 005 festival campaign, Top1Taxi brochure, stem-cell brochure, and Nero 2015 manual are classified as out of scope for the DIO/ODI research artefact count.
+- The 2011 ideology/hegemony thesis and the 2005 mOBSCENE semiotic analysis are direct theoretical and methodological antecedents, explicitly revisited in the professional ethnography. The 86-slide and seven-slide SlideShare copies of the 2011 thesis are retained only as distribution locators, not independent research outputs.
+- Model mocenské situace remains an unresolved historical-context lead. Positive-psychology thesis materials, the OpenLiteSpeed technical presentation/article, and unrelated customer-facing presentations are outside the direct DIO/ODI genealogy. The Seznam Asistent strategy presentation is registered as contextual professional AI-industry analysis. The Přesahy 005 festival campaign, Top1Taxi brochure, stem-cell brochure, and Nero 2015 manual are classified as out of scope for the DIO/ODI research artefact count.
 - The profile inventory does not imply that every URL is a DIO/ODI research output. The canonical registry retains a curated research subset, while preserving unresolved leads and out-of-scope distinctions.
 - The SCF Knowledge Panel event is maintained separately from the Research Genealogy registry.
 - The read-only SlideShare/Wayback intake workflow is validated in PR #105. Its CDX-only pass queried archive observations for the registered SlideShare URLs; no new profile URLs were extracted from the rendered public profile, which is why the author-provided 49-URL export became the inventory basis.
