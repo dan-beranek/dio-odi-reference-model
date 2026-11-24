@@ -52,6 +52,24 @@
         "distribution",
         "append-only"
       ]
+    },
+    {
+      "identifier": "urn:air:apps.danielberanek.cz:skill:agentic-entity-resolution-guardrail-planner",
+      "displayName": "Agentic Entity Resolution Guardrail Planner",
+      "type": "text/html",
+      "url": "https://apps.danielberanek.cz/agentic-entity-resolution-guardrail-planner/",
+      "description": "A published design-time Agent Skill for investigating agent-proposed MERGE, SPLIT, UNMERGE and supported identity-changing operations, then producing reviewable recommendations and structured engineering plans. It does not execute mutations or authorize production writes.",
+      "version": "0.4.2",
+      "tags": [
+        "Agent Skill",
+        "Agentic Entity Resolution",
+        "DIO/ODI",
+        "identity changes",
+        "MERGE",
+        "SPLIT",
+        "UNMERGE",
+        "engineering planning"
+      ]
     }
   ]
 }
