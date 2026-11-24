@@ -36,7 +36,7 @@ The date basis for these milestones is the professional ethnography's own change
 
 ## Earlier professional and AI context
 
-The article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/) was originally published on **23 September 2025**, as preserved in the [author-site AI category archive](https://danielberanek.cz/oblast/ai/). The current article page displays **21 October 2026**; this is the later last-update date, not the original publication date.
+The article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/) is preserved in an [Internet Archive snapshot captured on 12 March 2025 at 18:37:17 UTC](https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/). A second archived copy at [Archive.today](https://archive.is/Bq8tr) corroborates the archived article. The exact original publication date is not established; the article was online **no later than 12 March 2025**. The current article page displays **21 October 2026**, which the author confirms is the date of the latest update, not the original publication date.
 
 The article is relevant to the genealogy because it already formulates a reciprocal relationship between professional expertise and AI:
 
@@ -45,7 +45,7 @@ The article is relevant to the genealogy because it already formulates a recipro
 
 This is a pre-DIO professional and conceptual precursor. It documents an existing line of inquiry into the relationship between human professional capabilities and AI systems before the DIO articulation on 21 May 2026. It is linked as preceding context for the later exploratory environment, not substituted for the multimodal professional ethnography that the changelog explicitly identifies as the empirical and asynchronous foundation from which DIO was derived.
 
-The article's date fields are kept separate: original publication date (23 September 2025) and later last-update date (21 October 2026). The latter must not overwrite the former.
+The article's temporal fields are kept separate: its exact original publication date remains unknown; the earliest archived capture is 12 March 2025 at 18:37:17 UTC; the second archive is retained as corroborating evidence; and the later last-update date is 21 October 2026. An archive capture establishes that the page existed by that point, not the exact day on which it was first published.
 
 ## SlideShare archive
 
