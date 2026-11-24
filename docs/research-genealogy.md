@@ -102,7 +102,7 @@ A separate 12-slide [Gemini Deep Research report, *Spektrografie digitální ide
 
 These are separate first-order model reports, not one report copied across several platforms. Their exact identity relationships to shared AI conversations, web outputs, and other artifacts already recorded in the registry are intentionally left open until their contents can be compared.
 
-The collection contains six directly reviewed, independently attributed SlideShare meta-analyses of the E-E-A-T report set:
+Alongside the separately registered Manus PDF described below, six other directly reviewed, independently attributed SlideShare meta-analyses of the E-E-A-T report set are:
 
 - [Gemini 3 Deep Research meta-analysis](https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-deep-research/286570153)
 - [Gemini 3.1 Pro Preview meta-analysis](https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-1-pro-preview/286570090)
