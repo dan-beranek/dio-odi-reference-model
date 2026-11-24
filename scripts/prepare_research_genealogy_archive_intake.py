@@ -158,6 +158,90 @@ def fetch_text(url: str, accept: str = "text/html") -> tuple[str, dict[str, str]
         raise IntakeError(f"Could not decode UTF-8 response: {url}") from exc
 
 
+def fetch_profile_with_browser(
+    url: str, max_scrolls: int = 18, scroll_pause_ms: int = 900
+) -> tuple[str, str, int | None]:
+    """Render the public profile in Chromium and collect the loaded DOM.
+
+    This uses ordinary browser navigation and scrolling only. It does not call
+    private or undocumented SlideShare endpoints.
+    """
+    try:
+        from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+        from playwright.sync_api import sync_playwright
+    except ImportError as exc:
+        raise IntakeError("Playwright is not installed; rendered profile discovery is unavailable") from exc
+
+    response_status: int | None = None
+    selector = (
+        "a[href*='/slideshow/'], a[href*='/document/'], "
+        "a[href*='/infographics/'], a[href*='/presentation/']"
+    )
+    try:
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(
+                headless=True,
+                args=["--no-sandbox", "--disable-dev-shm-usage"],
+            )
+            try:
+                context = browser.new_context(
+                    user_agent=USER_AGENT,
+                    locale="en-US",
+                    viewport={"width": 1440, "height": 1200},
+                )
+                page = context.new_page()
+                response = page.goto(url, wait_until="domcontentloaded", timeout=90_000)
+                response_status = response.status if response else None
+                page.wait_for_timeout(3500)
+
+                previous_count = -1
+                stagnant_rounds = 0
+                for _ in range(max_scrolls):
+                    try:
+                        visible_count = page.locator(selector).count()
+                    except PlaywrightTimeoutError:
+                        visible_count = 0
+                    if visible_count == previous_count:
+                        stagnant_rounds += 1
+                    else:
+                        stagnant_rounds = 0
+                    if stagnant_rounds >= 3:
+                        break
+                    previous_count = visible_count
+                    page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                    page.wait_for_timeout(scroll_pause_ms)
+
+                rendered_html = page.content()
+                try:
+                    body_text = page.locator("body").inner_text(timeout=10_000)
+                except PlaywrightTimeoutError:
+                    body_text = ""
+                if not rendered_html.strip():
+                    raise IntakeError(f"Chromium returned an empty rendered document for {url}")
+                return rendered_html, body_text, response_status
+            finally:
+                browser.close()
+    except IntakeError:
+        raise
+    except Exception as exc:
+        raise IntakeError(f"Chromium profile rendering failed for {url}: {exc}") from exc
+
+
+def derive_profile_discovery_status(
+    profile_reported_count: int | None, discovered_url_count: int
+) -> str:
+    if discovered_url_count > 0:
+        return (
+            "profile-links-extracted"
+            if profile_reported_count is not None
+            else "profile-links-extracted-count-not-observed"
+        )
+    if profile_reported_count is not None and profile_reported_count > 0:
+        return "profile-count-visible-but-links-not-extracted"
+    return "no-profile-links-or-count-extracted"
+
+
+
 def cdx_query(url: str, match_type: str = "exact", limit: int = 500) -> list[dict[str, str]]:
     """Return all available CDX columns requested, preserving each capture row."""
     params = [
