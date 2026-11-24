@@ -714,8 +714,9 @@ def check_metadata() -> dict[str, int | str]:
     )
     for process in research_processes:
         require(
-            set(process.get("research_object_ids", [])) <= set(object_ids),
-            f"Research process has an unresolved research object: {process.get('id')}",
+            set(process.get("research_object_ids", [])) <= set(object_ids)
+            and set(process.get("preceding_context_object_ids", [])) <= set(object_ids),
+            f"Research process has an unresolved research or preceding-context object: {process.get('id')}",
         )
         outcomes = {item.get("id"): item for item in process.get("concept_outcomes", [])}
         require(
@@ -807,21 +808,43 @@ def check_metadata() -> dict[str, int | str]:
         and crisis_presentation.get("related_work_ids") == ["crisis-entity-resolution"],
         "Research Genealogy must distinguish an exploratory reading from a presentation of a registered research work",
     )
+    article_themes = {
+        item.get("theme") for item in (ai_comparison_article or {}).get("conceptual_themes", [])
+    }
     require(
         ai_comparison_article is not None
-        and ai_comparison_article.get("displayed_date") == "2026-10-21"
+        and ai_comparison_article.get("publication_date") == "2025-09-23"
+        and ai_comparison_article.get("last_updated_date") == "2026-10-21"
+        and set(article_themes) == {
+            "professional-expertise-for-AI",
+            "AI-for-professional-practice",
+            "reciprocal-human-AI-capability",
+        }
         and ai_comparison_presentation is not None
         and ai_comparison_presentation.get("source_object_ids") == ["ai-startup-marketing-article"]
         and ai_comparison_presentation.get("source_material", {}).get("url") == ai_comparison_article.get("uri")
+        and ai_comparison_presentation.get("source_material", {}).get("publication_date") == "2025-09-23"
+        and ai_comparison_presentation.get("source_material", {}).get("last_updated_date") == "2026-10-21"
         and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_upload_date") is None
         and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_last_modified") is None
+        and any(
+            milestone.get("id") == "dio-articulation"
+            and milestone.get("date") == "2026-05-21"
+            for milestone in genealogy_milestones
+        )
+        and any(
+            relation.get("subject_id") == "ai-startup-marketing-article"
+            and relation.get("relation") == "provides-preceding-professional-context-for"
+            and relation.get("object_id") == "dio-odi-genesis-exploration"
+            for relation in genealogy_relations
+        )
         and any(
             relation.get("subject_id") == "slideshare-ai-tools-comparative-review"
             and relation.get("relation") == "is-derived-from"
             and relation.get("object_id") == "ai-startup-marketing-article"
             for relation in genealogy_relations
         ),
-        "AI comparison presentation must retain its explicit source article and separate page/platform date metadata",
+        "AI article genealogy must distinguish its 2025 publication, 2026 last update, reciprocal expertise themes, and SlideShare source relationship",
     )
 
     genealogy_page = read_text("metadata/index.html")
