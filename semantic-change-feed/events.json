@@ -962,7 +962,7 @@
       "preserved_invariants": [
         "The event records the visible Google Search Knowledge Panel, not direct inspection of Google's internal Knowledge Graph record.",
         "No internal Google entity identifier, creation timestamp, or API-level verification response is asserted.",
-        "The 33-minute interval is an author-reported elapsed time in a Witter follow-up, not a Google-issued processing metric.",
+        "The author recalls that approval happened quickly, but no precise elapsed time is assigned and no Google processing metric is asserted.",
         "The cross-platform posts are multiple announcements of one underlying observation, not separate outcomes or independent validations.",
         "The event does not modify canonical DIO/ODI concepts, the Reference Vocabulary, or the Reference Model."
       ],
@@ -981,7 +981,7 @@
         "basis": [
           "linked-publication-or-artifact"
         ],
-        "temporal_note": "The event is dated 21 September 2026, the date of the author's contemporaneous public announcements reporting the newly visible Knowledge Panel. A Witter follow-up reports that approval took 33 minutes; this is preserved as an author-reported elapsed interval, not a Google-issued processing timestamp. The social posts document the public report of the visible outcome, not an independently exposed creation or verification timestamp from Google's internal systems.",
+        "temporal_note": "The event is dated 21 September 2026, the date of the author's contemporaneous public announcements reporting the newly visible Knowledge Panel. The author recalls that approval happened quickly, but no precise elapsed time is assigned. The social posts document the public report of the visible outcome, not an independently exposed creation or verification timestamp from Google's internal systems.",
         "sources": [
           {
             "label": "Instagram — Knowledge Panel announcement",
@@ -1034,9 +1034,9 @@
             "role": "contemporaneous-author-announcement"
           },
           {
-            "label": "Witter — 33-minute approval follow-up",
+            "label": "Witter — follow-up on the Knowledge Panel approval",
             "url": "https://witter.cz/@seo_copywriter_daniel_beranek/117320020484498771",
-            "role": "author-reported-elapsed-time"
+            "role": "author-reported-rapid-approval"
           },
           {
             "label": "Threads — Knowledge Panel announcement",
