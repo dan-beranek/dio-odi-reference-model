@@ -264,6 +264,9 @@ def markdown_report(report: dict[str, Any]) -> str:
         f"- CDX queries completed: {stats['cdx_queries_succeeded']} / {stats['cdx_queries_attempted']}",
         f"- Capture records returned: {stats['capture_records']}",
         f"- URLs without a corresponding registry artefact: {stats['unregistered_urls']}",
+        f"- Difference between the profile-reported total and extracted current-profile links (unreconciled): {stats['profile_count_to_html_link_gap']}",
+        f"- Profile snapshot cap reached: {stats['profile_snapshot_limit_reached']}",
+        f"- Presentation URL cap reached: {stats['presentation_url_limit_reached']}",
         "",
         "## Interpretation boundary",
         "",
@@ -378,17 +381,17 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
     # Use only documented CDX query parameters. No undocumented SlideShare API is
     # called. Archive profile captures can reveal historical profile link sets.
     profile_captures: dict[str, dict[str, str]] = {}
-    profile_cdx_queries_attempted = 0;
-    profile_cdx_queries_succeeded = 0;
+    profile_cdx_queries_attempted = 0
+    profile_cdx_queries_succeeded = 0
     for profile in profile_variants:
         parsed = urlsplit(profile)
         host_path = (parsed.netloc + parsed.path).rstrip("/")
         query_variants = [(host_path + (("?" + parsed.query) if parsed.query else ""), "exact"), (host_path + "/*", "prefix")]
         for query_url, match_type in query_variants:
-            profile_cdx_queries_attempted += 1;
+            profile_cdx_queries_attempted += 1
             try:
                 rows = cdx_query(query_url, match_type=match_type, limit=1000)
-                profile_cdx_queries_succeeded += 1;
+                profile_cdx_queries_succeeded += 1
                 for row in rows:
                     if row.get("statuscode") != "200" or row.get("mimetype") != "text/html":
                         continue
@@ -398,6 +401,7 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
                 errors.append(f"Profile CDX query failed for {query_url}: {exc}")
             time.sleep(delay_seconds)
 
+    profile_snapshot_limit_reached = len(profile_captures) > profile_snapshot_limit
     sorted_profile_captures = sorted(
         profile_captures.values(), key=lambda row: row.get("timestamp", ""), reverse=True
     )[:profile_snapshot_limit]
@@ -428,6 +432,7 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
             errors.append(f"Archived profile fetch failed for {snapshot_url}: {exc}")
         time.sleep(delay_seconds)
 
+    presentation_url_limit_reached = len(urls) > url_limit
     if len(urls) > url_limit:
         # Keep all registry-known URLs; truncate only extra discovered candidates.
         registry_keys = {
@@ -491,6 +496,9 @@ def run_intake(profile_snapshot_limit: int = 40, url_limit: int = 150,
         "capture_records": capture_total,
         "unregistered_urls": len(unmatched),
         "profile_snapshots_inspected": len(sorted_profile_captures),
+        "profile_snapshot_limit_reached": profile_snapshot_limit_reached,
+        "presentation_url_limit_reached": presentation_url_limit_reached,
+        "profile_count_to_html_link_gap": max(0, (profile_reported_count or 0) - current_count),
     }
     report = {
         "report_version": "0.1.0",
