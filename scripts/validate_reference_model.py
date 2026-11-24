@@ -813,7 +813,15 @@ def check_metadata() -> dict[str, int | str]:
     }
     require(
         ai_comparison_article is not None
-        and ai_comparison_article.get("publication_date") == "2025-09-23"
+        and ai_comparison_article.get("publication_date") is None
+        and ai_comparison_article.get("first_known_online_by") == "2025-03-12"
+        and ai_comparison_article.get("earliest_archived_capture", {}).get("captured_at") == "2025-03-12T18:37:17Z"
+        and ai_comparison_article.get("earliest_archived_capture", {}).get("url") == "https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/"
+        and any(
+            item.get("url") == "https://archive.is/Bq8tr"
+            and item.get("role") == "corroborating-archive-copy"
+            for item in ai_comparison_article.get("corroborating_archives", [])
+        )
         and ai_comparison_article.get("last_updated_date") == "2026-10-21"
         and set(article_themes) == {
             "professional-expertise-for-AI",
@@ -823,8 +831,13 @@ def check_metadata() -> dict[str, int | str]:
         and ai_comparison_presentation is not None
         and ai_comparison_presentation.get("source_object_ids") == ["ai-startup-marketing-article"]
         and ai_comparison_presentation.get("source_material", {}).get("url") == ai_comparison_article.get("uri")
-        and ai_comparison_presentation.get("source_material", {}).get("publication_date") == "2025-09-23"
+        and ai_comparison_presentation.get("source_material", {}).get("publication_date") is None
+        and ai_comparison_presentation.get("source_material", {}).get("first_known_online_by") == "2025-03-12"
+        and ai_comparison_presentation.get("source_material", {}).get("earliest_archived_capture", {}).get("captured_at") == "2025-03-12T18:37:17Z"
         and ai_comparison_presentation.get("source_material", {}).get("last_updated_date") == "2026-10-21"
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("source_article_first_known_online_by") == "2025-03-12"
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("source_article_earliest_archived_capture_at") == "2025-03-12T18:37:17Z"
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("corroborating_archive_url") == "https://archive.is/Bq8tr"
         and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_upload_date") is None
         and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_last_modified") is None
         and any(
@@ -844,7 +857,7 @@ def check_metadata() -> dict[str, int | str]:
             and relation.get("object_id") == "ai-startup-marketing-article"
             for relation in genealogy_relations
         ),
-        "AI article genealogy must distinguish its 2025 publication, 2026 last update, reciprocal expertise themes, and SlideShare source relationship",
+        "AI article genealogy must distinguish unknown original publication date, earliest archived capture, later last update, reciprocal expertise themes, and SlideShare source relationship",
     )
 
     genealogy_page = read_text("metadata/index.html")
