@@ -6,7 +6,7 @@ The archive intake creates a review-only inventory of Wayback Machine captures f
 
 It reads four types of evidence:
 
-1. SlideShare presentation URLs already recorded in the canonical Research Genealogy registry.
+1. Primary SlideShare artefact URLs and nested SlideShare publication-manifestation URLs already recorded in the canonical Research Genealogy registry.
 2. Presentation links exposed in the current public SlideShare profile HTML or its rendered DOM after ordinary browser navigation and scrolling.
 3. Presentation links exposed in inspected archived HTML snapshots of that profile.
 4. Direct presentation URLs returned by Tavily's indexed-web search, filtered to SlideShare presentation paths and retained as discovery leads.
@@ -43,10 +43,12 @@ The workflow also runs weekly and on pull requests that modify the scanner, its 
 
 The workflow installs Playwright/Chromium for the public-profile rendering step. If the rendered page still exposes no presentation links, the report marks that discovery state explicitly; a successful CDX query of previously known URLs must not be mistaken for a complete profile inventory.
 
+The workflow queries both primary SlideShare artefacts and nested SlideShare representations (for example, language editions and condensed presentation manifestations). Its summary keeps the counts for underlying artefacts and nested representations separate.
+
 The workflow artifact contains:
 
-- research-genealogy-archive-candidates.json — complete query report, profile observations, each URL's discovery source, registry match, candidate labels/snippets where available, CDX capture timestamps, status codes, MIME types, digests, lengths, and Wayback replay URLs. Provider status records whether Tavily was enabled and how many requests and direct SlideShare candidates it returned.
-- research-genealogy-archive-candidates.md — concise review summary, coverage assessment, source observations, and outstanding errors.
+- research-genealogy-archive-candidates.json — complete query report, profile observations, each URL's discovery source, parent artefact or nested representation match, candidate labels/snippets where available, CDX capture timestamps, status codes, MIME types, digests, lengths, and Wayback replay URLs. Provider status records whether Tavily was enabled and how many requests and direct SlideShare candidates it returned.
+- research-genealogy-archive-candidates.md — concise review summary, separate primary-artefact and nested-representation counts, coverage assessment, source observations, and outstanding errors.
 
 Artifacts are retained for 30 days. The workflow also writes the Markdown report to the Actions run summary.
 
