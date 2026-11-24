@@ -1,8 +1,8 @@
 {
-  "registry_version": "0.3.7",
+  "registry_version": "0.3.8",
   "schema_version": "0.3.3",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
-  "generated_on": "2026-11-24",
+  "generated_on": "2026-11-25",
   "title": "DIO/ODI Research Genealogy Registry",
   "description": "A source-linked reconstruction of the DIO/ODI research objects and processes, related professional AI practice, intermediate outputs, alternative publication manifestations, and archive observations. The registry distinguishes thematic relatedness from confirmed same-output identity.",
   "maintainer": {
@@ -292,7 +292,7 @@
       "uri": "https://is.muni.cz/th/wknmn/",
       "object_type": "university-masters-thesis-version-lineage",
       "status": "multi-file-first-submission-not-defended; second-submission-successfully-defended",
-      "description": "A 2008–2009 master's-thesis development lineage in Psychology at Masaryk University's Faculty of Social Studies. The IS MU archive contains multiple separately stored files from successive stages. An earlier file named Pozitivni_psychologie_a_Castanedovo_uceni.doc is dated 20 May 2008. The first registered examination attempt on 20 January 2009 was not defended; its 5 January 2009 body file is titled “Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení” and is accompanied by a separately stored file “uvodni_strany_a_obsah” containing the opening pages and table of contents. The uploaded 88-page DOC contains the main body (chapters 1–10, conclusion, and sources), but not those separately stored opening pages. A later separate file “uvodni_strany.doc” is dated 29 May 2009; its association with the second attempt is not yet established. The second submission, retitled “Aktualizace východisek a možností pozitivní psychologie”, was successfully defended on 2 June 2009. Its method combines analogous but differently coded perspectives using Gregory Bateson's binocular-vision principle and explicitly draws on semiotics, Derrida's différance, ethnomethodology, and critical discourse analysis.",
+      "description": "A 2008–2009 master's-thesis development lineage in Psychology at Masaryk University's Faculty of Social Studies. The IS MU archive contains multiple separately stored files from successive stages. An earlier file named Pozitivni_psychologie_a_Castanedovo_uceni.doc is dated 20 May 2008. The first registered examination attempt on 20 January 2009 was not defended; its 5 January 2009 body file is titled “Kvalitativní evaluace pozitivní psychologie perspektivou Castanedova učení” and is accompanied by a separately stored file “uvodni_strany_a_obsah” containing the opening pages and table of contents. The uploaded 88-page DOC contains the main body (chapters 1–10, conclusion, and sources), but not those separately stored opening pages. A later separate file “uvodni_strany.doc” is dated 29 May 2009; its association with the second attempt is not yet established. The second submission, retitled “Aktualizace východisek a možností pozitivní psychologie”, was successfully defended on 2 June 2009. Its second version substantially revises the method and analytical structure: it sharpens the methodological definitions and research plan, adds a worked analysis of Love's text, restructures the comparative synthesis, and rewrites the proposals section. It uses Gregory Bateson's binocular-vision principle to compare analogous but differently coded perspectives and explicitly draws on semiotics, Saussure, Barthes, Derrida's différance, ethnomethodology, and critical discourse analysis. The two submissions remain one thesis-development lineage.",
       "components": [
         "IS MU thesis lineage record wknmn and its separately stored archive files",
         "earlier file Pozitivni_psychologie_a_Castanedovo_uceni.doc, recorded 20 May 2008",
@@ -303,7 +303,10 @@
         "second IS MU submission record k2bkc and successful defense on 2 June 2009",
         "ResearchGate DOI and full-text PDF for the successful second version",
         "Gregory Bateson's binocular-vision principle and comparison of differently coded perspectives",
-        "secondary theoretical background: semiotics, Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis"
+        "secondary theoretical background: semiotics, Saussure, Barthes, Derrida's différance, Garfinkel, and critical discourse analysis",
+        "second-version revision account in section 2.8, documenting methodological, analytical, structural, and bibliographic changes from the first attempt",
+        "worked application of the analytical procedure to Love's text in chapter 6.1",
+        "tabular comparative synthesis and supplement in chapter 7; fully rewritten extension/proposals section in chapter 8"
       ],
       "role_in_genealogy": "A direct methodological and conceptual antecedent in the DIO/ODI lineage. The successful second submission formalizes cross-perspective reconstruction and comparison as a way of producing additional depth and new information. The professional ethnography explicitly carries the binocular-perspective principle into ongoing practice, including the paired reading of human-language effectiveness and search/AI algorithms, and business aims and people's needs/emotions. The thesis line also brings semiotics, contextual meaning, and critical discourse analysis into the psychological work. The archived first-attempt material documents the development of this method before the successful second submission.",
       "publication_date": "2009",
@@ -481,7 +484,8 @@
           "footnotes_after": 573,
           "doi": "10.13140/RG.2.2.32958.86087",
           "full_text_uri": "https://www.researchgate.net/publication/256483471_Aktualizace_vychodisek_a_moznosti_pozitivni_psychologie",
-          "notes": "The author reports 29% revision, expanding cited sources from 173 to 257 and footnotes from 182 to 573. The first and second submissions are one thesis lineage, not separate research objects."
+          "notes": "The author reports 29% revised content, a change from 173 to 257 cited bibliography items, and an increase from 182 to 573 footnotes. The second version's own section 2.8 documents the revision. Compared with the first attempt, it sharpens the methodological definitions and research plan, revises data processing, and adds a separately articulated secondary theoretical foundation. It adds a worked analysis of Love's text (chapter 6.1), turns the agreements/conflicts/differences comparison into a tabular presentation with an added supplement (chapter 7), completely rewrites the section on possibilities for extending positive psychology (chapter 8), and revises the conclusion and sources. The second version therefore represents a substantial methodological and analytical revision within the same thesis-development lineage, not a separate research object. Its explicitly stated secondary theoretical background includes semiotics and signification (Saussure and Barthes), Derrida's différance, ethnomethodology, and critical discourse analysis. The revised method retains Bateson's binocular-vision principle: reconstruct and reproduce analogous but differently coded perspectives, compare and interpret them, and extrapolate further possibilities.",
+          "similarity_to_previous_version_percent": 71
         }
       ]
     },
