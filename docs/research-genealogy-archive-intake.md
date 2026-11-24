@@ -35,7 +35,7 @@ Inputs:
 | url_limit | 150 | Safety limit for distinct presentation URLs queried |
 | delay_seconds | 0.15 | Delay between requests to the public CDX service |
 
-The optional repository Actions secret `TAVILY_API_KEY` enables four basic indexed-web queries. Without it, the report explicitly marks Tavily as disabled and continues with profile and archive sources only.
+The optional repository Actions secret `TAVILY_API_KEY` enables four basic indexed-web queries only when the workflow is started manually with **Enable Tavily indexed-web discovery** turned on. Scheduled and pull-request runs do not consume Tavily API credits. Without that manual opt-in, the report explicitly marks Tavily as disabled and continues with profile and archive sources only. If Tavily returns HTTP 432 because the plan usage limit has been reached, the scanner stops after the first blocked request and records the plan-limit state.
 
 The workflow also runs weekly and on pull requests that modify the scanner, its tests, or its supporting metadata and documentation.
 
