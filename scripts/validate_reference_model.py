@@ -749,8 +749,9 @@ def check_metadata() -> dict[str, int | str]:
         require(
             set(artefact.get("research_object_ids", [])) <= set(object_ids)
             and set(artefact.get("process_ids", [])) <= set(process_ids)
+            and set(artefact.get("source_object_ids", [])) <= set(object_ids)
             and set(artefact.get("related_work_ids", [])) <= work_ids,
-            f"Research Genealogy artefact has an unresolved research or work relation: {artefact.get('id')}",
+            f"Research Genealogy artefact has an unresolved research, source-object, or work relation: {artefact.get('id')}",
         )
     for lead in genealogy_leads:
         require(
@@ -782,6 +783,16 @@ def check_metadata() -> dict[str, int | str]:
          if item.get("id") == "slideshare-crisis-entity-resolution-presentation"),
         None,
     )
+    ai_comparison_article = next(
+        (item for item in research_objects
+         if item.get("id") == "ai-startup-marketing-article"),
+        None,
+    )
+    ai_comparison_presentation = next(
+        (item for item in genealogy_artefacts
+         if item.get("id") == "slideshare-ai-tools-comparative-review"),
+        None,
+    )
     require(
         professional_ethnography is not None
         and professional_ethnography.get("uri") == "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
@@ -795,6 +806,22 @@ def check_metadata() -> dict[str, int | str]:
         and crisis_presentation is not None
         and crisis_presentation.get("related_work_ids") == ["crisis-entity-resolution"],
         "Research Genealogy must distinguish an exploratory reading from a presentation of a registered research work",
+    )
+    require(
+        ai_comparison_article is not None
+        and ai_comparison_article.get("displayed_date") == "2026-10-21"
+        and ai_comparison_presentation is not None
+        and ai_comparison_presentation.get("source_object_ids") == ["ai-startup-marketing-article"]
+        and ai_comparison_presentation.get("source_material", {}).get("url") == ai_comparison_article.get("uri")
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_upload_date") is None
+        and ai_comparison_presentation.get("temporal_metadata", {}).get("slideshare_last_modified") is None
+        and any(
+            relation.get("subject_id") == "slideshare-ai-tools-comparative-review"
+            and relation.get("relation") == "is-derived-from"
+            and relation.get("object_id") == "ai-startup-marketing-article"
+            for relation in genealogy_relations
+        ),
+        "AI comparison presentation must retain its explicit source article and separate page/platform date metadata",
     )
 
     genealogy_page = read_text("metadata/index.html")
