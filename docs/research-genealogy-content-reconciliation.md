@@ -34,7 +34,7 @@ Evidence levels are claim-specific. A search result may discover a URL but canno
 
 ## Bibliographic records and persistent identifiers
 
-A single research object may be represented by more than one institutional, national-catalogue, author-maintained, or repository page. Record these as multiple bibliographic/access records attached to the same research object; do not create a new underlying output for each database entry or hosting page. Where available, prefer the institution's own record as the primary bibliographic anchor and retain national aggregators as additional discovery/cross-reference records.
+A single research object may be represented by more than one institutional, national-catalogue, author-maintained, or repository page. Record these as multiple bibliographic/access records attached to the same research object; do not create a new underlying output for each database entry or hosting page. Where available, prefer the institution's own record as the primary bibliographic anchor and retain national aggregators as additional discovery/cross-reference records. When no public institutional or national-catalogue page exists, record that absence explicitly only when confirmed (for example, by the author); do not leave it as an open search task or invent a placeholder catalogue record.
 
 Record persistent identifiers such as DOIs separately from publication records. A DOI resolving to a ResearchGate page identifies the associated work; it does not establish a second output or make the hosting platform the original institution. Preserve the DOI string, resolver URI, and provider while keeping the work's institutional or author-maintained bibliographic record distinct.
 
