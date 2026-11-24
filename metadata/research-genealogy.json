@@ -65,6 +65,18 @@
           "theme": "reciprocal-human-AI-capability",
           "description": "A practical account of complementary capabilities: human professional judgment and domain-bridging communication applied to AI products, and AI tools used to extend parts of professional information work."
         }
+      ],
+      "date_evidence": [
+        {
+          "title": "Author-site AI category archive listing (original post date)",
+          "url": "https://danielberanek.cz/oblast/ai/",
+          "role": "original-publication-date-evidence"
+        },
+        {
+          "title": "Current article page (later last-update date)",
+          "url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
+          "role": "last-updated-page-byline"
+        }
       ]
     }
   ],
@@ -405,7 +417,19 @@
         "publication_date": "2025-09-23",
         "publication_date_basis": "Author-site AI category archive listing preserving the original article byline date.",
         "last_updated_date": "2026-10-21",
-        "last_updated_date_basis": "Current article page byline; author confirms this is the latest-update date."
+        "last_updated_date_basis": "Current article page byline; author confirms this is the latest-update date.",
+        "date_evidence": [
+          {
+            "title": "Author-site AI category archive listing (original post date)",
+            "url": "https://danielberanek.cz/oblast/ai/",
+            "role": "original-publication-date-evidence"
+          },
+          {
+            "title": "Current article page (later last-update date)",
+            "url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
+            "role": "last-updated-page-byline"
+          }
+        ]
       },
       "temporal_metadata": {
         "source_article_publication_date": "2025-09-23",
