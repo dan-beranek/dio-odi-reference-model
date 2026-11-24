@@ -114,6 +114,13 @@
           },
           "role_in_genealogy": {
             "type": "string"
+          },
+          "displayed_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "date_basis": {
+            "type": "string"
           }
         }
       }
@@ -475,6 +482,73 @@
           },
           "review_status": {
             "type": "string"
+          },
+          "source_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_material": {
+            "type": "object",
+            "required": [
+              "title",
+              "url",
+              "displayed_date",
+              "date_basis"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "displayed_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "date_basis": {
+                "type": "string"
+              }
+            }
+          },
+          "temporal_metadata": {
+            "type": "object",
+            "required": [
+              "source_page_displayed_date",
+              "source_page_date_basis",
+              "slideshare_upload_date",
+              "slideshare_last_modified",
+              "timestamp_note"
+            ],
+            "properties": {
+              "source_page_displayed_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "source_page_date_basis": {
+                "type": "string"
+              },
+              "slideshare_upload_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "slideshare_last_modified": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "timestamp_note": {
+                "type": "string"
+              }
+            }
           }
         }
       }
