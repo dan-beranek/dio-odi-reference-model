@@ -295,6 +295,36 @@
                 }
               }
             }
+          },
+          "institutional_record_status": {
+            "type": "object",
+            "description": "Availability of a public institutional or national thesis-catalogue page; absence may be recorded when author-confirmed.",
+            "required": [
+              "status",
+              "basis",
+              "note"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "public-record-available",
+                  "no-public-record",
+                  "not-assessed"
+                ]
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "directly-verified",
+                  "author-confirmed",
+                  "not-assessed"
+                ]
+              },
+              "note": {
+                "type": "string"
+              }
+            }
           }
         }
       }
