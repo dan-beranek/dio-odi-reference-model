@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -791,7 +792,7 @@ def main() -> int:
             profile_snapshot_limit=args.profile_snapshot_limit,
             url_limit=args.url_limit,
             delay_seconds=args.delay_seconds,
-            tavily_api_key=__import__("os").environ.get("TAVILY_API_KEY"),
+            tavily_api_key=os.environ.get("TAVILY_API_KEY"),
         )
     except IntakeError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
