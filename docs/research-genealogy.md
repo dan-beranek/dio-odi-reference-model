@@ -80,7 +80,7 @@ The registry separates:
 - inventory leads awaiting a direct item record;
 - typed relationships connecting objects, processes, concepts, and artefacts.
 
-New artefacts are added only after their source page and uploader information have been inspected. The registry preserves the model attribution shown by the source page and does not infer a specific model where none is named. The source object's changelog remains the primary date basis for the concept-development chronology.
+Where a source page and uploader information have been reviewed, the registry records the directly observable title, attribution, and content characteristics. Author-supplied URLs may also be registered provisionally before their content is accessible or inspected; those records are explicitly marked as unreviewed. Model attribution is preserved when the source states it and is not inferred where it does not. The source object's changelog remains the primary date basis for the concept-development chronology.
 
 The registry now covers a wider, author-supplied set of multi-platform outputs and three alternative indexes of AI-related professional writing. Records whose contents have not yet been inspected are explicitly labelled as such. The registry does not infer artifact creation dates from archive captures, nor does it assign per-text AI-assistance levels where those were not recorded.
 
