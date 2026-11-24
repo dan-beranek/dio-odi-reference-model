@@ -684,6 +684,7 @@ def check_metadata() -> dict[str, int | str]:
     genealogy_milestones = research_genealogy.get("milestones", [])
     genealogy_collections = research_genealogy.get("source_collections", [])
     genealogy_artefacts = research_genealogy.get("artefacts", [])
+    genealogy_clusters = research_genealogy.get("research_clusters", [])
     genealogy_leads = research_genealogy.get("inventory_leads", [])
     genealogy_relations = research_genealogy.get("relations", [])
 
@@ -692,13 +693,17 @@ def check_metadata() -> dict[str, int | str]:
     milestone_ids = [item.get("id") for item in genealogy_milestones]
     collection_ids = [item.get("id") for item in genealogy_collections]
     artefact_ids = [item.get("id") for item in genealogy_artefacts]
+    cluster_ids = [item.get("id") for item in genealogy_clusters]
+    representation_ids = [rep.get("id") for artefact in genealogy_artefacts for rep in artefact.get("representations", [])]
     require(
         all(object_ids) and len(object_ids) == len(set(object_ids))
         and all(process_ids) and len(process_ids) == len(set(process_ids))
         and all(milestone_ids) and len(milestone_ids) == len(set(milestone_ids))
         and all(collection_ids) and len(collection_ids) == len(set(collection_ids))
-        and all(artefact_ids) and len(artefact_ids) == len(set(artefact_ids)),
-        "Research Genealogy object, process, milestone, collection, and artefact identifiers must be unique and non-empty",
+        and all(artefact_ids) and len(artefact_ids) == len(set(artefact_ids))
+        and all(cluster_ids) and len(cluster_ids) == len(set(cluster_ids))
+        and len(representation_ids) == len(set(representation_ids)),
+        "Research Genealogy object, process, milestone, collection, artefact, cluster, and representation identifiers must be unique and non-empty",
     )
 
     concept_ids = {
@@ -710,7 +715,7 @@ def check_metadata() -> dict[str, int | str]:
     work_ids = {item.get("id") for item in works.get("works", []) if item.get("id")}
     genealogy_entity_ids = (
         set(object_ids) | set(process_ids) | set(milestone_ids)
-        | set(collection_ids) | set(artefact_ids) | concept_ids | work_ids
+        | set(collection_ids) | set(artefact_ids) | set(cluster_ids) | set(representation_ids) | concept_ids | work_ids
     )
     for process in research_processes:
         require(
@@ -719,11 +724,12 @@ def check_metadata() -> dict[str, int | str]:
             f"Research process has an unresolved research or preceding-context object: {process.get('id')}",
         )
         outcomes = {item.get("id"): item for item in process.get("concept_outcomes", [])}
-        require(
-            outcomes.get("DIO", {}).get("articulated_on") == "2026-05-21"
-            and outcomes.get("ODI", {}).get("articulated_on") == "2026-06-22",
-            "DIO and ODI concept outcomes must retain their changelog articulation dates",
-        )
+        if process.get("id") == "dio-odi-genesis-exploration":
+            require(
+                outcomes.get("DIO", {}).get("articulated_on") == "2026-05-21"
+                and outcomes.get("ODI", {}).get("articulated_on") == "2026-06-22",
+                "DIO and ODI concept outcomes must retain their changelog articulation dates",
+            )
         for outcome in process.get("concept_outcomes", []):
             require(outcome.get("uri") in {
                 VOCAB_NS + "DIO", VOCAB_NS + "ODI"
@@ -743,22 +749,30 @@ def check_metadata() -> dict[str, int | str]:
         )
 
     for artefact in genealogy_artefacts:
-        require(
-            artefact.get("source_collection_id") in set(collection_ids),
-            f"Research Genealogy artefact has an unresolved source collection: {artefact.get('id')}",
-        )
+        if artefact.get("source_collection_id"):
+            require(
+                artefact.get("source_collection_id") in set(collection_ids),
+                f"Research Genealogy artefact has an unresolved source collection: {artefact.get('id')}",
+            )
         require(
             set(artefact.get("research_object_ids", [])) <= set(object_ids)
             and set(artefact.get("process_ids", [])) <= set(process_ids)
             and set(artefact.get("source_object_ids", [])) <= set(object_ids)
-            and set(artefact.get("related_work_ids", [])) <= work_ids,
-            f"Research Genealogy artefact has an unresolved research, source-object, or work relation: {artefact.get('id')}",
+            and set(artefact.get("related_work_ids", [])) <= work_ids
+            and set(artefact.get("research_cluster_ids", [])) <= set(cluster_ids),
+            f"Research Genealogy artefact has an unresolved research, source-object, work, or cluster relation: {artefact.get('id')}",
+        )
+    for cluster in genealogy_clusters:
+        require(
+            all(member.get("artefact_id") in set(artefact_ids) for member in cluster.get("members", [])),
+            f"Research Genealogy cluster has an unresolved artefact member: {cluster.get('id')}",
         )
     for lead in genealogy_leads:
-        require(
-            lead.get("source_collection_id") in set(collection_ids),
-            f"Research Genealogy inventory lead has an unresolved source collection: {lead.get('title')}",
-        )
+        if lead.get("source_collection_id"):
+            require(
+                lead.get("source_collection_id") in set(collection_ids),
+                f"Research Genealogy inventory lead has an unresolved source collection: {lead.get('title')}",
+            )
     for relation in genealogy_relations:
         require(
             relation.get("subject_id") in genealogy_entity_ids
@@ -861,8 +875,16 @@ def check_metadata() -> dict[str, int | str]:
     )
 
     genealogy_page = read_text("metadata/index.html")
+    genealogy_frontend = read_text("research-genealogy/index.html")
     require(
-        "/metadata/research-genealogy.json" in genealogy_page
+        "https://vocab.danielberanek.cz/research-genealogy/" in genealogy_frontend
+        and "/metadata/research-genealogy.json" in genealogy_frontend
+        and "/assets/research-genealogy.js" in genealogy_frontend,
+        "Research Genealogy frontend is missing its canonical identity, registry link, or rendering script",
+    )
+    require(
+        "/research-genealogy/" in genealogy_page
+        and "/metadata/research-genealogy.json" in genealogy_page
         and "/metadata/research-genealogy.schema.json" in genealogy_page
         and "/docs/research-genealogy.md" in genealogy_page,
         "Corpus Metadata frontend is missing the Research Genealogy registry links",
@@ -870,7 +892,8 @@ def check_metadata() -> dict[str, int | str]:
     genealogy_discovery = read_text("llms.txt")
     require(
         "- Research Genealogy Registry: https://vocab.danielberanek.cz/metadata/research-genealogy.json" in genealogy_discovery
-        and "## Research Genealogy" in genealogy_discovery,
+        and "## Research Genealogy" in genealogy_discovery
+        and "- Research Genealogy frontend: https://vocab.danielberanek.cz/research-genealogy/" in genealogy_discovery,
         "llms.txt is missing the Research Genealogy discovery entry",
     )
 
@@ -887,6 +910,8 @@ def check_metadata() -> dict[str, int | str]:
         "research_genealogy_processes": len(research_processes),
         "research_genealogy_milestones": len(genealogy_milestones),
         "research_genealogy_artefacts": len(genealogy_artefacts),
+        "research_genealogy_clusters": len(genealogy_clusters),
+        "research_genealogy_archive_captures": sum(len(item.get("archive_captures", [])) + sum(len(rep.get("archive_captures", [])) for rep in item.get("representations", [])) for item in genealogy_artefacts),
     }
 
 
@@ -1118,6 +1143,7 @@ def check_sitemap() -> int:
         "https://vocab.danielberanek.cz/dio-odi/",
         "https://vocab.danielberanek.cz/mappings/",
         "https://vocab.danielberanek.cz/metadata/",
+        "https://vocab.danielberanek.cz/research-genealogy/",
         "https://vocab.danielberanek.cz/external-reception/",
         "https://vocab.danielberanek.cz/metadata/external-reception.json",
         "https://vocab.danielberanek.cz/metadata/external-reception.schema.json",
