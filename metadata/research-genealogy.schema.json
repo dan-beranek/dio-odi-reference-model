@@ -115,12 +115,43 @@
           "role_in_genealogy": {
             "type": "string"
           },
-          "displayed_date": {
-            "type": "string",
+          "publication_date": {
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "date"
           },
-          "date_basis": {
+          "publication_date_basis": {
             "type": "string"
+          },
+          "last_updated_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "last_updated_date_basis": {
+            "type": "string"
+          },
+          "conceptual_themes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "theme",
+                "description"
+              ],
+              "properties": {
+                "theme": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -254,6 +285,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "preceding_context_object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }
@@ -494,8 +531,10 @@
             "required": [
               "title",
               "url",
-              "displayed_date",
-              "date_basis"
+              "publication_date",
+              "publication_date_basis",
+              "last_updated_date",
+              "last_updated_date_basis"
             ],
             "properties": {
               "title": {
@@ -505,11 +544,24 @@
                 "type": "string",
                 "format": "uri"
               },
-              "displayed_date": {
-                "type": "string",
+              "publication_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
                 "format": "date"
               },
-              "date_basis": {
+              "publication_date_basis": {
+                "type": "string"
+              },
+              "last_updated_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "last_updated_date_basis": {
                 "type": "string"
               }
             }
@@ -517,18 +569,33 @@
           "temporal_metadata": {
             "type": "object",
             "required": [
-              "source_page_displayed_date",
-              "source_page_date_basis",
+              "source_article_publication_date",
+              "source_article_publication_date_basis",
+              "source_article_last_updated_date",
+              "source_article_last_updated_date_basis",
               "slideshare_upload_date",
               "slideshare_last_modified",
               "timestamp_note"
             ],
             "properties": {
-              "source_page_displayed_date": {
-                "type": "string",
+              "source_article_publication_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
                 "format": "date"
               },
-              "source_page_date_basis": {
+              "source_article_publication_date_basis": {
+                "type": "string"
+              },
+              "source_article_last_updated_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "source_article_last_updated_date_basis": {
                 "type": "string"
               },
               "slideshare_upload_date": {
