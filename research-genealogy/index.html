@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIO/ODI Research Genealogy | Reference Model</title>
+<meta name="description" content="A navigable reconstruction of the DIO/ODI research genealogy: research objects, exploratory processes, AI outputs, publication manifestations, archive observations, and provenance.">
+<meta name="keywords" content="Digital Identity Optimization, DIO, Ontology of Digital Identity, ODI, research genealogy, AI-assisted research, E-E-A-T analysis, digital identity, research provenance, archival captures, publication manifestations, semantic coherence">
+<meta name="author" content="Daniel Beránek">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://vocab.danielberanek.cz/research-genealogy/">
+<link rel="home" href="/">
+<link rel="describedby" type="application/json" href="/metadata/research-genealogy.json" title="DIO/ODI Research Genealogy Registry">
+<link rel="alternate" type="application/json" href="/metadata/research-genealogy.json" title="Machine-readable Research Genealogy registry">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="DIO/ODI Research Genealogy">
+<meta property="og:description" content="Research objects, open-ended AI exploration, output manifestations, and archive observations associated with the emergence of DIO/ODI.">
+<meta property="og:url" content="https://vocab.danielberanek.cz/research-genealogy/">
+<meta property="og:site_name" content="DIO/ODI Reference Model">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DIO/ODI Research Genealogy">
+<meta name="twitter:description" content="A navigable record of research objects, AI outputs, publication manifestations, and archive observations.">
+<link rel="stylesheet" href="/assets/site.css?v=20261108-1">
+<style>
+.genealogy-intro{max-width:70ch;color:var(--muted);font-size:1.08rem}
+.genealogy-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:.8rem;margin:1.5rem 0 2rem}
+.genealogy-stat,.genealogy-card{border:1px solid var(--border);border-radius:.75rem;background:var(--surface);padding:1rem}
+.genealogy-stat strong{display:block;font-size:1.75rem;line-height:1.2;color:var(--text)}
+.genealogy-stat span,.genealogy-muted{font-size:.84rem;color:var(--muted)}
+.genealogy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:.85rem}
+.genealogy-card h3{font-size:1.05rem;margin:.1rem 0 .6rem}
+.genealogy-card p{margin:.45rem 0}
+.genealogy-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin:.6rem 0}
+.genealogy-pill{display:inline-flex;padding:.15rem .48rem;border:1px solid var(--border-strong);border-radius:999px;color:var(--muted);font-size:.76rem}
+.genealogy-links{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.7rem}
+.genealogy-links a{font-size:.88rem}
+.genealogy-details{margin-top:.75rem;border-top:1px solid var(--border);padding-top:.65rem}
+.genealogy-details summary{cursor:pointer;color:var(--link);font-size:.9rem}
+.genealogy-archive-list{display:grid;gap:.45rem;margin:.55rem 0 0;padding-left:1.1rem}
+.genealogy-archive-list li{font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+.genealogy-timeline{display:grid;gap:.5rem;max-width:75rem}
+.genealogy-event{display:grid;grid-template-columns:minmax(145px,185px) 1fr;gap:1rem;padding:.8rem 1rem;border-left:3px solid var(--border-strong);background:var(--surface);border-radius:.25rem .65rem .65rem .25rem}
+.genealogy-event time{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.genealogy-event h3{font-size:.97rem;margin:0 0 .25rem}
+.genealogy-event p{margin:.15rem 0;color:var(--muted);font-size:.88rem}
+.genealogy-filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.7rem;padding:1rem;border:1px solid var(--border);border-radius:.75rem;background:var(--surface);margin:1rem 0}
+.genealogy-filters label{display:grid;gap:.25rem;color:var(--muted);font-size:.84rem}
+.genealogy-filters input,.genealogy-filters select{width:100%;min-width:0;padding:.62rem .7rem;border:1px solid var(--border-strong);border-radius:.45rem;background:var(--page-bg);color:var(--text);font:inherit}
+.genealogy-section{margin:2.5rem 0}
+.genealogy-section>p{max-width:76ch;color:var(--muted)}
+.genealogy-load{padding:1.25rem;border:1px dashed var(--border-strong);border-radius:.7rem;color:var(--muted)}
+@media(max-width:720px){.genealogy-event{grid-template-columns:1fr;gap:.3rem}.genealogy-filters{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"CollectionPage",
+ "@id":"https://vocab.danielberanek.cz/research-genealogy/",
+ "url":"https://vocab.danielberanek.cz/research-genealogy/",
+ "name":"DIO/ODI Research Genealogy",
+ "description":"A navigable reconstruction of the DIO/ODI research objects, exploratory processes, intermediate outputs, publication manifestations, and archive observations.",
+ "inLanguage":"en",
+ "isPartOf":{"@id":"https://vocab.danielberanek.cz/#website"},
+ "license":"https://creativecommons.org/licenses/by/4.0/",
+ "author":{"@type":"Person","@id":"https://danielberanek.cz/#person","name":"Daniel Beránek","url":"https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/","sameAs":["https://orcid.org/0009-0004-0050-0264"]},
+ "mainEntity":{"@type":"Dataset","name":"DIO/ODI Research Genealogy Registry","url":"https://vocab.danielberanek.cz/metadata/research-genealogy.json","encodingFormat":"application/json"}
+}
+</script>
+</head>
+<body class="page page--research-genealogy">
+<nav class="site-nav" aria-label="Primary navigation">
+<a href="/">DIO/ODI Reference Model</a><a href="/dio-odi/">Reference Vocabulary</a><a href="/mappings/">Application Mappings</a><a href="/metadata/">Corpus Metadata</a><a href="/research-genealogy/" aria-current="page">Research Genealogy</a><a href="/external-reception/">External Reception</a><a href="/semantic-change-feed/">Semantic Change Feed</a><a href="https://mcp.danielberanek.cz/">MCP</a><a href="https://danielberanek.cz/manifest-dio/" target="_blank" rel="noopener noreferrer">DIO/ODI Hub</a>
+</nav>
+<header class="page-hero">
+<p class="page-hero-kicker">DIO/ODI Reference Model · Research provenance</p>
+<h1>DIO/ODI Research Genealogy</h1>
+<p class="genealogy-intro">A navigable record of the research objects, exploratory processes, intermediate outputs, publication forms, and archival traces associated with the development of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).</p>
+<p class="genealogy-intro">The registry distinguishes an underlying research output from its web, chat, application, document, or presentation manifestations—and from later archive captures of those manifestations. Similar topics do not automatically establish that two records are the same output.</p>
+<p class="genealogy-links"><a href="/metadata/research-genealogy.json">Machine-readable registry</a> · <a href="/metadata/research-genealogy.schema.json">JSON Schema</a> · <a href="/docs/research-genealogy.md">Curation and data model</a></p>
+</header>
+<div id="genealogy-stats" class="genealogy-stats" aria-live="polite"><div class="genealogy-load">Loading registry statistics…</div></div>
+<div id="genealogy-load-status" class="genealogy-load" role="status">Loading the canonical Research Genealogy registry…</div>
+<section id="genealogy-objects" class="genealogy-section" hidden><h2>Research objects</h2><p>The sources and subjects examined or used as professional and research context.</p><div id="genealogy-object-list" class="genealogy-grid"></div></section>
+<section id="genealogy-processes" class="genealogy-section" hidden><h2>Research processes</h2><p>Processes are reconstructed from available source records and author-provided context. Their bounds are not inferred from archive timestamps alone.</p><div id="genealogy-process-list" class="genealogy-grid"></div></section>
+<section id="genealogy-clusters" class="genealogy-section" hidden><h2>Thematic clusters</h2><p>Clusters group related records without collapsing distinct outputs or asserting unverified content identity.</p><div id="genealogy-cluster-list" class="genealogy-grid"></div></section>
+<section id="genealogy-timeline" class="genealogy-section" hidden><h2>Timeline and archive observations</h2><p>The timeline combines dated research milestones, dated source observations, and archive captures. Archive dates indicate when a representation was captured, not when its underlying output was created.</p><div id="genealogy-timeline-list" class="genealogy-timeline"></div></section>
+<section id="genealogy-artifacts" class="genealogy-section" hidden><h2>Artefact register</h2><p>Each record preserves its own platform identity. Additional manifestations and archive captures are nested under the underlying record where their relationship is known or explicitly marked as a candidate.</p>
+<div class="genealogy-filters"><label>Search records<input id="genealogy-search" type="search" placeholder="Title, platform, URL, topic…"></label><label>Platform<select id="genealogy-platform"><option value="">All platforms</option></select></label><label>Output type<select id="genealogy-type"><option value="">All types</option></select></label></div>
+<p id="genealogy-results-count" class="genealogy-muted" aria-live="polite"></p><div id="genealogy-artifact-list" class="genealogy-grid"></div></section>
+<section id="genealogy-collections" class="genealogy-section" hidden><h2>Source collections and indexes</h2><div id="genealogy-collection-list" class="genealogy-grid"></div></section>
+<section id="genealogy-leads" class="genealogy-section" hidden><h2>Unmatched provenance leads</h2><p>These archive references are retained without forcing an unsupported connection to an artefact.</p><div id="genealogy-lead-list" class="genealogy-grid"></div></section>
+<footer class="meta">Maintained by <a href="https://danielberanek.cz/#person">Daniel Beránek</a> · <a href="https://orcid.org/0009-0004-0050-0264">ORCID 0009-0004-0050-0264</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+<script src="/assets/research-genealogy.js?v=20261124-1" defer></script>
+</body></html>
