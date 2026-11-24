@@ -214,7 +214,10 @@ def search_tavily(api_key: str | None, max_results: int = 20) -> tuple[list[dict
     errors: list[str] = []
     requests_succeeded = 0
     raw_results = 0
+    queries_attempted = 0
+    blocked_by_plan_limit = False
     for query in TAVILY_QUERIES:
+        queries_attempted += 1
         request = Request(
             TAVILY_ENDPOINT,
             data=json.dumps({
@@ -261,6 +264,9 @@ def search_tavily(api_key: str | None, max_results: int = 20) -> tuple[list[dict
         except HTTPError as exc:
             detail = exc.read(500).decode("utf-8", errors="replace")
             errors.append(f"{query['id']}: Tavily HTTP {exc.code}: {detail}")
+            if exc.code == 432 and "exceeds your plan" in detail.casefold() and "usage limit" in detail.casefold():
+                blocked_by_plan_limit = True
+                break
         except (URLError, TimeoutError, OSError, IntakeError) as exc:
             errors.append(f"{query['id']}: {exc}")
         time.sleep(0.25)
@@ -268,10 +274,11 @@ def search_tavily(api_key: str | None, max_results: int = 20) -> tuple[list[dict
     return list(candidates.values()), {
         "provider": "Tavily Search",
         "enabled": True,
-        "queries_attempted": len(TAVILY_QUERIES),
+        "queries_attempted": queries_attempted,
         "requests_succeeded": requests_succeeded,
         "raw_results": raw_results,
         "slideshare_candidates": len(candidates),
+        "blocked_by_plan_limit": blocked_by_plan_limit,
         "errors": errors,
     }
 
