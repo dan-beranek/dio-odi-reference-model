@@ -152,6 +152,29 @@
                 }
               }
             }
+          },
+          "date_evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "title",
+                "url",
+                "role"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -563,6 +586,29 @@
               },
               "last_updated_date_basis": {
                 "type": "string"
+              },
+              "date_evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "title",
+                    "url",
+                    "role"
+                  ],
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "role": {
+                      "type": "string"
+                    }
+                  }
+                }
               }
             }
           },
