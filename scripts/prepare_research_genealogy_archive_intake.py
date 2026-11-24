@@ -449,7 +449,7 @@ def cdx_capture_record(row: dict[str, str]) -> dict[str, Any]:
 def markdown_report(report: dict[str, Any]) -> str:
     stats = report["summary"]
     lines = [
-        "# Research Genealogy — SlideShare / Wayback CDX intake",
+        "# Research Genealogy — SlideShare discovery and Wayback CDX intake",
         "",
         f"- Generated: {report['generated_at']}",
         f"- Profile: {report['profile_url']}",
@@ -474,24 +474,44 @@ def markdown_report(report: dict[str, Any]) -> str:
         "",
         "## Interpretation boundary",
         "",
-        "This is a review-only discovery report. It does not modify the canonical Research Genealogy registry. Public SlideShare API access has been retired; this intake uses public profile HTML, rendered public profile pages, and the Internet Archive CDX index only. The profile may render only a subset of uploads in the HTML response, and archived profile snapshots may also be incomplete. Therefore, the report is not a claim of exhaustive coverage of all uploads.",
+        "This is a review-only discovery report. It does not modify the canonical Research Genealogy registry. Public SlideShare API access has been retired; this intake combines public profile HTML, rendered public profile pages, optional Tavily indexed-web search, and the Internet Archive CDX index. None of these sources alone provides an exhaustive profile inventory.",
         "",
+        "Tavily results are candidate locators. They do not establish uploader attribution, authorship, exact output identity, or publication date; any `published_date` returned by the search index remains a candidate field until the original page is reviewed.",
         "CDX records are archive-index observations, not upload or creation dates. A timestamp identifies an archived capture. Multiple host aliases, redirects, or duplicate capture records must be reconciled before being attached to one research artefact.",
         "Tavily indexed-web search contributes direct SlideShare URL candidates that may not appear in the current profile DOM. Search results are discovery leads only: uploader attribution, content identity, and relationship to existing outputs require page-level review.",
         "",
         "## Presentation URL inventory",
         "",
-        "| URL | Registry item | Captures | First capture (UTC) | Last capture (UTC) |",
-        "|---|---|---:|---|---|",
+        "| URL | Discovery source | Registry item | Captures | First capture (UTC) | Last capture (UTC) |",
+        "|---|---|---|---:|---|---|",
     ]
     for item in report["presentations"]:
         captures = item["captures"]
         dates = [c["captured_at"] for c in captures if c.get("captured_at")]
         ids = ", ".join(item["registry_artefact_ids"]) or "Unmatched candidate"
         lines.append(
-            f"| {item['url']} | {ids} | {len(captures)} | "
-            f"{min(dates) if dates else '—'} | {max(dates) if dates else '—'} |"
+            sources = ", ".join(sorted({source.get("kind", "unknown") for source in item.get("discovery_sources", [])})) or "unknown"
+            lines.append(
+                f"| {item['url']} | {sources} | {ids} | {len(captures)} | "
+                f"{min(dates) if dates else '—'} | {max(dates) if dates else '—'} |"
+            )
         )
+    lines.extend(["", "## Indexed-web discovery provider", ""])
+    for provider in report.get("discovery_providers", []):
+        if provider.get("enabled"):
+            lines.append(
+                f"- {provider.get('provider')}: {provider.get('requests_succeeded', 0)} / "
+                f"{provider.get('queries_attempted', 0)} searches succeeded; "
+                f"{provider.get('slideshare_candidates', 0)} unique SlideShare candidates "
+                f"from {provider.get('raw_results', 0)} raw results."
+            )
+            lines.extend(f"  - {error}" for error in provider.get("errors", []))
+        else:
+            lines.append(
+                f"- {provider.get('provider')}: disabled "
+                f"({provider.get('reason', 'not configured')})."
+            )
+
     lines.extend(["", "## Source observations", ""])
     for obs in report["profile_observations"]:
         lines.append(
