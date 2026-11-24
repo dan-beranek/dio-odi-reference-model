@@ -292,6 +292,10 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "version_id": {
+                  "type": "string",
+                  "description": "Optional ID of the specific version identified by this persistent identifier."
                 }
               }
             }
@@ -323,6 +327,63 @@
               },
               "note": {
                 "type": "string"
+              }
+            }
+          },
+          "versions": {
+            "type": "array",
+            "description": "Explicitly documented versions or successive submission attempts belonging to one research-object lineage.",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "title",
+                "record_uri",
+                "submission_attempt",
+                "status"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "record_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "submission_attempt": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "status": {
+                  "type": "string"
+                },
+                "defended_on": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "similarity_to_previous_version_percent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "revision_extent_percent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "doi": {
+                  "type": "string"
+                },
+                "full_text_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "notes": {
+                  "type": "string"
+                }
               }
             }
           }
