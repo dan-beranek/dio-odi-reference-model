@@ -3977,7 +3977,7 @@
         "basis": [
           "registry"
         ],
-        "temporal_note": "The FAIRsharing record was already publicly available on 23 November 2026. It was reviewed and added to the live SCF on 24 November 2026. No FAIRsharing DOI is displayed on the record at the time of documentation.",
+        "temporal_note": "The FAIRsharing record's public page indicates that the record was available from 23 November 2026. It was reviewed and added to the live SCF on 24 November 2026. No FAIRsharing DOI is displayed on the record at the time of documentation.",
         "sources": [
           {
             "label": "FAIRsharing — DIO/ODI Reference Vocabulary, record #9470",
