@@ -66,6 +66,30 @@ class TestResearchGenealogyArchiveIntake(unittest.TestCase):
         self.assertEqual(len(links), 1)
         self.assertTrue(links[0]["url"].endswith("/999888"))
 
+    def test_profile_count_parses_singular_and_plural_labels(self):
+        self.assertEqual(intake.profile_count("49 Slideshow"), 49)
+        self.assertEqual(intake.profile_count("49 Slideshows"), 49)
+        self.assertIsNone(intake.profile_count("presentations are listed"))
+
+    def test_profile_discovery_status_does_not_treat_missing_count_as_zero(self):
+        self.assertEqual(
+            intake.derive_profile_discovery_status(None, 0),
+            "no-profile-links-or-count-extracted",
+        )
+        self.assertEqual(
+            intake.derive_profile_discovery_status(49, 0),
+            "profile-count-visible-but-links-not-extracted",
+        )
+        self.assertEqual(
+            intake.derive_profile_discovery_status(49, 12),
+            "profile-links-extracted",
+        )
+        self.assertEqual(
+            intake.derive_profile_discovery_status(None, 12),
+            "profile-links-extracted-count-not-observed",
+        )
+
+
     def test_timestamp_to_iso_uses_utc(self):
         self.assertEqual(
             intake.timestamp_to_iso("20260312183717"),
