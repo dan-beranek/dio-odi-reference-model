@@ -56,6 +56,14 @@ When a provider returns a landing URL instead of a DOI field, the collector can 
 
 Where an identifier is mapped to a canonical work or registered distribution, that relation is used for classification and work-level clustering. Distinct DOIs on different platforms remain distinct records unless they resolve to the same DOI. Near-identical title matching is conservative and requires a clear similarity margin over other registered work titles.
 
+## Research Genealogy source attribution
+
+The discovery collector reads `metadata/research-genealogy.json` alongside the works, distributions, and external-source registries. Exact item URLs registered under an author-confirmed source collection are recognized as curated author-corpus artefacts when the item uploader attribution matches the canonical author metadata.
+
+This provides stable attribution for reviewed SlideShare items whose individual document URLs do not contain the profile handle. The profile URL and each item URL remain separate source records. New items are added to the Research Genealogy Registry after their page title, uploader attribution, content origin, and research role have been reviewed.
+
+The registry distinguishes model-generated readings of the professional ethnography from model-generated conceptual notes, multi-report analyses, and presentation layers for canonical research works. A platform uploader, a named model, and the research role of the material are retained as separate fields.
+
 ## Candidate resolution
 
 Results are normalised and deduplicated by the discovered object's own DOI when available, otherwise by its canonical arXiv ID or URL. When a provider omits the DOI field, supported DOI-bearing landing URLs (Zenodo, Figshare and SSRN) and arXiv landing URLs are used to resolve the same object identity. A DOI or arXiv identifier merely cited in page text is retained as a reference to a related canonical work; it is never substituted for the discovered object's identity. The collector retains provider and query provenance so that DOI pages, platform landing pages, PDFs, and audio/HTML variants for the same identified object appear as one candidate with multiple observations.
