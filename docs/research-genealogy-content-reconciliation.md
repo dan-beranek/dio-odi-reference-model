@@ -198,13 +198,14 @@ Phases may overlap where a new archive capture helps identify a manifestation, b
 
 ## Current state on 24 November 2026
 
-- Research Genealogy registry v0.2.0 began with 29 artifact records; PR #106 proposes v0.3.0 with 41 artifact records and a documented E-E-A-T model-specific report series.
-- The initial SlideShare inventory is curated, not exhaustive. The profile displayed 49 Slideshow items on 24 November 2026.
+- Research Genealogy registry v0.2.0 began with 29 artefact records; PR #106 proposes v0.3.0 with 42 artefact records, a documented model-specific E-E-A-T report series, and a separate Gemini Deep Research transdisciplinary E-E-A-T/semantic analysis.
+- The initial SlideShare inventory is curated, not exhaustive. The English profile view displayed 49 Slideshow items on 24 November 2026. Four older academic/project cards and one technical-study relationship are now preserved as inventory leads where direct locators or provenance are incomplete.
 - The SCF Knowledge Panel event is maintained separately from the Research Genealogy registry.
 - A read-only SlideShare/Wayback intake prototype is under validation in PR #105. Its first CDX-only pass retrieved archive observations for five known SlideShare URLs but did not extract new URLs from server-side HTML or archived profile snapshots. A rendered Chromium discovery pass has been added; its live result must be reviewed before the intake is described as effective at profile-wide discovery.
 - Direct content reconciliation has confirmed at least one alternate representation: the Macaly page and Claude SlideShare PDF are manifestations of the same meta-analysis. Their platform/uploader attribution is not treated as identical merely from that content match.
 - The source-set discrepancy between Gemini 2.5 Pro Preview and Gemini 3.1 Pro Preview remains an explicit inventory lead.
 - Seznam Asistent's first-order SlideShare report is mentioned by meta-analyses but its own page remains unreviewed.
+- The SlideShare profile lists older items on power relations, positive psychology, ideology/hegemony, and a festival-promotion project; these remain discovery leads until direct pages and relationships are checked. The OpenLiteSpeed deck and article have both been identified, but their relation and temporal direction remain unresolved.
 
 ## Editorial safeguards
 
