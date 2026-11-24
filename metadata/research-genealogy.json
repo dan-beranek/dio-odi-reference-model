@@ -573,13 +573,26 @@
       "related_work_ids": [
         "crisis-entity-resolution"
       ],
-      "research_role": "A presentation layer for an existing research work, recorded here to distinguish publication distribution from exploratory readings of the professional ethnography.",
-      "summary": "A ten-slide public presentation of the canonical Crisis of Entity Resolution work. The SlideShare page itself identifies the Zenodo, SSRN, Figshare, and ResearchGate records as its canonical academic and citation records.",
+      "research_role": "A public presentation manifestation of the separately registered Crisis of Entity Resolution research work. The English SlideShare deck and its explicitly linked Czech-language edition are recorded as two language manifestations of the same underlying work, not as separate research outputs.",
+      "summary": "A public presentation layer for the canonical Crisis of Entity Resolution research work, distributed in English and Czech SlideShare editions. The English page explicitly links to the Czech edition, and the two pages share the same underlying study, date, four-anomaly structure, and DIO/ODI theoretical conclusion.",
       "provenance": {
         "basis": "Individual SlideShare page description, canonical work identifiers, and uploader attribution.",
         "source_description_url": "https://fr.slideshare.net/slideshow/the-crisis-of-entity-resolution-in-heterogeneous-ai-environments-data-financial-and-semantic-dimensions/289325700"
       },
-      "review_status": "page-description-and-uploader-reviewed"
+      "review_status": "english-and-czech-slide-pages-reviewed; same-work-language-relation-confirmed",
+      "representations": [
+        {
+          "id": "slideshare-crisis-entity-resolution-czech-edition",
+          "platform": "SlideShare",
+          "representation_type": "translated-presentation-edition",
+          "url": "https://www.slideshare.net/slideshow/krize-identifikace-entit-v-heterogennim-prostredi-ai-datove-financni-a-semanticke-dimenze/289325363",
+          "title": "Krize identifikace entit v heterogenním prostředí AI: datové, finanční a sémantické dimenze",
+          "relation": "same-underlying-work-czech-language-edition",
+          "relationship_status": "source-page-explicitly-identifies-CZ-version; title-abstract-structure-and-date-match-reviewed",
+          "evidence_basis": "The English SlideShare page explicitly labels this URL as its CZ version and links directly to it. Both pages identify Daniel Beránek as uploader/author, give the work date as 17 August 2026, and present the same abstract, four-anomaly structure, empirical sections, and concluding DIO/ODI discussion in the corresponding language edition. The Czech page directly displays the author/uploader attribution.",
+          "archive_captures": []
+        }
+      ]
     },
     {
       "id": "slideshare-ai-tools-comparative-review",
