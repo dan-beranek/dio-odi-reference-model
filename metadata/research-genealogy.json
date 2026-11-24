@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.3.1",
+  "registry_version": "0.3.2",
   "schema_version": "0.2.0",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-24",
@@ -18,7 +18,7 @@
       "uri": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/",
       "object_type": "multimodal-professional-ethnography",
       "status": "living-author-maintained-web-object",
-      "description": "An evolving, layered representation of professional experience, knowledge, practice, and digital traces. Its research object is distributed across narrative text, explicit interpretive guidance, visual and semantic structures, linked sources, machine-readable metadata, and a dated changelog.",
+      "description": "An evolving, layered representation of professional experience, knowledge, practice, and digital traces. Its research object is distributed across narrative text, explicit interpretive guidance, visual and semantic structures, linked sources, machine-readable metadata, and a dated changelog. The object also explicitly revisits two earlier works in media and communication studies: the 2011 Rearticulation of Ideology and Hegemony thesis and the 2005 semiotic analysis of mOBSCENE, integrating their theoretical and methodological contributions into the professional-ethnography narrative.",
       "components": [
         "narrative text and non-linear professional trajectory",
         "methodological and interpretive notes",
@@ -26,7 +26,8 @@
         "semantic inventory and linked references",
         "AI-use notice and machine-readable agent instructions",
         "structured page metadata and semantic markup",
-        "author-maintained changelog"
+        "author-maintained changelog",
+        "explicit retrospective integration of the Rearticulation of Ideology and Hegemony thesis and the mOBSCENE semiotic analysis"
       ],
       "role_in_genealogy": "Primary research object examined through iterative AI-assisted secondary exploration."
     },
@@ -135,15 +136,15 @@
       "title": "Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií",
       "uri": "https://is.muni.cz/th/ajfb6/",
       "object_type": "university-masters-thesis",
-      "status": "preserved-university-record",
-      "description": "A 2011 master's thesis in Media Studies and Journalism at Masaryk University. The abstract describes a reconstruction of ideology and hegemony concepts for analysing contemporary media representations, including ideological discourse, hegemonic formations, nodal points, dominant discourse, and general discourse.",
+      "status": "preserved-university-record-and-explicitly-revisited-theoretical-antecedent",
+      "description": "A 2011 master's thesis in Media Studies and Journalism at Masaryk University. It reconstructs concepts of ideology and hegemony for analysing media representations, including ideological discourse, hegemonic formations, nodal points, and the articulation of meaning. The professional ethnography explicitly revisits this thesis and carries its theoretical framework into the subsequent DIO/ODI conceptual development.",
       "components": [
         "official university thesis record and bibliographic metadata",
         "abstract and research assignment",
         "keywords on ideology, hegemony, discourse, nodal points, representation, structural semiotics, cultural studies, post-Marxism, and post-structuralism",
         "full-text PDF listed in the university record"
       ],
-      "role_in_genealogy": "An earlier academic work in the author's media-studies background. It documents engagement with discourse, ideology, hegemony, and nodal points that may contextualize later theoretical interests. It is not asserted as a direct source or formal derivation of DIO/ODI.",
+      "role_in_genealogy": "A direct theoretical antecedent in the DIO/ODI lineage. The professional ethnography explicitly returns to this thesis, identifies its rearticulation of ideology and hegemony, and connects discourse, nodal points, hegemonic formation, and relational meaning to contemporary SEO, branding, and digital identity.",
       "publication_date": "2011",
       "publication_date_basis": "Masaryk University record and its citation export identify the thesis as a 2011 work; the record states that the thesis was successfully defended on 25 January 2011.",
       "date_evidence": [
@@ -173,40 +174,50 @@
       ]
     },
     {
-      "id": "positive-psychology-and-spiritual-streams-thesis",
-      "title": "Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
-      "uri": "https://is.muni.cz/th/wknmn/",
-      "object_type": "university-thesis",
-      "status": "preserved-university-record",
-      "description": "A 2009 psychology thesis record at Masaryk University's Faculty of Social Studies. The abstract describes an update of positive-psychology foundations through comparison of differently coded but related perspectives, drawing on Gregory Bateson's Mind and Nature and a binocular-vision method for combining information from multiple sources.",
+      "id": "semiotic-mobscene-sign-expansion-thesis",
+      "title": "Sémiotická analýza klipu Marilyna Mansona mOBSCENE",
+      "uri": "https://danielberanek.cz/reference/akademicke-publikace/semioticka-analyza-klipu-marilyna-mansona-mobscene/",
+      "object_type": "university-masters-thesis",
+      "status": "author-maintained-academic-publication-record-and-explicitly-revisited-methodological-antecedent",
+      "description": "A 2005 master's thesis in Media Studies and Journalism at Masaryk University, preserved on the author's academic-publications page with PDF and ODT formats. The professional ethnography explicitly revisits its semiotic deconstruction of the mOBSCENE music video and retrospectively articulates the analysis as an emergent expansion of sign meaning, progressing from isolated signs through denotation, connotation, tropes, ideological structures, hegemony, and finally simulacrum and hyperreality.",
       "components": [
-        "official university thesis record and bibliographic metadata",
-        "abstract describing the binocular-vision method",
-        "references to Gregory Bateson's Mind and Nature",
-        "university-record metadata and supervisor information"
+        "2005 master's thesis in Media Studies and Journalism at Masaryk University",
+        "semiotic deconstruction of the mOBSCENE audiovisual music video",
+        "reconstruction of semiosis from constituent signs",
+        "emergent expansion of sign meaning across denotative and connotative layers",
+        "progression into ideological and hegemonic meaning structures",
+        "interpretation through simulacrum and hyperreality"
       ],
-      "role_in_genealogy": "An earlier academic work in the author's psychology background. Its explicit method of combining related but differently coded perspectives may contextualize later interdisciplinary practice. No direct derivation relation to DIO/ODI is asserted.",
-      "publication_date": "2009",
-      "publication_date_basis": "Masaryk University record and citation export identify the thesis as a 2009 work.",
+      "role_in_genealogy": "A direct semiotic and methodological antecedent in the DIO/ODI lineage. The professional ethnography explicitly revisits this work, formulates its procedure as emergent sign-meaning expansion, and connects the reconstruction of meaning to present-day reverse engineering of communication, brand meaning, and E-E-A-T.",
+      "publication_date": "2005",
+      "publication_date_basis": "The author-maintained academic-publications page cites the work as a 2005 master's thesis at Masaryk University, Faculty of Social Studies.",
       "date_evidence": [
         {
-          "title": "Masaryk University thesis record — Pozitivní psychologie a vybrané duchovní směry: komparativní analýza",
-          "url": "https://is.muni.cz/th/wknmn/",
-          "role": "official-university-record-and-thesis-citation"
+          "title": "Author-maintained academic-publications page — bibliographic citation to the 2005 master's thesis",
+          "url": "https://danielberanek.cz/reference/akademicke-publikace/semioticka-analyza-klipu-marilyna-mansona-mobscene/",
+          "role": "author-maintained-bibliographic-record"
         }
       ],
       "conceptual_themes": [
         {
-          "theme": "positive-psychology",
-          "description": "Critical update of the foundations and possibilities of positive psychology."
+          "theme": "semiotic-analysis-and-semiosis",
+          "description": "Deconstructs an audiovisual text into signs and reconstructs the process through which meaning is produced."
         },
         {
-          "theme": "binocular-vision-method",
-          "description": "Combines information from two or more related but differently coded perspectives to produce a deeper view of a problem."
+          "theme": "emergent-sign-meaning-expansion",
+          "description": "Tracks the expansion of sign meaning from isolated recognition through widening contextual and interpretive layers."
         },
         {
-          "theme": "Bateson-and-systems-thinking",
-          "description": "The method is inspired by Gregory Bateson's Mind and Nature and its idea of necessary unity."
+          "theme": "denotation-connotation-and-tropes",
+          "description": "Follows denotative and connotative interpretation, including metaphorical and metonymic transfers."
+        },
+        {
+          "theme": "ideology-and-hegemony",
+          "description": "Connects the expansion of meaning to ideological meta-structures and social relations of hegemony."
+        },
+        {
+          "theme": "simulacrum-and-hyperreality",
+          "description": "Extends the analysis to an interpretation of the represented world through simulacrum and hyperreality."
         }
       ]
     }
@@ -224,7 +235,7 @@
       "research_object_ids": [
         "professional-ethnography"
       ],
-      "summary": "The professional ethnography became the subject of iterative secondary exploration through AI-assisted machine readings and model-generated interpretations. These readings were examined in relation to the source text and its context. Their cross-domain associations, interpretive discrepancies, implicit readings, and algorithmic noise became material for the author's inquiry. The exploratory process contributed to the discovery and articulation of DIO, followed by the differentiation and articulation of ODI as its broader theoretical layer.",
+      "summary": "The professional ethnography became the subject of iterative secondary exploration through AI-assisted machine readings and model-generated interpretations. These readings were examined in relation to the source text and its context. Their cross-domain associations, interpretive discrepancies, implicit readings, and algorithmic noise became material for the author's inquiry. The exploratory process contributed to the discovery and articulation of DIO, followed by the differentiation and articulation of ODI as its broader theoretical layer. The professional-ethnography object itself explicitly revisits the author's 2011 rearticulation of ideology and hegemony and the 2005 semiotic analysis of mOBSCENE; these are recorded as direct theoretical and methodological antecedents integrated into the source object.",
       "process_characteristics": [
         "iterative rather than strictly linear inquiry",
         "secondary exploration of an existing multimodal source object",
@@ -270,7 +281,9 @@
         }
       ],
       "preceding_context_object_ids": [
-        "ai-startup-marketing-article"
+        "ai-startup-marketing-article",
+        "rearticulation-ideology-hegemony-thesis",
+        "semiotic-mobscene-sign-expansion-thesis"
       ]
     },
     {
@@ -484,7 +497,7 @@
       "url": "https://www.slideshare.net/danielberanek",
       "profile_display_name": "SEO specialista a copywriter Daniel Beránek",
       "collection_role": "exploratory-research-archive-and-publication-distribution-surface",
-      "content_scope": "A mixed collection containing AI-assisted readings, model-generated conceptual explorations, comparative AI materials, research presentations, publication presentation layers, and earlier academic, professional, and technical materials. On 24 November 2026 the author supplied a profile export containing 49 unique SlideShare URLs. Each locator has been mapped to an existing artefact, a new artefact, a nested language/version manifestation, an unresolved discovery lead, or an out-of-scope collection item. The 49-item profile total is not treated as a count of DIO/ODI research outputs.",
+      "content_scope": "A mixed collection containing AI-assisted readings, model-generated conceptual explorations, comparative AI materials, research presentations, and publication-distribution items. On 24 November 2026 the author supplied a profile export containing 49 unique SlideShare URLs. Each locator has been reconciled as a registered output, a nested publication representation, a distribution-only lead, an unresolved lead, or an out-of-scope collection item. Only works with a direct research or evidential role in the DIO/ODI lineage are included as research artefacts; unrelated technical material, other academic work, and customer-facing presentations are not promoted into that lineage. The 49-item profile total is not treated as a count of DIO/ODI research outputs.",
       "attribution": {
         "status": "author-confirmed",
         "person_uri": "https://danielberanek.cz/#person",
@@ -1559,19 +1572,22 @@
       "url": "https://eeat-analysis-b4jrwdnu.manus.space/",
       "platform": "Manus",
       "artefact_type": "deployed-meta-analysis-web-output",
-      "content_origin": "AI-platform output or AI-assisted publication; exact contribution and content origin not yet reviewed from the artifact itself.",
-      "research_object_ids": [],
+      "content_origin": "Manus-hosted E-E-A-T meta-analysis web output; its production sequence and relationship to the separately listed SlideShare PDF remain unresolved.",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ],
       "process_ids": [
-        "cross-platform-ai-exploration"
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
       ],
       "related_work_ids": [],
-      "research_role": "A candidate member of the author's E-E-A-T assessment and meta-analysis work. Its exact content, relationship to other reports, and whether it is an alternative manifestation of an existing output remain to be checked.",
-      "summary": "A Manus-hosted meta-analysis of E-E-A-T analyses, supplied by the author as the start of a distinct E-E-A-T meta-analysis set.",
+      "research_role": "A separately registered Manus-hosted E-E-A-T meta-analysis web output. The four-slide Manus-labelled PDF on SlideShare is retained as a separate output record; whether it supplied the website's source content, was exported from the website, or was prepared independently has not been established.",
+      "summary": "A Manus-hosted web meta-analysis of E-E-A-T assessments. The page is retained as its own output record, separately from the four-slide Manus-labelled SlideShare PDF. Their relationship awaits a direct comparison of the page's structure, wording, source set, and conclusions.",
       "provenance": {
-        "basis": "Original URL and archive locators supplied directly by the author. Wayback timestamps are recorded in UTC; Megalodon timestamps are normalized from Asia/Tokyo (JST) to UTC. Captured page content has not yet been reviewed.",
+        "basis": "Original Manus URL and archive locators supplied by the author. The live page and supplied archive captures have not yet yielded readable page content for direct comparison with the SlideShare PDF. Wayback timestamps are UTC; the Megalodon timestamp is normalized from Asia/Tokyo (JST).",
         "source_description_url": "https://eeat-analysis-b4jrwdnu.manus.space/"
       },
-      "review_status": "author-supplied-locators-content-unreviewed",
+      "review_status": "author-supplied-live-and-archive-locators;direct-page-content-unavailable;pdf-relationship-unresolved",
       "archive_captures": [
         {
           "url": "https://web.archive.org/web/20260313205916/https://eeat-analysis-b4jrwdnu.manus.space/",
@@ -1603,19 +1619,7 @@
           "note": "Archive identifier supplied by the author; capture timestamp and captured content not yet inspected."
         }
       ],
-      "representations": [
-        {
-          "id": "slideshare-manus-eeat-meta-analysis-pdf",
-          "platform": "SlideShare",
-          "representation_type": "PDF-presentation-manifestation-candidate",
-          "url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578",
-          "title": "Meta-analysis of E-E-A-T analyses of SEO specialist and copywriter Daniel Beránek (Manus).pdf",
-          "relation": "possible-alternate-publication-manifestation-of-same-underlying-output",
-          "relationship_status": "candidate-same-output; direct content comparison between Manus-hosted web page and SlideShare PDF pending",
-          "evidence_basis": "The SlideShare page is a four-slide Manus-labelled PDF titled as an E-E-A-T meta-analysis of the same subject; the existing Manus web artefact is also described as an E-E-A-T meta-analysis. The Manus web page content is not currently accessible for direct comparison, so same-output identity is not asserted.",
-          "archive_captures": []
-        }
-      ]
+      "curation_note": "Keep this web output separate from the four-slide SlideShare PDF. Resolve the relationship only after a direct comparison of section structure, distinctive formulations, source-report list, and conclusions."
     },
     {
       "id": "perplexity-page-1daf0768",
@@ -2807,41 +2811,38 @@
       ]
     },
     {
-      "id": "slideshare-rearticulation-thesis-distribution",
-      "title": "Reartikulace konceptů ideologie a hegemonie v rámci mediálních studií — SlideShare thesis copy",
-      "url": "https://www.slideshare.net/slideshow/reartikulace-koncept-ideologie-a-hegemonie/75199856",
+      "id": "slideshare-manus-eeat-meta-analysis-pdf",
+      "title": "Meta-analysis of E-E-A-T analyses of SEO specialista a copywriter Daniel Beránek (Manus).pdf",
+      "url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578",
       "platform": "SlideShare",
       "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "academic-thesis-distribution-and-presentation",
-      "content_origin": "author-authored-academic-thesis-republished-as-slide-format",
-      "uploader_attribution": "Daniel Beránek",
-      "source_object_ids": [
-        "rearticulation-ideology-hegemony-thesis"
-      ],
-      "research_object_ids": [],
-      "process_ids": [],
-      "related_work_ids": [],
-      "research_role": "A SlideShare distribution manifestation of the author's 2011 Masaryk University master's thesis on ideology and hegemony. It documents earlier academic context; no direct derivation from DIO/ODI is asserted.",
-      "summary": "An 86-slide SlideShare document whose title and abstract match the existing Masaryk University thesis record. A separate seven-slide SlideShare deck is linked as a condensed presentation of the thesis.",
-      "provenance": {
-        "basis": "SlideShare title, 86-slide count, abstract matching the Masaryk University thesis record, and the existing official university record at https://is.muni.cz/th/ajfb6/.",
-        "source_description_url": "https://www.slideshare.net/slideshow/reartikulace-koncept-ideologie-a-hegemonie/75199856"
+      "artefact_type": "model-generated-eeat-meta-analysis",
+      "content_origin": "Manus-labelled E-E-A-T meta-analysis presented as a four-slide PDF and uploaded to SlideShare by the author; the exact sequence of creation, export, and web publication has not been established.",
+      "model_attribution": {
+        "system": "Manus",
+        "model": "Manus (exact model/version not stated)"
       },
-      "review_status": "public-page-title-abstract-and-slide-count-reviewed; university-record-title-and-abstract-match-observed",
-      "representations": [
-        {
-          "id": "slideshare-rearticulation-thesis-short-presentation",
-          "platform": "SlideShare",
-          "representation_type": "condensed-thesis-presentation",
-          "url": "https://www.slideshare.net/slideshow/dp-reartikulace-ideologie/13978383",
-          "title": "DP — Reartikulace ideologie",
-          "relation": "condensed-presentation-of-same-underlying-thesis",
-          "relationship_status": "same-author-uploader-and-thesis-topic; seven-slide presentation treated as a derivative presentation manifestation of the thesis",
-          "evidence_basis": "The 86-slide SlideShare document matches the official Masaryk University thesis title and abstract. The seven-slide page is titled 'DP — Reartikulace ideologie', carries the same uploader, and links to the author's web page for the thesis. The two SlideShare pages are different formats/representations of the same academic work, not two theses.",
-          "archive_captures": []
-        }
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "eeat-digital-identity-assessment-subject"
       ],
-      "curation_note": "Historical academic context only. The thesis is not presented as a direct source or formal derivation of DIO/ODI."
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "research_role": "A distinct four-slide Manus-labelled second-order E-E-A-T synthesis. Its five main sections cover introduction, methodology, E-E-A-T factor analysis, conclusion, and references. It names ten first-order AI reports, including Gemini 3.1 Pro Preview and Seznam Asistent. Its relationship to the separately registered Manus-hosted web output is unresolved.",
+      "summary": "A four-slide E-E-A-T meta-analysis of the author's professional identity. The extracted document text contains five main sections and identifies ten source reports: Claude, Copilot, Mistral, Manus, Kimi, Gemini Research, ChatGPT, Gemini 3.1 Pro Preview, Grok 4.2 Beta, and Seznam Asistent. It also cites academic records, business registries, and professional profiles.",
+      "provenance": {
+        "basis": "SlideShare public-page metadata and extracted PDF text. The page identifies the title, author/uploader, four-page format, and E-E-A-T scope. The extracted content exposes the five-part structure and the ten-report source list, including Gemini 3.1 Pro Preview.",
+        "source_description_url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578"
+      },
+      "review_status": "slide-content-reviewed;cross-format-relationship-to-manus-web-output-pending",
+      "curation_note": "Retain as a separate underlying output from the Manus-hosted web page until a direct comparison establishes whether this PDF supplied the website's content, was exported from it, or represents a separate analysis."
     }
   ],
   "inventory_leads": [
@@ -2870,21 +2871,13 @@
     },
     {
       "title": "Gemini 2.5 Pro Preview E-E-A-T report cited by the Claude meta-analysis",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "model-generated-eeat-analysis",
-      "discovery_status": "referenced-in-Claude-meta-analysis; direct-presentation-locator-unidentified",
-      "summary": "The Claude-attributed E-E-A-T meta-analysis and its matching Macaly web manifestation list Gemini 2.5 Pro Preview among ten first-order SlideShare analyses. The Kimi and ChatGPT meta-analyses instead list Gemini 3.1 Pro Preview, for which a separate SlideShare presentation is directly identified. Keep the Gemini 2.5 reference as a separate unresolved source lead; do not merge it with the Gemini 3.1 presentation without content and version evidence.",
-      "platform": "SlideShare"
-    },
-    {
-      "title": "OpenLiteSpeed and LiteSpeed Enterprise technical study — presentation and article relationship",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "technical-study-presentation-and-article-reconciliation",
-      "discovery_status": "slide-page-reviewed; article-presentation-identity-and-temporal-direction-unresolved",
-      "summary": "The eight-slide SlideShare study page and the author's technical article on OpenLiteSpeed vs LiteSpeed Enterprise are both identified. The relationship and direction of derivation remain unresolved; do not infer chronology from the platform URL or article byline.",
-      "url": "https://www.slideshare.net/slideshow/studie-webserveru-openlitespeed-a-litespeed-enterprise/277555372",
-      "platform": "SlideShare",
-      "related_uri": "https://danielberanek.cz/studie-webserveru-openlitespeed-vs-litespeed-enterprise/"
+      "artefact_type": "model-generated-eeat-analysis-pdf",
+      "discovery_status": "author-confirmed-google-ai-studio-origin; PDF-export-only; content-review-pending",
+      "summary": "The Claude-attributed E-E-A-T meta-analysis names Gemini 2.5 Pro Preview among its ten first-order sources. The author confirms that this analysis was produced in Google AI Studio and exists here only as a PDF export, without a separate public web output or SlideShare presentation. Keep it distinct from the Gemini 3.1 Pro Preview report. The PDF content and source-file locator remain to be reviewed.",
+      "platform": "Google AI Studio (PDF export)",
+      "candidate_related_object_ids": [
+        "eeat-digital-identity-assessment-subject"
+      ]
     },
     {
       "title": "Model mocenské situace — SlideShare profile item",
@@ -2896,29 +2889,17 @@
       "url": "https://www.slideshare.net/slideshow/model-mocensk-situace/257179651"
     },
     {
-      "title": "Evaluace pozitivní psychologie perspektivou Castanedova učení — SlideShare profile item",
+      "title": "SlideShare distribution copies of Reartikulace konceptů ideologie a hegemonie",
       "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "historical-academic-context",
-      "discovery_status": "direct-page-reviewed; relationship-to-existing-MU-thesis-not-verified",
-      "summary": "An eleven-slide evaluation of positive psychology through Castaneda's teaching. It is thematically related to the author's registered 2009 positive-psychology thesis, but exact identity or derivation has not been established.",
-      "platform": "SlideShare",
-      "related_uri": "https://is.muni.cz/th/wknmn/",
-      "candidate_related_object_ids": [
-        "positive-psychology-and-spiritual-streams-thesis"
-      ],
-      "url": "https://www.slideshare.net/slideshow/evaluce-pp/13978386"
-    },
-    {
-      "title": "Reartikulace konceptů ideologie a hegemonie — SlideShare profile item",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "author-authored-academic-presentation",
-      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-unresolved; likely-related-university-thesis-identified",
-      "summary": "The SlideShare profile lists a seven-slide item under the shortened but matching title and displays the author/uploader attribution. The official Masaryk University record confirms the 2011 master's thesis with the full title. The direct SlideShare item URL and presentation-to-thesis content relationship have not yet been verified.",
+      "artefact_type": "academic-thesis-distribution-locators",
+      "discovery_status": "direct-page-and-thesis-relationship-reviewed; distribution-only; not-counted-as-separate-research-output",
+      "summary": "The 86-slide SlideShare document matches the registered 2011 thesis. A seven-slide condensed presentation is available at https://www.slideshare.net/slideshow/dp-reartikulace-ideologie/13978383. Both URLs are retained as distribution copies of the single research object; neither is counted as a separate DIO/ODI analysis.",
       "platform": "SlideShare",
       "related_uri": "https://is.muni.cz/th/ajfb6/",
       "candidate_related_object_ids": [
         "rearticulation-ideology-hegemony-thesis"
-      ]
+      ],
+      "url": "https://www.slideshare.net/slideshow/reartikulace-koncept-ideologie-a-hegemonie/75199856"
     },
     {
       "title": "Přesahy 005 — Internetová propagace festivalu — SlideShare profile item",
@@ -2927,18 +2908,6 @@
       "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-project-attribution-unresolved",
       "summary": "The current author profile lists a four-slide presentation titled Propagace presahy005. The thumbnail identifies it as Internetová propagace festivalu and displays EU regional-development funding marks. It is retained as a project-communication lead; its inclusion in the SlideShare collection does not by itself make it a DIO/ODI research output.",
       "platform": "SlideShare"
-    },
-    {
-      "title": "Aktualizace východisek a možností pozitivní psychologie — possible SlideShare thesis copy",
-      "url": "https://www.slideshare.net/slideshow/aktualizace-vchodisek-a-monost-pozitivn-psychologie/75199762",
-      "platform": "SlideShare",
-      "source_collection_id": "slideshare-danielberanek",
-      "artefact_type": "historical-academic-thesis-candidate",
-      "discovery_status": "title-page-and-abstract-reviewed; exact-match-to-MU-record-pending",
-      "summary": "A 126-slide SlideShare document whose title page identifies a Masaryk University psychology thesis and whose subject concerns positive psychology and Castaneda's teachings. The title differs from the existing MUNI thesis record; retain as a candidate representation until author/name, title, and thesis metadata are fully reconciled.",
-      "candidate_related_object_ids": [
-        "positive-psychology-and-spiritual-streams-thesis"
-      ]
     },
     {
       "title": "ChatGPT Thinking — professional ethnography analysis",
@@ -3205,6 +3174,24 @@
       "relation": "is-revision-of",
       "object_id": "slideshare-eeat-semiotic-analysis-claude-v1",
       "evidence_url": "https://www.slideshare.net/slideshow/e-e-a-t-analyza-semiotika-poststrukturalismus-kritika-ideologie-a-diskurzivni-analyza-claude-v2/287791595"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "explicitly-rearticulates-the-theoretical-framework-of",
+      "object_id": "rearticulation-ideology-hegemony-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "retrospectively-reconstructs-and-reapplies-the-semiotic-method-of",
+      "object_id": "semiotic-mobscene-sign-expansion-thesis",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+    },
+    {
+      "subject_id": "slideshare-manus-eeat-meta-analysis-pdf",
+      "relation": "possible-source-document-for (author-suggested; not confirmed)",
+      "object_id": "manus-eeat-meta-analysis-b4jrwdnu",
+      "evidence_url": "https://www.slideshare.net/slideshow/meta-analysis-of-e-e-a-t-analyses-of-seo-specialista-a-copywriter-daniel-beranek-manus-pdf/286569578"
     }
   ],
   "research_clusters": [
@@ -3376,11 +3363,6 @@
           "status": "page-reviewed-distinct-output"
         },
         {
-          "artefact_id": "slideshare-rearticulation-thesis-distribution",
-          "relationship": "distinct-output-or-historical-context-in-broad-cross-platform-collection",
-          "status": "page-reviewed-distinct-output"
-        },
-        {
           "artefact_id": "slideshare-qwen-beyond-eeat-professional-ethnography",
           "relationship": "model-specific-analysis-in-cross-platform-exploration",
           "status": "page-reviewed-distinct-output"
@@ -3409,6 +3391,11 @@
           "artefact_id": "slideshare-eeat-meta-analysis-mistral",
           "relationship": "model-specific-analysis-in-cross-platform-exploration",
           "status": "page-reviewed-distinct-output"
+        },
+        {
+          "artefact_id": "slideshare-manus-eeat-meta-analysis-pdf",
+          "relationship": "separate-Manus-labelled-meta-analysis-output;relationship-to-Manus-web-output-unresolved",
+          "status": "slide-content-reviewed;cross-format-relationship-pending"
         }
       ]
     },
@@ -3593,6 +3580,11 @@
           "artefact_id": "slideshare-eeat-meta-analysis-mistral",
           "relationship": "distinct-E-E-A-T-or-related-analysis-output",
           "status": "page-reviewed-distinct-output"
+        },
+        {
+          "artefact_id": "slideshare-manus-eeat-meta-analysis-pdf",
+          "relationship": "separate-Manus-labelled-meta-analysis-output;relationship-to-Manus-web-output-unresolved",
+          "status": "slide-content-reviewed;cross-format-relationship-pending"
         }
       ]
     }
