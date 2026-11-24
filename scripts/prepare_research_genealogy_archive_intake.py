@@ -505,11 +505,12 @@ def markdown_report(report: dict[str, Any]) -> str:
     lines.extend(["", "## Indexed-web discovery provider", ""])
     for provider in report.get("discovery_providers", []):
         if provider.get("enabled"):
+            quota_note = " (blocked by plan usage limit)" if provider.get("blocked_by_plan_limit") else ""
             lines.append(
                 f"- {provider.get('provider')}: {provider.get('requests_succeeded', 0)} / "
                 f"{provider.get('queries_attempted', 0)} searches succeeded; "
                 f"{provider.get('slideshare_candidates', 0)} unique SlideShare candidates "
-                f"from {provider.get('raw_results', 0)} raw results."
+                f"from {provider.get('raw_results', 0)} raw results{quota_note}."
             )
             lines.extend(f"  - {error}" for error in provider.get("errors", []))
         else:
