@@ -478,7 +478,6 @@ def markdown_report(report: dict[str, Any]) -> str:
         "",
         "Tavily results are candidate locators. They do not establish uploader attribution, authorship, exact output identity, or publication date; any `published_date` returned by the search index remains a candidate field until the original page is reviewed.",
         "CDX records are archive-index observations, not upload or creation dates. A timestamp identifies an archived capture. Multiple host aliases, redirects, or duplicate capture records must be reconciled before being attached to one research artefact.",
-        "Tavily indexed-web search contributes direct SlideShare URL candidates that may not appear in the current profile DOM. Search results are discovery leads only: uploader attribution, content identity, and relationship to existing outputs require page-level review.",
         "",
         "## Presentation URL inventory",
         "",
@@ -489,12 +488,12 @@ def markdown_report(report: dict[str, Any]) -> str:
         captures = item["captures"]
         dates = [c["captured_at"] for c in captures if c.get("captured_at")]
         ids = ", ".join(item["registry_artefact_ids"]) or "Unmatched candidate"
+        sources = ", ".join(sorted({
+            source.get("kind", "unknown") for source in item.get("discovery_sources", [])
+        })) or "unknown"
         lines.append(
-            sources = ", ".join(sorted({source.get("kind", "unknown") for source in item.get("discovery_sources", [])})) or "unknown"
-            lines.append(
-                f"| {item['url']} | {sources} | {ids} | {len(captures)} | "
-                f"{min(dates) if dates else '—'} | {max(dates) if dates else '—'} |"
-            )
+            f"| {item['url']} | {sources} | {ids} | {len(captures)} | "
+            f"{min(dates) if dates else '—'} | {max(dates) if dates else '—'} |"
         )
     lines.extend(["", "## Indexed-web discovery provider", ""])
     for provider in report.get("discovery_providers", []):
