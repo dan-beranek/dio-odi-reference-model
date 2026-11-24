@@ -238,7 +238,7 @@
       "research_object_ids": [
         "eeat-digital-identity-assessment-subject"
       ],
-      "summary": "A multi-model assessment sequence examined the author's professional digital identity and SEO pillar page through distinct E-E-A-T reports. The currently verified SlideShare series contains nine directly reviewed model-specific first-order assessments, alongside independent secondary meta-analyses published under Gemini 3 Deep Research, Kimi, Claude, and ChatGPT. The meta-analysis source sets do not fully agree on the Gemini model version: the Claude synthesis names Gemini 2.5 Pro Preview, while Kimi and ChatGPT name Gemini 3.1 Pro Preview. The 2.5 reference remains a separate inventory lead. Some first-order reports may also have shared-chat, web, or archive manifestations already registered elsewhere; those cross-platform identities remain separate until their content is compared.",
+      "summary": "A multi-model assessment sequence examined the author's professional digital identity and SEO pillar page through distinct E-E-A-T reports. The currently verified SlideShare series contains nine directly reviewed model-specific first-order assessments, alongside independent secondary meta-analyses published under Gemini 3 Deep Research, Kimi, Claude, and ChatGPT. The meta-analysis source sets do not fully agree on the Gemini model version: the Claude synthesis names Gemini 2.5 Pro Preview, while Kimi and ChatGPT name Gemini 3.1 Pro Preview. The 2.5 reference remains a separate inventory lead. Some first-order reports may also have shared-chat, web, or archive manifestations already registered elsewhere; those cross-platform identities remain separate until their content is compared. A separate 12-slide Gemini Deep Research report titled Spektrografie digitální identity Daniela Beránka applies a transdisciplinary E-E-A-T and semantic analysis to the broader professional-ethnography object; it is retained as an independent analysis, not folded into the first-order SEO-pillar report series or the four meta-analyses.",
       "process_characteristics": [
         "distinct model-specific first-order E-E-A-T assessments",
         "secondary synthesis of a common multi-model report set",
@@ -2194,6 +2194,41 @@
         "system": "ChatGPT / OpenAI",
         "model": "ChatGPT (exact model/version not stated)"
       }
+    },
+    {
+      "id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
+      "title": "Spektrografie digitální identity Daniela Beránka: transdisciplinární E-E-A-T a sémantická analýza (Gemini Deep Research)",
+      "url": "https://pt.slideshare.net/slideshow/spektrografie-digitalni-identity-daniela-beranka-transdisciplinarni-e-e-a-t-a-semanticka-analyza-gemini-deep-research/287937291",
+      "platform": "SlideShare",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "model-generated-transdisciplinary-eeat-semantic-analysis",
+      "content_origin": "model-generated-analysis-curated-and-published-by-author",
+      "model_attribution": {
+        "system": "Google Gemini",
+        "model": "Gemini Deep Research"
+      },
+      "uploader_attribution": "SEO specialista a copywriter Daniel Beránek",
+      "research_object_ids": [
+        "professional-ethnography",
+        "eeat-digital-identity-assessment-subject"
+      ],
+      "process_ids": [
+        "cross-platform-ai-exploration",
+        "eeat-multimodel-assessment-and-meta-analysis"
+      ],
+      "related_work_ids": [],
+      "research_role": "A distinct Gemini Deep Research analysis of the author's professional digital identity. It combines transdisciplinary E-E-A-T assessment with semantic deconstruction and interpretation of the professional-ethnography source. It is separate from the Gemini Research first-order SEO-pillar assessment and from the Gemini 3 Deep Research meta-analysis of multiple E-E-A-T reports.",
+      "summary": "A 12-slide report examining Daniel Beránek's digital identity through transdisciplinary interpretation, E-E-A-T assessment, semantic deconstruction, retail experience, academic expertise, and technical expertise in AI and marketing. The opening section explicitly discusses the professional trajectory as a non-linear iterative spiral and the role of Czech-language semantics in reconstructing identity.",
+      "provenance": {
+        "basis": "Direct SlideShare page title, public description, displayed model attribution in the title, 12-slide count, and uploader attribution.",
+        "source_description_url": "https://pt.slideshare.net/slideshow/spektrografie-digitalni-identity-daniela-beranka-transdisciplinarni-e-e-a-t-a-semanticka-analyza-gemini-deep-research/287937291"
+      },
+      "review_status": "public-page-title-description-content-uploader-reviewed",
+      "research_cluster_ids": [
+        "cross-platform-ai-exploration-cluster",
+        "eeat-analysis-meta-analysis-cluster"
+      ],
+      "curation_note": "A standalone transdisciplinary E-E-A-T and semantic analysis. Do not merge with the Gemini Research first-order assessment or Gemini 3 Deep Research meta-analysis solely because all three involve Gemini."
     }
   ],
   "inventory_leads": [
@@ -2226,6 +2261,50 @@
       "artefact_type": "model-generated-eeat-analysis",
       "discovery_status": "referenced-in-Claude-meta-analysis; direct-presentation-locator-unidentified",
       "summary": "The Claude-attributed E-E-A-T meta-analysis and its matching Macaly web manifestation list Gemini 2.5 Pro Preview among ten first-order SlideShare analyses. The Kimi and ChatGPT meta-analyses instead list Gemini 3.1 Pro Preview, for which a separate SlideShare presentation is directly identified. Keep the Gemini 2.5 reference as a separate unresolved source lead; do not merge it with the Gemini 3.1 presentation without content and version evidence.",
+      "platform": "SlideShare"
+    },
+    {
+      "title": "OpenLiteSpeed and LiteSpeed Enterprise technical study — presentation and article relationship",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-technical-study-and-presentation-candidate",
+      "discovery_status": "both-public-pages-identified; temporal-and-derivation-direction-unresolved",
+      "summary": "The SlideShare profile lists an eight-slide presentation, and a directly identified SlideShare page is available at the supplied URL. The last slide points to the author's article at danielberanek.cz/studie-webserveru-openlitespeed-vs-litespeed-enterprise/. The SlideShare page displays 5 April 2025, while the article page byline displays 14 October 2025. Their content and temporal relationship should be compared before describing the deck as derived from the article or vice versa.",
+      "url": "https://www.slideshare.net/slideshow/studie-webserveru-openlitespeed-a-litespeed-enterprise/277555372",
+      "platform": "SlideShare",
+      "related_uri": "https://danielberanek.cz/studie-webserveru-openlitespeed-vs-litespeed-enterprise/"
+    },
+    {
+      "title": "Model mocenské situace — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-academic-or-conceptual-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-source-context-unresolved",
+      "summary": "The current author profile lists a five-slide presentation titled Model mocenské situace and attributes it to SEO specialista a copywriter Daniel Beránek. The direct presentation page and its relationship to any academic work or later conceptual development have not yet been established.",
+      "platform": "SlideShare"
+    },
+    {
+      "title": "Evaluace pozitivní psychologie perspektivou Castanedova učení — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-academic-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-source-relation-unresolved",
+      "summary": "The current author profile lists an 11-slide presentation under this title and uploader attribution. A potentially related Masaryk University thesis record titled Pozitivní psychologie a vybrané duchovní směry: komparativní analýza is referenced elsewhere, but an exact relationship has not been confirmed.",
+      "platform": "SlideShare",
+      "related_uri": "https://is.muni.cz/th/wknmn/"
+    },
+    {
+      "title": "Reartikulace konceptů ideologie a hegemonie — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-authored-academic-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-unresolved; likely-related-university-thesis-identified",
+      "summary": "The current author profile lists a seven-slide presentation titled Reartikulace konceptů ideologie a hegemonie and attributes it to SEO specialista a copywriter Daniel Beránek. A Masaryk University thesis record with the corresponding title exists; the direct SlideShare page and exact presentation-to-thesis relation remain to be confirmed.",
+      "platform": "SlideShare",
+      "related_uri": "https://is.muni.cz/th/ajfb6/"
+    },
+    {
+      "title": "Přesahy 005 — Internetová propagace festivalu — SlideShare profile item",
+      "source_collection_id": "slideshare-danielberanek",
+      "artefact_type": "author-associated-project-presentation",
+      "discovery_status": "profile-listing-reviewed; direct-presentation-URL-and-project-attribution-unresolved",
+      "summary": "The current author profile lists a four-slide presentation titled Propagace presahy005. The thumbnail identifies it as Internetová propagace festivalu and displays EU regional-development funding marks. It is retained as a project-communication lead; its inclusion in the SlideShare collection does not by itself make it a DIO/ODI research output.",
       "platform": "SlideShare"
     }
   ],
@@ -2544,6 +2623,11 @@
           "artefact_id": "lovable-eeat-meta-analysis",
           "relationship": "member-of-broad-exploratory-set",
           "status": "author-supplied-content-review-pending"
+        },
+        {
+          "artefact_id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
+          "relationship": "distinct-model-generated-analysis-in-the-broad-cross-platform-exploration",
+          "status": "page-content-uploader-reviewed; distinct-output-identified"
         }
       ]
     },
@@ -2683,6 +2767,11 @@
           "artefact_id": "slideshare-eeat-meta-analysis-chatgpt",
           "relationship": "model-specific-report-or-independent-meta-analysis; thematic-membership-does-not-imply-output-equivalence",
           "status": "page-reviewed-cross-platform-identity-pending"
+        },
+        {
+          "artefact_id": "slideshare-gemini-deep-research-spectrography-eeat-semantic-analysis",
+          "relationship": "distinct-transdisciplinary-eeat-and-semantic-analysis-not-a-first-order-seo-pillar-report-or-meta-analysis",
+          "status": "page-content-uploader-reviewed; distinct-output-identified"
         }
       ]
     }
