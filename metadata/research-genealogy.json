@@ -47,11 +47,11 @@
         "practical observations on Czech-language processing, text generation, research, context retention, and everyday professional use",
         "source material for an eight-slide SlideShare presentation"
       ],
-      "role_in_genealogy": "A pre-DIO professional and conceptual precursor. Published on 23 September 2025, it already articulates a reciprocal relationship between professional capabilities (SEO, copywriting, journalism/PR, psychology, and commercial experience) and AI products and systems. It contextualizes the later AI-assisted exploratory environment, while the multimodal professional ethnography remains the primary research object from which DIO was explicitly derived.",
-      "publication_date": "2025-09-23",
-      "publication_date_basis": "Author-site AI category archive listing preserving the original post date.",
+      "role_in_genealogy": "A pre-DIO professional and conceptual precursor. The article is preserved in an Internet Archive capture from 12 March 2025, with a second archived copy providing corroboration. Its exact original publication date is not established. It already articulates a reciprocal relationship between professional capabilities (SEO, copywriting, journalism/PR, psychology, and commercial experience) and AI products and systems. It contextualizes the later AI-assisted exploratory environment, while the multimodal professional ethnography remains the primary research object from which DIO was explicitly derived.",
+      "publication_date": null,
+      "publication_date_basis": "Exact original publication date is not established. The earliest supplied archive capture proves that the article was online no later than 12 March 2025.",
       "last_updated_date": "2026-10-21",
-      "last_updated_date_basis": "Current article page byline; author confirms this is the date of the latest update, not the original publication.",
+      "last_updated_date_basis": "Current article page byline; the author confirms this is the date of the latest update, not the original publication date.",
       "conceptual_themes": [
         {
           "theme": "professional-expertise-for-AI",
@@ -68,14 +68,34 @@
       ],
       "date_evidence": [
         {
-          "title": "Author-site AI category archive listing (original post date)",
-          "url": "https://danielberanek.cz/oblast/ai/",
-          "role": "original-publication-date-evidence"
+          "title": "Internet Archive snapshot captured 12 March 2025 at 18:37:17 UTC",
+          "url": "https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
+          "role": "earliest-archived-capture"
         },
         {
-          "title": "Current article page (later last-update date)",
+          "title": "Archive.today corroborating copy",
+          "url": "https://archive.is/Bq8tr",
+          "role": "corroborating-archive-copy"
+        },
+        {
+          "title": "Current article page showing 21 October 2026",
           "url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
           "role": "last-updated-page-byline"
+        }
+      ],
+      "first_known_online_by": "2025-03-12",
+      "first_known_online_basis": "Earliest supplied Internet Archive snapshot, captured 12 March 2025 at 18:37:17 UTC; a second archived copy at Archive.today corroborates the archived source.",
+      "earliest_archived_capture": {
+        "captured_at": "2025-03-12T18:37:17Z",
+        "archive": "Internet Archive Wayback Machine",
+        "url": "https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/"
+      },
+      "corroborating_archives": [
+        {
+          "archive": "Archive.today / Archive.is",
+          "url": "https://archive.is/Bq8tr",
+          "captured_at": null,
+          "role": "corroborating-archived-copy"
         }
       ]
     }
@@ -409,39 +429,62 @@
       ],
       "process_ids": [],
       "related_work_ids": [],
-      "research_role": "An eight-slide presentation adapted from the author's 23 September 2025 article on marketing for AI startups and SaaS. It condenses the article's reciprocal treatment of how SEO, copywriting, journalism/PR, psychology, and commercial experience can contribute to AI products, and how AI systems can support or constrain professional information work. It is a pre-DIO contextual artefact documenting an existing line of inquiry into human expertise and AI, rather than a direct milestone in the later DIO/ODI emergence.",
-      "summary": "The SlideShare page explicitly identifies the presentation as based on the author's article. The source text, originally published on 23 September 2025 and updated later, discusses both the contribution of professional communication and information skills to AI products and the practical strengths and limitations of individual AI systems.",
+      "research_role": "An eight-slide presentation adapted from the author's AI-focused professional article, which is confirmed to have existed by 12 March 2025 and therefore predates the May 2026 DIO articulation. The source article already discusses how SEO, copywriting, journalism/PR, psychology, and commercial experience can contribute to AI products, as well as how AI systems can support or constrain professional information work. The SlideShare upload date is not established, so the presentation itself is not assigned a pre-DIO creation date.",
+      "summary": "The SlideShare page explicitly identifies the presentation as based on the author's article. The earliest supplied Internet Archive snapshot of the source article dates to 12 March 2025, and a second Archive.today copy corroborates it. The current article page shows 21 October 2026 as its latest-update date. The article's content discusses both the contribution of professional communication and information skills to AI products and the practical strengths and limitations of individual AI systems.",
       "source_material": {
         "title": "Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence",
         "url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
-        "publication_date": "2025-09-23",
-        "publication_date_basis": "Author-site AI category archive listing preserving the original article byline date.",
+        "publication_date": null,
+        "publication_date_basis": "Exact original publication date is not established. The earliest supplied archive capture proves that the source article was online no later than 12 March 2025.",
         "last_updated_date": "2026-10-21",
-        "last_updated_date_basis": "Current article page byline; author confirms this is the latest-update date.",
+        "last_updated_date_basis": "Current article page byline; the author confirms this is the latest-update date.",
         "date_evidence": [
           {
-            "title": "Author-site AI category archive listing (original post date)",
-            "url": "https://danielberanek.cz/oblast/ai/",
-            "role": "original-publication-date-evidence"
+            "title": "Internet Archive snapshot captured 12 March 2025 at 18:37:17 UTC",
+            "url": "https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
+            "role": "earliest-archived-capture"
           },
           {
-            "title": "Current article page (later last-update date)",
+            "title": "Archive.today corroborating copy",
+            "url": "https://archive.is/Bq8tr",
+            "role": "corroborating-archive-copy"
+          },
+          {
+            "title": "Current article page showing 21 October 2026",
             "url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
             "role": "last-updated-page-byline"
+          }
+        ],
+        "first_known_online_by": "2025-03-12",
+        "first_known_online_basis": "Internet Archive capture from 12 March 2025 at 18:37:17 UTC, corroborated by a second Archive.today copy.",
+        "earliest_archived_capture": {
+          "captured_at": "2025-03-12T18:37:17Z",
+          "archive": "Internet Archive Wayback Machine",
+          "url": "https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/"
+        },
+        "corroborating_archives": [
+          {
+            "archive": "Archive.today / Archive.is",
+            "url": "https://archive.is/Bq8tr",
+            "captured_at": null,
+            "role": "corroborating-archived-copy"
           }
         ]
       },
       "temporal_metadata": {
-        "source_article_publication_date": "2025-09-23",
-        "source_article_publication_date_basis": "Author-site AI category archive listing preserving the original post date.",
+        "source_article_publication_date": null,
+        "source_article_publication_date_basis": "Exact publication date not established; earliest supplied archive capture proves the article was online by 12 March 2025.",
+        "source_article_first_known_online_by": "2025-03-12",
+        "source_article_earliest_archived_capture_at": "2025-03-12T18:37:17Z",
         "source_article_last_updated_date": "2026-10-21",
         "source_article_last_updated_date_basis": "Current source page byline, confirmed by the author as the latest-update date.",
+        "corroborating_archive_url": "https://archive.is/Bq8tr",
         "slideshare_upload_date": null,
         "slideshare_last_modified": null,
-        "timestamp_note": "The source article was originally published on 23 September 2025 and the current article page reflects a later update dated 21 October 2026. The public SlideShare page displays uploader attribution, title, format, slide count, and description, but no explicit upload or last-modified date. No SlideShare date is inferred from the numeric item identifier."
+        "timestamp_note": "The exact original publication date is not established. The earliest supplied Internet Archive snapshot is 12 March 2025 at 18:37:17 UTC, with a second Archive.today copy as corroboration. The current article page displays 21 October 2026 as its latest-update date. The public SlideShare page displays uploader attribution, title, format, slide count, and description, but no explicit upload or last-modified date. No date is inferred from the numeric SlideShare item identifier."
       },
       "provenance": {
-        "basis": "The SlideShare page description explicitly identifies the source article URL; the SlideShare page supplies the title, uploader attribution, file format, and eight-slide count. The source article byline displays 21 October 2026.",
+        "basis": "The SlideShare page description explicitly identifies the source article URL; the SlideShare page supplies the title, uploader attribution, file format, and eight-slide count. The source article is preserved in Internet Archive and Archive.today snapshots; its current page displays 21 October 2026 as the latest-update date.",
         "source_description_url": "https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914"
       },
       "review_status": "source-article-and-slide-page-reviewed"
