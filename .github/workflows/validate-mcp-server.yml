@@ -1,0 +1,40 @@
+name: MCP server validation
+
+on:
+  push:
+    paths:
+      - "mcp-server/**"
+      - ".github/workflows/validate-mcp-server.yml"
+  pull_request:
+    paths:
+      - "mcp-server/**"
+      - ".github/workflows/validate-mcp-server.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mcp-server
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Live source, unit and protocol integration tests
+        env:
+          DIO_ODI_LIVE_SOURCE_CHECK: "1"
+        run: npm test
+      - name: Build Node entry points
+        run: npm run build
+      - name: Validate Cloudflare Worker bundle (dry run)
+        run: npx wrangler deploy --dry-run --outdir .wrangler/deploy-dry-run

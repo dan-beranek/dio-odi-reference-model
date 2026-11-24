@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dio-odi-reference-model-mcp",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-11-06",
+  "vars": {
+    "DIO_ODI_SOURCE_REF": "264bb30b66be051998b4eb522ae1af8d376e15d7",
+    "DIO_ODI_EXPECTED_VERSION": "0.7.0",
+    "MCP_ALLOWED_HOSTS": "SET-THIS-TO-YOUR-WORKER-HOSTNAME"
+  }
+}
