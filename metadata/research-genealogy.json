@@ -36,16 +36,36 @@
       "uri": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
       "object_type": "author-authored-web-article",
       "status": "published-web-article",
-      "displayed_date": "2026-10-21",
-      "date_basis": "date-displayed-in-source-page-byline",
-      "description": "An author-written professional article about marketing, copywriting, and SEO for AI startups and SaaS products. Its section 'Vztah k jednotlivým AI: zhola subjektivně a děsně útržkovitě' compares major AI systems through practical use, strengths, limitations, and workarounds.",
+      "description": "An author-written professional article exploring the reciprocal relationship between professional communication expertise and AI products. It explains how SEO, copywriting, journalism/PR, psychology, and cross-domain commercial experience can help AI startups and SaaS developers with brand discoverability, positioning, product communication, audience understanding, and translating technical capabilities into customer-relevant language. It also compares major AI systems through their practical strengths, limitations, and workarounds from the perspective of an information professional.",
       "components": [
         "author-written professional article",
+        "SEO, brand visibility, and discoverability for AI products and services",
+        "copywriting and translation of technical product capabilities into customer-relevant language",
+        "journalism, public relations, and cross-platform brand communication",
+        "psychology, customer perspective, and reduction of domain blindness",
         "comparative discussion of ChatGPT, Copilot, Claude, Mistral AI, DeepSeek, Perplexity, Gemini, and Monica.im",
-        "practical observations on Czech-language processing, text generation, research, and daily professional use",
+        "practical observations on Czech-language processing, text generation, research, context retention, and everyday professional use",
         "source material for an eight-slide SlideShare presentation"
       ],
-      "role_in_genealogy": "A later professional article and source object for a SlideShare presentation. It documents the author's comparative AI practice and forms part of the wider exploratory archive, but postdates the May–June 2026 articulation of DIO and ODI."
+      "role_in_genealogy": "A pre-DIO professional and conceptual precursor. Published on 23 September 2025, it already articulates a reciprocal relationship between professional capabilities (SEO, copywriting, journalism/PR, psychology, and commercial experience) and AI products and systems. It contextualizes the later AI-assisted exploratory environment, while the multimodal professional ethnography remains the primary research object from which DIO was explicitly derived.",
+      "publication_date": "2025-09-23",
+      "publication_date_basis": "Author-site AI category archive listing preserving the original post date.",
+      "last_updated_date": "2026-10-21",
+      "last_updated_date_basis": "Current article page byline; author confirms this is the date of the latest update, not the original publication.",
+      "conceptual_themes": [
+        {
+          "theme": "professional-expertise-for-AI",
+          "description": "How SEO, copywriting, journalism/PR, psychology, and commercial experience can contribute to AI products through discoverability, positioning, product explanation, user-oriented communication, and brand development."
+        },
+        {
+          "theme": "AI-for-professional-practice",
+          "description": "How different AI systems can support research, writing, synthesis, and information work, alongside their observed limitations in context retention, factual sourcing, language quality, consistency, and instruction following."
+        },
+        {
+          "theme": "reciprocal-human-AI-capability",
+          "description": "A practical account of complementary capabilities: human professional judgment and domain-bridging communication applied to AI products, and AI tools used to extend parts of professional information work."
+        }
+      ]
     }
   ],
   "research_processes": [
@@ -105,6 +125,9 @@
           "uri": "https://dan-beranek.github.io/dio-to-dio/",
           "relation": "subsequent-reapplication-of-ai-assisted-reconstruction-inquiry"
         }
+      ],
+      "preceding_context_object_ids": [
+        "ai-startup-marketing-article"
       ]
     }
   ],
@@ -374,20 +397,24 @@
       ],
       "process_ids": [],
       "related_work_ids": [],
-      "research_role": "An eight-slide presentation adapted from the author's article on marketing for AI startups and SaaS. It condenses the article's subjective comparison of major LLM and AI systems, including Czech-language handling, text generation, practical strengths, limitations, and workarounds. It is a later professional AI-practice artefact, not a direct milestone in the May–June 2026 emergence of DIO/ODI.",
-      "summary": "The SlideShare page explicitly identifies the presentation as being based on the author's source article. It covers ChatGPT, Copilot, Claude, Mistral AI, DeepSeek, Perplexity, Gemini, and Monica.im.",
+      "research_role": "An eight-slide presentation adapted from the author's 23 September 2025 article on marketing for AI startups and SaaS. It condenses the article's reciprocal treatment of how SEO, copywriting, journalism/PR, psychology, and commercial experience can contribute to AI products, and how AI systems can support or constrain professional information work. It is a pre-DIO contextual artefact documenting an existing line of inquiry into human expertise and AI, rather than a direct milestone in the later DIO/ODI emergence.",
+      "summary": "The SlideShare page explicitly identifies the presentation as based on the author's article. The source text, originally published on 23 September 2025 and updated later, discusses both the contribution of professional communication and information skills to AI products and the practical strengths and limitations of individual AI systems.",
       "source_material": {
         "title": "Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence",
         "url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/",
-        "displayed_date": "2026-10-21",
-        "date_basis": "date-displayed-in-source-page-byline"
+        "publication_date": "2025-09-23",
+        "publication_date_basis": "Author-site AI category archive listing preserving the original article byline date.",
+        "last_updated_date": "2026-10-21",
+        "last_updated_date_basis": "Current article page byline; author confirms this is the latest-update date."
       },
       "temporal_metadata": {
-        "source_page_displayed_date": "2026-10-21",
-        "source_page_date_basis": "date-displayed-in-source-page-byline",
+        "source_article_publication_date": "2025-09-23",
+        "source_article_publication_date_basis": "Author-site AI category archive listing preserving the original post date.",
+        "source_article_last_updated_date": "2026-10-21",
+        "source_article_last_updated_date_basis": "Current source page byline, confirmed by the author as the latest-update date.",
         "slideshare_upload_date": null,
         "slideshare_last_modified": null,
-        "timestamp_note": "The public SlideShare page displays uploader attribution, title, format, slide count, and description, but no explicit upload or last-modified date. No date is inferred from the numeric item identifier."
+        "timestamp_note": "The source article was originally published on 23 September 2025 and the current article page reflects a later update dated 21 October 2026. The public SlideShare page displays uploader attribution, title, format, slide count, and description, but no explicit upload or last-modified date. No SlideShare date is inferred from the numeric item identifier."
       },
       "provenance": {
         "basis": "The SlideShare page description explicitly identifies the source article URL; the SlideShare page supplies the title, uploader attribution, file format, and eight-slide count. The source article byline displays 21 October 2026.",
@@ -439,6 +466,12 @@
       "relation": "is-derived-from",
       "object_id": "ai-startup-marketing-article",
       "evidence_url": "https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914"
+    },
+    {
+      "subject_id": "ai-startup-marketing-article",
+      "relation": "provides-preceding-professional-context-for",
+      "object_id": "dio-odi-genesis-exploration",
+      "evidence_url": "https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/"
     }
   ]
 }
