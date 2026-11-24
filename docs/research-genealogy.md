@@ -122,6 +122,8 @@ The two direct academic antecedents are the 2011 thesis [Reartikulace konceptů 
 
 The broader SlideShare profile also contains material outside the direct DIO/ODI lineage. The 86-slide and seven-slide SlideShare copies of *Reartikulace konceptů ideologie a hegemonie* are retained only as distribution locators for the single registered thesis; they are not counted as independent research outputs. The five-slide *Model mocenské situace* remains an unresolved historical-context lead. The three-slide [Seznam Asistent strategy presentation](https://www.slideshare.net/slideshow/seznam-asistent-strategicka-prilezitost-seznam-cz/284616466) remains registered as contextual professional AI-industry analysis. Unrelated customer-facing and commercial materials remain outside the curated research-artefact count.
 
+The 2011 *Reartikulace konceptů ideologie a hegemonie* research object is anchored by its Masaryk University Information System record and the corresponding Theses.cz record; its ResearchGate full-text page exposes a DOI. The 2005 *Sémiotická analýza klipu mOBSCENE* research object has an author-maintained bibliographic entry and a ResearchGate full-text page with its own DOI. These are bibliographic, repository, and identifier records for the same two underlying works, not additional research artefacts. The Rearticulation thesis's SlideShare copies remain distribution manifestations only.
+
 ## Registry structure and maintenance
 
 - `metadata/research-genealogy.json` is the canonical structured source.
@@ -130,6 +132,8 @@ The broader SlideShare profile also contains material outside the direct DIO/ODI
 - [Content and provenance reconciliation protocol](research-genealogy-content-reconciliation.md) defines the evidence hierarchy, output/manifestation decision rules, and staged work packages for continued curation.
 
 The registry separates:
+The registry also records multiple bibliographic and repository pages (`publication_records`) and persistent identifiers (`identifiers`) on a research object. These records describe access, cataloguing, and identity; they do not multiply the underlying output count.
+
 
 - research objects;
 - research processes and their methods;
