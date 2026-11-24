@@ -51,7 +51,7 @@ The article's temporal fields are kept separate: its exact original publication 
 
 The [SlideShare profile](https://www.slideshare.net/danielberanek) is recorded as an exploratory-research archive and a publication-distribution surface. It contains several distinct kinds of material, including model-generated readings of the professional ethnography, comparative AI materials, conceptual notes, research presentations, and presentation layers for existing works.
 
-The initial curated sample includes:
+The curated sample includes:
 
 | Artefact | Research role |
 |---|---|
@@ -60,9 +60,39 @@ The initial curated sample includes:
 | [Metaanalýza E-E-A-T analýz subjektu SEO specialista a copywriter Daniel Beránek (Gemini 3 Deep Research)](https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-deep-research/286570153) | A multi-report AI meta-analysis included as a related exploratory artefact. Its exact chronological position in the DIO genesis process is not assigned. |
 | [The Crisis of Entity Resolution in Heterogeneous AI Environments](https://fr.slideshare.net/slideshow/the-crisis-of-entity-resolution-in-heterogeneous-ai-environments-data-financial-and-semantic-dimensions/289325700) | A public presentation layer for the separately registered canonical research work. |
 
-The initial sample also includes [AIs: zhola subjektivně a děsně útržkovitě](https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914), an eight-slide presentation explicitly described by SlideShare as based on the author's article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/). The source article's page byline displays **21 October 2026**. The public SlideShare page does not display an upload or last-modified date, so those platform timestamps remain unassigned. The presentation is therefore classified as a later professional AI-practice artefact derived from the article, not as an antecedent milestone in the May–June 2026 emergence of DIO/ODI.
+The sample also includes [AIs: zhola subjektivně a děsně útržkovitě](https://www.slideshare.net/slideshow/ais-zhola-subjektivne-a-desne-utrzkovite/276986914), an eight-slide presentation explicitly described by SlideShare as based on the author's article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/). The source article's page byline displays **21 October 2026**. The public SlideShare page does not display an upload or last-modified date, so those platform timestamps remain unassigned. The presentation is therefore classified as a later professional AI-practice artefact derived from the article, not as an antecedent milestone in the May–June 2026 emergence of DIO/ODI.
 
 The collection will be expanded as individual items are reviewed. Each artefact record distinguishes the platform uploader, the model attribution where stated, the nature of the content, the research object it concerns, and its role in the wider process. This preserves the difference between an AI-generated interpretation, an authorial synthesis, and a presentation of an already registered publication.
+
+### E-E-A-T report series
+
+The registry now identifies a model-specific E-E-A-T report series as a distinct strand within the wider cross-platform exploration. Nine individual SlideShare reports have been directly reviewed at the page-title, description, model-attribution, and uploader level:
+
+| Model | SlideShare report |
+|---|---|
+| Claude | [E-E-A-T analysis (Claude)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-claude/286343682) |
+| Copilot | [E-E-A-T analysis (Copilot)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-copilot/286343860) |
+| Mistral | [E-E-A-T analysis (Mistral)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-mistral/286344025) |
+| Manus | [E-E-A-T analysis (Manus)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-manus/286344747) |
+| Kimi | [E-E-A-T analysis (Kimi)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286346550) |
+| Gemini Research | [E-E-A-T analysis (Gemini Research)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-research/286346835) |
+| ChatGPT | [E-E-A-T analysis (ChatGPT)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286346980) |
+| Gemini 3.1 Pro Preview | [E-E-A-T analysis (Gemini 3.1 Pro Preview)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-1-pro-preview/286362734) |
+| Grok 4.2 Beta | [E-E-A-T analysis (Grok 4.2 Beta — Thinking Hard)](https://www.slideshare.net/slideshow/e-e-a-t-analyza-subjektu-seo-specialista-a-copywriter-daniel-beranek-grok-4-2-beta-thinking-hard/286401301) |
+
+These are separate first-order model reports, not one report copied across several platforms. Their exact identity relationships to shared AI conversations, web outputs, and other artifacts already recorded in the registry are intentionally left open until their contents can be compared.
+
+The collection also contains four independently generated SlideShare meta-analyses of the E-E-A-T report set:
+
+- [Gemini 3 Deep Research meta-analysis](https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-gemini-3-deep-research/286570153)
+- [Kimi meta-analysis](https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-kimi/286569792)
+- [Claude meta-analysis](https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-claude/286570213)
+- [ChatGPT meta-analysis](https://www.slideshare.net/slideshow/metaanalyza-e-e-a-t-analyz-subjektu-seo-specialista-a-copywriter-daniel-beranek-chatgpt/286569918)
+
+They share a subject and a broadly common source set, but each is retained as a distinct model-generated synthesis. The Kimi meta-analysis explicitly names ten first-order reports, including a Seznam Asistent item. The latter's direct SlideShare page could not be inspected in this review and remains an inventory lead until its page, uploader attribution, and content are verified.
+
+The public SlideShare profile displayed **49 Slideshow items** when reviewed on 24 November 2026. The current Genealogy registry represents a curated subset, not the full profile; the profile count is not treated as a count of DIO/ODI research outputs. The expanded registry contains 41 artefact records in total, including 17 SlideShare artefact records. The E-E-A-T thematic cluster groups 26 artefacts while preserving separate identities for the underlying reports, web outputs, shared conversations, and independent meta-analyses.
+
 
 ## Registry structure and maintenance
 
