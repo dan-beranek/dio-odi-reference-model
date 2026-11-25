@@ -114,7 +114,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/research-genealogy/</ns0:loc>
-    <ns0:lastmod>2026-11-24</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/research-genealogy/foundations/</ns0:loc>
@@ -190,7 +190,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata/research-genealogy.json</ns0:loc>
-    <ns0:lastmod>2026-11-24</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata/research-genealogy.schema.json</ns0:loc>
@@ -198,6 +198,6 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/docs/research-genealogy.md</ns0:loc>
-    <ns0:lastmod>2026-11-24</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
 </ns0:urlset>
