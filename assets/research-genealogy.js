@@ -84,7 +84,7 @@
         : '';
       return '<article class="genealogy-card" id="object-'+escapeHtml(item.id)+'"><h3>'+escapeHtml(item.title)+'</h3><div class="genealogy-meta"><span class="genealogy-pill">'+escapeHtml(item.object_type)+'</span></div>'+
         '<p>'+escapeHtml(item.description)+'</p><p class="genealogy-muted">'+escapeHtml(item.role_in_genealogy)+'</p>'+
-        '<div class="genealogy-links">'+link(item.uri,"Open source object")+'</div>'+interpretiveLinks(item.interpretive_refs)+detail+'</article>';
+        '<div class="genealogy-links">'+link(item.id === "professional-ethnography" ? item.uri + "#content" : item.uri,"Open source object")+'</div>'+interpretiveLinks(item.interpretive_refs)+detail+'</article>';
     }).join("");
     show("genealogy-objects");
   };

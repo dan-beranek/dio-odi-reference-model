@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.5.0",
+  "registry_version": "0.5.1",
   "schema_version": "0.4.0",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-25",
@@ -903,7 +903,7 @@
       ],
       "source": {
         "title": "Professional ethnography — Changelog",
-        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
       }
     },
     {
@@ -921,7 +921,7 @@
       ],
       "source": {
         "title": "Professional ethnography — Changelog",
-        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
       }
     },
     {
@@ -938,7 +938,7 @@
       ],
       "source": {
         "title": "Professional ethnography — Changelog",
-        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
       }
     },
     {
@@ -955,7 +955,7 @@
       ],
       "source": {
         "title": "Professional ethnography — Changelog",
-        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
       }
     },
     {
@@ -975,7 +975,7 @@
       ],
       "source": {
         "title": "Professional ethnography — Changelog",
-        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
       }
     },
     {
@@ -992,7 +992,7 @@
       ],
       "source": {
         "title": "Professional ethnography — Changelog",
-        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
       }
     },
     {
@@ -1012,7 +1012,7 @@
       ],
       "source": {
         "title": "Professional ethnography — Changelog",
-        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+        "url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
       }
     }
   ],
@@ -3514,19 +3514,19 @@
       "subject_id": "professional-ethnography",
       "relation": "was-explored-through",
       "object_id": "dio-odi-genesis-exploration",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#ai-a-dal…"
     },
     {
       "subject_id": "dio-odi-genesis-exploration",
       "relation": "contributed-to-articulation-of",
       "object_id": "DIO",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
     },
     {
       "subject_id": "dio-odi-genesis-exploration",
       "relation": "contributed-to-articulation-of",
       "object_id": "ODI",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#changelog"
     },
     {
       "subject_id": "slideshare-semiotic-discursive-deconstruction",
@@ -3706,13 +3706,13 @@
       "subject_id": "professional-ethnography",
       "relation": "explicitly-rearticulates-the-theoretical-framework-of",
       "object_id": "rearticulation-ideology-hegemony-thesis",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#reartikulace-ideologie-a-hegemonie"
     },
     {
       "subject_id": "professional-ethnography",
       "relation": "retrospectively-reconstructs-and-reapplies-the-semiotic-method-of",
       "object_id": "semiotic-mobscene-sign-expansion-thesis",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#semioticka-analyza-klipu-marilyn-manson-artikulace-tzv-vyznamove-expanze-znaku"
     },
     {
       "subject_id": "slideshare-manus-eeat-meta-analysis-pdf",
@@ -3724,19 +3724,19 @@
       "subject_id": "professional-ethnography",
       "relation": "reapplies-and-translates-the-model-of-power-situation-from",
       "object_id": "suicidal-cults-power-situation-thesis",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#jedinec-v-tahu-destruktivnich-manipulaci-sebevrazednych-sekt"
     },
     {
       "subject_id": "professional-ethnography",
       "relation": "reapplies-the-binocular-perspective-method-from",
       "object_id": "positive-psychology-and-spiritual-streams-thesis",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#pozitivni-psychologie-bateson-a-castaneda"
     },
     {
       "subject_id": "professional-ethnography",
       "relation": "retrospectively-documents-earlier-seo-website-project",
       "object_id": "seo-webnode-2012",
-      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/#seo"
     }
   ],
   "research_clusters": [
@@ -4262,7 +4262,7 @@
       "expressions": [
         {
           "research_object_id": "professional-ethnography",
-          "expression": "The professional ethnography documents several related but distinct forms: extensive multi-role work in family business and in collaborations including Studio CMYK, HOTJET, and Přílet ptáka Ludvíka; end-to-end organization and operation of the Christmas-market venture; independent end-to-end professional practice through freelancing; concept-to-implementation development in the Student.idnes.cz project, later realized through the iDnes–FSS connection as a separately developed platform with its own URL; and the comprehensive, ongoing conceptual and research development of DIO/ODI. The degree of responsibility differs between cases and is retained explicitly."
+          "expression": "The professional ethnography documents several related but distinct forms of integrated practice: multi-role work in the family business and external organizations including Studio CMYK and HOTJET; end-to-end organization and operation of the Christmas-market venture; independent professional practice through freelancing; and concept-to-implementation development in the 2004 Student.idnes.cz proposal. That proposal specified a national student portal with a defined content strategy, student contributors from FSS MU and FSV UK, an editorial-supervision model, university–iDnes.cz liaison roles, student participation in the CMS, and a proposed subdomain aligned with iDnes.cz's section architecture. It was presented directly to the then editor-in-chief and positively received, but did not launch in 2004 because the newsroom lacked implementation capacity. The 2009 Stisk – Studentský deník on iDnes operationalized the central media architecture of the proposal through the FSS MU–iDnes cooperation, but remains a distinct external publication. It must be distinguished from the two-semester STISK journalism workshop at FSS MU, whose first semester used the internal STISK (Studentský Internetový Server Katedry) publishing platform and whose second semester involved publication in external media. The 2004 proposal, the workshop, its internal platform, and the 2009 iDnes publication are connected in professional and institutional history, but are not interchangeable identities or outputs. The degree of responsibility differs between cases and is retained explicitly."
         }
       ],
       "interpretive_refs": [
