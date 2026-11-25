@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.3.9",
+  "registry_version": "0.4.0",
   "schema_version": "0.3.3",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-25",
@@ -52,6 +52,63 @@
           "year": 2013,
           "milestone": "Beginning of self-employment (OSVČ).",
           "basis": "Author-confirmed chronology; this is the start of self-employment, not the start of professional practice."
+        }
+      ]
+    },
+    {
+      "id": "seo-webnode-2012",
+      "title": "SEO webu pro bábu i dědu z Ostravy i Chebu v neděli i středu",
+      "uri": "https://seo-levou-zadni.webnode.cz/",
+      "object_type": "author-operated-seo-and-digital-communication-website",
+      "status": "live-historical-website-with-archived-2012-content-and-later-additions",
+      "description": "An author-operated SEO and digital-communication website whose substantial core content is preserved in Internet Archive captures from 2012 and remains available on the live site. Its content combines webpage-level SEO with communication psychology, semantic and logical consistency, audience interpretation, trustworthiness of the represented subject, metadata functions, and commercial context. Later additions are kept distinct from the 2012 evidence layer, including the separately dated homepage update, blog material, and later references to danielberanek.cz.",
+      "components": [
+        "live Webnode website retaining most of the original core content",
+        "SEO glossary, including the 2012 definition of communication optimum",
+        "Chyby SEO page distinguishing technical problems from logical and semantic errors in communication",
+        "discussion of physical existence, legal existence, and transaction history as evidence relevant to the trustworthiness of the represented subject",
+        "treatment of metadata functions beyond direct ranking effects, including author attribution",
+        "description of satellite websites oriented towards a wider communication whole supporting a main website and brand",
+        "keyword and semantic-signal treatment across URLs, titles, metadata, headings, text, links, images, and descriptions",
+        "early and practically limited experiments with Webnode tags/labels",
+        "archived page states from 2012 and later live-site additions"
+      ],
+      "role_in_genealogy": "An early practical antecedent documenting a shift beyond SEO centred on the individual webpage as a document. The archived material considers the entity represented through the webpage, the coherence of its communications, the ways different audiences interpret it, the evidence supporting its trustworthiness, and the effects of representation on commercial potential and relationships. The glossary's communication-optimum definition explicitly frames optimization as minimizing contradiction for search engines and readers. The website is labelled as archived in 2012; the archival captures do not establish the exact date of creation or first publication. Later additions, including the blog and semantic syndication, are not attributed to the 2012 layer.",
+      "publication_date": null,
+      "publication_date_basis": "The original creation and first-publication dates are not established. Direct Internet Archive captures show the SEO glossary on 17 March 2012 at 20:04:04 UTC without the later communication-optimum definition, and on 30 August 2012 at 20:00:55 UTC with that definition. These two snapshots establish a difference between the captured page states within the interval; they do not establish the exact date when the definition was formulated or first published.",
+      "date_evidence": [
+        {
+          "title": "SEO glossary — Internet Archive capture, 17 March 2012 at 20:04:04 UTC",
+          "url": "https://web.archive.org/web/20120317200404/http://seo-levou-zadni.webnode.cz/slovnik/",
+          "role": "earlier-dated-archive-observation-for-content-state-comparison"
+        },
+        {
+          "title": "SEO glossary — Internet Archive capture, 30 August 2012 at 20:00:55 UTC",
+          "url": "https://web.archive.org/web/20120830200055/http://seo-levou-zadni.webnode.cz/slovnik/",
+          "role": "dated-archive-observation"
+        },
+        {
+          "title": "Chyby SEO — Internet Archive capture, 31 August 2012 at 00:00:43 UTC",
+          "url": "https://web.archive.org/web/20120831000043/http://seo-levou-zadni.webnode.cz/chyby-seo/",
+          "role": "dated-archive-observation"
+        }
+      ],
+      "conceptual_themes": [
+        {
+          "theme": "communication-optimum",
+          "description": "Optimization is formulated as identifying and implementing a state of minimal contradiction for search engines and readers."
+        },
+        {
+          "theme": "entity-centred-digital-representation",
+          "description": "The website is considered in relation to the subject it represents, including the subject's existence, activity, trustworthiness, and transactional potential."
+        },
+        {
+          "theme": "semantic-and-logical-communication-coherence",
+          "description": "Labels, language, content, and page state are evaluated in relation to audience expectations and the interpretations they produce."
+        },
+        {
+          "theme": "multiple-representations-and-communication-whole",
+          "description": "Satellite websites and coordinated semantic signals are considered as parts of a wider communication whole supporting a website and brand."
         }
       ]
     },
@@ -3580,6 +3637,12 @@
       "relation": "reapplies-the-binocular-perspective-method-from",
       "object_id": "positive-psychology-and-spiritual-streams-thesis",
       "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
+    },
+    {
+      "subject_id": "professional-ethnography",
+      "relation": "retrospectively-documents-earlier-seo-website-project",
+      "object_id": "seo-webnode-2012",
+      "evidence_url": "https://danielberanek.cz/od-pultu-az-k-seo-a-copy-s-ostrymi-hroty-profesni-bio/"
     }
   ],
   "research_clusters": [
@@ -4062,6 +4125,20 @@
         {
           "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
           "expression": "The revised version explicitly includes Derrida's différance, semiotics, and critical discourse analysis in its secondary theoretical background."
+        }
+      ]
+    },
+    {
+      "id": "integrated-multi-role-professional-practice",
+      "title": "Integrated multi-role professional and project practice",
+      "description": "A recurring professional-practice pattern in which work extends beyond a single narrowly defined role and connects multiple functions within one project or professional activity. Its forms differ in scope: some involve complete end-to-end responsibility, others multi-role engagement within another organization or project, and others the progression from concept to implementation. The grouping preserves these distinctions rather than treating every collaboration as equivalent in ownership or completeness.",
+      "research_object_ids": [
+        "professional-ethnography"
+      ],
+      "expressions": [
+        {
+          "research_object_id": "professional-ethnography",
+          "expression": "The professional ethnography documents several related but distinct forms: extensive multi-role work in family business and in collaborations including Studio CMYK, HOTJET, and Přílet ptáka Ludvíka; end-to-end organization and operation of the Christmas-market venture; independent end-to-end professional practice through freelancing; concept-to-implementation development in the Student.idnes.cz project, later realized through the iDnes–FSS connection as a separately developed platform with its own URL; and the comprehensive, ongoing conceptual and research development of DIO/ODI. The degree of responsibility differs between cases and is retained explicitly."
         }
       ]
     }

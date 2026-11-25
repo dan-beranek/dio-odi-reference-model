@@ -64,18 +64,30 @@
     ).join("");
   };
   const renderObjects = (data) => {
-    $("genealogy-object-list").innerHTML=(data.research_objects||[]).map(item=>
-      '<article class="genealogy-card"><h3>'+escapeHtml(item.title)+'</h3><div class="genealogy-meta"><span class="genealogy-pill">'+escapeHtml(item.object_type)+'</span></div>'+
-      '<p>'+escapeHtml(item.description)+'</p><p class="genealogy-muted">'+escapeHtml(item.role_in_genealogy)+'</p>'+
-      '<div class="genealogy-links">'+link(item.uri,"Open source object")+'</div></article>'
-    ).join("");
+    $("genealogy-object-list").innerHTML=(data.research_objects||[]).map(item=>{
+      const components=(item.components||[]).length
+        ? '<h4>Components</h4><ul>'+(item.components||[]).map(x=>'<li>'+escapeHtml(x)+'</li>').join('')+'</ul>'
+        : '';
+      const evidence=(item.date_evidence||[]).length
+        ? '<h4>Date and archival evidence</h4><ul class="genealogy-archive-list">'+(item.date_evidence||[]).map(x=>'<li>'+escapeHtml(x.title)+' · '+link(x.url,"Open source record")+' <span class="genealogy-muted">('+escapeHtml(x.role)+')</span></li>').join('')+'</ul>'
+        : '';
+      const publications=(item.publication_records||[]).length
+        ? '<h4>Publication and institutional records</h4><ul>'+(item.publication_records||[]).map(x=>'<li>'+escapeHtml(x.title)+' · '+link(x.url,x.record_type||"Open record")+'</li>').join('')+'</ul>'
+        : '';
+      const detail=(components||evidence||publications)
+        ? '<details class="genealogy-details"><summary>Components and source evidence</summary>'+components+evidence+publications+'</details>'
+        : '';
+      return '<article class="genealogy-card" id="object-'+escapeHtml(item.id)+'"><h3>'+escapeHtml(item.title)+'</h3><div class="genealogy-meta"><span class="genealogy-pill">'+escapeHtml(item.object_type)+'</span></div>'+
+        '<p>'+escapeHtml(item.description)+'</p><p class="genealogy-muted">'+escapeHtml(item.role_in_genealogy)+'</p>'+
+        '<div class="genealogy-links">'+link(item.uri,"Open source object")+'</div>'+detail+'</article>';
+    }).join("");
     show("genealogy-objects");
   };
   const renderProcesses = (data) => {
     $("genealogy-process-list").innerHTML=(data.research_processes||[]).map(item=>
-      '<article class="genealogy-card"><h3>'+escapeHtml(item.title)+'</h3><div class="genealogy-meta"><span class="genealogy-pill">'+escapeHtml(item.status)+'</span></div>'+
+      '<article class="genealogy-card" id="process-'+escapeHtml(item.id)+'"><h3>'+escapeHtml(item.title)+'</h3><div class="genealogy-meta"><span class="genealogy-pill">'+escapeHtml(item.status)+'</span></div>'+
       '<p>'+escapeHtml(item.summary)+'</p><h4>Characteristics</h4><ul>'+
-      (item.process_characteristics||[]).map(x=>'<li>'+escapeHtml(x)+'</li>').join("")+'</ul></article>'
+      (item.process_characteristics||[]).map(x=>'<li>'+escapeHtml(x)+'</li>').join('')+'</ul></article>'
     ).join("");
     show("genealogy-processes");
   };
@@ -88,6 +100,15 @@
       '</ul></details></article>'
     ).join("");
     show("genealogy-clusters");
+  };
+  const renderThreads = (data) => {
+    $("genealogy-thread-list").innerHTML=(data.intellectual_threads||[]).map(thread=>
+      '<article class="genealogy-card" id="thread-'+escapeHtml(thread.id)+'"><h3>'+escapeHtml(thread.title)+'</h3>'+
+      '<p>'+escapeHtml(thread.description)+'</p><h4>Expressions in the research objects</h4><ul>'+
+      (thread.expressions||[]).map(item=>'<li>'+escapeHtml(item.expression)+' <span class="genealogy-muted">Source object: <a href="#object-'+encodeURIComponent(item.research_object_id)+'">'+escapeHtml(item.research_object_id)+'</a></span></li>').join('')+
+      '</ul></article>'
+    ).join("");
+    show("genealogy-threads");
   };
   const renderTimeline = (data) => {
     const items=captureEvents(data);
@@ -164,7 +185,7 @@
       const response=await fetch(DATA_URL,{cache:"no-cache"});
       if(!response.ok) throw new Error("HTTP "+response.status);
       registry=await response.json();
-      renderStats(registry);renderObjects(registry);renderProcesses(registry);renderClusters(registry);
+      renderStats(registry);renderObjects(registry);renderProcesses(registry);renderClusters(registry);renderThreads(registry);
       renderTimeline(registry);initFilters(registry);renderArtifacts();renderCollections(registry);renderLeads(registry);
       $("genealogy-load-status").hidden=true;
     } catch(error) {

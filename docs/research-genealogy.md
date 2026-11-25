@@ -1,5 +1,11 @@
 # DIO/ODI Research Genealogy
 
+## Interpretive Genealogy
+
+The [Genealogical Foundations of DIO/ODI](https://vocab.danielberanek.cz/research-genealogy/foundations/) is the interpretive narrative for the historical, professional, intellectual, and methodological lines that converged in DIO/ODI. It explains how the recurring principles emerged across different contexts.
+
+This registry remains the evidential and provenance layer. It records research objects, source records, exploratory processes, publication artefacts, archival observations, and cross-cutting threads. The narrative page does not replace the registry or duplicate its record-level provenance.
+
 The Research Genealogy Registry records the source object, exploratory process, dated concept-development milestones, and intermediate artefacts, alternative publication manifestations, and archive observations associated with the emergence of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
 
 It is a research-process layer within the Reference Model's operational metadata. It is maintained separately from the publication registry, distribution registry, canonical Reference Vocabulary, and Semantic Change Feed.
@@ -35,6 +41,8 @@ The current registry preserves seven milestones sourced from the author-maintain
 The date basis for these milestones is the professional ethnography's own changelog. Individual SlideShare artefacts are dated only where a direct publication date is available; otherwise their chronology remains unassigned.
 
 ## Earlier professional and AI context
+
+The earlier website [SEO webu pro bábu i dědu z Ostravy i Chebu v neděli i středu](https://seo-levou-zadni.webnode.cz/) is registered as the research object `seo-webnode-2012`. Its archival evidence includes the [SEO glossary capture from 17 March 2012](https://web.archive.org/web/20120317200404/http://seo-levou-zadni.webnode.cz/slovnik/), the [SEO glossary capture from 30 August 2012](https://web.archive.org/web/20120830200055/http://seo-levou-zadni.webnode.cz/slovnik/), and the [Chyby SEO capture from 31 August 2012](https://web.archive.org/web/20120831000043/http://seo-levou-zadni.webnode.cz/chyby-seo/). The two glossary captures document different content states: the later definition of communication optimum is absent in the March capture and present in the August capture. The registry records the website as archived in 2012 without assigning an unsupported creation or first-publication date. The later blog, homepage update, and semantic-syndication phase are not retroactively attributed to the 2012 content layer.
 
 The article [Marketing pro AI startupy & SaaS: copywriting a SEO pro vývojáře LLM a aplikací umělé inteligence](https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/) is preserved in an [Internet Archive snapshot captured on 12 March 2025 at 18:37:17 UTC](https://web.archive.org/web/20250312183717/https://danielberanek.cz/online-marketing-pro-ai-pr-copywriter-seo/). A second archived copy at [Archive.today](https://archive.is/Bq8tr) corroborates the archived article. The exact original publication date is not established; the article was online **no later than 12 March 2025**. The current article page displays **21 October 2026**, which the author confirms is the date of the latest update, not the original publication date.
 
@@ -191,6 +199,12 @@ Where the author supplied an original platform URL but the artifact's content or
 ## Open-ended AI-related professional writing
 
 The Linktree, Bitly, and Bio.link pages are recorded as alternative indexes of a broader collection of professional writing about AI. Their item lists may overlap and may be incomplete relative to one another. The author reports varying degrees of AI assistance in these texts, but did not record the degree or nature of assistance for each item. The registry therefore records this as collection-level context and does not retrospectively assign item-level assistance categories.
+
+## Integrated multi-role professional and project practice
+
+The recurring professional-practice thread `integrated-multi-role-professional-practice` is linked to the professional ethnography. It groups distinct forms of involvement without equating their scope: end-to-end organization and operation of the Christmas-market venture; independent end-to-end professional practice through freelancing; multi-role work in family business, Studio CMYK, HOTJET, and Přílet ptáka Ludvíka; concept-to-implementation development in Student.idnes.cz; and the comprehensive, ongoing conceptual and research development of DIO/ODI.
+
+The thread is intentionally represented as a cross-cutting line in the existing `intellectual_threads` collection rather than as multiple narrow research objects for individual job roles or project tasks. The corresponding interpretive account appears in the [Genealogical Foundations of DIO/ODI](https://vocab.danielberanek.cz/research-genealogy/foundations/).
 
 ## Thematic clusters and output identity
 
