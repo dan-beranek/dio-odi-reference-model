@@ -75,8 +75,13 @@
       ],
       "role_in_genealogy": "An early practical antecedent documenting a shift beyond SEO centred on the individual webpage as a document. The archived material considers the entity represented through the webpage, the coherence of its communications, the ways different audiences interpret it, the evidence supporting its trustworthiness, and the effects of representation on commercial potential and relationships. The glossary's communication-optimum definition explicitly frames optimization as minimizing contradiction for search engines and readers. The website is labelled as archived in 2012; the archival captures do not establish the exact date of creation or first publication. Later additions, including the blog and semantic syndication, are not attributed to the 2012 layer.",
       "publication_date": null,
-      "publication_date_basis": "The original creation and first-publication dates are not established. The author identifies a glossary snapshot from 17 March 2012 in which the later definition is absent and a snapshot from 30 August 2012 in which it is present. The registered direct archival locators below document the August 2012 state; the March comparison is retained as author-confirmed context until its exact locator is added.",
+      "publication_date_basis": "The original creation and first-publication dates are not established. Direct Internet Archive captures show the SEO glossary on 17 March 2012 at 20:04:04 UTC without the later communication-optimum definition, and on 30 August 2012 at 20:00:55 UTC with that definition. These two snapshots establish a difference between the captured page states within the interval; they do not establish the exact date when the definition was formulated or first published.",
       "date_evidence": [
+        {
+          "title": "SEO glossary — Internet Archive capture, 17 March 2012 at 20:04:04 UTC",
+          "url": "https://web.archive.org/web/20120317200404/http://seo-levou-zadni.webnode.cz/slovnik/",
+          "role": "earlier-dated-archive-observation-for-content-state-comparison"
+        },
         {
           "title": "SEO glossary — Internet Archive capture, 30 August 2012 at 20:00:55 UTC",
           "url": "https://web.archive.org/web/20120830200055/http://seo-levou-zadni.webnode.cz/slovnik/",
