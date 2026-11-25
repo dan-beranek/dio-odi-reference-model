@@ -25,6 +25,8 @@ The mapping proceeds from a DIO/ODI-informed commit-boundary obligation to the m
 
 **Contract obligation → policy representation/evaluation → enforcement and residual integration requirement.**
 
+This is the Policy-as-Code projection of a broader Agentic ER design. The companion [Agentic ER architecture mapping](https://vocab.danielberanek.cz/mappings/agentic-er-architecture/) formalizes the conceptual and functional relations of the commit-boundary architecture; this page examines how selected authorization obligations can be expressed and enforced through OPA/Rego and Cedar.
+
 It does not map DIO/ODI terms to supposed synonyms in OPA or Cedar. It does not claim that either policy engine implements the MVDIO Supervisor Layer, the complete commit-boundary contract, or the semantics of the DIO/ODI Reference Vocabulary out of the box.
 
 The following labels qualify the mapping relations:
