@@ -126,7 +126,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata/README.md</ns0:loc>
-    <ns0:lastmod>2026-11-24</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata/works.json</ns0:loc>
@@ -142,7 +142,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata/distributions.json</ns0:loc>
-    <ns0:lastmod>2026-11-23</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata/keywords.json</ns0:loc>
@@ -150,7 +150,7 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/metadata.json</ns0:loc>
-    <ns0:lastmod>2026-11-24</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/external-reception/</ns0:loc>
@@ -170,11 +170,11 @@
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/semantic-change-feed/</ns0:loc>
-    <ns0:lastmod>2026-11-24</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/semantic-change-feed/events.json</ns0:loc>
-    <ns0:lastmod>2026-11-24</ns0:lastmod>
+    <ns0:lastmod>2026-11-25</ns0:lastmod>
   </ns0:url>
   <ns0:url>
     <ns0:loc>https://vocab.danielberanek.cz/semantic-change-feed/schema.json</ns0:loc>
