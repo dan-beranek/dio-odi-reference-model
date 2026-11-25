@@ -223,6 +223,16 @@
           "captured_at": null,
           "role": "corroborating-archive-copy"
         }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "digital-communication",
+          "label": "Structural-semantic digital communication"
+        },
+        {
+          "section_id": "convergence",
+          "label": "Convergence and DIO/ODI articulation"
+        }
       ]
     },
     {
