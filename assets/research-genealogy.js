@@ -14,6 +14,11 @@
   const link = (url, label) => url
     ? '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(label || url) + '</a>'
     : "";
+  const interpretiveLinks = (refs) => (refs||[]).length
+    ? '<div class="genealogy-links genealogy-interpretive-links"><span class="genealogy-muted">Interpretive context: </span>' +
+      refs.map(ref=>'<a href="/research-genealogy/foundations/#'+encodeURIComponent(ref.section_id)+'">'+escapeHtml(ref.label)+'</a>').join(' · ') +
+      '</div>'
+    : '';
   const show = (id) => { const node = $(id); if (node) node.hidden = false; };
   const archiveCaptures = (artifact) => {
     const direct = Array.isArray(artifact.archive_captures) ? artifact.archive_captures : [];
@@ -79,7 +84,7 @@
         : '';
       return '<article class="genealogy-card" id="object-'+escapeHtml(item.id)+'"><h3>'+escapeHtml(item.title)+'</h3><div class="genealogy-meta"><span class="genealogy-pill">'+escapeHtml(item.object_type)+'</span></div>'+
         '<p>'+escapeHtml(item.description)+'</p><p class="genealogy-muted">'+escapeHtml(item.role_in_genealogy)+'</p>'+
-        '<div class="genealogy-links">'+link(item.uri,"Open source object")+'</div>'+detail+'</article>';
+        '<div class="genealogy-links">'+link(item.uri,"Open source object")+'</div>'+interpretiveLinks(item.interpretive_refs)+detail+'</article>';
     }).join("");
     show("genealogy-objects");
   };
@@ -106,7 +111,7 @@
       '<article class="genealogy-card" id="thread-'+escapeHtml(thread.id)+'"><h3>'+escapeHtml(thread.title)+'</h3>'+
       '<p>'+escapeHtml(thread.description)+'</p><h4>Expressions in the research objects</h4><ul>'+
       (thread.expressions||[]).map(item=>'<li>'+escapeHtml(item.expression)+' <span class="genealogy-muted">Source object: <a href="#object-'+encodeURIComponent(item.research_object_id)+'">'+escapeHtml(item.research_object_id)+'</a></span></li>').join('')+
-      '</ul></article>'
+      '</ul>'+interpretiveLinks(thread.interpretive_refs)+'</article>'
     ).join("");
     show("genealogy-threads");
   };
@@ -188,6 +193,14 @@
       renderStats(registry);renderObjects(registry);renderProcesses(registry);renderClusters(registry);renderThreads(registry);
       renderTimeline(registry);initFilters(registry);renderArtifacts();renderCollections(registry);renderLeads(registry);
       $("genealogy-load-status").hidden=true;
+      // Registry cards are created from fetched metadata. Resolve direct object/thread
+      // fragments only after their target elements have been rendered.
+      if (window.location.hash) {
+        let targetId = window.location.hash.slice(1);
+        try { targetId = decodeURIComponent(targetId); } catch (_) {}
+        const target = document.getElementById(targetId);
+        if (target) target.scrollIntoView({block:"start"});
+      }
     } catch(error) {
       $("genealogy-load-status").textContent="The Research Genealogy registry could not be loaded ("+error.message+"). The machine-readable registry remains available from the link above.";
     }

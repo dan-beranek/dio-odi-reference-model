@@ -480,6 +480,28 @@
                 }
               }
             }
+          },
+          "interpretive_refs": {
+            "type": "array",
+            "description": "Navigation links from a research object or intellectual thread to the relevant interpretive section(s) in the Genealogical Foundations page. These are navigational references, not provenance relations.",
+            "items": {
+              "type": "object",
+              "required": [
+                "section_id",
+                "label"
+              ],
+              "properties": {
+                "section_id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9-]+$",
+                  "description": "Anchor id of a section in research-genealogy/foundations/."
+                },
+                "label": {
+                  "type": "string",
+                  "description": "Human-readable label for the interpretive section."
+                }
+              }
+            }
           }
         }
       }
@@ -1381,6 +1403,28 @@
                 },
                 "expression": {
                   "type": "string"
+                }
+              }
+            }
+          },
+          "interpretive_refs": {
+            "type": "array",
+            "description": "Navigation links from a research object or intellectual thread to the relevant interpretive section(s) in the Genealogical Foundations page. These are navigational references, not provenance relations.",
+            "items": {
+              "type": "object",
+              "required": [
+                "section_id",
+                "label"
+              ],
+              "properties": {
+                "section_id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9-]+$",
+                  "description": "Anchor id of a section in research-genealogy/foundations/."
+                },
+                "label": {
+                  "type": "string",
+                  "description": "Human-readable label for the interpretive section."
                 }
               }
             }

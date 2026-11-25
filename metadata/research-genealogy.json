@@ -1,6 +1,6 @@
 {
-  "registry_version": "0.4.0",
-  "schema_version": "0.3.3",
+  "registry_version": "0.5.0",
+  "schema_version": "0.4.0",
   "uri": "https://vocab.danielberanek.cz/metadata/research-genealogy.json",
   "generated_on": "2026-11-25",
   "title": "DIO/ODI Research Genealogy Registry",
@@ -52,6 +52,36 @@
           "year": 2013,
           "milestone": "Beginning of self-employment (OSVČ).",
           "basis": "Author-confirmed chronology; this is the start of self-employment, not the start of professional practice."
+        }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "formation",
+          "label": "Non-linear formation"
+        },
+        {
+          "section_id": "commercial",
+          "label": "Commercial and customer experience"
+        },
+        {
+          "section_id": "multi-role",
+          "label": "Integrated multi-role practice"
+        },
+        {
+          "section_id": "academic",
+          "label": "Psychology, communication and academic inquiry"
+        },
+        {
+          "section_id": "digital-communication",
+          "label": "Structural-semantic digital communication"
+        },
+        {
+          "section_id": "reflexive-practice",
+          "label": "Reflexive experimental practice"
+        },
+        {
+          "section_id": "convergence",
+          "label": "Convergence and DIO/ODI articulation"
         }
       ]
     },
@@ -109,6 +139,20 @@
         {
           "theme": "multiple-representations-and-communication-whole",
           "description": "Satellite websites and coordinated semantic signals are considered as parts of a wider communication whole supporting a website and brand."
+        }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "digital-communication",
+          "label": "Structural-semantic digital communication"
+        },
+        {
+          "section_id": "communication-optimum",
+          "label": "Communication optimum and entity representation"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
         }
       ]
     },
@@ -178,6 +222,16 @@
           "url": "https://archive.is/Bq8tr",
           "captured_at": null,
           "role": "corroborating-archive-copy"
+        }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "digital-communication",
+          "label": "Structural-semantic digital communication"
+        },
+        {
+          "section_id": "convergence",
+          "label": "Convergence and DIO/ODI articulation"
         }
       ]
     },
@@ -288,7 +342,17 @@
         "status": "public-record-available",
         "basis": "directly-verified",
         "note": "The Masaryk University Information System and Theses.cz records refer to the same thesis."
-      }
+      },
+      "interpretive_refs": [
+        {
+          "section_id": "academic",
+          "label": "Psychology, communication and academic inquiry"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
+        }
+      ]
     },
     {
       "id": "semiotic-mobscene-sign-expansion-thesis",
@@ -365,7 +429,17 @@
         "status": "no-public-record",
         "basis": "author-confirmed",
         "note": "No public Masaryk University Information System or Theses.cz page exists for this thesis. Its public bibliographic trail is the author's academic-publications record and the ResearchGate full-text page/DOI."
-      }
+      },
+      "interpretive_refs": [
+        {
+          "section_id": "academic",
+          "label": "Psychology, communication and academic inquiry"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
+        }
+      ]
     },
     {
       "id": "positive-psychology-and-spiritual-streams-thesis",
@@ -572,6 +646,16 @@
             "complete single-file thesis held in the separate IS MU k2bkc archive"
           ]
         }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "academic",
+          "label": "Psychology, communication and academic inquiry"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
+        }
       ]
     },
     {
@@ -651,6 +735,16 @@
         {
           "theme": "psychological-manipulation",
           "description": "Explores manipulation through the control of behaviour, thought, emotions, and information."
+        }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "academic",
+          "label": "Psychology, communication and academic inquiry"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
         }
       ]
     }
@@ -4068,6 +4162,16 @@
           "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
           "expression": "The second version includes semiotics and contextual meaning among its secondary theoretical foundations, including Saussure, Barthes, and Derrida's différance."
         }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "academic",
+          "label": "Academic and methodological foundations"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
+        }
       ]
     },
     {
@@ -4096,6 +4200,16 @@
         {
           "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
           "expression": "Discourse and critical discourse analysis appear in the theoretical background, including discourse as a power practice."
+        }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "academic",
+          "label": "Academic and methodological foundations"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
         }
       ]
     },
@@ -4126,6 +4240,16 @@
           "research_object_id": "positive-psychology-and-spiritual-streams-thesis",
           "expression": "The revised version explicitly includes Derrida's différance, semiotics, and critical discourse analysis in its secondary theoretical background."
         }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "academic",
+          "label": "Academic and methodological foundations"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
+        }
       ]
     },
     {
@@ -4139,6 +4263,16 @@
         {
           "research_object_id": "professional-ethnography",
           "expression": "The professional ethnography documents several related but distinct forms: extensive multi-role work in family business and in collaborations including Studio CMYK, HOTJET, and Přílet ptáka Ludvíka; end-to-end organization and operation of the Christmas-market venture; independent end-to-end professional practice through freelancing; concept-to-implementation development in the Student.idnes.cz project, later realized through the iDnes–FSS connection as a separately developed platform with its own URL; and the comprehensive, ongoing conceptual and research development of DIO/ODI. The degree of responsibility differs between cases and is retained explicitly."
+        }
+      ],
+      "interpretive_refs": [
+        {
+          "section_id": "multi-role",
+          "label": "Integrated multi-role project practice"
+        },
+        {
+          "section_id": "principles",
+          "label": "Emergent genealogical principles"
         }
       ]
     }

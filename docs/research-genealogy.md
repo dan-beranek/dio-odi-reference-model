@@ -6,6 +6,8 @@ The [Genealogical Foundations of DIO/ODI](https://vocab.danielberanek.cz/researc
 
 This registry remains the evidential and provenance layer. It records research objects, source records, exploratory processes, publication artefacts, archival observations, and cross-cutting threads. The narrative page does not replace the registry or duplicate its record-level provenance.
 
+The connection is reciprocal at record level: relevant research-object and intellectual-thread records carry an optional `interpretive_refs` array. The registry frontend renders these as links to the exact section anchors in Foundations. These are navigation references to the interpretive account, not additional provenance relations or claims that the linked source records are identical.
+
 The Research Genealogy Registry records the source object, exploratory process, dated concept-development milestones, and intermediate artefacts, alternative publication manifestations, and archive observations associated with the emergence of Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI).
 
 It is a research-process layer within the Reference Model's operational metadata. It is maintained separately from the publication registry, distribution registry, canonical Reference Vocabulary, and Semantic Change Feed.
@@ -177,7 +179,8 @@ The registry also records multiple bibliographic and repository pages (`publicat
 - platform collections;
 - individual exploratory and presentation artefacts;
 - inventory leads awaiting a direct item record;
-- typed relationships connecting objects, processes, concepts, and artefacts.
+- typed relationships connecting objects, processes, concepts, and artefacts;
+- optional `interpretive_refs` connecting selected research objects and intellectual threads to specific sections of the Genealogical Foundations page.
 
 Where a source page and uploader information have been reviewed, the registry records the directly observable title, attribution, and content characteristics. Author-supplied URLs may also be registered provisionally before their content is accessible or inspected; those records are explicitly marked as unreviewed. Model attribution is preserved when the source states it and is not inferred where it does not. The source object's changelog remains the primary date basis for the concept-development chronology.
 
