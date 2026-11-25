@@ -1,10 +1,10 @@
 {
-  "feed_version": "0.1.13",
+  "feed_version": "0.1.14",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-24",
+  "generated_on": "2026-11-25",
   "title": "DIO/ODI Semantic Change Feed",
-  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, external identity-outcome, Reference Model release, deployment, external registry, and agent-discovery milestones through 24 November 2026.",
+  "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, external identity-outcome, Reference Model release, deployment, external registry, and agent-discovery milestones through 25 November 2026.",
   "author": {
     "name": "Daniel Beránek",
     "person_uri": "https://danielberanek.cz/#person",
@@ -16,7 +16,7 @@
     "git_diffs_are_not_authoritative": true,
     "correction_rule": "Corrections are new events linked to earlier records; published event records are not silently overwritten."
   },
-  "event_count": 62,
+  "event_count": 63,
   "events": [
     {
       "id": "SCF-2026-001",
@@ -4109,6 +4109,80 @@
           "SCF-2026-051",
           "SCF-2026-053",
           "SCF-2026-055"
+        ],
+        "supersedes": [],
+        "corrects": []
+      }
+    },
+    {
+      "id": "SCF-2026-063",
+      "date": "2026-11-25",
+      "date_basis": "documentation_date",
+      "event_class": "Distribution",
+      "change_type": "distributed",
+      "title": "The Agentic ER engineering deep dive gains an editorially revised HackerNoon variant",
+      "summary": "HackerNoon carries “A Confident Entity Match Is Not Permission to Merge”, an editorially revised variant of the Hashnode-canonical engineering deep dive “The Match Is Easy, the Merge Is Not”. The HackerNoon version has a different headline and editorial changes attributed to HackerNoon editor Sheharyar Khan. It is recorded as a variant form rather than an identical copy; Hashnode remains the canonical publication.",
+      "scope": [
+        {
+          "component": "A Confident Entity Match Is Not Permission to Merge — HackerNoon variant",
+          "component_type": "editorially-revised-secondary-publication",
+          "uri": "https://hackernoon.com/a-confident-entity-match-is-not-permission-to-merge",
+          "role": "secondary-variant-publication"
+        },
+        {
+          "component": "The Match Is Easy, the Merge Is Not — Hashnode",
+          "component_type": "engineering-deep-dive",
+          "uri": "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not",
+          "role": "canonical-publication"
+        }
+      ],
+      "before": "The distribution registry recorded Hashnode as the canonical publication and DEV.to and Medium as secondary representations. It did not yet include the HackerNoon edition.",
+      "after": "The registry records HackerNoon as an editorially revised variant, with the editorial contribution attributed to Sheharyar Khan. Hashnode remains canonical; the HackerNoon edition is classified as a variant form, not an identical copy.",
+      "preserved_invariants": [
+        "Hashnode remains the canonical publication for the engineering deep dive.",
+        "The HackerNoon edition is an editorially revised variant, not an identical copy of the Hashnode text.",
+        "The editorial contribution is preserved as publication provenance and does not create a separate underlying research work.",
+        "The additional distribution does not change the article's engineering-explainer role or the status of the Planner and DIO/ODI artefacts."
+      ],
+      "impact": {
+        "level": "distribution",
+        "compatibility": "distribution-only",
+        "affected_components": [
+          "The Match Is Easy, the Merge Is Not — engineering deep dive",
+          "Hashnode canonical publication",
+          "HackerNoon editorially revised variant"
+        ],
+        "notes": "An additional editorially revised publication representation, with editor attribution preserved in the distribution metadata."
+      },
+      "evidence": {
+        "status": "documented",
+        "basis": [
+          "primary-publication",
+          "registry",
+          "linked-publication-or-artifact"
+        ],
+        "temporal_note": "25 November 2026 is the date this HackerNoon representation was documented in the registry. It is not asserted as an independently verified original publication timestamp.",
+        "sources": [
+          {
+            "label": "HackerNoon — A Confident Entity Match Is Not Permission to Merge",
+            "url": "https://hackernoon.com/a-confident-entity-match-is-not-permission-to-merge",
+            "role": "editorially-revised-variant"
+          },
+          {
+            "label": "Hashnode — The Match Is Easy, the Merge Is Not",
+            "url": "https://dio-odi.hashnode.dev/the-match-is-easy-the-merge-is-not",
+            "role": "canonical-publication"
+          },
+          {
+            "label": "Sheharyar Khan — HackerNoon editor profile",
+            "url": "https://hackernoon.com/u/sheharyarkhan",
+            "role": "editorial-role-profile"
+          }
+        ]
+      },
+      "lineage": {
+        "related_to": [
+          "SCF-2026-058"
         ],
         "supersedes": [],
         "corrects": []
