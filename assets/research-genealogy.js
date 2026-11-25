@@ -193,6 +193,14 @@
       renderStats(registry);renderObjects(registry);renderProcesses(registry);renderClusters(registry);renderThreads(registry);
       renderTimeline(registry);initFilters(registry);renderArtifacts();renderCollections(registry);renderLeads(registry);
       $("genealogy-load-status").hidden=true;
+      // Registry cards are created from fetched metadata. Resolve direct object/thread
+      // fragments only after their target elements have been rendered.
+      if (window.location.hash) {
+        let targetId = window.location.hash.slice(1);
+        try { targetId = decodeURIComponent(targetId); } catch (_) {}
+        const target = document.getElementById(targetId);
+        if (target) target.scrollIntoView({block:"start"});
+      }
     } catch(error) {
       $("genealogy-load-status").textContent="The Research Genealogy registry could not be loaded ("+error.message+"). The machine-readable registry remains available from the link above.";
     }
