@@ -59,6 +59,7 @@ External copies and distribution layers are part of the metadata graph but are n
 For each canonical work, audit ResearchGate, Figshare, SSRN, Kaggle, Hugging Face, institutional repositories, and other known distribution layers where applicable. Preserve the precise relation actually justified by the record:
 
 - `isIdenticalTo` for genuinely identical objects;
+- `isVariantFormOf` for an edited or otherwise materially altered form of one work;
 - `isSupplementedBy` where the external representation supplements the canonical record;
 - other supported relation types where more accurate.
 
