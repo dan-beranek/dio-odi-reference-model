@@ -954,6 +954,12 @@ def check_semantic_change_feed() -> dict[str, int | str]:
     dates = [event.get("date") for event in events]
     require(dates == sorted(dates), "Semantic Change Feed events must be stored in chronological order")
     known_ids = set(ids)
+    event_031 = next((event for event in events if event.get("id") == "SCF-2026-031"), None)
+    endorsement_note = "The arXiv publication was endorsed by George Papadakis."
+    require(event_031 is not None and event_031.get("summary", "").endswith(endorsement_note),
+            "SCF-2026-031 must append the arXiv endorsement sentence to its event summary")
+    require(sum(event.get("summary", "").count(endorsement_note) for event in events) == 1,
+            "The arXiv endorsement sentence must appear only in SCF-2026-031")
     required_reconciliations = {
         "SCF-2026-046": ("deployment_date", "2026-11-09"),
         "SCF-2026-047": ("documentation_date", "2026-11-10"),

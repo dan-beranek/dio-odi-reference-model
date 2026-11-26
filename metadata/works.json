@@ -124,7 +124,7 @@
       "type": "publication-preprint",
       "version_doi": "10.5281/zenodo.23580733",
       "publication_date": "2026-10-22",
-      "note": "The paper develops a conceptual architecture for authorization of persistent identity changes in Agentic Entity Resolution, separating evidence available for agent reasoning from evidence eligible to authorize a specific identity or continuity claim. The arXiv publication was endorsed by George Papadakis.",
+      "note": "The paper develops a conceptual architecture for authorization of persistent identity changes in Agentic Entity Resolution, separating evidence available for agent reasoning from evidence eligible to authorize a specific identity or continuity claim.",
       "keyword_profile": "commit-boundary-paper",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",

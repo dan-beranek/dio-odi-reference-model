@@ -1,8 +1,8 @@
 {
-  "feed_version": "0.1.14",
+  "feed_version": "0.1.15",
   "schema_version": "0.2.1",
   "feed_uri": "https://vocab.danielberanek.cz/semantic-change-feed/",
-  "generated_on": "2026-11-25",
+  "generated_on": "2026-11-26",
   "title": "DIO/ODI Semantic Change Feed",
   "description": "A curated, append-only record covering the complete DIO/ODI Hub Changelog from 25 March to 25 October 2026, together with subsequently documented vocabulary, mapping, publication, research-portfolio, external identity-outcome, Reference Model release, deployment, external registry, and agent-discovery milestones through 25 November 2026.",
   "author": {
@@ -1859,7 +1859,7 @@
       "event_class": "Theoretical",
       "change_type": "introduced",
       "title": "Constraining the Commit Boundary introduces a DIO/ODI-informed authorization guardrail",
-      "summary": "The paper develops a conceptual architecture for authorization of persistent identity changes in Agentic Entity Resolution, separating evidence available for agent reasoning from evidence eligible to authorize a specific identity or continuity claim.",
+      "summary": "The paper develops a conceptual architecture for authorization of persistent identity changes in Agentic Entity Resolution, separating evidence available for agent reasoning from evidence eligible to authorize a specific identity or continuity claim. The arXiv publication was endorsed by George Papadakis.",
       "scope": [
         {
           "component": "Constraining the Commit Boundary",
