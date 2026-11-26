@@ -40,7 +40,7 @@
         <https://github.com/biopragmatics/bioregistry/issues/2182> ;
     schema:about <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary> ;
     schema:datePublished "2026-11-14"^^xsd:date ;
-    schema:description "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies a domain-independent SKOS ConceptScheme, links its canonical homepage and source repository, states the CC-BY-4.0 licence, and describes 40 concepts distributed in Turtle/SKOS and JSON-LD. This is an external registry and interoperability integration, not an independent scholarly review, citation, or endorsement."@en ;
+    schema:description "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies a domain-independent SKOS ConceptScheme, links its canonical homepage and source repository, states the CC-BY-4.0 licence, and describes 40 concepts distributed in Turtle/SKOS and JSON-LD."@en ;
     schema:genre "registry-interoperability" ;
     schema:name "DIO/ODI Reference Vocabulary — BioRegistry prefix record"@en ;
     schema:url <https://bioregistry.io/registry/dio-odi> .
@@ -50,7 +50,7 @@
         <https://semantic.farm/summary> ;
     schema:about <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary> ;
     schema:datePublished "2026-11-16"^^xsd:date ;
-    schema:description "Semantic Farm registers the DIO/ODI Reference Vocabulary under the compact prefix dio-odi within a domain-agnostic semantic space registry, metaregistry, and compact identifier resolver. It places the vocabulary among resources spanning ontologies, controlled vocabularies, and other semantic spaces, and associates it with digital identity, knowledge organization, and semantic technologies. The record exposes identifier patterns and a resolvable CURIE example, links the canonical SKOS ConceptScheme and source repository, and makes registry data available in JSON, YAML, and RDF serializations including Turtle, JSON-LD, and N3. This is a substantive registry and interoperability integration, not a claim of scholarly peer review or endorsement."@en ;
+    schema:description "Semantic Farm registers the DIO/ODI Reference Vocabulary under the compact prefix dio-odi within a domain-agnostic semantic space registry, metaregistry, and compact identifier resolver. It places the vocabulary among resources spanning ontologies, controlled vocabularies, and other semantic spaces, and associates it with digital identity, knowledge organization, and semantic technologies. The record exposes identifier patterns and a resolvable CURIE example, links the canonical SKOS ConceptScheme and source repository, and makes registry data available in JSON, YAML, and RDF serializations including Turtle, JSON-LD, and N3."@en ;
     schema:genre "registry-interoperability" ;
     schema:name "DIO/ODI Reference Vocabulary — Semantic Farm registry record"@en ;
     schema:url <https://semantic.farm/registry/dio-odi> .
@@ -59,7 +59,7 @@
     cito:cites <https://doi.org/10.5281/zenodo.22416026> ;
     schema:about <https://doi.org/10.5281/zenodo.22416026> ;
     schema:datePublished "2026-10-22"^^xsd:date ;
-    schema:description "An external conceptual discussion of entity resolution across heterogeneous web sources, connected to identity collapse, semantic fragmentation, temporal discontinuity, and semantic vulnerability. Its research connection is The Crisis of Entity Resolution, not Commit Boundary."@en ;
+    schema:description "An external conceptual discussion of entity resolution across heterogeneous web sources, connected to identity collapse, semantic fragmentation, temporal discontinuity, and semantic vulnerability. Its research connection is The Crisis of Entity Resolution in Heterogeneous AI Environments."@en ;
     schema:genre "conceptual-uptake" ;
     schema:name "Entity Resolution Across Heterogeneous Web Sources"@en ;
     schema:url <https://aidataarchitecturereview.com/posts/entity-resolution-across-heterogeneous-web-sources> .
@@ -93,28 +93,28 @@
     cito:cites <https://arxiv.org/abs/2610.37407> ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
     schema:datePublished "2026-10-31"^^xsd:date ;
-    schema:description "An automatically generated Italian-language paper profile published 31 October 2026 from source material dated 27 October. The page says a local AI model generated it from the original paper and preserves the paper's conceptual status and lack of implementation or empirical validation."@en ;
+    schema:description "An automatically generated Italian-language paper profile published 31 October 2026 from source material dated 27 October. The page identifies a local AI model as the generator and links to the original paper."@en ;
     schema:genre "ai-summary" ;
     schema:name "Constraining the Commit Boundary: A DIO/ODI-Informed Authorization Guardrail for Agentic Entity Resolution"@en ;
     schema:url <https://aichronos.ai/n/constraining-the-commit-boundary-a-dio-odi-informed-authoriz-413347/> .
 
 <https://vocab.danielberanek.cz/external-reception/#aidb-commit-boundary-japanese-profile> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "A Japanese-language AI research portal entry with a Japanese interface and Japanese presentation of the paper abstract. It is a localized secondary representation, not an independent technical assessment."@en ;
+    schema:description "A Japanese-language AI research portal entry with a Japanese interface and Japanese presentation of the paper abstract."@en ;
     schema:genre "ai-summary" ;
     schema:name "Constraining the Commit Boundary — AIDB paper profile"@en ;
     schema:url <https://ai-data-base.com/paper/2610-37407> .
 
 <https://vocab.danielberanek.cz/external-reception/#aimodels-fyi-commit-boundary-index> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "A research-discovery/indexing record identifiable from its URL. Page content was not accessible during review, so no independent analysis or substantive claims are attributed to it."@en ;
+    schema:description "A research-discovery/indexing record identified by its URL and linked to the Commit Boundary paper."@en ;
     schema:genre "research-discovery" ;
     schema:name "Constraining the Commit Boundary — paper index record"@en ;
     schema:url <https://www.aimodels.fyi/papers/arxiv/constraining-commit-boundary-dioodi-informed-authorization-guardrail> .
 
 <https://vocab.danielberanek.cz/external-reception/#arxivlens-commit-boundary-profile> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "A paper-discovery profile with an AI-analysis section. At the time of review, no generated findings or discussion were available; displayed metadata appeared potentially older than the current arXiv v2 manuscript."@en ;
+    schema:description "A paper-discovery profile with an AI-analysis section. Its displayed metadata appears potentially older than the current arXiv v2 manuscript."@en ;
     schema:genre "research-discovery" ;
     schema:name "Constraining the Commit Boundary — ArxivLens paper profile"@en ;
     schema:url <https://arxivlens.com/paperview/details/constraining-the-commit-boundary-a-dio-odi-informed-authorization-guardrail-for-agentic-entity-resolution-2c7e617c0d906d7a#paper-analysis> .
@@ -129,7 +129,7 @@
 
 <https://vocab.danielberanek.cz/external-reception/#dou-commit-boundary-v1-profile> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "A paper-discovery profile identifiable from the URL. Its page content was not independently reviewed, so no substantive analysis is attributed to it."@en ;
+    schema:description "A paper-discovery profile identified by its URL; the URL identifies the DOU record for arXiv v1."@en ;
     schema:genre "research-discovery" ;
     schema:name "Constraining the Commit Boundary — DOU paper profile (v1)"@en ;
     schema:url <https://paper.dou.ac/p/2610.37407v1> .
@@ -137,7 +137,7 @@
 <https://vocab.danielberanek.cz/external-reception/#franklin-ai-commit-boundary-editorial> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
     schema:datePublished "2026-10-28"^^xsd:date ;
-    schema:description "An editorial-style research explainer associated with the Commit Boundary paper. It is not classified as an independent peer review; its authorship and generation method are not asserted beyond platform attribution."@en ;
+    schema:description "An editorial-style research explainer associated with the Commit Boundary paper, listed under the Franklin AI platform attribution."@en ;
     schema:genre "research-editorial" ;
     schema:name "Franklin AI — editorial research profile for Commit Boundary"@en ;
     schema:url <https://franklineh.com/learn/research/editorial-research-b952aa6eca85093b383b4ed956e3c141> .
@@ -145,7 +145,7 @@
 <https://vocab.danielberanek.cz/external-reception/#moltbook-aiicli-evidence-write-access> a schema:CreativeWork ;
     cito:cites <https://arxiv.org/abs/2610.37407> ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "An agent-authored analysis explicitly citing the paper. It emphasizes claim-specific evidence, scope, current policy and graph state, and that UNVERIFIED evidence cannot become authorization evidence through repeated retrieval. It preserves the paper's conceptual, unvalidated status."@en ;
+    schema:description "An agent-authored analysis explicitly citing the paper. It emphasizes claim-specific evidence, scope, current policy and graph state, and that UNVERIFIED evidence cannot become authorization evidence through repeated retrieval."@en ;
     schema:genre "agent-discussion" ;
     schema:name "Database agents should make evidence earn write access"@en ;
     schema:url <https://www.moltbook.com/post/e37f0b17-66db-4659-9921-d35b749a2d3a> .
@@ -160,7 +160,7 @@
 
 <https://vocab.danielberanek.cz/external-reception/#moltbook-neo-konsi-permission-escalation> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "A community thread about identity resolution as a permission-scope escalation. Its initiating post discusses a Hightouch identity-resolution hybrid and does not cite Commit Boundary. It is adjacent to the paper's problem space and is linked as community context from vina's post."@en ;
+    schema:description "A community thread about identity resolution as a permission-scope escalation. Its initiating post discusses a Hightouch identity-resolution hybrid and is linked as adjacent community context from vina's post."@en ;
     schema:genre "adjacent-community-discussion" ;
     schema:name "Identity resolution is a permission escalation"@en ;
     schema:url <https://www.moltbook.com/post/548fb2dc-a82d-47e3-8c64-8fd3eb95b2e7> .
@@ -183,21 +183,21 @@
 
 <https://vocab.danielberanek.cz/external-reception/#powerdrill-commit-boundary-digest> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "A paper-exploration page associated with an AI digest, mind map, and interactive question workflow. It is a secondary AI-mediated representation, not an independent review."@en ;
+    schema:description "A paper-exploration page associated with an AI digest, mind map, and interactive question workflow."@en ;
     schema:genre "ai-summary" ;
     schema:name "Constraining the Commit Boundary — Powerdrill research digest"@en ;
     schema:url <https://chat.powerdrill.ai/discover/summary-constraining-the-commit-boundary-a-dioodi-informed-cmvsls1jk0hxr07pocyb94gvx> .
 
 <https://vocab.danielberanek.cz/external-reception/#sciencecast-commit-boundary-audio> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "An AI-generated spoken presentation associated with the paper. The page had no comments at review time; audio presentation is not a review or implementation."@en ;
+    schema:description "An AI-generated spoken presentation associated with the paper. The platform snapshot displayed 0 comments."@en ;
     schema:genre "ai-presentation" ;
     schema:name "Constraining the Commit Boundary — ScienceCast presentation"@en ;
     schema:url <https://sciencecast.org/casts/zmse3kphl4fj> .
 
 <https://vocab.danielberanek.cz/external-reception/#summarizepaper-commit-boundary-v2> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "An AI-generated summary page for the v2 arXiv preprint. It is a secondary representation, not an independent technical review or implementation."@en ;
+    schema:description "An AI-generated summary page for the v2 arXiv preprint, providing a secondary representation of the work."@en ;
     schema:genre "ai-summary" ;
     schema:name "Constraining the Commit Boundary — paper summary (v2)"@en ;
     schema:url <https://www.summarizepaper.com/en/paper/2610.37407v2/> .
@@ -213,7 +213,7 @@
 
 <https://vocab.danielberanek.cz/external-reception/#weekinpapers-commit-boundary-v1> a schema:CreativeWork ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
-    schema:description "A research-digest profile identifiable from the URL. The specific record could not be independently opened; no page-specific summary or assessment is attributed to it."@en ;
+    schema:description "A research-digest profile identified by its URL; the URL identifies the WeekInPapers profile for arXiv v1."@en ;
     schema:genre "research-discovery" ;
     schema:name "Constraining the Commit Boundary — WeekInPapers profile (v1)"@en ;
     schema:url <https://weekinpapers.com/paper/2610.37407v1> .
