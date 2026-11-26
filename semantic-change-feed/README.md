@@ -1,6 +1,6 @@
 # DIO/ODI Semantic Change Feed
 
-**Feed version:** 0.1.14  
+**Feed version:** 0.1.15  
 **Schema version:** 0.2.1  
 **Status:** Live append-only maintenance after archived Reference Model v0.9.0; no new Reference Model release  
 **Maintainer:** Daniel Beránek  
@@ -20,7 +20,7 @@ The Semantic Change Feed is a structured, reflexive artefact within this cycle. 
 
 ## Coverage
 
-Version 0.1.14 is the current live feed and covers:
+Version 0.1.15 is the current live feed and covers:
 
 - Every dated entry in the DIO/ODI Hub Changelog from **25 March through 25 October 2026**.
 - The appearance of a Google Search Knowledge Panel for Daniel Beránek on **21 September 2026** (SCF-2026-062), recorded as an externally visible structural outcome associated with DIO. Contemporaneous author announcements across Instagram, LinkedIn, Pinterest, X, Facebook, Tumblr, Mastodon, Bluesky, Witter, and Threads are treated as multiple records of one observation; Witter's 33-minute approval interval is identified as an author-reported elapsed time, not a Google processing timestamp. The public panel is not conflated with direct access to Google's internal Knowledge Graph record.
@@ -66,7 +66,7 @@ The DIO to DIO portfolio is included as a documented research-and-distribution m
 
 ## Record model
 
-Each event has a stable identifier (SCF-YYYY-NNN) and records classification, operation, scope, previous and resulting state, preserved invariants, impact, evidence, and lineage.
+Each event has a stable identifier (SCF-YYYY-NNN) and records classification, operation, scope, previous and resulting state, preserved invariants, impact, evidence, and lineage. An optional `publication_note` may preserve a brief publication circumstance separately from the event summary; it does not alter the event's change description or temporal basis.
 
 Event classes: Conceptual, Relational, Theoretical, Structural, Provenance, Mapping, Artifact, Distribution, ResearchProcess.
 
