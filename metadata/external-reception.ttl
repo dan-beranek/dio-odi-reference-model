@@ -203,10 +203,11 @@
     schema:url <https://www.summarizepaper.com/en/paper/2610.37407v2/> .
 
 <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> a schema:CreativeWork ;
+    dcterms:source <https://unghost.com/> ;
     cito:cites <https://arxiv.org/html/2610.37407v1> ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
     schema:datePublished "2026-11-06"^^xsd:date ;
-    schema:description "An unGhost editorial published on 6 November 2026 that summarizes the agentic ER loop as planning, retrieving evidence, updating hypotheses, and proposing graph mutations. It identifies an authorization guardrail but explicitly says the supplied summary does not specify its mechanics, architecture, policies, or results. It points readers to arXiv HTML v1."@en ;
+    schema:description "An unGhost commercial editorial published on 6 November 2026. It opens with a product pitch for identifying anonymous website visitors and turning them into contactable leads, then presents four clauses from the paper’s abstract as a four-step Agentic ER loop. It says that architecture, mechanics, policies, and results are unspecified based on the supplied summary. Comparison with the linked arXiv v1 shows that Sections 5–7 specify the proposed DIO/ODI-informed constraint binding, evidence admission and claim-specific promotion, authorization invariant, two-phase MVDIO Supervisor interface, mutation classes, and illustrative cases; Section 8 defines a prospective evaluation protocol with baselines and metrics. The paper does not report an implementation or empirical results, but this is distinct from saying that its proposed architecture and evaluation design are unspecified."@en ;
     schema:genre "research-editorial" ;
     schema:name "The Four-Step Agentic Entity Resolution Loop—and Its Proposed Guardrail"@en ;
     schema:url <https://unghost.com/blog/the-four-step-agentic-entity-resolution-loopand-its-proposed-guardrail-d6e86> .
