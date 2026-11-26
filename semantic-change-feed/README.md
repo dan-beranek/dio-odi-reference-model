@@ -66,7 +66,7 @@ The DIO to DIO portfolio is included as a documented research-and-distribution m
 
 ## Record model
 
-Each event has a stable identifier (SCF-YYYY-NNN) and records classification, operation, scope, previous and resulting state, preserved invariants, impact, evidence, and lineage. An optional `publication_note` may preserve a brief publication circumstance separately from the event summary; it does not alter the event's change description or temporal basis.
+Each event has a stable identifier (SCF-YYYY-NNN) and records classification, operation, scope, previous and resulting state, preserved invariants, impact, evidence, and lineage.
 
 Event classes: Conceptual, Relational, Theoretical, Structural, Provenance, Mapping, Artifact, Distribution, ResearchProcess.
 
