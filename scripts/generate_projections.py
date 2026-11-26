@@ -567,6 +567,7 @@ def render_scf_event(event: dict) -> str:
         f'<h2>{esc(event.get("title", ""))}</h2>',
         f'</div><span class="event-class">{esc(event_class)}</span></div>',
         f'<p class="event-summary">{summary}</p>',
+        *([f'<p class="event-publication-note">{esc(event["publication_note"])}</p>'] if event.get("publication_note") else []),
         '<div class="event-meta">',
         f'<span><strong>Date</strong> <time datetime="{esc(event_date)}">{esc(display_date)}</time></span>',
         f'<span><strong>Change</strong> {esc(event.get("change_type", ""))}</span>',
