@@ -1859,7 +1859,7 @@
       "event_class": "Theoretical",
       "change_type": "introduced",
       "title": "Constraining the Commit Boundary introduces a DIO/ODI-informed authorization guardrail",
-      "summary": "The paper develops a conceptual architecture for authorization of persistent identity changes in Agentic Entity Resolution, separating evidence available for agent reasoning from evidence eligible to authorize a specific identity or continuity claim.",
+      "summary": "The paper develops a conceptual architecture for authorization of persistent identity changes in Agentic Entity Resolution, separating evidence available for agent reasoning from evidence eligible to authorize a specific identity or continuity claim. The arXiv publication was endorsed by George Papadakis.",
       "scope": [
         {
           "component": "Constraining the Commit Boundary",
@@ -1912,8 +1912,7 @@
         ],
         "supersedes": [],
         "corrects": []
-      },
-      "publication_note": "The arXiv publication was endorsed by George Papadakis."
+      }
     },
     {
       "id": "SCF-2026-032",
