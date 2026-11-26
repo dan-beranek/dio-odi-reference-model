@@ -3828,7 +3828,7 @@
       "event_class": "Distribution",
       "change_type": "documented",
       "title": "The engineering deep dive on entity matching and merge authorization is recorded as a DIO/ODI application-layer publication",
-      "summary": "The DIO/ODI publication metadata records “The Match Is Easy, the Merge Is Not” as a substantive engineering deep dive on the distinction between entity matching and authorization to merge. Hashnode is the canonical publication and DEV.to carries the same article as a secondary publication with its canonical URL pointing to Hashnode. The work supports technical communication around the Agentic Entity Resolution Guardrail Planner, while remaining a non-normative engineering publication rather than a change to the canonical DIO/ODI vocabulary, ontology, Reference Model, or Planner implementation.",
+      "summary": "The DIO/ODI publication metadata records “The Match Is Easy, the Merge Is Not” as a substantive engineering deep dive on the distinction between entity matching and authorization to merge. Hashnode is the canonical publication and DEV.to and Medium carry the same article as secondary publications with their canonical URLs pointing to Hashnode. The work supports technical communication around the Agentic Entity Resolution Guardrail Planner, while remaining a non-normative engineering publication rather than a change to the canonical DIO/ODI vocabulary, ontology, Reference Model, or Planner implementation.",
       "scope": [
         {
           "component": "The Match Is Easy, the Merge Is Not",
@@ -3843,17 +3843,23 @@
           "role": "secondary-publication-of-the-same-work"
         },
         {
+          "component": "The Match Is Easy, the Merge Is Not — Medium representation",
+          "component_type": "secondary-web-publication",
+          "uri": "https://seo-spec-copy-daniel-beranek.medium.com/the-match-is-easy-the-merge-is-not-28eaba24a2d6",
+          "role": "secondary-publication-of-the-same-work"
+        },
+        {
           "component": "Agentic Entity Resolution Guardrail Planner",
           "component_type": "design-time-agent-skill",
           "uri": "https://apps.danielberanek.cz/agentic-entity-resolution-guardrail-planner/",
           "role": "application-context-and-product-discovery"
         }
       ],
-      "before": "The engineering deep dive and its Hashnode and DEV.to publication representations were already documented in the publication and distribution registries, but the Semantic Change Feed did not yet contain an explicit event for this external application-layer publication.",
-      "after": "The feed records the engineering deep dive as a non-normative public application-layer publication. Hashnode remains canonical; DEV.to is an identical secondary publication whose canonical URL points to Hashnode. The event records first inclusion in the feed on 22 November 2026 and does not assert that date as the article's original publication date.",
+      "before": "The engineering deep dive and its Hashnode, DEV.to, and Medium publication representations were already documented in the publication and distribution registries, but the Semantic Change Feed did not yet contain an explicit event for this external application-layer publication.",
+      "after": "The feed records the engineering deep dive as a non-normative public application-layer publication. Hashnode remains canonical; DEV.to and Medium are identical secondary publications whose canonical URLs point to Hashnode. The event records first inclusion in the feed on 22 November 2026 and does not assert that date as the article's original publication date.",
       "preserved_invariants": [
         "The article is an engineering deep dive and a separate work from the LinkedIn architectural overview; the two works are not copies, versions, or distributions of one another.",
-        "Hashnode remains the canonical publication for this work; DEV.to is a secondary publication of the same text and declares the Hashnode URL as its canonical URL.",
+        "Hashnode remains the canonical publication for this work; DEV.to and Medium are secondary publications of the same text and declare the Hashnode URL as their canonical URL.",
         "This is a non-normative engineering publication supporting communication and discovery of the Agentic Entity Resolution Guardrail Planner; it does not modify canonical DIO/ODI concepts, the SKOS Reference Vocabulary, or the Reference Model.",
         "Publication of the article does not establish runtime authorization, production mutation execution, implementation completeness, or empirical effectiveness of the Planner.",
         "The LinkedIn architectural overview is intentionally not included in this event."
@@ -3865,6 +3871,7 @@
           "The Match Is Easy, the Merge Is Not — engineering deep dive",
           "Hashnode canonical publication",
           "DEV.to secondary publication",
+          "Medium secondary publication",
           "Agentic Entity Resolution Guardrail Planner application communication"
         ],
         "notes": "A source-linked publication/distribution record for substantive engineering explanation. It adds no normative vocabulary or model assertions and is not a Planner release or implementation milestone."
@@ -3875,7 +3882,7 @@
           "registry",
           "linked-publication-or-artifact"
         ],
-        "temporal_note": "22 November 2026 is the date of first inclusion in the Semantic Change Feed, not the article's original publication date. The canonical Hashnode URL, identical DEV.to representation, and engineering-deep-dive content role are recorded in the author-maintained works and distributions registries and were confirmed by the author.",
+        "temporal_note": "22 November 2026 is the date of first inclusion in the Semantic Change Feed, not the article's original publication date. The canonical Hashnode URL, identical DEV.to and Medium representations, and engineering-deep-dive content role are recorded in the author-maintained works and distributions registries and were confirmed by the author.",
         "sources": [
           {
             "label": "Hashnode — The Match Is Easy, the Merge Is Not",
@@ -3885,6 +3892,11 @@
           {
             "label": "DEV.to — The Match Is Easy, the Merge Is Not",
             "url": "https://dev.to/danielberanek/the-match-is-easy-the-merge-is-not-khb",
+            "role": "secondary-publication-with-hashnode-canonical"
+          },
+          {
+            "label": "Medium — The Match Is Easy, the Merge Is Not",
+            "url": "https://seo-spec-copy-daniel-beranek.medium.com/the-match-is-easy-the-merge-is-not-28eaba24a2d6",
             "role": "secondary-publication-with-hashnode-canonical"
           },
           {
