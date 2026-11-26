@@ -610,18 +610,7 @@ def render_scf_event(event: dict, inbound_related: list[dict] | None = None) -> 
         + f'<span class="source-role">{esc(source.get("role", ""))}</span></li>'
         for source in sources if source.get("url")
     )
-    if evidence or sources:
-        status = evidence.get("status", "not-stated")
-        html_parts.append(
-            '<details class="evidence"><summary>'
-            f'Evidence and provenance ({len(sources)} sources · {esc(status)})'
-            '</summary>'
-            + (f"<ul>{source_list}</ul>" if source_list else "")
-            + (f'<p>{text_with_links(evidence.get("temporal_note", ""))}</p>'
-               if evidence.get("temporal_note") else "")
-            + "</details>"
-        )
-
+    related_html = ""
     if inbound_related:
         related_items = "".join(
             '<li><a href="#' + esc(item.get("id", "")) + '">'
@@ -632,9 +621,22 @@ def render_scf_event(event: dict, inbound_related: list[dict] | None = None) -> 
             + "</li>"
             for item in inbound_related
         )
-        html_parts.append(
+        related_html = (
             '<section class="evidence-related"><h4>Related events</h4><ul>'
             + related_items + "</ul></section>"
+        )
+
+    if evidence or sources or inbound_related:
+        status = evidence.get("status", "not-stated")
+        html_parts.append(
+            '<details class="evidence"><summary>'
+            f'Evidence and provenance ({len(sources)} sources · {esc(status)})'
+            '</summary>'
+            + (f"<ul>{source_list}</ul>" if source_list else "")
+            + (f'<p>{text_with_links(evidence.get("temporal_note", ""))}</p>'
+               if evidence.get("temporal_note") else "")
+            + related_html
+            + "</details>"
         )
 
     lineage = event.get("lineage", {})
