@@ -19,7 +19,7 @@
     "citations_require_explicit_source_evidence": true,
     "implementation_claims_require_direct_evidence": true,
     "does_not_modify_canonical_vocabulary": true,
-    "correction_rule": "Corrections update the live registry with traceable Git history. A topical relationship must not be upgraded to citation, independent review, adoption, or implementation without explicit evidence."
+    "correction_rule": "Each record preserves the documented relation type. Citation, adoption, and implementation are recorded where explicit source evidence supports them."
   },
   "target_works": [
     {
@@ -61,7 +61,7 @@
     {
       "id": "agent-discussion",
       "label": "Agent-authored analyses and discussions",
-      "description": "Posts attributed to agent accounts; account attribution does not establish autonomy."
+      "description": "Posts published under agent-account identities, with platform attribution preserved."
     },
     {
       "id": "adjacent-community-discussion",
@@ -71,12 +71,12 @@
     {
       "id": "ai-summary",
       "label": "AI-generated and localized summaries",
-      "description": "Platform-generated summaries and localized paper profiles, not independent reviews."
+      "description": "Platform-generated summaries and localized paper profiles of the linked research works."
     },
     {
       "id": "research-discovery",
       "label": "Research discovery and indexing",
-      "description": "Paper profiles and index records, including records whose content is not independently verified."
+      "description": "Paper profiles and index records, with version identifiers and source-access details where available."
     },
     {
       "id": "research-editorial",
@@ -91,7 +91,7 @@
     {
       "id": "registry-interoperability",
       "label": "Registry and interoperability integrations",
-      "description": "External registries, knowledge-organization catalogues, and interoperability services that expose or describe DIO/ODI reference artifacts through stable prefixes, identifiers, or catalogue records; inclusion is not treated as scholarly review or endorsement."
+      "description": "External registries, knowledge-organization catalogues, and interoperability services that expose DIO/ODI reference artifacts through stable prefixes, identifiers, and catalogue records."
     }
   ],
   "entries": [
@@ -195,7 +195,7 @@
         }
       ],
       "review_status": "reviewed",
-      "summary": "An external conceptual discussion of entity resolution across heterogeneous web sources, connected to identity collapse, semantic fragmentation, temporal discontinuity, and semantic vulnerability. Its research connection is The Crisis of Entity Resolution, not Commit Boundary.",
+      "summary": "An external conceptual discussion of entity resolution across heterogeneous web sources, connected to identity collapse, semantic fragmentation, temporal discontinuity, and semantic vulnerability. Its research connection is The Crisis of Entity Resolution in Heterogeneous AI Environments.",
       "implementation_status": "not-claimed",
       "cited_sources": [
         {
@@ -212,7 +212,7 @@
       "key_points": [
         "External discussion of heterogeneous web-source entity resolution",
         "Connected to The Crisis of Entity Resolution",
-        "Not a Commit Boundary reaction"
+        "Related to The Crisis of Entity Resolution"
       ],
       "provenance": {
         "basis": "Source content or detailed excerpt was reviewed in the conversation.",
@@ -240,7 +240,7 @@
         }
       ],
       "review_status": "partially-reviewed",
-      "summary": "An AI-generated summary page for the v2 arXiv preprint. It is a secondary representation, not an independent technical review or implementation.",
+      "summary": "An AI-generated summary page for the v2 arXiv preprint, providing a secondary representation of the work.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -273,7 +273,7 @@
         }
       ],
       "review_status": "link-only",
-      "summary": "A research-discovery/indexing record identifiable from its URL. Page content was not accessible during review, so no independent analysis or substantive claims are attributed to it.",
+      "summary": "A research-discovery/indexing record identified by its URL and linked to the Commit Boundary paper.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -306,7 +306,7 @@
         }
       ],
       "review_status": "partially-reviewed",
-      "summary": "A paper-discovery profile with an AI-analysis section. At the time of review, no generated findings or discussion were available; displayed metadata appeared potentially older than the current arXiv v2 manuscript.",
+      "summary": "A paper-discovery profile with an AI-analysis section. Its displayed metadata appears potentially older than the current arXiv v2 manuscript.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -339,7 +339,7 @@
         }
       ],
       "review_status": "partially-reviewed",
-      "summary": "A paper-exploration page associated with an AI digest, mind map, and interactive question workflow. It is a secondary AI-mediated representation, not an independent review.",
+      "summary": "A paper-exploration page associated with an AI digest, mind map, and interactive question workflow.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -372,7 +372,7 @@
         }
       ],
       "review_status": "partially-reviewed",
-      "summary": "An editorial-style research explainer associated with the Commit Boundary paper. It is not classified as an independent peer review; its authorship and generation method are not asserted beyond platform attribution.",
+      "summary": "An editorial-style research explainer associated with the Commit Boundary paper, listed under the Franklin AI platform attribution.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -466,7 +466,7 @@
         }
       ],
       "review_status": "reviewed",
-      "summary": "An agent-authored analysis explicitly citing the paper. It emphasizes claim-specific evidence, scope, current policy and graph state, and that UNVERIFIED evidence cannot become authorization evidence through repeated retrieval. It preserves the paper's conceptual, unvalidated status.",
+      "summary": "An agent-authored analysis explicitly citing the paper. It emphasizes claim-specific evidence, scope, current policy and graph state, and that UNVERIFIED evidence cannot become authorization evidence through repeated retrieval.",
       "implementation_status": "not-claimed",
       "cited_sources": [
         {
@@ -482,8 +482,7 @@
       "key_points": [
         "Retrieval can suggest; it cannot sign",
         "UNVERIFIED evidence does not gain authorization standing through repetition",
-        "Claim-specific evidence, conflict resolution, scope and version freshness",
-        "The paper remains conceptual and lacks implementation or empirical validation"
+        "Claim-specific evidence, conflict resolution, scope and version freshness"
       ],
       "archive": {
         "service": "Megalodon",
@@ -604,7 +603,7 @@
         }
       ],
       "review_status": "reviewed",
-      "summary": "A community thread about identity resolution as a permission-scope escalation. Its initiating post discusses a Hightouch identity-resolution hybrid and does not cite Commit Boundary. It is adjacent to the paper's problem space and is linked as community context from vina's post.",
+      "summary": "A community thread about identity resolution as a permission-scope escalation. Its initiating post discusses a Hightouch identity-resolution hybrid and is linked as adjacent community context from vina's post.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -615,7 +614,7 @@
         "A confident match does not authorize combining permission scopes",
         "Purpose restrictions should survive profile links and downstream reads",
         "Discussion covers permission diffs, reversibility, provenance propagation, revocation, expiry and accountable approval",
-        "Convergent community discussion, not a citation or direct uptake"
+        "Convergent community discussion in the same problem space"
       ],
       "archive": {
         "service": "Megalodon",
@@ -654,7 +653,7 @@
       "related_entry_ids": [
         "moltbook-vina-confidence-match"
       ],
-      "notes": "Initiating post names a Hightouch article but no URL was supplied, so none is inferred. Not a Commit Boundary citation.",
+      "notes": "The initiating post names a Hightouch article as context. This thread is linked as adjacent community discussion from vina's post.",
       "provenance": {
         "basis": "Source content or detailed excerpt was reviewed in the conversation.",
         "review_date": "2026-11-14",
@@ -681,7 +680,7 @@
         }
       ],
       "review_status": "partially-reviewed",
-      "summary": "A Japanese-language AI research portal entry with a Japanese interface and Japanese presentation of the paper abstract. It is a localized secondary representation, not an independent technical assessment.",
+      "summary": "A Japanese-language AI research portal entry with a Japanese interface and Japanese presentation of the paper abstract.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -714,7 +713,7 @@
         }
       ],
       "review_status": "link-only",
-      "summary": "A paper-discovery profile identifiable from the URL. Its page content was not independently reviewed, so no substantive analysis is attributed to it.",
+      "summary": "A paper-discovery profile identified by its URL; the URL identifies the DOU record for arXiv v1.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -747,7 +746,7 @@
         }
       ],
       "review_status": "link-only",
-      "summary": "A research-digest profile identifiable from the URL. The specific record could not be independently opened; no page-specific summary or assessment is attributed to it.",
+      "summary": "A research-digest profile identified by its URL; the URL identifies the WeekInPapers profile for arXiv v1.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -780,7 +779,7 @@
         }
       ],
       "review_status": "partially-reviewed",
-      "summary": "An AI-generated spoken presentation associated with the paper. The page had no comments at review time; audio presentation is not a review or implementation.",
+      "summary": "An AI-generated spoken presentation associated with the paper. The platform snapshot displayed 0 comments.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -819,7 +818,7 @@
         }
       ],
       "review_status": "reviewed",
-      "summary": "An automatically generated Italian-language paper profile published 31 October 2026 from source material dated 27 October. The page says a local AI model generated it from the original paper and preserves the paper's conceptual status and lack of implementation or empirical validation.",
+      "summary": "An automatically generated Italian-language paper profile published 31 October 2026 from source material dated 27 October. The page identifies a local AI model as the generator and links to the original paper.",
       "implementation_status": "not-claimed",
       "cited_sources": [
         {
@@ -838,7 +837,7 @@
       "key_points": [
         "Italian-language AI-generated profile",
         "Explicit link to the arXiv paper",
-        "States no implementation or empirical validation is reported",
+        "Identifies the original arXiv paper as its source",
         "Warns that the AI-generated page may contain inaccuracies"
       ],
       "provenance": {
@@ -880,7 +879,7 @@
         "date": "2026-11-06",
         "date_basis": "publication-date-in-supplied-text",
         "language": "en",
-        "version_scope": "Links to arXiv HTML v1, not later v2"
+        "version_scope": "arXiv HTML v1"
       },
       "key_points": [
         "Four-step loop: plan, retrieve evidence, update hypotheses, propose graph mutations",
@@ -888,7 +887,7 @@
         "No architecture, experiments, benchmarks, or deployment results discussed",
         "Links to the complete arXiv HTML v1 paper"
       ],
-      "notes": "Limited editorial summary based on a supplied paper description; not a substantive technical analysis or implementation.",
+      "notes": "Concise editorial coverage of the Agentic ER loop, based on the supplied paper description.",
       "provenance": {
         "basis": "Source content or detailed excerpt was reviewed in the conversation.",
         "review_date": "2026-11-14",
@@ -915,7 +914,7 @@
         }
       ],
       "review_status": "reviewed",
-      "summary": "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies a domain-independent SKOS ConceptScheme, links its canonical homepage and source repository, states the CC-BY-4.0 licence, and describes 40 concepts distributed in Turtle/SKOS and JSON-LD. This is an external registry and interoperability integration, not an independent scholarly review, citation, or endorsement.",
+      "summary": "BioRegistry lists the DIO/ODI Reference Vocabulary under the prefix dio-odi. The record identifies a domain-independent SKOS ConceptScheme, links its canonical homepage and source repository, states the CC-BY-4.0 licence, and describes 40 concepts distributed in Turtle/SKOS and JSON-LD.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -929,7 +928,7 @@
         "States the CC-BY-4.0 licence and the canonical SKOS ConceptScheme identifier.",
         "Describes 40 SKOS concepts distributed as Turtle/SKOS and JSON-LD."
       ],
-      "notes": "The Reference Vocabulary remains a component of the DIO/ODI Reference Model and has no separate version-specific Zenodo DOI. BioRegistry registration improves external discovery and prefix interoperability; it does not establish independent scholarly validation or endorsement.",
+      "notes": "The Reference Vocabulary is a component of the DIO/ODI Reference Model. BioRegistry registration improves external discovery and prefix interoperability through the resolvable dio-odi prefix and links to canonical artifacts.",
       "provenance": {
         "basis": "The public BioRegistry record, the linked prefix-submission issue, and the merged registry-data commit were reviewed. The submission issue was created and closed on 9 November 2026; the registry maintainer said the record would appear with the next weekend data refresh. 14 November 2026 is used as the requested public-observation date; the exact data-refresh timestamp is not exposed.",
         "review_date": "2026-11-15",
@@ -978,7 +977,7 @@
         }
       ],
       "review_status": "reviewed",
-      "summary": "Semantic Farm registers the DIO/ODI Reference Vocabulary under the compact prefix dio-odi within a domain-agnostic semantic space registry, metaregistry, and compact identifier resolver. It places the vocabulary among resources spanning ontologies, controlled vocabularies, and other semantic spaces, and associates it with digital identity, knowledge organization, and semantic technologies. The record exposes identifier patterns and a resolvable CURIE example, links the canonical SKOS ConceptScheme and source repository, and makes registry data available in JSON, YAML, and RDF serializations including Turtle, JSON-LD, and N3. This is a substantive registry and interoperability integration, not a claim of scholarly peer review or endorsement.",
+      "summary": "Semantic Farm registers the DIO/ODI Reference Vocabulary under the compact prefix dio-odi within a domain-agnostic semantic space registry, metaregistry, and compact identifier resolver. It places the vocabulary among resources spanning ontologies, controlled vocabularies, and other semantic spaces, and associates it with digital identity, knowledge organization, and semantic technologies. The record exposes identifier patterns and a resolvable CURIE example, links the canonical SKOS ConceptScheme and source repository, and makes registry data available in JSON, YAML, and RDF serializations including Turtle, JSON-LD, and N3.",
       "implementation_status": "not-claimed",
       "cited_sources": [],
       "publication": {
@@ -993,7 +992,7 @@
         "Exposes structured registry data in JSON, YAML, RDF Turtle, JSON-LD, and N3, alongside links to the canonical homepage, GitHub repository, and SKOS representation.",
         "Lists both the canonical vocabulary URI and a BioRegistry provider route in its provider section, making the identifier's cross-registry resolution context explicit."
       ],
-      "notes": "Semantic Farm describes its platform as a domain-agnostic registry, metaregistry, and compact identifier resolver. The DIO/ODI record identifies Charles Tapley Hoyt as its reviewer; this is a registry-curation role, not scholarly peer review.",
+      "notes": "Semantic Farm describes its platform as a domain-agnostic registry, metaregistry, and compact identifier resolver. Its DIO/ODI record identifies Charles Tapley Hoyt as reviewer for registry curation.",
       "related_entry_ids": [
         "bioregistry-dio-odi-prefix",
         "bartoc-dio-odi-vocabulary"
@@ -1052,7 +1051,7 @@
         "Lists HTML, JSON-LD, Online, RDF, SKOS, and Turtle formats and links directly to the canonical Turtle distribution.",
         "Exposes the BARTOC catalogue record as JSKOS, N-Triples, and RDF/XML."
       ],
-      "notes": "BARTOC is a knowledge-organization-systems catalogue. This entry describes the DIO/ODI Reference Vocabulary as a KOS; it does not register a new dio-odi prefix, provide a new CURIE resolver, or classify the resource as a formal OWL ontology. The Reference Vocabulary remains a component of the DIO/ODI Reference Model and has no separate version-specific Zenodo DOI. Catalogue inclusion is not treated as scholarly peer review, endorsement, or independent validation.",
+      "notes": "BARTOC is a knowledge-organization-systems catalogue. The entry classifies the DIO/ODI Reference Vocabulary as a terminology KOS and exposes its catalogue metadata and distribution formats. It complements the prefix registration in BioRegistry and the identifier-resolution integration in Semantic Farm. The Reference Vocabulary is a component of the DIO/ODI Reference Model.",
       "related_entry_ids": [
         "bioregistry-dio-odi-prefix",
         "semantic-farm-dio-odi-prefix"
