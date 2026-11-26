@@ -547,7 +547,7 @@ def render_reception_turtle(registry: dict) -> str:
     return graph.serialize(format="turtle")
 
 
-def render_scf_event(event: dict) -> str:
+def render_scf_event(event: dict, inbound_related: list[dict] | None = None) -> str:
     event_id = event.get("id", "")
     event_class = event.get("event_class", "")
     components = [scope.get("component", "") for scope in event.get("scope", [])]
@@ -610,7 +610,23 @@ def render_scf_event(event: dict) -> str:
         + f'<span class="source-role">{esc(source.get("role", ""))}</span></li>'
         for source in sources if source.get("url")
     )
-    if evidence or sources:
+    related_html = ""
+    if inbound_related:
+        related_items = "".join(
+            '<li><a href="#' + esc(item.get("id", "")) + '">'
+            + esc(item.get("id", "")) + " — " + esc(item.get("title", ""))
+            + "</a>"
+            + (f' <span class="source-role">{esc(format_date(item.get("date", "")))}</span>'
+               if item.get("date") else "")
+            + "</li>"
+            for item in inbound_related
+        )
+        related_html = (
+            '<section class="evidence-related"><h4>Related events</h4><ul>'
+            + related_items + "</ul></section>"
+        )
+
+    if evidence or sources or inbound_related:
         status = evidence.get("status", "not-stated")
         html_parts.append(
             '<details class="evidence"><summary>'
@@ -619,6 +635,7 @@ def render_scf_event(event: dict) -> str:
             + (f"<ul>{source_list}</ul>" if source_list else "")
             + (f'<p>{text_with_links(evidence.get("temporal_note", ""))}</p>'
                if evidence.get("temporal_note") else "")
+            + related_html
             + "</details>"
         )
 
@@ -690,8 +707,16 @@ def render_scf_html(feed: dict) -> str:
         "SCF component filter options",
     )
 
+    inbound_related = {}
+    for related_event in events:
+        for target_id in related_event.get("lineage", {}).get("related_to", []):
+            inbound_related.setdefault(target_id, []).append(related_event)
+    for related_items in inbound_related.values():
+        related_items.sort(key=lambda item: (item.get("date", ""), item.get("id", "")))
+
     rendered_events = "".join(
-        render_scf_event(event) for event in sorted(events, key=lambda item: item.get("date", ""), reverse=True)
+        render_scf_event(event, inbound_related.get(event.get("id", ""), []))
+        for event in sorted(events, key=lambda item: item.get("date", ""), reverse=True)
     )
     source = replace_once(
         source,
