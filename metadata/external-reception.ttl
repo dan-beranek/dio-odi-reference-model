@@ -203,10 +203,12 @@
     schema:url <https://www.summarizepaper.com/en/paper/2610.37407v2/> .
 
 <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> a schema:CreativeWork ;
+    dcterms:source <https://unghost.com/>,
+        <https://unghost.com/blog/what-a-threads-post-says-about-opensend-and-campaign-timing-7d3c5> ;
     cito:cites <https://arxiv.org/html/2610.37407v1> ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
     schema:datePublished "2026-11-06"^^xsd:date ;
-    schema:description "An unGhost editorial published on 6 November 2026 that summarizes the agentic ER loop as planning, retrieving evidence, updating hypotheses, and proposing graph mutations. It identifies an authorization guardrail but explicitly says the supplied summary does not specify its mechanics, architecture, policies, or results. It points readers to arXiv HTML v1."@en ;
+    schema:description "A commercially positioned unGhost blog item published on 6 November 2026. It opens with a visitor-identification product pitch, then appears to build its outline from the paper title and the abstract’s compressed description of iterative Agentic ER activity. The article repeatedly limits its claims to an unspecified “available” or “supplied” summary and concludes that architecture and mechanics are unspecified, although the linked arXiv v1 describes them in Sections 5–7 and sets out a prospective evaluation protocol in Section 8. A separate unGhost article on an unrelated topic uses the same “Quick note” promotion, “supplied summary” framing, limitation-led structure, and “original commentary” footer. Together, these are strong indicators of a repeatable programmatic-SEO / AI-SEO content format. The exact input packet, authoring process, and use of an LLM are not publicly established."@en ;
     schema:genre "research-editorial" ;
     schema:name "The Four-Step Agentic Entity Resolution Loop—and Its Proposed Guardrail"@en ;
     schema:url <https://unghost.com/blog/the-four-step-agentic-entity-resolution-loopand-its-proposed-guardrail-d6e86> .

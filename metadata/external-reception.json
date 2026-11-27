@@ -1,9 +1,9 @@
 {
-  "registry_version": "0.1.5",
+  "registry_version": "0.1.6",
   "schema_version": "0.1.1",
   "uri": "https://vocab.danielberanek.cz/metadata/external-reception.json",
   "frontend_uri": "https://vocab.danielberanek.cz/external-reception/",
-  "generated_on": "2026-11-23",
+  "generated_on": "2026-11-27",
   "title": "DIO/ODI External Reception Registry",
   "description": "A manually curated register of external technical analyses, conceptual uptake, agent-authored discussions, AI-mediated summaries, research-discovery records, registry and interoperability integrations, and secondary representations linked to specific DIO/ODI research works and canonical reference artifacts. It documents external reception without modifying the canonical Reference Vocabulary.",
   "maintainer": {
@@ -852,7 +852,7 @@
       "url": "https://unghost.com/blog/the-four-step-agentic-entity-resolution-loopand-its-proposed-guardrail-d6e86",
       "platform": "unGhost",
       "category": "research-editorial",
-      "content_kind": "externally-authored-limited-paper-summary",
+      "content_kind": "programmatic-seo-style-paper-commentary",
       "target_work_ids": [
         "commit-boundary-paper"
       ],
@@ -866,7 +866,7 @@
         }
       ],
       "review_status": "reviewed",
-      "summary": "An unGhost editorial published on 6 November 2026 that summarizes the agentic ER loop as planning, retrieving evidence, updating hypotheses, and proposing graph mutations. It identifies an authorization guardrail but explicitly says the supplied summary does not specify its mechanics, architecture, policies, or results. It points readers to arXiv HTML v1.",
+      "summary": "A commercially positioned unGhost blog item published on 6 November 2026. It opens with a visitor-identification product pitch, then appears to build its outline from the paper title and the abstract’s compressed description of iterative Agentic ER activity. The article repeatedly limits its claims to an unspecified “available” or “supplied” summary and concludes that architecture and mechanics are unspecified, although the linked arXiv v1 describes them in Sections 5–7 and sets out a prospective evaluation protocol in Section 8. A separate unGhost article on an unrelated topic uses the same “Quick note” promotion, “supplied summary” framing, limitation-led structure, and “original commentary” footer. Together, these are strong indicators of a repeatable programmatic-SEO / AI-SEO content format. The exact input packet, authoring process, and use of an LLM are not publicly established.",
       "implementation_status": "not-claimed",
       "cited_sources": [
         {
@@ -882,17 +882,33 @@
         "version_scope": "arXiv HTML v1"
       },
       "key_points": [
-        "Four-step loop: plan, retrieve evidence, update hypotheses, propose graph mutations",
-        "Mentions an authorization guardrail but does not explain its mechanics",
-        "No architecture, experiments, benchmarks, or deployment results discussed",
-        "Links to the complete arXiv HTML v1 paper"
+        "The article opens with a product promotion for unGhost’s website visitor-identification and lead-generation service before turning to the arXiv paper.",
+        "Its four-item outline closely reuses the abstract’s wording: “iteratively plan actions, retrieve evidence, update hypotheses, and propose graph mutations.”",
+        "The article repeatedly attributes its knowledge boundary to an “available summary” or “supplied material”; its conclusion describes omissions in that supplied summary rather than checking whether the details exist in the linked paper.",
+        "The paper’s Section 3 describes the Agentic ER lifecycle as Plan, Act, Observe, and Update Beliefs, explicitly citing prior work [18]. The article substitutes the abstract’s four compressed activity phrases without tracing that lifecycle or its source.",
+        "Sections 5–7 of the linked paper specify DIO/ODI-informed constraint binding, evidence admission and claim-specific promotion, an authorization invariant, a two-phase MVDIO Supervisor interface, mutation classes, and illustrative cases.",
+        "Section 8 specifies a prospective evaluation protocol with baselines, corpus construction, and metrics. The paper does not report executed experiments or empirical results; that limitation is real but does not make its architecture unspecified.",
+        "A separate unGhost article published on 24 September 2026, “What a Threads Post Says About OpenSend and Campaign Timing,” repeats the same opening “Quick note” product pitch, “supplied summary” restrictions, limitation-led exposition, and “original commentary from the unGhost™ team” footer.",
+        "The observable pattern supports describing the item as AI-SEO spam / programmatic-SEO-style content. The exact generation pipeline, including whether an LLM was used and whether its sole input was the title and abstract, remains unverified."
       ],
-      "notes": "Concise editorial coverage of the Agentic ER loop, based on the supplied paper description.",
+      "notes": "Assessment: this is better characterized as AI-SEO spam in a programmatic-SEO format than as an expert analysis or review of the paper. The visible construction is highly consistent with a summary-constrained content pipeline: the title and abstract supply the subject and four-part outline; the phrase “supplied summary” is then repeatedly used to state what the source packet does not contain; and the article directs readers to the full paper for details that are already present there. The same publisher uses an almost identical template in its 24 September 2026 OpenSend/Threads article, including the visitor-identification “Quick note,” the “supplied summary” framing, and the “original commentary” footer. The unGhost homepage itself markets a commercial service for identifying anonymous website visitors and turning them into contactable leads. These observable facts support the pSEO/AI-SEO classification. They do not prove the exact generation workflow, prompt, source packet, or whether a human or LLM produced the text; those implementation details are not asserted as facts. The substantive content failure is directly demonstrable: the linked arXiv v1 contains the proposed architecture and mechanics in Sections 5–7 and an evaluation protocol in Section 8, while the article treats their absence from its supplied summary as though they were absent from the paper.",
       "provenance": {
-        "basis": "Source content or detailed excerpt was reviewed in the conversation.",
-        "review_date": "2026-11-14",
+        "basis": "Full article text supplied in the conversation reviewed against arXiv HTML v1; unGhost homepage and a separate unGhost article reviewed to establish product positioning and recurring article-template features. Exact generation pipeline not verified.",
+        "review_date": "2026-11-27",
         "reviewed_by": "author-assisted-curation"
-      }
+      },
+      "evidence_sources": [
+        {
+          "title": "unGhost — commercial visitor-identification and lead-generation homepage",
+          "url": "https://unghost.com/",
+          "role": "Publisher's own homepage documents the commercial product and its visitor-identification / lead-generation positioning."
+        },
+        {
+          "title": "What a Threads Post Says About OpenSend and Campaign Timing",
+          "url": "https://unghost.com/blog/what-a-threads-post-says-about-opensend-and-campaign-timing-7d3c5",
+          "role": "A separate unGhost article dated 24 September 2026 exhibits the same promotional opening, supplied-summary framing, limitation-led structure, and original-commentary footer; comparative evidence of a repeatable editorial template."
+        }
+      ]
     },
     {
       "id": "bioregistry-dio-odi-prefix",
