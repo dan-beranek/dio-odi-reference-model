@@ -203,11 +203,12 @@
     schema:url <https://www.summarizepaper.com/en/paper/2610.37407v2/> .
 
 <https://vocab.danielberanek.cz/external-reception/#unghost-agentic-er-loop-guardrail> a schema:CreativeWork ;
-    dcterms:source <https://unghost.com/> ;
+    dcterms:source <https://unghost.com/>,
+        <https://unghost.com/blog/what-a-threads-post-says-about-opensend-and-campaign-timing-7d3c5> ;
     cito:cites <https://arxiv.org/html/2610.37407v1> ;
     schema:about <https://arxiv.org/abs/2610.37407> ;
     schema:datePublished "2026-11-06"^^xsd:date ;
-    schema:description "An unGhost commercial editorial published on 6 November 2026. It opens with a product pitch for identifying anonymous website visitors and turning them into contactable leads, then presents four clauses from the paper’s abstract as a four-step Agentic ER loop. It says that architecture, mechanics, policies, and results are unspecified based on the supplied summary. Comparison with the linked arXiv v1 shows that Sections 5–7 specify the proposed DIO/ODI-informed constraint binding, evidence admission and claim-specific promotion, authorization invariant, two-phase MVDIO Supervisor interface, mutation classes, and illustrative cases; Section 8 defines a prospective evaluation protocol with baselines and metrics. The paper does not report an implementation or empirical results, but this is distinct from saying that its proposed architecture and evaluation design are unspecified."@en ;
+    schema:description "A commercially positioned unGhost blog item published on 6 November 2026. It opens with a visitor-identification product pitch, then appears to build its outline from the paper title and the abstract’s compressed description of iterative Agentic ER activity. The article repeatedly limits its claims to an unspecified “available” or “supplied” summary and concludes that architecture and mechanics are unspecified, although the linked arXiv v1 describes them in Sections 5–7 and sets out a prospective evaluation protocol in Section 8. A separate unGhost article on an unrelated topic uses the same “Quick note” promotion, “supplied summary” framing, limitation-led structure, and “original commentary” footer. Together, these are strong indicators of a repeatable programmatic-SEO / AI-SEO content format. The exact input packet, authoring process, and use of an LLM are not publicly established."@en ;
     schema:genre "research-editorial" ;
     schema:name "The Four-Step Agentic Entity Resolution Loop—and Its Proposed Guardrail"@en ;
     schema:url <https://unghost.com/blog/the-four-step-agentic-entity-resolution-loopand-its-proposed-guardrail-d6e86> .
