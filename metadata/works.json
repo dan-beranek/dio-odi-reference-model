@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.8.22",
+  "registry_version": "1.8.23",
   "status": "operational-metadata-registry",
   "scope": "DIO/ODI corpus and DIO/ODI Reference Model publication metadata",
   "authority_note": "This registry is an operational source of truth for publication metadata and inter-work relations. It does not modify the canonical DIO/ODI Reference Vocabulary.",
@@ -28,7 +28,8 @@
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",
       "description": "The canonical multilingual manifesto defining Digital Identity Optimization (DIO) and the Ontology of Digital Identity (ODI). It establishes their conceptual scope, principles and terminology, and describes a framework for coherent, reconstructable digital identity across AI systems, search engines, knowledge graphs and human interpretation.",
-      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo"
+      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo",
+      "concept_doi": "10.5281/zenodo.21610933"
     },
     {
       "id": "manifest-v2-web",
@@ -104,7 +105,8 @@
       "keyword_profile": "mvdio",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",
-      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo"
+      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo",
+      "concept_doi": "10.5281/zenodo.23226204"
     },
     {
       "id": "taxonomic-note",
@@ -116,7 +118,8 @@
       "keyword_profile": "taxonomic-note",
       "keyword_profile_status": "canonical-approved",
       "keyword_grammar_version": "2.0.0",
-      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo"
+      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo",
+      "concept_doi": "10.5281/zenodo.23269322"
     },
     {
       "id": "commit-boundary-paper",
@@ -146,7 +149,8 @@
         "pdf_titlepage_author_name": "Daniel Beránek",
         "comments": "32 pages, 2 figures, 3 tables. Version 2, its non-normative relational architecture mapping and machine-readable serializations form one coordinated research artefact: the paper specifies the architecture; the mapping formalizes its relations. Mapping v0.3.1: https://vocab.danielberanek.cz/mappings/agentic-er-architecture/ ; archived Reference Model v0.7.0: https://doi.org/10.5281/zenodo.24020300; earlier mapping v0.3.0 is included in archived v0.6.0: https://doi.org/10.5281/zenodo.23966487"
       },
-      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo"
+      "image": "https://zenodo.org/api/communities/c3c9d61d-3e26-4975-9891-d54f5a836e19/logo",
+      "concept_doi": "10.5281/zenodo.23580732"
     },
     {
       "id": "reference-model",
