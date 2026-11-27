@@ -27,10 +27,13 @@
     dcterms:source <https://bartoc.org/api/data?uri=http%3A%2F%2Fbartoc.org%2Fen%2Fnode%2F21188>,
         <https://bartoc.org/en/node/21188>,
         <https://bartoc.org/en/node/21188?format=nt&inline=1>,
-        <https://bartoc.org/en/node/21188?format=rdfxml> ;
+        <https://bartoc.org/en/node/21188?format=rdfxml>,
+        <https://vocab.danielberanek.cz/>,
+        <https://vocab.danielberanek.cz/vocabulary/dio-odi-skos.ttl>,
+        <https://vocab.danielberanek.cz/vocabulary/dio-odi.jsonld> ;
     schema:about <https://vocab.danielberanek.cz/dio-odi/#ReferenceVocabulary> ;
     schema:datePublished "2026-11-19"^^xsd:date ;
-    schema:description "BARTOC catalogues DIO/ODI Reference Vocabulary v0.2.2 as a Terminology KOS, assigning the subject classifications Data processing & computer science (004) and Special computer methods (006), English language, and 40 concepts. It exposes the canonical ConceptScheme URI and namespace separately, lists the CC BY 4.0 licence, publisher, homepage, issue tracker, and HTML, JSON-LD, Online, RDF, SKOS, and Turtle formats, and provides a direct Turtle distribution plus JSKOS, N-Triples, and RDF/XML catalogue-record exports. This is a KOS-catalogue integration, distinct from namespace-prefix registration or CURIE resolution."@en ;
+    schema:description "BARTOC catalogues DIO/ODI Reference Vocabulary v0.2.2 as a Terminology KOS, assigning the subject classifications Data processing & computer science (004) and Special computer methods (006), English language, and 40 concepts. The record exposes the canonical ConceptScheme URI and namespace, licence, publisher, vocabulary homepage, the general vocabulary site as subjectOf, repository issue tracker, and two direct vocabulary distributions in Turtle and JSON-LD, alongside catalogue formats and machine-readable exports."@en ;
     schema:genre "registry-interoperability" ;
     schema:name "DIO/ODI Reference Vocabulary — BARTOC catalogue record"@en ;
     schema:url <https://bartoc.org/en/node/21188> .
